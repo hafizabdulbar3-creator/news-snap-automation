@@ -1,4 +1,4 @@
-name: NEWS SNAP Automation Test
+name: NEWS SNAP Automation
 
 on:
   workflow_dispatch:
@@ -9,17 +9,17 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  news:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get repository files
+      - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
-      - name: Run NEWS SNAP test
+      - name: Run NEWS SNAP
         run: python test.py
