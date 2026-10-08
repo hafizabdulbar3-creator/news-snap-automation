@@ -67,10 +67,13 @@ jobs:
           print("Gemini connection successful.")
           print("Gemini response:", text)
           PY
-
-      - name: Collect GDELT discovery
+            - name: Collect GDELT discovery
         run: python test.py
 
+      - name: Classify news with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python classify.py
       - name: Show discovery summary
         run: |
           python - <<'PY'
