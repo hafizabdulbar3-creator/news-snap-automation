@@ -91,3 +91,13 @@ jobs:
           print("SELECTED ARTICLE:")
           print(json.dumps(selected, ensure_ascii=False, indent=2))
           PY
+
+      - name: Generate NEWS SNAP post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python post_generator.py
+
+      - name: Show generated post
+        run: |
+          echo "===== NEWS SNAP POST ====="
+          cat post.json
