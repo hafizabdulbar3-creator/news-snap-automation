@@ -21,73 +21,73 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Test Gemini API
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          python - <<'PY'
-          import json
-          import os
-          import urllib.request
-
-          api_key = os.environ["GEMINI_API_KEY"]
-
-          url = (
-              "https://generativelanguage.googleapis.com/"
-              "v1beta/models/gemini-3.5-flash-lite:generateContent"
-          )
-
-          payload = {
-              "contents": [
-                  {
-                      "parts": [
-                          {
-                              "text": "Reply with exactly: NEWS SNAP GEMINI OK"
-                          }
-                      ]
-                  }
-              ]
-          }
-
-          request = urllib.request.Request(
-              url,
-              data=json.dumps(payload).encode("utf-8"),
-              headers={
-                  "Content-Type": "application/json",
-                  "x-goog-api-key": api_key
-              },
-              method="POST"
-          )
-
-          with urllib.request.urlopen(request, timeout=30) as response:
-              data = json.load(response)
-
-          text = data["candidates"][0]["content"]["parts"][0]["text"]
-
-          print("Gemini connection successful.")
-          print("Gemini response:", text)
-          PY
-            - name: Collect GDELT discovery
+      - name: Collect GDELT discovery
         run: python test.py
 
-      - name: Classify news with Gemini
+      - name: Classify first batch with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python classify.py
-      - name: Show discovery summary
+
+      - name: Select one article
         run: |
           python - <<'PY'
           import json
+          from pathlib import Path
 
-          with open("discovery.json", "r", encoding="utf-8") as f:
-              articles = json.load(f)
+          articles = json.loads(
+              Path("discovery.json").read_text(encoding="utf-8")
+          )
 
-          print(f"TOTAL ARTICLES: {len(articles)}")
-          print("\nFIRST 10 ARTICLES:\n")
+          result = json.loads(
+              Path("classified_sample.json").read_text(encoding="utf-8")
+          )
 
-          for i, article in enumerate(articles[:10], 1):
-              print(f"{i}. {article['title']}")
-              print(f"   SOURCE: {article['domain']}")
-              print(f"   URL: {article['url']}")
-              print()
+          classifications = {
+              item["id"]: item
+              for item in result.get("results", [])
+          }
+
+          selected = None
+
+          # Prefer a MAJOR story
+          for index, article in enumerate(articles[:50], start=1):
+              classification = classifications.get(index)
+
+              if classification and classification.get("importance") == "MAJOR":
+                  selected = {
+                      **article,
+                      "classification": classification
+                  }
+                  break
+
+          # Otherwise use a NORMAL story
+          if selected is None:
+              for index, article in enumerate(articles[:50], start=1):
+                  classification = classifications.get(index)
+
+                  if classification and classification.get("importance") == "NORMAL":
+                      selected = {
+                          **article,
+                          "classification": classification
+                      }
+                      break
+
+          # Final fallback: first article
+          if selected is None and articles:
+              selected = {
+                  **articles[0],
+                  "classification": classifications.get(1, {})
+              }
+
+          if selected is None:
+              raise RuntimeError("No article available.")
+
+          Path("selected_article.json").write_text(
+              json.dumps(selected, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+
+          print("SELECTED ARTICLE:")
+          print(json.dumps(selected, ensure_ascii=False, indent=2))
           PY
