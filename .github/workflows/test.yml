@@ -20,8 +20,10 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.13"
+
       - name: Install Pillow
         run: python -m pip install --upgrade pip Pillow
+
       - name: Collect GDELT discovery
         run: python test.py
 
@@ -51,7 +53,6 @@ jobs:
 
           selected = None
 
-          # Prefer a MAJOR story
           for index, article in enumerate(articles[:50], start=1):
               classification = classifications.get(index)
 
@@ -62,7 +63,6 @@ jobs:
                   }
                   break
 
-          # Otherwise use a NORMAL story
           if selected is None:
               for index, article in enumerate(articles[:50], start=1):
                   classification = classifications.get(index)
@@ -74,7 +74,6 @@ jobs:
                       }
                       break
 
-          # Final fallback: first article
           if selected is None and articles:
               selected = {
                   **articles[0],
@@ -98,7 +97,17 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python post_generator.py
 
+      - name: Generate NEWS SNAP image
+        run: python generate_image.py
+
       - name: Show generated post
         run: |
           echo "===== NEWS SNAP POST ====="
           cat post.json
+
+      - name: Upload NEWS SNAP image
+        uses: actions/upload-artifact@v7
+        with:
+          name: news-snap-first-post
+          path: news_snap_post.jpg
+          if-no-files-found: error
