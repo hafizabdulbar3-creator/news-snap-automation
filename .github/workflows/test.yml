@@ -21,5 +21,23 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Run NEWS SNAP
+      - name: Collect GDELT discovery
         run: python test.py
+
+      - name: Show discovery summary
+        run: |
+          python - <<'PY'
+          import json
+
+          with open("discovery.json", "r", encoding="utf-8") as f:
+              articles = json.load(f)
+
+          print(f"TOTAL ARTICLES: {len(articles)}")
+          print("\nFIRST 10 ARTICLES:\n")
+
+          for i, article in enumerate(articles[:10], 1):
+              print(f"{i}. {article['title']}")
+              print(f"   SOURCE: {article['domain']}")
+              print(f"   URL: {article['url']}")
+              print()
+          PY
