@@ -1,0 +1,118 @@
+name: NEWS SNAP Photo and Language Diagnostics
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pip Pillow langdetect
+
+      - name: Test actual language detector
+        run: |
+          python - <<'PY'
+          import generate_image as gi
+          from langdetect import DetectorFactory
+
+          DetectorFactory.seed = 0
+
+          assert gi.LANGDETECT_AVAILABLE, "langdetect is unavailable"
+
+          tests = [
+              (
+                  "English",
+                  "Wildfires intensify as temperatures rise across several regions.",
+                  True,
+              ),
+              (
+                  "Spanish",
+                  "Los incendios forestales se intensifican mientras suben las temperaturas.",
+                  False,
+              ),
+              (
+                  "Arabic script",
+                  "حرائق الغابات تزداد مع ارتفاع درجات الحرارة في المناطق المتضررة",
+                  False,
+              ),
+          ]
+
+          for label, text, expected in tests:
+              actual = gi.is_likely_english(text)
+              print(f"{label}: expected={expected}, actual={actual}")
+              if actual != expected:
+                  raise RuntimeError(f"Language test failed: {label}")
+
+          print("PASS: Actual langdetect tests completed.")
+          PY
+
+      - name: Test live Wikimedia Commons API
+        run: |
+          python - <<'PY'
+          import json
+          import urllib.parse
+          import urllib.request
+
+          import generate_image as gi
+
+          params = {
+              "action": "query",
+              "generator": "search",
+              "gsrsearch": "filetype:bitmap wildfire forest fire",
+              "gsrnamespace": 6,
+              "gsrlimit": 5,
+              "prop": "imageinfo",
+              "iiprop": "url|extmetadata",
+              "iiurlwidth": 800,
+              "format": "json",
+          }
+
+          url = (
+              "https://commons.wikimedia.org/w/api.php?"
+              + urllib.parse.urlencode(params)
+          )
+
+          request = urllib.request.Request(
+              url,
+              headers={"User-Agent": gi.USER_AGENT},
+          )
+
+          with urllib.request.urlopen(request, timeout=20) as response:
+              data = json.load(response)
+
+          if "error" in data or "query" not in data:
+              raise RuntimeError("Wikimedia Commons API test failed")
+
+          pages = data.get("query", {}).get("pages", {})
+          print(f"PASS: Commons API reachable; candidates={len(pages)}")
+
+          print("Testing the actual photo-search and download function...")
+          photo = gi.query_commons_image(
+              "forest wildfire flames firefighter"
+          )
+
+          if photo:
+              print("PASS: A photo passed reuse checks and downloaded.")
+              print("Licence:", photo["license"])
+              print("Image title:", photo["title"])
+              print("Image dimensions:", photo["image"].size)
+          else:
+              print(
+                  "No eligible photo was downloaded for this query. "
+                  "Inspect the log; the generator must use its "
+                  "labelled-illustration fallback."
+              )
+          PY
