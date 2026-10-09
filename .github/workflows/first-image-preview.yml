@@ -2,6 +2,16 @@ name: NEWS SNAP First Image Preview
 
 on:
   workflow_dispatch:
+    inputs:
+      preview_mode:
+        description: "Choose which NEWS SNAP format to preview"
+        type: choice
+        required: true
+        default: automatic
+        options:
+          - automatic
+          - daily_roundup
+          - verified_quote
 
 permissions:
   contents: read
@@ -25,12 +35,12 @@ jobs:
       - name: Collect news
         run: python test.py
 
-      - name: Classify first batch
+      - name: Classify first batch with Gemini
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python classify.py
 
-      - name: Select one article
+      - name: Select one source article
         run: |
           python - <<'PY'
           import json
@@ -39,77 +49,162 @@ jobs:
           articles = json.loads(
               Path("discovery.json").read_text(encoding="utf-8")
           )
-
-          result = json.loads(
+          classified = json.loads(
               Path("classified_sample.json").read_text(encoding="utf-8")
           )
 
-          classifications = {
-              item["id"]: item
-              for item in result.get("results", [])
-          }
+          by_id = {}
+          for item in classified.get("results", []):
+              if not isinstance(item, dict):
+                  continue
+              try:
+                  by_id[int(item.get("id"))] = item
+              except (TypeError, ValueError):
+                  continue
 
           selected = None
-
-          for index, article in enumerate(articles[:50], start=1):
-              classification = classifications.get(index)
-
-              if classification and classification.get("importance") == "MAJOR":
-                  selected = {
-                      **article,
-                      "classification": classification
-                  }
+          for importance in ("MAJOR", "NORMAL"):
+              for index, article in enumerate(articles[:50], start=1):
+                  classification = by_id.get(index, {})
+                  if classification.get("importance") == importance:
+                      title = str(article.get("title", "")).strip()
+                      url = str(article.get("url", "")).strip()
+                      domain = str(article.get("domain", "")).strip()
+                      if title and url.startswith(("https://", "http://")) and domain:
+                          selected = {
+                              **article,
+                              "classification": classification,
+                          }
+                          break
+              if selected:
                   break
 
           if selected is None:
-              for index, article in enumerate(articles[:50], start=1):
-                  classification = classifications.get(index)
-
-                  if classification and classification.get("importance") == "NORMAL":
-                      selected = {
-                          **article,
-                          "classification": classification
-                      }
-                      break
-
-          if selected is None and articles:
-              selected = {
-                  **articles[0],
-                  "classification": classifications.get(1, {})
-              }
-
-          if selected is None:
-              raise RuntimeError("No article available.")
+              raise RuntimeError(
+                  "No eligible MAJOR/NORMAL article with title, URL and publisher was found."
+              )
 
           Path("selected_article.json").write_text(
               json.dumps(selected, ensure_ascii=False, indent=2),
-              encoding="utf-8"
+              encoding="utf-8",
           )
-
-          print("SELECTED ARTICLE:")
+          print("SELECTED SOURCE ARTICLE:")
           print(json.dumps(selected, ensure_ascii=False, indent=2))
           PY
 
+      - name: Prepare roundup or quote evidence
+        env:
+          NEWS_SNAP_PREVIEW_MODE: ${{ inputs.preview_mode }}
+        run: python prepare_special_formats.py
+
+      - name: Keep automatic quote template for quote-led stories only
+        if: ${{ inputs.preview_mode == 'automatic' }}
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          path = Path("selected_article.json")
+          article = json.loads(path.read_text(encoding="utf-8"))
+          title = str(article.get("title", ""))
+
+          quote_led = bool(re.search(
+              r"\b(says?|said|told|warns?|warned|claims?|claimed|states?|stated|"
+              r"urges?|urged|announces?|announced|declares?|declared|reveals?|revealed|"
+              r"responds?|responded|writes?|wrote|statement|quote|quoted)\b",
+              title,
+              re.IGNORECASE,
+          ))
+
+          has_supported_quote = (
+              article.get("quote_verified") is True
+              and bool(article.get("quote_text"))
+              and bool(article.get("speaker"))
+          )
+
+          if not (quote_led and has_supported_quote):
+              for key in (
+                  "quote_text", "speaker", "quote_verified",
+                  "quote_source_url", "quote_verification_method", "speaker_role"
+              ):
+                  article.pop(key, None)
+              path.write_text(
+                  json.dumps(article, ensure_ascii=False, indent=2),
+                  encoding="utf-8",
+              )
+              print("Automatic mode: quote card not eligible; topic rules will choose a single-story template.")
+          else:
+              print("Automatic mode: quote-led headline and source-attributed quote are available; Format 06 is eligible.")
+          PY
+
       - name: Generate English-only post content
+        if: ${{ inputs.preview_mode != 'daily_roundup' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python post_generator.py
 
-      - name: Generate Format 05 image
+      - name: Generate image using the selected mode
         env:
+          NEWS_SNAP_PREVIEW_MODE: ${{ inputs.preview_mode }}
           NEWS_SNAP_TEST_MODE: "1"
-          NEWS_SNAP_FORCE_TEMPLATE: "05"
-        run: python generate_image.py
+          NEWS_SNAP_FORCE_TEMPLATE: ${{ inputs.preview_mode == 'daily_roundup' && '04' || '' }}
+        run: |
+          set -o pipefail
+          python generate_image.py | tee image-generation.log
+          grep -Eq '^Template: (01|02|03|04|05|06)$' image-generation.log
 
-      - name: Show generated content
-        run: cat post.json
+          if [ "$NEWS_SNAP_PREVIEW_MODE" = "daily_roundup" ]; then
+            grep -q '^Template: 04$' image-generation.log
+          elif [ "$NEWS_SNAP_PREVIEW_MODE" = "verified_quote" ]; then
+            grep -q '^Template: 06$' image-generation.log
+          fi
 
-      - name: Save first image as artifact
+      - name: Prepare preview content manifest
+        env:
+          NEWS_SNAP_PREVIEW_MODE: ${{ inputs.preview_mode }}
+        run: |
+          if [ "$NEWS_SNAP_PREVIEW_MODE" = "daily_roundup" ]; then
+            cp roundup_post.json preview_content.json
+            echo "Preview mode: daily roundup (Format 04)"
+            cat roundup_post.json
+          elif [ "$NEWS_SNAP_PREVIEW_MODE" = "verified_quote" ]; then
+            cp post.json preview_content.json
+            echo "Preview mode: verified quote (Format 06)"
+            cat post.json
+          else
+            cp post.json preview_content.json
+            echo "Preview mode: automatic topic/evidence selection"
+            cat post.json
+          fi
+          echo "===== SELECTED TEMPLATE ====="
+          grep -E '^Template: (01|02|03|04|05|06)$' image-generation.log
+
+      - name: Upload image preview artifact
         uses: actions/upload-artifact@v7
         with:
           name: news-snap-first-image-preview
           path: |
             news_snap_post.jpg
-            post.json
+            preview_content.json
             selected_article.json
+            image-generation.log
+          if-no-files-found: error
+
+      - name: Upload roundup evidence files
+        if: ${{ inputs.preview_mode == 'daily_roundup' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: news-snap-roundup-evidence
+          path: |
+            roundup.json
+            roundup_post.json
+          if-no-files-found: error
+
+      - name: Upload verified quote evidence
+        if: ${{ inputs.preview_mode == 'verified_quote' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: news-snap-quote-evidence
+          path: selected_article.json
           if-no-files-found: error
