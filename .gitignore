@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime and preview image outputs
+news_snap_post.jpg
+contact_sheet.jpg
+preview_format_*.jpg
+test_history.json
+*.log
+
+# Runtime generated data (generated on the fly by CI steps)
+discovery.json
+classified_sample.json
+selected_article.json
+post.json
+roundup.json
+roundup_post.json
+
+# Local environment / IDE
+.env
+.venv/
+env/
+.vscode/
+.idea/
