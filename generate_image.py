@@ -1011,10 +1011,13 @@ def main():
         raise ValueError("Invalid publisher domain; refusing image")
 
     image, rendered_post, photo_infos = render_approved_format(template_id, article, post_for_render)
-    caption_path = "roundup_post.json" if template_id == "04" else "post.json"
+    rendered_post["format"] = template_id
     for info in photo_infos:
         if info:
-            annotate_image_credit(rendered_post, info, caption_path=caption_path)
+            annotate_image_credit(rendered_post, info, caption_path="post.json")
+    if template_id == "04":
+        Path("roundup_post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
+    Path("post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
 
     image = image.convert("RGB")
     image.save(OUTPUT, "JPEG", quality=95, optimize=True)

@@ -230,6 +230,37 @@ class TestImageGeneration(unittest.TestCase):
         self.assertEqual(img.size, (1080, 1350))
 
 
+    def test_approved_format_04_roundup(self):
+        # Create temporary roundup.json and roundup_post.json
+        roundup = {
+            "stories": [
+                {"title": "Global Leaders Agree on Renewable Energy Goals", "domain": "reuters.com", "url": "https://reuters.com/1", "summary": "Nations commit to tripling clean energy capacity by 2030."},
+                {"title": "Central Bank Holds Benchmark Interest Rate Steady", "domain": "bloomberg.com", "url": "https://bloomberg.com/2", "summary": "Policymakers maintain interest rates following inflation reports."},
+                {"title": "Space Agency Launches Atmospheric Research Mission", "domain": "bbc.com", "url": "https://bbc.com/3", "summary": "New satellite will track worldwide climate and greenhouse gases."}
+            ]
+        }
+        roundup_post = {
+            "headline": "TODAY'S TOP 3 STORIES",
+            "curiosity_line": "Key developments across energy, economy and science",
+            "format": "04",
+            "caption": "NEWS SNAP roundup of today's top stories. #NewsSnap\n\n1. Energy goals — reuters.com\n2. Rate steady — bloomberg.com\n3. Space mission — bbc.com",
+            "hashtags": ["#NewsSnap", "#DailyBriefing"]
+        }
+        p1 = Path("roundup.json")
+        p2 = Path("roundup_post.json")
+        p1.write_text(json.dumps(roundup), encoding="utf-8")
+        p2.write_text(json.dumps(roundup_post), encoding="utf-8")
+        try:
+            img, rendered_post, _ = generate_image.render_approved_format("04", {}, roundup_post)
+            self.assertEqual(img.size, (1080, 1350))
+            self.assertEqual(rendered_post.get("format"), "04")
+        finally:
+            if p1.is_file():
+                p1.unlink()
+            if p2.is_file():
+                p2.unlink()
+
+
 class TestInstagramPublisher(unittest.TestCase):
     def test_dry_run_validation(self):
         # Verify validate_image_and_post succeeds with valid files
@@ -262,6 +293,129 @@ class TestInstagramPublisher(unittest.TestCase):
         with self.assertRaises(ValueError):
             if post.get("is_synthetic"):
                 raise ValueError("SAFETY REFUSAL: The generated post is marked as synthetic/mock test data.")
+
+    def test_graph_api_version_supported(self):
+        # Ensure Graph API version is current (>= v21.0) and not expired v19.0
+        version = instagram_publisher.GRAPH_API_VERSION
+        self.assertTrue(version.startswith("v"), f"Invalid Graph API version format: {version}")
+        num = float(version.lstrip("v"))
+        self.assertGreaterEqual(num, 21.0, f"Graph API version {version} is deprecated or expired; must be v21.0 or higher")
+
+    def test_roundup_caption_mismatch_refusal(self):
+        # Format 04 post with single-story caption must be refused
+        p1 = Path("roundup.json")
+        roundup = {
+            "stories": [
+                {"title": "Global Leaders Agree on Renewable Energy Goals", "domain": "reuters.com", "url": "https://reuters.com/1"},
+                {"title": "Central Bank Holds Benchmark Interest Rate Steady", "domain": "bloomberg.com", "url": "https://bloomberg.com/2"},
+                {"title": "Space Agency Launches Atmospheric Research Mission", "domain": "bbc.com", "url": "https://bbc.com/3"}
+            ]
+        }
+        p1.write_text(json.dumps(roundup), encoding="utf-8")
+        try:
+            mismatched_post = {
+                "headline": "TODAY'S TOP 3 STORIES",
+                "format": "04",
+                "caption": "A single unrelated story about local election results. #NewsSnap",
+                "hashtags": ["#NewsSnap"]
+            }
+            with self.assertRaises(ValueError) as ctx:
+                instagram_publisher.verify_format_caption_alignment(mismatched_post, mismatched_post["caption"])
+            self.assertIn("FORMAT 04 MISMATCH", str(ctx.exception))
+        finally:
+            if p1.is_file():
+                p1.unlink()
+
+    def test_pages_url_construction(self):
+        # Verify Pages URL construction from repository name
+        url = instagram_publisher.get_default_pages_url("hafizabdulbar3-creator/news-snap-automation")
+        self.assertEqual(url, "https://hafizabdulbar3-creator.github.io/news-snap-automation/news_snap_post.jpg")
+
+        # Edge cases: empty or malformed repo string
+        self.assertEqual(instagram_publisher.get_default_pages_url(""), "")
+        self.assertEqual(instagram_publisher.get_default_pages_url("single-string"), "")
+
+        # Verify URL normalization (trailing slash, missing filename, etc.)
+        self.assertEqual(
+            instagram_publisher.normalize_image_url("https://example.github.io/repo/"),
+            "https://example.github.io/repo/news_snap_post.jpg"
+        )
+        self.assertEqual(
+            instagram_publisher.normalize_image_url("https://example.github.io/repo"),
+            "https://example.github.io/repo/news_snap_post.jpg"
+        )
+        self.assertEqual(
+            instagram_publisher.normalize_image_url("https://example.github.io/repo/news_snap_post.jpg"),
+            "https://example.github.io/repo/news_snap_post.jpg"
+        )
+        self.assertEqual(
+            instagram_publisher.normalize_image_url("https://example.github.io/repo//news_snap_post.jpg"),
+            "https://example.github.io/repo/news_snap_post.jpg"
+        )
+        self.assertEqual(
+            instagram_publisher.normalize_image_url("https://example.github.io/repo/custom.jpg"),
+            "https://example.github.io/repo/custom.jpg"
+        )
+
+    def test_public_image_url_missing_handling(self):
+        # Empty string
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.verify_public_image_url("")
+        self.assertIn("missing or empty", str(ctx.exception).lower())
+
+        # None input
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.verify_public_image_url(None)
+        self.assertIn("missing or empty", str(ctx.exception).lower())
+
+    def test_public_image_url_invalid_handling(self):
+        # Non-HTTPS URLs must be rejected immediately
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.verify_public_image_url("http://insecure-host.com/news_snap_post.jpg", max_retries=1)
+        self.assertIn("must be a valid public https url", str(ctx.exception).lower())
+
+        # Malformed scheme
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.verify_public_image_url("ftp://server.com/news_snap_post.jpg", max_retries=1)
+        self.assertIn("must be a valid public https url", str(ctx.exception).lower())
+
+        # Missing netloc
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.verify_public_image_url("https://", max_retries=1)
+        self.assertIn("must be a valid public https url", str(ctx.exception).lower())
+
+
+class TestSixFormatRegistry(unittest.TestCase):
+    def test_six_formats_data_preparation(self):
+        from format_registry import FORMAT_REGISTRY, classify_format_for_article
+        # Verify all 6 approved formats exist
+        self.assertEqual(sorted(FORMAT_REGISTRY.keys()), ["01", "02", "03", "04", "05", "06"])
+        for fid, fdef in FORMAT_REGISTRY.items():
+            self.assertIn("name", fdef)
+            self.assertEqual(fdef["canvas_size"], (1080, 1350))
+
+        # Test format routing for each category
+        fmt, _ = classify_format_for_article({"title": "Massive wildfire triggers emergency evacuations"})
+        self.assertEqual(fmt, "01")
+
+        fmt, _ = classify_format_for_article({"title": "Central bank signals interest rate rise as inflation ticks up"})
+        self.assertEqual(fmt, "02")
+
+        fmt, _ = classify_format_for_article({"title": "Board appoints new Chief Executive to lead expansion"})
+        self.assertEqual(fmt, "03")
+
+        fmt, _ = classify_format_for_article({"template_override": "04"}, roundup_exists=True)
+        self.assertEqual(fmt, "04")
+
+        fmt, _ = classify_format_for_article({"title": "Scientists announce breakthrough in clean fusion power"})
+        self.assertEqual(fmt, "05")
+
+        fmt, _ = classify_format_for_article({
+            "quote_verified": True,
+            "quote_text": "We stand united against global challenges.",
+            "speaker": "World Leader"
+        })
+        self.assertEqual(fmt, "06")
 
 
 if __name__ == "__main__":

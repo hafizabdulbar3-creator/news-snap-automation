@@ -8,10 +8,15 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   news:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -37,6 +42,9 @@ jobs:
       - name: Select best article (with duplicate prevention)
         run: python select_article.py
 
+      - name: Prepare special format data (quote verification / roundup)
+        run: python prepare_special_formats.py
+
       - name: Generate NEWS SNAP post content
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -45,6 +53,44 @@ jobs:
 
       - name: Generate NEWS SNAP image
         run: python generate_image.py
+
+      - name: Prepare GitHub Pages directory
+        run: |
+          mkdir -p _site
+          cp news_snap_post.jpg _site/news_snap_post.jpg
+          cat << 'EOF' > _site/index.html
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>NEWS SNAP — Latest Publication</title>
+            <style>
+              body { background: #08101c; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+              img { max-width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+              h1 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #ffcf2d; }
+              p { color: #8fa0b5; font-size: 0.9rem; }
+            </style>
+          </head>
+          <body>
+            <h1>NEWS SNAP — Latest Publication</h1>
+            <img src="news_snap_post.jpg" alt="NEWS SNAP Latest Post">
+            <p>Automated Instagram publication asset hosted via GitHub Pages.</p>
+          </body>
+          </html>
+          EOF
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deploy-pages
+        uses: actions/deploy-pages@v4
 
       - name: Show generated post
         run: |
@@ -56,6 +102,7 @@ jobs:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
           ENABLE_INSTAGRAM_POSTING: ${{ vars.ENABLE_INSTAGRAM_POSTING }}
+          IMAGE_PUBLIC_URL: ${{ steps.deploy-pages.outputs.page_url }}news_snap_post.jpg
         run: python instagram_publisher.py
 
       - name: Persist post history
@@ -76,4 +123,6 @@ jobs:
             news_snap_post.jpg
             post.json
             selected_article.json
-          if-no-files-found: error
+            roundup.json
+            roundup_post.json
+          if-no-files-found: warn

@@ -25,7 +25,7 @@ POST_PATH = Path("post.json")
 ARTICLE_PATH = Path("selected_article.json")
 HISTORY_PATH = Path("history.json")
 
-GRAPH_API_VERSION = "v19.0"
+GRAPH_API_VERSION = os.environ.get("GRAPH_API_VERSION", "v22.0").strip()
 GRAPH_API_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
 
 
@@ -39,6 +39,27 @@ def record_history(article: dict, post: dict, published: bool = False, media_id:
             history = {"posted": []}
 
     posted_list = history.get("posted", [])
+    timestamp = datetime.now(timezone.utc).isoformat()
+
+    # Check if this is a Format 04 roundup with multiple stories
+    roundup_path = Path("roundup.json")
+    is_roundup = post.get("format") == "04" or (roundup_path.is_file() and "top 3" in post.get("headline", "").lower())
+    if is_roundup and roundup_path.is_file():
+        try:
+            roundup_data = json.loads(roundup_path.read_text(encoding="utf-8"))
+            for s in roundup_data.get("stories", []):
+                posted_list.append({
+                    "url": s.get("url", ""),
+                    "title": s.get("title", ""),
+                    "headline": post.get("headline", ""),
+                    "domain": s.get("domain", ""),
+                    "published": published,
+                    "media_id": media_id,
+                    "timestamp": timestamp,
+                })
+        except Exception:
+            pass
+
     entry = {
         "url": article.get("url", ""),
         "title": article.get("title", ""),
@@ -46,7 +67,7 @@ def record_history(article: dict, post: dict, published: bool = False, media_id:
         "domain": article.get("domain", ""),
         "published": published,
         "media_id": media_id,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "timestamp": timestamp,
     }
     posted_list.append(entry)
 
@@ -61,17 +82,147 @@ def is_already_posted(article: dict) -> bool:
         return False
     try:
         history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+        posted_items = [item for item in history.get("posted", []) if item.get("published")]
+        if not posted_items:
+            return False
+
+        # If a roundup is active, check duplicate for any of its stories
+        roundup_path = Path("roundup.json")
+        if roundup_path.is_file():
+            try:
+                roundup_data = json.loads(roundup_path.read_text(encoding="utf-8"))
+                for s in roundup_data.get("stories", []):
+                    s_url = str(s.get("url", "")).strip().lower()
+                    s_title = str(s.get("title", "")).strip().lower()
+                    for item in posted_items:
+                        if s_url and item.get("url", "").strip().lower() == s_url:
+                            return True
+                        if s_title and item.get("title", "").strip().lower() == s_title:
+                            return True
+            except Exception:
+                pass
+
         norm_url = str(article.get("url", "")).strip().lower()
         norm_title = str(article.get("title", "")).strip().lower()
-        for item in history.get("posted", []):
-            if item.get("published"):
-                if norm_url and item.get("url", "").strip().lower() == norm_url:
-                    return True
-                if norm_title and item.get("title", "").strip().lower() == norm_title:
-                    return True
+        for item in posted_items:
+            if norm_url and item.get("url", "").strip().lower() == norm_url:
+                return True
+            if norm_title and item.get("title", "").strip().lower() == norm_title:
+                return True
     except Exception:
         pass
     return False
+
+
+def verify_format_caption_alignment(post: dict, caption: str) -> None:
+    """Ensure post caption and attribution strictly match the rendered format and content."""
+    is_roundup_post = (
+        post.get("format") == "04"
+        or "top 3" in post.get("headline", "").lower()
+        or "roundup" in post.get("headline", "").lower()
+    )
+    roundup_path = Path("roundup.json")
+
+    if is_roundup_post:
+        if not roundup_path.is_file():
+            raise ValueError(
+                "FORMAT 04 MISMATCH: Post is marked as a Format 04 Roundup, but roundup.json is missing."
+            )
+        roundup = json.loads(roundup_path.read_text(encoding="utf-8"))
+        stories = roundup.get("stories", [])
+        if len(stories) != 3:
+            raise ValueError(f"FORMAT 04 MISMATCH: roundup.json must have 3 stories, found {len(stories)}.")
+
+        caption_lower = caption.lower()
+        matched_domains = sum(1 for s in stories if s.get("domain", "").lower() in caption_lower)
+        if matched_domains < 2 and not any(k in caption_lower for k in ("roundup", "top 3 stories", "daily briefing")):
+            raise ValueError(
+                "FORMAT 04 MISMATCH: Post caption does not contain the verified multi-story roundup content. "
+                "Roundup image cannot be published with an unrelated single-story caption."
+            )
+    else:
+        # Single story post: ensure caption does not claim to be a roundup when it isn't
+        if "top 3 stories" in caption.lower() and not roundup_path.is_file():
+            raise ValueError(
+                "FORMAT MISMATCH: Caption references 'TOP 3 STORIES', but no roundup.json exists."
+            )
+
+
+def get_default_pages_url(repo: str) -> str:
+    """Construct the standard GitHub Pages URL for the public repository."""
+    if not repo or "/" not in repo:
+        return ""
+    owner, repo_name = repo.strip().split("/", 1)
+    return f"https://{owner.strip().lower()}.github.io/{repo_name.strip()}/news_snap_post.jpg"
+
+
+def normalize_image_url(url_or_base: str) -> str:
+    """Normalize a base Pages URL or full image URL to point to news_snap_post.jpg with a single slash."""
+    url = str(url_or_base or "").strip()
+    if not url:
+        return ""
+    if url.lower().endswith("news_snap_post.jpg"):
+        prefix = url[:-len("news_snap_post.jpg")].rstrip("/")
+        return f"{prefix}/news_snap_post.jpg"
+    if url.lower().endswith(".jpg") or url.lower().endswith(".jpeg"):
+        return url
+    return url.rstrip("/") + "/news_snap_post.jpg"
+
+
+def verify_public_image_url(url: str, max_retries: int = 6, retry_delay: float = 5.0) -> None:
+    """Validate that the image URL is a valid public HTTPS link and reachable before API calls.
+
+    Includes brief retries to accommodate normal GitHub Pages CDN propagation delays.
+    """
+    if not url or not isinstance(url, str):
+        raise ValueError("Public image URL is missing or empty.")
+    parsed = urllib.parse.urlparse(url.strip())
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise ValueError(f"IMAGE_PUBLIC_URL must be a valid public HTTPS URL, got: '{url}'")
+
+    clean_url = url.strip()
+    last_error = None
+
+    for attempt in range(1, max_retries + 1):
+        try:
+            req = urllib.request.Request(
+                clean_url,
+                headers={"User-Agent": "NEWS-SNAP-Publisher/1.0 (pre-flight check)"},
+                method="HEAD"
+            )
+            with urllib.request.urlopen(req, timeout=12) as resp:
+                if resp.status == 200:
+                    print(f"[OK] Verified public image URL reachable (HTTP 200): {clean_url}")
+                    return
+                last_error = f"HTTP status {resp.status}"
+        except urllib.error.HTTPError as err:
+            if err.code == 405:  # Method Not Allowed for HEAD; retry with partial GET
+                try:
+                    get_req = urllib.request.Request(
+                        clean_url,
+                        headers={"User-Agent": "NEWS-SNAP-Publisher/1.0", "Range": "bytes=0-512"}
+                    )
+                    with urllib.request.urlopen(get_req, timeout=12) as get_resp:
+                        if get_resp.status in (200, 206):
+                            print(f"[OK] Verified public image URL reachable (HTTP {get_resp.status}): {clean_url}")
+                            return
+                        last_error = f"HTTP status {get_resp.status}"
+                except Exception as get_err:
+                    last_error = f"{type(get_err).__name__}: {get_err}"
+            else:
+                last_error = f"HTTP {err.code} {err.reason}"
+        except Exception as exc:
+            last_error = f"{type(exc).__name__}: {exc}"
+
+        if attempt < max_retries:
+            print(f"Image URL verification attempt {attempt}/{max_retries} pending ({last_error}). Retrying in {retry_delay}s...")
+            time.sleep(retry_delay)
+
+    raise ValueError(
+        f"FAIL-CLOSED: Public image URL verification failed after {max_retries} attempts ({last_error}).\n"
+        f"URL: {clean_url}\n"
+        f"Ensure GitHub Pages deployment has succeeded and the image is publicly accessible."
+    )
 
 
 def validate_image_and_post():
@@ -91,7 +242,10 @@ def validate_image_and_post():
     if "#newssnap" not in caption.lower():
         raise ValueError("Caption must include #NewsSnap hashtag.")
 
-    # 2. Image checks
+    # 2. Format & caption alignment check (prevents Format 04 mismatch)
+    verify_format_caption_alignment(post, caption)
+
+    # 3. Image checks
     with Image.open(IMAGE_PATH) as img:
         img_format = img.format
         width, height = img.size
@@ -113,6 +267,7 @@ def main():
     post, caption = validate_image_and_post()
     print("[OK] Image validation: 1080x1350 JPEG, within 8MB limit.")
     print("[OK] Caption validation: Under 2,200 characters, #NewsSnap included.")
+    print("[OK] Format alignment validation: Image and caption refer to the same story data.")
 
     article = {}
     if ARTICLE_PATH.is_file():
@@ -157,16 +312,22 @@ def main():
             "Real Gemini API generation is required for live publishing."
         )
 
-    image_public_url = os.environ.get("IMAGE_PUBLIC_URL", "").strip()
+    raw_image_url = os.environ.get("IMAGE_PUBLIC_URL", "").strip()
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if not raw_image_url and repo:
+        raw_image_url = get_default_pages_url(repo)
+        print(f"Constructed default GitHub Pages image URL: {raw_image_url}")
+
+    image_public_url = normalize_image_url(raw_image_url)
     if not image_public_url:
-        # Check if repository and SHA are available to construct GitHub raw URL
-        repo = os.environ.get("GITHUB_REPOSITORY", "")
-        sha = os.environ.get("GITHUB_SHA", "main")
-        if repo:
-            image_public_url = f"https://raw.githubusercontent.com/{repo}/{sha}/news_snap_post.jpg"
-            print(f"Using GitHub raw image URL: {image_public_url}")
-        else:
-            raise ValueError("Live Instagram publishing requires IMAGE_PUBLIC_URL or GITHUB_REPOSITORY.")
+        raise ValueError(
+            "FAIL-CLOSED: Live Instagram publishing requires a verified public HTTPS image URL (IMAGE_PUBLIC_URL).\n"
+            "The image generated during the workflow run (news_snap_post.jpg) is stored on the local runner "
+            "and cannot be fetched directly by Meta's Graph API.\n"
+            "GitHub Pages deployment or external image hosting is required.\n"
+            "Configure IMAGE_PUBLIC_URL or ensure GitHub Pages deployment step has completed."
+        )
+    verify_public_image_url(image_public_url)
 
     # Step 1: Create Container
     container_url = f"{GRAPH_API_BASE}/{account_id}/media"

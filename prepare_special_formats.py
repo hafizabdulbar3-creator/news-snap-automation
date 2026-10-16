@@ -236,20 +236,33 @@ def titles_too_similar(a, b):
 
 
 def load_candidates():
-    articles = json.loads(Path("discovery.json").read_text(encoding="utf-8"))
-    classified = json.loads(Path("classified_sample.json").read_text(encoding="utf-8"))
+    if not Path("discovery.json").is_file():
+        return []
+    try:
+        articles = json.loads(Path("discovery.json").read_text(encoding="utf-8"))
+    except Exception:
+        return []
+
+    classified = {}
+    if Path("classified_sample.json").is_file():
+        try:
+            classified = json.loads(Path("classified_sample.json").read_text(encoding="utf-8"))
+        except Exception:
+            classified = {}
+
     by_id = {item.get("id"): item for item in classified.get("results", []) if isinstance(item, dict)}
     result = []
     for index, article in enumerate(articles[:50], start=1):
         cls = by_id.get(index, {})
-        if cls.get("importance") not in {"MAJOR", "NORMAL"}:
+        importance = cls.get("importance", "NORMAL")
+        if importance not in {"MAJOR", "NORMAL"}:
             continue
         title = str(article.get("title", "")).strip()
         url = str(article.get("url", "")).strip()
         domain = str(article.get("domain", "")).strip().lower()
         if not title or not url or not domain or not is_english(title):
             continue
-        merged = {**article, "classification": cls}
+        merged = {**article, "classification": cls or {"importance": importance, "topic": "World News"}}
         result.append(merged)
     return result
 
@@ -361,6 +374,7 @@ def prepare_roundup(candidates):
     roundup_post = {
         "headline": "TODAY'S TOP 3 STORIES",
         "curiosity_line": "Three important updates in one quick briefing",
+        "format": "04",
         "caption": "NEWS SNAP roundup of three source-attributed headlines. Read each original report for full context.\n\n" + "\n".join(
             f"{i}. {story['title']} — {story['domain']} — {story['url']}"
             for i, story in enumerate(selected, start=1)
@@ -375,20 +389,21 @@ def prepare_roundup(candidates):
 
 
 def main():
-    if MODE not in {"automatic", "daily_roundup", "verified_quote"}:
-        raise ValueError("NEWS_SNAP_PREVIEW_MODE must be automatic, daily_roundup, or verified_quote")
+    mode = (os.environ.get("NEWS_SNAP_MODE") or os.environ.get("NEWS_SNAP_PREVIEW_MODE") or "automatic").strip().lower()
+    if mode not in {"automatic", "daily_roundup", "verified_quote"}:
+        raise ValueError("NEWS_SNAP_MODE must be automatic, daily_roundup, or verified_quote")
 
     if not Path("selected_article.json").is_file():
         raise FileNotFoundError("selected_article.json is missing")
 
     selected_article = json.loads(Path("selected_article.json").read_text(encoding="utf-8"))
-    candidates = load_candidates()
 
-    if MODE == "daily_roundup":
+    if mode == "daily_roundup":
+        candidates = load_candidates()
         prepare_roundup(candidates)
         return
 
-    if MODE == "automatic":
+    if mode == "automatic":
         enriched = attach_quote_to_article(selected_article)
         if enriched:
             save_json("selected_article.json", enriched)
