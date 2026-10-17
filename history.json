@@ -36,6 +36,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T06:32:47.250978+00:00"
+    },
+    {
+      "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
+      "title": "Trump waives key Russia-related sanctions, tariffs before they take effect under new law",
+      "headline": "Trump Waives Key Russia Sanctions and Tariffs Under New Law",
+      "domain": "cnbc.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T07:07:28.718595+00:00"
     }
   ]
 }
