@@ -20,8 +20,8 @@ try:
 except ImportError:
     LANGDETECT_AVAILABLE = False
 
-# Valid, supported Gemini API models
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+# Primary supported Gemini API model (Default to gemini-3.8-flash)
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
@@ -299,9 +299,7 @@ Return ONLY valid JSON matching this schema:
         },
     }
 
-    models_to_try = [MODEL, "gemini-2.0-flash", "gemini-1.5-flash"]
-    seen_models = set()
-    models_to_try = [m for m in models_to_try if not (m in seen_models or seen_models.add(m))]
+    models_to_try = [MODEL]
 
     last_error = None
     for model_name in models_to_try:

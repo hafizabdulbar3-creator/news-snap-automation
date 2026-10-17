@@ -41,7 +41,7 @@ jobs:
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-2.5-flash"
+          GEMINI_MODEL: "gemini-3.8-flash"
         run: python classify.py
 
       - name: Select best article (with duplicate prevention)
@@ -56,7 +56,7 @@ jobs:
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: "gemini-2.5-flash"
+          GEMINI_MODEL: "gemini-3.8-flash"
         run: python post_generator.py
 
       - name: Generate NEWS SNAP image

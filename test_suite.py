@@ -648,6 +648,30 @@ class TestScheduleAndFreshCandidates(unittest.TestCase):
                 if p.is_file():
                     p.unlink()
 
+    def test_gemini_model_configuration_and_no_obsolete_ids(self):
+        import classify
+        import post_generator
+
+        # 1. Verify primary model in workflow is gemini-3.8-flash
+        workflow_path = Path(".github/workflows/test.yml")
+        self.assertTrue(workflow_path.is_file())
+        wf_content = workflow_path.read_text(encoding="utf-8")
+        self.assertIn('GEMINI_MODEL: "gemini-3.8-flash"', wf_content)
+
+        # 2. Verify scripts default to gemini-3.8-flash
+        classify_code = Path("classify.py").read_text(encoding="utf-8")
+        post_code = Path("post_generator.py").read_text(encoding="utf-8")
+
+        self.assertIn('"gemini-3.8-flash"', classify_code)
+        self.assertIn('"gemini-3.8-flash"', post_code)
+
+        # 3. Assert no obsolete model IDs exist in workflow, classify.py, or post_generator.py
+        obsolete_ids = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.0", "gemini-pro"]
+        for obs in obsolete_ids:
+            self.assertNotIn(obs, wf_content, f"Obsolete model ID '{obs}' found in .github/workflows/test.yml")
+            self.assertNotIn(obs, classify_code, f"Obsolete model ID '{obs}' found in classify.py")
+            self.assertNotIn(obs, post_code, f"Obsolete model ID '{obs}' found in post_generator.py")
+
 
 if __name__ == "__main__":
     unittest.main()

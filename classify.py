@@ -6,8 +6,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-# Supported valid Gemini API models (Default to gemini-2.5-flash)
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+# Primary supported Gemini API model (Default to gemini-3.8-flash)
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 BATCH_SIZE = 50
 
@@ -76,11 +76,7 @@ Articles to classify:
         }
     }
 
-    # Support fallback to alternative valid model names if the primary returns an error
-    models_to_try = [MODEL, "gemini-2.0-flash", "gemini-1.5-flash"]
-    # De-duplicate while preserving order
-    seen_models = set()
-    models_to_try = [m for m in models_to_try if not (m in seen_models or seen_models.add(m))]
+    models_to_try = [MODEL]
 
     last_error = None
     for model_name in models_to_try:
