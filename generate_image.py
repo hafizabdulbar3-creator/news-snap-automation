@@ -507,6 +507,100 @@ MAP_DIAGRAM_DISQUALIFIERS = {
 }
 
 
+BROAD_GEOGRAPHIC_TERMS = {
+    "california", "texas", "florida", "york", "washington", "london", "paris",
+    "berlin", "tokyo", "beijing", "moscow", "delhi", "mumbai", "chicago",
+    "america", "american", "us", "usa", "uk", "britain", "british", "france",
+    "french", "germany", "german", "india", "indian", "china", "chinese",
+    "russia", "russian", "canada", "canadian", "australia", "australian",
+    "japan", "japanese", "europe", "european", "asia", "asian", "africa",
+    "african", "state", "states", "nation", "nations", "national", "federal",
+    "international", "global", "local", "regional", "city", "county",
+    "district", "province", "country"
+}
+
+GENERIC_ROLE_AND_ADMIN_TERMS = {
+    "official", "officials", "leader", "leaders", "authority", "authorities",
+    "spokesperson", "spokesman", "spokeswoman", "representative", "representatives",
+    "member", "members", "person", "people", "staff", "worker", "workers",
+    "meeting", "meet", "meets", "conference", "briefing", "press", "announcement",
+    "board", "panel", "committee", "agency", "department", "ministry",
+    "government", "administration", "office", "group", "public", "service",
+    "event", "discussion", "talks", "report", "update", "new"
+}
+
+BROAD_TERMS = BROAD_GEOGRAPHIC_TERMS | GENERIC_ROLE_AND_ADMIN_TERMS
+
+DISASTER_EMERGENCY_TERMS = {
+    "fema", "federal emergency management agency", "disaster", "disasters",
+    "disaster relief", "disaster assistance", "emergency management",
+    "search and rescue", "wildfire", "wildfires", "firefighter", "firefighters",
+    "fire department", "flood waters", "flood relief", "hurricane relief",
+    "earthquake relief", "casualty", "casualties", "military combat"
+}
+
+
+def is_photo_meaningfully_relevant(title: str, description: str, article: dict, query_terms=None) -> tuple[bool, str]:
+    """Validate whether candidate photo title/description meaningfully matches the article topic and entities.
+
+    Rejects:
+    1. Disaster/FEMA assistance imagery for election, ballot, or non-disaster stories.
+    2. Candidates whose only matches with the article/query are broad geographic or generic role terms (e.g. "California", "officials").
+    3. Candidates lacking meaningful semantic overlap with the specific entities or topic.
+
+    Returns (is_relevant, reason).
+    """
+    if not isinstance(article, dict):
+        return True, "No article context provided"
+
+    art_title = str(article.get("title", "")).lower()
+    art_topic = str(article.get("classification", {}).get("topic", "")).lower()
+    art_summary = str(article.get("summary", "") or article.get("description", "")).lower()
+    art_speaker = str(article.get("speaker", "")).lower()
+    art_combined = f"{art_title} {art_topic} {art_summary} {art_speaker}"
+
+    cand_text = f"{title} {description}".lower()
+    cand_tokens = set(re.findall(r"[a-z0-9]+", cand_text))
+
+    # Check 1: Election & ballot stories must NEVER use disaster/FEMA imagery
+    is_election_story = any(w in art_combined for w in (
+        "ballot", "ballots", "election", "elections", "voting", "vote", "votes",
+        "polling", "poll", "polls", "electoral", "primary", "referendum", "precinct"
+    ))
+    if is_election_story:
+        found_disaster = [d for d in DISASTER_EMERGENCY_TERMS if d in cand_text]
+        if found_disaster:
+            return False, f"Election/ballot story cannot use disaster/FEMA imagery (matched '{found_disaster[0]}')"
+
+    # Check 2: Non-disaster stories should not use FEMA disaster assistance imagery
+    is_disaster_story = any(w in art_combined for w in (
+        "wildfire", "fire", "flood", "flooding", "earthquake", "quake", "tsunami",
+        "hurricane", "cyclone", "typhoon", "tornado", "landslide", "disaster", "evacuation"
+    ))
+    if not is_disaster_story:
+        if "fema" in cand_tokens or "federal emergency management agency" in cand_text:
+            return False, "Non-disaster story cannot use FEMA disaster assistance imagery"
+
+    # Check 3: Rejection of broad-terms-only matches
+    raw_art_tokens = set(re.findall(r"[a-z0-9]+", art_combined))
+    meaningful_art_tokens = {
+        w for w in raw_art_tokens
+        if len(w) >= 3 and w not in STOP_WORDS and w not in GENERIC_HEADLINE_VERBS
+    }
+    query_tokens = set(query_terms) if query_terms else set()
+    specific_art_tokens = {w for w in (meaningful_art_tokens | query_tokens) if w not in BROAD_TERMS}
+
+    if specific_art_tokens:
+        overlap_with_article = cand_tokens.intersection(meaningful_art_tokens | query_tokens)
+        if not overlap_with_article:
+            return False, "Candidate shares no meaningful keywords with article"
+        if overlap_with_article.issubset(BROAD_TERMS):
+            matched_broad = ", ".join(sorted(overlap_with_article))
+            return False, f"Candidate matches only broad generic/geographic terms ({matched_broad}) with no specific topic/entity match"
+
+    return True, "Candidate photo is meaningfully relevant to story"
+
+
 def license_allowed(short_name):
     low = re.sub(r"\s+", " ", str(short_name or "").strip().lower())
     if not low:
@@ -584,17 +678,28 @@ def build_photo_search_queries(article, fallback_query=""):
     if curr:
         chunks.append(" ".join(curr))
 
+    tokens = [w for w in re.findall(r"[A-Za-z0-9]+", title) if len(w) >= 3]
+    salient = [w for w in tokens if w.lower() not in GENERIC_HEADLINE_VERBS and w.lower() not in STOP_WORDS]
+    specific_salient = [w for w in salient if w.lower() not in BROAD_TERMS]
+
     for ch in chunks:
         ch_tokens = ch.split()
         if 2 <= len(ch_tokens) <= 4:
-            if ch not in queries and ch.lower() not in {"breaking news", "live update", "daily briefing"}:
-                queries.append(ch)
+            if all(t.lower() in BROAD_TERMS for t in ch_tokens):
+                if specific_salient:
+                    augmented = f"{ch} {specific_salient[0]}"
+                    if augmented not in queries:
+                        queries.append(augmented)
+            else:
+                if ch not in queries and ch.lower() not in {"breaking news", "live update", "daily briefing"}:
+                    queries.append(ch)
 
     # 6. Salient nouns from headline without action verbs or stop words
-    tokens = [w for w in re.findall(r"[A-Za-z0-9]+", title) if len(w) >= 3]
-    salient = [w for w in tokens if w.lower() not in GENERIC_HEADLINE_VERBS and w.lower() not in STOP_WORDS]
     if len(salient) >= 2:
-        queries.append(" ".join(salient[:3]))
+        if all(t.lower() in BROAD_TERMS for t in salient[:2]) and specific_salient:
+            queries.append(f"{salient[0]} {specific_salient[0]}")
+        else:
+            queries.append(" ".join(salient[:3]))
 
     # 7. Category / topic fallback
     if topic and topic.lower() not in {"global news", "general", "news"}:
@@ -711,6 +816,12 @@ def query_commons_image(query_or_article, require_all_terms=False):
                     has_conflict = True
                     break
             if has_conflict:
+                continue
+
+            # Check semantic and topic relevance to article
+            is_rel, rel_reason = is_photo_meaningfully_relevant(title, description, query_or_article, query_terms)
+            if not is_rel:
+                print(f"Photo sourcing: rejected candidate '{title}': {rel_reason}.")
                 continue
 
             normalized_candidate = unicodedata.normalize("NFKD", candidate_text).encode("ascii", "ignore").decode("ascii")
@@ -1032,25 +1143,97 @@ def render_global_illustration(w, h):
     return im
 
 
+def render_election_illustration(w, h):
+    """Render a neutral ballot, polling-place, or election-administration visual clearly labelled as an illustration."""
+    im, d = create_vector_gradient(w, h, (12, 26, 48), (6, 14, 28))
+    cx, cy = w // 2, int(h * 0.44)
+
+    # Box dimensions scaled to canvas
+    bw = int(min(w * 0.52, h * 0.58))
+    bh = int(bw * 0.72)
+
+    box_left = cx - bw // 2
+    box_right = cx + bw // 2
+    box_top = cy - int(bh * 0.15)
+    box_bot = cy + int(bh * 0.75)
+
+    # Ballot Box Body
+    d.rounded_rectangle((box_left, box_top, box_right, box_bot), radius=16, fill=(18, 34, 62), outline=(70, 130, 215), width=2)
+
+    # Ballot slot on top lid
+    slot_w = int(bw * 0.60)
+    slot_h = max(4, int(bh * 0.05))
+    d.rounded_rectangle((cx - slot_w // 2, box_top - slot_h // 2, cx + slot_w // 2, box_top + slot_h // 2), radius=slot_h // 2, fill=(6, 12, 22), outline=(50, 95, 165), width=1)
+
+    # Official ballot paper slip entering the slot
+    slip_w = int(slot_w * 0.75)
+    slip_h = int(bh * 0.70)
+    slip_left = cx - slip_w // 2
+    slip_right = cx + slip_w // 2
+    slip_top = box_top - int(slip_h * 0.65)
+    slip_bot = box_top + int(slip_h * 0.35)
+
+    # Drop shadow behind ballot slip
+    d.rectangle((slip_left + 4, slip_top + 4, slip_right + 4, slip_bot + 4), fill=(10, 18, 32))
+
+    # Ballot paper (crisp official white paper)
+    d.rectangle((slip_left, slip_top, slip_right, slip_bot), fill=(244, 248, 255), outline=(190, 210, 235), width=1)
+
+    # Ballot choice lines and checkmark on the visible upper slip
+    line_y_start = slip_top + int(slip_h * 0.12)
+    line_spacing = max(8, int(slip_h * 0.12))
+    for i in range(3):
+        ly = line_y_start + i * line_spacing
+        if ly < box_top - 6:
+            # Checkbox
+            cb_size = max(6, int(slip_w * 0.09))
+            cb_x = slip_left + int(slip_w * 0.10)
+            d.rectangle((cb_x, ly - cb_size // 2, cb_x + cb_size, ly + cb_size // 2), outline=(120, 140, 170), width=1)
+            if i == 0:
+                # Cast vote checkmark in the first box
+                d.line((cb_x + 2, ly, cb_x + cb_size // 2, ly + cb_size // 2 - 1), fill=(40, 160, 90), width=2)
+                d.line((cb_x + cb_size // 2, ly + cb_size // 2 - 1, cb_x + cb_size + 2, ly - cb_size // 2), fill=(40, 160, 90), width=2)
+            # Ballot text lines
+            d.line((cb_x + cb_size + 8, ly, slip_right - int(slip_w * 0.10), ly), fill=(150, 165, 185), width=2)
+
+    # Front emblem / seal on the ballot box
+    emblem_r = int(bw * 0.16)
+    emblem_y = (box_top + box_bot) // 2 + int(bh * 0.08)
+    d.ellipse((cx - emblem_r, emblem_y - emblem_r, cx + emblem_r, emblem_y + emblem_r), fill=(24, 44, 78), outline=(70, 130, 215), width=2)
+
+    # Stylized checkmark emblem inside circle
+    ck_size = int(emblem_r * 0.55)
+    d.line((cx - ck_size // 2, emblem_y, cx - ck_size // 6, emblem_y + ck_size // 2), fill=(255, 207, 45), width=3)
+    d.line((cx - ck_size // 6, emblem_y + ck_size // 2, cx + ck_size // 2 + 2, emblem_y - ck_size // 2), fill=(255, 207, 45), width=3)
+
+    # Clear visible illustration label
+    draw_editorial_pill(d, w, h, "ELECTION & BALLOT ILLUSTRATION", accent=(70, 140, 220), fill=(12, 26, 48))
+    return im
+
+
 def make_illustration(width, height, category="GLOBAL NEWS", article=None):
     """Generate a story-specific, labelled editorial vector illustration.
 
-    Tailors visual to news topic (Finance, Emergency, Tech, Leadership, Quote, Diplomacy)
+    Tailors visual to news topic (Finance, Emergency, Tech, Leadership, Quote, Diplomacy, Election)
     using pure Pillow vector graphics.
     """
     cat = str(category or "").upper()
     title = ""
     topic = ""
+    summary = ""
     if article and isinstance(article, dict):
         title = str(article.get("title") or "").lower()
         topic = str(article.get("classification", {}).get("topic") or "").lower()
+        summary = str(article.get("summary") or article.get("description") or "").lower()
         if article.get("quote_text"):
             cat = "QUOTE"
 
-    combined = f"{cat} {topic} {title}".lower()
+    combined = f"{cat} {topic} {title} {summary}".lower()
 
     if any(k in combined for k in ("quote", "statement", "remarks", "said", "testimony", "speech")):
         return render_quote_illustration(width, height)
+    if any(k in combined for k in ("ballot", "ballots", "election", "elections", "voting", "vote", "votes", "polling", "poll", "polls", "electoral", "primary", "caucus", "referendum", "precinct")):
+        return render_election_illustration(width, height)
     if any(k in combined for k in ("fire", "wildfire", "emergency", "disaster", "earthquake", "flood", "storm", "hurricane", "typhoon", "cyclone", "evacuation", "explosion", "blast", "tsunami", "volcano")):
         return render_crisis_illustration(width, height)
     if any(k in combined for k in ("business", "economy", "finance", "market", "trade", "stock", "banking", "inflation", "rate", "rates", "dollar", "treasury", "revenue", "gdp", "crypto")):
@@ -1380,8 +1563,23 @@ def draw_template_06(article, post, photo):
     return canvas
 
 
+def strip_image_credits(caption: str) -> str:
+    """Remove any previously appended image credit block from caption."""
+    if not caption:
+        return ""
+    parts = re.split(
+        r"\n\s*(?:(?:Story\s+\d+\s+)?Image credit:|(?:Illustrative )?image credit:|Image licence:|Image source:)",
+        str(caption), maxsplit=1, flags=re.I
+    )
+    return parts[0].strip()
+
+
 def annotate_image_credit(post, photo_info, caption_path="post.json", story_index=None):
     if not photo_info:
+        return
+    if "image" in photo_info and (photo_info["image"] is None or not isinstance(photo_info["image"], Image.Image)):
+        return
+    if not photo_info.get("page_url") or not photo_info.get("license"):
         return
     caption = str(post.get("caption", "")).strip()
     if photo_info["page_url"] in caption:
@@ -1490,14 +1688,20 @@ def main():
     image, rendered_post, photo_infos = render_approved_format(template_id, article, post_for_render)
     rendered_post["format"] = template_id
     if template_id == "04":
-        for idx, info in enumerate(photo_infos, start=1):
-            if info:
-                annotate_image_credit(rendered_post, info, caption_path="post.json", story_index=idx)
+        real_photos = [info for info in photo_infos if info and isinstance(info.get("image"), Image.Image)]
+        if real_photos:
+            for idx, info in enumerate(photo_infos, start=1):
+                if info and isinstance(info.get("image"), Image.Image):
+                    annotate_image_credit(rendered_post, info, caption_path="post.json", story_index=idx)
+        else:
+            rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
         Path("roundup_post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
     else:
-        for info in photo_infos:
-            if info:
-                annotate_image_credit(rendered_post, info, caption_path="post.json")
+        real_photo = photo_infos[0] if (photo_infos and photo_infos[0] and isinstance(photo_infos[0].get("image"), Image.Image)) else None
+        if real_photo:
+            annotate_image_credit(rendered_post, real_photo, caption_path="post.json")
+        else:
+            rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
     Path("post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
 
     image = image.convert("RGB")

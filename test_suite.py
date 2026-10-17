@@ -1189,5 +1189,114 @@ class TestQuoteVerificationAndPreservation(unittest.TestCase):
         self.assertEqual(gov_ill.mode, "RGB")
 
 
+class TestStoryToImageRelevanceAndIllustrations(unittest.TestCase):
+    """Regression tests for story-to-image relevance, FEMA photo rejection, and election illustrations."""
+
+    def setUp(self):
+        self.california_election_article = {
+            "title": "California officials announce new ballot counting deadlines for upcoming election",
+            "classification": {"topic": "Politics"},
+            "summary": "State election officials in California have introduced updated timelines for counting mail-in ballots.",
+            "url": "https://reuters.com/world/us/california-ballot-counting-election",
+            "domain": "reuters.com"
+        }
+
+    def test_reject_fema_disaster_photo_for_california_election_story(self):
+        # Candidate FEMA disaster photo
+        fema_title = "FEMA - 43332 - State officials meet with FEMA in California.jpg"
+        fema_desc = "State officials meet with FEMA in California."
+
+        is_rel, reason = generate_image.is_photo_meaningfully_relevant(
+            fema_title, fema_desc, self.california_election_article
+        )
+        self.assertFalse(is_rel, "FEMA disaster photo must be rejected for California election ballot story")
+        self.assertTrue(
+            "disaster" in reason.lower() or "fema" in reason.lower() or "broad" in reason.lower(),
+            f"Expected rejection reason citing disaster/FEMA or broad terms, got: '{reason}'"
+        )
+
+    def test_reject_broad_terms_alone_without_topic_or_entity_match(self):
+        # 1. Candidate sharing ONLY broad terms (California, officials, state) with no topical match
+        generic_official_title = "California state officials attend annual governmental reception.jpg"
+        generic_official_desc = "Officials in California gathering for state ceremony."
+
+        is_rel, reason = generate_image.is_photo_meaningfully_relevant(
+            generic_official_title, generic_official_desc, self.california_election_article
+        )
+        self.assertFalse(is_rel, "Photo matching only broad geographic/generic terms must be rejected")
+        self.assertIn("broad", reason.lower())
+
+        # 2. Candidate that genuinely depicts election/ballot processing
+        election_photo_title = "Election workers process mail-in ballots in California.jpg"
+        election_photo_desc = "Staff sorting and verifying election ballots in Sacramento county."
+
+        is_rel_valid, reason_valid = generate_image.is_photo_meaningfully_relevant(
+            election_photo_title, election_photo_desc, self.california_election_article
+        )
+        self.assertTrue(is_rel_valid, f"Genuine election ballot photo must be accepted: '{reason_valid}'")
+
+    def test_search_queries_do_not_emit_broad_terms_alone(self):
+        queries = generate_image.build_photo_search_queries(self.california_election_article)
+        # Ensure bare "California officials" or "State officials" alone without topic nouns is not emitted
+        for q in queries:
+            tokens = [t.lower() for t in q.split()]
+            self.assertFalse(
+                all(t in generate_image.BROAD_TERMS for t in tokens),
+                f"Search query '{q}' consists purely of broad geographic/generic terms"
+            )
+
+    def test_labelled_election_illustration_fallback(self):
+        # 1. Directly render election illustration
+        direct_ill = generate_image.render_election_illustration(1080, 840)
+        self.assertEqual(direct_ill.size, (1080, 840))
+        self.assertEqual(direct_ill.mode, "RGB")
+
+        # 2. Automatic selection via make_illustration with election article
+        ill = generate_image.make_illustration(1080, 840, category="POLITICS", article=self.california_election_article)
+        self.assertEqual(ill.size, (1080, 840))
+        self.assertEqual(ill.mode, "RGB")
+
+        # 3. Verify it does not render a blank block and scales across dimensions
+        for w, h in [(950, 490), (240, 199), (530, 1000)]:
+            scaled_ill = generate_image.render_election_illustration(w, h)
+            self.assertEqual(scaled_ill.size, (w, h))
+            self.assertEqual(scaled_ill.mode, "RGB")
+
+    def test_image_credits_only_added_when_photo_actually_used(self):
+        post = {
+            "headline": "California Officials Announce Ballot Deadlines",
+            "caption": "California election officials announced new guidelines for mail-in ballot processing. #NewsSnap",
+            "hashtags": ["#NewsSnap", "#Elections"]
+        }
+
+        # 1. When photo is None (illustration used), annotate_image_credit does nothing
+        generate_image.annotate_image_credit(post, None)
+        self.assertNotIn("Image credit:", post["caption"])
+
+        # 2. When photo has no decoded Image instance, annotate_image_credit does nothing
+        corrupt_photo = {"title": "Test.jpg", "artist": "Photographer", "license": "CC BY-SA 4.0", "page_url": "https://commons.wikimedia.org/wiki/File:Test.jpg", "image": "corrupt_data"}
+        generate_image.annotate_image_credit(post, corrupt_photo)
+        self.assertNotIn("Image credit:", post["caption"])
+
+        # 3. When photo is genuine Image, annotate_image_credit adds clean attribution
+        real_img = Image.new("RGB", (800, 600), (40, 60, 80))
+        valid_photo = {
+            "title": "Ballot_box_voting.jpg",
+            "artist": "Jane Doe",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page_url": "https://commons.wikimedia.org/wiki/File:Ballot_box_voting.jpg",
+            "image": real_img
+        }
+        generate_image.annotate_image_credit(post, valid_photo)
+        self.assertIn("Image credit: Ballot_box_voting.jpg by Jane Doe.", post["caption"])
+        self.assertIn("Licence: CC BY-SA 4.0.", post["caption"])
+
+        # 4. strip_image_credits cleanly removes attribution block
+        cleaned_caption = generate_image.strip_image_credits(post["caption"])
+        self.assertNotIn("Image credit:", cleaned_caption)
+        self.assertIn("California election officials announced", cleaned_caption)
+
+
 if __name__ == "__main__":
     unittest.main()
