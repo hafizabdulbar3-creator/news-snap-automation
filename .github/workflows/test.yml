@@ -3,8 +3,8 @@ name: NEWS SNAP Automation
 on:
   workflow_dispatch:
   schedule:
-    # Run every 6 hours to stay comfortably within free-tier API quotas and GitHub Actions limits
-    - cron: "0 */6 * * *"
+    # Run every 15 minutes to capture breaking global news while staying comfortably within free-tier API quotas
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
@@ -33,28 +33,38 @@ jobs:
       - name: Discover English global news from GDELT
         run: python test.py
 
+      - name: Check for fresh eligible candidates
+        id: check-candidates
+        run: python check_candidates.py
+
       - name: Classify candidates with Gemini
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-2.5-flash"
         run: python classify.py
 
       - name: Select best article (with duplicate prevention)
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         run: python select_article.py
 
       - name: Prepare special format data (quote verification / roundup)
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         run: python prepare_special_formats.py
 
       - name: Generate NEWS SNAP post content
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-2.5-flash"
         run: python post_generator.py
 
       - name: Generate NEWS SNAP image
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         run: python generate_image.py
 
       - name: Prepare GitHub Pages directory
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         run: |
           mkdir -p _site
           cp news_snap_post.jpg _site/news_snap_post.jpg
@@ -81,23 +91,28 @@ jobs:
           EOF
 
       - name: Setup Pages
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         id: deploy-pages
         uses: actions/deploy-pages@v4
 
       - name: Show generated post
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         run: |
           echo "===== NEWS SNAP POST ====="
           cat post.json
 
       - name: Verify and publish to Instagram (Dry run by default)
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
@@ -116,6 +131,7 @@ jobs:
           fi
 
       - name: Upload NEWS SNAP image artifact
+        if: steps.check-candidates.outputs.has_fresh == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: news-snap-post

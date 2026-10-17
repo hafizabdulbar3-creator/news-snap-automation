@@ -264,6 +264,9 @@ def validate_image_and_post():
 
 def main():
     print("===== NEWS SNAP INSTAGRAM PUBLISHER =====")
+    if not IMAGE_PATH.is_file() or not POST_PATH.is_file():
+        print("[INFO] No generated image (news_snap_post.jpg) or post file (post.json) found. Skipping publication.")
+        return
     post, caption = validate_image_and_post()
     print("[OK] Image validation: 1080x1350 JPEG, within 8MB limit.")
     print("[OK] Caption validation: Under 2,200 characters, #NewsSnap included.")

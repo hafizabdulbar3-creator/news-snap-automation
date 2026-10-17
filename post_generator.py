@@ -339,9 +339,21 @@ Return ONLY valid JSON matching this schema:
 def main():
     article_path = Path("selected_article.json")
     if not article_path.is_file():
-        raise FileNotFoundError("selected_article.json is missing.")
+        print("[INFO] No selected_article.json found. Skipping post generation to preserve Gemini API quota.")
+        post_path = Path("post.json")
+        if post_path.is_file():
+            post_path.unlink()
+        return
 
-    article = json.loads(article_path.read_text(encoding="utf-8"))
+    try:
+        article = json.loads(article_path.read_text(encoding="utf-8"))
+    except Exception:
+        article = {}
+
+    if not article or not article.get("title"):
+        print("[INFO] selected_article.json is empty or invalid. Skipping post generation.")
+        return
+
     print("Generating NEWS SNAP content...")
     post = generate_post(article)
 

@@ -125,10 +125,21 @@ def main():
     if not discovery_path.is_file():
         raise FileNotFoundError("discovery.json is missing. Run test.py first.")
 
-    articles = json.loads(discovery_path.read_text(encoding="utf-8"))
-    batch = articles[:BATCH_SIZE]
+    from check_candidates import get_fresh_candidates
+    fresh_articles = get_fresh_candidates("discovery.json", "history.json")
 
-    print(f"Sending {len(batch)} articles to Gemini triage...")
+    if not fresh_articles:
+        print("[INFO] No fresh, unposted candidates found. Skipping Gemini classification to preserve API quota.")
+        output_path = Path("classified_sample.json")
+        output_path.write_text(json.dumps({
+            "results": [],
+            "status": "no_fresh_candidates",
+            "message": "All discovered articles have already been published or are ineligible."
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+        return
+
+    batch = fresh_articles[:BATCH_SIZE]
+    print(f"Sending {len(batch)} fresh articles to Gemini triage...")
     result = call_gemini(batch)
 
     output_path = Path("classified_sample.json")

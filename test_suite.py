@@ -418,5 +418,135 @@ class TestSixFormatRegistry(unittest.TestCase):
         self.assertEqual(fmt, "06")
 
 
+class TestScheduleAndFreshCandidates(unittest.TestCase):
+    def test_fifteen_minute_schedule(self):
+        workflow_path = Path(".github/workflows/test.yml")
+        self.assertTrue(workflow_path.is_file(), "Workflow file .github/workflows/test.yml must exist")
+        content = workflow_path.read_text(encoding="utf-8")
+        self.assertIn('cron: "*/15 * * * *"', content, "Workflow must be scheduled every 15 minutes")
+        self.assertNotIn('0 */6 * * *', content, "6-hour schedule must be replaced")
+
+    def test_no_new_candidate_path(self):
+        import check_candidates
+        import classify
+        import select_article
+        import post_generator
+
+        # Setup temporary files
+        temp_discovery = Path("test_discovery.json")
+        temp_history = Path("test_history.json")
+        temp_classified = Path("test_classified.json")
+
+        articles = [
+            {
+                "title": "Previously Published Story One About Global Economy",
+                "url": "https://reuters.com/economy-one",
+                "domain": "reuters.com",
+                "score": 100,
+                "is_duplicate": True
+            },
+            {
+                "title": "Previously Published Story Two About Central Bank",
+                "url": "https://bloomberg.com/bank-two",
+                "domain": "bloomberg.com",
+                "score": 90,
+                "is_duplicate": False
+            }
+        ]
+        history = {
+            "posted": [
+                {
+                    "title": "Previously Published Story Two About Central Bank",
+                    "url": "https://bloomberg.com/bank-two",
+                    "published": True
+                }
+            ]
+        }
+
+        try:
+            temp_discovery.write_text(json.dumps(articles), encoding="utf-8")
+            temp_history.write_text(json.dumps(history), encoding="utf-8")
+
+            # 1. get_fresh_candidates returns 0 when all articles are duplicates
+            fresh = check_candidates.get_fresh_candidates(temp_discovery, temp_history)
+            self.assertEqual(len(fresh), 0, "Expected 0 fresh candidates when all are already published")
+
+            # 2. Add an unposted story alongside duplicates
+            articles.append({
+                "title": "Brand New Unposted Story About Scientific Discovery",
+                "url": "https://nature.com/new-discovery",
+                "domain": "nature.com",
+                "score": 110,
+                "is_duplicate": False
+            })
+            temp_discovery.write_text(json.dumps(articles), encoding="utf-8")
+            fresh_with_new = check_candidates.get_fresh_candidates(temp_discovery, temp_history)
+            self.assertEqual(len(fresh_with_new), 1, "Expected 1 fresh candidate")
+            self.assertEqual(fresh_with_new[0]["domain"], "nature.com")
+
+            # 3. Verify select_best_article returns None instead of falling back to duplicate
+            # Set up environment where all discovered articles are published
+            p_disc = Path("discovery.json")
+            p_hist = Path("history.json")
+            p_class = Path("classified_sample.json")
+            p_sel = Path("selected_article.json")
+
+            old_disc = p_disc.read_text(encoding="utf-8") if p_disc.is_file() else None
+            old_hist = p_hist.read_text(encoding="utf-8") if p_hist.is_file() else None
+            old_class = p_class.read_text(encoding="utf-8") if p_class.is_file() else None
+            old_sel = p_sel.read_text(encoding="utf-8") if p_sel.is_file() else None
+
+            try:
+                # All candidates in history
+                all_posted = [
+                    {"title": "Published Story A In History", "url": "https://bbc.com/a", "domain": "bbc.com", "score": 100, "is_duplicate": True}
+                ]
+                p_disc.write_text(json.dumps(all_posted), encoding="utf-8")
+                p_hist.write_text(json.dumps({"posted": [{"url": "https://bbc.com/a", "title": "Published Story A In History", "published": True}]}), encoding="utf-8")
+                p_class.write_text(json.dumps({"results": [], "status": "no_fresh_candidates"}), encoding="utf-8")
+
+                # classify.main() should skip calling Gemini and write no_fresh_candidates
+                classify.main()
+                class_result = json.loads(p_class.read_text(encoding="utf-8"))
+                self.assertEqual(class_result.get("status"), "no_fresh_candidates")
+                self.assertEqual(len(class_result.get("results", [])), 0)
+
+                # select_best_article should return None and not create selected_article.json
+                selected = select_article.select_best_article()
+                self.assertIsNone(selected, "Must return None when no unposted candidates exist")
+                self.assertFalse(p_sel.is_file(), "selected_article.json must not exist when no fresh story is selected")
+
+                # post_generator.main() should exit cleanly without calling Gemini
+                post_generator.main()
+                self.assertFalse(Path("post.json").is_file(), "post.json must not be created when no selected article exists")
+
+            finally:
+                # Restore original files
+                if old_disc is not None:
+                    p_disc.write_text(old_disc, encoding="utf-8")
+                elif p_disc.is_file():
+                    p_disc.unlink()
+
+                if old_hist is not None:
+                    p_hist.write_text(old_hist, encoding="utf-8")
+                elif p_hist.is_file():
+                    p_hist.unlink()
+
+                if old_class is not None:
+                    p_class.write_text(old_class, encoding="utf-8")
+                elif p_class.is_file():
+                    p_class.unlink()
+
+                if old_sel is not None:
+                    p_sel.write_text(old_sel, encoding="utf-8")
+                elif p_sel.is_file():
+                    p_sel.unlink()
+
+        finally:
+            for p in (temp_discovery, temp_history, temp_classified):
+                if p.is_file():
+                    p.unlink()
+
+
 if __name__ == "__main__":
     unittest.main()

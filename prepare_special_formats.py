@@ -394,7 +394,8 @@ def main():
         raise ValueError("NEWS_SNAP_MODE must be automatic, daily_roundup, or verified_quote")
 
     if not Path("selected_article.json").is_file():
-        raise FileNotFoundError("selected_article.json is missing")
+        print("[INFO] No selected_article.json found. Skipping special format preparation.")
+        return
 
     selected_article = json.loads(Path("selected_article.json").read_text(encoding="utf-8"))
 

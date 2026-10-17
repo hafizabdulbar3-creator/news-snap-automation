@@ -978,7 +978,8 @@ def main():
     post_path = Path("post.json")
     article_path = Path("selected_article.json")
     if not post_path.is_file() or not article_path.is_file():
-        raise FileNotFoundError("post.json and selected_article.json are both required")
+        print("[INFO] post.json or selected_article.json missing. Skipping image generation.")
+        return
 
     post = json.loads(post_path.read_text(encoding="utf-8"))
     article = json.loads(article_path.read_text(encoding="utf-8"))

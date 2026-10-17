@@ -113,10 +113,11 @@ def select_best_article():
                 break
 
     if selected is None:
-        if articles:
-            selected = {**articles[0], "classification": classifications.get(1, {})}
-        else:
-            raise RuntimeError("No articles available for selection.")
+        print("[INFO] No fresh, unposted article available for selection in this run.")
+        sel_path = Path("selected_article.json")
+        if sel_path.is_file():
+            sel_path.unlink()
+        return None
 
     Path("selected_article.json").write_text(
         json.dumps(selected, ensure_ascii=False, indent=2),
