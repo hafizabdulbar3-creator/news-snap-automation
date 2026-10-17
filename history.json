@@ -45,6 +45,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T07:07:28.718595+00:00"
+    },
+    {
+      "url": "https://www.aljazeera.com/news-analysis/2026/10/17/can-yemens-government-forces-sustain-their-offensive-against-the-houthis",
+      "title": "Can Yemen's government forces sustain their offensive against the Houthis?",
+      "headline": "Houthi Missile Strikes Threaten Key Yemen Coast Supply Routes",
+      "domain": "aljazeera.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T07:30:11.871402+00:00"
     }
   ]
 }
