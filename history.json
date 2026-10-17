@@ -1,3 +1,14 @@
 {
-  "posted": []
+  "posted": [],
+  "processed": [
+    {
+      "url": "https://www.chicagotribune.com/2026/10/16/trump-holds-russia-sanctions/",
+      "title": "President Trump puts new Russia sanctions that he recently signed into law on hold",
+      "headline": "President Trump puts new Russia sanctions that he recently signed into law on hold",
+      "domain": "chicagotribune.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T04:25:55.963442+00:00"
+    }
+  ]
 }
