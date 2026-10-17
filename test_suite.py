@@ -11,6 +11,7 @@ Tests all components locally without calling external paid APIs:
 """
 
 import ast
+import io
 import json
 import os
 import unittest
@@ -1296,6 +1297,173 @@ class TestStoryToImageRelevanceAndIllustrations(unittest.TestCase):
         cleaned_caption = generate_image.strip_image_credits(post["caption"])
         self.assertNotIn("Image credit:", cleaned_caption)
         self.assertIn("California election officials announced", cleaned_caption)
+
+
+class TestContextualImageLabelAndSafeguards(unittest.TestCase):
+    """Regression tests for contextual image labelling, file photo verification, and relevance safeguards."""
+
+    def setUp(self):
+        self.article = {
+            "title": "Diplomatic Representatives Convene for Bilateral Security Talks in Geneva",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/security-talks",
+            "classification": {"importance": "MAJOR", "topic": "Diplomacy"}
+        }
+        self.dummy_photo = {
+            "title": "Geneva_Palais_des_Nations.jpg",
+            "artist": "Alexandre Dupont",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page_url": "https://commons.wikimedia.org/wiki/File:Geneva_Palais_des_Nations.jpg",
+            "image": Image.new("RGB", (640, 480), (50, 70, 90))
+        }
+
+    def test_contextual_image_label_for_unverified_photograph(self):
+        # 1. Unverified photograph relevant to story receives 'CONTEXTUAL IMAGE'
+        label = generate_image.determine_photo_label(self.dummy_photo, self.article)
+        self.assertEqual(label, "CONTEXTUAL IMAGE")
+
+        # 2. Rendering into canvas attaches badge inside photo boundaries
+        canvas = Image.new("RGBA", (1080, 1350), (10, 20, 30, 255))
+        box = (0, 0, 1080, 840)
+        pasted = generate_image.crop_photo(canvas, self.dummy_photo, box, article=self.article, draw_label=True)
+        self.assertTrue(pasted)
+        self.assertEqual(canvas.size, (1080, 1350))
+
+    def test_file_photo_label_only_when_supported_by_source(self):
+        # 1. Source indicators containing archival or file photo cues return 'FILE PHOTO'
+        archival_cases = [
+            {"is_file_photo": True},
+            {"title": "Geneva Palais des Nations (file photo).jpg"},
+            {"description": "Archive photo of conference venue from 2021."},
+            {"notes": "Archival image preserved in national records."},
+            {"artist": "Staff / Archive file"},
+            {"source": "Historical photo repository"}
+        ]
+        for extra in archival_cases:
+            info = dict(self.dummy_photo, **extra)
+            lbl = generate_image.determine_photo_label(info, self.article)
+            self.assertEqual(lbl, "FILE PHOTO", f"Expected 'FILE PHOTO' for cue: {extra}")
+
+        # 2. When no source cue exists, unverified photo returns 'CONTEXTUAL IMAGE', never 'FILE PHOTO'
+        clean_info = dict(self.dummy_photo)
+        self.assertEqual(generate_image.determine_photo_label(clean_info, self.article), "CONTEXTUAL IMAGE")
+
+        # 3. Verified event photograph returns empty string (no contextual badge)
+        verified_info = dict(self.dummy_photo, event_verified=True)
+        self.assertEqual(generate_image.determine_photo_label(verified_info, self.article), "")
+
+        # 4. Matching location/subject alone does not infer event depiction
+        location_photo = dict(self.dummy_photo, title="Geneva Palais des Nations conference hall")
+        self.assertEqual(generate_image.determine_photo_label(location_photo, self.article), "CONTEXTUAL IMAGE")
+
+    def test_irrelevant_photo_rejected_in_favour_of_labelled_illustration(self):
+        # 1. Irrelevant candidate is rejected by relevance safeguard
+        irrelevant_title = "Wildfire containment operations in mountain valley.jpg"
+        irrelevant_desc = "Firefighting helicopters drop water on forest blaze."
+        is_rel, reason = generate_image.is_photo_meaningfully_relevant(irrelevant_title, irrelevant_desc, self.article)
+        self.assertFalse(is_rel)
+
+        # 2. Crop photo fallback generates vector illustration
+        canvas = Image.new("RGBA", (1080, 1350), (10, 20, 30, 255))
+        box = (65, 125, 1015, 615)
+        pasted = generate_image.crop_photo(canvas, None, box, category="DIPLOMACY", article=self.article)
+        self.assertFalse(pasted, "Should return False when falling back to vector illustration")
+
+        # 3. Editorial vector illustration produces clear non-empty RGB visual
+        ill = generate_image.make_illustration(950, 490, category="DIPLOMACY", article=self.article)
+        self.assertEqual(ill.size, (950, 490))
+        self.assertEqual(ill.mode, "RGB")
+        extrema = ill.getextrema()
+        self.assertTrue(any(ch[0] != ch[1] for ch in extrema), "Illustration must not be a blank solid color")
+
+    def test_illustration_fallbacks_do_not_receive_invented_photo_credits(self):
+        post = {
+            "headline": "Geneva Security Talks Open",
+            "caption": "Diplomats gather in Geneva for high-stakes bilateral security negotiations. #NewsSnap"
+        }
+        # 1. Fallback with None photo adds no credit
+        generate_image.annotate_image_credit(post, None)
+        self.assertNotIn("Image credit:", post["caption"])
+
+        # 2. Fallback with non-image object adds no credit
+        generate_image.annotate_image_credit(post, {"image": None, "page_url": "https://example.com"})
+        self.assertNotIn("Image credit:", post["caption"])
+
+        # 3. Existing credits cleanly stripped when using illustration
+        post_with_credit = {
+            "headline": "Geneva Security Talks Open",
+            "caption": "Diplomats gather in Geneva. #NewsSnap\n\nImage credit: Old_Photo.jpg by Jane Doe. Licence: CC BY-SA 4.0."
+        }
+        stripped = generate_image.strip_image_credits(post_with_credit["caption"])
+        self.assertNotIn("Image credit:", stripped)
+        self.assertIn("Diplomats gather in Geneva", stripped)
+
+    def test_all_six_approved_formats_retain_dimensions_and_layout(self):
+        # Verify all 6 formats render at exactly 1080x1350 RGB/RGBA
+        test_cases = [
+            ("01", {
+                "title": "Severe Coastal Storm Triggers High Wind Warnings",
+                "domain": "reuters.com",
+                "url": "https://reuters.com/storm",
+                "classification": {"importance": "MAJOR", "topic": "Emergency"}
+            }, {
+                "headline": "Severe Coastal Storm Triggers Warnings",
+                "caption": "High wind warnings are in effect along coastal regions. #NewsSnap"
+            }),
+            ("02", {
+                "title": "Global Tech Firm Reports Quarterly Earnings Exceeding Estimates",
+                "domain": "bloomberg.com",
+                "url": "https://bloomberg.com/tech",
+                "classification": {"importance": "MAJOR", "topic": "Business"}
+            }, {
+                "headline": "Quarterly Earnings Exceed Estimates",
+                "caption": "Revenues surpassed analyst forecasts in third quarter results. #NewsSnap"
+            }),
+            ("03", {
+                "title": "CEO Outlines Five-Year Vision for Clean Energy Transition",
+                "domain": "ft.com",
+                "url": "https://ft.com/energy",
+                "classification": {"importance": "MAJOR", "topic": "People"}
+            }, {
+                "headline": "CEO Outlines Clean Energy Vision",
+                "caption": "Strategic transition plans were detailed during annual address. #NewsSnap"
+            }),
+            ("05", {
+                "title": "European Union Council Adopts New Cross-Border Regulatory Framework",
+                "domain": "reuters.com",
+                "url": "https://reuters.com/eu",
+                "classification": {"importance": "MAJOR", "topic": "Government"}
+            }, {
+                "headline": "EU Council Adopts New Regulations",
+                "caption": "Member states finalized approval for standardized guidelines. #NewsSnap"
+            }),
+            ("06", {
+                "title": "Prime Minister Delivers Address on International Peacekeeping",
+                "domain": "reuters.com",
+                "url": "https://reuters.com/peace",
+                "quote_verified": True,
+                "quote_text": "Peace is not merely the absence of conflict, but the presence of justice.",
+                "speaker": "Prime Minister",
+                "speaker_role": "Head of Government",
+                "classification": {"importance": "MAJOR", "topic": "Diplomacy"}
+            }, {
+                "headline": "Prime Minister Addresses Peace Summit",
+                "caption": "The Prime Minister underscored international commitments to lasting security. #NewsSnap"
+            }),
+        ]
+
+        for fmt, article, post in test_cases:
+            img, _, _ = generate_image.render_approved_format(fmt, article, post)
+            self.assertEqual(img.size, (1080, 1350), f"Format {fmt} dimension mismatch")
+            buf = io.BytesIO()
+            img.convert("RGB").save(buf, format="JPEG", quality=95)
+            self.assertGreater(buf.tell(), 10000, f"Format {fmt} output buffer is unexpectedly small")
+
+        # Verify Format 06 refuses unverified quotes
+        unverified_article = dict(test_cases[4][1], quote_verified=False)
+        with self.assertRaises(ValueError):
+            generate_image.render_approved_format("06", unverified_article, test_cases[4][2])
 
 
 if __name__ == "__main__":

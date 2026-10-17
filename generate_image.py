@@ -947,13 +947,107 @@ def add_pill(draw, box, text, fill=RED, text_fill=WHITE, max_font=28):
     draw_centered(draw, box, text, font(max_font, True), text_fill)
 
 
-def crop_photo(canvas, photo_info, box, category="GLOBAL NEWS", centering=(0.5, 0.5), article=None):
+def determine_photo_label(photo_info: dict, article: dict = None) -> str:
+    """Determine the accurate visual label for a photograph inside the photo area.
+
+    - Returns 'FILE PHOTO' only when the source supports that description (e.g. metadata/title/description
+      explicitly indicates file photo, archive, archival image, etc.).
+    - Returns 'CONTEXTUAL IMAGE' for relevant licensed photographs not verified as depicting the exact event.
+    - Never infers that a photograph depicts the exact event merely because subject, location, or people match.
+    """
+    if not photo_info or not isinstance(photo_info, dict):
+        return ""
+
+    if photo_info.get("event_verified") is True:
+        return ""
+
+    # Check if source text or metadata explicitly supports 'FILE PHOTO'
+    source_indicators = []
+    for key in ("title", "description", "artist", "source", "notes"):
+        val = photo_info.get(key)
+        if val:
+            source_indicators.append(str(val))
+
+    combined_source_text = " ".join(source_indicators).lower()
+
+    file_photo_cues = (
+        "file photo", "file picture", "file image", "file-photo",
+        "archive photo", "archival photo", "archive image", "archival image",
+        "stock photo", "historical photo", "undated file photo", "archive file"
+    )
+
+    if photo_info.get("is_file_photo") is True or any(cue in combined_source_text for cue in file_photo_cues):
+        return "FILE PHOTO"
+
+    return "CONTEXTUAL IMAGE"
+
+
+def draw_photo_label(canvas, box, text, position="top_right"):
+    """Overlay a small, readable photo label badge (e.g. 'CONTEXTUAL IMAGE' or 'FILE PHOTO') inside the photo area.
+
+    Placed cleanly inside the photo boundaries without shifting or redesigning any layout elements.
+    """
+    if not text:
+        return
+
+    x1, y1, x2, y2 = box
+    w, h = x2 - x1, y2 - y1
+
+    is_thumbnail = (w < 350 or h < 300)
+    font_size = 11 if is_thumbnail else 14
+    f = font(font_size, bold=True)
+
+    dummy_img = Image.new("RGBA", (1, 1))
+    dummy_draw = ImageDraw.Draw(dummy_img)
+    bbox = dummy_draw.textbbox((0, 0), text, font=f)
+    tw = bbox[2] - bbox[0]
+    th = bbox[3] - bbox[1]
+
+    pad_h = 7 if is_thumbnail else 12
+    pad_v = 4 if is_thumbnail else 6
+    pw = tw + pad_h * 2
+    ph = th + pad_v * 2
+
+    margin_x = 8 if is_thumbnail else (24 if x1 == 0 else 18)
+    margin_y = 8 if is_thumbnail else (50 if y1 == 0 else 16)
+
+    if position == "top_left":
+        px1 = x1 + margin_x
+        py1 = y1 + margin_y
+    elif position == "bottom_right":
+        px1 = x2 - pw - margin_x
+        py1 = y2 - ph - margin_y
+    else:  # default "top_right"
+        px1 = x2 - pw - margin_x
+        py1 = y1 + margin_y
+
+    px2 = px1 + pw
+    py2 = py1 + ph
+
+    overlay = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(overlay)
+
+    radius = max(6, ph // 2)
+    d.rounded_rectangle((px1, py1, px2, py2), radius=radius, fill=(8, 14, 24, 225), outline=(230, 240, 255, 180), width=1)
+
+    text_x = px1 + (pw - tw) // 2 - bbox[0]
+    text_y = py1 + (ph - th) // 2 - bbox[1]
+    d.text((text_x, text_y), text, font=f, fill=(255, 255, 255, 255))
+
+    canvas.alpha_composite(overlay)
+
+
+def crop_photo(canvas, photo_info, box, category="GLOBAL NEWS", centering=(0.5, 0.5), article=None, draw_label=True, label_position="top_right"):
     x1, y1, x2, y2 = box
     w, h = x2 - x1, y2 - y1
     if photo_info and isinstance(photo_info.get("image"), Image.Image):
         try:
             photo = ImageOps.fit(photo_info["image"], (w, h), method=Image.Resampling.LANCZOS, centering=centering)
             canvas.paste(photo.convert("RGBA"), (x1, y1))
+            if draw_label:
+                lbl = determine_photo_label(photo_info, article)
+                if lbl:
+                    draw_photo_label(canvas, box, lbl, position=label_position)
             return True
         except Exception as exc:
             print(f"Photo cropping failed ({type(exc).__name__}); falling back to editorial illustration.")
@@ -1015,7 +1109,7 @@ def render_finance_illustration(w, h):
         d.line(trend_pts, fill=(255, 207, 45), width=max(2, w // 350))
         for pt in trend_pts:
             d.ellipse((pt[0] - 3, pt[1] - 3, pt[0] + 3, pt[1] + 3), fill=(255, 255, 255), outline=(255, 207, 45), width=2)
-    draw_editorial_pill(d, w, h, "FINANCIAL GRAPHIC", accent=(255, 207, 45), fill=(10, 24, 45))
+    draw_editorial_pill(d, w, h, "FINANCIAL ILLUSTRATION", accent=(255, 207, 45), fill=(10, 24, 45))
     return im
 
 
@@ -1035,11 +1129,11 @@ def render_crisis_illustration(w, h):
     t_right = (cx + tw // 2, cy + th // 2)
     d.polygon([t_top, t_left, t_right], fill=(60, 18, 20), outline=(245, 60, 45))
     draw_centered(d, (cx - tw // 2, cy - th // 2, cx + tw // 2, cy + th // 2 + 4), "!", font(max(14, tw // 2), True), (255, 220, 50))
-    draw_editorial_pill(d, w, h, "EMERGENCY MONITORING", accent=(230, 31, 45), fill=(28, 12, 16))
+    draw_editorial_pill(d, w, h, "EMERGENCY ILLUSTRATION", accent=(230, 31, 45), fill=(28, 12, 16))
     return im
 
 
-def render_diplomacy_illustration(w, h, label="GLOBAL AFFAIRS GRAPHIC"):
+def render_diplomacy_illustration(w, h, label="GLOBAL AFFAIRS ILLUSTRATION"):
     import math
     im, d = create_vector_gradient(w, h, (10, 24, 48), (5, 14, 28))
     cx, cy = w // 2, int(h * 0.44)
@@ -1084,7 +1178,7 @@ def render_tech_illustration(w, h):
     for pts, col in [(l1, (70, 170, 240)), (l2, (100, 210, 255)), (l3, (255, 207, 45))]:
         for px, py in pts:
             d.ellipse((px - 5, py - 5, px + 5, py + 5), fill=col, outline=(255, 255, 255), width=1)
-    draw_editorial_pill(d, w, h, "TECHNOLOGY GRAPHIC", accent=(100, 210, 255), fill=(8, 20, 36))
+    draw_editorial_pill(d, w, h, "TECHNOLOGY ILLUSTRATION", accent=(100, 210, 255), fill=(8, 20, 36))
     return im
 
 
@@ -1241,7 +1335,7 @@ def make_illustration(width, height, category="GLOBAL NEWS", article=None):
     if any(k in combined for k in ("technology", "tech", "science", "space", "artificial intelligence", "ai", "software", "cyber", "quantum", "semiconductor", "chip", "chips", "satellite", "spacewalk", "nasa")):
         return render_tech_illustration(width, height)
     if any(k in combined for k in ("diplomacy", "treaty", "sanctions", "sanction", "summit", "accord", "alliance", "united nations", "geopolitics", "international", "ambassador", "foreign", "icc", "icj")):
-        label = "DIPLOMACY & SANCTIONS GRAPHIC" if any(s in combined for s in ("sanction", "sanctions", "icc", "icj")) else "GLOBAL AFFAIRS GRAPHIC"
+        label = "DIPLOMACY & SANCTIONS ILLUSTRATION" if any(s in combined for s in ("sanction", "sanctions", "icc", "icj")) else "GLOBAL AFFAIRS ILLUSTRATION"
         return render_diplomacy_illustration(width, height, label=label)
     if any(k in combined for k in ("leadership", "corporate", "government", "parliament", "congress", "senate", "court", "supreme", "legal", "policy", "regulator", "ministry", "minister", "president", "chancellor", "ceo")):
         return render_gov_illustration(width, height)
@@ -1349,12 +1443,16 @@ def draw_template_02(article, post, photo):
 def draw_template_03(article, post, photo):
     """Format 03: PEOPLE & CORPORATE STORIES"""
     canvas = Image.new("RGBA", (WIDTH, HEIGHT), (6, 12, 22, 255))
-    crop_photo(canvas, photo, (0, 0, WIDTH, 890), category="PEOPLE", centering=(0.5, 0.22), article=article)
+    is_photo = crop_photo(canvas, photo, (0, 0, WIDTH, 890), category="PEOPLE", centering=(0.5, 0.22), article=article, draw_label=False)
     # Convert photo area to monochrome / greyscale for dramatic portrait reference look
     box = (0, 0, WIDTH, 890)
     photo_crop = canvas.crop(box).convert("L").convert("RGBA")
     canvas.paste(photo_crop, (0, 0))
     draw_photo_overlay(canvas, (0, 460, WIDTH, 890), 220)
+    if is_photo:
+        lbl = determine_photo_label(photo, article)
+        if lbl:
+            draw_photo_label(canvas, box, lbl, position="top_right")
     d = ImageDraw.Draw(canvas)
 
     # Logo
@@ -1435,7 +1533,7 @@ def draw_template_04(article, roundup_post, stories, photos):
     y = 310
     for idx, (story, photo) in enumerate(zip(stories, photos), start=1):
         d.polygon([(65, y + 215), (85, y), (1025, y), (1005, y + 215)], fill=WHITE)
-        crop_photo(canvas, photo, (85, y + 8, 325, y + 207), category=category_label(story), article=story)
+        crop_photo(canvas, photo, (85, y + 8, 325, y + 207), category=category_label(story), article=story, label_position="top_left")
         d = ImageDraw.Draw(canvas)
         # Red numbered trapezoid badge
         d.polygon([(305, y + 155), (320, y + 55), (395, y + 55), (380, y + 155)], fill=RED)
