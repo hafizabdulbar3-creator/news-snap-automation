@@ -90,6 +90,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T15:43:46.367327+00:00"
+    },
+    {
+      "url": "https://www.thehindu.com/news/international/frustrated-with-trump-voters-overwhelmingly-want-change-in-washington-an-ap-norc-poll-finds/article71589722.ece",
+      "title": "Frustrated with Trump, voters overwhelmingly want change in Washington, an AP-NORC poll finds",
+      "headline": "Voters Overwhelmingly Demand Change in Washington, AP-NORC Poll Finds",
+      "domain": "thehindu.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T22:38:48.415446+00:00"
     }
   ]
 }
