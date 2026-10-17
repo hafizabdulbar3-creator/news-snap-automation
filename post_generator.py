@@ -25,27 +25,46 @@ MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
-class MetaDescriptionParser(HTMLParser):
-    """Fast HTML parser to extract og:description or meta description."""
+class SourceEvidenceParser(HTMLParser):
+    """Fast HTML parser to extract og:description, meta description, JSON-LD, or lead paragraphs."""
+    SKIP_TAGS = {"script", "style", "nav", "footer", "header", "noscript", "svg"}
+
     def __init__(self):
         super().__init__()
-        self.description = ""
+        self.meta_desc = ""
+        self.paragraphs = []
+        self._current_tag = None
+        self._p_buf = []
 
     def handle_starttag(self, tag, attrs):
-        if self.description:
-            return
-        if tag.lower() == "meta":
+        t = tag.lower()
+        self._current_tag = t
+        if t == "meta":
             attrs_dict = {k.lower(): v for k, v in attrs if k and v}
-            prop = attrs_dict.get("property", "").lower()
-            name = attrs_dict.get("name", "").lower()
-            if prop in ("og:description", "twitter:description") or name in ("description", "twitter:description"):
+            prop = (attrs_dict.get("property") or attrs_dict.get("name") or "").lower()
+            if prop in ("og:description", "description", "twitter:description", "article:description"):
                 content = attrs_dict.get("content", "").strip()
-                if len(content) > len(self.description):
-                    self.description = html.unescape(content)
+                if len(content) > len(self.meta_desc):
+                    self.meta_desc = html.unescape(content)
+        elif t == "p":
+            self._p_buf = []
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t == "p" and self._p_buf:
+            text = re.sub(r"\s+", " ", html.unescape("".join(self._p_buf))).strip()
+            if len(text) >= 35:
+                self.paragraphs.append(text)
+            self._p_buf = []
+        self._current_tag = None
+
+    def handle_data(self, data):
+        if self._current_tag == "p":
+            self._p_buf.append(data)
 
 
 def fetch_article_summary(url: str, timeout: int = 6) -> str:
-    """Attempt to fetch the meta description from the source article for grounded facts."""
+    """Attempt to fetch the meta description or lead paragraphs from the source article for grounded facts."""
     try:
         req = urllib.request.Request(
             url,
@@ -55,15 +74,17 @@ def fetch_article_summary(url: str, timeout: int = 6) -> str:
             }
         )
         with urllib.request.urlopen(req, timeout=timeout) as response:
-            raw = response.read(256 * 1024)  # Read first 256KB
+            raw = response.read(384 * 1024)  # Read first 384KB
             charset = response.headers.get_content_charset() or "utf-8"
             html_text = raw.decode(charset, errors="replace")
 
-        parser = MetaDescriptionParser()
+        parser = SourceEvidenceParser()
         parser.feed(html_text)
-        desc = re.sub(r"\s+", " ", parser.description).strip()
+        desc = re.sub(r"\s+", " ", parser.meta_desc).strip()
         if len(desc) >= 30:
             return desc
+        if parser.paragraphs:
+            return " ".join(parser.paragraphs[:2])[:600]
     except Exception:
         pass
     return ""
@@ -143,7 +164,71 @@ def word_count(text: str) -> int:
     return len(text.split())
 
 
-def validate_post(post: dict, source: str, url: str, is_mock: bool = False) -> dict:
+def extract_numeric_tokens(text: str) -> set[str]:
+    """Extract standalone numbers, monetary values, and percentages."""
+    cleaned = re.sub(r"[,']", "", text)
+    tokens = re.findall(r"\b\$?\d+(?:\.\d+)?%?(?:[kKmMbBtT]|(?:\s*(?:million|billion|trillion|percent)))?\b", cleaned, re.IGNORECASE)
+    norm = set()
+    for t in tokens:
+        clean_t = t.lower().replace("$", "").replace("%", "").strip()
+        if clean_t.isdigit() and len(clean_t) == 4 and 1990 <= int(clean_t) <= 2030:
+            continue
+        if clean_t:
+            norm.add(clean_t)
+    return norm
+
+
+def validate_factual_grounding(post: dict, article: dict, source_evidence: str = "") -> None:
+    """Ensure generated headline, summary, and caption do not introduce unsupported claims,
+    invented numbers, or convert speculative allegations into established facts.
+    """
+    if not isinstance(post, dict) or not isinstance(article, dict):
+        return
+
+    headline = str(post.get("headline", "")).strip()
+    caption = str(post.get("caption", "")).strip()
+    art_title = str(article.get("title", "")).strip()
+
+    # 1. Speculation / Allegation Safeguard
+    uncertainty_cues = (
+        "?", "alleged", "allegedly", "alleges", "allegation", "allegations", "suspected", "may face",
+        "could face", "might face", "claims", "reportedly", "investigating",
+        "under probe", "accused of"
+    )
+    title_has_uncertainty = any(cue in art_title.lower() for cue in uncertainty_cues)
+    if title_has_uncertainty:
+        attribution_markers = (
+            "alleged", "allegedly", "claims", "reportedly", "suspected", "may",
+            "could", "probe", "investigation", "says", "stated", "accused",
+            "according to", "facing", "under", "warns", "reports"
+        )
+        headline_lower = headline.lower()
+        if not any(marker in headline_lower or marker in caption.lower() for marker in attribution_markers):
+            raise ValueError(
+                f"FACTUAL GROUNDING REFUSAL: Source title contains uncertainty/allegation ('{art_title}'), "
+                f"but generated post converts it to an established fact without attribution."
+            )
+
+    # 2. Number / Quantity Grounding
+    headline_nums = extract_numeric_tokens(headline)
+    source_nums = extract_numeric_tokens(f"{art_title} {source_evidence}")
+    unsupported_nums = [n for n in headline_nums if n not in source_nums]
+    if unsupported_nums:
+        raise ValueError(
+            f"FACTUAL GROUNDING REFUSAL: Headline contains unsupported number(s) {unsupported_nums} "
+            f"not substantiated in source headline or retrieved evidence."
+        )
+
+    # 3. Sensational Clickbait Fabrication Check
+    sensational_terms = (
+        "bombshell", "shocking truth", "mind-blowing", "unbelievable",
+        "you won't believe", "miracle cure", "secret plot revealed"
+    )
+    if any(s in headline.lower() for s in sensational_terms):
+        raise ValueError("FACTUAL GROUNDING REFUSAL: Headline contains sensationalized clickbait fabrication.")
+
+
+def validate_post(post: dict, source: str, url: str, is_mock: bool = False, article: dict = None, source_evidence: str = "") -> dict:
     if not isinstance(post, dict):
         raise ValueError("Output must be a JSON object.")
 
@@ -236,7 +321,7 @@ def validate_post(post: dict, source: str, url: str, is_mock: bool = False) -> d
     # Clean trailing punctuation from headline
     headline = re.sub(r"[;:,|–—\-]+$", "", headline).strip()
 
-    return {
+    res = {
         "headline": headline,
         "curiosity_line": curiosity,
         "caption": final_caption,
@@ -244,6 +329,11 @@ def validate_post(post: dict, source: str, url: str, is_mock: bool = False) -> d
         "hashtags": final_hashtags,
         "is_synthetic": bool(is_mock),
     }
+
+    if article:
+        validate_factual_grounding(res, article, source_evidence)
+
+    return res
 
 
 def generate_mock_post(article: dict) -> dict:
@@ -276,7 +366,7 @@ def generate_mock_post(article: dict) -> dict:
         "curiosity_line": curiosity,
         "caption": caption,
         "hashtags": hashtags,
-    }, source, url, is_mock=True)
+    }, source, url, is_mock=True, article=article, source_evidence="")
     res["is_synthetic"] = True
     return res
 
@@ -301,13 +391,19 @@ def generate_post(article: dict) -> dict:
         print("GEMINI_API_KEY missing in local environment; using verified offline test generator.")
         return generate_mock_post(article)
 
-    # Fetch article summary for verified factual grounding
-    print(f"Fetching source context from {url}...")
-    source_summary = fetch_article_summary(url)
-    if source_summary:
-        print(f"Retrieved source summary ({len(source_summary)} chars).")
+    # Check if article already carries retrieved source description from preparation step
+    source_summary = ""
+    if article.get("source_description"):
+        source_summary = article["source_description"]
+    elif article.get("source_body_excerpt"):
+        source_summary = article["source_body_excerpt"]
     else:
-        print("No meta summary retrieved; relying strictly on verified headline.")
+        print(f"Fetching source context from {url}...")
+        source_summary = fetch_article_summary(url)
+        if source_summary:
+            print(f"Retrieved source summary ({len(source_summary)} chars).")
+        else:
+            print("No meta summary retrieved; relying strictly on verified headline.")
 
     prompt = f"""You are the senior editor for NEWS SNAP.
 Your job is to transform this news report into a high-impact, 100% accurate, professional NEWS SNAP Instagram post.
@@ -374,7 +470,7 @@ Return ONLY valid JSON matching this schema:
                 text = re.sub(r"\s*```$", "", text)
             post_data = json.loads(text)
             is_mock = is_mock_fixture_article(article)
-            return validate_post(post_data, source, url, is_mock=is_mock)
+            return validate_post(post_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
         except Exception as e:
             print(f"Model {model_name} post generation error: {e}")
             last_error = e

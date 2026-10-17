@@ -581,7 +581,22 @@ def is_photo_meaningfully_relevant(title: str, description: str, article: dict, 
         if "fema" in cand_tokens or "federal emergency management agency" in cand_text:
             return False, "Non-disaster story cannot use FEMA disaster assistance imagery"
 
-    # Check 3: Rejection of broad-terms-only matches
+    # Check 3: Legal, sanctions, and court stories (e.g. ICC, ICJ, war crimes, prosecutor) must NEVER use commercial skyscraper or sports imagery
+    is_court_story = any(w in art_combined for w in (
+        "international criminal court", "icc", "icj", "international court of justice",
+        "war crimes", "prosecutor", "the hague", "tribunal"
+    ))
+    if is_court_story:
+        court_conflicts = (
+            "commerce centre", "hong kong", "kowloon", "skyscraper",
+            "tallest building", "commercial building", "office tower", "shopping mall",
+            "cricket", "stadium", "champions trophy", "bcci"
+        )
+        for cc in court_conflicts:
+            if cc in cand_text:
+                return False, f"Legal/court story cannot use commercial skyscraper or sports imagery (matched '{cc}')"
+
+    # Check 4: Rejection of broad-terms-only matches
     raw_art_tokens = set(re.findall(r"[a-z0-9]+", art_combined))
     meaningful_art_tokens = {
         w for w in raw_art_tokens

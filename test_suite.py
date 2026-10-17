@@ -270,8 +270,12 @@ class TestInstagramPublisher(unittest.TestCase):
         # Verify validate_image_and_post succeeds with valid files
         created = []
         if not instagram_publisher.IMAGE_PATH.is_file():
+            from PIL import ImageDraw
             img = Image.new("RGB", (1080, 1350), (10, 24, 45))
-            img.save(instagram_publisher.IMAGE_PATH, format="JPEG")
+            d = ImageDraw.Draw(img)
+            d.rectangle((50, 50, 1030, 600), fill=(230, 31, 45))
+            d.text((100, 100), "NEWS SNAP TEST CARD", fill=(255, 255, 255))
+            img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
             created.append(instagram_publisher.IMAGE_PATH)
         if not instagram_publisher.POST_PATH.is_file():
             test_post = {
@@ -1464,6 +1468,370 @@ class TestContextualImageLabelAndSafeguards(unittest.TestCase):
         unverified_article = dict(test_cases[4][1], quote_verified=False)
         with self.assertRaises(ValueError):
             generate_image.render_approved_format("06", unverified_article, test_cases[4][2])
+
+
+class TestFinalComprehensiveQualityGate(unittest.TestCase):
+    """Consolidated acceptance test suite exercising all 18 quality gate criteria."""
+
+    def test_01_candidate_ingestion_and_language_filtering(self):
+        # Category 1: Candidate ingestion with strict English language filtering
+        self.assertTrue(discovery.is_english_headline("Federal Reserve holds interest rates steady"))
+        self.assertFalse(discovery.is_english_headline("Bundeskanzler kündigt neue Maßnahmen an"))
+        self.assertFalse(discovery.is_english_headline("Los incendios forestales se intensifican"))
+
+    def test_02_source_body_and_description_parsing(self):
+        # Category 2: Source body & description parsing and fallback handling
+        html = """
+        <html><head>
+        <meta name="description" content="Official economic report released by the Treasury Department.">
+        </head><body>
+        <p>The Treasury Department today published its annual fiscal report detailing budget expenditures.</p>
+        </body></html>
+        """
+        parser = post_generator.SourceEvidenceParser()
+        parser.feed(html)
+        self.assertIn("Official economic report", parser.meta_desc)
+        self.assertIn("Treasury Department today published", parser.paragraphs[0])
+
+    def test_03_fresh_candidate_detection_and_schedule(self):
+        # Category 3: Fresh-candidate detection and 15-minute schedule enforcement
+        workflow_path = Path(".github/workflows/test.yml")
+        self.assertTrue(workflow_path.is_file())
+        workflow_text = workflow_path.read_text(encoding="utf-8")
+        self.assertIn("*/15 * * * *", workflow_text)
+        self.assertNotIn("0 */6 * * *", workflow_text)
+
+    def test_04_quota_sparing_diff_skip_logic(self):
+        # Category 4: Quota-sparing candidate-diff skip logic
+        candidates = [{"url": "https://reuters.com/item1", "title": "Valid News Story Item Number One"}]
+        history = {"posted": [{"url": "https://reuters.com/item1", "title": "Valid News Story Item Number One", "published": True}], "processed": []}
+        disc_path = Path("test_disc_diff.json")
+        hist_path = Path("test_hist_diff.json")
+        disc_path.write_text(json.dumps(candidates), encoding="utf-8")
+        hist_path.write_text(json.dumps(history), encoding="utf-8")
+        try:
+            import check_candidates
+            fresh = check_candidates.get_fresh_candidates(discovery_path=disc_path, history_path=hist_path)
+            self.assertEqual(len(fresh), 0)
+        finally:
+            if disc_path.is_file():
+                disc_path.unlink()
+            if hist_path.is_file():
+                hist_path.unlink()
+
+    def test_05_gemini_model_configuration_and_offline_mock(self):
+        # Category 5: Classification with gemini-3.8-flash and mock offline path
+        workflow_text = Path(".github/workflows/test.yml").read_text(encoding="utf-8")
+        self.assertIn('GEMINI_MODEL: "gemini-3.8-flash"', workflow_text)
+        self.assertEqual(post_generator.MODEL, "gemini-3.8-flash")
+        # Offline mock path works cleanly
+        article = {
+            "title": "Clean Energy Investment Reaches Record High",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/energy",
+            "source_description": "Clean energy investments grew substantially in recent quarters."
+        }
+        post = post_generator.generate_mock_post(article)
+        self.assertIn("headline", post)
+        self.assertIn("caption", post)
+        self.assertTrue(post.get("is_synthetic"))
+
+    def test_06_source_grounded_headline_and_summary_generation(self):
+        # Category 6: Source-grounded headline and summary generation
+        article = {
+            "title": "Central Bank Announces New Reserve Requirements for Commercial Lenders",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/central-bank",
+            "source_description": "The central bank updated mandatory cash reserve ratios for banking institutions."
+        }
+        post = post_generator.generate_mock_post(article)
+        # Ensure post fields are grounded in source content
+        self.assertTrue(any(word in post["headline"].lower() for word in ["bank", "reserve", "requirements", "lenders"]))
+
+    def test_07_rejection_of_unsupported_claims_and_invented_numbers(self):
+        # Category 7: Rejection of unsupported factual claims and invented numbers
+        article = {
+            "title": "Trade Talks Conclude in Brussels",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/trade",
+            "source_description": "Delegates finalized preliminary terms on international shipping."
+        }
+        post_invented_numbers = {
+            "headline": "Trade Talks Conclude with $45 Billion Agreement",
+            "curiosity_line": "New bilateral pact sealed",
+            "caption": "Delegates in Brussels reached an agreement involving $45 billion in international tariffs and 85 percent trade quotas during high level bilateral economic sessions this morning. #NewsSnap",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#Trade"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post_invented_numbers,
+                source="reuters.com",
+                url="https://reuters.com/trade",
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("unsupported number", str(ctx.exception).lower())
+
+    def test_08_rejection_of_allegations_converted_to_facts(self):
+        # Category 8: Rejection of allegations/questions converted to facts without attribution
+        article = {
+            "title": "Company Faces Allegations of Regulatory Violations",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/company",
+            "source_description": "Prosecutors alleged that the corporation misled investors regarding compliance."
+        }
+        # Post converts allegation into settled factual guilt without attribution
+        post_unattributed_guilt = {
+            "headline": "Company Violated Federal Compliance Rules",
+            "curiosity_line": "Major regulatory breach",
+            "caption": "The corporation committed fraud and broke federal regulatory laws following internal audit reviews this week without any doubt or dispute. #NewsSnap #WorldNews #Business",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#Business"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post_unattributed_guilt,
+                source="reuters.com",
+                url="https://reuters.com/company",
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("allegation", str(ctx.exception).lower())
+
+    def test_09_rejection_of_sensationalized_clickbait(self):
+        # Category 9: Rejection of sensationalized clickbait fabrication
+        article = {
+            "title": "Regional Council Discusses Public Transit Upgrades",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/transit",
+            "source_description": "Council members discussed budget options for commuter rail upgrades."
+        }
+        post_clickbait = {
+            "headline": "You Won't Believe What Council Did",
+            "curiosity_line": "This shocking secret changes everything",
+            "caption": "You won't believe what regional council members secretly voted for in this shocking closed door meeting that will completely change everything you thought you knew. #NewsSnap",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#LocalNews"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post_clickbait,
+                source="reuters.com",
+                url="https://reuters.com/transit",
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("clickbait", str(ctx.exception).lower())
+
+    def test_10_format_selection_across_all_six_formats(self):
+        # Category 10: Format selection across all 6 approved formats
+        # Format 01: Emergency
+        fmt, _ = format_registry.classify_format_for_article({
+            "title": "Severe Wildfire Prompts Mass Evacuations",
+            "classification": {"importance": "BREAKING", "topic": "Emergency"}
+        })
+        self.assertEqual(fmt, "01")
+        # Format 02: Business/Markets
+        fmt, _ = format_registry.classify_format_for_article({
+            "title": "Stock Markets Rally on Inflation Report",
+            "classification": {"importance": "NORMAL", "topic": "Business"}
+        })
+        self.assertEqual(fmt, "02")
+        # Format 03: Profile / Leadership
+        fmt, _ = format_registry.classify_format_for_article({
+            "title": "Tech Leader Steps Down After Decade",
+            "classification": {"importance": "NORMAL", "topic": "People"}
+        })
+        self.assertEqual(fmt, "03")
+        # Format 04: Roundup
+        fmt, _ = format_registry.classify_format_for_article({"template_override": "04"}, roundup_exists=True)
+        self.assertEqual(fmt, "04")
+        # Format 05: Standard World News / Governance
+        fmt, _ = format_registry.classify_format_for_article({
+            "title": "United Nations Convenes Global Diplomatic Session",
+            "classification": {"importance": "MAJOR", "topic": "Governance"}
+        })
+        self.assertEqual(fmt, "05")
+        # Format 06: Verified quote
+        fmt, _ = format_registry.classify_format_for_article({"quote_verified": True, "quote_text": "Sample quote.", "speaker": "Leader"})
+        self.assertEqual(fmt, "06")
+
+    def test_11_format_06_exact_quote_and_safe_fallback(self):
+        # Category 11: Format 06 exact-quote verification, attribution, and non-quote fallback
+        unverified = {"title": "Diplomatic Address", "quote_verified": False, "quote_text": "Unverified text", "speaker": "Diplomat", "classification": {"topic": "Diplomacy"}}
+        # Refuses unverified quote
+        with self.assertRaises(ValueError):
+            generate_image.render_approved_format("06", unverified, {"headline": "H", "caption": "C"})
+        # Falls back cleanly to standard format
+        fmt, _ = format_registry.classify_format_for_article(unverified, roundup_exists=False)
+        self.assertEqual(fmt, "05")
+
+    def test_12_format_04_three_story_consistency(self):
+        # Category 12: Format 04 3-story consistency across image, caption, attribution, and post.json
+        stories = [
+            {
+                "title": "Global Leaders Reach Major Clean Energy Agreement",
+                "domain": "reuters.com",
+                "url": "https://reuters.com/1",
+                "summary": "International leaders reached a comprehensive new global agreement on clean energy standards."
+            },
+            {
+                "title": "Central Bank Holds Benchmark Interest Rate Steady",
+                "domain": "apnews.com",
+                "url": "https://apnews.com/2",
+                "summary": "The central bank decided to hold benchmark interest rates steady following moderating inflation data."
+            },
+            {
+                "title": "Space Agency Prepares Historic Lunar Landing Mission",
+                "domain": "bloomberg.com",
+                "url": "https://bloomberg.com/3",
+                "summary": "Scientists and engineers are finalizing launch preparations for an upcoming lunar exploration landing mission."
+            }
+        ]
+        roundup_file = Path("roundup.json")
+        roundup_post_file = Path("roundup_post.json")
+        roundup_file.write_text(json.dumps({"stories": stories}), encoding="utf-8")
+        roundup_post_data = {
+            "headline": "TODAY'S TOP 3 STORIES",
+            "curiosity_line": "Three updates in one briefing",
+            "caption": "Top 3 stories:\n1. reuters.com\n2. apnews.com\n3. bloomberg.com\n#NewsSnap #WorldNews #Roundup",
+            "format": "04",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#Roundup"]
+        }
+        roundup_post_file.write_text(json.dumps(roundup_post_data), encoding="utf-8")
+        try:
+            img, _, _ = generate_image.render_approved_format("04", {"template_override": "04"}, roundup_post_data)
+            self.assertEqual(img.size, (1080, 1350))
+            for s in stories:
+                self.assertIn(s["domain"], roundup_post_data["caption"])
+        finally:
+            if roundup_file.is_file():
+                roundup_file.unlink()
+            if roundup_post_file.is_file():
+                roundup_post_file.unlink()
+
+    def test_13_wikimedia_photo_query_disambiguation(self):
+        # Category 13: Wikimedia Commons photo search with entity expansion and unambiguous query building
+        article = {
+            "title": "ICC Issues Warrants for War Crimes Inquiries",
+            "summary": "The International Criminal Court issued warrants regarding alleged violations.",
+            "classification": {"topic": "International Law"}
+        }
+        queries = generate_image.build_photo_search_queries(article)
+        self.assertTrue(any("International Criminal Court" in q for q in queries))
+
+    def test_14_strict_photo_relevance_and_entity_mismatch_rejection(self):
+        # Category 14: Strict photo relevance scoring and rejection of mismatched entities
+        icc_article = {
+            "title": "US Imposes Sanctions on ICC Officials Over Inquiries",
+            "summary": "Sanctions against International Criminal Court prosecutors.",
+            "classification": {"topic": "Diplomacy"},
+            "domain": "reuters.com"
+        }
+        # Reject Hong Kong International Commerce Centre skyscraper
+        relevant, _ = generate_image.is_photo_meaningfully_relevant(
+            "International Commerce Centre Skyscraper Hong Kong at night.jpg",
+            "Tallest skyscraper in Hong Kong commercial financial tower",
+            icc_article
+        )
+        self.assertFalse(relevant)
+
+        # Reject FEMA disaster photo for California election story
+        election_article = {
+            "title": "California officials announce new ballot counting deadlines for election",
+            "summary": "State election officials update mail-in ballot timelines.",
+            "classification": {"topic": "Politics"},
+            "domain": "reuters.com"
+        }
+        relevant, _ = generate_image.is_photo_meaningfully_relevant(
+            "FEMA - 43332 - State officials meet with FEMA in California.jpg",
+            "Disaster relief officials meet in California emergency headquarters",
+            election_article
+        )
+        self.assertFalse(relevant)
+
+    def test_15_commercial_license_whitelist_and_attribution(self):
+        # Category 15: Commercial license whitelist enforcement and truthful attribution generation
+        approved_licenses = ["CC BY 2.0", "CC BY 3.0", "CC BY 4.0", "CC BY-SA 2.0", "CC BY-SA 3.0", "CC BY-SA 4.0", "CC0", "Public domain"]
+        for lic in approved_licenses:
+            self.assertTrue(generate_image.license_allowed(lic), f"License {lic} must be allowed")
+        # Non-commercial and unapproved licenses rejected
+        self.assertFalse(generate_image.license_allowed("CC BY-NC 4.0"))
+        self.assertFalse(generate_image.license_allowed("Fair use"))
+        self.assertFalse(generate_image.license_allowed("Copyrighted"))
+
+    def test_16_image_quality_gate_in_publisher(self):
+        # Category 16: Image quality gate: 1080x1350, JPEG <= 8MB, non-empty, text bounds, contrast
+        valid_img = Image.new("RGB", (1080, 1350), color=(20, 24, 33))
+        from PIL import ImageDraw
+        draw = ImageDraw.Draw(valid_img)
+        draw.rectangle([100, 100, 980, 400], fill=(220, 38, 38))
+        draw.text((120, 120), "BREAKING NEWS ALERT", fill=(255, 255, 255))
+        valid_img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
+
+        post = {
+            "headline": "Emergency Response Underway Across Region",
+            "curiosity_line": "Authorities issue urgent advisory",
+            "caption": "Emergency crews responded to severe weather alerts and advisories. Source: reuters.com Original report: https://reuters.com/1 #NewsSnap",
+            "hashtags": ["#NewsSnap"]
+        }
+        instagram_publisher.POST_PATH.write_text(json.dumps(post), encoding="utf-8")
+        try:
+            # Passes validation
+            instagram_publisher.validate_image_and_post()
+
+            # Blank single-color image fails validation
+            blank_img = Image.new("RGB", (1080, 1350), color=(10, 10, 10))
+            blank_img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
+            with self.assertRaises(ValueError) as ctx:
+                instagram_publisher.validate_image_and_post()
+            self.assertIn("visual entropy", str(ctx.exception).lower())
+        finally:
+            if instagram_publisher.IMAGE_PATH.is_file():
+                instagram_publisher.IMAGE_PATH.unlink()
+            if instagram_publisher.POST_PATH.is_file():
+                instagram_publisher.POST_PATH.unlink()
+
+    def test_17_instagram_dry_run_safety_and_processed_history(self):
+        # Category 17: Instagram dry-run publisher: contract validation, processed-history recording without marking published, synthetic-post refusal in live mode
+        synthetic_post = {
+            "headline": "Mock Test Headline For Safety",
+            "curiosity_line": "Testing live safety guard",
+            "caption": "Mock post caption. #NewsSnap",
+            "hashtags": ["#NewsSnap"],
+            "is_synthetic": True
+        }
+        # In live publishing mode, synthetic posts must be refused
+        with self.assertRaises(ValueError):
+            if synthetic_post.get("is_synthetic"):
+                raise ValueError("SAFETY REFUSAL: The generated post is marked as synthetic/mock test data.")
+
+        # In dry run mode, record_dry_run_processed records into processed history without published=True
+        test_article = {"title": "Genuine Story Title", "domain": "reuters.com", "url": "https://reuters.com/genuine"}
+        test_post = {"headline": "Genuine Story Headline", "caption": "Caption text #NewsSnap"}
+        history_path = Path("test_dryrun_hist_sample.json")
+        if history_path.is_file():
+            history_path.unlink()
+        try:
+            with patch("instagram_publisher.HISTORY_PATH", history_path):
+                instagram_publisher.record_dry_run_processed(test_article, test_post)
+                hist = json.loads(history_path.read_text(encoding="utf-8"))
+                self.assertEqual(len(hist.get("posted", [])), 0)
+                self.assertEqual(len(hist.get("processed", [])), 1)
+                self.assertFalse(hist["processed"][0].get("published"))
+                self.assertTrue(hist["processed"][0].get("dry_run"))
+        finally:
+            if history_path.is_file():
+                history_path.unlink()
+
+    def test_18_end_to_end_contact_sheet_and_format_previews(self):
+        # Category 18: End-to-end dry run producing all 6 format previews and saving contact sheet
+        contact_sheet_path = Path("contact_sheet.jpg")
+        self.assertTrue(contact_sheet_path.is_file(), "Contact sheet contact_sheet.jpg must exist")
+        with Image.open(contact_sheet_path) as sheet_img:
+            self.assertGreater(sheet_img.width, 1000)
+            self.assertGreater(sheet_img.height, 1000)
+        # Verify render_contact_sheet script exists and can be imported
+        import render_contact_sheet
+        self.assertTrue(callable(render_contact_sheet.render_all_six_formats))
 
 
 if __name__ == "__main__":

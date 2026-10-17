@@ -143,6 +143,14 @@ def select_best_article():
             sel_path.unlink()
         return None
 
+    # Clean up any stale roundup artifacts from prior runs/tests to prevent silent divergence
+    for stale in (Path("roundup.json"), Path("roundup_post.json")):
+        if stale.is_file():
+            try:
+                stale.unlink()
+            except Exception:
+                pass
+
     Path("selected_article.json").write_text(
         json.dumps(selected, ensure_ascii=False, indent=2),
         encoding="utf-8"

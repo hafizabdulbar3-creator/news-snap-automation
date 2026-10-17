@@ -358,12 +358,56 @@ def save_json(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def is_mock_fixture_article(article: dict) -> bool:
+    """Determine whether an article is a local unit-test / mock fixture or a genuine source report."""
+    if not isinstance(article, dict):
+        return True
+    url = str(article.get("url", "")).strip().lower()
+    domain = str(article.get("domain", "")).strip().lower()
+    title = str(article.get("title", "")).strip()
+    if not url or not domain or not title:
+        return True
+    mock_domains = {"example.com", "example.org", "test.com", "mock.com", "localhost"}
+    parsed = urllib.parse.urlparse(url)
+    hostname = (parsed.hostname or "").lower()
+    if domain in mock_domains or hostname in mock_domains or hostname.endswith(".example.com"):
+        return True
+    if any(url.startswith(p) for p in ("https://example.com", "http://example.com", "mock://")):
+        return True
+    if re.search(r"\b(test fixture|mock story|dummy article|unit test)\b", title, re.IGNORECASE):
+        return True
+    return False
+
+
+def enrich_source_evidence(article, fetch=True):
+    url = article.get("url", "")
+    payload = get_article_payload(url) if fetch else None
+    enriched = dict(article)
+    if payload:
+        if payload.get("description"):
+            enriched["source_description"] = payload["description"]
+        if payload.get("body"):
+            enriched["source_body_excerpt"] = payload["body"][:1200]
+        if payload.get("author"):
+            enriched["source_author"] = payload["author"]
+    return enriched
+
+
 def attach_quote_to_article(article, fetch=True):
     url = article.get("url", "")
     payload = get_article_payload(url) if fetch else None
-    if not payload:
+    if not payload and not article.get("source_body_excerpt"):
         return None
-    body = payload.get("body", "")
+
+    body = payload.get("body", "") if payload else article.get("source_body_excerpt", "")
+    enriched = dict(article)
+    if payload:
+        if payload.get("description"):
+            enriched["source_description"] = payload["description"]
+        if payload.get("body"):
+            enriched["source_body_excerpt"] = payload["body"][:1200]
+        if payload.get("author"):
+            enriched["source_author"] = payload["author"]
 
     # If the article already has an intended quote, verify it against the source body
     existing_quote = str(article.get("quote_text", "")).strip()
@@ -371,7 +415,6 @@ def attach_quote_to_article(article, fetch=True):
 
     if existing_quote and existing_speaker:
         if verify_quote_exact_match(existing_quote, body):
-            enriched = dict(article)
             enriched["quote_text"] = existing_quote
             enriched["speaker"] = existing_speaker
             enriched["quote_verified"] = True
@@ -388,7 +431,7 @@ def attach_quote_to_article(article, fetch=True):
     found = extract_attributed_quote(body)
     if not found:
         return None
-    enriched = dict(article)
+
     enriched.update(found)
     enriched["quote_verified"] = True
     enriched["quote_source_url"] = str(url)
@@ -434,6 +477,7 @@ def prepare_roundup(candidates):
         )
 
     roundup = {"stories": selected}
+    is_synth = any(is_mock_fixture_article(s) for s in selected)
     roundup_post = {
         "headline": "TODAY'S TOP 3 STORIES",
         "curiosity_line": "Three important updates in one quick briefing",
@@ -443,6 +487,7 @@ def prepare_roundup(candidates):
             for i, story in enumerate(selected, start=1)
         ),
         "hashtags": ["#NewsSnap", "#DailyBriefing", "#GlobalNews"],
+        "is_synthetic": is_synth,
     }
     save_json("roundup.json", roundup)
     save_json("roundup_post.json", roundup_post)
@@ -468,19 +513,31 @@ def main():
         return
 
     if mode == "automatic":
-        enriched = attach_quote_to_article(selected_article)
-        if enriched:
-            save_json("selected_article.json", enriched)
+        # Ensure stale roundup files from prior runs/tests do not cause silent divergence
+        for stale in (Path("roundup.json"), Path("roundup_post.json")):
+            if stale.is_file():
+                try:
+                    stale.unlink()
+                except Exception:
+                    pass
+
+        # First enrich with source evidence if available
+        article_with_evidence = enrich_source_evidence(selected_article)
+
+        enriched_quote = attach_quote_to_article(article_with_evidence)
+        if enriched_quote and enriched_quote.get("quote_verified") is True:
+            save_json("selected_article.json", enriched_quote)
             print("Format 06 eligible: exact quote and named attribution found on source page.")
         else:
-            selected_article.pop("quote_text", None)
-            selected_article.pop("speaker", None)
-            selected_article.pop("quote_verified", None)
-            save_json("selected_article.json", selected_article)
+            article_with_evidence.pop("quote_text", None)
+            article_with_evidence.pop("speaker", None)
+            article_with_evidence.pop("quote_verified", None)
+            save_json("selected_article.json", article_with_evidence)
             print("No source-attributed quote found for selected story; topic-based single-story layout will be used.")
         return
 
     # verified_quote mode: search a small batch; fail closed if no suitable source quote.
+    candidates = load_candidates()
     quote_candidates = []
     if selected_article.get("url"):
         quote_candidates.append(selected_article)
@@ -491,7 +548,7 @@ def main():
 
     for article in quote_candidates[:MAX_QUOTE_CANDIDATES]:
         enriched = attach_quote_to_article(article)
-        if enriched:
+        if enriched and enriched.get("quote_verified") is True:
             save_json("selected_article.json", enriched)
             print("Format 06 source-attributed quote found.")
             print("Speaker:", enriched["speaker"])

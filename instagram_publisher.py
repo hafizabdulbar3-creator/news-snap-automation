@@ -376,7 +376,7 @@ def verify_public_image_url(url: str, max_retries: int = 6, retry_delay: float =
     )
 
 
-def validate_image_and_post():
+def validate_image_and_post(article: dict = None):
     if not IMAGE_PATH.is_file():
         raise FileNotFoundError(f"Image file {IMAGE_PATH} not found.")
     if not POST_PATH.is_file():
@@ -393,13 +393,31 @@ def validate_image_and_post():
     if "#newssnap" not in caption.lower():
         raise ValueError("Caption must include #NewsSnap hashtag.")
 
-    # 2. Format & caption alignment check (prevents Format 04 mismatch)
+    # 2. Headline & text layout bounds
+    headline = str(post.get("headline", "")).strip()
+    if not headline:
+        raise ValueError("Post headline is missing.")
+    hl_words = headline.split()
+    if not (4 <= len(hl_words) <= 14):
+        raise ValueError(f"Headline word count ({len(hl_words)}) out of bounds (4–14 words required).")
+    if hl_words[-1].lower() in {"by", "to", "at", "of", "for", "on", "with", "and", "or", "in"}:
+        raise ValueError(f"Headline appears clipped/incomplete (ends with trailing connector '{hl_words[-1]}').")
+
+    # 3. Format & caption alignment check (prevents Format 04 mismatch)
     verify_format_caption_alignment(post, caption)
 
-    # 3. Image checks
+    # 4. Image dimensions, format, and visual integrity checks
     with Image.open(IMAGE_PATH) as img:
         img_format = img.format
         width, height = img.size
+        # Verify image is not corrupted or solid blank rectangle
+        extrema = img.getextrema()
+        if isinstance(extrema[0], tuple):  # Multi-band RGB/RGBA
+            has_variation = any(ch[0] != ch[1] for ch in extrema)
+        else:
+            has_variation = extrema[0] != extrema[1]
+        if not has_variation:
+            raise ValueError("Corrupted/blank image: Canvas has zero visual entropy (solid color).")
 
     if img_format not in ("JPEG", "JPG"):
         raise ValueError(f"Image must be JPEG format, got: {img_format}")
@@ -409,6 +427,23 @@ def validate_image_and_post():
     file_size_mb = IMAGE_PATH.stat().st_size / (1024 * 1024)
     if file_size_mb > 8.0:
         raise ValueError(f"Image size exceeds 8MB ({file_size_mb:.2f} MB).")
+    if IMAGE_PATH.stat().st_size < 15 * 1024:
+        raise ValueError(f"Image file size is suspiciously small ({IMAGE_PATH.stat().st_size} bytes); incomplete render.")
+
+    # 5. Attribution truthfulness
+    if "illustration" in caption.lower() and "image credit:" in caption.lower() and post.get("format") != "04":
+        if re.search(r"Image credit:\s*[^.\n]+\s+by\s+[^.\n]+", caption):
+            raise ValueError("Attribution error: Real photo credits cannot be attributed to synthetic illustrations.")
+
+    # 6. Factual grounding verification against article if available
+    if article and isinstance(article, dict):
+        art_title = str(article.get("title", "")).strip()
+        if art_title:
+            uncertainty_cues = ("?", "alleged", "allegedly", "suspected", "may face", "could face", "claims", "investigating")
+            if any(cue in art_title.lower() for cue in uncertainty_cues):
+                attribution_markers = ("alleged", "allegedly", "claims", "reportedly", "suspected", "may", "could", "probe", "investigation", "says", "stated", "accused", "according to", "facing", "under")
+                if not any(m in headline.lower() or m in caption.lower() for m in attribution_markers):
+                    raise ValueError(f"Factual grounding error: Uncertainty in source title ('{art_title}') converted to settled fact.")
 
     return post, caption
 
@@ -418,10 +453,6 @@ def main():
     if not IMAGE_PATH.is_file() or not POST_PATH.is_file():
         print("[INFO] No generated image (news_snap_post.jpg) or post file (post.json) found. Skipping publication.")
         return
-    post, caption = validate_image_and_post()
-    print("[OK] Image validation: 1080x1350 JPEG, within 8MB limit.")
-    print("[OK] Caption validation: Under 2,200 characters, #NewsSnap included.")
-    print("[OK] Format alignment validation: Image and caption refer to the same story data.")
 
     article = {}
     if ARTICLE_PATH.is_file():
@@ -429,6 +460,12 @@ def main():
             article = json.loads(ARTICLE_PATH.read_text(encoding="utf-8"))
         except Exception:
             pass
+
+    post, caption = validate_image_and_post(article=article)
+    print("[OK] Image validation: 1080x1350 JPEG, within 8MB limit, verified non-empty visual entropy.")
+    print("[OK] Caption validation: Under 2,200 characters, #NewsSnap included, text within bounds.")
+    print("[OK] Format alignment validation: Image and caption refer to the same story data.")
+    print("[OK] Factual and attribution safeguards verified.")
 
     # Check duplicate prevention
     if is_already_posted(article):
