@@ -15,7 +15,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 from PIL import Image
@@ -25,20 +25,106 @@ POST_PATH = Path("post.json")
 ARTICLE_PATH = Path("selected_article.json")
 HISTORY_PATH = Path("history.json")
 
+# Documented retention window for dry-run processed stories (48 hours by default)
+DRY_RUN_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
+MAX_HISTORY_ENTRIES = 100
+
 GRAPH_API_VERSION = os.environ.get("GRAPH_API_VERSION", "v22.0").strip()
 GRAPH_API_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
 
 
-def record_history(article: dict, post: dict, published: bool = False, media_id: str = None):
-    """Save article entry into history.json to prevent duplicate posts across workflow runs."""
-    history = {"posted": []}
+def prune_processed_entries(entries: list, max_age_hours: int = DRY_RUN_RETENTION_HOURS, max_entries: int = MAX_HISTORY_ENTRIES) -> list:
+    """Filter processed entries by retention window (default 48h) and cap at max_entries."""
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=max_age_hours)
+    valid = []
+    for e in entries:
+        if not isinstance(e, dict):
+            continue
+        ts_str = e.get("timestamp")
+        if ts_str:
+            try:
+                ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                if ts < cutoff:
+                    continue  # Expired outside retention window
+            except Exception:
+                pass
+        valid.append(e)
+    return valid[-max_entries:]
+
+
+def record_dry_run_processed(article: dict, post: dict):
+    """Save article entry into history.json under 'processed' (NEVER 'posted').
+
+    Marked with published=False, dry_run=True.
+    Prevents re-processing and repeated Gemini API calls during subsequent 15-minute runs.
+    """
+    history = {"posted": [], "processed": []}
     if HISTORY_PATH.is_file():
         try:
             history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
         except Exception:
-            history = {"posted": []}
+            history = {"posted": [], "processed": []}
 
-    posted_list = history.get("posted", [])
+    if "posted" not in history:
+        history["posted"] = []
+    if "processed" not in history:
+        history["processed"] = []
+
+    timestamp = datetime.now(timezone.utc).isoformat()
+    processed_list = history["processed"]
+
+    # Check if this is a Format 04 roundup with multiple stories
+    roundup_path = Path("roundup.json")
+    is_roundup = post.get("format") == "04" or (roundup_path.is_file() and "top 3" in post.get("headline", "").lower())
+    if is_roundup and roundup_path.is_file():
+        try:
+            roundup_data = json.loads(roundup_path.read_text(encoding="utf-8"))
+            for s in roundup_data.get("stories", []):
+                processed_list.append({
+                    "url": s.get("url", ""),
+                    "title": s.get("title", ""),
+                    "headline": post.get("headline", ""),
+                    "domain": s.get("domain", ""),
+                    "published": False,
+                    "dry_run": True,
+                    "timestamp": timestamp,
+                })
+        except Exception:
+            pass
+
+    entry = {
+        "url": article.get("url", ""),
+        "title": article.get("title", ""),
+        "headline": post.get("headline", ""),
+        "domain": article.get("domain", ""),
+        "published": False,
+        "dry_run": True,
+        "timestamp": timestamp,
+    }
+    processed_list.append(entry)
+
+    # Prune processed list: retain entries within 48-hour retention window up to 100 entries
+    history["processed"] = prune_processed_entries(processed_list, max_age_hours=DRY_RUN_RETENTION_HOURS, max_entries=MAX_HISTORY_ENTRIES)
+    HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Recorded dry-run entry in {HISTORY_PATH} under 'processed' (total processed: {len(history['processed'])}).")
+
+
+def record_published_history(article: dict, post: dict, media_id: str = None):
+    """Save article entry into history.json under 'posted' with published=True."""
+    history = {"posted": [], "processed": []}
+    if HISTORY_PATH.is_file():
+        try:
+            history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+        except Exception:
+            history = {"posted": [], "processed": []}
+
+    if "posted" not in history:
+        history["posted"] = []
+    if "processed" not in history:
+        history["processed"] = []
+
+    posted_list = history["posted"]
     timestamp = datetime.now(timezone.utc).isoformat()
 
     # Check if this is a Format 04 roundup with multiple stories
@@ -53,7 +139,7 @@ def record_history(article: dict, post: dict, published: bool = False, media_id:
                     "title": s.get("title", ""),
                     "headline": post.get("headline", ""),
                     "domain": s.get("domain", ""),
-                    "published": published,
+                    "published": True,
                     "media_id": media_id,
                     "timestamp": timestamp,
                 })
@@ -65,16 +151,24 @@ def record_history(article: dict, post: dict, published: bool = False, media_id:
         "title": article.get("title", ""),
         "headline": post.get("headline", ""),
         "domain": article.get("domain", ""),
-        "published": published,
+        "published": True,
         "media_id": media_id,
         "timestamp": timestamp,
     }
     posted_list.append(entry)
 
     # Retain the last 100 entries
-    history["posted"] = posted_list[-100:]
+    history["posted"] = posted_list[-MAX_HISTORY_ENTRIES:]
     HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Recorded post entry in {HISTORY_PATH} (total entries: {len(history['posted'])}).")
+    print(f"Recorded live post entry in {HISTORY_PATH} under 'posted' (total posted: {len(history['posted'])}).")
+
+
+def record_history(article: dict, post: dict, published: bool = False, media_id: str = None):
+    """Wrapper routing to published or dry-run processed history lists."""
+    if published:
+        record_published_history(article, post, media_id=media_id)
+    else:
+        record_dry_run_processed(article, post)
 
 
 def is_already_posted(article: dict) -> bool:
@@ -105,6 +199,63 @@ def is_already_posted(article: dict) -> bool:
         norm_url = str(article.get("url", "")).strip().lower()
         norm_title = str(article.get("title", "")).strip().lower()
         for item in posted_items:
+            if norm_url and item.get("url", "").strip().lower() == norm_url:
+                return True
+            if norm_title and item.get("title", "").strip().lower() == norm_title:
+                return True
+    except Exception:
+        pass
+    return False
+
+
+def is_already_processed(article: dict, retention_hours: int = DRY_RUN_RETENTION_HOURS) -> bool:
+    """Check if the article was already processed in dry-run mode within the retention window."""
+    if not HISTORY_PATH.is_file():
+        return False
+    try:
+        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+        processed_items = history.get("processed", [])
+        if not processed_items:
+            return False
+
+        now = datetime.now(timezone.utc)
+        cutoff = now - timedelta(hours=retention_hours)
+
+        # Check Format 04 roundup stories
+        roundup_path = Path("roundup.json")
+        if roundup_path.is_file():
+            try:
+                roundup_data = json.loads(roundup_path.read_text(encoding="utf-8"))
+                for s in roundup_data.get("stories", []):
+                    s_url = str(s.get("url", "")).strip().lower()
+                    s_title = str(s.get("title", "")).strip().lower()
+                    for item in processed_items:
+                        ts_str = item.get("timestamp")
+                        if ts_str:
+                            try:
+                                ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                                if ts < cutoff:
+                                    continue
+                            except Exception:
+                                pass
+                        if s_url and item.get("url", "").strip().lower() == s_url:
+                            return True
+                        if s_title and item.get("title", "").strip().lower() == s_title:
+                            return True
+            except Exception:
+                pass
+
+        norm_url = str(article.get("url", "")).strip().lower()
+        norm_title = str(article.get("title", "")).strip().lower()
+        for item in processed_items:
+            ts_str = item.get("timestamp")
+            if ts_str:
+                try:
+                    ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                    if ts < cutoff:
+                        continue
+                except Exception:
+                    pass
             if norm_url and item.get("url", "").strip().lower() == norm_url:
                 return True
             if norm_title and item.get("title", "").strip().lower() == norm_title:
@@ -284,6 +435,10 @@ def main():
         print("Duplicate alert: This article was already marked as published in history.json.")
         print("Skipping publication to prevent duplicate Instagram feed posts.")
         sys.exit(0)
+    elif is_already_processed(article):
+        print("Duplicate alert: This article was already processed in a previous dry-run within the retention window.")
+        print("Skipping to prevent repeated API calls and duplicate processing.")
+        sys.exit(0)
     else:
         print("[OK] Duplicate prevention check passed (fresh story).")
 
@@ -301,11 +456,20 @@ def main():
         print("\n[DRY-RUN MODE] Live publishing is disabled or credentials are not configured.")
         print("All format, image, and duplicate checks PASSED successfully.")
         print("The generated image is ready for Instagram publication.")
-        print("Dry-run complete: Article is NOT marked as published, preserving its eligibility for real publication.")
+        record_dry_run_processed(article, post)
+        print("Dry-run complete: Article recorded in 'processed' list (published=False) to prevent repeated API calls.")
         return
 
     # LIVE PUBLISHING MODE
     print("\n[LIVE PUBLISHING MODE ACTIVATED]")
+
+    # Refuse to publish if this article was previously processed as a dry-run test
+    if is_already_processed(article):
+        raise ValueError(
+            "SAFETY REFUSAL: This article was previously processed as a dry-run test story. "
+            "To prevent old test stories from being published when live mode is activated, "
+            "only fresh, un-processed news stories are permitted."
+        )
 
     # Safety check: Never publish synthetic or mock test stories to Instagram
     if post.get("is_synthetic"):

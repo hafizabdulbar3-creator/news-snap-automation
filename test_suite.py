@@ -547,6 +547,107 @@ class TestScheduleAndFreshCandidates(unittest.TestCase):
                 if p.is_file():
                     p.unlink()
 
+    def test_dry_run_processed_separation_and_skipping(self):
+        import check_candidates
+        import instagram_publisher
+
+        temp_history = Path("test_history_dryrun.json")
+        temp_discovery = Path("test_discovery_dryrun.json")
+
+        old_hist_path = instagram_publisher.HISTORY_PATH
+        instagram_publisher.HISTORY_PATH = temp_history
+
+        article = {
+            "title": "Diplomatic Summit Concludes With Multilateral Climate Accord",
+            "url": "https://reuters.com/world/diplomatic-summit-accord-2026",
+            "domain": "reuters.com"
+        }
+        post = {
+            "headline": "Historic Climate Accord Reached At Global Summit",
+            "curiosity_line": "Key outcomes and commitments explained",
+            "caption": "World leaders reached an agreement at the summit.\n\n#NewsSnap"
+        }
+
+        try:
+            if temp_history.is_file():
+                temp_history.unlink()
+
+            # 1. Record dry-run processed
+            instagram_publisher.record_dry_run_processed(article, post)
+            self.assertTrue(temp_history.is_file())
+
+            hist_data = json.loads(temp_history.read_text(encoding="utf-8"))
+            self.assertIn("processed", hist_data)
+            self.assertEqual(len(hist_data.get("posted", [])), 0, "posted list must remain empty in dry-run mode")
+            self.assertEqual(len(hist_data["processed"]), 1, "processed list must contain exactly 1 entry")
+
+            entry = hist_data["processed"][0]
+            self.assertFalse(entry["published"], "published flag must be strictly False for dry-run entries")
+            self.assertTrue(entry.get("dry_run"), "dry_run flag must be True")
+            self.assertEqual(entry["url"], article["url"])
+
+            # 2. Assert is_already_posted is False and is_already_processed is True
+            self.assertFalse(instagram_publisher.is_already_posted(article), "Must NOT be reported as published")
+            self.assertTrue(instagram_publisher.is_already_processed(article), "Must be reported as processed")
+
+            # 3. Prove candidate check skips this dry-run processed story on the next run
+            temp_discovery.write_text(json.dumps([
+                {
+                    "title": article["title"],
+                    "url": article["url"],
+                    "domain": article["domain"],
+                    "score": 100,
+                    "is_duplicate": False
+                }
+            ]), encoding="utf-8")
+
+            fresh = check_candidates.get_fresh_candidates(temp_discovery, temp_history)
+            self.assertEqual(len(fresh), 0, "Processed dry-run story must be skipped on the next run")
+
+            # 4. Prove a genuinely new story remains eligible
+            new_story = {
+                "title": "Space Agency Confirms Discovery Of Subsurface Oceans",
+                "url": "https://bbc.com/science/ocean-discovery-2026",
+                "domain": "bbc.com",
+                "score": 120,
+                "is_duplicate": False
+            }
+            temp_discovery.write_text(json.dumps([
+                {
+                    "title": article["title"],
+                    "url": article["url"],
+                    "domain": article["domain"],
+                    "score": 100,
+                    "is_duplicate": False
+                },
+                new_story
+            ]), encoding="utf-8")
+
+            fresh_with_new = check_candidates.get_fresh_candidates(temp_discovery, temp_history)
+            self.assertEqual(len(fresh_with_new), 1, "Genuinely new story must remain eligible")
+            self.assertEqual(fresh_with_new[0]["url"], new_story["url"])
+
+            # 5. Verify retention window: an expired entry (>48h) is pruned
+            from datetime import datetime, timezone, timedelta
+            expired_time = (datetime.now(timezone.utc) - timedelta(hours=50)).isoformat()
+            hist_data["processed"].append({
+                "url": "https://example.com/expired-story",
+                "title": "Expired Story from Two Days Ago",
+                "published": False,
+                "dry_run": True,
+                "timestamp": expired_time
+            })
+            pruned = instagram_publisher.prune_processed_entries(hist_data["processed"], max_age_hours=48)
+            urls = [e["url"] for e in pruned]
+            self.assertIn(article["url"], urls, "Recent entry within 48h must be retained")
+            self.assertNotIn("https://example.com/expired-story", urls, "Entry older than 48h must be pruned")
+
+        finally:
+            instagram_publisher.HISTORY_PATH = old_hist_path
+            for p in (temp_history, temp_discovery):
+                if p.is_file():
+                    p.unlink()
+
 
 if __name__ == "__main__":
     unittest.main()

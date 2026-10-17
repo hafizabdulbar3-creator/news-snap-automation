@@ -1,18 +1,23 @@
 """NEWS SNAP Candidate Verification.
 
 Checks discovered news candidates against history.json to ensure only genuinely fresh,
-unposted, and eligible articles are sent to Gemini API triage and post generation.
+unposted, and un-processed articles are sent to Gemini API triage and post generation.
 Prevents wasted API calls and prevents duplicate publications across 15-minute cycles.
+Keeps published history and dry-run processed history separate.
 """
 
 import json
 import os
 import sys
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 
 DISCOVERY_PATH = Path("discovery.json")
 HISTORY_PATH = Path("history.json")
+
+# Documented retention window for dry-run processed stories (48 hours by default)
+DEFAULT_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
 
 
 def is_valid_candidate_url(url: str) -> bool:
@@ -36,31 +41,67 @@ def is_genuine_headline(title: str) -> bool:
     return True
 
 
-def get_published_history(history_path=HISTORY_PATH) -> tuple[set, set]:
-    """Extract sets of normalized lowercase URLs and titles that have been published."""
+def get_history_sets(history_path=HISTORY_PATH, retention_hours: int = DEFAULT_RETENTION_HOURS) -> dict:
+    """Extract sets of normalized lowercase URLs and titles for published and processed entries.
+
+    Returns dict with keys:
+    'published_urls', 'published_titles', 'processed_urls', 'processed_titles'
+    """
     p = Path(history_path)
-    published_urls = set()
-    published_titles = set()
+    res = {
+        "published_urls": set(),
+        "published_titles": set(),
+        "processed_urls": set(),
+        "processed_titles": set(),
+    }
     if not p.is_file():
-        return published_urls, published_titles
+        return res
+
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=retention_hours)
 
     try:
         data = json.loads(p.read_text(encoding="utf-8"))
+
+        # 1. Published entries in 'posted'
         for entry in data.get("posted", []):
             if entry.get("published") is True:
                 u = str(entry.get("url", "")).strip().lower()
                 t = str(entry.get("title", "")).strip().lower()
                 if u:
-                    published_urls.add(u)
+                    res["published_urls"].add(u)
                 if t:
-                    published_titles.add(t)
+                    res["published_titles"].add(t)
+
+        # 2. Processed dry-run entries in 'processed' (within retention window)
+        for entry in data.get("processed", []):
+            ts_str = entry.get("timestamp")
+            if ts_str:
+                try:
+                    ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                    if ts < cutoff:
+                        continue  # Expired outside retention window
+                except Exception:
+                    pass
+            u = str(entry.get("url", "")).strip().lower()
+            t = str(entry.get("title", "")).strip().lower()
+            if u:
+                res["processed_urls"].add(u)
+            if t:
+                res["processed_titles"].add(t)
     except Exception:
         pass
-    return published_urls, published_titles
+    return res
 
 
-def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PATH) -> list:
-    """Return all discovered articles that have NOT been published and meet eligibility criteria.
+def get_published_history(history_path=HISTORY_PATH) -> tuple[set, set]:
+    """Extract sets of normalized lowercase URLs and titles that have been published."""
+    sets = get_history_sets(history_path)
+    return sets["published_urls"], sets["published_titles"]
+
+
+def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PATH, retention_hours: int = DEFAULT_RETENTION_HOURS) -> list:
+    """Return all discovered articles that have NOT been published and NOT recently processed in dry-run.
 
     Does NOT fabricate stories, and does NOT discard unprocessed candidates.
     """
@@ -76,7 +117,7 @@ def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PAT
     if not isinstance(articles, list):
         return []
 
-    published_urls, published_titles = get_published_history(history_path)
+    hist_sets = get_history_sets(history_path, retention_hours=retention_hours)
 
     fresh = []
     for article in articles:
@@ -86,11 +127,19 @@ def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PAT
         url = str(article.get("url", "")).strip()
         title = str(article.get("title", "")).strip()
 
-        # Check duplicate flag from discovery or published history
+        # Check duplicate flag from discovery
         if article.get("is_duplicate"):
             continue
 
-        if url.lower() in published_urls or title.lower() in published_titles:
+        url_low = url.lower()
+        title_low = title.lower()
+
+        # Skip if already published to Instagram
+        if url_low in hist_sets["published_urls"] or title_low in hist_sets["published_titles"]:
+            continue
+
+        # Skip if recently processed in dry-run mode within the retention window
+        if url_low in hist_sets["processed_urls"] or title_low in hist_sets["processed_titles"]:
             continue
 
         if not is_valid_candidate_url(url) or not is_genuine_headline(title):

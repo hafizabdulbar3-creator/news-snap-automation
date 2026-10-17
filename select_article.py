@@ -1,7 +1,11 @@
 import json
+import os
 import re
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
+
+DEFAULT_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
 
 
 def is_valid_url(url: str) -> bool:
@@ -36,8 +40,9 @@ def select_best_article():
     articles = json.loads(discovery_path.read_text(encoding="utf-8"))
     classified_data = json.loads(classified_path.read_text(encoding="utf-8"))
 
-    # Load history
+    # Load history (both published and recently dry-run-processed)
     recently_posted = set()
+    recently_processed = set()
     if history_path.is_file():
         try:
             hist = json.loads(history_path.read_text(encoding="utf-8"))
@@ -47,6 +52,22 @@ def select_best_article():
                         recently_posted.add(item["url"].strip().lower())
                     if item.get("title"):
                         recently_posted.add(item["title"].strip().lower())
+
+            now = datetime.now(timezone.utc)
+            cutoff = now - timedelta(hours=DEFAULT_RETENTION_HOURS)
+            for item in hist.get("processed", []):
+                ts_str = item.get("timestamp")
+                if ts_str:
+                    try:
+                        ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                        if ts < cutoff:
+                            continue  # Expired
+                    except Exception:
+                        pass
+                if item.get("url"):
+                    recently_processed.add(item["url"].strip().lower())
+                if item.get("title"):
+                    recently_processed.add(item["title"].strip().lower())
         except Exception:
             pass
 
@@ -67,7 +88,8 @@ def select_best_article():
         if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
             continue
 
-        if url.lower() in recently_posted or title.lower() in recently_posted:
+        if (url.lower() in recently_posted or title.lower() in recently_posted or
+            url.lower() in recently_processed or title.lower() in recently_processed):
             continue
 
         if classification.get("importance") == "MAJOR":
@@ -88,7 +110,8 @@ def select_best_article():
             if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
                 continue
 
-            if url.lower() in recently_posted or title.lower() in recently_posted:
+            if (url.lower() in recently_posted or title.lower() in recently_posted or
+                url.lower() in recently_processed or title.lower() in recently_processed):
                 continue
 
             if classification.get("importance") == "NORMAL":
@@ -108,7 +131,8 @@ def select_best_article():
             if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
                 continue
 
-            if url.lower() not in recently_posted and title.lower() not in recently_posted:
+            if (url.lower() not in recently_posted and title.lower() not in recently_posted and
+                url.lower() not in recently_processed and title.lower() not in recently_processed):
                 selected = {**article, "classification": classification}
                 break
 

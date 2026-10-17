@@ -61,7 +61,7 @@ if not PRIORITY_TOPICS:
         "israel", "gaza", "iran", "space", "artificial intelligence", "climate"
     }
 
-# Load previously posted history to avoid duplicates
+# Load previously posted and processed history to avoid duplicates
 HISTORY_FILE = Path("history.json")
 RECENTLY_POSTED_URLS = set()
 RECENTLY_POSTED_TITLES = set()
@@ -74,6 +74,11 @@ if HISTORY_FILE.is_file():
                     RECENTLY_POSTED_URLS.add(entry["url"].strip().lower())
                 if entry.get("title"):
                     RECENTLY_POSTED_TITLES.add(entry["title"].strip().lower())
+        for entry in hist_data.get("processed", []):
+            if entry.get("url"):
+                RECENTLY_POSTED_URLS.add(entry["url"].strip().lower())
+            if entry.get("title"):
+                RECENTLY_POSTED_TITLES.add(entry["title"].strip().lower())
     except Exception:
         pass
 
