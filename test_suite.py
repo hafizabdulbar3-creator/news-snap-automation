@@ -673,5 +673,144 @@ class TestScheduleAndFreshCandidates(unittest.TestCase):
             self.assertNotIn(obs, post_code, f"Obsolete model ID '{obs}' found in post_generator.py")
 
 
+class TestImageQualityAndSafeguards(unittest.TestCase):
+    """Quality and safety tests for Commons photo sourcing and editorial vector illustrations."""
+
+    def test_query_extraction_entities_and_acronyms(self):
+        # 1. Acronyms & proper noun extraction
+        art1 = {"title": "USCIS Increases Maximum Validity Period to 5 Years for Certain EAD Applicants"}
+        q1 = generate_image.build_photo_search_queries(art1)
+        self.assertIn("USCIS", q1)
+        self.assertIn("EAD", q1)
+
+        # 2. Known multi-word organization
+        art2 = {"title": "Federal Reserve Signals Rate Pause Amid Inflation Concerns", "classification": {"topic": "Business"}}
+        q2 = generate_image.build_photo_search_queries(art2)
+        self.assertIn("Federal Reserve", q2)
+
+        # 3. Speaker / person extraction
+        art3 = {"title": "Tech Leader Speaks on Future of Computing", "speaker": "Satya Nadella"}
+        q3 = generate_image.build_photo_search_queries(art3)
+        self.assertIn("Satya Nadella", q3)
+
+        # 4. Action verbs & generic headline terms stripped from queries
+        for q in q1 + q2:
+            self.assertNotIn("increases", q.lower().split())
+            self.assertNotIn("signals", q.lower().split())
+
+    def test_licence_filtering_safeguards(self):
+        # Allowed licences
+        allowed = [
+            "CC BY 4.0",
+            "CC BY-SA 3.0",
+            "CC-BY-SA 4.0",
+            "CC0 1.0 Universal",
+            "Public domain",
+            "PD-US",
+            "PD-self",
+            "GODL-India",
+            "Creative Commons Attribution 2.5",
+        ]
+        for lic in allowed:
+            self.assertTrue(generate_image.license_allowed(lic), f"Expected licence to be allowed: '{lic}'")
+
+        # Strictly disallowed licences
+        disallowed = [
+            "CC BY-NC 4.0",
+            "CC BY-NC-SA 3.0",
+            "CC BY-ND 4.0",
+            "All rights reserved",
+            "Fair use",
+            "Copyrighted",
+            "",
+            None,
+        ]
+        for lic in disallowed:
+            self.assertFalse(generate_image.license_allowed(lic), f"Expected licence to be rejected: '{lic}'")
+
+    def test_editorial_illustration_generation_across_categories(self):
+        categories_and_articles = [
+            ("DISASTER", {"title": "Wildfire sweeps across national park", "classification": {"topic": "Emergency"}}),
+            ("BUSINESS", {"title": "Central bank announces benchmark interest rate policy", "classification": {"topic": "Business"}}),
+            ("TECHNOLOGY", {"title": "Researchers unveil breakthrough quantum computing chip", "classification": {"topic": "Technology"}}),
+            ("LEADERSHIP", {"title": "Prime Minister and Cabinet review legislative framework", "classification": {"topic": "Government"}}),
+            ("QUOTE", {"title": "Ambassador delivers remarks at multilateral summit", "quote_text": "We stand together in defending global peace and security."}),
+            ("DIPLOMACY", {"title": "Nations finalize international climate accord", "classification": {"topic": "Diplomacy"}}),
+            ("GLOBAL NEWS", {"title": "International observers report on development projects", "classification": {"topic": "General"}}),
+        ]
+        test_dimensions = [(1080, 840), (950, 490), (240, 199), (530, 1000)]
+        for cat, article in categories_and_articles:
+            for w, h in test_dimensions:
+                img = generate_image.make_illustration(w, h, category=cat, article=article)
+                self.assertEqual(img.size, (w, h))
+                self.assertEqual(img.mode, "RGB")
+                extrema = img.getextrema()
+                # Verify image is not a solid blank single-color block
+                has_variation = any(ch[0] != ch[1] for ch in extrema)
+                self.assertTrue(has_variation, f"Illustration for {cat} at ({w}, {h}) is blank")
+
+    def test_format_04_story_aligned_attribution(self):
+        post = {
+            "headline": "TODAY'S TOP 3 STORIES",
+            "caption": "Briefing of today's developments. #NewsSnap"
+        }
+        photo_info_1 = {
+            "title": "Solar_Panels_Desert.jpg",
+            "artist": "John Doe",
+            "license": "CC BY-SA 4.0",
+            "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "page_url": "https://commons.wikimedia.org/wiki/File:Solar_Panels_Desert.jpg"
+        }
+        photo_info_3 = {
+            "title": "Satellite_Orbit_Earth.jpg",
+            "artist": "Jane Smith",
+            "license": "Public domain",
+            "license_url": "",
+            "page_url": "https://commons.wikimedia.org/wiki/File:Satellite_Orbit_Earth.jpg"
+        }
+
+        # Temporary file for testing caption annotation
+        test_post_file = Path("test_attrib_post.json")
+        try:
+            test_post_file.write_text(json.dumps(post), encoding="utf-8")
+
+            # Annotate Story 1
+            generate_image.annotate_image_credit(post, photo_info_1, caption_path=str(test_post_file), story_index=1)
+            self.assertIn("Story 1 Image credit:", post["caption"])
+            self.assertIn(photo_info_1["title"], post["caption"])
+
+            # Story 2 had no photo (illustration) -> no credit appended for story 2
+            generate_image.annotate_image_credit(post, None, caption_path=str(test_post_file), story_index=2)
+            self.assertNotIn("Story 2", post["caption"])
+
+            # Annotate Story 3
+            generate_image.annotate_image_credit(post, photo_info_3, caption_path=str(test_post_file), story_index=3)
+            self.assertIn("Story 3 Image credit:", post["caption"])
+            self.assertIn(photo_info_3["title"], post["caption"])
+
+            # Verify caption remains valid length
+            self.assertLessEqual(len(post["caption"]), 2200)
+        finally:
+            if test_post_file.is_file():
+                test_post_file.unlink()
+
+    def test_fail_safe_broken_asset_fallback(self):
+        canvas = Image.new("RGBA", (1080, 1350), (10, 24, 45, 255))
+        # Corrupted photo_info with non-Image object
+        corrupted_info = {"image": "corrupt_data_payload"}
+        res = generate_image.crop_photo(
+            canvas, corrupted_info, (65, 125, 1015, 615),
+            category="BUSINESS", article={"title": "Test story with broken asset"}
+        )
+        self.assertFalse(res, "Expected fallback return value False when photo is broken")
+        # Ensure canvas remained intact and valid
+        self.assertEqual(canvas.size, (1080, 1350))
+
+    def test_disqualifier_keywords_coverage(self):
+        disqualifiers = generate_image.MAP_DIAGRAM_DISQUALIFIERS
+        for required_word in ("map", "diagram", "chart", "graph", "screenshot", "flag", "coat of arms", "seal", "stamp"):
+            self.assertIn(required_word, disqualifiers)
+
+
 if __name__ == "__main__":
     unittest.main()
