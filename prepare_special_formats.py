@@ -49,11 +49,48 @@ def is_english(text, min_confidence=0.45):
     text = re.sub(r"https?://\S+", "", str(text or "")).strip()
     if not is_latin_script(text) or sum(ch.isalpha() for ch in text) < 8:
         return False
+    norm_text = text.lower()
     try:
-        guesses = detect_langs(text)
-        return bool(guesses and guesses[0].lang == "en" and guesses[0].prob >= min_confidence)
+        guesses = detect_langs(norm_text)
+        if guesses and guesses[0].lang == "en" and guesses[0].prob >= min_confidence:
+            return True
     except LangDetectException:
+        pass
+    common_english = {
+        "the", "be", "to", "of", "and", "a", "in", "that", "have", "it",
+        "for", "not", "on", "with", "he", "as", "you", "do", "at", "this",
+        "but", "his", "by", "from", "they", "we", "say", "her", "she", "or",
+        "an", "will", "my", "one", "all", "would", "there", "their", "what",
+        "so", "up", "out", "if", "about", "who", "which", "when", "can",
+        "into", "year", "your", "could", "them", "other", "than", "then",
+        "now", "its", "over", "also", "after", "two", "how", "our", "new"
+    }
+    tokens = re.findall(r"[a-z]+", norm_text)
+    return sum(1 for t in tokens if t in common_english) >= 1
+
+
+def verify_quote_exact_match(quote: str, source_text: str) -> bool:
+    """Verify that quote appears verbatim, word-for-word, including punctuation, in source_text."""
+    if not quote or not source_text:
         return False
+    q_norm = " ".join(str(quote).strip().split())
+    s_norm = " ".join(str(source_text).strip().split())
+
+    if q_norm in s_norm:
+        return True
+
+    # Check with normalized curly/straight quotation marks and dashes
+    char_replacements = {
+        "“": '"', "”": '"', "‘": "'", "’": "'",
+        "–": "-", "—": "-", "…": "..."
+    }
+    q_sub = q_norm
+    s_sub = s_norm
+    for orig, repl in char_replacements.items():
+        q_sub = q_sub.replace(orig, repl)
+        s_sub = s_sub.replace(orig, repl)
+
+    return q_sub in s_sub
 
 
 def clean_text(value):
@@ -290,7 +327,8 @@ def extract_attributed_quote(body):
     ]
     after_pattern = re.compile(r"^\s*(?:,|—|–|-)?\s*(?:said|says|told|warned|added|stated|noted|explained|argued|wrote|announced)\s+(?P<speaker>(?:[A-Z][A-Za-zÀ-ÖØ-öø-ÿ'.’\-]*\s+){0,4}[A-Z][A-Za-zÀ-ÖØ-öø-ÿ'.’\-]*)")
     for match in quote_re.finditer(body):
-        quote = clean_text(match.group("quote")).strip(" ,;:—–-")
+        # Preserve the exact quotation word for word, including all internal and trailing punctuation
+        quote = clean_text(match.group("quote")).strip()
         wc = len(quote.split())
         if not 5 <= wc <= 45 or not is_english(quote):
             continue
@@ -311,7 +349,8 @@ def extract_attributed_quote(body):
                 if name_is_plausible(candidate):
                     speaker = candidate
         if speaker:
-            return {"quote_text": quote, "speaker": speaker}
+            if verify_quote_exact_match(quote, body):
+                return {"quote_text": quote, "speaker": speaker}
     return None
 
 
@@ -320,18 +359,42 @@ def save_json(path, value):
 
 
 def attach_quote_to_article(article, fetch=True):
-    payload = get_article_payload(article.get("url", "")) if fetch else None
+    url = article.get("url", "")
+    payload = get_article_payload(url) if fetch else None
     if not payload:
         return None
-    found = extract_attributed_quote(payload.get("body", ""))
+    body = payload.get("body", "")
+
+    # If the article already has an intended quote, verify it against the source body
+    existing_quote = str(article.get("quote_text", "")).strip()
+    existing_speaker = str(article.get("speaker", "")).strip()
+
+    if existing_quote and existing_speaker:
+        if verify_quote_exact_match(existing_quote, body):
+            enriched = dict(article)
+            enriched["quote_text"] = existing_quote
+            enriched["speaker"] = existing_speaker
+            enriched["quote_verified"] = True
+            enriched["quote_source_url"] = str(url)
+            enriched["quote_verification_method"] = "Exact quoted text and speaker verified against source page."
+            if "speaker_role" not in enriched:
+                enriched["speaker_role"] = ""
+            return enriched
+        else:
+            print(f"[WARN] Existing quote failed exact source verification against {article.get('domain')}; skipping unverified quote.")
+            return None
+
+    # Otherwise, extract an authentic attributed quote from the source body
+    found = extract_attributed_quote(body)
     if not found:
         return None
     enriched = dict(article)
     enriched.update(found)
     enriched["quote_verified"] = True
-    enriched["quote_source_url"] = str(article.get("url", ""))
+    enriched["quote_source_url"] = str(url)
     enriched["quote_verification_method"] = "Exact quoted text and nearby speaker attribution found on the publisher page; not independently corroborated."
-    enriched["speaker_role"] = ""
+    if "speaker_role" not in enriched:
+        enriched["speaker_role"] = ""
     return enriched
 
 

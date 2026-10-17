@@ -149,6 +149,8 @@ def validate_english_text(text, label, min_words=None, max_words=None):
     if min_words is not None and wc < min_words:
         raise ValueError(f"Rejected {label}: too few words ({wc} < {min_words})")
     if max_words is not None and wc > max_words:
+        if "quotation" in label or "quote" in label:
+            raise ValueError(f"Rejected {label}: quotation exceeds {max_words} words ({wc} words). Never shorten or truncate a quotation.")
         words = text.split()[:max_words]
         text = " ".join(words)
     return text
@@ -993,7 +995,7 @@ def render_gov_illustration(w, h):
     for i in range(1, 5):
         col_x = (cx - gw // 2) + i * col_step
         d.rectangle((col_x - col_w // 2, col_top, col_x + col_w // 2, col_bot), fill=(45, 60, 85), outline=(180, 200, 225), width=1)
-    draw_editorial_pill(d, w, h, "INSTITUTIONAL REPORT", accent=(180, 200, 225), fill=(18, 24, 38))
+    draw_editorial_pill(d, w, h, "INSTITUTIONAL ILLUSTRATION", accent=(180, 200, 225), fill=(18, 24, 38))
     return im
 
 
@@ -1014,7 +1016,7 @@ def render_quote_illustration(w, h):
         bx = start_x + i * (bar_w + gap)
         by = cy + int(h * 0.12) - bh // 2
         d.rounded_rectangle((bx, by, bx + bar_w, by + bh), radius=bar_w // 2, fill=(45, 160, 95))
-    draw_editorial_pill(d, w, h, "VERIFIED STATEMENT", accent=(45, 160, 95), fill=(8, 36, 24))
+    draw_editorial_pill(d, w, h, "STATEMENT ILLUSTRATION", accent=(45, 160, 95), fill=(8, 36, 24))
     return im
 
 
@@ -1321,6 +1323,12 @@ def draw_template_05(article, post, photo):
 
 def draw_template_06(article, post, photo):
     """Format 06: QUOTES & PUBLIC STATEMENTS"""
+    if article.get("quote_verified") is not True:
+        raise ValueError(
+            "Format 06 REFUSAL: Quotation cannot be verified from original source (quote_verified is not True). "
+            "Never present unverified or rewritten quotations inside quotation marks. "
+            "Skip Format 06 and use an appropriate non-quote format instead."
+        )
     quote = validate_english_text(article.get("quote_text"), "verified quotation", 5, 45)
     speaker = validate_english_text(article.get("speaker"), "speaker name", 1, 8)
 
@@ -1409,6 +1417,12 @@ def render_approved_format(template_id, article, post):
         return image, roundup_post, photos
 
     if template_id == "06":
+        if article.get("quote_verified") is not True or not article.get("quote_text") or not article.get("speaker"):
+            raise ValueError(
+                "Format 06 REFUSAL: Quotation cannot be verified from original source (quote_verified is not True). "
+                "Never present unverified or rewritten quotations inside quotation marks. "
+                "Skip Format 06 and use an appropriate non-quote format instead."
+            )
         photo = query_commons_image(article.get("speaker", ""), require_all_terms=True)
     else:
         photo = query_commons_image(article)
@@ -1449,6 +1463,13 @@ def main():
         selection_reason = f"Forced via environment variable: Format {template_id} ({FORMAT_REGISTRY[template_id]['name']})"
     else:
         template_id, selection_reason = classify_format_for_article(article, roundup_exists)
+
+    if template_id == "06" and not (article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker")):
+        print("[WARN] Format 06 skipped: quote is not source-verified (quote_verified is not True). Using appropriate non-quote format instead.")
+        clean_article = dict(article)
+        clean_article.pop("quote_text", None)
+        clean_article.pop("quote_verified", None)
+        template_id, selection_reason = classify_format_for_article(clean_article, roundup_exists)
 
     format_info = FORMAT_REGISTRY[template_id]
     print(f"Format Selected: Format {template_id} — {format_info['name']}")

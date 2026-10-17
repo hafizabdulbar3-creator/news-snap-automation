@@ -22,6 +22,9 @@ import select_article
 import post_generator
 import generate_image
 import instagram_publisher
+import prepare_special_formats
+import format_registry
+from unittest.mock import patch
 
 
 class TestSyntax(unittest.TestCase):
@@ -987,6 +990,203 @@ class TestImageQualityAndSafeguards(unittest.TestCase):
                 roundup_path.unlink()
             if roundup_post_created and roundup_post_path.is_file():
                 roundup_post_path.unlink()
+
+class TestQuoteVerificationAndPreservation(unittest.TestCase):
+    """Regression tests for NEWS SNAP quote verification, verbatim preservation, and refusal safeguards."""
+
+    def test_verify_quote_exact_match_verbatim_and_punctuation(self):
+        source_text = (
+            "During the press conference at the summit, António Guterres declared, "
+            "“We stand firmly behind the integrity, independence, and impartiality of the international court.” "
+            "He warned that unilateral sanctions undermine global justice."
+        )
+
+        # 1. Exact quote with identical words and punctuation matches
+        exact_quote = "We stand firmly behind the integrity, independence, and impartiality of the international court."
+        self.assertTrue(
+            prepare_special_formats.verify_quote_exact_match(exact_quote, source_text),
+            "Exact quote with punctuation must pass verification"
+        )
+
+        # 2. Straight quote normalization works
+        quote_with_quotes = '"We stand firmly behind the integrity, independence, and impartiality of the international court."'
+        self.assertTrue(
+            prepare_special_formats.verify_quote_exact_match(quote_with_quotes, source_text)
+        )
+
+        # 3. Rewritten, paraphrased, or fabricated quote fails verification
+        paraphrased_quote = "We strongly support the integrity and independence of the court."
+        self.assertFalse(
+            prepare_special_formats.verify_quote_exact_match(paraphrased_quote, source_text),
+            "Paraphrased or rewritten quotation must fail verification"
+        )
+
+        # 4. Truncated or modified quote that changes meaning/wording fails if not exact substring
+        modified_quote = "We stand firmly behind the integrity of international courts everywhere."
+        self.assertFalse(
+            prepare_special_formats.verify_quote_exact_match(modified_quote, source_text),
+            "Modified quotation must fail verification"
+        )
+
+        # 5. Empty inputs fail
+        self.assertFalse(prepare_special_formats.verify_quote_exact_match("", source_text))
+        self.assertFalse(prepare_special_formats.verify_quote_exact_match(exact_quote, ""))
+
+    def test_quotation_never_shortened_or_truncated(self):
+        # validate_english_text must raise ValueError rather than truncating quotes that exceed max_words
+        long_quote = (
+            "The international community must come together to uphold the fundamental principles of "
+            "justice, accountability, and the rule of law across all sovereign nations, ensuring that "
+            "no individual or government can act with impunity or disregard established international "
+            "legal treaties and human rights protections in times of conflict."
+        )
+        self.assertGreater(len(long_quote.split()), 45)
+        with self.assertRaises(ValueError) as ctx:
+            generate_image.validate_english_text(long_quote, "verified quotation", 5, 45)
+        self.assertIn("Never shorten or truncate a quotation", str(ctx.exception))
+
+        # A non-quote label still supports safe length bounding if needed
+        non_quote = (
+            "Global ministers and international delegates convened today in Geneva to negotiate new "
+            "environmental protection agreements, addressing climate change, renewable energy adoption, "
+            "economic stability, sustainable development goals, and technological collaboration across "
+            "developed and developing nations in response to extreme weather patterns."
+        )
+        self.assertGreater(len(non_quote.split()), 30)
+        truncated_non_quote = generate_image.validate_english_text(non_quote, "headline", 5, 20)
+        self.assertEqual(len(truncated_non_quote.split()), 20)
+
+        # Valid quote preserves punctuation and exact words
+        valid_quote = "We must act now, before it is too late; history will judge our actions."
+        result = generate_image.validate_english_text(valid_quote, "verified quotation", 5, 45)
+        self.assertEqual(result, valid_quote)
+
+    def test_format_06_refusal_when_quote_unverified(self):
+        article_unverified = {
+            "title": "Diplomat Remarks on International Sanctions",
+            "url": "https://reuters.com/world/diplomat-remarks",
+            "domain": "reuters.com",
+            "quote_text": "We stand firmly behind the integrity and independence of international justice institutions.",
+            "speaker": "António Guterres",
+            "speaker_role": "UN Secretary-General",
+            "quote_verified": False  # Explicitly unverified
+        }
+        post = {
+            "headline": "Diplomat Speaks on Sanctions",
+            "curiosity_line": "Key statements and implications",
+            "caption": "A detailed discussion on international sanctions.",
+            "hashtags": ["#NewsSnap", "#Diplomacy"]
+        }
+
+        # 1. draw_template_06 raises ValueError when quote_verified is False or not True
+        with self.assertRaises(ValueError) as ctx:
+            generate_image.draw_template_06(article_unverified, post, photo=None)
+        self.assertIn("Format 06 REFUSAL", str(ctx.exception))
+
+        # 2. draw_template_06 raises ValueError when quote_verified is missing
+        article_missing_flag = dict(article_unverified)
+        del article_missing_flag["quote_verified"]
+        with self.assertRaises(ValueError) as ctx:
+            generate_image.draw_template_06(article_missing_flag, post, photo=None)
+        self.assertIn("Format 06 REFUSAL", str(ctx.exception))
+
+        # 3. render_approved_format('06', ...) refuses unverified quote
+        with self.assertRaises(ValueError) as ctx:
+            generate_image.render_approved_format("06", article_unverified, post)
+        self.assertIn("Format 06 REFUSAL", str(ctx.exception))
+
+        # 4. render_approved_format('06', ...) refuses missing speaker or quote_text
+        article_no_speaker = dict(article_unverified)
+        article_no_speaker["quote_verified"] = True
+        article_no_speaker["speaker"] = ""
+        with self.assertRaises(ValueError) as ctx:
+            generate_image.render_approved_format("06", article_no_speaker, post)
+        self.assertIn("Format 06 REFUSAL", str(ctx.exception))
+
+    def test_format_06_skips_to_appropriate_non_quote_format_when_unverified(self):
+        article_unverified = {
+            "title": "US Imposes Sanctions on ICC Officials Over Inquiries",
+            "classification": {"topic": "Diplomacy"},
+            "summary": "Economic sanctions imposed against ICC prosecutors.",
+            "url": "https://reuters.com/world/icc-sanctions",
+            "domain": "reuters.com",
+            "quote_text": "We stand firmly behind the integrity and independence of international justice institutions.",
+            "speaker": "António Guterres",
+            "quote_verified": False  # Unverified
+        }
+
+        # Rule 1 in classify_format_for_article must skip Format 06 and fallback to standard format (Format 05)
+        fmt_id, reason = format_registry.classify_format_for_article(article_unverified, roundup_exists=False)
+        self.assertEqual(fmt_id, "05", "Unverified quote must fallback to appropriate non-quote format (05)")
+        self.assertNotIn("Format 06", reason)
+
+        # Corporate story with unverified quote falls back to Format 03
+        corp_article = {
+            "title": "Tech Giant CEO Steps Down After Ten Years",
+            "quote_text": "It has been an honour to lead this team.",
+            "speaker": "Jane Doe",
+            "quote_verified": False
+        }
+        fmt_id, reason = format_registry.classify_format_for_article(corp_article, roundup_exists=False)
+        self.assertEqual(fmt_id, "03", "Corporate article with unverified quote must fallback to Format 03")
+
+        # Emergency story with unverified quote falls back to Format 01
+        emergency_article = {
+            "title": "Massive Wildfire Forces Urgent Evacuations",
+            "quote_text": "Residents must leave immediately.",
+            "speaker": "Fire Chief",
+            "quote_verified": False
+        }
+        fmt_id, reason = format_registry.classify_format_for_article(emergency_article, roundup_exists=False)
+        self.assertEqual(fmt_id, "01", "Emergency article with unverified quote must fallback to Format 01")
+
+        # Fully verified quote successfully selects Format 06
+        verified_article = dict(article_unverified)
+        verified_article["quote_verified"] = True
+        fmt_id, reason = format_registry.classify_format_for_article(verified_article, roundup_exists=False)
+        self.assertEqual(fmt_id, "06", "Verified quote and speaker must select Format 06")
+
+    def test_attach_quote_verification_with_source_body(self):
+        article = {
+            "title": "World Court Press Briefing",
+            "url": "https://reuters.com/world/court-briefing",
+            "domain": "reuters.com",
+            "quote_text": "We stand firmly behind the integrity and independence of international justice institutions.",
+            "speaker": "António Guterres"
+        }
+
+        # Case 1: Body contains exact quote -> attach_quote_to_article verifies and returns enriched dict
+        matching_body = (
+            "At the United Nations briefing, António Guterres declared, "
+            "“We stand firmly behind the integrity and independence of international justice institutions.” "
+            "The statement was delivered in response to recent developments."
+        )
+        with patch("prepare_special_formats.get_article_payload", return_value={"body": matching_body}):
+            result = prepare_special_formats.attach_quote_to_article(article, fetch=True)
+            self.assertIsNotNone(result)
+            self.assertTrue(result.get("quote_verified"))
+            self.assertEqual(result.get("quote_text"), article["quote_text"])
+            self.assertEqual(result.get("speaker"), article["speaker"])
+
+        # Case 2: Body contains different / rewritten wording -> attach_quote_to_article rejects and returns None
+        mismatched_body = (
+            "At the United Nations briefing, António Guterres spoke about the importance of courts. "
+            "He emphasized that nations should respect legal frameworks."
+        )
+        with patch("prepare_special_formats.get_article_payload", return_value={"body": mismatched_body}):
+            result = prepare_special_formats.attach_quote_to_article(article, fetch=True)
+            self.assertIsNone(result, "Quote failing exact match against source body must be rejected (return None)")
+
+    def test_vector_illustrations_visibly_labelled_as_illustrations(self):
+        # 1. Quote illustration has visible "STATEMENT ILLUSTRATION" badge
+        quote_ill = generate_image.render_quote_illustration(1080, 1350)
+        self.assertEqual(quote_ill.size, (1080, 1350))
+        self.assertEqual(quote_ill.mode, "RGB")
+
+        # 2. Government / Institutional illustration has visible "INSTITUTIONAL ILLUSTRATION" badge
+        gov_ill = generate_image.render_gov_illustration(1080, 840)
+        self.assertEqual(gov_ill.size, (1080, 840))
+        self.assertEqual(gov_ill.mode, "RGB")
 
 
 if __name__ == "__main__":
