@@ -351,6 +351,7 @@ GENERIC_HEADLINE_VERBS = {
 }
 
 KNOWN_ENTITIES = [
+    "International Criminal Court", "International Court of Justice",
     "International Space Station", "United Nations", "Federal Reserve",
     "European Union", "White House", "Supreme Court", "Wall Street",
     "World Bank", "Bank of England", "European Central Bank",
@@ -358,6 +359,112 @@ KNOWN_ENTITIES = [
     "National Park", "World Health Organization", "International Monetary Fund",
     "European Commission", "Security Council", "Department of Homeland Security",
 ]
+
+ACRONYM_DISAMBIGUATIONS = {
+    "ICC": {
+        "court": {
+            "keywords": {"court", "sanction", "sanctions", "prosecutor", "hague", "investigation", "warrant", "judge", "justice", "war crimes", "tribunal", "legal", "official", "officials"},
+            "expanded": "International Criminal Court",
+            "conflicts": {"commerce centre", "hong kong", "kowloon", "skyscraper", "tallest building", "cricket", "stadium", "champions trophy", "world cup"},
+        },
+        "cricket": {
+            "keywords": {"cricket", "match", "tournament", "trophy", "batsman", "bowler", "wicket", "innings", "t20", "odi", "bcci", "world cup"},
+            "expanded": "International Cricket Council",
+            "conflicts": {"court", "hague", "sanction", "prosecutor", "war crimes", "commerce centre", "skyscraper"},
+        },
+    },
+    "ICJ": {
+        "court": {
+            "keywords": {"court", "justice", "hague", "ruling", "dispute", "genocide", "un", "tribunal", "legal"},
+            "expanded": "International Court of Justice",
+            "conflicts": {"institute", "cricket", "commerce"},
+        },
+    },
+    "SEC": {
+        "finance": {
+            "keywords": {"securities", "exchange", "commission", "fraud", "stocks", "wall street", "crypto", "investor", "fund", "gensler", "market", "trading"},
+            "expanded": "Securities and Exchange Commission",
+            "conflicts": {"southeastern conference", "football", "alabama", "georgia", "ncaa", "touchdown"},
+        },
+        "sports": {
+            "keywords": {"football", "college", "conference", "touchdown", "ncaa", "quarterback"},
+            "expanded": "Southeastern Conference",
+            "conflicts": {"securities", "exchange commission", "fraud", "crypto"},
+        },
+    },
+    "WHO": {
+        "health": {
+            "keywords": {"health", "disease", "pandemic", "virus", "vaccine", "outbreak", "medical", "hospital", "organization", "geneva"},
+            "expanded": "World Health Organization",
+            "conflicts": {"rock band", "pete townshend", "roger daltrey", "guitarist", "concert", "album"},
+        },
+    },
+    "COP": {
+        "climate": {
+            "keywords": {"climate", "summit", "conference", "emissions", "un", "dubai", "baku", "glasgow", "paris", "environment", "warming", "fossil"},
+            "expanded": "UN Climate Change Conference",
+            "conflicts": {"police", "officer", "patrol", "handcuffs", "cop car", "sheriff", "arrest"},
+        },
+    },
+    "IMF": {
+        "finance": {
+            "keywords": {"fund", "monetary", "loan", "economy", "bailout", "debt", "inflation", "gdp"},
+            "expanded": "International Monetary Fund",
+            "conflicts": {"impossible mission force", "movie", "film"},
+        },
+    },
+    "FDA": {
+        "health": {
+            "keywords": {"drug", "food", "medicine", "approval", "vaccine", "treatment", "health", "pharmaceutical", "fda"},
+            "expanded": "Food and Drug Administration",
+            "conflicts": set(),
+        },
+    },
+    "EPA": {
+        "environment": {
+            "keywords": {"environment", "pollution", "emission", "clean", "water", "air", "environmental"},
+            "expanded": "Environmental Protection Agency",
+            "conflicts": {"pressphoto"},
+        },
+    },
+}
+
+
+def resolve_acronym_and_conflicts(title: str, text_context: str = ""):
+    """Detect acronyms in title, resolve to full entity names using context, and identify conflict keywords."""
+    combined_context = f"{title} {text_context}".lower()
+    context_tokens = set(re.findall(r"[a-z0-9]+", combined_context))
+
+    resolved_queries = []
+    conflict_terms = set()
+    raw_acronyms = set(re.findall(r"\b[A-Z]{2,6}\b", title))
+
+    stop_acronyms = {"NEWS", "SNAP", "LIVE", "TOP", "DAILY", "POST", "AND", "THE", "FOR", "WITH", "NEW", "ALL"}
+    raw_acronyms -= stop_acronyms
+
+    for acr in sorted(raw_acronyms):
+        if acr in ACRONYM_DISAMBIGUATIONS:
+            senses = ACRONYM_DISAMBIGUATIONS[acr]
+            best_sense = None
+            max_matches = 0
+            for sense_key, sense_info in senses.items():
+                kw_matches = len(context_tokens.intersection(sense_info["keywords"]))
+                if kw_matches > max_matches:
+                    max_matches = kw_matches
+                    best_sense = sense_info
+
+            if best_sense and max_matches >= 1:
+                resolved_queries.append(best_sense["expanded"])
+                conflict_terms.update(best_sense["conflicts"])
+            else:
+                # Ambiguous without clear context match: DO NOT search bare acronym!
+                pass
+        else:
+            # For general unambiguous acronyms (e.g. USCIS, EAD, NATO, NASA)
+            if len(acr) >= 3:
+                resolved_queries.append(acr)
+
+    return resolved_queries, conflict_terms
 
 
 def name_is_plausible(name):
@@ -420,12 +527,19 @@ def build_photo_search_queries(article, fallback_query=""):
     """Extract prioritized, high-signal entity and topic search queries for Wikimedia Commons."""
     if not isinstance(article, dict):
         q = str(article or fallback_query or "").strip()
-        return [q] if q else []
+        if not q:
+            return []
+        resolved, _ = resolve_acronym_and_conflicts(q, "")
+        res = list(resolved)
+        if q not in res and len(q.split()) >= 2:
+            res.append(q)
+        return res
 
     title = str(article.get("title") or fallback_query or "").strip()
     speaker = str(article.get("speaker") or "").strip()
     explicit_query = str(article.get("image_search_query") or "").strip()
     topic = str(article.get("classification", {}).get("topic") or "").strip()
+    summary = str(article.get("summary") or article.get("description") or "").strip()
 
     queries = []
 
@@ -443,12 +557,11 @@ def build_photo_search_queries(article, fallback_query=""):
             if ke not in queries:
                 queries.append(ke)
 
-    # 4. Acronyms (e.g. USCIS, NASA, WHO, IMF, FDA, NATO, EU, UN, EAD, CDC, EPA)
-    acronyms = re.findall(r"\b[A-Z]{2,6}\b", title)
-    for acr in acronyms:
-        if acr not in {"NEWS", "SNAP", "LIVE", "TOP", "DAILY", "POST", "AND", "THE", "FOR", "WITH"}:
-            if acr not in queries:
-                queries.append(acr)
+    # 4. Disambiguated acronyms using context (never search bare ambiguous acronyms like ICC)
+    resolved_acrs, _ = resolve_acronym_and_conflicts(title, f"{topic} {summary}")
+    for racr in resolved_acrs:
+        if racr not in queries:
+            queries.append(racr)
 
     # 5. Salient proper noun phrases (e.g. "Satya Nadella", "Jasper National Park")
     words = title.split()
@@ -501,12 +614,18 @@ def query_commons_image(query_or_article, require_all_terms=False):
     if os.environ.get("NEWS_SNAP_OFFLINE_PREVIEW") == "1":
         return None
 
+    conflict_terms = set()
     if isinstance(query_or_article, dict):
         candidate_queries = build_photo_search_queries(query_or_article)
+        title_context = str(query_or_article.get("title", ""))
+        topic_context = str(query_or_article.get("classification", {}).get("topic", ""))
+        summary_context = str(query_or_article.get("summary", "") or query_or_article.get("description", ""))
+        _, conflict_terms = resolve_acronym_and_conflicts(title_context, f"{topic_context} {summary_context}")
     elif isinstance(query_or_article, str):
         candidate_queries = build_photo_search_queries({}, fallback_query=query_or_article)
         if query_or_article and query_or_article not in candidate_queries:
             candidate_queries.insert(0, query_or_article)
+        _, conflict_terms = resolve_acronym_and_conflicts(query_or_article, "")
     else:
         return None
 
@@ -581,6 +700,17 @@ def query_commons_image(query_or_article, require_all_terms=False):
             if any(bad in title.lower() for bad in MAP_DIAGRAM_DISQUALIFIERS):
                 continue
             candidate_text = (title + " " + description).lower()
+
+            # Disqualify candidate images that represent conflicting entities
+            has_conflict = False
+            for conflict_phrase in conflict_terms:
+                if conflict_phrase in candidate_text:
+                    print(f"Photo sourcing: rejected candidate '{title}' due to entity conflict with story context ('{conflict_phrase}').")
+                    has_conflict = True
+                    break
+            if has_conflict:
+                continue
+
             normalized_candidate = unicodedata.normalize("NFKD", candidate_text).encode("ascii", "ignore").decode("ascii")
             candidate_tokens = set(re.findall(r"[a-z0-9]+", normalized_candidate))
             matches = query_set.intersection(candidate_tokens)
@@ -796,7 +926,7 @@ def render_crisis_illustration(w, h):
     return im
 
 
-def render_diplomacy_illustration(w, h):
+def render_diplomacy_illustration(w, h, label="GLOBAL AFFAIRS GRAPHIC"):
     import math
     im, d = create_vector_gradient(w, h, (10, 24, 48), (5, 14, 28))
     cx, cy = w // 2, int(h * 0.44)
@@ -820,7 +950,7 @@ def render_diplomacy_illustration(w, h):
             d.line((nodes[i], nodes[j]), fill=(80, 160, 240), width=1)
     for nx, ny in nodes:
         d.ellipse((nx - 4, ny - 4, nx + 4, ny + 4), fill=(255, 255, 255), outline=(70, 160, 240), width=2)
-    draw_editorial_pill(d, w, h, "GLOBAL AFFAIRS GRAPHIC", accent=(70, 160, 240), fill=(10, 24, 45))
+    draw_editorial_pill(d, w, h, label, accent=(70, 160, 240), fill=(10, 24, 45))
     return im
 
 
@@ -925,10 +1055,11 @@ def make_illustration(width, height, category="GLOBAL NEWS", article=None):
         return render_finance_illustration(width, height)
     if any(k in combined for k in ("technology", "tech", "science", "space", "artificial intelligence", "ai", "software", "cyber", "quantum", "semiconductor", "chip", "chips", "satellite", "spacewalk", "nasa")):
         return render_tech_illustration(width, height)
+    if any(k in combined for k in ("diplomacy", "treaty", "sanctions", "sanction", "summit", "accord", "alliance", "united nations", "geopolitics", "international", "ambassador", "foreign", "icc", "icj")):
+        label = "DIPLOMACY & SANCTIONS GRAPHIC" if any(s in combined for s in ("sanction", "sanctions", "icc", "icj")) else "GLOBAL AFFAIRS GRAPHIC"
+        return render_diplomacy_illustration(width, height, label=label)
     if any(k in combined for k in ("leadership", "corporate", "government", "parliament", "congress", "senate", "court", "supreme", "legal", "policy", "regulator", "ministry", "minister", "president", "chancellor", "ceo")):
         return render_gov_illustration(width, height)
-    if any(k in combined for k in ("diplomacy", "treaty", "sanctions", "summit", "accord", "alliance", "united nations", "geopolitics", "international", "ambassador", "foreign")):
-        return render_diplomacy_illustration(width, height)
     return render_global_illustration(width, height)
 
 

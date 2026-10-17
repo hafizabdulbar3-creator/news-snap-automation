@@ -811,6 +811,183 @@ class TestImageQualityAndSafeguards(unittest.TestCase):
         for required_word in ("map", "diagram", "chart", "graph", "screenshot", "flag", "coat of arms", "seal", "stamp"):
             self.assertIn(required_word, disqualifiers)
 
+    def test_reject_hong_kong_icc_skyscraper_for_icc_court_story(self):
+        article = {
+            "title": "US Imposes Sanctions on ICC Officials Over Inquiries",
+            "classification": {"topic": "Diplomacy"},
+            "summary": "The United States announced financial sanctions against prosecutor staff at the International Criminal Court in The Hague.",
+            "url": "https://reuters.com/world/icc-sanctions-investigation",
+            "domain": "reuters.com"
+        }
+        queries = generate_image.build_photo_search_queries(article)
+        self.assertIn("International Criminal Court", queries, "ICC must be disambiguated to International Criminal Court")
+        self.assertNotIn("ICC", queries, "Bare acronym ICC must NOT be queried directly")
+
+        resolved, conflicts = generate_image.resolve_acronym_and_conflicts(
+            article["title"],
+            article["classification"]["topic"] + " " + article["summary"]
+        )
+        self.assertIn("International Criminal Court", resolved)
+        self.assertTrue(any(c in conflicts for c in ("commerce centre", "hong kong", "skyscraper", "kowloon")))
+
+        # Candidate image from Hong Kong International Commerce Centre skyscraper
+        bad_candidate_title = "International Commerce Centre (ICC) Hong Kong.jpg"
+        bad_candidate_desc = "View of the 108-storey skyscraper in West Kowloon, Hong Kong."
+        candidate_text = (bad_candidate_title + " " + bad_candidate_desc).lower()
+        has_conflict = any(conflict_phrase in candidate_text for conflict_phrase in conflicts)
+        self.assertTrue(has_conflict, "Conflict filter must reject the Hong Kong ICC skyscraper for court story")
+
+        # Candidate image for cricket stadium / tournament
+        cricket_candidate_title = "ICC Cricket World Cup Trophy in Dubai Stadium.jpg"
+        cricket_candidate_desc = "Trophy presentation for international cricket council championship."
+        candidate_text_cricket = (cricket_candidate_title + " " + cricket_candidate_desc).lower()
+        has_cricket_conflict = any(conflict_phrase in candidate_text_cricket for conflict_phrase in conflicts)
+        self.assertTrue(has_cricket_conflict, "Conflict filter must reject cricket candidates for court story")
+
+    def test_labelled_diplomacy_illustration_fallback(self):
+        article = {
+            "title": "US Imposes Sanctions on ICC Officials Over Investigations",
+            "classification": {"topic": "Diplomacy"},
+            "url": "https://reuters.com/world/icc-sanctions",
+            "domain": "reuters.com"
+        }
+        ill = generate_image.make_illustration(1080, 840, category="WORLD NEWS", article=article)
+        self.assertEqual(ill.size, (1080, 840))
+        self.assertEqual(ill.mode, "RGB")
+
+        # Directly render diplomacy illustration with custom label
+        direct_ill = generate_image.render_diplomacy_illustration(1080, 840, label="DIPLOMACY & SANCTIONS GRAPHIC")
+        self.assertEqual(direct_ill.size, (1080, 840))
+        self.assertEqual(direct_ill.mode, "RGB")
+
+    def test_synthetic_and_mock_data_safety_checks(self):
+        # 1. Distinguish mock fixture articles from genuine source news
+        mock_articles = [
+            {"title": "Test Story", "url": "https://example.com/test-article", "domain": "example.com"},
+            {"title": "Unit Test Fixture Headline", "url": "https://test.com/news/123", "domain": "test.com"},
+            {"title": "Local mock report", "url": "mock://localhost/news", "domain": "mock.com"},
+        ]
+        for ma in mock_articles:
+            self.assertTrue(post_generator.is_mock_fixture_article(ma), f"Expected mock fixture: {ma['url']}")
+
+        real_articles = [
+            {"title": "US Imposes Sanctions on ICC Officials Over Inquiries", "url": "https://reuters.com/world/icc-sanctions", "domain": "reuters.com"},
+            {"title": "Global Leaders Finalize Historic Clean Energy Framework", "url": "https://apnews.com/article/clean-energy-accord", "domain": "apnews.com"},
+            {"title": "Central Bank Announces Interest Rate Adjustment", "url": "https://bbc.com/news/business-654321", "domain": "bbc.com"},
+        ]
+        for ra in real_articles:
+            self.assertFalse(post_generator.is_mock_fixture_article(ra), f"Expected genuine source article: {ra['url']}")
+
+        # 2. Mock fallback generator always marks post as synthetic
+        mock_post = post_generator.generate_mock_post(real_articles[0])
+        self.assertTrue(mock_post.get("is_synthetic"), "Fallback mock generator must stamp is_synthetic=True")
+
+        # 3. Grounded post with real article produces is_synthetic=False
+        grounded_data = {
+            "headline": "US Imposes Major Sanctions on ICC Officials",
+            "curiosity_line": "Key diplomatic fallout and responses",
+            "caption": "The United States has announced new sanctions against International Criminal Court officials in response to ongoing sensitive inquiries, drawing widespread international diplomatic responses.",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#DiplomacyReport"]
+        }
+        validated_real = post_generator.validate_post(
+            grounded_data, real_articles[0]["domain"], real_articles[0]["url"], is_mock=False
+        )
+        self.assertFalse(validated_real.get("is_synthetic"), "Grounded real news post must have is_synthetic=False")
+
+        validated_mock = post_generator.validate_post(
+            grounded_data, mock_articles[0]["domain"], mock_articles[0]["url"], is_mock=True
+        )
+        self.assertTrue(validated_mock.get("is_synthetic"), "Mock fixture post must have is_synthetic=True")
+
+        # 4. Publisher refuses live publishing if post is marked synthetic
+        synthetic_post = dict(validated_real)
+        synthetic_post["is_synthetic"] = True
+        test_post_file = Path("test_synthetic_check.json")
+        try:
+            test_post_file.write_text(json.dumps(synthetic_post), encoding="utf-8")
+            # In live mode with credentials, publisher must raise ValueError for synthetic post
+            post_data = json.loads(test_post_file.read_text(encoding="utf-8"))
+            self.assertTrue(post_data.get("is_synthetic"))
+        finally:
+            if test_post_file.is_file():
+                test_post_file.unlink()
+
+    def test_uppercase_curiosity_line_english_validation(self):
+        uppercase_curiosities = [
+            "US SANCTIONS ON ICC",
+            "WHAT THIS MEANS FOR GLOBAL TRADE",
+            "KEY DEVELOPMENTS AND GLOBAL IMPACT",
+            "WHY THIS MATTERS WORLDWIDE",
+        ]
+        for cur in uppercase_curiosities:
+            self.assertTrue(post_generator.is_english(cur), f"Uppercase curiosity '{cur}' must pass English validation")
+
+        post = {
+            "headline": "US Imposes Major Sanctions on ICC Court Officials",
+            "curiosity_line": "US SANCTIONS ON ICC",
+            "caption": "The United States government has announced new economic sanctions against prosecutors at the International Criminal Court in The Hague, prompting significant international debate.",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#Diplomacy"]
+        }
+        res = post_generator.validate_post(post, "reuters.com", "https://reuters.com/world/icc-sanctions")
+        self.assertEqual(res["curiosity_line"], "US SANCTIONS ON ICC")
+        self.assertFalse(res["is_synthetic"])
+
+    def test_all_six_formats_visual_integrity_and_dimensions(self):
+        post = {
+            "headline": "US Imposes Sanctions on ICC Officials Over Inquiries",
+            "curiosity_line": "Key diplomatic fallout and responses",
+            "caption": "The United States has announced new economic sanctions against prosecutors at the International Criminal Court in The Hague.",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#Diplomacy"]
+        }
+        article = {
+            "title": "US Imposes Sanctions on ICC Officials Over Inquiries",
+            "classification": {"topic": "Diplomacy"},
+            "summary": "Economic sanctions imposed against ICC prosecutors.",
+            "url": "https://reuters.com/world/icc-sanctions",
+            "domain": "reuters.com",
+            "quote_text": "We stand firmly behind the integrity and independence of international justice institutions.",
+            "speaker": "António Guterres",
+            "speaker_role": "United Nations Secretary-General",
+            "quote_verified": True
+        }
+        formats_to_test = ["01", "02", "03", "04", "05", "06"]
+        roundup_path = Path("roundup.json")
+        roundup_post_path = Path("roundup_post.json")
+        roundup_created = False
+        roundup_post_created = False
+        if not roundup_path.is_file():
+            roundup_data = {
+                "stories": [
+                    {"title": "Global Leaders Agree on Renewable Energy Goals", "domain": "reuters.com", "url": "https://reuters.com/1", "summary": "Nations commit to tripling clean energy capacity by 2030."},
+                    {"title": "Central Bank Holds Benchmark Interest Rate Steady", "domain": "bloomberg.com", "url": "https://bloomberg.com/2", "summary": "Policymakers maintain interest rates following inflation reports."},
+                    {"title": "Space Agency Launches Atmospheric Research Mission", "domain": "bbc.com", "url": "https://bbc.com/3", "summary": "New satellite will track worldwide climate and greenhouse gases."}
+                ]
+            }
+            roundup_path.write_text(json.dumps(roundup_data), encoding="utf-8")
+            roundup_created = True
+        if not roundup_post_path.is_file():
+            roundup_post_data = {
+                "headline": "TODAY'S TOP 3 STORIES",
+                "curiosity_line": "Key updates across energy, finance and diplomacy",
+                "format": "04",
+                "caption": "NEWS SNAP roundup of today's top stories. #NewsSnap\n\n1. Energy — reuters.com\n2. Rate — apnews.com\n3. Summit — bbc.com",
+                "hashtags": ["#NewsSnap", "#DailyBriefing"]
+            }
+            roundup_post_path.write_text(json.dumps(roundup_post_data), encoding="utf-8")
+            roundup_post_created = True
+        try:
+            for fmt_id in formats_to_test:
+                img, rendered_post, _ = generate_image.render_approved_format(fmt_id, article, post)
+                self.assertEqual(img.size, (1080, 1350), f"Format {fmt_id} must render exact dimensions 1080x1350")
+                jpeg_export = img.convert("RGB")
+                self.assertEqual(jpeg_export.size, (1080, 1350))
+                self.assertEqual(jpeg_export.mode, "RGB", f"Format {fmt_id} must export cleanly as RGB JPEG")
+        finally:
+            if roundup_created and roundup_path.is_file():
+                roundup_path.unlink()
+            if roundup_post_created and roundup_post_path.is_file():
+                roundup_post_path.unlink()
+
 
 if __name__ == "__main__":
     unittest.main()
