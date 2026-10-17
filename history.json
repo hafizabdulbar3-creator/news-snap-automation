@@ -81,6 +81,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T12:14:25.009833+00:00"
+    },
+    {
+      "url": "https://www.thehindu.com/business/Economy/imf-slightly-raises-forecast-for-2026-global-growth-to-31-citing-resilience-to-shocks/article71577836.ece",
+      "title": "IMF upgrades 2026 growth forecast but warns of 'split' outlook",
+      "headline": "IMF Raises 2026 Global Growth Forecast But Warns of Split Outlook",
+      "domain": "thehindu.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T15:43:46.367327+00:00"
     }
   ]
 }
