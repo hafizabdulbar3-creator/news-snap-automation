@@ -54,6 +54,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T07:30:11.871402+00:00"
+    },
+    {
+      "url": "https://www.thehindu.com/news/international/earthquake-of-magnitude-57-jolts-pakistans-balochistan/article71595718.ece",
+      "title": "Earthquake of magnitude 5.7 jolts Pakistan's Balochistan",
+      "headline": "Earthquake of magnitude 5.7 jolts Pakistan's Balochistan",
+      "domain": "thehindu.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T08:04:51.512999+00:00"
     }
   ]
 }
