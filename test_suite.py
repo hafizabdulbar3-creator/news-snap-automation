@@ -392,6 +392,157 @@ class TestInstagramPublisher(unittest.TestCase):
             instagram_publisher.verify_public_image_url("https://", max_retries=1)
         self.assertIn("must be a valid public https url", str(ctx.exception).lower())
 
+    def test_instagram_login_host_and_endpoints(self):
+        self.assertEqual(instagram_publisher.INSTAGRAM_GRAPH_HOST, "graph.instagram.com")
+        self.assertTrue(
+            instagram_publisher.GRAPH_API_BASE.startswith("https://graph.instagram.com/"),
+            f"Expected base URL to start with https://graph.instagram.com/, got {instagram_publisher.GRAPH_API_BASE}"
+        )
+        self.assertTrue(instagram_publisher.is_supported_api_version("v21.0"))
+        self.assertTrue(instagram_publisher.is_supported_api_version("v22.0"))
+        self.assertTrue(instagram_publisher.is_supported_api_version("v23.0"))
+        self.assertFalse(instagram_publisher.is_supported_api_version("v19.0"))
+        self.assertFalse(instagram_publisher.is_supported_api_version("v18.0"))
+        self.assertFalse(instagram_publisher.is_supported_api_version("invalid_version"))
+        self.assertFalse(instagram_publisher.is_supported_api_version(""))
+
+    def test_instagram_login_required_permissions(self):
+        perms = instagram_publisher.REQUIRED_PERMISSIONS
+        self.assertIn("instagram_business_basic", perms)
+        self.assertIn("instagram_business_content_publish", perms)
+
+    def test_token_masking_and_sanitization(self):
+        raw_token = "EAABwz123456789xyzToken99"
+        masked = instagram_publisher.mask_token(raw_token)
+        self.assertEqual(masked, "EAAB...en99")
+        self.assertEqual(instagram_publisher.mask_token("short"), "***")
+        self.assertEqual(instagram_publisher.mask_token(""), "")
+
+        # Test URL parameter sanitization
+        url_with_token = f"https://graph.instagram.com/v22.0/me?access_token={raw_token}&fields=id"
+        sanitized_url = instagram_publisher.sanitize_token(url_with_token, raw_token)
+        self.assertNotIn(raw_token, sanitized_url)
+        self.assertIn(masked, sanitized_url)
+
+        # Test header and error message sanitization
+        err_msg = f"HTTP 401 Unauthorized: Authorization: Bearer {raw_token} failed"
+        sanitized_err = instagram_publisher.sanitize_token(err_msg, raw_token)
+        self.assertNotIn(raw_token, sanitized_err)
+        self.assertIn(masked, sanitized_err)
+
+    def test_account_id_resolution_from_numeric(self):
+        numeric_id = "17841405322997123"
+        resolved, _ = instagram_publisher.resolve_instagram_account_id(numeric_id, access_token="")
+        self.assertEqual(resolved, numeric_id)
+
+        # Leading @ stripped
+        resolved_at, _ = instagram_publisher.resolve_instagram_account_id("@" + numeric_id, access_token="")
+        self.assertEqual(resolved_at, numeric_id)
+
+    def test_account_id_resolution_from_username(self):
+        mock_response = {
+            "id": "17841409999999999",
+            "user_id": "17841409999999999",
+            "username": "newssnap_official",
+            "account_type": "BUSINESS"
+        }
+        with patch("instagram_publisher.fetch_account_info", return_value=mock_response):
+            # When username is provided
+            resolved, info = instagram_publisher.resolve_instagram_account_id("newssnap_official", access_token="mock_token")
+            self.assertEqual(resolved, "17841409999999999")
+            self.assertEqual(info.get("username"), "newssnap_official")
+
+            # When handle with @ is provided
+            resolved_at, _ = instagram_publisher.resolve_instagram_account_id("@newssnap_official", access_token="mock_token")
+            self.assertEqual(resolved_at, "17841409999999999")
+
+        # Refusal when username is configured but no token is present to resolve it
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.resolve_instagram_account_id("newssnap_official", access_token="")
+        self.assertIn("is a username or handle, not a numeric id", str(ctx.exception).lower())
+
+    def test_account_id_auto_discovery_when_empty(self):
+        mock_response = {
+            "user_id": "17841407777777777",
+            "username": "newssnap_global",
+            "account_type": "CREATOR"
+        }
+        with patch("instagram_publisher.fetch_account_info", return_value=mock_response):
+            resolved, info = instagram_publisher.resolve_instagram_account_id("", access_token="mock_token")
+            self.assertEqual(resolved, "17841407777777777")
+            self.assertEqual(info.get("username"), "newssnap_global")
+
+        # When neither ID nor token is provided
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.resolve_instagram_account_id("", access_token="")
+        self.assertIn("missing and could not be resolved", str(ctx.exception).lower())
+
+    def test_container_status_check(self):
+        # Successful status
+        mock_resp_finished = io.BytesIO(json.dumps({"status_code": "FINISHED"}).encode("utf-8"))
+        mock_resp_finished.status = 200
+        with patch("urllib.request.urlopen", return_value=mock_resp_finished):
+            res = instagram_publisher.check_container_status("1790001", "mock_token")
+            self.assertEqual(res.get("status_code"), "FINISHED")
+
+        # Error status
+        mock_resp_error = io.BytesIO(json.dumps({"status_code": "ERROR", "status": "Failed to process media"}).encode("utf-8"))
+        mock_resp_error.status = 200
+        with patch("urllib.request.urlopen", return_value=mock_resp_error):
+            with self.assertRaises(RuntimeError) as ctx:
+                instagram_publisher.check_container_status("1790002", "mock_token")
+            self.assertIn("failed with status_code: ERROR", str(ctx.exception))
+
+    def test_dry_run_with_instagram_login_token(self):
+        # Create minimal valid image and post files for dry-run
+        from PIL import ImageDraw
+        img = Image.new("RGB", (1080, 1350), (15, 25, 45))
+        d = ImageDraw.Draw(img)
+        d.rectangle((50, 50, 1030, 600), fill=(230, 31, 45))
+        d.text((100, 100), "TEST LOGIN CARD", fill=(255, 255, 255))
+        img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
+
+        test_post = {
+            "headline": "TEST STORY HEADLINE FOR INSTAGRAM LOGIN DRY RUN",
+            "caption": "Verified caption for testing publisher dry-run. #NewsSnap",
+            "hashtags": ["#NewsSnap"]
+        }
+        instagram_publisher.POST_PATH.write_text(json.dumps(test_post), encoding="utf-8")
+
+        temp_hist = Path("test_history_dryrun_login.json")
+        orig_hist = instagram_publisher.HISTORY_PATH
+        instagram_publisher.HISTORY_PATH = temp_hist
+
+        mock_profile = {
+            "id": "17841400012345678",
+            "username": "newssnap_bot",
+            "account_type": "BUSINESS"
+        }
+
+        try:
+            with patch("instagram_publisher.fetch_account_info", return_value=mock_profile), \
+                 patch.dict(os.environ, {
+                     "ENABLE_INSTAGRAM_POSTING": "false",
+                     "INSTAGRAM_ACCESS_TOKEN": "mock_login_token_abc123xyz",
+                     "INSTAGRAM_ACCOUNT_ID": "newssnap_bot"
+                 }):
+                instagram_publisher.main()
+
+            self.assertTrue(temp_hist.is_file(), "History file should be created in dry-run")
+            hist_data = json.loads(temp_hist.read_text(encoding="utf-8"))
+            self.assertEqual(len(hist_data.get("posted", [])), 0, "No stories should be marked as posted in dry-run")
+            self.assertEqual(len(hist_data.get("processed", [])), 1, "Story should be marked in processed list")
+            self.assertFalse(hist_data["processed"][0]["published"])
+            self.assertTrue(hist_data["processed"][0]["dry_run"])
+        finally:
+            instagram_publisher.HISTORY_PATH = orig_hist
+            if temp_hist.is_file():
+                temp_hist.unlink()
+            if instagram_publisher.IMAGE_PATH.is_file():
+                instagram_publisher.IMAGE_PATH.unlink()
+            if instagram_publisher.POST_PATH.is_file():
+                instagram_publisher.POST_PATH.unlink()
+
 
 class TestSixFormatRegistry(unittest.TestCase):
     def test_six_formats_data_preparation(self):

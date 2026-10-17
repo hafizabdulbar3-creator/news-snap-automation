@@ -10,6 +10,7 @@ Adheres strictly to safety requirements:
 
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -29,8 +30,187 @@ HISTORY_PATH = Path("history.json")
 DRY_RUN_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
 MAX_HISTORY_ENTRIES = 100
 
+# Meta Graph API configuration for Instagram Login / "Manage content on Instagram"
+INSTAGRAM_GRAPH_HOST = os.environ.get("INSTAGRAM_GRAPH_HOST", "graph.instagram.com").strip()
 GRAPH_API_VERSION = os.environ.get("GRAPH_API_VERSION", "v22.0").strip()
-GRAPH_API_BASE = f"https://graph.facebook.com/{GRAPH_API_VERSION}"
+GRAPH_API_BASE = f"https://{INSTAGRAM_GRAPH_HOST}/{GRAPH_API_VERSION}"
+
+# Required permission scopes for Instagram Login publishing
+REQUIRED_PERMISSIONS = (
+    "instagram_business_basic",
+    "instagram_business_content_publish",
+)
+SUPPORTED_GRAPH_API_VERSIONS = ("v21.0", "v22.0", "v23.0")
+
+
+def is_supported_api_version(version: str) -> bool:
+    """Validate that the Graph API version conforms to Meta versioning and is currently supported (>= v21.0)."""
+    if not version or not isinstance(version, str):
+        return False
+    clean = version.strip()
+    if not re.match(r"^v\d+\.\d+$", clean):
+        return False
+    try:
+        ver_num = float(clean.lstrip("v"))
+        return ver_num >= 21.0
+    except ValueError:
+        return False
+
+
+def mask_token(token: str) -> str:
+    """Mask access token for safe logging, exposing only first 4 and last 4 characters."""
+    if not token or not isinstance(token, str):
+        return ""
+    clean = token.strip()
+    if len(clean) <= 8:
+        return "***"
+    return f"{clean[:4]}...{clean[-4:]}"
+
+
+def sanitize_token(text: str, token: str = "") -> str:
+    """Sanitize raw tokens from exception strings, URLs, and logs to prevent credential leakage."""
+    if not text:
+        return ""
+    sanitized = str(text)
+    if token and len(token) > 4:
+        sanitized = sanitized.replace(token, mask_token(token))
+    # General regex patterns for access tokens in URLs, headers, or JSON payloads
+    sanitized = re.sub(r'access_token=([^&\s"\'\\}]+)', lambda m: f"access_token={mask_token(m.group(1))}", sanitized)
+    sanitized = re.sub(r'("access_token"\s*:\s*")([^"\s]+)(")', lambda m: f'{m.group(1)}{mask_token(m.group(2))}{m.group(3)}', sanitized)
+    sanitized = re.sub(r'(Bearer\s+)([A-Za-z0-9_\-\.]+)', lambda m: f'{m.group(1)}{mask_token(m.group(2))}', sanitized)
+    return sanitized
+
+
+def fetch_account_info(access_token: str, graph_base: str = GRAPH_API_BASE) -> dict:
+    """Fetch Instagram profile and professional account ID via the /me endpoint.
+
+    Uses Instagram Login authentication (Bearer token) to query the authenticated user's
+    user_id, id, username, name, and account_type.
+    """
+    if not access_token:
+        return {}
+    url = f"{graph_base}/me?fields=user_id,id,username,name,account_type"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Authorization": f"Bearer {access_token}",
+            "User-Agent": "NEWS-SNAP-Publisher/1.0",
+        },
+        method="GET"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.load(resp)
+    except urllib.error.HTTPError as err:
+        body = err.read().decode("utf-8", errors="replace")
+        sanitized_body = sanitize_token(body, access_token)
+        raise RuntimeError(f"Failed to query Instagram /me endpoint (HTTP {err.code}): {sanitized_body}") from err
+    except Exception as exc:
+        raise RuntimeError(f"Error querying Instagram /me endpoint: {exc}") from exc
+
+
+def resolve_instagram_account_id(
+    configured_id: str,
+    access_token: str,
+    graph_base: str = GRAPH_API_BASE
+) -> tuple:
+    """Obtain and use the actual Instagram professional account ID.
+
+    Meta Graph API publishing endpoints (/{ig_user_id}/media) require the numeric
+    Instagram professional account ID (e.g. '17841400000000001'), not a handle or username.
+
+    If configured_id is a username (e.g. '@newssnap' or 'newssnap') or is omitted,
+    this function discovers the real numeric ID via GET /me using the access token.
+
+    Returns:
+        tuple: (numeric_account_id: str, account_info: dict)
+    """
+    clean_id = (configured_id or "").strip()
+    if clean_id.startswith("@"):
+        clean_id = clean_id[1:].strip()
+
+    is_numeric = bool(clean_id and clean_id.isdigit() and len(clean_id) >= 6)
+
+    account_info = {}
+    if access_token:
+        try:
+            account_info = fetch_account_info(access_token, graph_base=graph_base)
+        except Exception as exc:
+            # If we already have a valid numeric account ID, allow execution with a warning
+            if is_numeric:
+                print(f"[WARN] Could not verify numeric account ID via /me: {exc}")
+                return clean_id, {}
+            raise
+
+        discovered_id = str(account_info.get("user_id") or account_info.get("id") or "").strip()
+        discovered_username = str(account_info.get("username") or "").strip()
+
+        if discovered_id:
+            if not is_numeric:
+                print(f"[OK] Auto-resolved numeric Instagram Professional Account ID: {discovered_id} (handle: @{discovered_username or clean_id})")
+                return discovered_id, account_info
+            else:
+                if clean_id != discovered_id:
+                    print(f"[INFO] Using verified account ID from token: {discovered_id} (configured was {clean_id})")
+                return discovered_id, account_info
+
+    if is_numeric:
+        return clean_id, account_info
+
+    if clean_id and not is_numeric:
+        raise ValueError(
+            f"Configured INSTAGRAM_ACCOUNT_ID '{configured_id}' is a username or handle, not a numeric ID. "
+            "Meta Graph API endpoints require the numeric Instagram professional account ID. "
+            "A valid INSTAGRAM_ACCESS_TOKEN with 'instagram_business_basic' scope is required to resolve it via /me."
+        )
+
+    raise ValueError(
+        "INSTAGRAM_ACCOUNT_ID is missing and could not be resolved from token. "
+        "Please provide a numeric Instagram professional account ID or a valid INSTAGRAM_ACCESS_TOKEN."
+    )
+
+
+def check_container_status(
+    creation_id: str,
+    access_token: str,
+    graph_base: str = GRAPH_API_BASE,
+    max_retries: int = 6,
+    retry_delay: float = 2.0
+) -> dict:
+    """Poll container status until FINISHED, ERROR, or EXPIRED as recommended by Meta.
+
+    Meta media containers for Instagram Login may take a few moments to process.
+    """
+    url = f"{graph_base}/{creation_id}?fields=status_code,status&access_token={urllib.parse.quote(access_token)}"
+    for attempt in range(1, max_retries + 1):
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "NEWS-SNAP-Publisher/1.0"},
+            method="GET"
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                data = json.load(resp)
+            status_code = data.get("status_code", "").upper()
+            if status_code == "FINISHED":
+                print(f"[OK] Container {creation_id} processing FINISHED and ready to publish.")
+                return data
+            elif status_code in ("ERROR", "EXPIRED"):
+                raise RuntimeError(f"Container {creation_id} processing failed with status_code: {status_code} ({data})")
+            else:
+                print(f"Container {creation_id} status: {status_code or 'IN_PROGRESS'} (attempt {attempt}/{max_retries}). Waiting {retry_delay}s...")
+                time.sleep(retry_delay)
+        except urllib.error.HTTPError as err:
+            body = err.read().decode("utf-8", errors="replace")
+            raise RuntimeError(f"Failed to query container status (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
+        except RuntimeError:
+            raise
+        except Exception as exc:
+            print(f"Container status check attempt {attempt}/{max_retries} warning: {exc}")
+            time.sleep(retry_delay)
+
+    print(f"[WARN] Container status polling reached max retries ({max_retries}); proceeding with publish attempt.")
+    return {"status_code": "UNKNOWN"}
 
 
 def prune_processed_entries(entries: list, max_age_hours: int = DRY_RUN_RETENTION_HOURS, max_entries: int = MAX_HISTORY_ENTRIES) -> list:
@@ -479,18 +659,37 @@ def main():
     else:
         print("[OK] Duplicate prevention check passed (fresh story).")
 
-    # Inspect credentials and flags
+    # Inspect configuration and credentials
     access_token = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
-    account_id = os.environ.get("INSTAGRAM_ACCOUNT_ID", "").strip()
+    configured_account_id = os.environ.get("INSTAGRAM_ACCOUNT_ID", "").strip()
     enable_live_posting = os.environ.get("ENABLE_INSTAGRAM_POSTING", "").strip().lower() == "true"
 
-    has_credentials = bool(access_token and account_id)
-    print(f"Credentials present: {'Yes' if has_credentials else 'No'}")
+    has_token = bool(access_token)
+    has_account = bool(configured_account_id)
+
+    print(f"Instagram Graph Host: {INSTAGRAM_GRAPH_HOST}")
+    print(f"Graph API Version: {GRAPH_API_VERSION}")
+    print(f"Access Token Present: {'Yes (' + mask_token(access_token) + ')' if has_token else 'No'}")
+    print(f"Account ID Configured: {'Yes (' + configured_account_id + ')' if has_account else 'No'}")
     print(f"Live posting enabled (ENABLE_INSTAGRAM_POSTING=true): {enable_live_posting}")
 
     # DRY-RUN MODE (Safe default)
-    if not (enable_live_posting and has_credentials):
-        print("\n[DRY-RUN MODE] Live publishing is disabled or credentials are not configured.")
+    if not enable_live_posting:
+        print("\n[DRY-RUN MODE] Live publishing is disabled (ENABLE_INSTAGRAM_POSTING != 'true').")
+        # In dry-run mode, if access token is provided, verify token and resolve account ID safely
+        if has_token:
+            print("[DRY-RUN] Verifying Instagram Login token and resolving account ID without publishing...")
+            try:
+                resolved_id, info = resolve_instagram_account_id(
+                    configured_account_id, access_token, graph_base=GRAPH_API_BASE
+                )
+                u_name = info.get("username", configured_account_id or "unknown")
+                acc_type = info.get("account_type", "PROFESSIONAL")
+                print(f"[OK] Instagram Login token verified: Account @{u_name} (ID: {resolved_id}, Type: {acc_type})")
+            except Exception as e:
+                print(f"[WARN] Dry-run token verification check: {sanitize_token(str(e), access_token)}")
+                print("[INFO] Continuing dry-run pipeline validation.")
+
         print("All format, image, and duplicate checks PASSED successfully.")
         print("The generated image is ready for Instagram publication.")
         record_dry_run_processed(article, post)
@@ -499,6 +698,15 @@ def main():
 
     # LIVE PUBLISHING MODE
     print("\n[LIVE PUBLISHING MODE ACTIVATED]")
+
+    if not has_token:
+        raise ValueError("Live Instagram publishing requires INSTAGRAM_ACCESS_TOKEN.")
+
+    # Resolve numeric professional account ID
+    account_id, account_info = resolve_instagram_account_id(
+        configured_account_id, access_token, graph_base=GRAPH_API_BASE
+    )
+    print(f"Using verified numeric Instagram Account ID: {account_id}")
 
     # Refuse to publish if this article was previously processed as a dry-run test
     if is_already_processed(article):
@@ -541,17 +749,27 @@ def main():
         "access_token": access_token,
     }).encode("utf-8")
 
-    print("Creating Instagram media container...")
-    req = urllib.request.Request(container_url, data=container_payload, method="POST")
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        res_data = json.load(resp)
+    print(f"Creating Instagram media container on {INSTAGRAM_GRAPH_HOST}...")
+    req = urllib.request.Request(
+        container_url,
+        data=container_payload,
+        headers={"User-Agent": "NEWS-SNAP-Publisher/1.0"},
+        method="POST"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            res_data = json.load(resp)
+    except urllib.error.HTTPError as err:
+        body = err.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"Container creation failed (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
+
     creation_id = res_data.get("id")
     if not creation_id:
-        raise RuntimeError(f"Container creation failed: {res_data}")
+        raise RuntimeError(f"Container creation failed: {sanitize_token(str(res_data), access_token)}")
     print(f"Container created with ID: {creation_id}")
 
-    # Wait a few seconds for Meta media processing
-    time.sleep(5)
+    # Poll container status until ready
+    check_container_status(creation_id, access_token, graph_base=GRAPH_API_BASE)
 
     # Step 2: Publish Media
     publish_url = f"{GRAPH_API_BASE}/{account_id}/media_publish"
@@ -560,13 +778,23 @@ def main():
         "access_token": access_token,
     }).encode("utf-8")
 
-    print("Publishing container to Instagram feed...")
-    req = urllib.request.Request(publish_url, data=publish_payload, method="POST")
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        pub_data = json.load(resp)
+    print(f"Publishing container to Instagram feed on {INSTAGRAM_GRAPH_HOST}...")
+    req = urllib.request.Request(
+        publish_url,
+        data=publish_payload,
+        headers={"User-Agent": "NEWS-SNAP-Publisher/1.0"},
+        method="POST"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            pub_data = json.load(resp)
+    except urllib.error.HTTPError as err:
+        body = err.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"Media publishing failed (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
+
     media_id = pub_data.get("id")
     if not media_id:
-        raise RuntimeError(f"Media publishing failed: {pub_data}")
+        raise RuntimeError(f"Media publishing failed: {sanitize_token(str(pub_data), access_token)}")
 
     print(f"[OK] SUCCESSFULLY PUBLISHED TO INSTAGRAM! Media ID: {media_id}")
     record_history(article, post, published=True, media_id=media_id)
