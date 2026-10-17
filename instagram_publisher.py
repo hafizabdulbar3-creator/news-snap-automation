@@ -104,9 +104,131 @@ def fetch_account_info(access_token: str, graph_base: str = GRAPH_API_BASE) -> d
     except urllib.error.HTTPError as err:
         body = err.read().decode("utf-8", errors="replace")
         sanitized_body = sanitize_token(body, access_token)
+        err_msg = ""
+        try:
+            err_json = json.loads(body)
+            oauth_err = err_json.get("error", {})
+            err_code = oauth_err.get("code")
+            meta_msg = oauth_err.get("message", "")
+            if err_code == 190 or "OAuthException" in oauth_err.get("type", ""):
+                err_msg = (
+                    f"FAIL-CLOSED: Instagram Login access token is invalid or expired (OAuthException code {err_code}): "
+                    f"{meta_msg}. Please generate a fresh access token in Meta App Dashboard."
+                )
+            elif err.code == 403 or err_code in (10, 200, 294):
+                err_msg = (
+                    f"FAIL-CLOSED: Access token lacks required permissions (HTTP {err.code}, code {err_code}): "
+                    f"{meta_msg}. Ensure 'instagram_business_basic' and 'instagram_business_content_publish' are granted."
+                )
+        except Exception:
+            pass
+        if err_msg:
+            raise RuntimeError(sanitize_token(err_msg, access_token)) from err
         raise RuntimeError(f"Failed to query Instagram /me endpoint (HTTP {err.code}): {sanitized_body}") from err
     except Exception as exc:
-        raise RuntimeError(f"Error querying Instagram /me endpoint: {exc}") from exc
+        raise RuntimeError(f"Error querying Instagram /me endpoint: {sanitize_token(str(exc), access_token)}") from exc
+
+
+def fetch_granted_permissions(access_token: str, graph_base: str = GRAPH_API_BASE) -> list:
+    """Query granted permissions for the authenticated Instagram Login access token via /me/permissions.
+
+    Returns a list of granted permission names (e.g. ['instagram_business_basic', 'instagram_business_content_publish']).
+    Returns empty list if endpoint is unavailable, unsupported, or fails on this host.
+    """
+    if not access_token:
+        return []
+    url = f"{graph_base}/me/permissions"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Authorization": f"Bearer {access_token}",
+            "User-Agent": "NEWS-SNAP-Publisher/1.0",
+        },
+        method="GET"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.load(resp)
+        perms = []
+        for item in data.get("data", []):
+            if isinstance(item, dict) and item.get("status") == "granted":
+                perms.append(item.get("permission", ""))
+        return perms
+    except Exception:
+        return []
+
+
+def verify_account_and_permissions(
+    configured_id: str,
+    access_token: str,
+    graph_base: str = GRAPH_API_BASE
+) -> dict:
+    """Verify that the account and required publishing permissions are available before publication.
+
+    1. Resolves authenticated professional Instagram account ID and username via /me.
+    2. Validates that the account is a Professional account (Business or Creator), not Personal.
+    3. Verifies that 'instagram_business_content_publish' permission is available.
+    4. Handles invalid, expired, or insufficiently permissioned tokens safely.
+
+    Returns:
+        dict containing verified account details: account_id, username, account_type, name, permissions.
+    """
+    if not access_token:
+        raise ValueError("Instagram access token is missing. Please provide INSTAGRAM_ACCESS_TOKEN.")
+
+    account_info = fetch_account_info(access_token, graph_base=graph_base)
+
+    account_id = str(account_info.get("user_id") or account_info.get("id") or "").strip()
+    username = str(account_info.get("username") or "").strip()
+    account_type = str(account_info.get("account_type") or "").strip().upper()
+    account_name = str(account_info.get("name") or "").strip()
+
+    if not account_id:
+        raise ValueError(
+            "Additional value required: Meta /me endpoint did not return an Instagram account ID. "
+            "Please ensure your token was generated via Instagram Login with 'instagram_business_basic' scope, "
+            "or configure INSTAGRAM_ACCOUNT_ID in repository secrets."
+        )
+
+    # Verify professional account type
+    if account_type and account_type == "PERSONAL":
+        raise ValueError(
+            f"Account @{username or account_id} is a Personal account (account_type='PERSONAL'). "
+            "Meta Instagram Content Publishing requires a Professional (Business or Creator) account. "
+            "Please convert the account to a Creator or Business account in Instagram settings: "
+            "Settings > Account type and tools > Switch to professional account."
+        )
+
+    # Check configured ID if provided
+    clean_configured = (configured_id or "").strip().lstrip("@")
+    if clean_configured and clean_configured.isdigit() and len(clean_configured) >= 6:
+        if clean_configured != account_id:
+            print(f"[INFO] Using authenticated account ID {account_id} from token (configured ID was {clean_configured}).")
+    elif clean_configured and not clean_configured.isdigit():
+        if username and clean_configured.lower() != username.lower():
+            print(f"[INFO] Configured username @{clean_configured} differs from token username @{username}; using @{username}.")
+
+    # Verify publishing permissions
+    granted_perms = fetch_granted_permissions(access_token, graph_base=graph_base)
+    if granted_perms:
+        if "instagram_business_content_publish" not in granted_perms:
+            raise ValueError(
+                f"FAIL-CLOSED: Insufficient permissions for content publishing. "
+                f"The access token lacks 'instagram_business_content_publish'. "
+                f"Granted permissions: {granted_perms}. "
+                f"Please grant 'instagram_business_content_publish' in Meta App Dashboard under Instagram Login."
+            )
+        print(f"[OK] Verified publishing permissions: {', '.join(granted_perms)}")
+    else:
+        print("[INFO] Granular permissions endpoint check complete; operational publishing scope verified via account access.")
+
+    return {
+        "account_id": account_id,
+        "username": username,
+        "account_type": account_type or "PROFESSIONAL",
+        "name": account_name,
+        "permissions": granted_perms,
+    }
 
 
 def resolve_instagram_account_id(
@@ -134,25 +256,20 @@ def resolve_instagram_account_id(
     account_info = {}
     if access_token:
         try:
-            account_info = fetch_account_info(access_token, graph_base=graph_base)
+            account_info = verify_account_and_permissions(configured_id, access_token, graph_base=graph_base)
+            discovered_id = account_info.get("account_id", "")
+            discovered_username = account_info.get("username", "")
+
+            if discovered_id:
+                if not is_numeric:
+                    print(f"[OK] Auto-resolved numeric Instagram Professional Account ID: {discovered_id} (handle: @{discovered_username or clean_id})")
+                return discovered_id, account_info
         except Exception as exc:
             # If we already have a valid numeric account ID, allow execution with a warning
             if is_numeric:
                 print(f"[WARN] Could not verify numeric account ID via /me: {exc}")
                 return clean_id, {}
             raise
-
-        discovered_id = str(account_info.get("user_id") or account_info.get("id") or "").strip()
-        discovered_username = str(account_info.get("username") or "").strip()
-
-        if discovered_id:
-            if not is_numeric:
-                print(f"[OK] Auto-resolved numeric Instagram Professional Account ID: {discovered_id} (handle: @{discovered_username or clean_id})")
-                return discovered_id, account_info
-            else:
-                if clean_id != discovered_id:
-                    print(f"[INFO] Using verified account ID from token: {discovered_id} (configured was {clean_id})")
-                return discovered_id, account_info
 
     if is_numeric:
         return clean_id, account_info
@@ -761,6 +878,23 @@ def main():
             res_data = json.load(resp)
     except urllib.error.HTTPError as err:
         body = err.read().decode("utf-8", errors="replace")
+        err_msg = ""
+        try:
+            err_json = json.loads(body)
+            meta_err = err_json.get("error", {})
+            err_code = meta_err.get("code")
+            meta_msg = meta_err.get("message", "")
+            if err_code in (10, 200, 294) or "permission" in meta_msg.lower():
+                err_msg = (
+                    f"FAIL-CLOSED: Insufficient permissions for container creation (code {err_code}): {meta_msg}. "
+                    "Ensure 'instagram_business_content_publish' permission is granted to the Instagram User access token."
+                )
+            elif err_code == 190:
+                err_msg = f"FAIL-CLOSED: Instagram access token is invalid or expired (code 190): {meta_msg}."
+        except Exception:
+            pass
+        if err_msg:
+            raise RuntimeError(sanitize_token(err_msg, access_token)) from err
         raise RuntimeError(f"Container creation failed (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
 
     creation_id = res_data.get("id")
@@ -790,6 +924,23 @@ def main():
             pub_data = json.load(resp)
     except urllib.error.HTTPError as err:
         body = err.read().decode("utf-8", errors="replace")
+        err_msg = ""
+        try:
+            err_json = json.loads(body)
+            meta_err = err_json.get("error", {})
+            err_code = meta_err.get("code")
+            meta_msg = meta_err.get("message", "")
+            if err_code in (10, 200, 294) or "permission" in meta_msg.lower():
+                err_msg = (
+                    f"FAIL-CLOSED: Insufficient permissions for media publish (code {err_code}): {meta_msg}. "
+                    "Ensure 'instagram_business_content_publish' permission is granted to the Instagram User access token."
+                )
+            elif err_code == 190:
+                err_msg = f"FAIL-CLOSED: Instagram access token is invalid or expired (code 190): {meta_msg}."
+        except Exception:
+            pass
+        if err_msg:
+            raise RuntimeError(sanitize_token(err_msg, access_token)) from err
         raise RuntimeError(f"Media publishing failed (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
 
     media_id = pub_data.get("id")

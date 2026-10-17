@@ -15,6 +15,7 @@ import io
 import json
 import os
 import unittest
+import urllib.error
 from pathlib import Path
 from PIL import Image
 
@@ -542,6 +543,70 @@ class TestInstagramPublisher(unittest.TestCase):
                 instagram_publisher.IMAGE_PATH.unlink()
             if instagram_publisher.POST_PATH.is_file():
                 instagram_publisher.POST_PATH.unlink()
+
+    def test_invalid_and_expired_token_handling(self):
+        # Verify that expired or invalid tokens (OAuthException code 190) are safely detected and sanitized
+        error_json = json.dumps({
+            "error": {
+                "message": "Error validating access token: Session has expired on Monday, 01-Jan-2026",
+                "type": "OAuthException",
+                "code": 190,
+                "error_subcode": 463
+            }
+        }).encode("utf-8")
+
+        mock_err = urllib.error.HTTPError(
+            url="https://graph.instagram.com/v22.0/me",
+            code=401,
+            msg="Unauthorized",
+            hdrs={},
+            fp=io.BytesIO(error_json)
+        )
+
+        with patch("urllib.request.urlopen", side_effect=mock_err):
+            with self.assertRaises(RuntimeError) as ctx:
+                instagram_publisher.verify_account_and_permissions("", "secret_expired_token_999")
+            err_str = str(ctx.exception)
+            self.assertIn("invalid or expired", err_str.lower())
+            self.assertIn("190", err_str)
+            self.assertNotIn("secret_expired_token_999", err_str, "Raw token must never be exposed in error messages")
+
+    def test_personal_account_rejection(self):
+        # Personal accounts cannot use Instagram content publishing; must be Business or Creator
+        personal_profile = {
+            "id": "1784140009999",
+            "username": "personal_creator",
+            "account_type": "PERSONAL"
+        }
+        with patch("instagram_publisher.fetch_account_info", return_value=personal_profile):
+            with self.assertRaises(ValueError) as ctx:
+                instagram_publisher.verify_account_and_permissions("", "mock_token")
+            err_str = str(ctx.exception)
+            self.assertIn("personal", err_str.lower())
+            self.assertIn("professional", err_str.lower())
+
+    def test_missing_permissions_handling(self):
+        # Missing instagram_business_content_publish must be refused before publication
+        business_profile = {
+            "id": "1784140008888",
+            "username": "newssnap_biz",
+            "account_type": "BUSINESS"
+        }
+        with patch("instagram_publisher.fetch_account_info", return_value=business_profile), \
+             patch("instagram_publisher.fetch_granted_permissions", return_value=["instagram_business_basic"]):
+            with self.assertRaises(ValueError) as ctx:
+                instagram_publisher.verify_account_and_permissions("", "mock_token")
+            err_str = str(ctx.exception)
+            self.assertIn("insufficient permissions", err_str.lower())
+            self.assertIn("instagram_business_content_publish", err_str)
+
+        # When permission is granted, verification succeeds
+        with patch("instagram_publisher.fetch_account_info", return_value=business_profile), \
+             patch("instagram_publisher.fetch_granted_permissions", return_value=["instagram_business_basic", "instagram_business_content_publish"]):
+            res = instagram_publisher.verify_account_and_permissions("", "mock_token")
+            self.assertEqual(res["account_id"], "1784140008888")
+            self.assertEqual(res["username"], "newssnap_biz")
+            self.assertIn("instagram_business_content_publish", res["permissions"])
 
 
 class TestSixFormatRegistry(unittest.TestCase):
