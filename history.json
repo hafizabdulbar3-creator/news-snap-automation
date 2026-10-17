@@ -72,6 +72,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T08:28:24.925520+00:00"
+    },
+    {
+      "url": "https://www.thehindu.com/news/national/telangana/hyderabad-man-killed-in-riyadh-airport-attack-two-sons-injured/article71572615.ece",
+      "title": "Hyderabad man killed in Riyadh airport attack, two sons injured",
+      "headline": "Hyderabad Man Killed in Riyadh Airport Attack; Two Sons Injured",
+      "domain": "thehindu.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-17T12:14:25.009833+00:00"
     }
   ]
 }
