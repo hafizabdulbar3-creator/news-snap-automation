@@ -126,6 +126,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-18T09:29:59.143778+00:00"
+    },
+    {
+      "url": "https://www.foxnews.com/politics/trump-tries-different-approach-russia-bring-americans-relief-amid-ongoing-war-ukraine",
+      "title": "Trump tries different approach with Russia to bring Americans relief amid ongoing war with Ukraine",
+      "headline": "Trump tries different approach with Russia to bring Americans relief amid ongoing war",
+      "domain": "foxnews.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-18T13:31:51.526666+00:00"
     }
   ]
 }
