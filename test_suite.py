@@ -26,6 +26,7 @@ import generate_image
 import instagram_publisher
 import prepare_special_formats
 import format_registry
+import quota_manager
 from unittest.mock import patch
 
 
@@ -2346,6 +2347,10 @@ class TestSchedulerArchitecture(unittest.TestCase):
 
 class TestProductionMockFallbackRefusal(unittest.TestCase):
     def setUp(self):
+        self.test_hist = Path("test_history_prod_safeguard.json")
+        self.test_hist.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {}}), encoding="utf-8")
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.test_hist)
+
         self.real_article = {
             "title": "Global Leaders Finalize Historic Clean Energy Framework",
             "domain": "reuters.com",
@@ -2370,6 +2375,14 @@ class TestProductionMockFallbackRefusal(unittest.TestCase):
                 }
             ]
         }
+
+    def tearDown(self):
+        if self.test_hist.exists():
+            try:
+                self.test_hist.unlink()
+            except Exception:
+                pass
+        os.environ.pop("NEWS_SNAP_HISTORY_PATH", None)
 
     def test_scenario_1_real_gemini_response_produces_non_synthetic_post(self):
         """1. Real Gemini response produces non-synthetic post (is_synthetic == False)."""
@@ -2443,6 +2456,7 @@ class TestProductionMockFallbackRefusal(unittest.TestCase):
         ]
 
         for code, msg, body in permanent_cases:
+            quota_manager.clear_quota_cooldown(self.test_hist)
             with self.subTest(code=code, msg=msg):
                 err = urllib.error.HTTPError(
                     url="https://generativelanguage.googleapis.com",
@@ -2467,6 +2481,7 @@ class TestProductionMockFallbackRefusal(unittest.TestCase):
                     mock_sleep.assert_not_called()
                     self.assertIn("Production post generation failed", str(ctx.exception))
 
+        quota_manager.clear_quota_cooldown(self.test_hist)
         malformed_resp = {
             "candidates": [
                 {
@@ -2600,6 +2615,171 @@ class TestProductionMockFallbackRefusal(unittest.TestCase):
                 post_path.unlink()
             if article_path.exists():
                 article_path.unlink()
+
+
+class TestQuotaManagerAndOptimizations(unittest.TestCase):
+    def setUp(self):
+        self.temp_hist = Path("test_history_quota.json")
+        self.temp_disc = Path("test_discovery_quota.json")
+        self.temp_sample = Path("test_classified_sample.json")
+        if self.temp_hist.exists():
+            self.temp_hist.unlink()
+        if self.temp_disc.exists():
+            self.temp_disc.unlink()
+        if self.temp_sample.exists():
+            self.temp_sample.unlink()
+
+    def tearDown(self):
+        for p in (self.temp_hist, self.temp_disc, self.temp_sample):
+            if p.exists():
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+
+    def test_parse_quota_cooldown_gemini_daily_error(self):
+        """1. parse_quota_cooldown correctly extracts reset time from Gemini 429 quota exhaustion body."""
+        from datetime import datetime, timezone
+        import quota_manager
+        raw_msg = (
+            '{"error": {"code": 429, "message": "You exceeded your current quota, please check your plan and billing details... '
+            '* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.8-flash\\n'
+            'Please retry in 5h15m46.002725955s."}}'
+        )
+        err = urllib.error.HTTPError(
+            url="https://generativelanguage.googleapis.com",
+            code=429,
+            msg="Too Many Requests",
+            hdrs={},
+            fp=io.BytesIO(raw_msg.encode("utf-8"))
+        )
+        is_quota, reset_dt, reason = quota_manager.parse_quota_cooldown(err)
+        self.assertTrue(is_quota)
+        self.assertIsNotNone(reset_dt)
+        self.assertIn("18946s", reason)
+        self.assertGreater(reset_dt, datetime.now(timezone.utc))
+
+    def test_quota_cooldown_active_and_expiration(self):
+        """2. Cooldown is active before reset_dt and inactive after reset_dt."""
+        from datetime import datetime, timezone, timedelta
+        import quota_manager
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=2)
+        quota_manager.set_quota_cooldown(future_dt, "Test Cooldown", history_path=self.temp_hist)
+        self.assertTrue(quota_manager.is_cooldown_active(history_path=self.temp_hist))
+        cd = quota_manager.get_quota_cooldown(history_path=self.temp_hist)
+        self.assertTrue(cd.get("active"))
+        self.assertEqual(cd.get("reason"), "Test Cooldown")
+
+        past_dt = datetime.now(timezone.utc) - timedelta(minutes=5)
+        quota_manager.set_quota_cooldown(past_dt, "Past Cooldown", history_path=self.temp_hist)
+        self.assertFalse(quota_manager.is_cooldown_active(history_path=self.temp_hist))
+
+    def test_classified_pool_save_and_reuse(self):
+        """3. Pool saves candidates, dedupes against history, and consumes selected articles."""
+        import quota_manager
+        candidates = [
+            {
+                "url": "https://reuters.com/world/story1",
+                "title": "Major Peace Accord Signed Between World Leaders",
+                "domain": "reuters.com",
+                "classification": {"importance": "MAJOR", "topic": "Diplomacy"}
+            },
+            {
+                "url": "https://bbc.com/economy/story2",
+                "title": "Central Bank Announces Significant Interest Rate Adjustment",
+                "domain": "bbc.com",
+                "classification": {"importance": "NORMAL", "topic": "Economy"}
+            }
+        ]
+        added = quota_manager.save_to_classified_pool(candidates, history_path=self.temp_hist)
+        self.assertEqual(added, 2)
+        added_again = quota_manager.save_to_classified_pool(candidates, history_path=self.temp_hist)
+        self.assertEqual(added_again, 0)
+
+        pool = quota_manager.get_classified_pool(history_path=self.temp_hist)
+        self.assertEqual(len(pool), 2)
+
+        quota_manager.remove_from_classified_pool("https://reuters.com/world/story1", history_path=self.temp_hist)
+        remaining = quota_manager.get_classified_pool(history_path=self.temp_hist)
+        self.assertEqual(len(remaining), 1)
+        self.assertEqual(remaining[0]["url"], "https://bbc.com/economy/story2")
+
+    def test_heuristic_classifier_accurately_categorizes_news(self):
+        """4. Journalistic heuristic accurately categorizes MAJOR, NORMAL, and LOW without API."""
+        import quota_manager
+        major = quota_manager.heuristic_classify_article("Fatal Military Base Blaze Leaves Multiple Dead Across Region")
+        self.assertEqual(major["importance"], "MAJOR")
+
+        major_economy = quota_manager.heuristic_classify_article("Federal Reserve Signals Interest Rate Adjustments Amid Inflation")
+        self.assertEqual(major_economy["importance"], "MAJOR")
+
+        normal = quota_manager.heuristic_classify_article("City Council Proposes New Municipal Water Conservation Policy")
+        self.assertEqual(normal["importance"], "NORMAL")
+
+        low_horoscope = quota_manager.heuristic_classify_article("Today's Zodiac Horoscope and Tarot Card Predictions")
+        self.assertEqual(low_horoscope["importance"], "LOW")
+
+        low_entertainment = quota_manager.heuristic_classify_article("Movie Box Office Collection Day 5 Earnings Update")
+        self.assertEqual(low_entertainment["importance"], "LOW")
+
+    def test_check_candidates_pauses_during_active_cooldown(self):
+        """5. check_candidates skips pipeline during active quota cooldown (has_fresh=false, exit 0)."""
+        from datetime import datetime, timezone, timedelta
+        import check_candidates
+        import quota_manager
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=3)
+        quota_manager.set_quota_cooldown(future_dt, "Daily quota 20 limit reached", history_path=self.temp_hist)
+
+        with patch.dict(os.environ, {"NEWS_SNAP_HISTORY_PATH": str(self.temp_hist)}):
+            with self.assertRaises(SystemExit) as cm:
+                check_candidates.main()
+            self.assertEqual(cm.exception.code, 0)
+
+    def test_classify_reuses_pool_with_zero_api_calls(self):
+        """6. classify.py reuses persistent pool candidates with 0 Gemini API calls."""
+        import classify
+        import quota_manager
+        candidates = [
+            {
+                "url": "https://reuters.com/world/story1",
+                "title": "Major Peace Accord Signed Between World Leaders",
+                "domain": "reuters.com",
+                "classification": {"importance": "MAJOR", "topic": "Diplomacy", "reason": "Historic peace accord"}
+            }
+        ]
+        quota_manager.save_to_classified_pool(candidates, history_path=self.temp_hist)
+        self.temp_disc.write_text(json.dumps([{"url": "https://reuters.com/world/story1", "title": "Major Peace Accord Signed Between World Leaders", "domain": "reuters.com"}]), encoding="utf-8")
+
+        with patch("classify.call_gemini") as mock_gemini, \
+             patch("classify.Path", side_effect=lambda p: self.temp_disc if str(p) == "discovery.json" else (self.temp_sample if str(p) == "classified_sample.json" else Path(p))), \
+             patch.dict(os.environ, {"NEWS_SNAP_HISTORY_PATH": str(self.temp_hist)}):
+            classify.main()
+            mock_gemini.assert_not_called()
+
+        sample_data = json.loads(self.temp_sample.read_text(encoding="utf-8"))
+        self.assertEqual(sample_data.get("source"), "persistent_pool")
+        self.assertEqual(len(sample_data.get("results", [])), 1)
+        self.assertEqual(sample_data["results"][0]["importance"], "MAJOR")
+
+    def test_post_generator_blocks_api_calls_during_active_cooldown(self):
+        """7. post_generator.generate_post raises RuntimeError during active cooldown."""
+        from datetime import datetime, timezone, timedelta
+        import quota_manager
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=4)
+        quota_manager.set_quota_cooldown(future_dt, "Limit reached", history_path=self.temp_hist)
+
+        with patch.dict(os.environ, {
+            "NEWS_SNAP_HISTORY_PATH": str(self.temp_hist),
+            "GEMINI_API_KEY": "test_key",
+            "GITHUB_ACTIONS": "true"
+        }):
+            with self.assertRaises(RuntimeError) as ctx:
+                post_generator.generate_post({
+                    "title": "Important Headline Story",
+                    "domain": "reuters.com",
+                    "url": "https://reuters.com/story"
+                })
+            self.assertIn("active cooldown", str(ctx.exception))
 
 
 if __name__ == "__main__":

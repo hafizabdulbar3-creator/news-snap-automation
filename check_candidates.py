@@ -151,7 +151,29 @@ def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PAT
 
 
 def main():
-    fresh_articles = get_fresh_candidates()
+    history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+    try:
+        from quota_manager import is_cooldown_active, get_quota_cooldown
+        if is_cooldown_active(history_path):
+            cd = get_quota_cooldown(history_path)
+            resets_at = cd.get("resets_at", "scheduled reset")
+            reason = cd.get("reason", "Daily quota limit reached")
+            print(f"[QUOTA COOLDOWN] Gemini API daily quota cooldown is active until {resets_at}.")
+            print(f"[REASON] {reason}")
+            print("[INFO] Pausing automated pipeline executions to preserve system stability.")
+            github_output = os.environ.get("GITHUB_OUTPUT")
+            if github_output:
+                try:
+                    with open(github_output, "a", encoding="utf-8") as f:
+                        f.write("has_fresh=false\n")
+                        f.write("fresh_count=0\n")
+                except Exception as e:
+                    print(f"Warning: could not write to GITHUB_OUTPUT: {e}")
+            sys.exit(0)
+    except ImportError:
+        pass
+
+    fresh_articles = get_fresh_candidates(history_path=history_path)
     count = len(fresh_articles)
     has_fresh = count > 0
 

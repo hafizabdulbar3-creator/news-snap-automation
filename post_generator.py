@@ -415,11 +415,15 @@ def is_retryable_gemini_error(err: Exception) -> tuple[bool, float | None, str]:
         # Transient HTTP error codes: 408, 429, 500, 502, 503, 504
         if err.code in (408, 429, 500, 502, 503, 504):
             try:
-                body = ""
-                if hasattr(err, "read"):
-                    body = err.read().decode("utf-8", errors="replace").lower()
-                if "daily" in body and ("quota" in body or "limit" in body or "exhausted" in body):
-                    return False, None, f"Permanent daily quota exhaustion: HTTP {err.code}"
+                from quota_manager import parse_quota_cooldown, set_quota_cooldown
+                is_quota, reset_dt, reason = parse_quota_cooldown(err)
+                if is_quota:
+                    history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+                    try:
+                        set_quota_cooldown(reset_dt, reason, history_path)
+                    except Exception:
+                        pass
+                    return False, None, f"Permanent daily quota exhaustion: {reason}"
             except Exception:
                 pass
             return True, retry_after, f"Transient HTTP {err.code}"
@@ -503,6 +507,20 @@ def generate_post(article: dict) -> dict:
         raise ValueError("Article title, source or URL is missing.")
 
     is_prod = is_production_mode()
+
+    try:
+        from quota_manager import is_cooldown_active, get_quota_cooldown
+        history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+        if is_cooldown_active(history_path):
+            cd = get_quota_cooldown(history_path)
+            resets_at = cd.get("resets_at", "scheduled reset")
+            reason = cd.get("reason", "Daily quota exhausted")
+            raise RuntimeError(
+                f"Gemini API quota is currently in active cooldown until {resets_at} ({reason}). "
+                f"Refusing to make API requests during active quota cooldown."
+            )
+    except ImportError:
+        pass
 
     if not api_key:
         if is_prod:

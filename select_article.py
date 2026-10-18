@@ -156,6 +156,13 @@ def select_best_article():
         encoding="utf-8"
     )
 
+    try:
+        from quota_manager import remove_from_classified_pool
+        history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+        remove_from_classified_pool(selected.get("url"), selected.get("title"), history_path)
+    except Exception as e:
+        print(f"[WARN] Could not remove selected article from pool: {e}")
+
     print("SELECTED ARTICLE:")
     print(f"Title: {selected.get('title')}")
     print(f"Domain: {selected.get('domain')}")

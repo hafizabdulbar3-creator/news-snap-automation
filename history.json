@@ -218,5 +218,12 @@
       "dry_run": true,
       "timestamp": "2026-10-18T13:31:51.526666+00:00"
     }
-  ]
+  ],
+  "classified_pool": [],
+  "quota_cooldown": {
+    "active": true,
+    "resets_at": "2026-10-19T00:06:21+00:00",
+    "reason": "Gemini Free Tier daily quota limit (20 requests/day) reached in Run #55.",
+    "updated_at": "2026-10-18T18:54:17.311237+00:00"
+  }
 }
