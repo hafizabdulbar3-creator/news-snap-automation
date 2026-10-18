@@ -108,6 +108,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-18T00:25:13.569452+00:00"
+    },
+    {
+      "url": "https://www.thehindu.com/news/national/jaishankar-rubio-to-hold-meeting-in-mumbai-on-oct-20-mea/article71592380.ece",
+      "title": "Jaishankar to meet Rubio, UAE Foreign Minister, in back-to-back separate visits in Mumbai next week",
+      "headline": "Jaishankar to meet Rubio, UAE Foreign Minister, in back-to-back separate visits in Mumbai next",
+      "domain": "thehindu.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-18T05:00:22.965035+00:00"
     }
   ]
 }
