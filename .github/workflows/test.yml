@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run every 15 minutes to capture breaking global news while staying comfortably within free-tier API quotas
-    - cron: "*/15 * * * *"
+    - cron: "7,22,37,52 * * * *"
 
 permissions:
   contents: write
