@@ -1,5 +1,15 @@
 {
-  "posted": [],
+  "posted": [
+    {
+      "url": "https://www.theguardian.com/world/2026/oct/18/french-government-crisis-talks-violent-unrest-policing-macron",
+      "title": "French government in crisis talks after 'colossal failure of the state'",
+      "headline": "French Government Holds Crisis Talks Following Days of Violent Unrest",
+      "domain": "theguardian.com",
+      "published": true,
+      "media_id": "18100627301063835",
+      "timestamp": "2026-10-18T15:41:46.009161+00:00"
+    }
+  ],
   "processed": [
     {
       "url": "https://www.chicagotribune.com/2026/10/16/trump-holds-russia-sanctions/",
