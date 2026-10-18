@@ -608,6 +608,106 @@ class TestInstagramPublisher(unittest.TestCase):
             self.assertEqual(res["username"], "newssnap_biz")
             self.assertIn("instagram_business_content_publish", res["permissions"])
 
+    def test_live_feed_duplicate_detection(self):
+        headline = "World Leaders Sign Clean Energy Transition Framework"
+        mock_media = {
+            "data": [
+                {
+                    "id": "18099887766554433",
+                    "caption": f"Breaking update: {headline}. Details inside. #NewsSnap\n\nSource: reuters.com",
+                    "timestamp": "2026-10-18T20:00:00+00:00"
+                },
+                {
+                    "id": "18099887766554422",
+                    "caption": "An older unrelated news report. #NewsSnap",
+                    "timestamp": "2026-10-18T18:00:00+00:00"
+                }
+            ]
+        }
+        mock_resp = io.BytesIO(json.dumps(mock_media).encode("utf-8"))
+        mock_resp.status = 200
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            matched_id = instagram_publisher.check_live_feed_duplicate(
+                headline, "1784140001", "mock_token"
+            )
+            self.assertEqual(matched_id, "18099887766554433")
+
+        # When recent media does NOT contain headline
+        mock_resp_none = io.BytesIO(json.dumps(mock_media).encode("utf-8"))
+        mock_resp_none.status = 200
+        with patch("urllib.request.urlopen", return_value=mock_resp_none):
+            matched_none = instagram_publisher.check_live_feed_duplicate(
+                "Completely Unrelated Story About Quantum Computers", "1784140001", "mock_token"
+            )
+            self.assertEqual(matched_none, "")
+
+        # When API call fails, gracefully returns empty string
+        mock_err = urllib.error.HTTPError(
+            url="https://graph.instagram.com/v22.0/me/media",
+            code=500,
+            msg="Server Error",
+            hdrs={},
+            fp=io.BytesIO(b"{}")
+        )
+        with patch("urllib.request.urlopen", side_effect=mock_err):
+            matched_err = instagram_publisher.check_live_feed_duplicate(
+                headline, "1784140001", "mock_token"
+            )
+            self.assertEqual(matched_err, "")
+
+    def test_live_feed_duplicate_recovery_in_main(self):
+        from PIL import ImageDraw
+        img = Image.new("RGB", (1080, 1350), (15, 25, 45))
+        d = ImageDraw.Draw(img)
+        d.rectangle((50, 50, 1030, 600), fill=(230, 31, 45))
+        d.text((100, 100), "TEST DUPLICATE CARD", fill=(255, 255, 255))
+        img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
+
+        test_headline = "RECOVERY TEST STORY HEADLINE"
+        test_post = {
+            "headline": test_headline,
+            "caption": "Verified caption for testing duplicate recovery. #NewsSnap",
+            "hashtags": ["#NewsSnap"]
+        }
+        instagram_publisher.POST_PATH.write_text(json.dumps(test_post), encoding="utf-8")
+
+        temp_hist = Path("test_history_recovery.json")
+        orig_hist = instagram_publisher.HISTORY_PATH
+        instagram_publisher.HISTORY_PATH = temp_hist
+
+        mock_profile = {
+            "id": "17841400012345678",
+            "username": "newssnap_bot",
+            "account_type": "BUSINESS"
+        }
+
+        try:
+            with patch("instagram_publisher.fetch_account_info", return_value=mock_profile), \
+                 patch("instagram_publisher.check_live_feed_duplicate", return_value="18999999999"), \
+                 patch("instagram_publisher.verify_public_image_url"), \
+                 patch.dict(os.environ, {
+                     "ENABLE_INSTAGRAM_POSTING": "true",
+                     "INSTAGRAM_ACCESS_TOKEN": "mock_login_token_abc123xyz",
+                     "INSTAGRAM_ACCOUNT_ID": "17841400012345678",
+                     "IMAGE_PUBLIC_URL": "https://example.com/news_snap_post.jpg"
+                 }):
+                instagram_publisher.main()
+
+            self.assertTrue(temp_hist.is_file())
+            hist_data = json.loads(temp_hist.read_text(encoding="utf-8"))
+            self.assertEqual(len(hist_data.get("posted", [])), 1)
+            self.assertEqual(hist_data["posted"][0]["media_id"], "18999999999")
+            self.assertTrue(hist_data["posted"][0]["published"])
+        finally:
+            instagram_publisher.HISTORY_PATH = orig_hist
+            if temp_hist.is_file():
+                temp_hist.unlink()
+            if instagram_publisher.IMAGE_PATH.is_file():
+                instagram_publisher.IMAGE_PATH.unlink()
+            if instagram_publisher.POST_PATH.is_file():
+                instagram_publisher.POST_PATH.unlink()
+
 
 class TestSixFormatRegistry(unittest.TestCase):
     def test_six_formats_data_preparation(self):
@@ -643,12 +743,42 @@ class TestSixFormatRegistry(unittest.TestCase):
 
 
 class TestScheduleAndFreshCandidates(unittest.TestCase):
-    def test_fifteen_minute_schedule(self):
+    def test_five_minute_schedule_and_concurrency(self):
+        import yaml
         workflow_path = Path(".github/workflows/test.yml")
         self.assertTrue(workflow_path.is_file(), "Workflow file .github/workflows/test.yml must exist")
         content = workflow_path.read_text(encoding="utf-8")
-        self.assertIn('cron: "*/15 * * * *"', content, "Workflow must be scheduled every 15 minutes")
+
+        # Verify 5-minute staggered cron schedule
+        self.assertIn('cron: "2-57/5 * * * *"', content, "Workflow must be scheduled with staggered 5-minute cron")
         self.assertNotIn('0 */6 * * *', content, "6-hour schedule must be replaced")
+        self.assertNotIn('*/15 * * * *', content, "15-minute schedule must be replaced with 5-minute schedule")
+
+        # Verify parsed YAML structure
+        data = yaml.safe_load(content)
+        on_block = data.get(True) or data.get("on", {})
+        schedule_list = on_block.get("schedule", [])
+        self.assertTrue(len(schedule_list) > 0, "Schedule must be defined in workflow")
+        cron_val = schedule_list[0].get("cron")
+        self.assertEqual(cron_val, "2-57/5 * * * *")
+
+        # Verify concurrency group and queue mode
+        concurrency = data.get("concurrency", {})
+        self.assertEqual(concurrency.get("group"), "news-snap-automation-live")
+        self.assertEqual(concurrency.get("queue"), "max")
+        self.assertFalse(concurrency.get("cancel-in-progress", False), "cancel-in-progress must NOT be true with queue: max")
+
+        # Verify checkout settings for fresh git history
+        self.assertIn("ref: main", content)
+        self.assertIn("fetch-depth: 0", content)
+        self.assertIn("git pull origin main --rebase", content)
+
+        # Verify retry loop in Persist post history
+        self.assertIn("for attempt in 1 2 3 4 5; do", content)
+
+    def test_fifteen_minute_schedule(self):
+        """Backward-compatibility alias pointing to 5-minute schedule test."""
+        return self.test_five_minute_schedule_and_concurrency()
 
     def test_no_new_candidate_path(self):
         import check_candidates
@@ -1710,11 +1840,11 @@ class TestFinalComprehensiveQualityGate(unittest.TestCase):
         self.assertIn("Treasury Department today published", parser.paragraphs[0])
 
     def test_03_fresh_candidate_detection_and_schedule(self):
-        # Category 3: Fresh-candidate detection and 15-minute schedule enforcement
+        # Category 3: Fresh-candidate detection and 5-minute schedule enforcement
         workflow_path = Path(".github/workflows/test.yml")
         self.assertTrue(workflow_path.is_file())
         workflow_text = workflow_path.read_text(encoding="utf-8")
-        self.assertIn("*/15 * * * *", workflow_text)
+        self.assertIn("2-57/5 * * * *", workflow_text)
         self.assertNotIn("0 */6 * * *", workflow_text)
 
     def test_04_quota_sparing_diff_skip_logic(self):

@@ -330,6 +330,48 @@ def check_container_status(
     return {"status_code": "UNKNOWN"}
 
 
+def check_live_feed_duplicate(
+    headline: str,
+    account_id: str,
+    access_token: str,
+    graph_base: str = GRAPH_API_BASE
+) -> str:
+    """Check recent live Instagram feed posts to ensure this story was not already published.
+
+    Protects against duplicate posts in edge cases where a previous run succeeded in publishing
+    to Instagram but failed to persist history.json to Git (e.g. runner crash, git push rejection).
+
+    Returns:
+        str: Existing media ID if found on the live feed, empty string otherwise.
+    """
+    if not (headline and account_id and access_token):
+        return ""
+    url = f"{graph_base}/{account_id}/media?fields=id,caption,timestamp&limit=15"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Authorization": f"Bearer {access_token}",
+            "User-Agent": "NEWS-SNAP-Publisher/1.0",
+        },
+        method="GET"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=12) as resp:
+            data = json.load(resp)
+        norm_headline = headline.strip().lower()
+        hl_words = [w for w in re.sub(r"[^\w\s]", "", norm_headline).split() if len(w) > 3]
+        for item in data.get("data", []):
+            cap = str(item.get("caption", "")).lower()
+            if "#newssnap" in cap:
+                if norm_headline in cap:
+                    return str(item.get("id", ""))
+                if hl_words and sum(1 for w in hl_words if w in cap) / len(hl_words) >= 0.8:
+                    return str(item.get("id", ""))
+    except Exception as exc:
+        print(f"[INFO] Live feed duplicate check skipped: {sanitize_token(str(exc), access_token)}")
+    return ""
+
+
 def prune_processed_entries(entries: list, max_age_hours: int = DRY_RUN_RETENTION_HOURS, max_entries: int = MAX_HISTORY_ENTRIES) -> list:
     """Filter processed entries by retention window (default 48h) and cap at max_entries."""
     now = datetime.now(timezone.utc)
@@ -857,6 +899,16 @@ def main():
             "Configure IMAGE_PUBLIC_URL or ensure GitHub Pages deployment step has completed."
         )
     verify_public_image_url(image_public_url)
+
+    # Live feed duplicate pre-flight check (safeguard against unpersisted history from previous run)
+    existing_live_media_id = check_live_feed_duplicate(
+        post.get("headline", ""), account_id, access_token, graph_base=GRAPH_API_BASE
+    )
+    if existing_live_media_id:
+        print(f"[DUPLICATE RECOVERY] Story '{post.get('headline')}' is already published on live Instagram feed (Media ID: {existing_live_media_id}).")
+        print("Skipping duplicate publication and updating local history.json.")
+        record_history(article, post, published=True, media_id=existing_live_media_id)
+        return
 
     # Step 1: Create Container
     container_url = f"{GRAPH_API_BASE}/{account_id}/media"

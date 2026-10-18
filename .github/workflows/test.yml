@@ -3,8 +3,14 @@ name: NEWS SNAP Automation
 on:
   workflow_dispatch:
   schedule:
-    # Run every 15 minutes to capture breaking global news while staying comfortably within free-tier API quotas
-    - cron: "7,22,37,52 * * * *"
+    # Run every 5 minutes with a staggered offset (minutes 2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57)
+    # Staggering avoids peak scheduling congestion at the top of the hour (:00) and common 15-minute intervals
+    - cron: "2-57/5 * * * *"
+
+concurrency:
+  group: news-snap-automation-live
+  queue: max
+
 
 permissions:
   contents: write
@@ -21,6 +27,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Pull latest history and branch state
+        run: |
+          git pull origin main --rebase || true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -126,8 +139,21 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if [ -f history.json ]; then
-            git add history.json
-            git diff --staged --quiet || (git commit -m "chore: update post history [skip ci]" && git push)
+            for attempt in 1 2 3 4 5; do
+              git add history.json
+              if git diff --staged --quiet; then
+                echo "No new history changes to commit."
+                break
+              fi
+              git commit -m "chore: update post history [skip ci]" || true
+              if git push origin main; then
+                echo "Successfully persisted post history to origin/main on attempt $attempt."
+                break
+              fi
+              echo "Git push rejected on attempt $attempt; pulling latest changes with rebase..."
+              git pull origin main --rebase || git rebase --abort || true
+              sleep 2
+            done
           fi
 
       - name: Upload NEWS SNAP image artifact
