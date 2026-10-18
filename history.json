@@ -99,6 +99,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-17T22:38:48.415446+00:00"
+    },
+    {
+      "url": "https://www.thehindu.com/news/national/the-debate-over-immunity-to-cec-ecs/article71589739.ece",
+      "title": "The debate over immunity to CEC, ECs",
+      "headline": "The debate over immunity to CEC, ECs",
+      "domain": "thehindu.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-18T00:25:13.569452+00:00"
     }
   ]
 }
