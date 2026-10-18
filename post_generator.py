@@ -1,6 +1,7 @@
 import html
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -371,6 +372,127 @@ def generate_mock_post(article: dict) -> dict:
     return res
 
 
+def is_production_mode() -> bool:
+    """Return True if running in production or CI automation mode."""
+    return (
+        os.environ.get("GITHUB_ACTIONS") == "true"
+        or os.environ.get("CI") == "true"
+        or os.environ.get("NEWS_SNAP_PROD") == "1"
+    )
+
+
+def sanitize_gemini_error(err: Exception | str) -> str:
+    """Sanitize error messages to prevent leaking API keys or secrets in logs."""
+    msg = str(err)
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if api_key and len(api_key) > 5:
+        msg = msg.replace(api_key, "[REDACTED_API_KEY]")
+    msg = re.sub(r"key=[a-zA-Z0-9_\-]+", "key=[REDACTED]", msg)
+    msg = re.sub(r"x-goog-api-key['\":\s]+[a-zA-Z0-9_\-]+", "x-goog-api-key: [REDACTED]", msg, flags=re.IGNORECASE)
+    return msg
+
+
+def is_retryable_gemini_error(err: Exception) -> tuple[bool, float | None, str]:
+    """Classify whether a Gemini API error is transient/retryable or permanent.
+
+    Returns:
+        (is_retryable, retry_after_seconds, description)
+    """
+    if isinstance(err, urllib.error.HTTPError):
+        retry_after = None
+        if err.headers:
+            ra = err.headers.get("Retry-After")
+            if ra:
+                try:
+                    retry_after = float(ra)
+                except ValueError:
+                    pass
+
+        # Permanent HTTP error codes: Do not retry
+        if err.code in (400, 401, 403, 404):
+            return False, None, f"Permanent HTTP {err.code}"
+
+        # Transient HTTP error codes: 408, 429, 500, 502, 503, 504
+        if err.code in (408, 429, 500, 502, 503, 504):
+            try:
+                body = ""
+                if hasattr(err, "read"):
+                    body = err.read().decode("utf-8", errors="replace").lower()
+                if "daily" in body and ("quota" in body or "limit" in body or "exhausted" in body):
+                    return False, None, f"Permanent daily quota exhaustion: HTTP {err.code}"
+            except Exception:
+                pass
+            return True, retry_after, f"Transient HTTP {err.code}"
+
+        return False, None, f"HTTP {err.code} (non-retryable)"
+
+    if isinstance(err, (urllib.error.URLError, TimeoutError, ConnectionError, OSError)):
+        return True, None, f"Transient network/connection error: {type(err).__name__}"
+
+    return False, None, f"Non-retryable error: {type(err).__name__}"
+
+
+def call_gemini_api(payload: dict, api_key: str, model_name: str = MODEL, max_attempts: int = 4) -> dict:
+    """Execute Gemini API call with bounded retries, exponential backoff, jitter, and Retry-After support."""
+    api_url = f"{API_BASE}/{model_name}:generateContent"
+    req_data = json.dumps(payload).encode("utf-8")
+    last_error = None
+
+    for attempt in range(1, max_attempts + 1):
+        req = urllib.request.Request(
+            api_url,
+            data=req_data,
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": api_key,
+            },
+            method="POST",
+        )
+
+        try:
+            with urllib.request.urlopen(req, timeout=60) as response:
+                data = json.load(response)
+
+            candidates = data.get("candidates", [])
+            if not candidates:
+                raise ValueError("Gemini returned empty candidate")
+
+            text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+            if not text:
+                raise ValueError("Gemini response contained empty text part")
+
+            if text.startswith("```"):
+                text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE)
+                text = re.sub(r"\s*```$", "", text)
+
+            post_data = json.loads(text)
+            return post_data
+
+        except Exception as e:
+            last_error = e
+            sanitized = sanitize_gemini_error(e)
+            retryable, retry_after, reason = is_retryable_gemini_error(e)
+
+            if not retryable:
+                print(f"[ERROR] Non-retryable Gemini error on attempt {attempt}/{max_attempts} ({reason}): {sanitized}")
+                raise RuntimeError(f"Gemini API permanent failure: {sanitized}") from e
+
+            if attempt < max_attempts:
+                if retry_after is not None and retry_after > 0:
+                    delay = min(retry_after, 25.0)
+                else:
+                    base_delay = 2.0 * (2 ** (attempt - 1))
+                    jitter = random.uniform(0.5, 1.5)
+                    delay = min(base_delay + jitter, 25.0)
+
+                print(f"[RETRY] Transient Gemini error ({reason}) on attempt {attempt}/{max_attempts}: {sanitized}. Retrying in {delay:.2f}s...")
+                time.sleep(delay)
+            else:
+                print(f"[ERROR] Gemini API retries exhausted ({max_attempts} attempts). Last error: {sanitized}")
+
+    raise RuntimeError(f"Gemini API failed after {max_attempts} attempts. Last error: {sanitize_gemini_error(last_error)}")
+
+
 def generate_post(article: dict) -> dict:
     api_key = os.environ.get("GEMINI_API_KEY")
     source = str(article.get("domain", "")).strip()
@@ -380,10 +502,10 @@ def generate_post(article: dict) -> dict:
     if not all((title, source, url)):
         raise ValueError("Article title, source or URL is missing.")
 
-    is_production = os.environ.get("GITHUB_ACTIONS") == "true" or os.environ.get("NEWS_SNAP_PROD") == "1"
+    is_prod = is_production_mode()
 
     if not api_key:
-        if is_production:
+        if is_prod:
             raise RuntimeError(
                 "CRITICAL: GEMINI_API_KEY is missing in production environment. "
                 "Refusing to generate or publish synthetic news content."
@@ -441,52 +563,31 @@ Return ONLY valid JSON matching this schema:
         },
     }
 
-    models_to_try = [MODEL]
+    try:
+        post_data = call_gemini_api(payload, api_key, model_name=MODEL)
+        is_mock = is_mock_fixture_article(article)
+        return validate_post(post_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
+    except Exception as e:
+        sanitized = sanitize_gemini_error(e)
+        if is_prod:
+            print(f"[PRODUCTION SAFEGUARD] Gemini generation failed in production mode: {sanitized}")
+            raise RuntimeError(f"Production post generation failed: {sanitized}") from e
 
-    last_error = None
-    for model_name in models_to_try:
-        api_url = f"{API_BASE}/{model_name}:generateContent"
-        req = urllib.request.Request(
-            api_url,
-            data=json.dumps(payload).encode("utf-8"),
-            headers={
-                "Content-Type": "application/json",
-                "x-goog-api-key": api_key,
-            },
-            method="POST",
-        )
-
-        try:
-            with urllib.request.urlopen(req, timeout=60) as response:
-                data = json.load(response)
-
-            candidates = data.get("candidates", [])
-            if not candidates:
-                raise ValueError("Gemini returned empty candidate")
-
-            text = candidates[0]["content"]["parts"][0]["text"].strip()
-            if text.startswith("```"):
-                text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE)
-                text = re.sub(r"\s*```$", "", text)
-            post_data = json.loads(text)
-            is_mock = is_mock_fixture_article(article)
-            return validate_post(post_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
-        except Exception as e:
-            print(f"Model {model_name} post generation error: {e}")
-            last_error = e
-            time.sleep(1)
-
-    print(f"API calls failed ({last_error}); falling back to verified offline generator.")
-    return generate_mock_post(article)
+        print(f"API calls failed ({sanitized}); falling back to verified offline generator.")
+        return generate_mock_post(article)
 
 
 def main():
+    post_path = Path("post.json")
+    if post_path.is_file():
+        try:
+            post_path.unlink()
+        except OSError:
+            pass
+
     article_path = Path("selected_article.json")
     if not article_path.is_file():
         print("[INFO] No selected_article.json found. Skipping post generation to preserve Gemini API quota.")
-        post_path = Path("post.json")
-        if post_path.is_file():
-            post_path.unlink()
         return
 
     try:
@@ -499,9 +600,27 @@ def main():
         return
 
     print("Generating NEWS SNAP content...")
-    post = generate_post(article)
+    try:
+        post = generate_post(article)
+    except Exception as e:
+        if post_path.is_file():
+            try:
+                post_path.unlink()
+            except OSError:
+                pass
+        print(f"[FATAL ERROR] Post generation failed: {e}", file=sys.stderr)
+        sys.exit(1)
 
-    with open("post.json", "w", encoding="utf-8") as file:
+    if is_production_mode() and post.get("is_synthetic") is True:
+        if post_path.is_file():
+            try:
+                post_path.unlink()
+            except OSError:
+                pass
+        print("[FATAL ERROR] Production safeguard refusal: Generated post is marked synthetic.", file=sys.stderr)
+        sys.exit(1)
+
+    with open(post_path, "w", encoding="utf-8") as file:
         json.dump(post, file, ensure_ascii=False, indent=2)
 
     print("\nContent validation passed successfully:")

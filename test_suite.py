@@ -2344,5 +2344,263 @@ class TestSchedulerArchitecture(unittest.TestCase):
         self.assertIn("news-snap-scheduler.yml/dispatches", calls[0]["url"])
 
 
+class TestProductionMockFallbackRefusal(unittest.TestCase):
+    def setUp(self):
+        self.real_article = {
+            "title": "Global Leaders Finalize Historic Clean Energy Framework",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/clean-energy-accord",
+            "source_description": "Nations agreed on a transition plan to cut carbon emissions over the next decade."
+        }
+        self.valid_gemini_payload = {
+            "candidates": [
+                {
+                    "content": {
+                        "parts": [
+                            {
+                                "text": json.dumps({
+                                    "headline": "Global Leaders Finalize Historic Clean Energy Framework",
+                                    "curiosity_line": "Key climate transition roadmap",
+                                    "caption": "According to reports from reuters.com, Global Leaders Finalize Historic Clean Energy Framework. Observers and delegates are closely monitoring the implementation details as the international situation unfolds across multiple regions.",
+                                    "hashtags": ["#NewsSnap", "#Climate", "#Energy"]
+                                })
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+
+    def test_scenario_1_real_gemini_response_produces_non_synthetic_post(self):
+        """1. Real Gemini response produces non-synthetic post (is_synthetic == False)."""
+        with patch("urllib.request.urlopen", return_value=io.BytesIO(json.dumps(self.valid_gemini_payload).encode("utf-8"))), \
+             patch.dict(os.environ, {"GEMINI_API_KEY": "test_valid_key", "GITHUB_ACTIONS": "true"}):
+            post = post_generator.generate_post(self.real_article)
+            self.assertFalse(post.get("is_synthetic", False))
+            self.assertEqual(post["headline"], "Global Leaders Finalize Historic Clean Energy Framework")
+            self.assertIn("#NewsSnap", post["caption"])
+
+    def test_scenario_2_transient_429_followed_by_success_retries_and_succeeds(self):
+        """2. Transient error (429) followed by 200 produces valid non-synthetic post."""
+        err_429 = urllib.error.HTTPError(
+            url="https://generativelanguage.googleapis.com",
+            code=429,
+            msg="Too Many Requests",
+            hdrs={"Retry-After": "2"},
+            fp=io.BytesIO(b'{"error": {"message": "Resource has been exhausted (e.g. check quota)."}}')
+        )
+        success_resp = io.BytesIO(json.dumps(self.valid_gemini_payload).encode("utf-8"))
+        call_count = 0
+
+        def side_effect(req, *args, **kwargs):
+            nonlocal call_count
+            call_count += 1
+            if call_count == 1:
+                raise err_429
+            return success_resp
+
+        with patch("urllib.request.urlopen", side_effect=side_effect), \
+             patch("time.sleep") as mock_sleep, \
+             patch.dict(os.environ, {"GEMINI_API_KEY": "test_valid_key", "GITHUB_ACTIONS": "true"}):
+            post = post_generator.generate_post(self.real_article)
+            self.assertEqual(call_count, 2)
+            self.assertFalse(post.get("is_synthetic", False))
+            mock_sleep.assert_called_once()
+            self.assertEqual(mock_sleep.call_args[0][0], 2.0)
+
+    def test_scenario_3_repeated_transient_errors_exhaust_retries_and_raise(self):
+        """3. Repeated transient errors exhaust retries and raise RuntimeError in production."""
+        err_503 = urllib.error.HTTPError(
+            url="https://generativelanguage.googleapis.com",
+            code=503,
+            msg="Service Unavailable",
+            hdrs={},
+            fp=io.BytesIO(b'{"error": "Backend timeout"}')
+        )
+        attempts = 0
+
+        def side_effect(req, *args, **kwargs):
+            nonlocal attempts
+            attempts += 1
+            raise err_503
+
+        with patch("urllib.request.urlopen", side_effect=side_effect), \
+             patch("time.sleep"), \
+             patch.dict(os.environ, {"GEMINI_API_KEY": "test_valid_key", "GITHUB_ACTIONS": "true"}):
+            with self.assertRaises(RuntimeError) as ctx:
+                post_generator.generate_post(self.real_article)
+            self.assertEqual(attempts, 4)
+            self.assertIn("Production post generation failed", str(ctx.exception))
+
+    def test_scenario_4_permanent_errors_abort_immediately_in_production(self):
+        """4. Permanent errors (400, 401, 403, 404, daily quota, malformed JSON) never produce mock content in production."""
+        permanent_cases = [
+            (400, "Bad Request", b'{"error": "Invalid argument"}'),
+            (401, "Unauthorized", b'{"error": "API key invalid"}'),
+            (403, "Forbidden", b'{"error": "Permission denied"}'),
+            (404, "Not Found", b'{"error": "Model not found"}'),
+            (429, "Too Many Requests", b'{"error": "Daily quota limit exceeded for free tier."}'),
+        ]
+
+        for code, msg, body in permanent_cases:
+            with self.subTest(code=code, msg=msg):
+                err = urllib.error.HTTPError(
+                    url="https://generativelanguage.googleapis.com",
+                    code=code,
+                    msg=msg,
+                    hdrs={},
+                    fp=io.BytesIO(body)
+                )
+                attempts = 0
+
+                def side_effect(req, *args, **kwargs):
+                    nonlocal attempts
+                    attempts += 1
+                    raise err
+
+                with patch("urllib.request.urlopen", side_effect=side_effect), \
+                     patch("time.sleep") as mock_sleep, \
+                     patch.dict(os.environ, {"GEMINI_API_KEY": "test_valid_key", "GITHUB_ACTIONS": "true"}):
+                    with self.assertRaises(RuntimeError) as ctx:
+                        post_generator.generate_post(self.real_article)
+                    self.assertEqual(attempts, 1)
+                    mock_sleep.assert_not_called()
+                    self.assertIn("Production post generation failed", str(ctx.exception))
+
+        malformed_resp = {
+            "candidates": [
+                {
+                    "content": {
+                        "parts": [{"text": "{invalid json schema..."}]
+                    }
+                }
+            ]
+        }
+        with patch("urllib.request.urlopen", return_value=io.BytesIO(json.dumps(malformed_resp).encode("utf-8"))), \
+             patch.dict(os.environ, {"GEMINI_API_KEY": "test_valid_key", "GITHUB_ACTIONS": "true"}):
+            with self.assertRaises(RuntimeError) as ctx:
+                post_generator.generate_post(self.real_article)
+            self.assertIn("Production post generation failed", str(ctx.exception))
+
+    def test_scenario_5_production_failure_cleans_up_and_never_leaves_post_json(self):
+        """5. Production failure cleans up and never leaves a synthetic post.json."""
+        post_path = Path("post.json")
+        article_path = Path("selected_article.json")
+        try:
+            post_path.write_text(json.dumps({"headline": "Old Post", "is_synthetic": True}), encoding="utf-8")
+            article_path.write_text(json.dumps(self.real_article), encoding="utf-8")
+
+            with patch("post_generator.generate_post", side_effect=RuntimeError("API Failure")), \
+                 patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}), \
+                 self.assertRaises(SystemExit) as cm:
+                post_generator.main()
+            self.assertEqual(cm.exception.code, 1)
+            self.assertFalse(post_path.exists())
+
+            with patch("post_generator.generate_post", return_value={"headline": "Fake", "is_synthetic": True}), \
+                 patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}), \
+                 self.assertRaises(SystemExit) as cm:
+                post_generator.main()
+            self.assertEqual(cm.exception.code, 1)
+            self.assertFalse(post_path.exists())
+        finally:
+            if post_path.exists():
+                post_path.unlink()
+            if article_path.exists():
+                article_path.unlink()
+
+    def test_scenario_6_explicit_generate_mock_post_works_for_offline_fixtures(self):
+        """6. Explicit generate_mock_post works for offline test fixtures."""
+        mock_post = post_generator.generate_mock_post(self.real_article)
+        self.assertTrue(mock_post["is_synthetic"])
+        self.assertIn("headline", mock_post)
+        self.assertIn("curiosity_line", mock_post)
+        self.assertIn("caption", mock_post)
+        self.assertIn("#NewsSnap", mock_post["caption"])
+
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "", "GITHUB_ACTIONS": "", "CI": "", "NEWS_SNAP_PROD": ""}):
+            local_post = post_generator.generate_post(self.real_article)
+            self.assertTrue(local_post["is_synthetic"])
+
+    def test_scenario_7_downstream_image_gen_and_publisher_halt_on_failure(self):
+        """7. Downstream image generation / publisher is not reached on generation failure."""
+        post_path = Path("post.json")
+        article_path = Path("selected_article.json")
+        img_path = Path("news_snap_post.jpg")
+        try:
+            if post_path.exists():
+                post_path.unlink()
+            if img_path.exists():
+                img_path.unlink()
+            article_path.write_text(json.dumps(self.real_article), encoding="utf-8")
+
+            # 1. When post.json is missing, generate_image.main returns early without producing image
+            generate_image.main()
+            self.assertFalse(img_path.exists())
+
+            # 2. When post.json is missing, instagram_publisher.main returns early without publishing
+            instagram_publisher.main()
+
+            # 3. When post.json is synthetic and live posting is enabled, publisher rejects with SAFETY REFUSAL
+            post_path.write_text(json.dumps({
+                "headline": "Synthetic Story Headline For Tests",
+                "curiosity_line": "Sub-kicker line",
+                "caption": "Synthetic caption for testing publisher refusal. #NewsSnap",
+                "hashtags": ["#NewsSnap"],
+                "is_synthetic": True
+            }), encoding="utf-8")
+
+            # Create dummy 1080x1350 JPEG image for publisher validation
+            from PIL import ImageDraw
+            dummy_img = Image.new("RGB", (1080, 1350), (10, 24, 45))
+            d = ImageDraw.Draw(dummy_img)
+            d.text((50, 50), "TEST CARD", fill=(255, 255, 255))
+            dummy_img.save(img_path, "JPEG", quality=95)
+
+            with patch.dict(os.environ, {
+                "ENABLE_INSTAGRAM_POSTING": "true",
+                "INSTAGRAM_ACCESS_TOKEN": "mock_token",
+                "INSTAGRAM_ACCOUNT_ID": "17841400012345678",
+            }), patch("instagram_publisher.resolve_instagram_account_id", return_value=("17841400012345678", {"username": "test"})):
+                with self.assertRaises(ValueError) as ctx:
+                    instagram_publisher.main()
+                self.assertIn("SAFETY REFUSAL: The generated post is marked as synthetic/mock test data.", str(ctx.exception))
+        finally:
+            if post_path.exists():
+                post_path.unlink()
+            if article_path.exists():
+                article_path.unlink()
+            if img_path.exists():
+                img_path.unlink()
+
+    def test_scenario_8_failed_generation_not_recorded_in_history(self):
+        """8. Failed generation does not get recorded in history.json."""
+        hist_path = Path("test_history_fail_safeguard.json")
+        orig_hist = instagram_publisher.HISTORY_PATH
+        post_path = Path("post.json")
+        article_path = Path("selected_article.json")
+        try:
+            instagram_publisher.HISTORY_PATH = hist_path
+            hist_path.write_text(json.dumps({"posted": [], "processed": []}), encoding="utf-8")
+            article_path.write_text(json.dumps(self.real_article), encoding="utf-8")
+
+            with patch("post_generator.generate_post", side_effect=RuntimeError("API failure")), \
+                 patch.dict(os.environ, {"GITHUB_ACTIONS": "true"}), \
+                 self.assertRaises(SystemExit):
+                post_generator.main()
+
+            hist_data = json.loads(hist_path.read_text(encoding="utf-8"))
+            self.assertEqual(len(hist_data.get("posted", [])), 0)
+            self.assertEqual(len(hist_data.get("processed", [])), 0)
+        finally:
+            instagram_publisher.HISTORY_PATH = orig_hist
+            if hist_path.exists():
+                hist_path.unlink()
+            if post_path.exists():
+                post_path.unlink()
+            if article_path.exists():
+                article_path.unlink()
+
+
 if __name__ == "__main__":
     unittest.main()

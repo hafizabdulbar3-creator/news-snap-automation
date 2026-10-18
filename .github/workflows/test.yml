@@ -66,11 +66,18 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-3.8-flash"
-        run: python post_generator.py
+        run: |
+          rm -f post.json news_snap_post.jpg roundup_post.jpg
+          python post_generator.py
 
       - name: Generate NEWS SNAP image
         if: steps.check-candidates.outputs.has_fresh == 'true'
-        run: python generate_image.py
+        run: |
+          if [ ! -f post.json ]; then
+            echo "[FATAL ERROR] post.json missing prior to image generation."
+            exit 1
+          fi
+          python generate_image.py
 
       - name: Prepare GitHub Pages directory
         if: steps.check-candidates.outputs.has_fresh == 'true'
