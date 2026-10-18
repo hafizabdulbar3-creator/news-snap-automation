@@ -117,6 +117,15 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-18T05:00:22.965035+00:00"
+    },
+    {
+      "url": "https://www.dw.com/en/how-reliant-is-ukraine-on-the-us-controlled-starlink-internet-service/a-79689729",
+      "title": "Why Starlink is so important for Ukraine",
+      "headline": "Ukraine Warns of Ongoing Restrictions to Starlink Internet Network",
+      "domain": "dw.com",
+      "published": false,
+      "dry_run": true,
+      "timestamp": "2026-10-18T09:29:59.143778+00:00"
     }
   ]
 }
