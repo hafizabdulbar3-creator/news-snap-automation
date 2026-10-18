@@ -1,0 +1,42 @@
+name: NEWS SNAP Scheduler Controller
+
+on:
+  workflow_dispatch:
+    inputs:
+      bootstrap_only:
+        description: 'Initialize recurrence chain safely without dispatching production publisher'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: news-snap-scheduler-controller
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  controller:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run scheduler controller cycle
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          BOOTSTRAP_ONLY: ${{ inputs.bootstrap_only }}
+        run: python scheduler_controller.py

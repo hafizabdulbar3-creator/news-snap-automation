@@ -745,36 +745,53 @@ class TestSixFormatRegistry(unittest.TestCase):
 class TestScheduleAndFreshCandidates(unittest.TestCase):
     def test_five_minute_schedule_and_concurrency(self):
         import yaml
-        workflow_path = Path(".github/workflows/test.yml")
-        self.assertTrue(workflow_path.is_file(), "Workflow file .github/workflows/test.yml must exist")
-        content = workflow_path.read_text(encoding="utf-8")
+        test_path = Path(".github/workflows/test.yml")
+        scheduler_path = Path(".github/workflows/news-snap-scheduler.yml")
+        watchdog_path = Path(".github/workflows/news-snap-watchdog.yml")
 
-        # Verify 5-minute staggered cron schedule
-        self.assertIn('cron: "2-57/5 * * * *"', content, "Workflow must be scheduled with staggered 5-minute cron")
-        self.assertNotIn('0 */6 * * *', content, "6-hour schedule must be replaced")
-        self.assertNotIn('*/15 * * * *', content, "15-minute schedule must be replaced with 5-minute schedule")
+        self.assertTrue(test_path.is_file(), ".github/workflows/test.yml must exist")
+        self.assertTrue(scheduler_path.is_file(), ".github/workflows/news-snap-scheduler.yml must exist")
+        self.assertTrue(watchdog_path.is_file(), ".github/workflows/news-snap-watchdog.yml must exist")
 
-        # Verify parsed YAML structure
-        data = yaml.safe_load(content)
-        on_block = data.get(True) or data.get("on", {})
-        schedule_list = on_block.get("schedule", [])
-        self.assertTrue(len(schedule_list) > 0, "Schedule must be defined in workflow")
-        cron_val = schedule_list[0].get("cron")
-        self.assertEqual(cron_val, "2-57/5 * * * *")
+        test_content = test_path.read_text(encoding="utf-8")
+        scheduler_content = scheduler_path.read_text(encoding="utf-8")
+        watchdog_content = watchdog_path.read_text(encoding="utf-8")
 
-        # Verify concurrency group and queue mode
-        concurrency = data.get("concurrency", {})
-        self.assertEqual(concurrency.get("group"), "news-snap-automation-live")
-        self.assertEqual(concurrency.get("queue"), "max")
-        self.assertFalse(concurrency.get("cancel-in-progress", False), "cancel-in-progress must NOT be true with queue: max")
+        # Verify test.yml has workflow_dispatch and NO conflicting 5-minute cron
+        test_data = yaml.safe_load(test_content)
+        test_on = test_data.get(True) or test_data.get("on", {})
+        self.assertIn("workflow_dispatch", test_on)
+        self.assertNotIn("schedule", test_on, "Conflicting cron schedule must be removed from test.yml")
 
-        # Verify checkout settings for fresh git history
-        self.assertIn("ref: main", content)
-        self.assertIn("fetch-depth: 0", content)
-        self.assertIn("git pull origin main --rebase", content)
+        # Verify test.yml publisher-level concurrency
+        test_conc = test_data.get("concurrency", {})
+        self.assertEqual(test_conc.get("group"), "news-snap-automation-live")
+        self.assertEqual(test_conc.get("queue"), "max")
+        self.assertIn("ref: main", test_content)
+        self.assertIn("fetch-depth: 0", test_content)
+        self.assertIn("git pull origin main --rebase", test_content)
+        self.assertIn("for attempt in 1 2 3 4 5; do", test_content)
 
-        # Verify retry loop in Persist post history
-        self.assertIn("for attempt in 1 2 3 4 5; do", content)
+        # Verify news-snap-scheduler.yml controller configuration
+        sched_data = yaml.safe_load(scheduler_content)
+        sched_on = sched_data.get(True) or sched_data.get("on", {})
+        self.assertIn("workflow_dispatch", sched_on)
+        wd_inputs = sched_on["workflow_dispatch"].get("inputs", {})
+        self.assertIn("bootstrap_only", wd_inputs, "bootstrap_only input must exist")
+        self.assertEqual(wd_inputs["bootstrap_only"].get("type"), "boolean")
+
+        sched_perms = sched_data.get("permissions", {})
+        self.assertEqual(sched_perms.get("actions"), "write")
+
+        sched_conc = sched_data.get("concurrency", {})
+        self.assertEqual(sched_conc.get("group"), "news-snap-scheduler-controller")
+
+        # Verify news-snap-watchdog.yml recovery configuration
+        watch_data = yaml.safe_load(watchdog_content)
+        watch_perms = watch_data.get("permissions", {})
+        self.assertEqual(watch_perms.get("actions"), "write")
+        watch_conc = watch_data.get("concurrency", {})
+        self.assertEqual(watch_conc.get("group"), "news-snap-watchdog")
 
     def test_fifteen_minute_schedule(self):
         """Backward-compatibility alias pointing to 5-minute schedule test."""
@@ -1840,12 +1857,16 @@ class TestFinalComprehensiveQualityGate(unittest.TestCase):
         self.assertIn("Treasury Department today published", parser.paragraphs[0])
 
     def test_03_fresh_candidate_detection_and_schedule(self):
-        # Category 3: Fresh-candidate detection and 5-minute schedule enforcement
-        workflow_path = Path(".github/workflows/test.yml")
-        self.assertTrue(workflow_path.is_file())
-        workflow_text = workflow_path.read_text(encoding="utf-8")
-        self.assertIn("2-57/5 * * * *", workflow_text)
-        self.assertNotIn("0 */6 * * *", workflow_text)
+        # Category 3: Fresh-candidate detection and 5-minute scheduler architecture
+        test_path = Path(".github/workflows/test.yml")
+        sched_path = Path(".github/workflows/news-snap-scheduler.yml")
+        self.assertTrue(test_path.is_file())
+        self.assertTrue(sched_path.is_file())
+        test_text = test_path.read_text(encoding="utf-8")
+        sched_text = sched_path.read_text(encoding="utf-8")
+        self.assertIn("workflow_dispatch", test_text)
+        self.assertNotIn("0 */6 * * *", test_text)
+        self.assertIn("bootstrap_only", sched_text)
 
     def test_04_quota_sparing_diff_skip_logic(self):
         # Category 4: Quota-sparing candidate-diff skip logic
@@ -2178,6 +2199,149 @@ class TestFinalComprehensiveQualityGate(unittest.TestCase):
         # Verify render_contact_sheet script exists and can be imported
         import render_contact_sheet
         self.assertTrue(callable(render_contact_sheet.render_all_six_formats))
+
+
+
+class TestSchedulerArchitecture(unittest.TestCase):
+    def test_controller_bootstrap_only(self):
+        import scheduler_controller
+        dispatches = []
+
+        def mock_dispatch(repo, token, workflow_file, ref="main", inputs=None, api_url=None):
+            dispatches.append({"workflow": workflow_file, "inputs": inputs})
+            return True
+
+        with patch("scheduler_controller.dispatch_workflow", side_effect=mock_dispatch), \
+             patch("scheduler_controller.check_active_controller_runs", return_value=[]):
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="100",
+                bootstrap_only=True,
+                cycle_interval=0,
+                min_sleep=0
+            )
+
+        self.assertEqual(res["status"], "success")
+        self.assertFalse(res["publisher_dispatched"], "Bootstrap mode must NOT dispatch production publisher")
+        self.assertTrue(res["successor_dispatched"], "Bootstrap mode must dispatch successor controller")
+        # Verify exactly one dispatch occurred: successor controller
+        self.assertEqual(len(dispatches), 1)
+        self.assertEqual(dispatches[0]["workflow"], "news-snap-scheduler.yml")
+        self.assertEqual(dispatches[0]["inputs"], {"bootstrap_only": False})
+
+    def test_controller_normal_cycle(self):
+        import scheduler_controller
+        dispatches = []
+
+        def mock_dispatch(repo, token, workflow_file, ref="main", inputs=None, api_url=None):
+            dispatches.append({"workflow": workflow_file, "inputs": inputs})
+            return True
+
+        with patch("scheduler_controller.dispatch_workflow", side_effect=mock_dispatch), \
+             patch("scheduler_controller.check_active_controller_runs", return_value=[]):
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="100",
+                bootstrap_only=False,
+                cycle_interval=0,
+                min_sleep=0
+            )
+
+        self.assertEqual(res["status"], "success")
+        self.assertTrue(res["publisher_dispatched"], "Normal mode must dispatch production publisher")
+        self.assertTrue(res["successor_dispatched"], "Normal mode must dispatch successor controller")
+        # Verify exactly two dispatches occurred: publisher then successor
+        self.assertEqual(len(dispatches), 2)
+        self.assertEqual(dispatches[0]["workflow"], "test.yml")
+        self.assertIsNone(dispatches[0]["inputs"])
+        self.assertEqual(dispatches[1]["workflow"], "news-snap-scheduler.yml")
+        self.assertEqual(dispatches[1]["inputs"], {"bootstrap_only": False})
+
+    def test_controller_duplicate_chain_guard(self):
+        import scheduler_controller
+        active_runs = [{"id": 999, "run_number": 42, "status": "in_progress"}]
+
+        with patch("scheduler_controller.check_active_controller_runs", return_value=active_runs), \
+             patch("scheduler_controller.dispatch_workflow") as mock_disp:
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="100",
+                bootstrap_only=False,
+                cycle_interval=0,
+                min_sleep=0
+            )
+
+        self.assertEqual(res["status"], "aborted_duplicate")
+        self.assertFalse(res["publisher_dispatched"])
+        self.assertFalse(res["successor_dispatched"])
+        mock_disp.assert_not_called()
+
+    def test_controller_api_error_handling(self):
+        import scheduler_controller
+        with patch("scheduler_controller.query_api", return_value=(500, {"error": "Server error"})):
+            with self.assertRaises(RuntimeError) as ctx:
+                scheduler_controller.dispatch_workflow(
+                    repo="test/repo",
+                    token="test_tok",
+                    workflow_file="test.yml"
+                )
+            self.assertIn("Failed to dispatch 'test.yml'", str(ctx.exception))
+
+    def test_watchdog_active_controller_no_op(self):
+        import scheduler_watchdog
+        mock_runs_resp = {
+            "workflow_runs": [
+                {"id": 101, "run_number": 5, "status": "in_progress", "updated_at": "2026-10-18T22:00:00Z"}
+            ]
+        }
+        with patch("scheduler_watchdog.query_api", return_value=(200, mock_runs_resp)):
+            res = scheduler_watchdog.run_watchdog_check(repo="test/repo", token="test_tok")
+        self.assertEqual(res["status"], "healthy")
+        self.assertEqual(res["action"], "none")
+        self.assertEqual(res["active_run_id"], 101)
+
+    def test_watchdog_recent_completed_no_op(self):
+        from datetime import datetime, timezone
+        import scheduler_watchdog
+        now_iso = datetime.now(timezone.utc).isoformat()
+        mock_runs_resp = {
+            "workflow_runs": [
+                {"id": 102, "run_number": 6, "status": "completed", "updated_at": now_iso}
+            ]
+        }
+        with patch("scheduler_watchdog.query_api", return_value=(200, mock_runs_resp)):
+            res = scheduler_watchdog.run_watchdog_check(repo="test/repo", token="test_tok", stale_threshold_minutes=12)
+        self.assertEqual(res["status"], "healthy")
+        self.assertEqual(res["action"], "none")
+
+    def test_watchdog_stale_controller_recovery(self):
+        from datetime import datetime, timezone, timedelta
+        import scheduler_watchdog
+        # Completed 45 minutes in the past
+        old_time = (datetime.now(timezone.utc) - timedelta(minutes=45)).isoformat()
+        mock_runs_resp = {
+            "workflow_runs": [
+                {"id": 103, "run_number": 7, "status": "completed", "updated_at": old_time}
+            ]
+        }
+        calls = []
+
+        def mock_query(url, token, method="GET", payload=None):
+            if method == "GET":
+                return 200, mock_runs_resp
+            calls.append({"url": url, "method": method, "payload": payload})
+            return 204, {}
+
+        with patch("scheduler_watchdog.query_api", side_effect=mock_query):
+            res = scheduler_watchdog.run_watchdog_check(repo="test/repo", token="test_tok", stale_threshold_minutes=12)
+
+        self.assertEqual(res["status"], "revived")
+        self.assertEqual(res["action"], "dispatched_replacement")
+        self.assertEqual(len(calls), 1)
+        self.assertIn("news-snap-scheduler.yml/dispatches", calls[0]["url"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,52 @@
+name: NEWS SNAP Scheduler Watchdog
+
+# This workflow acts as an independent recovery watchdog for the primary 5-minute scheduler controller.
+# It runs on a low-frequency, staggered schedule (at minutes 13 and 43 of each hour).
+#
+# Watchdog Safety & Design:
+# - Uses the repository-scoped GITHUB_TOKEN with minimal permissions (actions: write, contents: read).
+# - Inspects recent runs of 'NEWS SNAP Scheduler Controller'.
+# - If an active or recently completed controller cycle is found, it does nothing (no-op).
+# - Only if the controller chain has become demonstrably stale (>12 minutes) does it dispatch a replacement controller.
+# - NOTE: Like all GitHub Actions cron events, this watchdog uses GitHub's best-effort scheduler and is not infallible.
+#
+# To stop the scheduler safely:
+# 1. Disable the 'NEWS SNAP Scheduler Controller' workflow in the Actions tab.
+# 2. Disable this 'NEWS SNAP Scheduler Watchdog' workflow in the Actions tab.
+# 3. If any controller run is currently executing, cancel it from the Actions UI.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Staggered recovery check every 30 minutes (minutes 13 and 43)
+    - cron: "13,43 * * * *"
+
+concurrency:
+  group: news-snap-watchdog
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run scheduler watchdog check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scheduler_watchdog.py

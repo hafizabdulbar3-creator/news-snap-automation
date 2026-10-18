@@ -971,29 +971,37 @@ def main():
         headers={"User-Agent": "NEWS-SNAP-Publisher/1.0"},
         method="POST"
     )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            pub_data = json.load(resp)
-    except urllib.error.HTTPError as err:
-        body = err.read().decode("utf-8", errors="replace")
-        err_msg = ""
+    pub_data = None
+    for pub_attempt in range(1, 4):
         try:
-            err_json = json.loads(body)
-            meta_err = err_json.get("error", {})
-            err_code = meta_err.get("code")
-            meta_msg = meta_err.get("message", "")
-            if err_code in (10, 200, 294) or "permission" in meta_msg.lower():
-                err_msg = (
-                    f"FAIL-CLOSED: Insufficient permissions for media publish (code {err_code}): {meta_msg}. "
-                    "Ensure 'instagram_business_content_publish' permission is granted to the Instagram User access token."
-                )
-            elif err_code == 190:
-                err_msg = f"FAIL-CLOSED: Instagram access token is invalid or expired (code 190): {meta_msg}."
-        except Exception:
-            pass
-        if err_msg:
-            raise RuntimeError(sanitize_token(err_msg, access_token)) from err
-        raise RuntimeError(f"Media publishing failed (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                pub_data = json.load(resp)
+            break
+        except urllib.error.HTTPError as err:
+            body = err.read().decode("utf-8", errors="replace")
+            err_msg = ""
+            try:
+                err_json = json.loads(body)
+                meta_err = err_json.get("error", {})
+                err_code = meta_err.get("code")
+                meta_msg = meta_err.get("message", "")
+                if meta_err.get("error_subcode") == 2207027 and pub_attempt < 3:
+                    print(f"[RETRY] Media not ready for publishing yet (subcode 2207027, attempt {pub_attempt}/3). Waiting 5s...")
+                    time.sleep(5)
+                    continue
+                if err_code in (10, 200, 294) or "permission" in meta_msg.lower():
+                    err_msg = (
+                        f"FAIL-CLOSED: Insufficient permissions for media publish (code {err_code}): {meta_msg}. "
+                        "Ensure 'instagram_business_content_publish' permission is granted to the Instagram User access token."
+                    )
+                elif err_code == 190:
+                    err_msg = f"FAIL-CLOSED: Instagram access token is invalid or expired (code 190): {meta_msg}."
+            except Exception:
+                pass
+            if err_msg:
+                raise RuntimeError(sanitize_token(err_msg, access_token)) from err
+            raise RuntimeError(f"Media publishing failed (HTTP {err.code}): {sanitize_token(body, access_token)}") from err
+
 
     media_id = pub_data.get("id")
     if not media_id:

@@ -2,10 +2,6 @@ name: NEWS SNAP Automation
 
 on:
   workflow_dispatch:
-  schedule:
-    # Run every 5 minutes with a staggered offset (minutes 2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57)
-    # Staggering avoids peak scheduling congestion at the top of the hour (:00) and common 15-minute intervals
-    - cron: "2-57/5 * * * *"
 
 concurrency:
   group: news-snap-automation-live
