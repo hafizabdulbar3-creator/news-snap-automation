@@ -219,9 +219,230 @@
       "timestamp": "2026-10-18T13:31:51.526666+00:00"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "EU tariffs aimed at China hitting Ukraine, steel boss says",
+      "domain": "bbc.co.uk",
+      "url": "https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "International Trade",
+        "reason": "Analysis of the spillover economic impacts of EU trade tariffs on Ukrainian industry."
+      },
+      "classified_at": "2026-10-19T00:07:24.667289+00:00"
+    },
+    {
+      "title": "Don't fall for this - how to protect yourself from AI scams",
+      "domain": "bbc.co.uk",
+      "url": "https://www.bbc.co.uk/news/articles/c60rl1xvjv89o",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "Public-interest advisory concerning cybersecurity and generative AI scams."
+      },
+      "classified_at": "2026-10-19T00:07:24.667294+00:00"
+    },
+    {
+      "title": "'Great Warrior Prime Minister': Trump endorses Netanyahu ahead of Israel elections",
+      "domain": "oann.com",
+      "url": "https://www.oann.com/newsroom/great-warrior-prime-minister-trump-endorses-netanyahu-ahead-of-israel-elections/",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "International Relations",
+        "reason": "US political endorsement affecting foreign national elections and Middle East diplomacy."
+      },
+      "classified_at": "2026-10-19T00:07:24.667297+00:00"
+    },
+    {
+      "title": "USA and Germany Support Former Norway Prime Minister Stoltenberg as New NATO Secretary - The Nordic Page",
+      "domain": "tnp.no",
+      "url": "https://www.tnp.no/norway/politics/4402-usa-and-germany-support-former-norway-prime-minister-stoltenberg-as-new-nato-secretary/",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "International Security",
+        "reason": "Leadership decisions regarding the appointment of NATO's Secretary General."
+      },
+      "classified_at": "2026-10-19T00:07:24.667300+00:00"
+    },
+    {
+      "title": "Government shutdown: Senate leaders reach deal on short-term spending bill to avoid shutdown",
+      "domain": "digbycourier.ca",
+      "url": "https://www.digbycourier.ca/government-shutdown-senate-leaders-reach-deal-on-short-term-spending-bill-to-avoid-shutdown/",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "US Governance",
+        "reason": "Congressional legislative agreement to prevent a federal government shutdown."
+      },
+      "classified_at": "2026-10-19T00:07:24.667303+00:00"
+    },
+    {
+      "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
+      "domain": "westerntelegraph.co.uk",
+      "url": "https://www.westerntelegraph.co.uk/news/national/26646884.39-people-hospital-fire-canadian-military-base-says-alberta-premier/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Accidents & Disasters",
+        "reason": "Mass casualty incident involving dozens hospitalized at a military facility."
+      },
+      "classified_at": "2026-10-19T00:07:24.667306+00:00"
+    },
+    {
+      "title": "Support frays over bumper trade deal with Europe",
+      "domain": "irrigator.com.au",
+      "url": "https://www.irrigator.com.au/story/9370788/support-frays-over-bumper-trade-deal-with-europe/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "International Trade",
+        "reason": "Negotiation friction and political resistance surrounding a major international trade agreement."
+      },
+      "classified_at": "2026-10-19T00:07:24.667310+00:00"
+    },
+    {
+      "title": "China's economy slows in May, and stimulus is expected",
+      "domain": "digbycourier.ca",
+      "url": "https://www.digbycourier.ca/chinas-economy-slows-in-may-and-stimulus-is-expected/",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Global Economy",
+        "reason": "Economic slowdown in the world's second-largest economy with macroeconomic policy implications."
+      },
+      "classified_at": "2026-10-19T00:07:24.667312+00:00"
+    },
+    {
+      "title": "Trump says he doesn't want to drive 'Russia away from the bargaining table,' signals progress in Russia-Ukraine War negotiations",
+      "domain": "oann.com",
+      "url": "https://www.oann.com/newsroom/trump-says-he-doesnt-want-to-drive-russia-away-from-the-bargaining-table-signals-progress-in-russia-ukraine-war-negotiations/",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Geopolitics",
+        "reason": "Diplomatic statements regarding high-stakes peace negotiations in the Russia-Ukraine war."
+      },
+      "classified_at": "2026-10-19T00:07:24.667316+00:00"
+    },
+    {
+      "title": "'A shock to all of us': A day after CFB Wainwright disaster, neighbouring town is eerily silent",
+      "domain": "calgarysun.com",
+      "url": "https://calgarysun.com/news/local-news/cfb-wainwright-town-response/wcm/39fe2499-0f17-4784-8750-8bda1d24fedb",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic News",
+        "reason": "Local aftermath and community impact following a deadly military base incident."
+      },
+      "classified_at": "2026-10-19T00:07:24.667318+00:00"
+    },
+    {
+      "title": "Statoil Sees Growth in Energy Demand towards 2040 - The Nordic Page",
+      "domain": "tnp.no",
+      "url": "https://www.tnp.no/norway/economy/3046-statoil-sees-growth-in-energy-demand-towards-2040/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Energy",
+        "reason": "Long-term global energy demand projections by a major multinational energy company."
+      },
+      "classified_at": "2026-10-19T00:07:24.667322+00:00"
+    },
+    {
+      "title": "Four Killed, Dozens Hurt in Fire at Canadian Military Base - Jowhar News Leader | Somali News",
+      "domain": "jowhar.com",
+      "url": "https://jowhar.com/four-killed-dozens-hurt-in-fire-at-canadian-military-base/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Accidents & Disasters",
+        "reason": "Fatal disaster at a military facility causing multiple deaths and injuries."
+      },
+      "classified_at": "2026-10-19T00:07:24.667325+00:00"
+    },
+    {
+      "title": "Major fire at Canada military base leaves four dead, dozens injured | Cedar News",
+      "domain": "cedarnews.net",
+      "url": "https://cedarnews.net/newstasks/1083645/major-fire-canada-military-base-leaves-four/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Accidents & Disasters",
+        "reason": "Report on casualties and emergency response following a fire at a Canadian military base."
+      },
+      "classified_at": "2026-10-19T00:07:24.667328+00:00"
+    },
+    {
+      "title": "Gold Star Spouse Questions JD Vance On 'Accountability' For Military's 'Failures' During VP Town Hall",
+      "domain": "dailycaller.com",
+      "url": "https://dailycaller.com/2026/10/18/gold-star-spouse-joey-amor-questions-jd-vance-accountability-military-failures-cbs-news-town-hall/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "US Politics",
+        "reason": "High-profile political town hall interaction highlighting military policy and accountability."
+      },
+      "classified_at": "2026-10-19T00:07:24.667333+00:00"
+    },
+    {
+      "title": "Danantara's transparency, mandate remain in question two years into Prabowo's rule - Economy - The Jakarta Post",
+      "domain": "thejakartapost.com",
+      "url": "http://www.thejakartapost.com/business/2026/10/19/danantaras-transparency-mandate-remain-in-question-two-years-into-prabowos-rule",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy & Governance",
+        "reason": "Governance and transparency concerns regarding Indonesia's sovereign wealth management."
+      },
+      "classified_at": "2026-10-19T00:07:24.667336+00:00"
+    },
+    {
+      "title": "Trump Endorses Netanyahu Ahead Of Israeli Elections | NewsRadio 1170 WWVA",
+      "domain": "newsradio1170.iheart.com",
+      "url": "https://newsradio1170.iheart.com/content/2026-10-18-trump-endorses-netanyahu-ahead-of-israeli-elections/",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "International Relations",
+        "reason": "Foreign political endorsement directly impacting national elections in Israel."
+      },
+      "classified_at": "2026-10-19T00:07:24.667339+00:00"
+    },
+    {
+      "title": "Why a mega trade deal has been thrown in jeopardy",
+      "domain": "bendigoadvertiser.com.au",
+      "url": "https://www.bendigoadvertiser.com.au/story/9370849/why-a-mega-trade-deal-has-been-thrown-in-jeopardy/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "International Trade",
+        "reason": "Analysis of political hurdles endangering a major bilateral/multilateral trade pact."
+      },
+      "classified_at": "2026-10-19T00:07:24.667342+00:00"
+    },
+    {
+      "title": "Google cuts quantum errors 40-fold in step toward practical use (GOOG:NASDAQ)",
+      "domain": "seekingalpha.com",
+      "url": "https://seekingalpha.com/news/4654077-google-cuts-quantum-errors-40-fold-in-step-toward-practical-use",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology & Science",
+        "reason": "Significant scientific breakthrough in quantum computing error mitigation."
+      },
+      "classified_at": "2026-10-19T00:07:24.667345+00:00"
+    },
+    {
+      "title": "Election 2026: Labour promise to enforce new conditions on social media companies",
+      "domain": "newstalkzb.co.nz",
+      "url": "https://www.newstalkzb.co.nz/news/politics/election-2026-labour-wants-to-force-social-media-companies-to-give-users-options-about-what-they-see/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National Politics",
+        "reason": "National election campaign pledge concerning regulatory policy on tech platforms."
+      },
+      "classified_at": "2026-10-19T00:07:24.667350+00:00"
+    },
+    {
+      "title": "Fatal fire at Canadian military base linked to live-fire exercise: official",
+      "domain": "bignewsnetwork.com",
+      "url": "http://www.bignewsnetwork.com/news/279383603/fatal-fire-at-canadian-military-base-linked-to-live-fire-exercise-official",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Accidents & Disasters",
+        "reason": "Official investigation findings into the cause of a fatal military base fire."
+      },
+      "classified_at": "2026-10-19T00:07:24.667353+00:00"
+    }
+  ],
   "quota_cooldown": {
-    "active": true,
+    "active": false,
     "resets_at": "2026-10-19T00:06:21+00:00",
     "reason": "Gemini Free Tier daily quota limit (20 requests/day) reached in Run #55.",
     "updated_at": "2026-10-18T18:54:17.311237+00:00"
