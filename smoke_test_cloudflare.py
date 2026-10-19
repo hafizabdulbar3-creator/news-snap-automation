@@ -33,12 +33,12 @@ def run_smoke_test() -> int:
         import ai_provider
 
         # Make one minimal text-generation request
-        test_prompt = 'Reply with a single JSON object: {"status": "ok", "provider": "cloudflare"}'
+        test_prompt = 'Output ONLY this JSON object and nothing else: {"status": "ok", "provider": "cloudflare"}'
         result = ai_provider.call_cloudflare_chat_completion(
             prompt=test_prompt,
-            system_prompt="You are a lightweight test service. Always output valid JSON.",
-            max_tokens=60,
-            max_attempts=2
+            system_prompt="You are a lightweight test service. Return ONLY valid JSON.",
+            max_tokens=256,
+            max_attempts=3
         )
 
         if isinstance(result, dict) and (result.get("status") == "ok" or "status" in result or len(result) > 0):

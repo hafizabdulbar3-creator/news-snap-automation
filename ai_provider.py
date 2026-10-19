@@ -271,7 +271,10 @@ def call_cloudflare_chat_completion(
         "messages": messages,
         "temperature": temperature,
         "max_tokens": max_tokens,
+        "max_completion_tokens": max_tokens,
     }
+    if "glm" in model_name.lower():
+        payload["chat_template_kwargs"] = {"enable_thinking": False}
     req_body = json.dumps(payload).encode("utf-8")
 
     last_error = None
@@ -310,7 +313,7 @@ def call_cloudflare_chat_completion(
                     if isinstance(choice, dict):
                         msg = choice.get("message", {})
                         if isinstance(msg, dict):
-                            content = msg.get("content") or ""
+                            content = msg.get("content") or msg.get("reasoning_content") or ""
                         elif isinstance(msg, str):
                             content = msg
                         if not content and "text" in choice:
@@ -325,7 +328,7 @@ def call_cloudflare_chat_completion(
                     if isinstance(choice, dict):
                         msg = choice.get("message", {})
                         if isinstance(msg, dict):
-                            content = msg.get("content") or ""
+                            content = msg.get("content") or msg.get("reasoning_content") or ""
                         elif isinstance(msg, str):
                             content = msg
                         if not content and "text" in choice:
@@ -664,7 +667,7 @@ Return ONLY a valid JSON object with these exact keys:
             prompt=user_prompt,
             system_prompt=system_prompt,
             temperature=0.2,
-            max_tokens=600
+            max_tokens=1024
         )
     elif provider == "groq":
         return call_groq_chat_completion(
