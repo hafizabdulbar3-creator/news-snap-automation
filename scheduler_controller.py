@@ -169,6 +169,19 @@ def run_controller_cycle(
         api_url=api_url
     )
     if other_active:
+        current_id_int = int(current_run_id) if current_run_id and str(current_run_id).isdigit() else None
+        if current_id_int and all(int(r.get("id", 0)) < current_id_int for r in other_active):
+            print("[DUPLICATE CHAIN GUARD] Detected older predecessor run still in teardown; waiting 8s for status propagation...")
+            sleep_fn(8)
+            other_active = check_active_controller_runs(
+                repo=repo,
+                token=token,
+                controller_workflow=controller_workflow,
+                current_run_id=current_run_id,
+                api_url=api_url
+            )
+
+    if other_active:
         other_run = other_active[0]
         print(f"[DUPLICATE CHAIN GUARD] Active controller run #{other_run.get('run_number')} (ID: {other_run.get('id')}) is already {other_run.get('status')}.")
         print("[DUPLICATE CHAIN GUARD] Aborting this run to preserve strict single-chain serialization.")

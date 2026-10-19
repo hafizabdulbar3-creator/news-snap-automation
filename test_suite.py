@@ -2301,6 +2301,35 @@ class TestSchedulerArchitecture(unittest.TestCase):
         self.assertFalse(res["successor_dispatched"])
         mock_disp.assert_not_called()
 
+    def test_controller_predecessor_teardown_grace_period(self):
+        import scheduler_controller
+        predecessor_run = [{"id": 99, "run_number": 41, "status": "in_progress"}]
+        check_calls = 0
+
+        def mock_check(*args, **kwargs):
+            nonlocal check_calls
+            check_calls += 1
+            if check_calls == 1:
+                return predecessor_run
+            return []
+
+        mock_sleep = MagicMock()
+        with patch("scheduler_controller.check_active_controller_runs", side_effect=mock_check), \
+             patch("scheduler_controller.dispatch_workflow", return_value=True):
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="100",
+                bootstrap_only=False,
+                cycle_interval=0,
+                min_sleep=0,
+                sleep_fn=mock_sleep
+            )
+
+        self.assertEqual(res["status"], "success")
+        self.assertEqual(check_calls, 3)
+        mock_sleep.assert_any_call(8)
+
     def test_controller_api_error_handling(self):
         import scheduler_controller
         with patch("scheduler_controller.query_api", return_value=(500, {"error": "Server error"})):
