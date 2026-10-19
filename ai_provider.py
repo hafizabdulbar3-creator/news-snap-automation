@@ -31,7 +31,7 @@ from pathlib import Path
 
 # Groq Defaults
 DEFAULT_GROQ_API_BASE = "https://api.groq.com/openai/v1"
-DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile"
+DEFAULT_GROQ_MODEL = "openai/gpt-oss-120b"
 
 # Gemini Defaults
 DEFAULT_GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
@@ -178,7 +178,7 @@ def call_groq_chat_completion(
                         history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
                         print(f"[GROQ QUOTA EXHAUSTED] {reason} (Cooldown until {reset_dt.isoformat()}).")
                         try:
-                            set_quota_cooldown(reset_dt, reason, history_path)
+                            set_quota_cooldown(reset_dt, reason, history_path, provider="groq")
                         except Exception:
                             pass
                         raise RuntimeError(f"Groq API quota exhausted: {reason}") from e
@@ -300,7 +300,7 @@ def call_gemini_generate_content(
                         history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
                         print(f"[GEMINI QUOTA EXHAUSTED] {reason} (Cooldown until {reset_dt.isoformat()}).")
                         try:
-                            set_quota_cooldown(reset_dt, reason, history_path)
+                            set_quota_cooldown(reset_dt, reason, history_path, provider="gemini")
                         except Exception:
                             pass
                         raise RuntimeError(f"Gemini API quota exhausted: {reason}") from e

@@ -48,7 +48,7 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
 
     # Determine provider hints
     url_str = str(getattr(err, "url", "")).lower()
-    provider = "Groq" if ("groq.com" in url_str or "groq" in body_low or "llama" in body_low or "rpd" in body_low or "tpd" in body_low) else "Gemini"
+    provider = "Groq" if ("groq.com" in url_str or "groq" in body_low or "llama" in body_low or "gpt-oss" in body_low or "rpd" in body_low or "tpd" in body_low) else "Gemini"
 
     # Detect indicators of daily or long-term quota exhaustion
     has_daily_metric = (
@@ -101,6 +101,21 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
     return False, None, ""
 
 
+def infer_provider(cd: dict) -> str:
+    """Infer the provider ('groq' or 'gemini' or 'all') from a cooldown dictionary."""
+    if not isinstance(cd, dict):
+        return "all"
+    p = str(cd.get("provider", "")).strip().lower()
+    if p in ("groq", "gemini"):
+        return p
+    reason = str(cd.get("reason", "")).lower()
+    if any(k in reason for k in ("groq", "llama", "gpt-oss", "rpd", "tpd")):
+        return "groq"
+    if any(k in reason for k in ("gemini", "goog", "google")):
+        return "gemini"
+    return "all"
+
+
 def load_history(history_path: Path = HISTORY_PATH, strict: bool = False) -> dict:
     """Load history.json structure.
 
@@ -111,7 +126,7 @@ def load_history(history_path: Path = HISTORY_PATH, strict: bool = False) -> dic
     if not p.is_file():
         if strict:
             raise FileNotFoundError(f"History file not found: {history_path}")
-        return {"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {}}
+        return {"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {}, "quota_cooldowns": {}}
     data = json.loads(p.read_text(encoding="utf-8"))
     if not isinstance(data, dict):
         raise ValueError(f"History file root is not a JSON object: {type(data)}")
@@ -119,6 +134,8 @@ def load_history(history_path: Path = HISTORY_PATH, strict: bool = False) -> dic
         data["classified_pool"] = []
     if "quota_cooldown" not in data:
         data["quota_cooldown"] = {}
+    if "quota_cooldowns" not in data or not isinstance(data["quota_cooldowns"], dict):
+        data["quota_cooldowns"] = {}
     return data
 
 
@@ -128,51 +145,141 @@ def save_history(data: dict, history_path: Path = HISTORY_PATH) -> None:
     p.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def get_quota_cooldown(history_path: Path = HISTORY_PATH) -> dict:
-    """Returns active cooldown info if currently in cooldown, else empty dict."""
+def get_quota_cooldown(history_path: Path = HISTORY_PATH, provider: str | None = None) -> dict:
+    """Returns active cooldown info for the specified provider if currently in cooldown, else empty dict.
+
+    If provider is specified ('groq' or 'gemini'), checks cooldown for that provider.
+    If provider is None:
+      - Resolves active provider from environment/ai_provider.
+      - If active provider is known, checks that provider's cooldown.
+      - If no active provider is known, checks legacy quota_cooldown.
+    """
     data = load_history(history_path)
-    cd = data.get("quota_cooldown", {})
-    if not cd or not cd.get("active"):
-        return {}
-    resets_at_str = cd.get("resets_at")
-    if not resets_at_str:
-        return {}
-    try:
-        resets_at = datetime.fromisoformat(resets_at_str.replace("Z", "+00:00"))
-        now = datetime.now(timezone.utc)
-        if now < resets_at:
-            return cd
-        # Expired: clear active state
-        cd["active"] = False
-        data["quota_cooldown"] = cd
-        save_history(data, history_path)
-        return {}
-    except Exception:
-        return {}
+    now = datetime.now(timezone.utc)
+
+    target_prov = provider.strip().lower() if provider else None
+    if not target_prov:
+        try:
+            from ai_provider import get_active_provider
+            active = get_active_provider()
+            if active:
+                target_prov = active
+        except ImportError:
+            pass
+        if not target_prov:
+            if os.environ.get("GROQ_API_KEY", "").strip():
+                target_prov = "groq"
+            elif os.environ.get("GEMINI_API_KEY", "").strip():
+                target_prov = "gemini"
+
+    # 1. Check provider-specific entry in quota_cooldowns if target_prov is known
+    cooldowns = data.get("quota_cooldowns", {})
+    if isinstance(cooldowns, dict) and target_prov and target_prov in cooldowns:
+        cd = cooldowns[target_prov]
+        if isinstance(cd, dict) and cd.get("active"):
+            resets_at_str = cd.get("resets_at")
+            if resets_at_str:
+                try:
+                    resets_at = datetime.fromisoformat(resets_at_str.replace("Z", "+00:00"))
+                    if now < resets_at:
+                        return cd
+                    # Expired: clear active state
+                    cd["active"] = False
+                    save_history(data, history_path)
+                    return {}
+                except Exception:
+                    pass
+
+    # 2. Check legacy quota_cooldown
+    cd_legacy = data.get("quota_cooldown", {})
+    if isinstance(cd_legacy, dict) and cd_legacy.get("active"):
+        resets_at_str = cd_legacy.get("resets_at")
+        if resets_at_str:
+            try:
+                resets_at = datetime.fromisoformat(resets_at_str.replace("Z", "+00:00"))
+                if now < resets_at:
+                    legacy_prov = infer_provider(cd_legacy)
+                    if target_prov:
+                        if legacy_prov in (target_prov, "all", "unknown"):
+                            return cd_legacy
+                        # Legacy cooldown belongs to a different provider
+                        return {}
+                    return cd_legacy
+                # Expired
+                cd_legacy["active"] = False
+                save_history(data, history_path)
+                return {}
+            except Exception:
+                pass
+
+    return {}
 
 
-def is_cooldown_active(history_path: Path = HISTORY_PATH) -> bool:
-    """Check whether a Gemini API quota cooldown is currently active."""
-    return bool(get_quota_cooldown(history_path))
+def is_cooldown_active(history_path: Path = HISTORY_PATH, provider: str | None = None) -> bool:
+    """Check whether an API quota cooldown is currently active for the provider."""
+    return bool(get_quota_cooldown(history_path, provider=provider))
 
 
-def set_quota_cooldown(resets_at: datetime, reason: str, history_path: Path = HISTORY_PATH) -> None:
-    """Set an active quota cooldown in history.json."""
+def set_quota_cooldown(
+    resets_at: datetime,
+    reason: str,
+    history_path: Path = HISTORY_PATH,
+    provider: str | None = None
+) -> None:
+    """Set an active quota cooldown in history.json for a provider."""
     data = load_history(history_path)
-    data["quota_cooldown"] = {
+    now_iso = datetime.now(timezone.utc).isoformat()
+    prov = (provider or "").strip().lower()
+    if not prov:
+        prov = infer_provider({"reason": reason})
+
+    cooldown_entry = {
         "active": True,
         "resets_at": resets_at.isoformat(),
         "reason": reason,
-        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "provider": prov,
+        "updated_at": now_iso,
     }
+
+    if "quota_cooldowns" not in data or not isinstance(data["quota_cooldowns"], dict):
+        data["quota_cooldowns"] = {}
+
+    if prov in ("groq", "gemini"):
+        data["quota_cooldowns"][prov] = cooldown_entry
+    else:
+        data["quota_cooldowns"]["groq"] = cooldown_entry
+        data["quota_cooldowns"]["gemini"] = cooldown_entry
+
+    data["quota_cooldown"] = cooldown_entry
     save_history(data, history_path)
 
 
-def clear_quota_cooldown(history_path: Path = HISTORY_PATH) -> None:
-    """Clear active quota cooldown in history.json."""
+def clear_quota_cooldown(history_path: Path = HISTORY_PATH, provider: str | None = None) -> None:
+    """Clear active quota cooldown in history.json for a provider or all providers."""
     data = load_history(history_path)
-    if "quota_cooldown" in data:
-        data["quota_cooldown"]["active"] = False
+    target_prov = (provider or "").strip().lower()
+
+    changed = False
+    if target_prov:
+        if "quota_cooldowns" in data and isinstance(data["quota_cooldowns"], dict):
+            if target_prov in data["quota_cooldowns"] and data["quota_cooldowns"][target_prov].get("active"):
+                data["quota_cooldowns"][target_prov]["active"] = False
+                changed = True
+        if "quota_cooldown" in data and isinstance(data["quota_cooldown"], dict):
+            if infer_provider(data["quota_cooldown"]) == target_prov and data["quota_cooldown"].get("active"):
+                data["quota_cooldown"]["active"] = False
+                changed = True
+    else:
+        if "quota_cooldown" in data and isinstance(data["quota_cooldown"], dict) and data["quota_cooldown"].get("active"):
+            data["quota_cooldown"]["active"] = False
+            changed = True
+        if "quota_cooldowns" in data and isinstance(data["quota_cooldowns"], dict):
+            for k in data["quota_cooldowns"]:
+                if data["quota_cooldowns"][k].get("active"):
+                    data["quota_cooldowns"][k]["active"] = False
+                    changed = True
+
+    if changed:
         save_history(data, history_path)
 
 

@@ -3248,7 +3248,7 @@ class TestMultiProviderAIClient(unittest.TestCase):
             res = ai_provider.call_groq_chat_completion(
                 prompt="Generate post",
                 api_key="gsk_valid_key",
-                model="llama-3.3-70b-versatile"
+                model="openai/gpt-oss-120b"
             )
 
         self.assertEqual(res["headline"], "Historic Global Climate Treaty Signed")
@@ -3257,8 +3257,33 @@ class TestMultiProviderAIClient(unittest.TestCase):
         self.assertEqual(req.get_header("Authorization"), "Bearer gsk_valid_key")
         self.assertEqual(req.get_header("Content-type"), "application/json")
         payload = json.loads(req.data.decode("utf-8"))
-        self.assertEqual(payload["model"], "llama-3.3-70b-versatile")
+        self.assertEqual(payload["model"], "openai/gpt-oss-120b")
         self.assertEqual(payload["response_format"], {"type": "json_object"})
+
+    def test_groq_uses_corrected_default_model(self):
+        """3b. Groq uses the corrected default free-tier model openai/gpt-oss-120b when no model is specified."""
+        self.assertEqual(ai_provider.DEFAULT_GROQ_MODEL, "openai/gpt-oss-120b")
+
+        mock_response_json = {
+            "choices": [
+                {"message": {"content": json.dumps({"headline": "Test Headline", "caption": "Test caption"})}}
+            ]
+        }
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = json.dumps(mock_response_json).encode("utf-8")
+        mock_resp.__enter__.return_value = mock_resp
+
+        recorded_req = []
+        def fake_urlopen(req, timeout=30):
+            recorded_req.append(req)
+            return mock_resp
+
+        with patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            ai_provider.call_groq_chat_completion(prompt="Test", api_key="gsk_key")
+
+        self.assertEqual(len(recorded_req), 1)
+        payload = json.loads(recorded_req[0].data.decode("utf-8"))
+        self.assertEqual(payload["model"], "openai/gpt-oss-120b")
 
     def test_groq_authentication_error_fails_closed(self):
         """4. call_groq_chat_completion fails closed immediately on HTTP 401 without retry."""
@@ -3308,7 +3333,7 @@ class TestMultiProviderAIClient(unittest.TestCase):
 
     def test_groq_daily_quota_exhaustion_sets_cooldown(self):
         """6. Daily quota exhaustion on Groq activates quota cooldown in history.json."""
-        err_fp = io.BytesIO(b'{"error": {"message": "Rate limit reached for model llama-3.3-70b-versatile in organization org_123 on requests per day (RPD): Limit 1000, Used 1000. Please try again in 12h30m."}}')
+        err_fp = io.BytesIO(b'{"error": {"message": "Rate limit reached for model openai/gpt-oss-120b in organization org_123 on requests per day (RPD): Limit 1000, Used 1000. Please try again in 12h30m."}}')
         http_err = urllib.error.HTTPError(
             url="https://api.groq.com/openai/v1/chat/completions",
             code=429,
@@ -3328,6 +3353,71 @@ class TestMultiProviderAIClient(unittest.TestCase):
         hist = json.loads(self.temp_hist.read_text(encoding="utf-8"))
         self.assertTrue(hist.get("quota_cooldown", {}).get("active"))
         self.assertIn("Groq", hist["quota_cooldown"].get("reason", ""))
+        self.assertEqual(hist["quota_cooldown"].get("provider"), "groq")
+
+    def test_active_gemini_cooldown_does_not_block_valid_groq_usage(self):
+        """6b. An active Gemini-only cooldown does not block Groq usage in post_generator or candidate check."""
+        from datetime import datetime, timezone, timedelta
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=14)
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [],
+            "quota_cooldown": {
+                "active": True,
+                "resets_at": future_dt.isoformat(),
+                "reason": "Gemini API quota exhausted. Retry required in 50000s.",
+                "provider": "gemini"
+            }
+        }), encoding="utf-8")
+
+        os.environ["GROQ_API_KEY"] = "gsk_valid_test_key"
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+
+        # 1. is_cooldown_active for groq must be False
+        self.assertFalse(quota_manager.is_cooldown_active(self.temp_hist, provider="groq"))
+        # 2. is_cooldown_active for gemini must be True
+        self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist, provider="gemini"))
+        # 3. is_cooldown_active default with GROQ_API_KEY active must be False
+        self.assertFalse(quota_manager.is_cooldown_active(self.temp_hist))
+
+        # 4. post_generator succeeds with Groq without raising cooldown exception
+        article = {
+            "title": "Major International Accord Reached at Summit",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/accord"
+        }
+        mock_groq_output = {
+            "headline": "Major International Accord Reached",
+            "curiosity_line": "Key global development",
+            "caption": "World powers and international delegates have formally concluded landmark negotiations to establish a new bilateral accord following constructive high-level discussions in Geneva.",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#SummitReport"]
+        }
+        with patch("ai_provider.call_groq_chat_completion", return_value=mock_groq_output):
+            post = post_generator.generate_post(article)
+        self.assertEqual(post["headline"], "Major International Accord Reached")
+
+    def test_actual_groq_quota_cooldown_blocks_groq_requests(self):
+        """6c. An actual Groq quota cooldown blocks Groq requests in post_generator and check_candidates."""
+        from datetime import datetime, timezone, timedelta
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=10)
+        quota_manager.set_quota_cooldown(
+            resets_at=future_dt,
+            reason="Groq API quota exhausted. RPD limit reached.",
+            history_path=self.temp_hist,
+            provider="groq"
+        )
+
+        os.environ["GROQ_API_KEY"] = "gsk_valid_test_key"
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+
+        self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist, provider="groq"))
+        self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist))
+
+        article = {"title": "Test Title", "domain": "reuters.com", "url": "https://reuters.com/test"}
+        with self.assertRaises(RuntimeError) as cm:
+            post_generator.generate_post(article)
+        self.assertIn("GROQ API quota is currently in active cooldown", str(cm.exception))
 
     def test_post_generator_with_groq_provider(self):
         """7. post_generator.generate_post produces validated Instagram post using Groq provider."""
@@ -3380,17 +3470,60 @@ class TestMultiProviderAIClient(unittest.TestCase):
         self.assertEqual(res["results"][1]["importance"], "LOW")
 
     def test_production_fails_closed_when_no_provider_key_configured(self):
-        """9. post_generator raises RuntimeError in production mode if neither Groq nor Gemini key is set."""
+        """9. Missing API credentials in production mode never leads to fake content or live publication."""
         os.environ["GITHUB_ACTIONS"] = "true"
         os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
         self.temp_hist.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": []}), encoding="utf-8")
 
         article = {"title": "Test Title", "domain": "reuters.com", "url": "https://reuters.com/test"}
+        # Post generator refuses to create mock content in production
         with self.assertRaises(RuntimeError) as cm:
             post_generator.generate_post(article)
 
         self.assertIn("CRITICAL", str(cm.exception))
         self.assertIn("GROQ_API_KEY", str(cm.exception))
+
+        # Classifier refuses to proceed in production without a provider key
+        with self.assertRaises(RuntimeError) as cm_class:
+            ai_provider.classify_articles_ai([article])
+        self.assertIn("CRITICAL", str(cm_class.exception))
+
+    def test_scheduler_does_not_create_duplicate_chains_or_publish_during_cooldown(self):
+        """10. Scheduler controller aborts on duplicate active chains and pauses during provider cooldown."""
+        # 10a. Duplicate chain aborts
+        other_run = {"id": 9999, "run_number": 55, "status": "in_progress"}
+        with patch("scheduler_controller.check_active_controller_runs", return_value=[other_run]):
+            res_dup = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="100",
+                history_file=str(self.temp_hist)
+            )
+        self.assertEqual(res_dup["status"], "aborted_duplicate")
+        self.assertFalse(res_dup["publisher_dispatched"])
+        self.assertFalse(res_dup["successor_dispatched"])
+
+        # 10b. Controller pauses and does not publish during active provider cooldown
+        from datetime import datetime, timezone, timedelta
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=5)
+        quota_manager.set_quota_cooldown(
+            resets_at=future_dt,
+            reason="Groq API daily quota exhausted",
+            history_path=self.temp_hist,
+            provider="groq"
+        )
+        os.environ["GROQ_API_KEY"] = "gsk_valid_key"
+
+        with patch("scheduler_controller.check_active_controller_runs", return_value=[]):
+            res_cool = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="100",
+                history_file=str(self.temp_hist)
+            )
+        self.assertEqual(res_cool["status"], "paused_quota_cooldown")
+        self.assertFalse(res_cool["publisher_dispatched"])
+        self.assertFalse(res_cool["successor_dispatched"])
 
 
 if __name__ == "__main__":

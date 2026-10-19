@@ -44,13 +44,16 @@ jobs:
 
       - name: Check for fresh eligible candidates
         id: check-candidates
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python check_candidates.py
 
       - name: Classify candidates with AI (Groq / Gemini)
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: "llama-3.3-70b-versatile"
+          GROQ_MODEL: "openai/gpt-oss-120b"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-3.8-flash"
         run: python classify.py
@@ -67,7 +70,7 @@ jobs:
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: "llama-3.3-70b-versatile"
+          GROQ_MODEL: "openai/gpt-oss-120b"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-3.8-flash"
         run: |

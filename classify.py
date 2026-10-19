@@ -24,9 +24,10 @@ def call_ai(articles):
             is_quota, reset_dt, reason = parse_quota_cooldown(e)
             if is_quota:
                 history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+                provider = get_active_provider() or "ai"
                 print(f"[QUOTA COOLDOWN ACTIVATED] {reason} (Cooldown until {reset_dt.isoformat()}).")
                 try:
-                    set_quota_cooldown(reset_dt, reason, history_path)
+                    set_quota_cooldown(reset_dt, reason, history_path, provider=provider)
                 except Exception:
                     pass
                 print("[FALLBACK] Using local journalistic heuristic classification to avoid pipeline failure.")
@@ -44,7 +45,8 @@ def call_ai(articles):
         try:
             from quota_manager import is_cooldown_active, heuristic_classify_article
             history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
-            if is_cooldown_active(history_path):
+            active_prov = get_active_provider() or None
+            if is_cooldown_active(history_path, provider=active_prov):
                 print(f"[QUOTA COOLDOWN ACTIVE] {e}")
                 print("[FALLBACK] Using local journalistic heuristic classification to avoid pipeline failure.")
                 results = []
@@ -132,10 +134,12 @@ def main():
         }, ensure_ascii=False, indent=2), encoding="utf-8")
         return
 
-    # 3. Check if Gemini quota is in active cooldown
-    if is_cooldown_active(history_path):
-        cd = get_quota_cooldown(history_path)
-        print(f"[QUOTA COOLDOWN] Gemini API is in active quota cooldown until {cd.get('resets_at')}.")
+    # 3. Check if active AI provider quota is in active cooldown
+    active_prov = get_active_provider() or None
+    if is_cooldown_active(history_path, provider=active_prov):
+        cd = get_quota_cooldown(history_path, provider=active_prov)
+        prov_name = cd.get("provider", active_prov or "AI").upper()
+        print(f"[QUOTA COOLDOWN] {prov_name} API is in active quota cooldown until {cd.get('resets_at')}.")
         print("[FALLBACK] Using local journalistic heuristic classification to avoid API calls.")
         batch = fresh_articles[:BATCH_SIZE]
         results = []

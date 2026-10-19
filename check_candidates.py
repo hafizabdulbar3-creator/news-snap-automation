@@ -154,11 +154,19 @@ def main():
     history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
     try:
         from quota_manager import is_cooldown_active, get_quota_cooldown
-        if is_cooldown_active(history_path):
-            cd = get_quota_cooldown(history_path)
+        active_provider = None
+        try:
+            from ai_provider import get_active_provider
+            active_provider = get_active_provider() or None
+        except ImportError:
+            pass
+
+        if is_cooldown_active(history_path, provider=active_provider):
+            cd = get_quota_cooldown(history_path, provider=active_provider)
             resets_at = cd.get("resets_at", "scheduled reset")
             reason = cd.get("reason", "Daily quota limit reached")
-            print(f"[QUOTA COOLDOWN] Gemini API daily quota cooldown is active until {resets_at}.")
+            prov_name = cd.get("provider", active_provider or "AI provider").upper()
+            print(f"[QUOTA COOLDOWN] {prov_name} API daily quota cooldown is active until {resets_at}.")
             print(f"[REASON] {reason}")
             print("[INFO] Pausing automated pipeline executions to preserve system stability.")
             github_output = os.environ.get("GITHUB_OUTPUT")
@@ -170,6 +178,7 @@ def main():
                         f.write("cooldown_active=true\n")
                 except Exception as e:
                     print(f"Warning: could not write to GITHUB_OUTPUT: {e}")
+            sys.exit(0)
     except Exception as e:
         print(f"[QUOTA GUARD FAIL-CLOSED] Error checking quota cooldown: {e}")
         github_output = os.environ.get("GITHUB_OUTPUT")

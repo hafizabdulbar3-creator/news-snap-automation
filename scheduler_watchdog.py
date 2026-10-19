@@ -145,11 +145,19 @@ def run_watchdog_check(
                 "error": diag
             }
 
-        if is_cooldown_active(history_file):
-            cd = get_quota_cooldown(history_file)
+        active_provider = None
+        try:
+            from ai_provider import get_active_provider
+            active_provider = get_active_provider() or None
+        except ImportError:
+            pass
+
+        if is_cooldown_active(history_file, provider=active_provider):
+            cd = get_quota_cooldown(history_file, provider=active_provider)
             resets_at = cd.get("resets_at", "unknown")
             reason = cd.get("reason", "Daily quota exhausted")
-            print(f"[WATCHDOG COOLDOWN ACTIVE] Active Gemini quota cooldown until {resets_at}.")
+            prov_name = cd.get("provider", active_provider or "AI provider").upper()
+            print(f"[WATCHDOG COOLDOWN ACTIVE] Active {prov_name} quota cooldown until {resets_at}.")
             print(f"[WATCHDOG COOLDOWN ACTIVE] Reason: {reason}")
             print("[WATCHDOG COOLDOWN ACTIVE] Suppressing scheduler revival while quota cooldown remains active.")
             print("===== WATCHDOG INSPECTION COMPLETE (COOLDOWN ACTIVE) =====")
@@ -157,7 +165,8 @@ def run_watchdog_check(
                 "status": "cooldown_active",
                 "action": "none",
                 "resets_at": resets_at,
-                "reason": reason
+                "reason": reason,
+                "provider": prov_name
             }
     except Exception as guard_err:
         diag = f"[WATCHDOG FAIL-CLOSED] Unexpected error during quota verification: {guard_err}"

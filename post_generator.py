@@ -504,13 +504,16 @@ def generate_post(article: dict) -> dict:
 
     try:
         from quota_manager import is_cooldown_active, get_quota_cooldown
+        from ai_provider import get_active_provider
+        active_provider = get_active_provider() or None
         history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
-        if is_cooldown_active(history_path):
-            cd = get_quota_cooldown(history_path)
+        if is_cooldown_active(history_path, provider=active_provider):
+            cd = get_quota_cooldown(history_path, provider=active_provider)
             resets_at = cd.get("resets_at", "scheduled reset")
             reason = cd.get("reason", "Daily quota exhausted")
+            prov_name = cd.get("provider", active_provider or "AI").upper()
             raise RuntimeError(
-                f"AI API quota is currently in active cooldown until {resets_at} ({reason}). "
+                f"{prov_name} API quota is currently in active cooldown until {resets_at} ({reason}). "
                 f"Refusing to make API requests during active quota cooldown."
             )
     except ImportError:
