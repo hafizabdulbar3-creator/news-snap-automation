@@ -233,6 +233,15 @@
       "published": true,
       "media_id": "18644483989042962",
       "timestamp": "2026-10-19T19:04:31.083507+00:00"
+    },
+    {
+      "url": "https://www.newstalkzb.co.nz/news/politics/election-2026-labour-wants-to-force-social-media-companies-to-give-users-options-about-what-they-see/",
+      "title": "Election 2026: Labour promise to enforce new conditions on social media companies",
+      "headline": "Labour vows to force social media companies to give users feed options",
+      "domain": "newstalkzb.co.nz",
+      "published": true,
+      "media_id": "17913150189504340",
+      "timestamp": "2026-10-19T19:34:50.815605+00:00"
     }
   ],
   "processed": [
@@ -373,17 +382,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Election 2026: Labour promise to enforce new conditions on social media companies",
-      "domain": "newstalkzb.co.nz",
-      "url": "https://www.newstalkzb.co.nz/news/politics/election-2026-labour-wants-to-force-social-media-companies-to-give-users-options-about-what-they-see/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National Politics",
-        "reason": "National election campaign pledge concerning regulatory policy on tech platforms."
-      },
-      "classified_at": "2026-10-19T00:07:24.667350+00:00"
-    },
     {
       "title": "Fatal fire at Canadian military base linked to live-fire exercise: official",
       "domain": "bignewsnetwork.com",
