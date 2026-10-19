@@ -4332,6 +4332,73 @@ Headline should be impactful.
             code = smoke_test_cloudflare.run_smoke_test()
             self.assertEqual(code, 1)
 
+    def test_scheduler_selects_cloudflare_and_bypasses_active_gemini_cooldown(self):
+        """13. Scheduler and watchdog select Cloudflare and do not halt solely due to active Gemini cooldown."""
+        from datetime import datetime, timezone, timedelta
+        # Set active Gemini cooldown in history
+        future_reset = datetime.now(timezone.utc) + timedelta(hours=12)
+        quota_manager.set_quota_cooldown(
+            resets_at=future_reset,
+            reason="Gemini API quota exhausted (limit: 20).",
+            history_path=self.temp_hist,
+            provider="gemini"
+        )
+        self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist, provider="gemini"))
+        self.assertFalse(quota_manager.is_cooldown_active(self.temp_hist, provider="cloudflare"))
+
+        # Configure Cloudflare provider in environment
+        os.environ["CLOUDFLARE_API_TOKEN"] = "valid_cf_token"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "valid_cf_acc"
+        os.environ["CLOUDFLARE_AI_MODEL"] = "@cf/zai-org/glm-4.7-flash"
+        os.environ["AI_PROVIDER"] = "cloudflare"
+
+        # 13a. Scheduler controller proceeds to dispatch publisher and successor without halting
+        with patch("scheduler_controller.check_active_controller_runs", return_value=[]), \
+             patch("scheduler_controller.dispatch_workflow", return_value=True) as mock_dispatch:
+            res_ctrl = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="mock_token",
+                current_run_id="202",
+                bootstrap_only=False,
+                history_file=str(self.temp_hist),
+                cycle_interval=0
+            )
+
+        self.assertEqual(res_ctrl["status"], "success")
+        self.assertTrue(res_ctrl["publisher_dispatched"])
+        self.assertTrue(res_ctrl["successor_dispatched"])
+        self.assertEqual(mock_dispatch.call_count, 2)
+        calls = mock_dispatch.call_args_list
+        self.assertEqual(calls[0][1]["workflow_file"], "test.yml")
+        self.assertEqual(calls[1][1]["workflow_file"], "news-snap-scheduler.yml")
+
+        # 13b. Watchdog also recovers stale controller because Cloudflare cooldown is clear
+        stale_runs = [{
+            "id": 100,
+            "run_number": 40,
+            "status": "completed",
+            "conclusion": "success",
+            "updated_at": (datetime.now(timezone.utc) - timedelta(minutes=25)).isoformat()
+        }]
+        watchdog_calls = []
+        def mock_wd_query(url, token, method="GET", payload=None):
+            if method == "GET":
+                return 200, {"workflow_runs": stale_runs}
+            watchdog_calls.append({"url": url, "method": method, "payload": payload})
+            return 204, {}
+
+        with patch("scheduler_watchdog.query_api", side_effect=mock_wd_query):
+            res_wd = scheduler_watchdog.run_watchdog_check(
+                repo="test/repo",
+                token="mock_token",
+                history_file=str(self.temp_hist)
+            )
+        self.assertEqual(res_wd["status"], "revived")
+        self.assertEqual(res_wd["action"], "dispatched_bootstrap")
+        self.assertEqual(len(watchdog_calls), 1)
+        self.assertIn("news-snap-scheduler.yml/dispatches", watchdog_calls[0]["url"])
+        self.assertTrue(watchdog_calls[0]["payload"]["inputs"]["bootstrap_only"])
+
 
 if __name__ == "__main__":
     unittest.main()
