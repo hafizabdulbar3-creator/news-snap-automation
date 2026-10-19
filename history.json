@@ -125,6 +125,15 @@
       "published": true,
       "media_id": "18147612055492716",
       "timestamp": "2026-10-19T10:56:56.813884+00:00"
+    },
+    {
+      "url": "https://seekingalpha.com/news/4654077-google-cuts-quantum-errors-40-fold-in-step-toward-practical-use",
+      "title": "Google cuts quantum errors 40-fold in step toward practical use (GOOG:NASDAQ)",
+      "headline": "Google cuts quantum errors 40-fold in step toward practical use",
+      "domain": "seekingalpha.com",
+      "published": true,
+      "media_id": "18168727279464744",
+      "timestamp": "2026-10-19T11:28:31.974848+00:00"
     }
   ],
   "processed": [
@@ -385,17 +394,6 @@
         "reason": "Analysis of political hurdles endangering a major bilateral/multilateral trade pact."
       },
       "classified_at": "2026-10-19T00:07:24.667342+00:00"
-    },
-    {
-      "title": "Google cuts quantum errors 40-fold in step toward practical use (GOOG:NASDAQ)",
-      "domain": "seekingalpha.com",
-      "url": "https://seekingalpha.com/news/4654077-google-cuts-quantum-errors-40-fold-in-step-toward-practical-use",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology & Science",
-        "reason": "Significant scientific breakthrough in quantum computing error mitigation."
-      },
-      "classified_at": "2026-10-19T00:07:24.667345+00:00"
     },
     {
       "title": "Election 2026: Labour promise to enforce new conditions on social media companies",
