@@ -2,6 +2,12 @@ name: NEWS SNAP Automation
 
 on:
   workflow_dispatch:
+    inputs:
+      force_publish:
+        description: 'Bypass cadence wait for immediate publication'
+        required: false
+        default: 'false'
+        type: string
 
 concurrency:
   group: news-snap-automation-live
@@ -49,6 +55,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FORCE_PUBLISH: ${{ inputs.force_publish }}
         run: python check_candidates.py
 
       - name: Classify candidates with AI (Cloudflare / Groq / Gemini)
