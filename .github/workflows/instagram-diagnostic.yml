@@ -1,0 +1,58 @@
+name: Instagram API Safe Diagnostic
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'diagnose_instagram.py'
+      - '.github/workflows/instagram-diagnostic.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    name: Meta Graph API Read-Only Diagnostic
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run safe read-only Instagram diagnostics
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+        run: python diagnose_instagram.py
+
+      - name: Persist sanitized diagnostic report
+        if: always()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -f diagnostic_report.json ]; then
+            git add diagnostic_report.json
+            git commit -m "chore: persist safe instagram diagnostic report [skip ci]" || true
+            for attempt in 1 2 3; do
+              if git push origin main; then
+                echo "Successfully pushed diagnostic report to main."
+                break
+              fi
+              echo "Rebasing and retrying push..."
+              git pull origin main --rebase || true
+              sleep 2
+            done
+          fi
+
+      - name: Upload diagnostic report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-diagnostic-report
+          path: diagnostic_report.json

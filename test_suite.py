@@ -4400,6 +4400,63 @@ Headline should be impactful.
         self.assertTrue(watchdog_calls[0]["payload"]["inputs"]["bootstrap_only"])
 
 
+class TestInstagramDiagnostic(unittest.TestCase):
+    """Unit tests for the safe read-only Instagram diagnostic tool."""
+
+    def test_mask_token(self):
+        import diagnose_instagram
+        self.assertEqual(diagnose_instagram.mask_token(""), "")
+        self.assertEqual(diagnose_instagram.mask_token("short"), "***")
+        self.assertEqual(diagnose_instagram.mask_token("IGAA123456789test"), "IGAA...test")
+
+    def test_sanitize(self):
+        import diagnose_instagram
+        raw = "secret_raw_token_xyz"
+        text = f"https://graph.instagram.com/me?access_token={raw}&other=1"
+        sanitized = diagnose_instagram.sanitize(text, token=raw)
+        self.assertNotIn(raw, sanitized)
+        self.assertIn("secr..._xyz", sanitized)
+
+        bearer_text = f"Authorization: Bearer {raw}"
+        sanitized_bearer = diagnose_instagram.sanitize(bearer_text, token=raw)
+        self.assertNotIn(raw, sanitized_bearer)
+
+    def test_run_get_check_success(self):
+        import diagnose_instagram
+        mock_resp = io.BytesIO(json.dumps({"id": "12345", "username": "testuser"}).encode("utf-8"))
+        mock_resp.status = 200
+        mock_resp.headers = {"Content-Type": "application/json"}
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            res = diagnose_instagram.run_get_check("test_check", "https://graph.instagram.com/v22.0/me", token="test_token")
+            self.assertTrue(res["success"])
+            self.assertEqual(res["status"], 200)
+            self.assertEqual(res["data"]["username"], "testuser")
+
+    def test_run_get_check_oauth_exception_handling(self):
+        import diagnose_instagram
+        err_body = json.dumps({
+            "error": {
+                "message": "API access blocked.",
+                "type": "OAuthException",
+                "code": 200,
+                "fbtrace_id": "TRACE123"
+            }
+        }).encode("utf-8")
+        http_err = urllib.error.HTTPError(
+            url="https://graph.instagram.com/v22.0/me",
+            code=400,
+            msg="Bad Request",
+            hdrs={"Www-Authenticate": 'OAuth "Facebook Platform" "access_denied" "API access blocked."'},
+            fp=io.BytesIO(err_body)
+        )
+        with patch("urllib.request.urlopen", side_effect=http_err):
+            res = diagnose_instagram.run_get_check("test_fail", "https://graph.instagram.com/v22.0/me", token="test_token")
+            self.assertFalse(res["success"])
+            self.assertEqual(res["status"], 400)
+            self.assertEqual(res["error"]["code"], 200)
+            self.assertEqual(res["error"]["message"], "API access blocked.")
+
+
 if __name__ == "__main__":
     unittest.main()
 
