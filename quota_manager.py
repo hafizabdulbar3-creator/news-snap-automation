@@ -54,7 +54,7 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
 
     # Determine provider hints
     url_str = str(getattr(err, "url", "")).lower()
-    if "cloudflare" in url_str or "cloudflare" in body_low or "neuron" in body_low:
+    if "cloudflare" in url_str or "cloudflare" in body_low or "neuron" in body_low or "zai-org" in body_low or "glm" in body_low:
         provider = "Cloudflare"
     elif "groq.com" in url_str or "groq" in body_low or "llama" in body_low or "gpt-oss" in body_low or "rpd" in body_low or "tpd" in body_low:
         provider = "Groq"
@@ -123,7 +123,7 @@ def infer_provider(cd: dict) -> str:
     if p in ("cloudflare", "groq", "gemini"):
         return p
     reason = str(cd.get("reason", "")).lower()
-    if any(k in reason for k in ("cloudflare", "workers ai", "neuron")):
+    if any(k in reason for k in ("cloudflare", "workers ai", "neuron", "glm", "zai-org")):
         return "cloudflare"
     if any(k in reason for k in ("groq", "llama", "gpt-oss", "rpd", "tpd")):
         return "groq"

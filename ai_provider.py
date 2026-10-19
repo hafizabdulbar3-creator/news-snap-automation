@@ -2,9 +2,9 @@
 
 Provides a unified interface for hosted text generation and article triage:
 1. Cloudflare Workers AI (Zero-Cost Hosted Serverless):
-   - Endpoint: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/run/@cf/meta/llama-3.1-8b-instruct
+   - Endpoint: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/run/@cf/zai-org/glm-4.7-flash
    - Configured via CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID
-   - Supported models: @cf/meta/llama-3.1-8b-instruct (default)
+   - Supported models: @cf/zai-org/glm-4.7-flash (default)
 2. Groq API (High-speed Llama Inference):
    - Endpoint: https://api.groq.com/openai/v1/chat/completions
    - Configured via GROQ_API_KEY
@@ -35,7 +35,7 @@ from pathlib import Path
 
 # Cloudflare Defaults
 DEFAULT_CLOUDFLARE_API_BASE = "https://api.cloudflare.com/client/v4/accounts"
-DEFAULT_CLOUDFLARE_MODEL = "@cf/meta/llama-3.1-8b-instruct"
+DEFAULT_CLOUDFLARE_MODEL = "@cf/zai-org/glm-4.7-flash"
 
 # Groq Defaults
 DEFAULT_GROQ_API_BASE = "https://api.groq.com/openai/v1"
@@ -297,18 +297,53 @@ def call_cloudflare_chat_completion(
                 raise RuntimeError(f"Cloudflare Workers AI returned success=False: {err_msg}")
 
             result = resp_data.get("result", {})
+            content = ""
             if isinstance(result, str):
                 content = result
             elif isinstance(result, dict):
-                content = result.get("response") or result.get("text") or ""
-            else:
-                content = ""
+                if result.get("response"):
+                    content = result.get("response")
+                elif result.get("text"):
+                    content = result.get("text")
+                elif result.get("choices") and isinstance(result["choices"], list) and len(result["choices"]) > 0:
+                    choice = result["choices"][0]
+                    if isinstance(choice, dict):
+                        msg = choice.get("message", {})
+                        if isinstance(msg, dict):
+                            content = msg.get("content") or ""
+                        elif isinstance(msg, str):
+                            content = msg
+                        if not content and "text" in choice:
+                            content = choice.get("text") or ""
+                elif result.get("message") and isinstance(result["message"], dict):
+                    content = result["message"].get("content") or ""
+
+            # Check if resp_data directly contained choices (OpenAI schema envelope)
+            if not content:
+                if resp_data.get("choices") and isinstance(resp_data["choices"], list) and len(resp_data["choices"]) > 0:
+                    choice = resp_data["choices"][0]
+                    if isinstance(choice, dict):
+                        msg = choice.get("message", {})
+                        if isinstance(msg, dict):
+                            content = msg.get("content") or ""
+                        elif isinstance(msg, str):
+                            content = msg
+                        if not content and "text" in choice:
+                            content = choice.get("text") or ""
+                elif resp_data.get("response"):
+                    content = resp_data.get("response")
 
             if not content:
                 raise ValueError("Cloudflare Workers AI returned empty content in response.")
 
-            # Clean markdown code fences if present
+            # Clean reasoning / thinking tags if present from reasoning models
             cleaned = content.strip()
+            if "<think>" in cleaned:
+                cleaned = re.sub(r"<think>.*?</think>", "", cleaned, flags=re.DOTALL).strip()
+                if "</think>" in cleaned:
+                    cleaned = cleaned.split("</think>", 1)[-1].strip()
+
+            # Clean markdown code fences if present
             if cleaned.startswith("```"):
                 cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned, flags=re.IGNORECASE)
                 cleaned = re.sub(r"\s*```$", "", cleaned)

@@ -4005,7 +4005,7 @@ class TestCloudflareWorkersAIProvider(unittest.TestCase):
         # Verify request details
         req_sent = mock_urlopen.call_args[0][0]
         self.assertIn("cf_test_account_id", req_sent.full_url)
-        self.assertIn("@cf/meta/llama-3.1-8b-instruct", req_sent.full_url)
+        self.assertIn("@cf/zai-org/glm-4.7-flash", req_sent.full_url)
         self.assertEqual(req_sent.headers["Authorization"], "Bearer cf_test_token")
         self.assertEqual(req_sent.headers["Content-type"], "application/json")
 
@@ -4069,7 +4069,7 @@ Hope this helps!"""
         os.environ["CLOUDFLARE_ACCOUNT_ID"] = "test_acc"
 
         http_err = urllib.error.HTTPError(
-            url="https://api.cloudflare.com/client/v4/accounts/test_acc/ai/run/@cf/meta/llama-3.1-8b-instruct",
+            url="https://api.cloudflare.com/client/v4/accounts/test_acc/ai/run/@cf/zai-org/glm-4.7-flash",
             code=401,
             msg="Unauthorized",
             hdrs={},
@@ -4092,7 +4092,7 @@ Hope this helps!"""
         self.temp_hist.write_text(json.dumps({"posted": [], "processed": []}), encoding="utf-8")
 
         http_err = urllib.error.HTTPError(
-            url="https://api.cloudflare.com/client/v4/accounts/acc/ai/run/@cf/meta/llama-3.1-8b-instruct",
+            url="https://api.cloudflare.com/client/v4/accounts/acc/ai/run/@cf/zai-org/glm-4.7-flash",
             code=429,
             msg="Too Many Requests",
             hdrs={},
@@ -4221,6 +4221,116 @@ Hope this helps!"""
                 temp_disc.unlink()
             if temp_out.is_file():
                 temp_out.unlink()
+
+    def test_call_cloudflare_openai_choices_response_format(self):
+        """10. Parses choices schema inside result dict as well as top-level envelope."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "acc"
+
+        # Case A: result.choices format (standard Workers AI LLM response)
+        payload_a = {
+            "result": {
+                "choices": [
+                    {
+                        "index": 0,
+                        "message": {
+                            "role": "assistant",
+                            "content": json.dumps({"headline": "Workers AI Choice In Result", "status": "ok"})
+                        },
+                        "finish_reason": "stop"
+                    }
+                ]
+            },
+            "success": True,
+            "errors": [],
+            "messages": []
+        }
+        mock_resp_a = MagicMock()
+        mock_resp_a.read.return_value = json.dumps(payload_a).encode("utf-8")
+        mock_resp_a.__enter__.return_value = mock_resp_a
+
+        with patch("urllib.request.urlopen", return_value=mock_resp_a):
+            res_a = ai_provider.call_cloudflare_chat_completion(prompt="test choices in result")
+        self.assertEqual(res_a["headline"], "Workers AI Choice In Result")
+
+        # Case B: top-level choices format
+        payload_b = {
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": json.dumps({"headline": "Top Level Choice", "status": "ok"})
+                    },
+                    "finish_reason": "stop"
+                }
+            ],
+            "success": True
+        }
+        mock_resp_b = MagicMock()
+        mock_resp_b.read.return_value = json.dumps(payload_b).encode("utf-8")
+        mock_resp_b.__enter__.return_value = mock_resp_b
+
+        with patch("urllib.request.urlopen", return_value=mock_resp_b):
+            res_b = ai_provider.call_cloudflare_chat_completion(prompt="test top level choices")
+        self.assertEqual(res_b["headline"], "Top Level Choice")
+
+    def test_call_cloudflare_reasoning_thinking_tags_stripping(self):
+        """11. Strips <think>...</think> reasoning tags emitted by GLM-4.7-Flash before JSON decoding."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "acc"
+
+        raw_reasoning_output = """<think>
+Let's consider how to format this news snap headline concisely.
+Headline should be impactful.
+</think>
+```json
+{
+  "headline": "Historic Breakthrough Announced",
+  "topic": "Technology"
+}
+```"""
+        mock_payload = {
+            "result": {
+                "response": raw_reasoning_output
+            },
+            "success": True,
+            "errors": [],
+            "messages": []
+        }
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = json.dumps(mock_payload).encode("utf-8")
+        mock_resp.__enter__.return_value = mock_resp
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            res = ai_provider.call_cloudflare_chat_completion(prompt="generate headline")
+        self.assertEqual(res["headline"], "Historic Breakthrough Announced")
+        self.assertEqual(res["topic"], "Technology")
+
+    def test_smoke_test_script_success_and_failure(self):
+        """12. smoke_test_cloudflare script behaves safely without touching history or publishing."""
+        import smoke_test_cloudflare
+
+        # 12a. Missing credentials fails fast
+        with patch.dict(os.environ, {"CLOUDFLARE_API_TOKEN": "", "CLOUDFLARE_ACCOUNT_ID": ""}):
+            code = smoke_test_cloudflare.run_smoke_test()
+            self.assertEqual(code, 1)
+
+        # 12b. Successful test returns 0
+        with patch.dict(os.environ, {
+            "CLOUDFLARE_API_TOKEN": "valid_token",
+            "CLOUDFLARE_ACCOUNT_ID": "valid_acc"
+        }), patch("ai_provider.call_cloudflare_chat_completion", return_value={"status": "ok", "provider": "cloudflare"}):
+            code = smoke_test_cloudflare.run_smoke_test()
+            self.assertEqual(code, 0)
+
+        # 12c. API error sanitizes secrets and returns 1
+        with patch.dict(os.environ, {
+            "CLOUDFLARE_API_TOKEN": "secret_token_123",
+            "CLOUDFLARE_ACCOUNT_ID": "secret_acc_456"
+        }), patch("ai_provider.call_cloudflare_chat_completion", side_effect=RuntimeError("Secret error: secret_token_123")):
+            code = smoke_test_cloudflare.run_smoke_test()
+            self.assertEqual(code, 1)
 
 
 if __name__ == "__main__":
