@@ -91,22 +91,25 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
     return False, None, ""
 
 
-def load_history(history_path: Path = HISTORY_PATH) -> dict:
-    """Safely load history.json structure."""
+def load_history(history_path: Path = HISTORY_PATH, strict: bool = False) -> dict:
+    """Load history.json structure.
+
+    If strict=True, raises FileNotFoundError if history file does not exist.
+    Raises json.JSONDecodeError or ValueError if history file exists but is unreadable or malformed.
+    """
     p = Path(history_path)
     if not p.is_file():
+        if strict:
+            raise FileNotFoundError(f"History file not found: {history_path}")
         return {"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {}}
-    try:
-        data = json.loads(p.read_text(encoding="utf-8"))
-        if not isinstance(data, dict):
-            return {"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {}}
-        if "classified_pool" not in data:
-            data["classified_pool"] = []
-        if "quota_cooldown" not in data:
-            data["quota_cooldown"] = {}
-        return data
-    except Exception:
-        return {"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {}}
+    data = json.loads(p.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError(f"History file root is not a JSON object: {type(data)}")
+    if "classified_pool" not in data:
+        data["classified_pool"] = []
+    if "quota_cooldown" not in data:
+        data["quota_cooldown"] = {}
+    return data
 
 
 def save_history(data: dict, history_path: Path = HISTORY_PATH) -> None:

@@ -27,6 +27,7 @@ To stop the scheduler:
 from datetime import datetime, timezone
 import json
 import os
+from pathlib import Path
 import sys
 import time
 import urllib.error
@@ -178,10 +179,52 @@ def run_controller_cycle(
             "successor_dispatched": False
         }
 
-    # Check quota cooldown from history.json before dispatching publisher or successor
+    # FAIL-CLOSED QUOTA & INTEGRITY GUARD
+    # If quota checking fails, history.json is unreadable or malformed,
+    # or quota_manager cannot be imported, controller MUST NOT dispatch publisher or successor.
     history_file = history_file or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
     try:
-        from quota_manager import is_cooldown_active, get_quota_cooldown
+        hist_path = Path(history_file)
+        if not hist_path.is_file():
+            diag = f"[QUOTA GUARD FAIL-CLOSED] History file missing or not accessible: '{history_file}'"
+            print(diag)
+            print("[CHAIN HALT] Aborting controller cycle without dispatching publisher or successor.")
+            return {
+                "status": "error_history_missing",
+                "error": diag,
+                "publisher_dispatched": False,
+                "successor_dispatched": False
+            }
+
+        try:
+            raw_hist = hist_path.read_text(encoding="utf-8")
+            data = json.loads(raw_hist)
+            if not isinstance(data, dict):
+                raise ValueError("History file root must be a JSON object")
+        except Exception as json_err:
+            diag = f"[QUOTA GUARD FAIL-CLOSED] History file unreadable or malformed JSON: {json_err}"
+            print(diag)
+            print("[CHAIN HALT] Aborting controller cycle without dispatching publisher or successor.")
+            return {
+                "status": "error_history_malformed",
+                "error": diag,
+                "publisher_dispatched": False,
+                "successor_dispatched": False
+            }
+
+        try:
+            from quota_manager import is_cooldown_active, get_quota_cooldown
+        except Exception as import_err:
+            diag = f"[QUOTA GUARD FAIL-CLOSED] Quota module could not be imported: {import_err}"
+            print(diag)
+            print("[CHAIN HALT] Aborting controller cycle without dispatching publisher or successor.")
+            return {
+                "status": "error_quota_module_import",
+                "error": diag,
+                "publisher_dispatched": False,
+                "successor_dispatched": False
+            }
+
         if is_cooldown_active(history_file):
             cd = get_quota_cooldown(history_file)
             resets_at = cd.get("resets_at", "unknown")
@@ -198,8 +241,16 @@ def run_controller_cycle(
                 "publisher_dispatched": False,
                 "successor_dispatched": False
             }
-    except ImportError:
-        pass
+    except Exception as guard_err:
+        diag = f"[QUOTA GUARD FAIL-CLOSED] Unexpected error during quota verification: {guard_err}"
+        print(diag)
+        print("[CHAIN HALT] Aborting controller cycle without dispatching publisher or successor.")
+        return {
+            "status": "error_quota_guard_failed",
+            "error": diag,
+            "publisher_dispatched": False,
+            "successor_dispatched": False
+        }
 
     publisher_dispatched = False
     # Execute publisher dispatch if not in bootstrap mode

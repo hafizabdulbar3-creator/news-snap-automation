@@ -14,6 +14,7 @@ import ast
 import io
 import json
 import os
+import sys
 import unittest
 import urllib.error
 from pathlib import Path
@@ -3060,6 +3061,91 @@ class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
         self.assertTrue(summary["cooldown_active"])
         self.assertEqual(summary["pool_count"], 1)
         self.assertFalse(summary["confirmed_published"])
+
+    def test_controller_fails_closed_on_missing_history_file(self):
+        """9. Controller fails closed when history file is missing (no publisher or successor dispatch)."""
+        res = scheduler_controller.run_controller_cycle(
+            repo="test/repo",
+            token="test_token",
+            history_file="non_existent_history_file.json"
+        )
+        self.assertEqual(res["status"], "error_history_missing")
+        self.assertFalse(res["publisher_dispatched"])
+        self.assertFalse(res["successor_dispatched"])
+
+    def test_controller_fails_closed_on_malformed_history_json(self):
+        """10. Controller fails closed when history JSON is corrupt or invalid."""
+        self.temp_hist.write_text("{broken json invalid syntax", encoding="utf-8")
+        res = scheduler_controller.run_controller_cycle(
+            repo="test/repo",
+            token="test_token",
+            history_file=str(self.temp_hist)
+        )
+        self.assertEqual(res["status"], "error_history_malformed")
+        self.assertFalse(res["publisher_dispatched"])
+        self.assertFalse(res["successor_dispatched"])
+
+    def test_controller_fails_closed_on_missing_quota_module(self):
+        """11. Controller fails closed when quota_manager cannot be imported."""
+        self.temp_hist.write_text(json.dumps({}), encoding="utf-8")
+        with patch.dict(sys.modules, {"quota_manager": None}):
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_token",
+                history_file=str(self.temp_hist)
+            )
+        self.assertEqual(res["status"], "error_quota_module_import")
+        self.assertFalse(res["publisher_dispatched"])
+        self.assertFalse(res["successor_dispatched"])
+
+    def test_watchdog_fails_closed_on_missing_history_file(self):
+        """12. Watchdog fails closed when history file is missing (no scheduler restart)."""
+        res = scheduler_watchdog.run_watchdog_check(
+            repo="test/repo",
+            token="test_token",
+            history_file="non_existent_history_file.json"
+        )
+        self.assertEqual(res["status"], "error_history_missing")
+        self.assertEqual(res["action"], "none")
+
+    def test_watchdog_fails_closed_on_malformed_history_json(self):
+        """13. Watchdog fails closed when history JSON is corrupt or invalid."""
+        self.temp_hist.write_text("{broken json invalid syntax", encoding="utf-8")
+        res = scheduler_watchdog.run_watchdog_check(
+            repo="test/repo",
+            token="test_token",
+            history_file=str(self.temp_hist)
+        )
+        self.assertEqual(res["status"], "error_history_malformed")
+        self.assertEqual(res["action"], "none")
+
+    def test_watchdog_fails_closed_on_missing_quota_module(self):
+        """14. Watchdog fails closed when quota_manager cannot be imported."""
+        self.temp_hist.write_text(json.dumps({}), encoding="utf-8")
+        with patch.dict(sys.modules, {"quota_manager": None}):
+            res = scheduler_watchdog.run_watchdog_check(
+                repo="test/repo",
+                token="test_token",
+                history_file=str(self.temp_hist)
+            )
+        self.assertEqual(res["status"], "error_quota_module_import")
+        self.assertEqual(res["action"], "none")
+
+    def test_quota_manager_load_history_strict_mode_and_corruption_guards(self):
+        """15. quota_manager.load_history raises errors on corrupt JSON or missing files in strict mode."""
+        # Non-existent file in strict mode
+        with self.assertRaises(FileNotFoundError):
+            quota_manager.load_history(Path("missing_file.json"), strict=True)
+
+        # Corrupt JSON
+        self.temp_hist.write_text("{corrupt: json", encoding="utf-8")
+        with self.assertRaises(json.JSONDecodeError):
+            quota_manager.load_history(self.temp_hist)
+
+        # Non-dict JSON root
+        self.temp_hist.write_text(json.dumps(["not", "a", "dict"]), encoding="utf-8")
+        with self.assertRaises(ValueError):
+            quota_manager.load_history(self.temp_hist)
 
 
 if __name__ == "__main__":

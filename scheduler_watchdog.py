@@ -23,6 +23,7 @@ To stop the scheduler safely:
 from datetime import datetime, timezone
 import json
 import os
+from pathlib import Path
 import sys
 import urllib.error
 import urllib.request
@@ -101,10 +102,49 @@ def run_watchdog_check(
     print(f"Monitored Controller: {controller_workflow}")
     print(f"Stale Threshold: {stale_threshold_minutes} minutes")
 
-    # 1. Check for active quota cooldown
+    # FAIL-CLOSED QUOTA & INTEGRITY GUARD
+    # If quota checking fails, history.json is unreadable or malformed,
+    # or quota_manager cannot be imported, watchdog MUST NOT restart controller.
     history_file = history_file or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
     try:
-        from quota_manager import is_cooldown_active, get_quota_cooldown
+        hist_path = Path(history_file)
+        if not hist_path.is_file():
+            diag = f"[WATCHDOG FAIL-CLOSED] History file missing or not accessible: '{history_file}'"
+            print(diag)
+            print("[WATCHDOG SUPPRESSED] Suppressing scheduler revival due to unverified history state.")
+            return {
+                "status": "error_history_missing",
+                "action": "none",
+                "error": diag
+            }
+
+        try:
+            raw_hist = hist_path.read_text(encoding="utf-8")
+            data = json.loads(raw_hist)
+            if not isinstance(data, dict):
+                raise ValueError("History file root must be a JSON object")
+        except Exception as json_err:
+            diag = f"[WATCHDOG FAIL-CLOSED] History file unreadable or malformed JSON: {json_err}"
+            print(diag)
+            print("[WATCHDOG SUPPRESSED] Suppressing scheduler revival due to malformed history.")
+            return {
+                "status": "error_history_malformed",
+                "action": "none",
+                "error": diag
+            }
+
+        try:
+            from quota_manager import is_cooldown_active, get_quota_cooldown
+        except Exception as import_err:
+            diag = f"[WATCHDOG FAIL-CLOSED] Quota module could not be imported: {import_err}"
+            print(diag)
+            print("[WATCHDOG SUPPRESSED] Suppressing scheduler revival due to quota module import failure.")
+            return {
+                "status": "error_quota_module_import",
+                "action": "none",
+                "error": diag
+            }
+
         if is_cooldown_active(history_file):
             cd = get_quota_cooldown(history_file)
             resets_at = cd.get("resets_at", "unknown")
@@ -119,8 +159,15 @@ def run_watchdog_check(
                 "resets_at": resets_at,
                 "reason": reason
             }
-    except ImportError:
-        pass
+    except Exception as guard_err:
+        diag = f"[WATCHDOG FAIL-CLOSED] Unexpected error during quota verification: {guard_err}"
+        print(diag)
+        print("[WATCHDOG SUPPRESSED] Suppressing scheduler revival due to quota guard failure.")
+        return {
+            "status": "error_quota_guard_failed",
+            "action": "none",
+            "error": diag
+        }
 
     # Fetch recent controller workflow runs
     url = f"{api_url}/repos/{repo}/actions/workflows/{controller_workflow}/runs?per_page=15"

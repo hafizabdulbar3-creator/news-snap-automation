@@ -170,9 +170,18 @@ def main():
                         f.write("cooldown_active=true\n")
                 except Exception as e:
                     print(f"Warning: could not write to GITHUB_OUTPUT: {e}")
-            sys.exit(0)
-    except ImportError:
-        pass
+    except Exception as e:
+        print(f"[QUOTA GUARD FAIL-CLOSED] Error checking quota cooldown: {e}")
+        github_output = os.environ.get("GITHUB_OUTPUT")
+        if github_output:
+            try:
+                with open(github_output, "a", encoding="utf-8") as f:
+                    f.write("has_fresh=false\n")
+                    f.write("fresh_count=0\n")
+                    f.write("cooldown_active=true\n")
+            except Exception:
+                pass
+        sys.exit(0)
 
     fresh_articles = get_fresh_candidates(history_path=history_path)
 
