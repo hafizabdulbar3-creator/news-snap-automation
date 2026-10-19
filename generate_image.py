@@ -2062,6 +2062,11 @@ def select_editorial_template(article: dict, roundup_exists: bool = False) -> tu
     summary = str(article.get("summary") or article.get("description", "")).lower()
     combined = f"{title} {topic} {summary}"
 
+    def _has_keyword(text: str, kw: str) -> bool:
+        if " " in kw:
+            return kw in text
+        return bool(re.search(r"\b" + re.escape(kw) + r"\b", text))
+
     # Rule 2: Breaking News & Health News (Template C)
     health_keywords = (
         "health", "outbreak", "virus", "disease", "infection", "epidemic", "pandemic",
@@ -2074,8 +2079,8 @@ def select_editorial_template(article: dict, roundup_exists: bool = False) -> tu
         "tsunami", "evacuation", "evacuations", "landslide", "volcano", "volcanic",
         "explosion", "disaster", "rescue operation", "mass casualty", "severe storm"
     )
-    if any(k in combined for k in health_keywords) or any(k in combined for k in emergency_keywords):
-        sub_type = "Health Alert" if any(k in combined for k in health_keywords) else "Urgent Breaking/Emergency"
+    if any(_has_keyword(combined, k) for k in health_keywords) or any(_has_keyword(combined, k) for k in emergency_keywords):
+        sub_type = "Health Alert" if any(_has_keyword(combined, k) for k in health_keywords) else "Urgent Breaking/Emergency"
         return "breaking_health", f"{sub_type} indicators detected; matched Template C (Breaking News & Health News)"
 
     # Rule 3: Business & Technology News (Template B)
@@ -2088,7 +2093,7 @@ def select_editorial_template(article: dict, roundup_exists: bool = False) -> tu
         "spacex", "tesla", "apple", "google", "microsoft", "nvidia", "amazon",
         "meta", "crypto", "bitcoin", "startup", "ipo", "electric vehicle"
     )
-    if any(k in combined for k in business_tech_keywords) or any(t in topic for t in ("business", "economy", "finance", "market", "technology", "tech")):
+    if any(_has_keyword(combined, k) for k in business_tech_keywords) or any(_has_keyword(topic, t) for t in ("business", "economy", "finance", "market", "technology", "tech")):
         return "business_tech", "Business or technology indicators detected; matched Template B (Business & Technology News)"
 
     # Rule 4: Political News (Template A)
@@ -2100,7 +2105,7 @@ def select_editorial_template(article: dict, roundup_exists: bool = False) -> tu
         "supreme court", "legislation", "bill passed", "ambassador", "diplomacy",
         "diplomatic", "sanctions", "treaty", "nato", "united nations"
     )
-    if any(k in combined for k in political_keywords) or any(t in topic for t in ("politics", "government", "diplomacy", "election")):
+    if any(_has_keyword(combined, k) for k in political_keywords) or any(_has_keyword(topic, t) for t in ("politics", "government", "diplomacy", "election")):
         return "political", "Political or governmental indicators detected; matched Template A (Political News)"
 
     # Rule 5: Fallback to neutral editorial
