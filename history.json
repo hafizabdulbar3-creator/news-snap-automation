@@ -134,6 +134,15 @@
       "published": true,
       "media_id": "18168727279464744",
       "timestamp": "2026-10-19T11:28:31.974848+00:00"
+    },
+    {
+      "url": "https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o",
+      "title": "EU tariffs aimed at China hitting Ukraine, steel boss says",
+      "headline": "EU tariffs aimed at China hitting Ukraine, steel boss says",
+      "domain": "bbc.co.uk",
+      "published": true,
+      "media_id": "17963159502249217",
+      "timestamp": "2026-10-19T11:59:36.623060+00:00"
     }
   ],
   "processed": [
@@ -274,17 +283,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "EU tariffs aimed at China hitting Ukraine, steel boss says",
-      "domain": "bbc.co.uk",
-      "url": "https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "International Trade",
-        "reason": "Analysis of the spillover economic impacts of EU trade tariffs on Ukrainian industry."
-      },
-      "classified_at": "2026-10-19T00:07:24.667289+00:00"
-    },
     {
       "title": "Don't fall for this - how to protect yourself from AI scams",
       "domain": "bbc.co.uk",
