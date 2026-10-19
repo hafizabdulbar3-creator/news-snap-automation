@@ -116,6 +116,15 @@
       "published": true,
       "media_id": "18143682517595032",
       "timestamp": "2026-10-19T10:26:23.307266+00:00"
+    },
+    {
+      "url": "https://newsradio1170.iheart.com/content/2026-10-18-trump-endorses-netanyahu-ahead-of-israeli-elections/",
+      "title": "Trump Endorses Netanyahu Ahead Of Israeli Elections | NewsRadio 1170 WWVA",
+      "headline": "Trump Endorses Netanyahu Ahead Of Israeli Elections",
+      "domain": "newsradio1170.iheart.com",
+      "published": true,
+      "media_id": "18147612055492716",
+      "timestamp": "2026-10-19T10:56:56.813884+00:00"
     }
   ],
   "processed": [
@@ -365,17 +374,6 @@
         "reason": "Governance and transparency concerns regarding Indonesia's sovereign wealth management."
       },
       "classified_at": "2026-10-19T00:07:24.667336+00:00"
-    },
-    {
-      "title": "Trump Endorses Netanyahu Ahead Of Israeli Elections | NewsRadio 1170 WWVA",
-      "domain": "newsradio1170.iheart.com",
-      "url": "https://newsradio1170.iheart.com/content/2026-10-18-trump-endorses-netanyahu-ahead-of-israeli-elections/",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Relations",
-        "reason": "Foreign political endorsement directly impacting national elections in Israel."
-      },
-      "classified_at": "2026-10-19T00:07:24.667339+00:00"
     },
     {
       "title": "Why a mega trade deal has been thrown in jeopardy",
