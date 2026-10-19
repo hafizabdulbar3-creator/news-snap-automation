@@ -143,6 +143,15 @@
       "published": true,
       "media_id": "17963159502249217",
       "timestamp": "2026-10-19T11:59:36.623060+00:00"
+    },
+    {
+      "url": "https://www.bbc.co.uk/news/articles/c60rl1xvjv89o",
+      "title": "Don't fall for this - how to protect yourself from AI scams",
+      "headline": "AI scams are super-charging existing frauds, say experts",
+      "domain": "bbc.co.uk",
+      "published": true,
+      "media_id": "17951231643055761",
+      "timestamp": "2026-10-19T12:30:49.075846+00:00"
     }
   ],
   "processed": [
@@ -283,17 +292,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Don't fall for this - how to protect yourself from AI scams",
-      "domain": "bbc.co.uk",
-      "url": "https://www.bbc.co.uk/news/articles/c60rl1xvjv89o",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "Public-interest advisory concerning cybersecurity and generative AI scams."
-      },
-      "classified_at": "2026-10-19T00:07:24.667294+00:00"
-    },
     {
       "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
       "domain": "westerntelegraph.co.uk",
