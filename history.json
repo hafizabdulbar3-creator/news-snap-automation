@@ -179,6 +179,15 @@
       "published": true,
       "media_id": "18432871651148472",
       "timestamp": "2026-10-19T14:04:33.458301+00:00"
+    },
+    {
+      "url": "https://www.tnp.no/norway/economy/3046-statoil-sees-growth-in-energy-demand-towards-2040/",
+      "title": "Statoil Sees Growth in Energy Demand towards 2040 - The Nordic Page",
+      "headline": "Statoil Sees Growth in Energy Demand towards 2040",
+      "domain": "tnp.no",
+      "published": true,
+      "media_id": "18020880287934696",
+      "timestamp": "2026-10-19T14:35:26.278506+00:00"
     }
   ],
   "processed": [
@@ -319,17 +328,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Statoil Sees Growth in Energy Demand towards 2040 - The Nordic Page",
-      "domain": "tnp.no",
-      "url": "https://www.tnp.no/norway/economy/3046-statoil-sees-growth-in-energy-demand-towards-2040/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Energy",
-        "reason": "Long-term global energy demand projections by a major multinational energy company."
-      },
-      "classified_at": "2026-10-19T00:07:24.667322+00:00"
-    },
     {
       "title": "Four Killed, Dozens Hurt in Fire at Canadian Military Base - Jowhar News Leader | Somali News",
       "domain": "jowhar.com",
