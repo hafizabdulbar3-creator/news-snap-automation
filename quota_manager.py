@@ -302,7 +302,7 @@ def clear_quota_cooldown(history_path: Path = HISTORY_PATH, provider: str | None
         save_history(data, history_path)
 
 
-DEFAULT_CADENCE_MINUTES = float(os.environ.get("PUBLISH_CADENCE_MINUTES", "29"))
+DEFAULT_CADENCE_MINUTES = float(os.environ.get("PUBLISH_CADENCE_MINUTES", "25"))
 DEFAULT_MAX_ROLLING_POSTS_24H = int(os.environ.get("MAX_ROLLING_POSTS_24H", "50"))
 
 
@@ -360,6 +360,8 @@ def check_publication_cadence_due(
 ) -> tuple[bool, float, float]:
     """Check if enough time has elapsed since the last confirmed publication.
 
+    Enforces minimum confirmed Instagram publication cadence of exactly cadence_minutes.
+
     Returns:
         (is_due, elapsed_minutes, remaining_minutes_until_due)
     """
@@ -371,11 +373,10 @@ def check_publication_cadence_due(
 
     elapsed_sec = (now - last_pub).total_seconds()
     elapsed_min = max(0.0, elapsed_sec / 60.0)
-    # Allow a small buffer (0.5m) to align smoothly with 5-minute scheduler cycles
-    threshold_min = max(0.0, cadence_minutes - 0.5)
-    if elapsed_min >= threshold_min:
+    # Strictly enforce minimum confirmed publication cadence
+    if elapsed_min >= cadence_minutes:
         return True, elapsed_min, 0.0
-    remaining_min = cadence_minutes - elapsed_min
+    remaining_min = max(0.0, cadence_minutes - elapsed_min)
     return False, elapsed_min, remaining_min
 
 

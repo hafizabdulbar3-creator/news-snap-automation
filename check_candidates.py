@@ -246,8 +246,8 @@ def main():
                 pass
         sys.exit(0)
 
-    # 3. Check 29-minute publication cadence
-    cadence_min = float(os.environ.get("PUBLISH_CADENCE_MINUTES", "29"))
+    # 3. Check 25-minute publication cadence
+    cadence_min = float(os.environ.get("PUBLISH_CADENCE_MINUTES", "25"))
     force_publish = os.environ.get("FORCE_PUBLISH", "").strip().lower() in ("true", "1", "yes")
 
     try:
@@ -258,8 +258,8 @@ def main():
         is_cadence_due, elapsed_min, remaining_min = True, 999999.0, 0.0
 
     if not is_cadence_due and not force_publish:
-        print(f"[CADENCE NOT DUE] Elapsed time since last confirmed post: {elapsed_min:.1f}m (Target: ~{cadence_min:.0f}m). Next publication due in {remaining_min:.1f}m.")
-        print("[CADENCE] News discovery preserved; skipping downstream AI triage, image generation, and publication to enforce ~29m spacing.")
+        print(f"[CADENCE NOT DUE] Elapsed time since last confirmed post: {elapsed_min:.1f}m (Target: {cadence_min:.0f}m minimum). Next publication due in {remaining_min:.1f}m.")
+        print(f"[CADENCE] News discovery preserved; skipping downstream AI triage, image generation, and publication to enforce {cadence_min:.0f}m minimum spacing.")
         github_output = os.environ.get("GITHUB_OUTPUT")
         if github_output:
             try:

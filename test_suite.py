@@ -3666,19 +3666,19 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
         self.assertEqual(remaining, 0)
 
     def test_publication_cadence_calculation_due_vs_not_due(self):
-        """2. Publication cadence calculates elapsed time and enforces ~29-minute spacing."""
+        """2. Publication cadence calculates elapsed time and enforces exactly 25-minute spacing."""
         from datetime import datetime, timezone, timedelta
         now = datetime(2026, 10, 19, 12, 0, 0, tzinfo=timezone.utc)
 
         # Case A: No previous confirmed posts in history -> immediately due
         self.temp_hist.write_text(json.dumps({"posted": [], "processed": []}), encoding="utf-8")
         is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
-            self.temp_hist, cadence_minutes=29, now=now
+            self.temp_hist, cadence_minutes=25, now=now
         )
         self.assertTrue(is_due)
         self.assertEqual(remaining, 0.0)
 
-        # Case B: Last post was 10 minutes ago -> NOT due, remaining ~19 min
+        # Case B: Last post was 10 minutes ago -> NOT due, remaining 15 min
         posted = [{
             "url": "https://example.com/last",
             "title": "Last Story",
@@ -3688,17 +3688,27 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
         }]
         self.temp_hist.write_text(json.dumps({"posted": posted, "processed": []}), encoding="utf-8")
         is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
-            self.temp_hist, cadence_minutes=29, now=now
+            self.temp_hist, cadence_minutes=25, now=now
         )
         self.assertFalse(is_due)
         self.assertAlmostEqual(elapsed, 10.0, places=1)
-        self.assertAlmostEqual(remaining, 19.0, places=1)
+        self.assertAlmostEqual(remaining, 15.0, places=1)
 
-        # Case C: Last post was 28.6 minutes ago (threshold is 28.5m with buffer) -> due
-        posted[0]["timestamp"] = (now - timedelta(minutes=28.6)).isoformat()
+        # Case C: Last post was 24.5 minutes ago -> NOT due (< 25 min)
+        posted[0]["timestamp"] = (now - timedelta(minutes=24.5)).isoformat()
         self.temp_hist.write_text(json.dumps({"posted": posted, "processed": []}), encoding="utf-8")
         is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
-            self.temp_hist, cadence_minutes=29, now=now
+            self.temp_hist, cadence_minutes=25, now=now
+        )
+        self.assertFalse(is_due)
+        self.assertAlmostEqual(elapsed, 24.5, places=1)
+        self.assertAlmostEqual(remaining, 0.5, places=1)
+
+        # Case D: Last post was 25.0 minutes ago -> DUE (>= 25 min)
+        posted[0]["timestamp"] = (now - timedelta(minutes=25.0)).isoformat()
+        self.temp_hist.write_text(json.dumps({"posted": posted, "processed": []}), encoding="utf-8")
+        is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
+            self.temp_hist, cadence_minutes=25, now=now
         )
         self.assertTrue(is_due)
         self.assertEqual(remaining, 0.0)
@@ -3867,7 +3877,7 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
             if instagram_publisher.POST_PATH.is_file():
                 instagram_publisher.POST_PATH.unlink()
 
-    def test_check_candidates_separates_5m_discovery_from_29m_cadence(self):
+    def test_check_candidates_separates_5m_discovery_from_25m_cadence(self):
         """7. check_candidates skips downstream publishing (cadence_due=false) while preserving discovered candidates."""
         # Story discovered in discovery.json
         temp_disc = Path("test_discovery_cadence.json")
@@ -3894,7 +3904,7 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
             with patch.dict(os.environ, {
                 "NEWS_SNAP_HISTORY_PATH": str(self.temp_hist),
                 "GITHUB_OUTPUT": str(self.temp_output),
-                "PUBLISH_CADENCE_MINUTES": "29"
+                "PUBLISH_CADENCE_MINUTES": "25"
             }), patch("check_candidates.DISCOVERY_PATH", temp_disc):
                 with self.assertRaises(SystemExit) as cm:
                     check_candidates.main()
@@ -3907,8 +3917,46 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
             if temp_disc.is_file():
                 temp_disc.unlink()
 
+    def test_check_candidates_allows_publication_when_25m_cadence_due(self):
+        """8. check_candidates permits downstream publishing (cadence_due=true, has_fresh=true) when 25 minutes elapsed."""
+        temp_disc = Path("test_discovery_cadence_due.json")
+        disc_articles = [{
+            "url": "https://reuters.com/world/due-story",
+            "title": "Fresh Discovered Summit Story Due For Publication",
+            "domain": "reuters.com",
+            "is_duplicate": False,
+        }]
+        temp_disc.write_text(json.dumps(disc_articles), encoding="utf-8")
+
+        # Last confirmed post was 26 minutes ago (>= 25 min cadence)
+        now = datetime.now(timezone.utc)
+        recent_posted = [{
+            "url": "https://example.com/older-post",
+            "title": "Older Post",
+            "published": True,
+            "media_id": "media_older",
+            "timestamp": (now - timedelta(minutes=26)).isoformat(),
+        }]
+        self.temp_hist.write_text(json.dumps({"posted": recent_posted, "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        try:
+            with patch.dict(os.environ, {
+                "NEWS_SNAP_HISTORY_PATH": str(self.temp_hist),
+                "GITHUB_OUTPUT": str(self.temp_output),
+                "PUBLISH_CADENCE_MINUTES": "25"
+            }), patch("check_candidates.get_fresh_candidates", return_value=disc_articles):
+                check_candidates.main()
+
+            out_content = self.temp_output.read_text(encoding="utf-8")
+            self.assertIn("has_fresh=true", out_content)
+            self.assertIn("cadence_due=true", out_content)
+            self.assertIn("cap_reached=false", out_content)
+        finally:
+            if temp_disc.is_file():
+                temp_disc.unlink()
+
     def test_check_candidates_gates_when_rolling_cap_reached(self):
-        """8. check_candidates outputs cap_reached=true and has_fresh=false when 50 posts published in 24h."""
+        """9. check_candidates outputs cap_reached=true and has_fresh=false when 50 posts published in 24h."""
         temp_disc = Path("test_discovery_cap.json")
         disc_articles = [{
             "url": "https://reuters.com/world/new-story-cap",
@@ -3946,10 +3994,10 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
                 temp_disc.unlink()
 
     def test_unattended_6_month_design_safeguards(self):
-        """9. Multi-month unattended operation parameters (retention >= 500, defaults 50/day and 29m)."""
+        """10. Multi-month unattended operation parameters (retention >= 500, defaults 50/day and 25m)."""
         self.assertGreaterEqual(instagram_publisher.MAX_HISTORY_ENTRIES, 500)
         self.assertEqual(quota_manager.DEFAULT_MAX_ROLLING_POSTS_24H, 50)
-        self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 29)
+        self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 25)
 
 
 
