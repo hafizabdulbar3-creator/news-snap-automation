@@ -46,9 +46,11 @@ jobs:
         id: check-candidates
         run: python check_candidates.py
 
-      - name: Classify candidates with Gemini
+      - name: Classify candidates with AI (Groq / Gemini)
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: "llama-3.3-70b-versatile"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-3.8-flash"
         run: python classify.py
@@ -64,6 +66,8 @@ jobs:
       - name: Generate NEWS SNAP post content
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: "llama-3.3-70b-versatile"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: "gemini-3.8-flash"
         run: |

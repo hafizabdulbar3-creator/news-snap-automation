@@ -383,13 +383,8 @@ def is_production_mode() -> bool:
 
 def sanitize_gemini_error(err: Exception | str) -> str:
     """Sanitize error messages to prevent leaking API keys or secrets in logs."""
-    msg = str(err)
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if api_key and len(api_key) > 5:
-        msg = msg.replace(api_key, "[REDACTED_API_KEY]")
-    msg = re.sub(r"key=[a-zA-Z0-9_\-]+", "key=[REDACTED]", msg)
-    msg = re.sub(r"x-goog-api-key['\":\s]+[a-zA-Z0-9_\-]+", "x-goog-api-key: [REDACTED]", msg, flags=re.IGNORECASE)
-    return msg
+    from ai_provider import sanitize_ai_error
+    return sanitize_ai_error(err)
 
 
 def is_retryable_gemini_error(err: Exception) -> tuple[bool, float | None, str]:
@@ -498,7 +493,6 @@ def call_gemini_api(payload: dict, api_key: str, model_name: str = MODEL, max_at
 
 
 def generate_post(article: dict) -> dict:
-    api_key = os.environ.get("GEMINI_API_KEY")
     source = str(article.get("domain", "")).strip()
     url = str(article.get("url", "")).strip()
     title = str(article.get("title", "")).strip()
@@ -516,19 +510,22 @@ def generate_post(article: dict) -> dict:
             resets_at = cd.get("resets_at", "scheduled reset")
             reason = cd.get("reason", "Daily quota exhausted")
             raise RuntimeError(
-                f"Gemini API quota is currently in active cooldown until {resets_at} ({reason}). "
+                f"AI API quota is currently in active cooldown until {resets_at} ({reason}). "
                 f"Refusing to make API requests during active quota cooldown."
             )
     except ImportError:
         pass
 
-    if not api_key:
+    from ai_provider import get_active_provider, generate_post_content_ai, sanitize_ai_error
+    provider = get_active_provider()
+
+    if not provider:
         if is_prod:
             raise RuntimeError(
-                "CRITICAL: GEMINI_API_KEY is missing in production environment. "
+                "CRITICAL: Neither GROQ_API_KEY nor GEMINI_API_KEY is configured in production environment. "
                 "Refusing to generate or publish synthetic news content."
             )
-        print("GEMINI_API_KEY missing in local environment; using verified offline test generator.")
+        print("No AI provider key configured in local environment; using verified offline test generator.")
         return generate_mock_post(article)
 
     # Check if article already carries retrieved source description from preparation step
@@ -545,50 +542,14 @@ def generate_post(article: dict) -> dict:
         else:
             print("No meta summary retrieved; relying strictly on verified headline.")
 
-    prompt = f"""You are the senior editor for NEWS SNAP.
-Your job is to transform this news report into a high-impact, 100% accurate, professional NEWS SNAP Instagram post.
-
-GROUND TRUTH RULES (STRICT):
-1. ACCURACY: Only use facts stated in the headline and source summary below. NEVER invent facts, dates, casualty figures, monetary sums, or quotations.
-2. PRESERVE UNCERTAINTY: If the report involves an allegation, investigation, or ongoing claim, explicitly attribute it ("officials say", "investigators allege", "according to reports").
-3. LANGUAGE: Write natural, fluent English only.
-
-EDITORIAL GUIDELINES:
-- headline: Punchy, clear, authoritative headline (5–12 words). Must be compelling and 100% factual.
-- curiosity_line: A 3–8 word teaser / sub-kicker giving vital context (e.g. "WHAT THIS MEANS FOR GLOBAL TRADE").
-- caption: 25–60 words summarizing the core facts clearly and concisely.
-- hashtags: 3–5 relevant tags, including "#NewsSnap".
-
-Source Headline: {title}
-Publisher: {source}
-Original URL: {url}
-Source Summary: {source_summary or 'None provided; use only confirmed headline details.'}
-
-Return ONLY valid JSON matching this schema:
-{{
-  "headline": "...",
-  "curiosity_line": "...",
-  "caption": "...",
-  "hashtags": ["#NewsSnap", "#TopicTag", "#NewsUpdate"]
-}}
-"""
-
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "responseMimeType": "application/json",
-            "temperature": 0.15,
-        },
-    }
-
     try:
-        post_data = call_gemini_api(payload, api_key, model_name=MODEL)
+        post_data = generate_post_content_ai(article, source_evidence=source_summary)
         is_mock = is_mock_fixture_article(article)
         return validate_post(post_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
     except Exception as e:
-        sanitized = sanitize_gemini_error(e)
+        sanitized = sanitize_ai_error(e)
         if is_prod:
-            print(f"[PRODUCTION SAFEGUARD] Gemini generation failed in production mode: {sanitized}")
+            print(f"[PRODUCTION SAFEGUARD] AI generation failed in production mode: {sanitized}")
             raise RuntimeError(f"Production post generation failed: {sanitized}") from e
 
         print(f"API calls failed ({sanitized}); falling back to verified offline generator.")

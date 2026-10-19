@@ -6,134 +6,60 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-# Primary supported Gemini API model (Default to gemini-3.8-flash)
+from ai_provider import classify_articles_ai, get_active_provider
+
+# Primary supported model defaults
 MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 BATCH_SIZE = 50
 
 
-def call_gemini(articles):
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        print("GEMINI_API_KEY environment variable is missing. Running in mock/offline mode.")
-        # Return fallback classifications when no key is present (e.g. local test)
-        results = []
-        for i, a in enumerate(articles, start=1):
-            results.append({
-                "id": i,
-                "importance": "MAJOR" if i <= 3 else "NORMAL",
-                "topic": "World News",
-                "reason": "Test evaluation fallback."
-            })
-        return {"results": results}
-
-    items = []
-    for i, article in enumerate(articles, start=1):
-        items.append({
-            "id": i,
-            "title": article["title"],
-            "source": article.get("domain", "")
-        })
-
-    prompt = """You are the senior news-triage AI for NEWS SNAP.
-Classify every article. DO NOT omit any article from the results.
-
-Requirements:
-1. Language: Must be natural English. If an article is in a foreign language or nonsensical, mark as LOW with topic "Non-English".
-2. Quality filter:
-   - Mark as MAJOR: Major geopolitical events, wars, summits, national elections, central bank actions, major scientific/tech breakthroughs, major disasters, or stories of broad international consequence.
-   - Mark as NORMAL: Legitimate national/regional policy, economic trends, corporate milestones, or notable public interest stories.
-   - Mark as LOW: Local disputes, gossip, obituaries, sports-only, entertainment trivia, sensationalist claims, or unverified rumors.
-
-Return ONLY valid JSON matching this schema:
-{
-  "results": [
-    {
-      "id": 1,
-      "importance": "MAJOR",
-      "topic": "World News",
-      "reason": "Clear explanation of public significance."
-    }
-  ]
-}
-
-Articles to classify:
-""" + json.dumps(items, ensure_ascii=False)
-
-    payload = {
-        "contents": [
-            {
-                "parts": [
-                    {
-                        "text": prompt
-                    }
-                ]
-            }
-        ],
-        "generationConfig": {
-            "responseMimeType": "application/json",
-            "temperature": 0.1
-        }
-    }
-
-    models_to_try = [MODEL]
-
-    last_error = None
-    for model_name in models_to_try:
-        api_url = f"{API_BASE}/{model_name}:generateContent"
-        request = urllib.request.Request(
-            api_url,
-            data=json.dumps(payload).encode("utf-8"),
-            headers={
-                "Content-Type": "application/json",
-                "x-goog-api-key": api_key
-            },
-            method="POST"
-        )
-
+def call_ai(articles):
+    """Classify articles via active AI provider (Groq or Gemini)."""
+    try:
+        return classify_articles_ai(articles)
+    except urllib.error.HTTPError as e:
         try:
-            with urllib.request.urlopen(request, timeout=60) as response:
-                data = json.load(response)
+            from quota_manager import parse_quota_cooldown, set_quota_cooldown, heuristic_classify_article
+            is_quota, reset_dt, reason = parse_quota_cooldown(e)
+            if is_quota:
+                history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+                print(f"[QUOTA COOLDOWN ACTIVATED] {reason} (Cooldown until {reset_dt.isoformat()}).")
+                try:
+                    set_quota_cooldown(reset_dt, reason, history_path)
+                except Exception:
+                    pass
+                print("[FALLBACK] Using local journalistic heuristic classification to avoid pipeline failure.")
+                results = []
+                for idx, a in enumerate(articles, start=1):
+                    h_res = heuristic_classify_article(a.get("title", ""), a.get("domain", ""))
+                    h_res["id"] = idx
+                    results.append(h_res)
+                return {"results": results, "source": "local_heuristic"}
+        except Exception as inner_e:
+            print(f"[WARN] Error handling HTTP error in quota manager: {inner_e}")
+        raise e
+    except RuntimeError as e:
+        # Check if quota exhaustion error from ai_provider
+        try:
+            from quota_manager import is_cooldown_active, heuristic_classify_article
+            history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+            if is_cooldown_active(history_path):
+                print(f"[QUOTA COOLDOWN ACTIVE] {e}")
+                print("[FALLBACK] Using local journalistic heuristic classification to avoid pipeline failure.")
+                results = []
+                for idx, a in enumerate(articles, start=1):
+                    h_res = heuristic_classify_article(a.get("title", ""), a.get("domain", ""))
+                    h_res["id"] = idx
+                    results.append(h_res)
+                return {"results": results, "source": "local_heuristic"}
+        except Exception:
+            pass
+        raise e
 
-            candidates = data.get("candidates", [])
-            if not candidates:
-                raise ValueError("Gemini returned empty candidates")
 
-            text = candidates[0]["content"]["parts"][0]["text"]
-            parsed = json.loads(text)
-            if "results" in parsed:
-                return parsed
-        except urllib.error.HTTPError as e:
-            try:
-                from quota_manager import parse_quota_cooldown, set_quota_cooldown, heuristic_classify_article
-                is_quota, reset_dt, reason = parse_quota_cooldown(e)
-                if is_quota:
-                    history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
-                    print(f"[QUOTA COOLDOWN ACTIVATED] {reason} (Cooldown until {reset_dt.isoformat()}).")
-                    try:
-                        set_quota_cooldown(reset_dt, reason, history_path)
-                    except Exception:
-                        pass
-                    print("[FALLBACK] Using local journalistic heuristic classification to avoid pipeline failure.")
-                    results = []
-                    for idx, a in enumerate(articles, start=1):
-                        h_res = heuristic_classify_article(a.get("title", ""), a.get("domain", ""))
-                        h_res["id"] = idx
-                        results.append(h_res)
-                    return {"results": results, "source": "local_heuristic"}
-            except Exception as inner_e:
-                print(f"[WARN] Error handling HTTP error in quota manager: {inner_e}")
-
-            err_body = e.read().decode("utf-8", errors="replace")
-            print(f"Model {model_name} HTTP {e.code}: {err_body}")
-            last_error = e
-            time.sleep(2)
-        except Exception as e:
-            print(f"Model {model_name} error: {e}")
-            last_error = e
-            time.sleep(1)
-
-    raise RuntimeError(f"All Gemini classification attempts failed. Last error: {last_error}")
+# Maintain backwards compatibility
+call_gemini = call_ai
 
 
 def main():
@@ -220,15 +146,16 @@ def main():
         output_path.write_text(json.dumps({"results": results, "source": "local_heuristic"}, ensure_ascii=False, indent=2), encoding="utf-8")
         return
 
-    # 4. Normal Gemini Triage
+    # 4. Normal AI Triage (Groq or Gemini)
     batch = fresh_articles[:BATCH_SIZE]
-    print(f"Sending {len(batch)} fresh articles to Gemini triage...")
-    result = call_gemini(batch)
+    active_prov = get_active_provider() or "fallback"
+    print(f"Sending {len(batch)} fresh articles to AI triage ({active_prov.upper()})...")
+    result = call_ai(batch)
 
     output_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
 
     results = result.get("results", [])
-    print(f"Gemini classification successful. Total classified: {len(results)}")
+    print(f"AI classification successful ({active_prov.upper()}). Total classified: {len(results)}")
 
     # 5. Save classified results to persistent pool in history.json
     from datetime import datetime, timezone

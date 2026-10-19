@@ -35,6 +35,8 @@ def extract_http_error_body(err: Exception) -> str:
 def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
     """Examines an exception (e.g. HTTPError 429) to detect daily/long-term quota exhaustion.
 
+    Supports both Groq and Gemini API error formats.
+
     Returns:
         (is_exhausted, reset_datetime_utc, reason_description)
     """
@@ -44,31 +46,37 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
     body = extract_http_error_body(err)
     body_low = body.lower()
 
+    # Determine provider hints
+    url_str = str(getattr(err, "url", "")).lower()
+    provider = "Groq" if ("groq.com" in url_str or "groq" in body_low or "llama" in body_low or "rpd" in body_low or "tpd" in body_low) else "Gemini"
+
     # Detect indicators of daily or long-term quota exhaustion
-    is_daily = (
+    has_daily_metric = (
         "quota exceeded for metric" in body_low
         or "generaterequestsperday" in body_low
         or "free_tier_requests" in body_low
         or "limit: 20" in body_low
+        or "requests per day" in body_low
+        or "tokens per day" in body_low
+        or bool(re.search(r"\b(rpd|tpd)\b", body_low))
         or ("daily" in body_low and "quota" in body_low)
-        or ("please retry in" in body_low and ("h" in body_low or "m" in body_low))
     )
 
-    if not is_daily and err.code != 429:
-        return False, None, ""
-
-    # Check if this is a transient short-term burst rate limit instead of daily quota
     now = datetime.now(timezone.utc)
-    m = re.search(r"retry in (?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?", body, re.IGNORECASE)
-    if m:
+
+    # Check for duration string in body: "retry in 1h 2m 3s" or "try again in 14h23m10s"
+    m = re.search(r"(?:retry|try again) in (?:(\d+)h\s*)?(?:(\d+)m\s*)?(?:(\d+(?:\.\d+)?)s)?", body, re.IGNORECASE)
+    if m and any((m.group(1), m.group(2), m.group(3))):
         h = int(m.group(1) or 0)
         mins = int(m.group(2) or 0)
         s = float(m.group(3) or 0)
         total_sec = h * 3600 + mins * 60 + s
-        if total_sec > 0:
+        if total_sec >= 60:
             reset_dt = now + timedelta(seconds=total_sec)
-            reason = f"Gemini API quota exhausted. Retry required in {total_sec:.0f}s ({h}h {mins}m {s:.0f}s)."
+            reason = f"{provider} API quota exhausted. Retry required in {total_sec:.0f}s ({h}h {mins}m {s:.0f}s)."
             return True, reset_dt, reason
+        elif not has_daily_metric:
+            return False, None, ""
 
     # Check Retry-After header
     if err.headers:
@@ -78,14 +86,16 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
                 ra_sec = float(ra)
                 if ra_sec >= 60:
                     reset_dt = now + timedelta(seconds=ra_sec)
-                    return True, reset_dt, f"Gemini API Retry-After cooldown: {ra_sec:.0f}s."
+                    return True, reset_dt, f"{provider} API Retry-After cooldown: {ra_sec:.0f}s."
+                elif not has_daily_metric:
+                    return False, None, ""
             except ValueError:
                 pass
 
-    if is_daily:
+    if has_daily_metric:
         # Default daily reset is next 00:00 UTC (Midnight UTC)
         reset_dt = (now + timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
-        reason = "Gemini Free Tier daily quota exhausted (limit: 20 requests/day). Resets at 00:00 UTC."
+        reason = f"{provider} Free Tier daily quota exhausted. Resets at 00:00 UTC."
         return True, reset_dt, reason
 
     return False, None, ""

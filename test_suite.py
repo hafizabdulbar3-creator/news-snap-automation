@@ -31,7 +31,9 @@ import quota_manager
 import scheduler_controller
 import scheduler_watchdog
 import run_summary
-from unittest.mock import patch
+import ai_provider
+import classify
+from unittest.mock import patch, MagicMock
 
 
 class TestSyntax(unittest.TestCase):
@@ -3146,6 +3148,249 @@ class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
         self.temp_hist.write_text(json.dumps(["not", "a", "dict"]), encoding="utf-8")
         with self.assertRaises(ValueError):
             quota_manager.load_history(self.temp_hist)
+
+
+class TestMultiProviderAIClient(unittest.TestCase):
+    def setUp(self):
+        self.orig_env = os.environ.copy()
+        for k in ("GROQ_API_KEY", "GROQ_MODEL", "GEMINI_API_KEY", "GEMINI_MODEL", "AI_PROVIDER", "GITHUB_ACTIONS", "CI", "NEWS_SNAP_PROD"):
+            os.environ.pop(k, None)
+        self.temp_hist = Path("test_history_groq.json")
+        if self.temp_hist.exists():
+            try:
+                self.temp_hist.unlink()
+            except Exception:
+                pass
+
+    def tearDown(self):
+        os.environ.clear()
+        os.environ.update(self.orig_env)
+        if self.temp_hist.exists():
+            try:
+                self.temp_hist.unlink()
+            except Exception:
+                pass
+
+    def test_provider_selection_hierarchy(self):
+        """1. ai_provider correctly selects Groq as primary, Gemini as secondary, and respects explicit override."""
+        # No keys -> empty
+        self.assertEqual(ai_provider.get_active_provider(), "")
+
+        # Only Gemini set -> gemini
+        os.environ["GEMINI_API_KEY"] = "test_gemini_key"
+        self.assertEqual(ai_provider.get_active_provider(), "gemini")
+
+        # Groq set -> groq (precedence over Gemini)
+        os.environ["GROQ_API_KEY"] = "gsk_test_groq_key"
+        self.assertEqual(ai_provider.get_active_provider(), "groq")
+
+        # Explicit override to gemini
+        os.environ["AI_PROVIDER"] = "gemini"
+        self.assertEqual(ai_provider.get_active_provider(), "gemini")
+
+        # Explicit override to groq
+        os.environ["AI_PROVIDER"] = "groq"
+        self.assertEqual(ai_provider.get_active_provider(), "groq")
+
+    def test_secret_sanitization(self):
+        """2. sanitize_ai_error thoroughly redacts Groq keys, Gemini keys, Bearer tokens, and sensitive headers."""
+        os.environ["GROQ_API_KEY"] = "gsk_supersecret12345"
+        os.environ["GEMINI_API_KEY"] = "AIzaSySuperSecretGeminiKey"
+
+        raw_err = (
+            "Failed at https://api.groq.com/openai/v1 with Authorization: Bearer gsk_supersecret12345. "
+            "Found leaked key gsk_unrelatedkey8888. "
+            "Also checked https://generativelanguage.googleapis.com?key=AIzaSySuperSecretGeminiKey "
+            "and header x-goog-api-key: AIzaSySuperSecretGeminiKey "
+            "and query param https://api.service.com?key=some_secret_api_token"
+        )
+        sanitized = ai_provider.sanitize_ai_error(raw_err)
+
+        self.assertNotIn("gsk_supersecret12345", sanitized)
+        self.assertNotIn("gsk_unrelatedkey8888", sanitized)
+        self.assertNotIn("AIzaSySuperSecretGeminiKey", sanitized)
+        self.assertNotIn("some_secret_api_token", sanitized)
+        self.assertIn("[REDACTED_GROQ_API_KEY]", sanitized)
+        self.assertIn("[REDACTED_GROQ_KEY]", sanitized)
+        self.assertIn("[REDACTED]", sanitized)
+
+    def test_groq_chat_completion_success(self):
+        """3. call_groq_chat_completion sends OpenAI-compatible payload and parses valid JSON response."""
+        mock_response_json = {
+            "id": "chatcmpl-test12345",
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": json.dumps({
+                            "headline": "Historic Global Climate Treaty Signed",
+                            "curiosity_line": "Key developments for international policy",
+                            "caption": "World leaders reached an agreement at the climate summit today.",
+                            "hashtags": ["#NewsSnap", "#Climate", "#WorldNews"]
+                        })
+                    },
+                    "finish_reason": "stop"
+                }
+            ]
+        }
+
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = json.dumps(mock_response_json).encode("utf-8")
+        mock_resp.__enter__.return_value = mock_resp
+
+        recorded_req = []
+        def fake_urlopen(req, timeout=30):
+            recorded_req.append(req)
+            return mock_resp
+
+        with patch("urllib.request.urlopen", side_effect=fake_urlopen):
+            res = ai_provider.call_groq_chat_completion(
+                prompt="Generate post",
+                api_key="gsk_valid_key",
+                model="llama-3.3-70b-versatile"
+            )
+
+        self.assertEqual(res["headline"], "Historic Global Climate Treaty Signed")
+        self.assertEqual(len(recorded_req), 1)
+        req = recorded_req[0]
+        self.assertEqual(req.get_header("Authorization"), "Bearer gsk_valid_key")
+        self.assertEqual(req.get_header("Content-type"), "application/json")
+        payload = json.loads(req.data.decode("utf-8"))
+        self.assertEqual(payload["model"], "llama-3.3-70b-versatile")
+        self.assertEqual(payload["response_format"], {"type": "json_object"})
+
+    def test_groq_authentication_error_fails_closed(self):
+        """4. call_groq_chat_completion fails closed immediately on HTTP 401 without retry."""
+        err_fp = io.BytesIO(b'{"error": {"message": "Invalid API Key", "type": "invalid_request_error"}}')
+        http_err = urllib.error.HTTPError(
+            url="https://api.groq.com/openai/v1/chat/completions",
+            code=401,
+            msg="Unauthorized",
+            hdrs={},
+            fp=err_fp
+        )
+
+        with patch("urllib.request.urlopen", side_effect=http_err) as mock_url:
+            with self.assertRaises(RuntimeError) as cm:
+                ai_provider.call_groq_chat_completion(prompt="Test", api_key="gsk_bad_key")
+
+        self.assertIn("HTTP 401", str(cm.exception))
+        # Must fail closed immediately on first attempt without retrying
+        self.assertEqual(mock_url.call_count, 1)
+
+    def test_groq_rate_limit_with_retry_after(self):
+        """5. call_groq_chat_completion respects Retry-After header and succeeds on retry."""
+        err_fp = io.BytesIO(b'{"error": {"message": "Rate limit reached. Please try again in 0.1s."}}')
+        hdrs = MagicMock()
+        hdrs.get.side_effect = lambda h: "0.1" if h == "Retry-After" else None
+        rate_limit_err = urllib.error.HTTPError(
+            url="https://api.groq.com/openai/v1/chat/completions",
+            code=429,
+            msg="Too Many Requests",
+            hdrs=hdrs,
+            fp=err_fp
+        )
+
+        mock_ok = MagicMock()
+        mock_ok.read.return_value = json.dumps({
+            "choices": [{"message": {"content": json.dumps({"status": "recovered"})}}]
+        }).encode("utf-8")
+        mock_ok.__enter__.return_value = mock_ok
+
+        attempts = [rate_limit_err, mock_ok]
+        with patch("urllib.request.urlopen", side_effect=attempts), \
+             patch("time.sleep") as mock_sleep:
+            res = ai_provider.call_groq_chat_completion(prompt="Test", api_key="gsk_key")
+
+        self.assertEqual(res["status"], "recovered")
+        self.assertTrue(mock_sleep.called)
+
+    def test_groq_daily_quota_exhaustion_sets_cooldown(self):
+        """6. Daily quota exhaustion on Groq activates quota cooldown in history.json."""
+        err_fp = io.BytesIO(b'{"error": {"message": "Rate limit reached for model llama-3.3-70b-versatile in organization org_123 on requests per day (RPD): Limit 1000, Used 1000. Please try again in 12h30m."}}')
+        http_err = urllib.error.HTTPError(
+            url="https://api.groq.com/openai/v1/chat/completions",
+            code=429,
+            msg="Too Many Requests",
+            hdrs={},
+            fp=err_fp
+        )
+
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        with patch("urllib.request.urlopen", side_effect=http_err):
+            with self.assertRaises(RuntimeError) as cm:
+                ai_provider.call_groq_chat_completion(prompt="Test", api_key="gsk_key")
+
+        self.assertIn("quota exhausted", str(cm.exception).lower())
+        hist = json.loads(self.temp_hist.read_text(encoding="utf-8"))
+        self.assertTrue(hist.get("quota_cooldown", {}).get("active"))
+        self.assertIn("Groq", hist["quota_cooldown"].get("reason", ""))
+
+    def test_post_generator_with_groq_provider(self):
+        """7. post_generator.generate_post produces validated Instagram post using Groq provider."""
+        os.environ["GROQ_API_KEY"] = "gsk_test_mock"
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        article = {
+            "title": "European Union Reaches Historic Energy Agreement",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/europe/energy-agreement"
+        }
+
+        mock_groq_output = {
+            "headline": "EU Reaches Historic Energy Agreement",
+            "curiosity_line": "Major shift for European energy policy",
+            "caption": "The European Union has finalized a comprehensive energy pact to stabilize prices and secure long-term power supplies across member states.",
+            "hashtags": ["#NewsSnap", "#EuropeanUnion", "#EnergyPolicy", "#WorldNews"]
+        }
+
+        with patch("ai_provider.call_groq_chat_completion", return_value=mock_groq_output):
+            post = post_generator.generate_post(article)
+
+        self.assertEqual(post["headline"], "EU Reaches Historic Energy Agreement")
+        self.assertEqual(post["curiosity_line"], "Major shift for European energy policy")
+        self.assertIn("#NewsSnap", post["hashtags"])
+        self.assertIn("Source: reuters.com", post["caption"])
+        self.assertFalse(post.get("is_synthetic"))
+
+    def test_classify_with_groq_provider(self):
+        """8. classify.call_ai classifies articles using Groq provider."""
+        os.environ["GROQ_API_KEY"] = "gsk_test_mock"
+        articles = [
+            {"title": "Summit Concludes With Major Defense Agreement", "domain": "bbc.com", "url": "https://bbc.com/1"},
+            {"title": "Local Neighborhood Flower Show Winners Announced", "domain": "localnews.com", "url": "https://localnews.com/2"}
+        ]
+
+        mock_class_output = {
+            "results": [
+                {"id": 1, "importance": "MAJOR", "topic": "Defense", "reason": "Defense pact"},
+                {"id": 2, "importance": "LOW", "topic": "Community", "reason": "Local event"}
+            ]
+        }
+
+        with patch("ai_provider.call_groq_chat_completion", return_value=mock_class_output):
+            res = classify.call_ai(articles)
+
+        self.assertEqual(len(res["results"]), 2)
+        self.assertEqual(res["results"][0]["importance"], "MAJOR")
+        self.assertEqual(res["results"][1]["importance"], "LOW")
+
+    def test_production_fails_closed_when_no_provider_key_configured(self):
+        """9. post_generator raises RuntimeError in production mode if neither Groq nor Gemini key is set."""
+        os.environ["GITHUB_ACTIONS"] = "true"
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        article = {"title": "Test Title", "domain": "reuters.com", "url": "https://reuters.com/test"}
+        with self.assertRaises(RuntimeError) as cm:
+            post_generator.generate_post(article)
+
+        self.assertIn("CRITICAL", str(cm.exception))
+        self.assertIn("GROQ_API_KEY", str(cm.exception))
 
 
 if __name__ == "__main__":
