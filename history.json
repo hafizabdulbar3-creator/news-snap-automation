@@ -243,17 +243,6 @@
       "classified_at": "2026-10-19T00:07:24.667294+00:00"
     },
     {
-      "title": "'Great Warrior Prime Minister': Trump endorses Netanyahu ahead of Israel elections",
-      "domain": "oann.com",
-      "url": "https://www.oann.com/newsroom/great-warrior-prime-minister-trump-endorses-netanyahu-ahead-of-israel-elections/",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Relations",
-        "reason": "US political endorsement affecting foreign national elections and Middle East diplomacy."
-      },
-      "classified_at": "2026-10-19T00:07:24.667297+00:00"
-    },
-    {
       "title": "USA and Germany Support Former Norway Prime Minister Stoltenberg as New NATO Secretary - The Nordic Page",
       "domain": "tnp.no",
       "url": "https://www.tnp.no/norway/politics/4402-usa-and-germany-support-former-norway-prime-minister-stoltenberg-as-new-nato-secretary/",
@@ -442,9 +431,9 @@
     }
   ],
   "quota_cooldown": {
-    "active": false,
-    "resets_at": "2026-10-19T00:06:21+00:00",
-    "reason": "Gemini Free Tier daily quota limit (20 requests/day) reached in Run #55.",
-    "updated_at": "2026-10-18T18:54:17.311237+00:00"
+    "active": true,
+    "resets_at": "2026-10-20T00:00:00.017549+00:00",
+    "reason": "Gemini API quota exhausted. Retry required in 85668s (23h 47m 48s).",
+    "updated_at": "2026-10-19T00:12:12.446572+00:00"
   }
 }
