@@ -81,7 +81,8 @@ def run_watchdog_check(
     token: str = None,
     controller_workflow: str = DEFAULT_CONTROLLER_WORKFLOW,
     stale_threshold_minutes: int = DEFAULT_STALE_THRESHOLD_MINUTES,
-    api_url: str = DEFAULT_API_URL
+    api_url: str = DEFAULT_API_URL,
+    history_file: str = None
 ) -> dict:
     """Check health of the controller chain and revive it if demonstrably stale."""
     now_utc = datetime.now(timezone.utc)
@@ -99,6 +100,27 @@ def run_watchdog_check(
     print(f"Repository: {repo}")
     print(f"Monitored Controller: {controller_workflow}")
     print(f"Stale Threshold: {stale_threshold_minutes} minutes")
+
+    # 1. Check for active quota cooldown
+    history_file = history_file or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+    try:
+        from quota_manager import is_cooldown_active, get_quota_cooldown
+        if is_cooldown_active(history_file):
+            cd = get_quota_cooldown(history_file)
+            resets_at = cd.get("resets_at", "unknown")
+            reason = cd.get("reason", "Daily quota exhausted")
+            print(f"[WATCHDOG COOLDOWN ACTIVE] Active Gemini quota cooldown until {resets_at}.")
+            print(f"[WATCHDOG COOLDOWN ACTIVE] Reason: {reason}")
+            print("[WATCHDOG COOLDOWN ACTIVE] Suppressing scheduler revival while quota cooldown remains active.")
+            print("===== WATCHDOG INSPECTION COMPLETE (COOLDOWN ACTIVE) =====")
+            return {
+                "status": "cooldown_active",
+                "action": "none",
+                "resets_at": resets_at,
+                "reason": reason
+            }
+    except ImportError:
+        pass
 
     # Fetch recent controller workflow runs
     url = f"{api_url}/repos/{repo}/actions/workflows/{controller_workflow}/runs?per_page=15"
@@ -145,20 +167,20 @@ def run_watchdog_check(
     else:
         print("[WATCHDOG STALE] No completed controller runs found in history.")
 
-    # Chain is stale or absent: dispatch replacement controller
-    print(f"[WATCHDOG RECOVERY] Reviving scheduler chain by dispatching '{controller_workflow}'...")
+    # Chain is stale or absent: dispatch replacement controller in safe bootstrap mode
+    print(f"[WATCHDOG RECOVERY] Cooldown check confirmed expired/clear. Reviving scheduler chain by dispatching safe bootstrap...")
     dispatch_url = f"{api_url}/repos/{repo}/actions/workflows/{controller_workflow}/dispatches"
     payload = {
         "ref": "main",
-        "inputs": {"bootstrap_only": False}
+        "inputs": {"bootstrap_only": True}
     }
     dispatch_status, dispatch_resp = query_api(dispatch_url, token, method="POST", payload=payload)
     if dispatch_status == 204:
-        print(f"[WATCHDOG REVIVED] Successfully dispatched replacement controller run.")
+        print(f"[WATCHDOG REVIVED] Successfully dispatched safe bootstrap controller run.")
         print("===== WATCHDOG INSPECTION COMPLETE =====")
         return {
             "status": "revived",
-            "action": "dispatched_replacement",
+            "action": "dispatched_bootstrap",
             "controller_workflow": controller_workflow
         }
 

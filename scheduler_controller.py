@@ -132,7 +132,8 @@ def run_controller_cycle(
     publisher_workflow: str = DEFAULT_PUBLISHER_WORKFLOW,
     controller_workflow: str = DEFAULT_CONTROLLER_WORKFLOW,
     api_url: str = DEFAULT_API_URL,
-    sleep_fn=time.sleep
+    sleep_fn=time.sleep,
+    history_file: str = None
 ) -> dict:
     """Execute a single cycle of the scheduler controller."""
     start_time = time.time()
@@ -176,6 +177,29 @@ def run_controller_cycle(
             "publisher_dispatched": False,
             "successor_dispatched": False
         }
+
+    # Check quota cooldown from history.json before dispatching publisher or successor
+    history_file = history_file or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+    try:
+        from quota_manager import is_cooldown_active, get_quota_cooldown
+        if is_cooldown_active(history_file):
+            cd = get_quota_cooldown(history_file)
+            resets_at = cd.get("resets_at", "unknown")
+            reason = cd.get("reason", "Daily quota exhausted")
+            print(f"[QUOTA COOLDOWN ACTIVE] Production publishing workflow dispatch suppressed.")
+            print(f"[RESET TIME] {resets_at}")
+            print(f"[REASON] {reason}")
+            print("[CHAIN HALT] Stopping 5-minute recurrence chain to prevent repeated no-op executions.")
+            print("===== CONTROLLER PAUSED (QUOTA COOLDOWN) =====")
+            return {
+                "status": "paused_quota_cooldown",
+                "resets_at": resets_at,
+                "reason": reason,
+                "publisher_dispatched": False,
+                "successor_dispatched": False
+            }
+    except ImportError:
+        pass
 
     publisher_dispatched = False
     # Execute publisher dispatch if not in bootstrap mode

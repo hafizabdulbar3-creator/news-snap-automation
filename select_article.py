@@ -156,12 +156,8 @@ def select_best_article():
         encoding="utf-8"
     )
 
-    try:
-        from quota_manager import remove_from_classified_pool
-        history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
-        remove_from_classified_pool(selected.get("url"), selected.get("title"), history_path)
-    except Exception as e:
-        print(f"[WARN] Could not remove selected article from pool: {e}")
+    # Preserve candidate in classified_pool until confirmed published or processed in instagram_publisher.py
+    # This prevents dropping pool candidates if generation, rendering, or publishing fails downstream.
 
     print("SELECTED ARTICLE:")
     print(f"Title: {selected.get('title')}")

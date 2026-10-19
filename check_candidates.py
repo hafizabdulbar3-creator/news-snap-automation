@@ -167,6 +167,7 @@ def main():
                     with open(github_output, "a", encoding="utf-8") as f:
                         f.write("has_fresh=false\n")
                         f.write("fresh_count=0\n")
+                        f.write("cooldown_active=true\n")
                 except Exception as e:
                     print(f"Warning: could not write to GITHUB_OUTPUT: {e}")
             sys.exit(0)
@@ -174,10 +175,28 @@ def main():
         pass
 
     fresh_articles = get_fresh_candidates(history_path=history_path)
-    count = len(fresh_articles)
+
+    # Also account for eligible unposted candidates in the persistent classified pool
+    pool_eligible = []
+    try:
+        from quota_manager import get_classified_pool
+        pool = get_classified_pool(history_path)
+        hist_sets = get_history_sets(history_path)
+        pool_eligible = [
+            a for a in pool
+            if a.get("url", "").lower() not in hist_sets["published_urls"]
+            and a.get("url", "").lower() not in hist_sets["processed_urls"]
+            and a.get("title", "").lower() not in hist_sets["published_titles"]
+            and a.get("title", "").lower() not in hist_sets["processed_titles"]
+            and a.get("classification", {}).get("importance") in ("MAJOR", "NORMAL")
+        ]
+    except Exception:
+        pool_eligible = []
+
+    count = len(fresh_articles) + len(pool_eligible)
     has_fresh = count > 0
 
-    print(f"Candidate check: {count} fresh eligible unposted article(s) found.")
+    print(f"Candidate check: {len(fresh_articles)} fresh discovered article(s), {len(pool_eligible)} eligible pool article(s) found (total: {count}).")
 
     # Write GitHub Actions step output if running in CI
     github_output = os.environ.get("GITHUB_OUTPUT")
@@ -186,6 +205,7 @@ def main():
             with open(github_output, "a", encoding="utf-8") as f:
                 f.write(f"has_fresh={'true' if has_fresh else 'false'}\n")
                 f.write(f"fresh_count={count}\n")
+                f.write("cooldown_active=false\n")
         except Exception as e:
             print(f"Warning: could not write to GITHUB_OUTPUT: {e}")
 

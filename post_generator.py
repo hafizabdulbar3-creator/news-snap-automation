@@ -597,11 +597,12 @@ Return ONLY valid JSON matching this schema:
 
 def main():
     post_path = Path("post.json")
-    if post_path.is_file():
-        try:
-            post_path.unlink()
-        except OSError:
-            pass
+    for stale_file in (post_path, Path("news_snap_post.jpg"), Path("roundup_post.json")):
+        if stale_file.is_file():
+            try:
+                stale_file.unlink()
+            except OSError:
+                pass
 
     article_path = Path("selected_article.json")
     if not article_path.is_file():

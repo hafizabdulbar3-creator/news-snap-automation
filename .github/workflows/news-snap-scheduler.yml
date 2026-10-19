@@ -28,6 +28,10 @@ jobs:
         with:
           ref: main
 
+      - name: Pull latest history and branch state
+        run: |
+          git pull origin main --rebase || true
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:

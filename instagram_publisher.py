@@ -448,6 +448,13 @@ def record_dry_run_processed(article: dict, post: dict):
     HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Recorded dry-run entry in {HISTORY_PATH} under 'processed' (total processed: {len(history['processed'])}).")
 
+    # Remove processed candidate from classified pool
+    try:
+        from quota_manager import remove_from_classified_pool
+        remove_from_classified_pool(article.get("url"), article.get("title"), HISTORY_PATH)
+    except Exception as e:
+        print(f"[WARN] Could not remove dry-run article from classified pool: {e}")
+
 
 def record_published_history(article: dict, post: dict, media_id: str = None):
     """Save article entry into history.json under 'posted' with published=True."""
@@ -500,6 +507,20 @@ def record_published_history(article: dict, post: dict, media_id: str = None):
     history["posted"] = posted_list[-MAX_HISTORY_ENTRIES:]
     HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Recorded live post entry in {HISTORY_PATH} under 'posted' (total posted: {len(history['posted'])}).")
+
+    # Remove confirmed published story (and any roundup stories) from classified_pool
+    try:
+        from quota_manager import remove_from_classified_pool
+        remove_from_classified_pool(article.get("url"), article.get("title"), HISTORY_PATH)
+        if is_roundup and roundup_path.is_file():
+            try:
+                roundup_data = json.loads(roundup_path.read_text(encoding="utf-8"))
+                for s in roundup_data.get("stories", []):
+                    remove_from_classified_pool(s.get("url"), s.get("title"), HISTORY_PATH)
+            except Exception:
+                pass
+    except Exception as e:
+        print(f"[WARN] Could not remove published article from classified pool: {e}")
 
 
 def record_history(article: dict, post: dict, published: bool = False, media_id: str = None):

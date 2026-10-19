@@ -1755,6 +1755,12 @@ def render_approved_format(template_id, article, post):
 
 
 def main():
+    if OUTPUT.is_file():
+        try:
+            OUTPUT.unlink()
+        except OSError:
+            pass
+
     post_path = Path("post.json")
     article_path = Path("selected_article.json")
     if not post_path.is_file() or not article_path.is_file():

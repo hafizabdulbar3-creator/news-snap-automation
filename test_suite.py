@@ -27,6 +27,9 @@ import instagram_publisher
 import prepare_special_formats
 import format_registry
 import quota_manager
+import scheduler_controller
+import scheduler_watchdog
+import run_summary
 from unittest.mock import patch
 
 
@@ -2204,6 +2207,19 @@ class TestFinalComprehensiveQualityGate(unittest.TestCase):
 
 
 class TestSchedulerArchitecture(unittest.TestCase):
+    def setUp(self):
+        self.temp_hist = Path("test_history_scheduler_arch.json")
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": [], "quota_cooldown": {"active": False}}), encoding="utf-8")
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+
+    def tearDown(self):
+        if self.temp_hist.exists():
+            try:
+                self.temp_hist.unlink()
+            except Exception:
+                pass
+        os.environ.pop("NEWS_SNAP_HISTORY_PATH", None)
+
     def test_controller_bootstrap_only(self):
         import scheduler_controller
         dispatches = []
@@ -2340,9 +2356,10 @@ class TestSchedulerArchitecture(unittest.TestCase):
             res = scheduler_watchdog.run_watchdog_check(repo="test/repo", token="test_tok", stale_threshold_minutes=12)
 
         self.assertEqual(res["status"], "revived")
-        self.assertEqual(res["action"], "dispatched_replacement")
+        self.assertEqual(res["action"], "dispatched_bootstrap")
         self.assertEqual(len(calls), 1)
         self.assertIn("news-snap-scheduler.yml/dispatches", calls[0]["url"])
+        self.assertTrue(calls[0]["payload"]["inputs"]["bootstrap_only"])
 
 
 class TestProductionMockFallbackRefusal(unittest.TestCase):
@@ -2780,6 +2797,269 @@ class TestQuotaManagerAndOptimizations(unittest.TestCase):
                     "url": "https://reuters.com/story"
                 })
             self.assertIn("active cooldown", str(ctx.exception))
+
+
+class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
+    def setUp(self):
+        self.temp_hist = Path("test_history_qa.json")
+        self.temp_disc = Path("test_discovery_qa.json")
+        self.temp_sample = Path("test_sample_qa.json")
+        self.temp_sel = Path("selected_article.json")
+        for p in (self.temp_hist, self.temp_disc, self.temp_sample, self.temp_sel):
+            if p.exists():
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+
+    def tearDown(self):
+        for p in (self.temp_hist, self.temp_disc, self.temp_sample, self.temp_sel):
+            if p.exists():
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+
+    def test_controller_suppresses_dispatch_and_stops_chain_during_active_cooldown(self):
+        """1. scheduler_controller suppresses production dispatch and halts successor chain during active quota cooldown."""
+        from datetime import datetime, timezone, timedelta
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=18)
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [{"title": "Pending Story", "url": "https://example.com/1"}],
+            "quota_cooldown": {
+                "active": True,
+                "resets_at": future_dt.isoformat(),
+                "reason": "Gemini API quota exhausted (limit: 20)."
+            }
+        }), encoding="utf-8")
+
+        with patch("scheduler_controller.check_active_controller_runs", return_value=[]), \
+             patch("scheduler_controller.dispatch_workflow") as mock_dispatch:
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_token",
+                history_file=str(self.temp_hist)
+            )
+
+        self.assertEqual(res["status"], "paused_quota_cooldown")
+        self.assertFalse(res["publisher_dispatched"])
+        self.assertFalse(res["successor_dispatched"])
+        mock_dispatch.assert_not_called()
+
+    def test_controller_dispatches_publisher_and_successor_when_cooldown_absent(self):
+        """2. scheduler_controller dispatches publisher and successor when cooldown is inactive."""
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [],
+            "quota_cooldown": {"active": False}
+        }), encoding="utf-8")
+
+        with patch("scheduler_controller.check_active_controller_runs", return_value=[]), \
+             patch("scheduler_controller.dispatch_workflow", return_value=True) as mock_dispatch:
+            res = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_token",
+                bootstrap_only=False,
+                cycle_interval=0,
+                sleep_fn=lambda s: None,
+                history_file=str(self.temp_hist)
+            )
+
+        self.assertEqual(res["status"], "success")
+        self.assertTrue(res["publisher_dispatched"])
+        self.assertTrue(res["successor_dispatched"])
+        self.assertEqual(mock_dispatch.call_count, 2)
+
+    def test_watchdog_suppresses_revival_during_active_cooldown(self):
+        """3. scheduler_watchdog recognizes active quota cooldown and suppresses revival."""
+        from datetime import datetime, timezone, timedelta
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=12)
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [],
+            "quota_cooldown": {
+                "active": True,
+                "resets_at": future_dt.isoformat(),
+                "reason": "Quota exhausted."
+            }
+        }), encoding="utf-8")
+
+        with patch("scheduler_watchdog.query_api") as mock_api:
+            res = scheduler_watchdog.run_watchdog_check(
+                repo="test/repo",
+                token="test_token",
+                history_file=str(self.temp_hist)
+            )
+
+        self.assertEqual(res["status"], "cooldown_active")
+        self.assertEqual(res["action"], "none")
+        mock_api.assert_not_called()
+
+    def test_watchdog_revives_controller_with_safe_bootstrap_after_cooldown_expired(self):
+        """4. scheduler_watchdog revives controller using safe bootstrap (bootstrap_only=True) after cooldown expired."""
+        from datetime import datetime, timezone, timedelta
+        past_dt = datetime.now(timezone.utc) - timedelta(hours=1)
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [],
+            "quota_cooldown": {
+                "active": True,
+                "resets_at": past_dt.isoformat(),
+                "reason": "Expired quota cooldown."
+            }
+        }), encoding="utf-8")
+
+        last_run_time = (datetime.now(timezone.utc) - timedelta(minutes=30)).isoformat()
+        runs_response = {
+            "workflow_runs": [
+                {
+                    "id": 1001,
+                    "run_number": 40,
+                    "status": "completed",
+                    "conclusion": "success",
+                    "updated_at": last_run_time
+                }
+            ]
+        }
+
+        calls = []
+        def mock_query(url, token, method="GET", payload=None):
+            calls.append({"url": url, "method": method, "payload": payload})
+            if method == "GET":
+                return 200, runs_response
+            return 204, {}
+
+        with patch("scheduler_watchdog.query_api", side_effect=mock_query):
+            res = scheduler_watchdog.run_watchdog_check(
+                repo="test/repo",
+                token="test_token",
+                history_file=str(self.temp_hist)
+            )
+
+        self.assertEqual(res["status"], "revived")
+        self.assertEqual(res["action"], "dispatched_bootstrap")
+        self.assertEqual(len(calls), 2)
+        dispatch_call = [c for c in calls if c["method"] == "POST"][0]
+        self.assertTrue(dispatch_call["payload"]["inputs"]["bootstrap_only"])
+
+    def test_select_article_preserves_candidate_in_classified_pool(self):
+        """5. select_article selects best article without dropping candidates from classified_pool prematurely."""
+        article = {
+            "title": "Major Peace Accord Signed Between World Leaders",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/accord-1"
+        }
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [{**article, "classification": {"importance": "MAJOR", "topic": "Diplomacy", "reason": "Historic"}}]
+        }), encoding="utf-8")
+        self.temp_disc.write_text(json.dumps([article]), encoding="utf-8")
+        self.temp_sample.write_text(json.dumps({
+            "results": [{"id": 1, "importance": "MAJOR", "topic": "Diplomacy", "reason": "Historic"}]
+        }), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.temp_disc if str(p) == "discovery.json"
+            else (self.temp_sample if str(p) == "classified_sample.json"
+            else (self.temp_hist if str(p) == "history.json"
+            else (self.temp_sel if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        self.assertIsNotNone(sel)
+        self.assertEqual(sel["title"], article["title"])
+
+        # Confirm the candidate was PRESERVED in classified_pool
+        hist_data = json.loads(self.temp_hist.read_text(encoding="utf-8"))
+        self.assertEqual(len(hist_data.get("classified_pool", [])), 1)
+        self.assertEqual(hist_data["classified_pool"][0]["url"], article["url"])
+
+    def test_instagram_publisher_removes_candidate_from_pool_on_publication(self):
+        """6. instagram_publisher removes candidate from classified_pool only upon confirmed publication."""
+        article = {
+            "title": "Major Peace Accord Signed Between World Leaders",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/accord-1"
+        }
+        post = {
+            "headline": "Major Peace Accord Signed",
+            "caption": "Full caption text #NewsSnap",
+            "is_synthetic": False
+        }
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [{**article, "classification": {"importance": "MAJOR"}}]
+        }), encoding="utf-8")
+
+        orig_hist = instagram_publisher.HISTORY_PATH
+        try:
+            instagram_publisher.HISTORY_PATH = self.temp_hist
+            instagram_publisher.record_published_history(article, post, media_id="17899999999")
+            hist_data = json.loads(self.temp_hist.read_text(encoding="utf-8"))
+            self.assertEqual(len(hist_data["posted"]), 1)
+            self.assertEqual(hist_data["posted"][0]["media_id"], "17899999999")
+            # Candidate must be cleanly removed from classified_pool
+            self.assertEqual(len(hist_data.get("classified_pool", [])), 0)
+        finally:
+            instagram_publisher.HISTORY_PATH = orig_hist
+
+    def test_instagram_publisher_removes_candidate_from_pool_on_dry_run(self):
+        """7. instagram_publisher removes candidate from classified_pool upon dry-run completion."""
+        article = {
+            "title": "Major Peace Accord Signed Between World Leaders",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/accord-1"
+        }
+        post = {
+            "headline": "Major Peace Accord Signed",
+            "caption": "Full caption text #NewsSnap",
+            "is_synthetic": False
+        }
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [{**article, "classification": {"importance": "MAJOR"}}]
+        }), encoding="utf-8")
+
+        orig_hist = instagram_publisher.HISTORY_PATH
+        try:
+            instagram_publisher.HISTORY_PATH = self.temp_hist
+            instagram_publisher.record_dry_run_processed(article, post)
+            hist_data = json.loads(self.temp_hist.read_text(encoding="utf-8"))
+            self.assertEqual(len(hist_data["processed"]), 1)
+            # Candidate must be cleanly removed from classified_pool
+            self.assertEqual(len(hist_data.get("classified_pool", [])), 0)
+        finally:
+            instagram_publisher.HISTORY_PATH = orig_hist
+
+    def test_run_summary_output(self):
+        """8. run_summary correctly identifies cooldown no-op vs confirmed publication."""
+        from datetime import datetime, timezone, timedelta
+        future_dt = datetime.now(timezone.utc) + timedelta(hours=10)
+        self.temp_hist.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [{"title": "Pool Story 1"}],
+            "quota_cooldown": {
+                "active": True,
+                "resets_at": future_dt.isoformat(),
+                "reason": "Quota exhausted."
+            }
+        }), encoding="utf-8")
+
+        summary = run_summary.generate_run_summary(history_path=str(self.temp_hist))
+        self.assertEqual(summary["run_mode"], "NO-OP: QUOTA COOLDOWN ACTIVE (PUBLICATION SUPPRESSED)")
+        self.assertTrue(summary["cooldown_active"])
+        self.assertEqual(summary["pool_count"], 1)
+        self.assertFalse(summary["confirmed_published"])
 
 
 if __name__ == "__main__":
