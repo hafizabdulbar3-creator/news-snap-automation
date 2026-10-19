@@ -107,6 +107,15 @@
       "published": true,
       "media_id": "17883380955527744",
       "timestamp": "2026-10-19T09:54:33.684163+00:00"
+    },
+    {
+      "url": "https://www.oann.com/newsroom/trump-says-he-doesnt-want-to-drive-russia-away-from-the-bargaining-table-signals-progress-in-russia-ukraine-war-negotiations/",
+      "title": "Trump says he doesn't want to drive 'Russia away from the bargaining table,' signals progress in Russia-Ukraine War negotiations",
+      "headline": "Trump Signals Progress in Russia-Ukraine War Negotiations",
+      "domain": "oann.com",
+      "published": true,
+      "media_id": "18143682517595032",
+      "timestamp": "2026-10-19T10:26:23.307266+00:00"
     }
   ],
   "processed": [
@@ -290,17 +299,6 @@
         "reason": "Negotiation friction and political resistance surrounding a major international trade agreement."
       },
       "classified_at": "2026-10-19T00:07:24.667310+00:00"
-    },
-    {
-      "title": "Trump says he doesn't want to drive 'Russia away from the bargaining table,' signals progress in Russia-Ukraine War negotiations",
-      "domain": "oann.com",
-      "url": "https://www.oann.com/newsroom/trump-says-he-doesnt-want-to-drive-russia-away-from-the-bargaining-table-signals-progress-in-russia-ukraine-war-negotiations/",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Geopolitics",
-        "reason": "Diplomatic statements regarding high-stakes peace negotiations in the Russia-Ukraine war."
-      },
-      "classified_at": "2026-10-19T00:07:24.667316+00:00"
     },
     {
       "title": "'A shock to all of us': A day after CFB Wainwright disaster, neighbouring town is eerily silent",
