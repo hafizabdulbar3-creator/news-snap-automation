@@ -188,6 +188,15 @@
       "published": true,
       "media_id": "18020880287934696",
       "timestamp": "2026-10-19T14:35:26.278506+00:00"
+    },
+    {
+      "url": "https://jowhar.com/four-killed-dozens-hurt-in-fire-at-canadian-military-base/",
+      "title": "Four Killed, Dozens Hurt in Fire at Canadian Military Base - Jowhar News Leader | Somali News",
+      "headline": "Four Killed, Dozens Hurt in Fire at Canadian Military Base",
+      "domain": "jowhar.com",
+      "published": true,
+      "media_id": "18152833456528394",
+      "timestamp": "2026-10-19T15:06:59.763284+00:00"
     }
   ],
   "processed": [
@@ -328,17 +337,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Four Killed, Dozens Hurt in Fire at Canadian Military Base - Jowhar News Leader | Somali News",
-      "domain": "jowhar.com",
-      "url": "https://jowhar.com/four-killed-dozens-hurt-in-fire-at-canadian-military-base/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Accidents & Disasters",
-        "reason": "Fatal disaster at a military facility causing multiple deaths and injuries."
-      },
-      "classified_at": "2026-10-19T00:07:24.667325+00:00"
-    },
     {
       "title": "Major fire at Canada military base leaves four dead, dozens injured | Cedar News",
       "domain": "cedarnews.net",
