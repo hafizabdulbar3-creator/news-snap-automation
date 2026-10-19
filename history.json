@@ -197,6 +197,15 @@
       "published": true,
       "media_id": "18152833456528394",
       "timestamp": "2026-10-19T15:06:59.763284+00:00"
+    },
+    {
+      "url": "https://cedarnews.net/newstasks/1083645/major-fire-canada-military-base-leaves-four/",
+      "title": "Major fire at Canada military base leaves four dead, dozens injured | Cedar News",
+      "headline": "Major fire at Canada military base leaves four dead, dozens injured",
+      "domain": "cedarnews.net",
+      "published": true,
+      "media_id": "18115313231031549",
+      "timestamp": "2026-10-19T17:43:29.349257+00:00"
     }
   ],
   "processed": [
@@ -337,17 +346,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Major fire at Canada military base leaves four dead, dozens injured | Cedar News",
-      "domain": "cedarnews.net",
-      "url": "https://cedarnews.net/newstasks/1083645/major-fire-canada-military-base-leaves-four/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Accidents & Disasters",
-        "reason": "Report on casualties and emergency response following a fire at a Canadian military base."
-      },
-      "classified_at": "2026-10-19T00:07:24.667328+00:00"
-    },
     {
       "title": "Gold Star Spouse Questions JD Vance On 'Accountability' For Military's 'Failures' During VP Town Hall",
       "domain": "dailycaller.com",
