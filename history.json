@@ -80,6 +80,15 @@
       "published": true,
       "media_id": "18115313231031549",
       "timestamp": "2026-10-18T18:39:44.781287+00:00"
+    },
+    {
+      "url": "https://www.tnp.no/norway/politics/4402-usa-and-germany-support-former-norway-prime-minister-stoltenberg-as-new-nato-secretary/",
+      "title": "USA and Germany Support Former Norway Prime Minister Stoltenberg as New NATO Secretary - The Nordic Page",
+      "headline": "USA and Germany Back Former Norway PM Stoltenberg for NATO Secretary",
+      "domain": "tnp.no",
+      "published": true,
+      "media_id": "18115735508122230",
+      "timestamp": "2026-10-19T07:49:36.952336+00:00"
     }
   ],
   "processed": [
@@ -241,17 +250,6 @@
         "reason": "Public-interest advisory concerning cybersecurity and generative AI scams."
       },
       "classified_at": "2026-10-19T00:07:24.667294+00:00"
-    },
-    {
-      "title": "USA and Germany Support Former Norway Prime Minister Stoltenberg as New NATO Secretary - The Nordic Page",
-      "domain": "tnp.no",
-      "url": "https://www.tnp.no/norway/politics/4402-usa-and-germany-support-former-norway-prime-minister-stoltenberg-as-new-nato-secretary/",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Security",
-        "reason": "Leadership decisions regarding the appointment of NATO's Secretary General."
-      },
-      "classified_at": "2026-10-19T00:07:24.667300+00:00"
     },
     {
       "title": "Government shutdown: Senate leaders reach deal on short-term spending bill to avoid shutdown",
@@ -435,5 +433,6 @@
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
     "reason": "Gemini API quota exhausted. Retry required in 85668s (23h 47m 48s).",
     "updated_at": "2026-10-19T00:12:12.446572+00:00"
-  }
+  },
+  "quota_cooldowns": {}
 }
