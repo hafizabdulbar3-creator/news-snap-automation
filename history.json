@@ -152,6 +152,15 @@
       "published": true,
       "media_id": "17951231643055761",
       "timestamp": "2026-10-19T12:30:49.075846+00:00"
+    },
+    {
+      "url": "https://www.westerntelegraph.co.uk/news/national/26646884.39-people-hospital-fire-canadian-military-base-says-alberta-premier/",
+      "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
+      "headline": "39 hospitalized after fire at Canadian military base",
+      "domain": "westerntelegraph.co.uk",
+      "published": true,
+      "media_id": "17917418751465211",
+      "timestamp": "2026-10-19T13:02:16.360679+00:00"
     }
   ],
   "processed": [
@@ -292,17 +301,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
-      "domain": "westerntelegraph.co.uk",
-      "url": "https://www.westerntelegraph.co.uk/news/national/26646884.39-people-hospital-fire-canadian-military-base-says-alberta-premier/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Accidents & Disasters",
-        "reason": "Mass casualty incident involving dozens hospitalized at a military facility."
-      },
-      "classified_at": "2026-10-19T00:07:24.667306+00:00"
-    },
     {
       "title": "Support frays over bumper trade deal with Europe",
       "domain": "irrigator.com.au",
