@@ -224,6 +224,15 @@
       "published": true,
       "media_id": "18114326165033563",
       "timestamp": "2026-10-19T18:37:39.452410+00:00"
+    },
+    {
+      "url": "https://www.bendigoadvertiser.com.au/story/9370849/why-a-mega-trade-deal-has-been-thrown-in-jeopardy/",
+      "title": "Why a mega trade deal has been thrown in jeopardy",
+      "headline": "Why a mega trade deal has been thrown in jeopardy",
+      "domain": "bendigoadvertiser.com.au",
+      "published": true,
+      "media_id": "18644483989042962",
+      "timestamp": "2026-10-19T19:04:31.083507+00:00"
     }
   ],
   "processed": [
@@ -364,17 +373,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Why a mega trade deal has been thrown in jeopardy",
-      "domain": "bendigoadvertiser.com.au",
-      "url": "https://www.bendigoadvertiser.com.au/story/9370849/why-a-mega-trade-deal-has-been-thrown-in-jeopardy/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "International Trade",
-        "reason": "Analysis of political hurdles endangering a major bilateral/multilateral trade pact."
-      },
-      "classified_at": "2026-10-19T00:07:24.667342+00:00"
-    },
     {
       "title": "Election 2026: Labour promise to enforce new conditions on social media companies",
       "domain": "newstalkzb.co.nz",
