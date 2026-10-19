@@ -206,6 +206,15 @@
       "published": true,
       "media_id": "18115313231031549",
       "timestamp": "2026-10-19T17:43:29.349257+00:00"
+    },
+    {
+      "url": "https://dailycaller.com/2026/10/18/gold-star-spouse-joey-amor-questions-jd-vance-accountability-military-failures-cbs-news-town-hall/",
+      "title": "Gold Star Spouse Questions JD Vance On 'Accountability' For Military's 'Failures' During VP Town Hall",
+      "headline": "Gold Star Spouse Questions JD Vance On Military Accountability",
+      "domain": "dailycaller.com",
+      "published": true,
+      "media_id": "17872036620643476",
+      "timestamp": "2026-10-19T17:56:21.764654+00:00"
     }
   ],
   "processed": [
@@ -346,17 +355,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Gold Star Spouse Questions JD Vance On 'Accountability' For Military's 'Failures' During VP Town Hall",
-      "domain": "dailycaller.com",
-      "url": "https://dailycaller.com/2026/10/18/gold-star-spouse-joey-amor-questions-jd-vance-accountability-military-failures-cbs-news-town-hall/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "US Politics",
-        "reason": "High-profile political town hall interaction highlighting military policy and accountability."
-      },
-      "classified_at": "2026-10-19T00:07:24.667333+00:00"
-    },
     {
       "title": "Danantara's transparency, mandate remain in question two years into Prabowo's rule - Economy - The Jakarta Post",
       "domain": "thejakartapost.com",
