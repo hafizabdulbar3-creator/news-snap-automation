@@ -89,6 +89,15 @@
       "published": true,
       "media_id": "18115735508122230",
       "timestamp": "2026-10-19T07:49:36.952336+00:00"
+    },
+    {
+      "url": "https://www.digbycourier.ca/government-shutdown-senate-leaders-reach-deal-on-short-term-spending-bill-to-avoid-shutdown/",
+      "title": "Government shutdown: Senate leaders reach deal on short-term spending bill to avoid shutdown",
+      "headline": "Senate leaders reach deal on short-term spending bill to avoid shutdown",
+      "domain": "digbycourier.ca",
+      "published": true,
+      "media_id": "18075557237744595",
+      "timestamp": "2026-10-19T08:20:45.344933+00:00"
     }
   ],
   "processed": [
@@ -250,17 +259,6 @@
         "reason": "Public-interest advisory concerning cybersecurity and generative AI scams."
       },
       "classified_at": "2026-10-19T00:07:24.667294+00:00"
-    },
-    {
-      "title": "Government shutdown: Senate leaders reach deal on short-term spending bill to avoid shutdown",
-      "domain": "digbycourier.ca",
-      "url": "https://www.digbycourier.ca/government-shutdown-senate-leaders-reach-deal-on-short-term-spending-bill-to-avoid-shutdown/",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "US Governance",
-        "reason": "Congressional legislative agreement to prevent a federal government shutdown."
-      },
-      "classified_at": "2026-10-19T00:07:24.667303+00:00"
     },
     {
       "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
