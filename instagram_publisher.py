@@ -28,7 +28,7 @@ HISTORY_PATH = Path("history.json")
 
 # Documented retention window for dry-run processed stories (48 hours by default)
 DRY_RUN_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
-MAX_HISTORY_ENTRIES = 100
+MAX_HISTORY_ENTRIES = 500
 
 # Meta Graph API configuration for Instagram Login / "Manage content on Instagram"
 INSTAGRAM_GRAPH_HOST = os.environ.get("INSTAGRAM_GRAPH_HOST", "graph.instagram.com").strip()
@@ -156,6 +156,66 @@ def fetch_granted_permissions(access_token: str, graph_base: str = GRAPH_API_BAS
         return perms
     except Exception:
         return []
+
+
+def fetch_content_publishing_limit(account_id: str, access_token: str, graph_base: str = GRAPH_API_BASE) -> dict:
+    """Query Meta Graph API content_publishing_limit endpoint to check account's remaining publishing quota.
+
+    Endpoint: GET /{account-id}/content_publishing_limit?fields=config,quota_usage
+
+    Returns:
+        dict with keys:
+            'quota_total': int (e.g. 50, 100, dynamic from Meta),
+            'quota_usage': int (number of posts published in rolling 24h window),
+            'quota_duration': int (seconds, typically 86400),
+            'remaining_quota': int (quota_total - quota_usage)
+    """
+    if not account_id or not access_token:
+        raise ValueError("account_id and access_token are required to check content_publishing_limit.")
+
+    url = f"{graph_base}/{account_id}/content_publishing_limit?fields=config,quota_usage"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Authorization": f"Bearer {access_token}",
+            "User-Agent": "NEWS-SNAP-Publisher/1.0",
+        },
+        method="GET"
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.load(resp)
+    except urllib.error.HTTPError as err:
+        body = err.read().decode("utf-8", errors="replace")
+        sanitized = sanitize_token(body, access_token)
+        print(f"[WARN] Failed to query content_publishing_limit (HTTP {err.code}): {sanitized}")
+        raise RuntimeError(f"Failed to query content_publishing_limit (HTTP {err.code}): {sanitized}") from err
+    except Exception as exc:
+        sanitized = sanitize_token(str(exc), access_token)
+        print(f"[WARN] Error querying content_publishing_limit: {sanitized}")
+        raise RuntimeError(f"Error querying content_publishing_limit: {sanitized}") from exc
+
+    items = data.get("data", [])
+    if not items or not isinstance(items, list):
+        raise ValueError(f"Unexpected response structure from content_publishing_limit: {sanitize_token(str(data), access_token)}")
+
+    entry = items[0]
+    config = entry.get("config", {})
+    quota_total = config.get("quota_total")
+    quota_duration = config.get("quota_duration", 86400)
+    quota_usage = entry.get("quota_usage", 0)
+
+    if quota_total is None:
+        raise ValueError(f"Missing quota_total in content_publishing_limit response: {sanitize_token(str(data), access_token)}")
+
+    remaining_quota = max(0, int(quota_total) - int(quota_usage))
+
+    return {
+        "quota_total": int(quota_total),
+        "quota_usage": int(quota_usage),
+        "quota_duration": int(quota_duration),
+        "remaining_quota": remaining_quota,
+    }
 
 
 def verify_account_and_permissions(
@@ -503,7 +563,7 @@ def record_published_history(article: dict, post: dict, media_id: str = None):
     }
     posted_list.append(entry)
 
-    # Retain the last 100 entries
+    # Retain the last MAX_HISTORY_ENTRIES entries (500)
     history["posted"] = posted_list[-MAX_HISTORY_ENTRIES:]
     HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Recorded live post entry in {HISTORY_PATH} under 'posted' (total posted: {len(history['posted'])}).")
@@ -870,6 +930,14 @@ def main():
                 print(f"[WARN] Dry-run token verification check: {sanitize_token(str(e), access_token)}")
                 print("[INFO] Continuing dry-run pipeline validation.")
 
+        # Check rolling 24h publication count in dry-run mode
+        try:
+            from quota_manager import check_rolling_24h_cap, DEFAULT_MAX_ROLLING_POSTS_24H
+            under_cap, count_24h, remaining_24h = check_rolling_24h_cap(history_path=HISTORY_PATH)
+            print(f"[DRY-RUN] Rolling 24h confirmed posts: {count_24h}/{DEFAULT_MAX_ROLLING_POSTS_24H} (remaining allowance: {remaining_24h})")
+        except Exception as e:
+            print(f"[INFO] Rolling 24h cap check skipped in dry-run: {e}")
+
         print("All format, image, and duplicate checks PASSED successfully.")
         print("The generated image is ready for Instagram publication.")
         record_dry_run_processed(article, post)
@@ -930,6 +998,34 @@ def main():
         print("Skipping duplicate publication and updating local history.json.")
         record_history(article, post, published=True, media_id=existing_live_media_id)
         return
+
+    # Pre-flight Cap Check 1: Rolling 24-hour application publishing cap (max 50 posts/24h)
+    from quota_manager import check_rolling_24h_cap, DEFAULT_MAX_ROLLING_POSTS_24H
+    under_cap, count_24h, remaining_24h = check_rolling_24h_cap(history_path=HISTORY_PATH)
+    print(f"[PRE-FLIGHT CAP CHECK] Rolling 24h confirmed posts: {count_24h}/{DEFAULT_MAX_ROLLING_POSTS_24H} (remaining allowance: {remaining_24h})")
+    if not under_cap:
+        raise RuntimeError(
+            f"SAFETY REFUSAL: Rolling 24-hour Instagram publishing cap reached ({count_24h}/{DEFAULT_MAX_ROLLING_POSTS_24H} posts). "
+            "Refusing to publish to prevent exceeding the daily limit."
+        )
+
+    # Pre-flight Cap Check 2: Live Meta Graph API content_publishing_limit check
+    print("[PRE-FLIGHT INSTAGRAM QUOTA CHECK] Querying Meta Graph API content_publishing_limit...")
+    try:
+        limit_info = fetch_content_publishing_limit(account_id, access_token, graph_base=GRAPH_API_BASE)
+        meta_quota_total = limit_info["quota_total"]
+        meta_quota_usage = limit_info["quota_usage"]
+        meta_remaining = limit_info["remaining_quota"]
+        print(f"[OK] Instagram publishing quota: {meta_quota_usage}/{meta_quota_total} used in 24h. Remaining quota: {meta_remaining}")
+        if meta_remaining <= 0:
+            raise RuntimeError(
+                f"SAFETY REFUSAL: Instagram Graph API publishing quota exhausted ({meta_quota_usage}/{meta_quota_total} used). "
+                "Meta account publishing quota limit reached."
+            )
+    except RuntimeError:
+        raise
+    except Exception as exc:
+        raise RuntimeError(f"FAIL-CLOSED: Could not verify Instagram publishing limit: {sanitize_token(str(exc), access_token)}") from exc
 
     # Step 1: Create Container
     container_url = f"{GRAPH_API_BASE}/{account_id}/media"

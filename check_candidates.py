@@ -197,7 +197,13 @@ def main():
     # Also account for eligible unposted candidates in the persistent classified pool
     pool_eligible = []
     try:
-        from quota_manager import get_classified_pool
+        from quota_manager import (
+            get_classified_pool,
+            check_rolling_24h_cap,
+            check_publication_cadence_due,
+            DEFAULT_CADENCE_MINUTES,
+            DEFAULT_MAX_ROLLING_POSTS_24H
+        )
         pool = get_classified_pool(history_path)
         hist_sets = get_history_sets(history_path)
         pool_eligible = [
@@ -211,10 +217,64 @@ def main():
     except Exception:
         pool_eligible = []
 
-    count = len(fresh_articles) + len(pool_eligible)
-    has_fresh = count > 0
+    total_candidates = len(fresh_articles) + len(pool_eligible)
 
-    print(f"Candidate check: {len(fresh_articles)} fresh discovered article(s), {len(pool_eligible)} eligible pool article(s) found (total: {count}).")
+    # 1. Clear diagnostics for discovery, pool, and AI provider
+    print(f"[NEWS DISCOVERY] News discovery completed: {len(fresh_articles)} fresh discovered article(s).")
+    print(f"[QUEUE STATUS] Number of eligible queued stories in pool: {len(pool_eligible)} (Total candidate backlog: {total_candidates}).")
+    prov_label = (active_provider or "none").upper()
+    print(f"[AI PROVIDER] Active provider: {prov_label}.")
+
+    # 2. Check 50-post rolling 24-hour cap
+    max_posts = int(os.environ.get("MAX_ROLLING_POSTS_24H", "50"))
+    try:
+        from quota_manager import check_rolling_24h_cap, check_publication_cadence_due, DEFAULT_CADENCE_MINUTES
+        is_under_cap, count_24h, remaining_allowance = check_rolling_24h_cap(history_path, max_posts=max_posts)
+    except Exception:
+        is_under_cap, count_24h, remaining_allowance = True, 0, max_posts
+
+    if not is_under_cap:
+        print(f"[ROLLING 24H CAP REACHED] 50 confirmed posts published in the last 24 hours (Cap: {max_posts}). Publication paused until rolling window frees capacity.")
+        github_output = os.environ.get("GITHUB_OUTPUT")
+        if github_output:
+            try:
+                with open(github_output, "a", encoding="utf-8") as f:
+                    f.write("has_fresh=false\n")
+                    f.write("fresh_count=0\n")
+                    f.write("cap_reached=true\n")
+            except Exception:
+                pass
+        sys.exit(0)
+
+    # 3. Check 29-minute publication cadence
+    cadence_min = float(os.environ.get("PUBLISH_CADENCE_MINUTES", "29"))
+    force_publish = os.environ.get("FORCE_PUBLISH", "").strip().lower() in ("true", "1", "yes")
+
+    try:
+        is_cadence_due, elapsed_min, remaining_min = check_publication_cadence_due(
+            history_path, cadence_minutes=cadence_min
+        )
+    except Exception:
+        is_cadence_due, elapsed_min, remaining_min = True, 999999.0, 0.0
+
+    if not is_cadence_due and not force_publish:
+        print(f"[CADENCE NOT DUE] Elapsed time since last confirmed post: {elapsed_min:.1f}m (Target: ~{cadence_min:.0f}m). Next publication due in {remaining_min:.1f}m.")
+        print("[CADENCE] News discovery preserved; skipping downstream AI triage, image generation, and publication to enforce ~29m spacing.")
+        github_output = os.environ.get("GITHUB_OUTPUT")
+        if github_output:
+            try:
+                with open(github_output, "a", encoding="utf-8") as f:
+                    f.write("has_fresh=false\n")
+                    f.write("fresh_count=0\n")
+                    f.write("cadence_due=false\n")
+            except Exception:
+                pass
+        sys.exit(0)
+
+    # 4. Cadence is due and cap is open
+    print(f"[CADENCE OK] Publication cadence due ({elapsed_min:.1f}m >= {cadence_min:.0f}m) and rolling 24h cap allowance available ({remaining_allowance}/{max_posts}).")
+
+    has_fresh = total_candidates > 0
 
     # Write GitHub Actions step output if running in CI
     github_output = os.environ.get("GITHUB_OUTPUT")
@@ -222,14 +282,16 @@ def main():
         try:
             with open(github_output, "a", encoding="utf-8") as f:
                 f.write(f"has_fresh={'true' if has_fresh else 'false'}\n")
-                f.write(f"fresh_count={count}\n")
+                f.write(f"fresh_count={total_candidates}\n")
                 f.write("cooldown_active=false\n")
+                f.write("cadence_due=true\n")
+                f.write("cap_reached=false\n")
         except Exception as e:
             print(f"Warning: could not write to GITHUB_OUTPUT: {e}")
 
     if not has_fresh:
         print("[INFO] No fresh unposted eligible candidates in this cycle.")
-        print("Downstream Gemini triage and post generation will be skipped to preserve API quota.")
+        print("[INFO] Skipping downstream generation; will not invent or recycle stories.")
         sys.exit(0)
 
 

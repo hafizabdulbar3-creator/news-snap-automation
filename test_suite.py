@@ -17,6 +17,7 @@ import os
 import sys
 import unittest
 import urllib.error
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from PIL import Image
 
@@ -33,6 +34,7 @@ import scheduler_watchdog
 import run_summary
 import ai_provider
 import classify
+import check_candidates
 from unittest.mock import patch, MagicMock
 
 
@@ -3526,5 +3528,397 @@ class TestMultiProviderAIClient(unittest.TestCase):
         self.assertFalse(res_cool["successor_dispatched"])
 
 
+
+class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
+    def setUp(self):
+        self.temp_hist = Path("test_history_cap_cadence.json")
+        self.temp_output = Path("test_github_output.txt")
+        self.orig_hist_publisher = instagram_publisher.HISTORY_PATH
+        self.orig_hist_candidates = check_candidates.HISTORY_PATH
+
+    def tearDown(self):
+        instagram_publisher.HISTORY_PATH = self.orig_hist_publisher
+        check_candidates.HISTORY_PATH = self.orig_hist_candidates
+        for p in (self.temp_hist, self.temp_output):
+            if p.is_file():
+                try:
+                    p.unlink()
+                except Exception:
+                    pass
+
+    def test_rolling_24h_cap_counts_only_confirmed_posts_with_media_id(self):
+        """1. Rolling 24-hour cap counts ONLY confirmed posts with valid media_id and timestamp within 24h."""
+        from datetime import datetime, timezone, timedelta
+        now = datetime(2026, 10, 19, 12, 0, 0, tzinfo=timezone.utc)
+
+        posted_entries = []
+        # 48 confirmed posts within last 24h
+        for i in range(48):
+            posted_entries.append({
+                "url": f"https://example.com/story_{i}",
+                "title": f"Story {i}",
+                "published": True,
+                "media_id": f"media_id_{i}",
+                "timestamp": (now - timedelta(hours=i * 0.4)).isoformat(),
+            })
+
+        # 3 dry-run / unconfirmed entries (should NOT count towards cap)
+        for i in range(3):
+            posted_entries.append({
+                "url": f"https://example.com/dry_{i}",
+                "title": f"Dry Run {i}",
+                "published": False,
+                "media_id": None,
+                "timestamp": now.isoformat(),
+            })
+
+        # 2 entries with missing or empty media_id (should NOT count)
+        posted_entries.append({
+            "url": "https://example.com/no_media_1",
+            "title": "No Media 1",
+            "published": True,
+            "media_id": "",
+            "timestamp": now.isoformat(),
+        })
+        posted_entries.append({
+            "url": "https://example.com/no_media_2",
+            "title": "No Media 2",
+            "published": True,
+            "media_id": None,
+            "timestamp": now.isoformat(),
+        })
+
+        # 10 older confirmed posts outside 24h window (should NOT count)
+        for i in range(10):
+            posted_entries.append({
+                "url": f"https://example.com/old_{i}",
+                "title": f"Old Story {i}",
+                "published": True,
+                "media_id": f"old_media_{i}",
+                "timestamp": (now - timedelta(hours=25 + i)).isoformat(),
+            })
+
+        self.temp_hist.write_text(json.dumps({"posted": posted_entries, "processed": []}), encoding="utf-8")
+
+        # Test rolling 24h posts getter
+        confirmed = quota_manager.get_rolling_24h_published_posts(self.temp_hist, now=now)
+        self.assertEqual(len(confirmed), 48)
+
+        # Check cap with 48 posts (allowance 2 left under 50 cap)
+        is_under, count, remaining = quota_manager.check_rolling_24h_cap(self.temp_hist, max_posts=50, now=now)
+        self.assertTrue(is_under)
+        self.assertEqual(count, 48)
+        self.assertEqual(remaining, 2)
+
+        # Add 2 more confirmed posts (hitting exactly 50 cap)
+        posted_entries.append({
+            "url": "https://example.com/story_49",
+            "title": "Story 49",
+            "published": True,
+            "media_id": "media_id_49",
+            "timestamp": now.isoformat(),
+        })
+        posted_entries.append({
+            "url": "https://example.com/story_50",
+            "title": "Story 50",
+            "published": True,
+            "media_id": "media_id_50",
+            "timestamp": now.isoformat(),
+        })
+        self.temp_hist.write_text(json.dumps({"posted": posted_entries, "processed": []}), encoding="utf-8")
+
+        is_under, count, remaining = quota_manager.check_rolling_24h_cap(self.temp_hist, max_posts=50, now=now)
+        self.assertFalse(is_under)
+        self.assertEqual(count, 50)
+        self.assertEqual(remaining, 0)
+
+    def test_publication_cadence_calculation_due_vs_not_due(self):
+        """2. Publication cadence calculates elapsed time and enforces ~29-minute spacing."""
+        from datetime import datetime, timezone, timedelta
+        now = datetime(2026, 10, 19, 12, 0, 0, tzinfo=timezone.utc)
+
+        # Case A: No previous confirmed posts in history -> immediately due
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": []}), encoding="utf-8")
+        is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
+            self.temp_hist, cadence_minutes=29, now=now
+        )
+        self.assertTrue(is_due)
+        self.assertEqual(remaining, 0.0)
+
+        # Case B: Last post was 10 minutes ago -> NOT due, remaining ~19 min
+        posted = [{
+            "url": "https://example.com/last",
+            "title": "Last Story",
+            "published": True,
+            "media_id": "media_last",
+            "timestamp": (now - timedelta(minutes=10)).isoformat(),
+        }]
+        self.temp_hist.write_text(json.dumps({"posted": posted, "processed": []}), encoding="utf-8")
+        is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
+            self.temp_hist, cadence_minutes=29, now=now
+        )
+        self.assertFalse(is_due)
+        self.assertAlmostEqual(elapsed, 10.0, places=1)
+        self.assertAlmostEqual(remaining, 19.0, places=1)
+
+        # Case C: Last post was 28.6 minutes ago (threshold is 28.5m with buffer) -> due
+        posted[0]["timestamp"] = (now - timedelta(minutes=28.6)).isoformat()
+        self.temp_hist.write_text(json.dumps({"posted": posted, "processed": []}), encoding="utf-8")
+        is_due, elapsed, remaining = quota_manager.check_publication_cadence_due(
+            self.temp_hist, cadence_minutes=29, now=now
+        )
+        self.assertTrue(is_due)
+        self.assertEqual(remaining, 0.0)
+
+    def test_fetch_content_publishing_limit_success_and_dynamic_quota(self):
+        """3. fetch_content_publishing_limit parses Meta Graph API response dynamically without hardcoding."""
+        mock_meta_response = {
+            "data": [
+                {
+                    "config": {
+                        "quota_total": 50,
+                        "quota_duration": 86400
+                    },
+                    "quota_usage": 14
+                }
+            ]
+        }
+
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = json.dumps(mock_meta_response).encode("utf-8")
+        mock_resp.__enter__.return_value = mock_resp
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            res = instagram_publisher.fetch_content_publishing_limit("17841400", "test_token")
+
+        self.assertEqual(res["quota_total"], 50)
+        self.assertEqual(res["quota_usage"], 14)
+        self.assertEqual(res["quota_duration"], 86400)
+        self.assertEqual(res["remaining_quota"], 36)
+
+        # Test with higher dynamic quota from Meta (e.g. 100 total, 99 usage)
+        mock_meta_response_100 = {
+            "data": [
+                {
+                    "config": {
+                        "quota_total": 100,
+                        "quota_duration": 86400
+                    },
+                    "quota_usage": 99
+                }
+            ]
+        }
+        mock_resp.read.return_value = json.dumps(mock_meta_response_100).encode("utf-8")
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            res100 = instagram_publisher.fetch_content_publishing_limit("17841400", "test_token")
+        self.assertEqual(res100["quota_total"], 100)
+        self.assertEqual(res100["quota_usage"], 99)
+        self.assertEqual(res100["remaining_quota"], 1)
+
+    def test_fetch_content_publishing_limit_fail_closed(self):
+        """4. fetch_content_publishing_limit fails closed and sanitizes token on HTTP/API errors."""
+        # 4a. Missing credentials
+        with self.assertRaises(ValueError):
+            instagram_publisher.fetch_content_publishing_limit("", "tok")
+        with self.assertRaises(ValueError):
+            instagram_publisher.fetch_content_publishing_limit("acc", "")
+
+        # 4b. HTTP Error sanitizes secret token
+        http_err = urllib.error.HTTPError(
+            url="https://graph.instagram.com/v22.0/test/content_publishing_limit",
+            code=400,
+            msg="Bad Request",
+            hdrs={},
+            fp=io.BytesIO(b'{"error":{"message":"Invalid OAuth access_token secret_token_xyz"}}')
+        )
+        with patch("urllib.request.urlopen", side_effect=http_err):
+            with self.assertRaises(RuntimeError) as cm:
+                instagram_publisher.fetch_content_publishing_limit("17841400", "secret_token_xyz")
+            self.assertNotIn("secret_token_xyz", str(cm.exception))
+            self.assertIn("secr..._xyz", str(cm.exception))
+
+    def test_publisher_main_refuses_when_rolling_24h_cap_reached(self):
+        """5. Publisher main() refuses to create container when 50-post rolling 24h cap is reached."""
+        from PIL import ImageDraw
+        img = Image.new("RGB", (1080, 1350), (10, 20, 30))
+        d = ImageDraw.Draw(img)
+        d.rectangle((50, 50, 1030, 600), fill=(230, 31, 45))
+        d.text((100, 100), "CAP TEST CARD", fill=(255, 255, 255))
+        img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
+
+        test_post = {
+            "headline": "CAP TEST HEADLINE FOR ROLLING CAP",
+            "caption": "Verified caption testing rolling 24h cap. #NewsSnap",
+            "hashtags": ["#NewsSnap"]
+        }
+        instagram_publisher.POST_PATH.write_text(json.dumps(test_post), encoding="utf-8")
+
+        # Set 50 confirmed posts in temp history
+        now = datetime.now(timezone.utc)
+        posts_50 = [{
+            "url": f"https://example.com/p_{i}",
+            "title": f"Story {i}",
+            "published": True,
+            "media_id": f"media_{i}",
+            "timestamp": (now - timedelta(minutes=i * 10)).isoformat(),
+        } for i in range(50)]
+        self.temp_hist.write_text(json.dumps({"posted": posts_50, "processed": []}), encoding="utf-8")
+        instagram_publisher.HISTORY_PATH = self.temp_hist
+
+        mock_profile = {"id": "17841400", "username": "newssnap_bot", "account_type": "BUSINESS"}
+
+        try:
+            with patch("instagram_publisher.fetch_account_info", return_value=mock_profile), \
+                 patch("instagram_publisher.check_live_feed_duplicate", return_value=""), \
+                 patch("instagram_publisher.verify_public_image_url"), \
+                 patch.dict(os.environ, {
+                     "ENABLE_INSTAGRAM_POSTING": "true",
+                     "INSTAGRAM_ACCESS_TOKEN": "mock_login_token",
+                     "INSTAGRAM_ACCOUNT_ID": "17841400",
+                     "IMAGE_PUBLIC_URL": "https://example.com/news_snap_post.jpg"
+                 }):
+                with self.assertRaises(RuntimeError) as cm:
+                    instagram_publisher.main()
+                self.assertIn("Rolling 24-hour Instagram publishing cap reached", str(cm.exception))
+        finally:
+            if instagram_publisher.IMAGE_PATH.is_file():
+                instagram_publisher.IMAGE_PATH.unlink()
+            if instagram_publisher.POST_PATH.is_file():
+                instagram_publisher.POST_PATH.unlink()
+
+    def test_publisher_main_refuses_when_meta_quota_exhausted(self):
+        """6. Publisher main() refuses to create container when Meta content_publishing_limit remaining is 0."""
+        from PIL import ImageDraw
+        img = Image.new("RGB", (1080, 1350), (10, 20, 30))
+        d = ImageDraw.Draw(img)
+        d.rectangle((50, 50, 1030, 600), fill=(230, 31, 45))
+        d.text((100, 100), "META QUOTA CARD", fill=(255, 255, 255))
+        img.save(instagram_publisher.IMAGE_PATH, format="JPEG", quality=95)
+
+        test_post = {
+            "headline": "META QUOTA TEST HEADLINE",
+            "caption": "Verified caption testing meta publishing limit. #NewsSnap",
+            "hashtags": ["#NewsSnap"]
+        }
+        instagram_publisher.POST_PATH.write_text(json.dumps(test_post), encoding="utf-8")
+
+        # Under app cap (only 5 posts)
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": []}), encoding="utf-8")
+        instagram_publisher.HISTORY_PATH = self.temp_hist
+
+        mock_profile = {"id": "17841400", "username": "newssnap_bot", "account_type": "BUSINESS"}
+        mock_limit_exhausted = {
+            "quota_total": 50,
+            "quota_usage": 50,
+            "quota_duration": 86400,
+            "remaining_quota": 0,
+        }
+
+        try:
+            with patch("instagram_publisher.fetch_account_info", return_value=mock_profile), \
+                 patch("instagram_publisher.check_live_feed_duplicate", return_value=""), \
+                 patch("instagram_publisher.verify_public_image_url"), \
+                 patch("instagram_publisher.fetch_content_publishing_limit", return_value=mock_limit_exhausted), \
+                 patch.dict(os.environ, {
+                     "ENABLE_INSTAGRAM_POSTING": "true",
+                     "INSTAGRAM_ACCESS_TOKEN": "mock_login_token",
+                     "INSTAGRAM_ACCOUNT_ID": "17841400",
+                     "IMAGE_PUBLIC_URL": "https://example.com/news_snap_post.jpg"
+                 }):
+                with self.assertRaises(RuntimeError) as cm:
+                    instagram_publisher.main()
+                self.assertIn("Instagram Graph API publishing quota exhausted", str(cm.exception))
+        finally:
+            if instagram_publisher.IMAGE_PATH.is_file():
+                instagram_publisher.IMAGE_PATH.unlink()
+            if instagram_publisher.POST_PATH.is_file():
+                instagram_publisher.POST_PATH.unlink()
+
+    def test_check_candidates_separates_5m_discovery_from_29m_cadence(self):
+        """7. check_candidates skips downstream publishing (cadence_due=false) while preserving discovered candidates."""
+        # Story discovered in discovery.json
+        temp_disc = Path("test_discovery_cadence.json")
+        disc_articles = [{
+            "url": "https://reuters.com/world/new-story-cadence",
+            "title": "Fresh Discovered International Summit Agreement",
+            "domain": "reuters.com",
+            "is_duplicate": False,
+        }]
+        temp_disc.write_text(json.dumps(disc_articles), encoding="utf-8")
+
+        # Last confirmed post was 10 minutes ago
+        now = datetime.now(timezone.utc)
+        recent_posted = [{
+            "url": "https://example.com/recent",
+            "title": "Recent Post",
+            "published": True,
+            "media_id": "media_recent",
+            "timestamp": (now - timedelta(minutes=10)).isoformat(),
+        }]
+        self.temp_hist.write_text(json.dumps({"posted": recent_posted, "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        try:
+            with patch.dict(os.environ, {
+                "NEWS_SNAP_HISTORY_PATH": str(self.temp_hist),
+                "GITHUB_OUTPUT": str(self.temp_output),
+                "PUBLISH_CADENCE_MINUTES": "29"
+            }), patch("check_candidates.DISCOVERY_PATH", temp_disc):
+                with self.assertRaises(SystemExit) as cm:
+                    check_candidates.main()
+                self.assertEqual(cm.exception.code, 0)
+
+            out_content = self.temp_output.read_text(encoding="utf-8")
+            self.assertIn("has_fresh=false", out_content)
+            self.assertIn("cadence_due=false", out_content)
+        finally:
+            if temp_disc.is_file():
+                temp_disc.unlink()
+
+    def test_check_candidates_gates_when_rolling_cap_reached(self):
+        """8. check_candidates outputs cap_reached=true and has_fresh=false when 50 posts published in 24h."""
+        temp_disc = Path("test_discovery_cap.json")
+        disc_articles = [{
+            "url": "https://reuters.com/world/new-story-cap",
+            "title": "Fresh Discovered Story Cap",
+            "domain": "reuters.com",
+            "is_duplicate": False,
+        }]
+        temp_disc.write_text(json.dumps(disc_articles), encoding="utf-8")
+
+        now = datetime.now(timezone.utc)
+        posts_50 = [{
+            "url": f"https://example.com/post_{i}",
+            "title": f"Post {i}",
+            "published": True,
+            "media_id": f"media_cap_{i}",
+            "timestamp": (now - timedelta(minutes=i * 10)).isoformat(),
+        } for i in range(50)]
+        self.temp_hist.write_text(json.dumps({"posted": posts_50, "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        try:
+            with patch.dict(os.environ, {
+                "NEWS_SNAP_HISTORY_PATH": str(self.temp_hist),
+                "GITHUB_OUTPUT": str(self.temp_output),
+                "MAX_ROLLING_POSTS_24H": "50"
+            }), patch("check_candidates.DISCOVERY_PATH", temp_disc):
+                with self.assertRaises(SystemExit) as cm:
+                    check_candidates.main()
+                self.assertEqual(cm.exception.code, 0)
+
+            out_content = self.temp_output.read_text(encoding="utf-8")
+            self.assertIn("has_fresh=false", out_content)
+            self.assertIn("cap_reached=true", out_content)
+        finally:
+            if temp_disc.is_file():
+                temp_disc.unlink()
+
+    def test_unattended_6_month_design_safeguards(self):
+        """9. Multi-month unattended operation parameters (retention >= 500, defaults 50/day and 29m)."""
+        self.assertGreaterEqual(instagram_publisher.MAX_HISTORY_ENTRIES, 500)
+        self.assertEqual(quota_manager.DEFAULT_MAX_ROLLING_POSTS_24H, 50)
+        self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 29)
+
+
 if __name__ == "__main__":
     unittest.main()
+

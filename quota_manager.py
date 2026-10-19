@@ -283,6 +283,100 @@ def clear_quota_cooldown(history_path: Path = HISTORY_PATH, provider: str | None
         save_history(data, history_path)
 
 
+DEFAULT_CADENCE_MINUTES = float(os.environ.get("PUBLISH_CADENCE_MINUTES", "29"))
+DEFAULT_MAX_ROLLING_POSTS_24H = int(os.environ.get("MAX_ROLLING_POSTS_24H", "50"))
+
+
+def get_rolling_24h_published_posts(history_path: Path = HISTORY_PATH, now: datetime | None = None) -> list:
+    """Return all confirmed published posts within the rolling 24-hour window (86,400s).
+
+    Only entries with published=True and a valid non-empty media_id are counted.
+    Failed attempts, dry-run entries, or missing media IDs are strictly excluded.
+    """
+    if now is None:
+        now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=24)
+    data = load_history(history_path)
+    confirmed = []
+    for entry in data.get("posted", []):
+        if not entry.get("published"):
+            continue
+        if not entry.get("media_id"):
+            continue
+        ts_str = entry.get("timestamp")
+        if not ts_str:
+            continue
+        try:
+            ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+            if ts >= cutoff:
+                confirmed.append(entry)
+        except Exception:
+            continue
+    return confirmed
+
+
+def get_last_successful_publication_time(history_path: Path = HISTORY_PATH) -> datetime | None:
+    """Return the datetime of the most recent confirmed published post, or None if none exist."""
+    data = load_history(history_path)
+    latest_ts = None
+    for entry in data.get("posted", []):
+        if not entry.get("published") or not entry.get("media_id"):
+            continue
+        ts_str = entry.get("timestamp")
+        if not ts_str:
+            continue
+        try:
+            ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+            if latest_ts is None or ts > latest_ts:
+                latest_ts = ts
+        except Exception:
+            continue
+    return latest_ts
+
+
+def check_publication_cadence_due(
+    history_path: Path = HISTORY_PATH,
+    cadence_minutes: float = DEFAULT_CADENCE_MINUTES,
+    now: datetime | None = None
+) -> tuple[bool, float, float]:
+    """Check if enough time has elapsed since the last confirmed publication.
+
+    Returns:
+        (is_due, elapsed_minutes, remaining_minutes_until_due)
+    """
+    if now is None:
+        now = datetime.now(timezone.utc)
+    last_pub = get_last_successful_publication_time(history_path)
+    if last_pub is None:
+        return True, 999999.0, 0.0
+
+    elapsed_sec = (now - last_pub).total_seconds()
+    elapsed_min = max(0.0, elapsed_sec / 60.0)
+    # Allow a small buffer (0.5m) to align smoothly with 5-minute scheduler cycles
+    threshold_min = max(0.0, cadence_minutes - 0.5)
+    if elapsed_min >= threshold_min:
+        return True, elapsed_min, 0.0
+    remaining_min = cadence_minutes - elapsed_min
+    return False, elapsed_min, remaining_min
+
+
+def check_rolling_24h_cap(
+    history_path: Path = HISTORY_PATH,
+    max_posts: int = DEFAULT_MAX_ROLLING_POSTS_24H,
+    now: datetime | None = None
+) -> tuple[bool, int, int]:
+    """Check whether the rolling 24-hour confirmed publication count is strictly under the cap.
+
+    Returns:
+        (is_under_cap, current_confirmed_count, remaining_allowance)
+    """
+    confirmed = get_rolling_24h_published_posts(history_path, now=now)
+    count = len(confirmed)
+    is_under = count < max_posts
+    remaining = max(0, max_posts - count)
+    return is_under, count, remaining
+
+
 def get_classified_pool(history_path: Path = HISTORY_PATH) -> list:
     """Get all candidates currently stored in classified_pool."""
     data = load_history(history_path)
