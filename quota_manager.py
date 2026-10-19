@@ -20,11 +20,17 @@ def extract_http_error_body(err: Exception) -> str:
     """Extract string body from urllib.error.HTTPError safely."""
     if not isinstance(err, urllib.error.HTTPError):
         return str(err)
+    if hasattr(err, "_cached_body") and err._cached_body:
+        return err._cached_body
     body = ""
     try:
         if hasattr(err, "read"):
             raw = err.read()
-            body = raw.decode("utf-8", errors="replace")
+            if isinstance(raw, bytes):
+                body = raw.decode("utf-8", errors="replace")
+            else:
+                body = str(raw)
+            err._cached_body = body
     except Exception:
         pass
     if not body and hasattr(err, "reason"):
@@ -48,7 +54,12 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
 
     # Determine provider hints
     url_str = str(getattr(err, "url", "")).lower()
-    provider = "Groq" if ("groq.com" in url_str or "groq" in body_low or "llama" in body_low or "gpt-oss" in body_low or "rpd" in body_low or "tpd" in body_low) else "Gemini"
+    if "cloudflare" in url_str or "cloudflare" in body_low or "neuron" in body_low:
+        provider = "Cloudflare"
+    elif "groq.com" in url_str or "groq" in body_low or "llama" in body_low or "gpt-oss" in body_low or "rpd" in body_low or "tpd" in body_low:
+        provider = "Groq"
+    else:
+        provider = "Gemini"
 
     # Detect indicators of daily or long-term quota exhaustion
     has_daily_metric = (
@@ -58,8 +69,11 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
         or "limit: 20" in body_low
         or "requests per day" in body_low
         or "tokens per day" in body_low
+        or "neurons" in body_low
+        or "limit: 10000" in body_low
         or bool(re.search(r"\b(rpd|tpd)\b", body_low))
         or ("daily" in body_low and "quota" in body_low)
+        or ("daily" in body_low and "limit" in body_low)
     )
 
     now = datetime.now(timezone.utc)
@@ -102,13 +116,15 @@ def parse_quota_cooldown(err: Exception) -> tuple[bool, datetime | None, str]:
 
 
 def infer_provider(cd: dict) -> str:
-    """Infer the provider ('groq' or 'gemini' or 'all') from a cooldown dictionary."""
+    """Infer the provider ('cloudflare', 'groq', 'gemini' or 'all') from a cooldown dictionary."""
     if not isinstance(cd, dict):
         return "all"
     p = str(cd.get("provider", "")).strip().lower()
-    if p in ("groq", "gemini"):
+    if p in ("cloudflare", "groq", "gemini"):
         return p
     reason = str(cd.get("reason", "")).lower()
+    if any(k in reason for k in ("cloudflare", "workers ai", "neuron")):
+        return "cloudflare"
     if any(k in reason for k in ("groq", "llama", "gpt-oss", "rpd", "tpd")):
         return "groq"
     if any(k in reason for k in ("gemini", "goog", "google")):
@@ -167,7 +183,9 @@ def get_quota_cooldown(history_path: Path = HISTORY_PATH, provider: str | None =
         except ImportError:
             pass
         if not target_prov:
-            if os.environ.get("GROQ_API_KEY", "").strip():
+            if os.environ.get("CLOUDFLARE_API_TOKEN", "").strip() and os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip():
+                target_prov = "cloudflare"
+            elif os.environ.get("GROQ_API_KEY", "").strip():
                 target_prov = "groq"
             elif os.environ.get("GEMINI_API_KEY", "").strip():
                 target_prov = "gemini"
@@ -244,9 +262,10 @@ def set_quota_cooldown(
     if "quota_cooldowns" not in data or not isinstance(data["quota_cooldowns"], dict):
         data["quota_cooldowns"] = {}
 
-    if prov in ("groq", "gemini"):
+    if prov in ("cloudflare", "groq", "gemini"):
         data["quota_cooldowns"][prov] = cooldown_entry
     else:
+        data["quota_cooldowns"]["cloudflare"] = cooldown_entry
         data["quota_cooldowns"]["groq"] = cooldown_entry
         data["quota_cooldowns"]["gemini"] = cooldown_entry
 

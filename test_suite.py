@@ -3155,7 +3155,11 @@ class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
 class TestMultiProviderAIClient(unittest.TestCase):
     def setUp(self):
         self.orig_env = os.environ.copy()
-        for k in ("GROQ_API_KEY", "GROQ_MODEL", "GEMINI_API_KEY", "GEMINI_MODEL", "AI_PROVIDER", "GITHUB_ACTIONS", "CI", "NEWS_SNAP_PROD"):
+        for k in (
+            "CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_AI_MODEL", "CLOUDFLARE_API_BASE",
+            "GROQ_API_KEY", "GROQ_MODEL", "GEMINI_API_KEY", "GEMINI_MODEL", "AI_PROVIDER",
+            "GITHUB_ACTIONS", "CI", "NEWS_SNAP_PROD"
+        ):
             os.environ.pop(k, None)
         self.temp_hist = Path("test_history_groq.json")
         if self.temp_hist.exists():
@@ -3919,6 +3923,307 @@ class TestPublishingCapCadenceAndUnattended(unittest.TestCase):
         self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 29)
 
 
+
+class TestCloudflareWorkersAIProvider(unittest.TestCase):
+    def setUp(self):
+        self.orig_env = os.environ.copy()
+        for k in (
+            "CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "CLOUDFLARE_AI_MODEL", "CLOUDFLARE_API_BASE",
+            "GROQ_API_KEY", "GROQ_MODEL", "GEMINI_API_KEY", "GEMINI_MODEL", "AI_PROVIDER",
+            "GITHUB_ACTIONS", "CI", "NEWS_SNAP_PROD"
+        ):
+            os.environ.pop(k, None)
+        self.temp_hist = Path("test_history_cf.json")
+        if self.temp_hist.exists():
+            try:
+                self.temp_hist.unlink()
+            except Exception:
+                pass
+
+    def tearDown(self):
+        os.environ.clear()
+        os.environ.update(self.orig_env)
+        if self.temp_hist.exists():
+            try:
+                self.temp_hist.unlink()
+            except Exception:
+                pass
+
+    def test_cloudflare_provider_selection_and_override(self):
+        """1. ai_provider selects Cloudflare when token and account are configured, and respects overrides."""
+        self.assertEqual(ai_provider.get_active_provider(), "")
+
+        # Set Cloudflare credentials -> returns 'cloudflare'
+        os.environ["CLOUDFLARE_API_TOKEN"] = "mock_cf_token_123"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "mock_cf_acc_456"
+        self.assertEqual(ai_provider.get_active_provider(), "cloudflare")
+
+        # Explicit override to gemini
+        os.environ["AI_PROVIDER"] = "gemini"
+        self.assertEqual(ai_provider.get_active_provider(), "gemini")
+
+        # Explicit override to groq
+        os.environ["AI_PROVIDER"] = "groq"
+        self.assertEqual(ai_provider.get_active_provider(), "groq")
+
+        # Explicit override to cloudflare
+        os.environ["AI_PROVIDER"] = "cloudflare"
+        self.assertEqual(ai_provider.get_active_provider(), "cloudflare")
+
+    def test_call_cloudflare_chat_completion_success(self):
+        """2. call_cloudflare_chat_completion makes correct REST request and parses valid JSON output."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "cf_test_token"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "cf_test_account_id"
+
+        mock_payload = {
+            "result": {
+                "response": json.dumps({
+                    "headline": "Historic Global Climate Treaty Signed at UN Summit",
+                    "curiosity_line": "Major diplomatic breakthrough",
+                    "caption": "Representatives from 190 nations reached a landmark accord today. #NewsSnap",
+                    "hashtags": ["#NewsSnap", "#ClimateAction", "#UNSummit"]
+                })
+            },
+            "success": True,
+            "errors": [],
+            "messages": []
+        }
+
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = json.dumps(mock_payload).encode("utf-8")
+        mock_resp.__enter__.return_value = mock_resp
+
+        with patch("urllib.request.urlopen", return_value=mock_resp) as mock_urlopen:
+            res = ai_provider.call_cloudflare_chat_completion(
+                prompt="Summarize article",
+                system_prompt="You are an editor"
+            )
+
+        self.assertEqual(res["headline"], "Historic Global Climate Treaty Signed at UN Summit")
+        self.assertIn("#NewsSnap", res["hashtags"])
+
+        # Verify request details
+        req_sent = mock_urlopen.call_args[0][0]
+        self.assertIn("cf_test_account_id", req_sent.full_url)
+        self.assertIn("@cf/meta/llama-3.1-8b-instruct", req_sent.full_url)
+        self.assertEqual(req_sent.headers["Authorization"], "Bearer cf_test_token")
+        self.assertEqual(req_sent.headers["Content-type"], "application/json")
+
+        req_body = json.loads(req_sent.data.decode("utf-8"))
+        self.assertEqual(len(req_body["messages"]), 2)
+        self.assertEqual(req_body["messages"][0]["role"], "system")
+        self.assertEqual(req_body["messages"][1]["role"], "user")
+
+    def test_call_cloudflare_chat_completion_markdown_fences_and_braces(self):
+        """3. Handles markdown code fences and cleans outer text from response."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "cf_tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "cf_acc"
+
+        fenced_output = """Here is the classified response:
+```json
+{
+  "results": [
+    {"id": 1, "importance": "MAJOR", "topic": "World", "reason": "Historic accord"}
+  ]
+}
+```
+Hope this helps!"""
+
+        mock_payload = {
+            "result": {"response": fenced_output},
+            "success": True,
+            "errors": [],
+            "messages": []
+        }
+
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = json.dumps(mock_payload).encode("utf-8")
+        mock_resp.__enter__.return_value = mock_resp
+
+        with patch("urllib.request.urlopen", return_value=mock_resp):
+            res = ai_provider.call_cloudflare_chat_completion(prompt="Classify")
+
+        self.assertIn("results", res)
+        self.assertEqual(len(res["results"]), 1)
+        self.assertEqual(res["results"][0]["importance"], "MAJOR")
+
+    def test_call_cloudflare_missing_secrets(self):
+        """4. Fails fast with descriptive ValueError if credentials are missing."""
+        # Missing token
+        os.environ.pop("CLOUDFLARE_API_TOKEN", None)
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "acc"
+        with self.assertRaises(ValueError) as cm1:
+            ai_provider.call_cloudflare_chat_completion(prompt="test")
+        self.assertIn("CLOUDFLARE_API_TOKEN", str(cm1.exception))
+
+        # Missing account ID
+        os.environ["CLOUDFLARE_API_TOKEN"] = "tok"
+        os.environ.pop("CLOUDFLARE_ACCOUNT_ID", None)
+        with self.assertRaises(ValueError) as cm2:
+            ai_provider.call_cloudflare_chat_completion(prompt="test")
+        self.assertIn("CLOUDFLARE_ACCOUNT_ID", str(cm2.exception))
+
+    def test_call_cloudflare_api_auth_error_sanitization(self):
+        """5. Auth errors fail closed without leaking API token in exceptions."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "super_secret_cf_token_999"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "test_acc"
+
+        http_err = urllib.error.HTTPError(
+            url="https://api.cloudflare.com/client/v4/accounts/test_acc/ai/run/@cf/meta/llama-3.1-8b-instruct",
+            code=401,
+            msg="Unauthorized",
+            hdrs={},
+            fp=io.BytesIO(b'{"success":false,"errors":[{"code":10000,"message":"Invalid token super_secret_cf_token_999"}]}')
+        )
+
+        with patch("urllib.request.urlopen", side_effect=http_err):
+            with self.assertRaises(RuntimeError) as cm:
+                ai_provider.call_cloudflare_chat_completion(prompt="test")
+
+            err_str = str(cm.exception)
+            self.assertNotIn("super_secret_cf_token_999", err_str)
+            self.assertIn("HTTP 401", err_str)
+
+    def test_call_cloudflare_quota_exhaustion_sets_cooldown(self):
+        """6. Daily quota exhaustion (HTTP 429 or neurons exceeded) triggers provider-specific cooldown."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "acc"
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.temp_hist)
+        self.temp_hist.write_text(json.dumps({"posted": [], "processed": []}), encoding="utf-8")
+
+        http_err = urllib.error.HTTPError(
+            url="https://api.cloudflare.com/client/v4/accounts/acc/ai/run/@cf/meta/llama-3.1-8b-instruct",
+            code=429,
+            msg="Too Many Requests",
+            hdrs={},
+            fp=io.BytesIO(b'{"success":false,"errors":[{"code":10016,"message":"Daily quota limit exceeded for neurons: 10000"}]}')
+        )
+
+        with patch("urllib.request.urlopen", side_effect=http_err):
+            with self.assertRaises(RuntimeError) as cm:
+                ai_provider.call_cloudflare_chat_completion(prompt="test", max_attempts=1)
+            self.assertIn("quota exhausted", str(cm.exception).lower())
+
+        # Verify cooldown recorded specifically for Cloudflare in history.json
+        self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist, provider="cloudflare"))
+        # Verify Gemini is NOT affected by Cloudflare cooldown
+        self.assertFalse(quota_manager.is_cooldown_active(self.temp_hist, provider="gemini"))
+
+    def test_classify_and_post_generation_routing_through_cloudflare(self):
+        """7. classify_articles_ai and generate_post_content_ai route cleanly through Cloudflare."""
+        os.environ["CLOUDFLARE_API_TOKEN"] = "cf_tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "cf_acc"
+
+        mock_class_output = {
+            "results": [
+                {"id": 1, "importance": "MAJOR", "topic": "Diplomacy", "reason": "Peace summit"}
+            ]
+        }
+        mock_post_output = {
+            "headline": "Peace Summit Successfully Concluded",
+            "curiosity_line": "Major regional accord",
+            "caption": "World leaders signed a landmark pact today. #NewsSnap",
+            "hashtags": ["#NewsSnap", "#PeaceAccord"]
+        }
+
+        # 7a. Classification routes to Cloudflare
+        with patch("ai_provider.call_cloudflare_chat_completion", return_value=mock_class_output) as mock_cf_call:
+            articles = [{"title": "Historic Peace Summit Concluded", "domain": "reuters.com", "url": "https://reuters.com/1"}]
+            res = ai_provider.classify_articles_ai(articles)
+            self.assertEqual(res["results"][0]["importance"], "MAJOR")
+            mock_cf_call.assert_called_once()
+
+        # 7b. Post generation routes to Cloudflare
+        with patch("ai_provider.call_cloudflare_chat_completion", return_value=mock_post_output) as mock_cf_gen:
+            article = {"title": "Historic Peace Summit Concluded", "domain": "reuters.com", "url": "https://reuters.com/1"}
+            post = ai_provider.generate_post_content_ai(article)
+            self.assertEqual(post["headline"], "Peace Summit Successfully Concluded")
+            mock_cf_gen.assert_called_once()
+
+    def test_scheduler_and_watchdog_respect_cloudflare_cooldown(self):
+        """8. Scheduler controller and watchdog halt safely when Cloudflare quota cooldown is active."""
+        from datetime import datetime, timezone, timedelta
+        os.environ["CLOUDFLARE_API_TOKEN"] = "tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "acc"
+
+        # Record Cloudflare quota cooldown
+        future_reset = datetime.now(timezone.utc) + timedelta(hours=6)
+        quota_manager.set_quota_cooldown(
+            resets_at=future_reset,
+            reason="Cloudflare Workers AI Free Tier daily quota exhausted. Resets at 00:00 UTC.",
+            history_path=self.temp_hist,
+            provider="cloudflare"
+        )
+
+        # 8a. Scheduler controller pauses
+        with patch("scheduler_controller.check_active_controller_runs", return_value=[]):
+            res_ctrl = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="test_tok",
+                current_run_id="101",
+                history_file=str(self.temp_hist)
+            )
+        self.assertEqual(res_ctrl["status"], "paused_quota_cooldown")
+        self.assertEqual(res_ctrl["provider"], "CLOUDFLARE")
+        self.assertFalse(res_ctrl["publisher_dispatched"])
+        self.assertFalse(res_ctrl["successor_dispatched"])
+
+        # 8b. Watchdog suppresses revival
+        res_wd = scheduler_watchdog.run_watchdog_check(
+            repo="test/repo",
+            token="test_tok",
+            history_file=str(self.temp_hist)
+        )
+        self.assertEqual(res_wd["status"], "cooldown_active")
+        self.assertEqual(res_wd["action"], "none")
+        self.assertEqual(res_wd["provider"], "CLOUDFLARE")
+
+    def test_check_candidates_with_cloudflare_provider(self):
+        """9. check_candidates detects Cloudflare as active provider and respects Cloudflare cooldown."""
+        temp_disc = Path("test_discovery_cf.json")
+        disc_articles = [{
+            "url": "https://reuters.com/world/cf-story",
+            "title": "Fresh Discovered Cloudflare Story",
+            "domain": "reuters.com",
+            "is_duplicate": False,
+        }]
+        temp_disc.write_text(json.dumps(disc_articles), encoding="utf-8")
+        temp_out = Path("test_output_cf.txt")
+
+        # Set Cloudflare credentials
+        os.environ["CLOUDFLARE_API_TOKEN"] = "tok"
+        os.environ["CLOUDFLARE_ACCOUNT_ID"] = "acc"
+
+        # Active Cloudflare cooldown halts candidate check cleanly
+        from datetime import datetime, timezone, timedelta
+        future_reset = datetime.now(timezone.utc) + timedelta(hours=5)
+        quota_manager.set_quota_cooldown(
+            resets_at=future_reset,
+            reason="Cloudflare Workers AI Free Tier daily quota exhausted.",
+            history_path=self.temp_hist,
+            provider="cloudflare"
+        )
+
+        try:
+            with patch.dict(os.environ, {
+                "NEWS_SNAP_HISTORY_PATH": str(self.temp_hist),
+                "GITHUB_OUTPUT": str(temp_out),
+            }), patch("check_candidates.DISCOVERY_PATH", temp_disc):
+                with self.assertRaises(SystemExit) as cm:
+                    check_candidates.main()
+                self.assertEqual(cm.exception.code, 0)
+
+            out_content = temp_out.read_text(encoding="utf-8")
+            self.assertIn("has_fresh=false", out_content)
+            self.assertIn("cooldown_active=true", out_content)
+        finally:
+            if temp_disc.is_file():
+                temp_disc.unlink()
+            if temp_out.is_file():
+                temp_out.unlink()
+
+
 if __name__ == "__main__":
     unittest.main()
+
 

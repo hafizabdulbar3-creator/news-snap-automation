@@ -525,7 +525,7 @@ def generate_post(article: dict) -> dict:
     if not provider:
         if is_prod:
             raise RuntimeError(
-                "CRITICAL: Neither GROQ_API_KEY nor GEMINI_API_KEY is configured in production environment. "
+                "CRITICAL: Neither CLOUDFLARE, GROQ_API_KEY, nor GEMINI_API_KEY is configured in production environment. "
                 "Refusing to generate or publish synthetic news content."
             )
         print("No AI provider key configured in local environment; using verified offline test generator.")

@@ -1,17 +1,21 @@
 """NEWS SNAP Multi-Provider AI Client.
 
 Provides a unified interface for hosted text generation and article triage:
-1. Groq API (Primary):
+1. Cloudflare Workers AI (Zero-Cost Hosted Serverless):
+   - Endpoint: https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/run/@cf/meta/llama-3.1-8b-instruct
+   - Configured via CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID
+   - Supported models: @cf/meta/llama-3.1-8b-instruct (default)
+2. Groq API (High-speed Llama Inference):
    - Endpoint: https://api.groq.com/openai/v1/chat/completions
    - Configured via GROQ_API_KEY
-   - Supported models: llama-3.3-70b-versatile (default), llama-3.1-8b-instant
-2. Gemini API (Secondary / Fallback):
+   - Supported models: openai/gpt-oss-120b (default), llama-3.3-70b-versatile
+3. Gemini API (Secondary / Fallback):
    - Endpoint: https://generativelanguage.googleapis.com/v1beta/models
    - Configured via GEMINI_API_KEY
    - Supported models: gemini-3.8-flash (default), gemini-2.0-flash
 
 Features:
-- Automatic provider detection (prefers Groq if GROQ_API_KEY is present).
+- Automatic provider detection (prefers Cloudflare if CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID are present, then Groq, then Gemini).
 - Strict secret sanitization in logs and exception messages.
 - Bounded retries with exponential backoff and Retry-After header parsing.
 - Fail-closed behavior in production if required keys are missing or invalid.
@@ -28,6 +32,10 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+
+# Cloudflare Defaults
+DEFAULT_CLOUDFLARE_API_BASE = "https://api.cloudflare.com/client/v4/accounts"
+DEFAULT_CLOUDFLARE_MODEL = "@cf/meta/llama-3.1-8b-instruct"
 
 # Groq Defaults
 DEFAULT_GROQ_API_BASE = "https://api.groq.com/openai/v1"
@@ -50,7 +58,11 @@ def is_production_mode() -> bool:
 def sanitize_ai_error(err: Exception | str) -> str:
     """Sanitize error messages to prevent leaking API keys or secrets in logs."""
     msg = str(err)
-    for env_var in ("GROQ_API_KEY", "GEMINI_API_KEY", "INSTAGRAM_ACCESS_TOKEN", "GITHUB_TOKEN"):
+    for env_var in (
+        "CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID",
+        "GROQ_API_KEY", "GEMINI_API_KEY",
+        "INSTAGRAM_ACCESS_TOKEN", "GITHUB_TOKEN"
+    ):
         val = os.environ.get(env_var, "")
         if val and len(val) > 4:
             msg = msg.replace(val, f"[REDACTED_{env_var}]")
@@ -66,15 +78,18 @@ def get_active_provider() -> str:
     """Determine the active AI provider based on environment variables.
 
     Priority:
-    1. Explicit AI_PROVIDER env var ("groq" or "gemini")
-    2. GROQ_API_KEY present -> "groq"
-    3. GEMINI_API_KEY present -> "gemini"
-    4. Empty string if no provider configured
+    1. Explicit AI_PROVIDER env var ("cloudflare", "groq", or "gemini")
+    2. CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID present -> "cloudflare"
+    3. GROQ_API_KEY present -> "groq"
+    4. GEMINI_API_KEY present -> "gemini"
+    5. Empty string if no provider configured
     """
     explicit = os.environ.get("AI_PROVIDER", "").strip().lower()
-    if explicit in ("groq", "gemini"):
+    if explicit in ("cloudflare", "groq", "gemini"):
         return explicit
 
+    if os.environ.get("CLOUDFLARE_API_TOKEN", "").strip() and os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip():
+        return "cloudflare"
     if os.environ.get("GROQ_API_KEY", "").strip():
         return "groq"
     if os.environ.get("GEMINI_API_KEY", "").strip():
@@ -223,6 +238,167 @@ def call_groq_chat_completion(
     raise RuntimeError(f"Groq API failed: {sanitize_ai_error(last_error)}")
 
 
+def call_cloudflare_chat_completion(
+    prompt: str,
+    system_prompt: str = "",
+    model: str | None = None,
+    api_token: str | None = None,
+    account_id: str | None = None,
+    temperature: float = 0.2,
+    max_tokens: int = 1000,
+    max_attempts: int = 3,
+    api_base: str | None = None
+) -> dict:
+    """Execute a chat completion request to Cloudflare Workers AI REST API with bounded retries."""
+    token = api_token or os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+    if not token:
+        raise ValueError("CLOUDFLARE_API_TOKEN is not configured.")
+
+    acc_id = account_id or os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
+    if not acc_id:
+        raise ValueError("CLOUDFLARE_ACCOUNT_ID is not configured.")
+
+    base = api_base or os.environ.get("CLOUDFLARE_API_BASE", DEFAULT_CLOUDFLARE_API_BASE).rstrip("/")
+    model_name = model or os.environ.get("CLOUDFLARE_AI_MODEL", DEFAULT_CLOUDFLARE_MODEL)
+    url = f"{base}/{acc_id}/ai/run/{model_name}"
+
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+
+    payload = {
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+    }
+    req_body = json.dumps(payload).encode("utf-8")
+
+    last_error = None
+    for attempt in range(1, max_attempts + 1):
+        req = urllib.request.Request(
+            url,
+            data=req_body,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+                "User-Agent": "NEWS-SNAP-automation/1.0"
+            },
+            method="POST"
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=35) as resp:
+                resp_text = resp.read().decode("utf-8")
+                resp_data = json.loads(resp_text)
+
+            if not resp_data.get("success", True):
+                errors = resp_data.get("errors", [])
+                err_msg = "; ".join(e.get("message", str(e)) for e in errors) if errors else "Unknown Cloudflare error"
+                raise RuntimeError(f"Cloudflare Workers AI returned success=False: {err_msg}")
+
+            result = resp_data.get("result", {})
+            if isinstance(result, str):
+                content = result
+            elif isinstance(result, dict):
+                content = result.get("response") or result.get("text") or ""
+            else:
+                content = ""
+
+            if not content:
+                raise ValueError("Cloudflare Workers AI returned empty content in response.")
+
+            # Clean markdown code fences if present
+            cleaned = content.strip()
+            if cleaned.startswith("```"):
+                cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned, flags=re.IGNORECASE)
+                cleaned = re.sub(r"\s*```$", "", cleaned)
+            cleaned = cleaned.strip()
+
+            try:
+                parsed = json.loads(cleaned)
+            except json.JSONDecodeError:
+                brace_start = cleaned.find("{")
+                brace_end = cleaned.rfind("}")
+                if brace_start != -1 and brace_end > brace_start:
+                    parsed = json.loads(cleaned[brace_start:brace_end + 1])
+                else:
+                    raise
+
+            return parsed
+
+        except urllib.error.HTTPError as e:
+            last_error = e
+            sanitized = sanitize_ai_error(e)
+
+            # Check for daily quota exhaustion (429 or 401/403 with quota/neuron indicator)
+            if e.code in (429, 401, 403):
+                try:
+                    from quota_manager import parse_quota_cooldown, set_quota_cooldown
+                    is_exhausted, reset_dt, reason = parse_quota_cooldown(e)
+                    if is_exhausted and reset_dt:
+                        history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
+                        print(f"[CLOUDFLARE QUOTA EXHAUSTED] {reason} (Cooldown until {reset_dt.isoformat()}).")
+                        try:
+                            set_quota_cooldown(reset_dt, reason, history_path, provider="cloudflare")
+                        except Exception:
+                            pass
+                        raise RuntimeError(f"Cloudflare Workers AI quota exhausted: {reason}") from e
+                except ImportError:
+                    pass
+
+            # HTTP 401 Unauthorized / HTTP 403 Forbidden -> Non-retryable
+            if e.code in (401, 403):
+                print(f"[ERROR] Cloudflare Workers AI authentication failed (HTTP {e.code}): {sanitized}")
+                raise RuntimeError(f"Cloudflare Workers AI authentication failed (HTTP {e.code}): {sanitized}") from e
+
+            # HTTP 429 Rate Limit (transient) -> Retryable
+            if e.code == 429:
+                ra_header = e.headers.get("Retry-After") if e.headers else None
+                retry_after = None
+                if ra_header:
+                    try:
+                        retry_after = float(ra_header)
+                    except ValueError:
+                        pass
+
+                if attempt < max_attempts:
+                    delay = min(retry_after or (2.0 ** attempt), 25.0)
+                    print(f"[RETRY] Cloudflare HTTP 429 on attempt {attempt}/{max_attempts}. Retrying in {delay:.1f}s...")
+                    time.sleep(delay)
+                    continue
+                else:
+                    raise RuntimeError(f"Cloudflare Workers AI rate limit exceeded after {max_attempts} attempts: {sanitized}") from e
+
+            # Server error 5xx -> Retryable
+            if 500 <= e.code < 600 and attempt < max_attempts:
+                delay = 2.0 * (2 ** (attempt - 1)) + random.uniform(0.5, 1.5)
+                print(f"[RETRY] Cloudflare server error HTTP {e.code} on attempt {attempt}/{max_attempts}. Retrying in {delay:.1f}s...")
+                time.sleep(delay)
+                continue
+
+            raise RuntimeError(f"Cloudflare Workers AI permanent failure (HTTP {e.code}): {sanitized}") from e
+
+        except json.JSONDecodeError as e:
+            last_error = e
+            print(f"[WARN] Cloudflare response was not valid JSON on attempt {attempt}/{max_attempts}: {e}")
+            if attempt < max_attempts:
+                time.sleep(1.0)
+                continue
+            raise RuntimeError(f"Cloudflare output could not be parsed as valid JSON: {e}") from e
+
+        except Exception as e:
+            last_error = e
+            sanitized = sanitize_ai_error(e)
+            if attempt < max_attempts:
+                delay = 2.0 ** attempt
+                print(f"[RETRY] Transient Cloudflare error on attempt {attempt}/{max_attempts}: {sanitized}. Retrying in {delay:.1f}s...")
+                time.sleep(delay)
+                continue
+            raise RuntimeError(f"Cloudflare Workers AI failed after {max_attempts} attempts: {sanitized}") from e
+
+    raise RuntimeError(f"Cloudflare Workers AI failed: {sanitize_ai_error(last_error)}")
+
+
 def call_gemini_generate_content(
     prompt: str,
     system_prompt: str = "",
@@ -333,14 +509,14 @@ def call_gemini_generate_content(
 
 
 def classify_articles_ai(articles: list[dict]) -> dict:
-    """Classify a batch of news articles using the active AI provider (Groq or Gemini)."""
+    """Classify a batch of news articles using the active AI provider (Cloudflare, Groq, or Gemini)."""
     provider = get_active_provider()
     is_prod = is_production_mode()
 
     if not provider:
         if is_prod:
             raise RuntimeError(
-                "CRITICAL: Neither GROQ_API_KEY nor GEMINI_API_KEY is configured in production environment. "
+                "CRITICAL: Neither CLOUDFLARE (CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID), GROQ_API_KEY, nor GEMINI_API_KEY is configured in production environment. "
                 "Refusing to proceed without a verified AI provider."
             )
         # Local offline test fallback
@@ -390,7 +566,9 @@ Articles to classify:
 """ + json.dumps(items, ensure_ascii=False)
 
     print(f"[AI TRIAGE] Routing classification of {len(articles)} articles to provider: {provider.upper()}")
-    if provider == "groq":
+    if provider == "cloudflare":
+        return call_cloudflare_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
+    elif provider == "groq":
         return call_groq_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
     else:
         return call_gemini_generate_content(prompt=user_prompt, system_prompt=system_prompt)
@@ -404,7 +582,7 @@ def generate_post_content_ai(article: dict, source_evidence: str = "") -> dict:
     if not provider:
         if is_prod:
             raise RuntimeError(
-                "CRITICAL: Neither GROQ_API_KEY nor GEMINI_API_KEY is configured in production environment. "
+                "CRITICAL: Neither CLOUDFLARE, GROQ_API_KEY, nor GEMINI_API_KEY is configured in production environment. "
                 "Refusing to generate or publish synthetic news content."
             )
         # In offline local mode, caller should invoke generate_mock_post
@@ -446,7 +624,14 @@ Return ONLY a valid JSON object with these exact keys:
 """
 
     print(f"[AI GENERATOR] Routing post generation for '{title[:45]}...' to provider: {provider.upper()}")
-    if provider == "groq":
+    if provider == "cloudflare":
+        return call_cloudflare_chat_completion(
+            prompt=user_prompt,
+            system_prompt=system_prompt,
+            temperature=0.2,
+            max_tokens=600
+        )
+    elif provider == "groq":
         return call_groq_chat_completion(
             prompt=user_prompt,
             system_prompt=system_prompt,

@@ -45,13 +45,18 @@ jobs:
       - name: Check for fresh eligible candidates
         id: check-candidates
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python check_candidates.py
 
-      - name: Classify candidates with AI (Groq / Gemini)
+      - name: Classify candidates with AI (Cloudflare / Groq / Gemini)
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_AI_MODEL: "@cf/meta/llama-3.1-8b-instruct"
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: "openai/gpt-oss-120b"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -69,6 +74,9 @@ jobs:
       - name: Generate NEWS SNAP post content
         if: steps.check-candidates.outputs.has_fresh == 'true'
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_AI_MODEL: "@cf/meta/llama-3.1-8b-instruct"
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: "openai/gpt-oss-120b"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
