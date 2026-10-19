@@ -215,6 +215,15 @@
       "published": true,
       "media_id": "17872036620643476",
       "timestamp": "2026-10-19T17:56:21.764654+00:00"
+    },
+    {
+      "url": "http://www.thejakartapost.com/business/2026/10/19/danantaras-transparency-mandate-remain-in-question-two-years-into-prabowos-rule",
+      "title": "Danantara's transparency, mandate remain in question two years into Prabowo's rule - Economy - The Jakarta Post",
+      "headline": "Danantara's transparency pledge questioned after missing deadline",
+      "domain": "thejakartapost.com",
+      "published": true,
+      "media_id": "18114326165033563",
+      "timestamp": "2026-10-19T18:37:39.452410+00:00"
     }
   ],
   "processed": [
@@ -355,17 +364,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Danantara's transparency, mandate remain in question two years into Prabowo's rule - Economy - The Jakarta Post",
-      "domain": "thejakartapost.com",
-      "url": "http://www.thejakartapost.com/business/2026/10/19/danantaras-transparency-mandate-remain-in-question-two-years-into-prabowos-rule",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy & Governance",
-        "reason": "Governance and transparency concerns regarding Indonesia's sovereign wealth management."
-      },
-      "classified_at": "2026-10-19T00:07:24.667336+00:00"
-    },
     {
       "title": "Why a mega trade deal has been thrown in jeopardy",
       "domain": "bendigoadvertiser.com.au",
