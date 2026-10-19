@@ -98,6 +98,15 @@
       "published": true,
       "media_id": "18075557237744595",
       "timestamp": "2026-10-19T08:20:45.344933+00:00"
+    },
+    {
+      "url": "https://www.digbycourier.ca/chinas-economy-slows-in-may-and-stimulus-is-expected/",
+      "title": "China's economy slows in May, and stimulus is expected",
+      "headline": "China's Economy Slows in May, Stimulus Expected",
+      "domain": "digbycourier.ca",
+      "published": true,
+      "media_id": "17883380955527744",
+      "timestamp": "2026-10-19T09:54:33.684163+00:00"
     }
   ],
   "processed": [
@@ -281,17 +290,6 @@
         "reason": "Negotiation friction and political resistance surrounding a major international trade agreement."
       },
       "classified_at": "2026-10-19T00:07:24.667310+00:00"
-    },
-    {
-      "title": "China's economy slows in May, and stimulus is expected",
-      "domain": "digbycourier.ca",
-      "url": "https://www.digbycourier.ca/chinas-economy-slows-in-may-and-stimulus-is-expected/",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Global Economy",
-        "reason": "Economic slowdown in the world's second-largest economy with macroeconomic policy implications."
-      },
-      "classified_at": "2026-10-19T00:07:24.667312+00:00"
     },
     {
       "title": "Trump says he doesn't want to drive 'Russia away from the bargaining table,' signals progress in Russia-Ukraine War negotiations",
