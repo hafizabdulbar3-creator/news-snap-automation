@@ -242,6 +242,15 @@
       "published": true,
       "media_id": "17913150189504340",
       "timestamp": "2026-10-19T19:34:50.815605+00:00"
+    },
+    {
+      "url": "http://www.bignewsnetwork.com/news/279383603/fatal-fire-at-canadian-military-base-linked-to-live-fire-exercise-official",
+      "title": "Fatal fire at Canadian military base linked to live-fire exercise: official",
+      "headline": "Fatal fire at Canadian military base linked to live-fire exercise",
+      "domain": "bignewsnetwork.com",
+      "published": true,
+      "media_id": "18026361323916462",
+      "timestamp": "2026-10-19T20:01:42.863458+00:00"
     }
   ],
   "processed": [
@@ -381,19 +390,7 @@
       "timestamp": "2026-10-18T13:31:51.526666+00:00"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Fatal fire at Canadian military base linked to live-fire exercise: official",
-      "domain": "bignewsnetwork.com",
-      "url": "http://www.bignewsnetwork.com/news/279383603/fatal-fire-at-canadian-military-base-linked-to-live-fire-exercise-official",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Accidents & Disasters",
-        "reason": "Official investigation findings into the cause of a fatal military base fire."
-      },
-      "classified_at": "2026-10-19T00:07:24.667353+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
