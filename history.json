@@ -402,5 +402,15 @@
     "reason": "Gemini API quota exhausted. Retry required in 85668s (23h 47m 48s).",
     "updated_at": "2026-10-19T00:12:12.446572+00:00"
   },
-  "quota_cooldowns": {}
+  "quota_cooldowns": {},
+  "token_metadata": {
+    "token_type": "bearer",
+    "expires_in": 5183999,
+    "refreshed_at": "2026-10-19T19:30:35.481431+00:00",
+    "expires_at": "2026-12-18T19:30:34.481431+00:00",
+    "secret_updated": false,
+    "secret_status": "BLOCKED_SECRETS_WRITE_TOKEN_REQUIRED",
+    "status": "BLOCKED_SECRETS_WRITE_TOKEN_REQUIRED",
+    "updated_at": "2026-10-19T19:30:37.688314+00:00"
+  }
 }
