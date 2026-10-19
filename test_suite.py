@@ -11,10 +11,13 @@ Tests all components locally without calling external paid APIs:
 """
 
 import ast
+import base64
 import io
 import json
 import os
+import shutil
 import sys
+import tempfile
 import unittest
 import urllib.error
 from datetime import datetime, timezone, timedelta
@@ -4743,8 +4746,346 @@ class TestEditorialImageRedesign(unittest.TestCase):
                 out_path.unlink()
 
 
+class TwoMonthUnattendedHardeningTests(unittest.TestCase):
+    """Comprehensive test coverage for two-month unattended production hardening."""
+
+    def setUp(self):
+        self.test_dir = tempfile.mkdtemp()
+        self.history_path = Path(self.test_dir) / "test_history.json"
+        self.history_path.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [],
+            "token_metadata": {}
+        }), encoding="utf-8")
+
+    def tearDown(self):
+        shutil.rmtree(self.test_dir, ignore_errors=True)
+
+    def test_cadence_25_minutes_and_50_post_cap(self):
+        import quota_manager
+        self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 25)
+        self.assertEqual(quota_manager.DEFAULT_MAX_ROLLING_POSTS_24H, 50)
+
+        # Confirm 50 post cap enforcement
+        now = datetime.now(timezone.utc)
+        posts = [
+            {"published": True, "timestamp": (now - timedelta(hours=i % 20)).isoformat(), "media_id": f"id_{i}"}
+            for i in range(50)
+        ]
+        self.history_path.write_text(json.dumps({"posted": posts}), encoding="utf-8")
+        is_under, count, rem = quota_manager.check_rolling_24h_cap(self.history_path, max_posts=50)
+        self.assertFalse(is_under)
+        self.assertEqual(count, 50)
+        self.assertEqual(rem, 0)
+
+    def test_secret_encryption_with_pynacl(self):
+        import refresh_instagram_token
+        from nacl import public, encoding
+        sk = public.PrivateKey.generate()
+        pk_b64 = base64.b64encode(bytes(sk.public_key)).decode("utf-8")
+
+        encrypted_b64 = refresh_instagram_token.encrypt_secret_for_github(pk_b64, "my_super_secret_token_123")
+        self.assertIsInstance(encrypted_b64, str)
+        # Verify it can be decrypted with private key
+        box = public.SealedBox(sk)
+        decrypted = box.decrypt(base64.b64decode(encrypted_b64))
+        self.assertEqual(decrypted.decode("utf-8"), "my_super_secret_token_123")
+
+    def test_token_refresh_successful_and_metadata_saved(self):
+        import refresh_instagram_token
+        from nacl import public
+        sk = public.PrivateKey.generate()
+        pk_b64 = base64.b64encode(bytes(sk.public_key)).decode("utf-8")
+
+        # Mock Instagram refresh endpoint
+        def mock_refresh(token, host=refresh_instagram_token.DEFAULT_GRAPH_HOST, max_attempts=3):
+            return {
+                "access_token": "IGQ_new_refreshed_token_xyz987",
+                "token_type": "bearer",
+                "expires_in": 5184000,
+                "already_fresh": False
+            }
+
+        # Mock GitHub public key and secret PUT
+        def mock_get_key(repo, token, api_url=refresh_instagram_token.DEFAULT_GITHUB_API_URL):
+            return {"key_id": "key_12345", "key": pk_b64}
+
+        def mock_update_secret(repo, write_token, secret_name, secret_value, api_url=refresh_instagram_token.DEFAULT_GITHUB_API_URL):
+            self.assertEqual(secret_name, "INSTAGRAM_ACCESS_TOKEN")
+            self.assertEqual(secret_value, "IGQ_new_refreshed_token_xyz987")
+            return True
+
+        with patch("refresh_instagram_token.refresh_instagram_token", side_effect=mock_refresh), \
+             patch("refresh_instagram_token.get_repo_public_key", side_effect=mock_get_key), \
+             patch("refresh_instagram_token.update_repo_secret", side_effect=mock_update_secret), \
+             patch("refresh_instagram_token.manage_alert_issue") as mock_alert:
+
+            res = refresh_instagram_token.run_token_maintenance(
+                history_path=self.history_path,
+                repo="test/repo",
+                github_token="ghp_mock",
+                write_token="ghp_write_mock",
+                ig_token="IGQ_old_token"
+            )
+
+            self.assertEqual(res["status"], "success")
+            self.assertTrue(res["secret_updated"])
+            self.assertEqual(res["expires_in"], 5184000)
+
+            # Check history.json metadata
+            hist_data = json.loads(self.history_path.read_text(encoding="utf-8"))
+            meta = hist_data.get("token_metadata", {})
+            self.assertEqual(meta.get("status"), "HEALTHY")
+            self.assertEqual(meta.get("expires_in"), 5184000)
+            self.assertTrue(meta.get("secret_updated"))
+            # Ensure raw token is NOT saved in history
+            self.assertNotIn("IGQ_new_refreshed_token_xyz987", json.dumps(hist_data))
+            self.assertNotIn("access_token", meta)
+
+    def test_token_already_fresh_within_24h_handled_gracefully(self):
+        import refresh_instagram_token
+        def mock_refresh(token, host=refresh_instagram_token.DEFAULT_GRAPH_HOST, max_attempts=3):
+            return {
+                "access_token": token,
+                "token_type": "bearer",
+                "expires_in": 5184000,
+                "already_fresh": True
+            }
+
+        with patch("refresh_instagram_token.refresh_instagram_token", side_effect=mock_refresh), \
+             patch("refresh_instagram_token.manage_alert_issue") as mock_alert:
+
+            res = refresh_instagram_token.run_token_maintenance(
+                history_path=self.history_path,
+                repo="test/repo",
+                github_token="ghp_mock",
+                write_token="ghp_write_mock",
+                ig_token="IGQ_recent_token"
+            )
+
+            self.assertEqual(res["status"], "success")
+            self.assertFalse(res["secret_updated"])
+            self.assertEqual(res["secret_status"], "CURRENT_TOKEN_ALREADY_FRESH")
+
+            hist_data = json.loads(self.history_path.read_text(encoding="utf-8"))
+            meta = hist_data.get("token_metadata", {})
+            self.assertEqual(meta.get("status"), "HEALTHY")
+
+    def test_token_permanent_error_raises_and_alerts(self):
+        import refresh_instagram_token
+
+        def mock_refresh(token, host=refresh_instagram_token.DEFAULT_GRAPH_HOST, max_attempts=3):
+            raise refresh_instagram_token.PermanentTokenError("Token expired (Code 190): Session invalidated")
+
+        with patch("refresh_instagram_token.refresh_instagram_token", side_effect=mock_refresh), \
+             patch("refresh_instagram_token.manage_alert_issue") as mock_alert:
+
+            res = refresh_instagram_token.run_token_maintenance(
+                history_path=self.history_path,
+                repo="test/repo",
+                github_token="ghp_mock",
+                write_token="ghp_write_mock",
+                ig_token="IGQ_expired_token"
+            )
+
+            self.assertEqual(res["status"], "permanent_token_error")
+            mock_alert.assert_called_once()
+            self.assertTrue(mock_alert.call_args[1].get("is_failure", True))
+
+            hist_data = json.loads(self.history_path.read_text(encoding="utf-8"))
+            meta = hist_data.get("token_metadata", {})
+            self.assertEqual(meta.get("status"), "EXPIRED_OR_REVOKED")
+
+    def test_token_maintenance_blocks_cleanly_when_secrets_write_token_missing(self):
+        import refresh_instagram_token
+
+        def mock_refresh(token, host=refresh_instagram_token.DEFAULT_GRAPH_HOST, max_attempts=3):
+            return {
+                "access_token": "IGQ_new_token_123",
+                "token_type": "bearer",
+                "expires_in": 5184000,
+                "already_fresh": False
+            }
+
+        with patch("refresh_instagram_token.refresh_instagram_token", side_effect=mock_refresh), \
+             patch("refresh_instagram_token.manage_alert_issue") as mock_alert:
+
+            res = refresh_instagram_token.run_token_maintenance(
+                history_path=self.history_path,
+                repo="test/repo",
+                github_token="ghp_mock",
+                write_token="",  # Missing write token
+                ig_token="IGQ_existing_token"
+            )
+
+            self.assertEqual(res["status"], "success")
+            self.assertFalse(res["secret_updated"])
+            self.assertEqual(res["secret_status"], "BLOCKED_SECRETS_WRITE_TOKEN_REQUIRED")
+
+            mock_alert.assert_called_once()
+            self.assertTrue(mock_alert.call_args[1].get("is_failure"))
+
+            hist_data = json.loads(self.history_path.read_text(encoding="utf-8"))
+            meta = hist_data.get("token_metadata", {})
+            self.assertEqual(meta.get("status"), "BLOCKED_SECRETS_WRITE_TOKEN_REQUIRED")
+            self.assertNotIn("IGQ_new_token_123", json.dumps(hist_data))
+
+    def test_token_and_secrets_sanitized_in_logs_and_metadata(self):
+        import refresh_instagram_token
+        sensitive_token = "IGQ_very_secret_token_never_leak_me_123"
+        sanitized = refresh_instagram_token.sanitize_message(f"Failed token: {sensitive_token}", [sensitive_token])
+        self.assertNotIn(sensitive_token, sanitized)
+        self.assertIn("[REDACTED", sanitized)
+
+    def test_multi_provider_failover_when_cloudflare_exhausted(self):
+        import ai_provider
+        import quota_manager
+
+        test_article = {
+            "title": "Global Climate Accord Reached by 150 Countries",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/climate-accord"
+        }
+
+        # Set environment with both Cloudflare and Gemini
+        env_patch = {
+            "CLOUDFLARE_API_TOKEN": "cf_test_token",
+            "CLOUDFLARE_ACCOUNT_ID": "cf_test_acc",
+            "GEMINI_API_KEY": "gemini_test_key",
+            "NEWS_SNAP_HISTORY_PATH": str(self.history_path)
+        }
+
+        mock_gemini_response = {
+            "headline": "Historic Climate Agreement Signed by 150 Nations",
+            "curiosity_line": "Major commitments on global emission reductions",
+            "caption": "Representatives from 150 countries have reached an agreement on ambitious new climate goals. #NewsSnap",
+            "hashtags": ["#NewsSnap", "#ClimateAction", "#GlobalNews"]
+        }
+
+        def mock_cf_call(*args, **kwargs):
+            raise ai_provider.QuotaExhaustedError("Cloudflare daily quota exhausted")
+
+        def mock_gemini_call(*args, **kwargs):
+            return mock_gemini_response
+
+        with patch.dict(os.environ, env_patch), \
+             patch("ai_provider.call_cloudflare_chat_completion", side_effect=mock_cf_call), \
+             patch("ai_provider.call_gemini_generate_content", side_effect=mock_gemini_call):
+
+            result = ai_provider.generate_post_content_ai(test_article, history_path=self.history_path)
+            self.assertEqual(result["headline"], "Historic Climate Agreement Signed by 150 Nations")
+
+    def test_scheduler_controller_does_not_halt_if_secondary_provider_available(self):
+        import quota_manager
+
+        reset_time = datetime.now(timezone.utc) + timedelta(hours=6)
+        quota_manager.set_quota_cooldown(reset_time, "Cloudflare quota exhausted", self.history_path, provider="cloudflare")
+
+        all_cooling, reason, earliest = quota_manager.are_all_configured_providers_cooling_down(
+            self.history_path,
+            configured_providers=["cloudflare", "gemini"]
+        )
+        self.assertFalse(all_cooling)
+        self.assertIn("gemini", reason)
+
+    def test_scheduler_controller_halts_when_all_configured_providers_cooling_down(self):
+        import quota_manager
+        import scheduler_controller
+
+        reset_time = datetime.now(timezone.utc) + timedelta(hours=6)
+        quota_manager.set_quota_cooldown(reset_time, "Cloudflare quota exhausted", self.history_path, provider="cloudflare")
+        quota_manager.set_quota_cooldown(reset_time, "Gemini quota exhausted", self.history_path, provider="gemini")
+
+        all_cooling, reason, earliest = quota_manager.are_all_configured_providers_cooling_down(
+            self.history_path,
+            configured_providers=["cloudflare", "gemini"]
+        )
+        self.assertTrue(all_cooling)
+
+        with patch("ai_provider.get_configured_providers", return_value=["cloudflare", "gemini"]), \
+             patch("scheduler_controller.check_active_controller_runs", return_value=[]):
+
+            cycle_result = scheduler_controller.run_controller_cycle(
+                repo="test/repo",
+                token="mock_token",
+                current_run_id="999",
+                history_file=str(self.history_path),
+                cycle_interval=0
+            )
+            self.assertEqual(cycle_result["status"], "paused_quota_cooldown")
+            self.assertFalse(cycle_result["publisher_dispatched"])
+            self.assertFalse(cycle_result["successor_dispatched"])
+
+    def test_watchdog_10_minute_stale_threshold_and_revival(self):
+        import scheduler_watchdog
+
+        self.assertEqual(scheduler_watchdog.DEFAULT_STALE_THRESHOLD_MINUTES, 10)
+
+        now = datetime.now(timezone.utc)
+        completed_run_time = (now - timedelta(minutes=15)).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        runs_resp = {
+            "workflow_runs": [
+                {
+                    "id": 100,
+                    "run_number": 50,
+                    "status": "completed",
+                    "conclusion": "success",
+                    "updated_at": completed_run_time
+                }
+            ]
+        }
+
+        with patch("scheduler_watchdog.query_api") as mock_api, \
+             patch("quota_manager.are_all_configured_providers_cooling_down", return_value=(False, "Clear", None)):
+
+            mock_api.side_effect = [
+                (200, runs_resp),    # Fetch runs
+                (204, {})            # Dispatch replacement controller
+            ]
+
+            res = scheduler_watchdog.run_watchdog_check(
+                repo="test/repo",
+                token="mock_token",
+                stale_threshold_minutes=10,
+                history_file=str(self.history_path)
+            )
+
+            self.assertEqual(res["status"], "revived")
+            self.assertEqual(res["action"], "dispatched_bootstrap")
+
+    def test_heartbeat_and_token_workflows_do_not_publish(self):
+        workflows_dir = Path(".github/workflows")
+        token_wf = (workflows_dir / "instagram-token-maintenance.yml").read_text(encoding="utf-8")
+        heartbeat_wf = (workflows_dir / "maintenance-heartbeat.yml").read_text(encoding="utf-8")
+
+        for wf_text in (token_wf, heartbeat_wf):
+            self.assertNotIn("instagram_publisher.py", wf_text)
+            self.assertNotIn("post_generator.py", wf_text)
+            self.assertNotIn("test.py", wf_text)
+            self.assertNotIn("select_article.py", wf_text)
+
+    def test_system_health_diagnostics_differentiates_empty_backlog_from_broken_scheduler(self):
+        import system_health
+
+        report = system_health.run_system_health_check(
+            repo="test/repo",
+            history_path=self.history_path,
+            check_pages=False
+        )
+
+        self.assertIn("is_healthy", report)
+        self.assertIn("publication", report)
+        self.assertIn("token", report)
+        self.assertIn("ai_providers", report)
+        self.assertEqual(report["publication"]["rolling_cap_limit"], 50)
+        self.assertEqual(report["publication"]["target_cadence_minutes"], 25)
+
+
 if __name__ == "__main__":
     unittest.main()
+
 
 
 

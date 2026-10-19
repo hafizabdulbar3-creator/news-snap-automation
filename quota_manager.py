@@ -238,6 +238,107 @@ def is_cooldown_active(history_path: Path = HISTORY_PATH, provider: str | None =
     return bool(get_quota_cooldown(history_path, provider=provider))
 
 
+def get_all_quota_cooldowns(history_path: Path = HISTORY_PATH) -> dict[str, dict]:
+    """Return a mapping of provider -> active cooldown dict for all providers with active cooldowns."""
+    active_map = {}
+    for prov in ("cloudflare", "groq", "gemini"):
+        cd = get_quota_cooldown(history_path, provider=prov)
+        if cd and cd.get("active"):
+            active_map[prov] = cd
+    return active_map
+
+
+def are_all_configured_providers_cooling_down(
+    history_path: Path = HISTORY_PATH,
+    configured_providers: list[str] | None = None
+) -> tuple[bool, str, datetime | None]:
+    """Check if ALL configured free AI providers are currently in active quota cooldown.
+
+    Returns:
+        (all_cooling_down: bool, reason_message: str, earliest_resets_at: datetime | None)
+    """
+    # 1. First check if a generic or legacy cooldown is active in history.json
+    cd_legacy = get_quota_cooldown(history_path, provider=None)
+    if cd_legacy and cd_legacy.get("active"):
+        resets_at_str = cd_legacy.get("resets_at")
+        dt = None
+        if resets_at_str:
+            try:
+                dt = datetime.fromisoformat(resets_at_str.replace("Z", "+00:00"))
+            except Exception:
+                pass
+        reason = cd_legacy.get("reason", "Daily quota exhausted")
+
+        if configured_providers is None:
+            try:
+                from ai_provider import get_configured_providers
+                configured_providers = get_configured_providers()
+            except ImportError:
+                configured_providers = []
+
+        if not configured_providers or len(configured_providers) <= 1:
+            return True, reason, dt
+
+    if configured_providers is None:
+        try:
+            from ai_provider import get_configured_providers
+            configured_providers = get_configured_providers()
+        except ImportError:
+            configured_providers = []
+
+    if not configured_providers:
+        if cd_legacy and cd_legacy.get("active"):
+            resets_at_str = cd_legacy.get("resets_at")
+            dt = None
+            if resets_at_str:
+                try:
+                    dt = datetime.fromisoformat(resets_at_str.replace("Z", "+00:00"))
+                except Exception:
+                    pass
+            return True, cd_legacy.get("reason", "Daily quota exhausted"), dt
+        return False, "No AI providers configured", None
+
+    active_cooldowns = {}
+    reset_times = []
+    for prov in configured_providers:
+        cd = get_quota_cooldown(history_path, provider=prov)
+        if cd and cd.get("active"):
+            active_cooldowns[prov] = cd
+            resets_at_str = cd.get("resets_at")
+            if resets_at_str:
+                try:
+                    dt = datetime.fromisoformat(resets_at_str.replace("Z", "+00:00"))
+                    reset_times.append(dt)
+                except Exception:
+                    pass
+
+    # If all configured providers have active cooldowns
+    if len(active_cooldowns) == len(configured_providers):
+        earliest_reset = min(reset_times) if reset_times else None
+        prov_names = ", ".join(p.upper() for p in configured_providers)
+        msg = f"All configured AI providers ({prov_names}) are in active quota cooldown"
+        return True, msg, earliest_reset
+
+    available = [p for p in configured_providers if p not in active_cooldowns]
+    return False, f"Available providers exist: {', '.join(available)}", None
+
+
+def get_token_metadata(history_path: Path = HISTORY_PATH) -> dict:
+    """Return non-sensitive Instagram token metadata from history.json."""
+    data = load_history(history_path)
+    meta = data.get("token_metadata", {})
+    return meta if isinstance(meta, dict) else {}
+
+
+def set_token_metadata(metadata: dict, history_path: Path = HISTORY_PATH) -> None:
+    """Persist non-sensitive Instagram token metadata into history.json."""
+    data = load_history(history_path)
+    clean_meta = {k: v for k, v in metadata.items() if ("token" not in k.lower() or k == "token_type")}
+    clean_meta["updated_at"] = datetime.now(timezone.utc).isoformat()
+    data["token_metadata"] = clean_meta
+    save_history(data, history_path)
+
+
 def set_quota_cooldown(
     resets_at: datetime,
     reason: str,

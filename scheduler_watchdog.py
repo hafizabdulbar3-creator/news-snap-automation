@@ -30,7 +30,18 @@ import urllib.request
 
 DEFAULT_API_URL = "https://api.github.com"
 DEFAULT_CONTROLLER_WORKFLOW = "news-snap-scheduler.yml"
-DEFAULT_STALE_THRESHOLD_MINUTES = 12
+DEFAULT_STALE_THRESHOLD_MINUTES = int(os.environ.get("STALE_THRESHOLD_MINUTES", "10"))
+
+
+def write_step_summary(markdown_text: str) -> None:
+    """Append text to GITHUB_STEP_SUMMARY if configured in the environment."""
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        try:
+            with open(summary_path, "a", encoding="utf-8") as f:
+                f.write(markdown_text + "\n")
+        except Exception:
+            pass
 
 
 def parse_github_timestamp(ts_str: str) -> datetime:
@@ -134,7 +145,7 @@ def run_watchdog_check(
             }
 
         try:
-            from quota_manager import is_cooldown_active, get_quota_cooldown
+            from quota_manager import are_all_configured_providers_cooling_down, get_quota_cooldown
         except Exception as import_err:
             diag = f"[WATCHDOG FAIL-CLOSED] Quota module could not be imported: {import_err}"
             print(diag)
@@ -145,22 +156,30 @@ def run_watchdog_check(
                 "error": diag
             }
 
-        active_provider = None
-        try:
-            from ai_provider import get_active_provider
-            active_provider = get_active_provider() or None
-        except ImportError:
-            pass
+        all_cooling, reason, earliest_reset = are_all_configured_providers_cooling_down(history_file)
+        if all_cooling:
+            resets_at = earliest_reset.isoformat() if earliest_reset else "unknown"
+            cd = get_quota_cooldown(history_file)
+            prov_name = (cd.get("provider") or "").upper()
+            if not prov_name:
+                try:
+                    from ai_provider import get_configured_providers
+                    cfg = get_configured_providers()
+                    prov_name = cfg[0].upper() if len(cfg) == 1 else "AI PROVIDER"
+                except Exception:
+                    prov_name = "AI PROVIDER"
 
-        if is_cooldown_active(history_file, provider=active_provider):
-            cd = get_quota_cooldown(history_file, provider=active_provider)
-            resets_at = cd.get("resets_at", "unknown")
-            reason = cd.get("reason", "Daily quota exhausted")
-            prov_name = cd.get("provider", active_provider or "AI provider").upper()
             print(f"[WATCHDOG COOLDOWN ACTIVE] Active {prov_name} quota cooldown until {resets_at}.")
             print(f"[WATCHDOG COOLDOWN ACTIVE] Reason: {reason}")
             print("[WATCHDOG COOLDOWN ACTIVE] Suppressing scheduler revival while quota cooldown remains active.")
             print("===== WATCHDOG INSPECTION COMPLETE (COOLDOWN ACTIVE) =====")
+            write_step_summary(
+                f"### ⏸️ NEWS SNAP Scheduler Watchdog — AI Quota Cooldown Active\n\n"
+                f"- **Status:** Scheduler revival suppressed — all configured AI providers are cooling down.\n"
+                f"- **Reason:** {reason}\n"
+                f"- **Earliest Reset:** `{resets_at}`\n\n"
+                f"The watchdog will automatically dispatch a replacement controller once the cooldown expires.\n"
+            )
             return {
                 "status": "cooldown_active",
                 "action": "none",

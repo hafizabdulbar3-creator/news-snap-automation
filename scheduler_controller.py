@@ -40,6 +40,17 @@ DEFAULT_CYCLE_INTERVAL = 300  # 5 minutes
 MIN_SLEEP_SECONDS = 5
 
 
+def write_step_summary(markdown_text: str) -> None:
+    """Append text to GITHUB_STEP_SUMMARY if configured in the environment."""
+    summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary_path:
+        try:
+            with open(summary_path, "a", encoding="utf-8") as f:
+                f.write(markdown_text + "\n")
+        except Exception:
+            pass
+
+
 def get_auth_headers(token: str) -> dict:
     """Build standard GitHub REST API request headers."""
     return {
@@ -226,7 +237,7 @@ def run_controller_cycle(
             }
 
         try:
-            from quota_manager import is_cooldown_active, get_quota_cooldown
+            from quota_manager import are_all_configured_providers_cooling_down, get_quota_cooldown
         except Exception as import_err:
             diag = f"[QUOTA GUARD FAIL-CLOSED] Quota module could not be imported: {import_err}"
             print(diag)
@@ -238,23 +249,31 @@ def run_controller_cycle(
                 "successor_dispatched": False
             }
 
-        active_provider = None
-        try:
-            from ai_provider import get_active_provider
-            active_provider = get_active_provider() or None
-        except ImportError:
-            pass
+        all_cooling, reason, earliest_reset = are_all_configured_providers_cooling_down(history_file)
+        if all_cooling:
+            resets_at = earliest_reset.isoformat() if earliest_reset else "unknown"
+            cd = get_quota_cooldown(history_file)
+            prov_name = (cd.get("provider") or "").upper()
+            if not prov_name:
+                try:
+                    from ai_provider import get_configured_providers
+                    cfg = get_configured_providers()
+                    prov_name = cfg[0].upper() if len(cfg) == 1 else "AI PROVIDER"
+                except Exception:
+                    prov_name = "AI PROVIDER"
 
-        if is_cooldown_active(history_file, provider=active_provider):
-            cd = get_quota_cooldown(history_file, provider=active_provider)
-            resets_at = cd.get("resets_at", "unknown")
-            reason = cd.get("reason", "Daily quota exhausted")
-            prov_name = cd.get("provider", active_provider or "AI provider").upper()
             print(f"[QUOTA COOLDOWN ACTIVE] Production publishing workflow dispatch suppressed ({prov_name}).")
             print(f"[RESET TIME] {resets_at}")
             print(f"[REASON] {reason}")
             print("[CHAIN HALT] Stopping 5-minute recurrence chain to prevent repeated no-op executions.")
             print("===== CONTROLLER PAUSED (QUOTA COOLDOWN) =====")
+            write_step_summary(
+                f"### ⏸️ NEWS SNAP Scheduler Controller Paused (Quota Cooldown)\n\n"
+                f"- **Status:** Paused — all configured free AI providers are in active quota cooldown.\n"
+                f"- **Reason:** {reason}\n"
+                f"- **Earliest Reset:** `{resets_at}`\n\n"
+                f"The independent watchdog will automatically restart the recurrence chain once the cooldown expires.\n"
+            )
             return {
                 "status": "paused_quota_cooldown",
                 "resets_at": resets_at,

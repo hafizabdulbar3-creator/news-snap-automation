@@ -153,20 +153,11 @@ def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PAT
 def main():
     history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
     try:
-        from quota_manager import is_cooldown_active, get_quota_cooldown
-        active_provider = None
-        try:
-            from ai_provider import get_active_provider
-            active_provider = get_active_provider() or None
-        except ImportError:
-            pass
-
-        if is_cooldown_active(history_path, provider=active_provider):
-            cd = get_quota_cooldown(history_path, provider=active_provider)
-            resets_at = cd.get("resets_at", "scheduled reset")
-            reason = cd.get("reason", "Daily quota limit reached")
-            prov_name = cd.get("provider", active_provider or "AI provider").upper()
-            print(f"[QUOTA COOLDOWN] {prov_name} API daily quota cooldown is active until {resets_at}.")
+        from quota_manager import are_all_configured_providers_cooling_down, get_quota_cooldown
+        all_cooling, reason, earliest_reset = are_all_configured_providers_cooling_down(history_path)
+        if all_cooling:
+            resets_at = earliest_reset.isoformat() if earliest_reset else "scheduled reset"
+            print(f"[QUOTA COOLDOWN] All configured free AI providers are in active quota cooldown until {resets_at}.")
             print(f"[REASON] {reason}")
             print("[INFO] Pausing automated pipeline executions to preserve system stability.")
             github_output = os.environ.get("GITHUB_OUTPUT")
@@ -222,6 +213,12 @@ def main():
     # 1. Clear diagnostics for discovery, pool, and AI provider
     print(f"[NEWS DISCOVERY] News discovery completed: {len(fresh_articles)} fresh discovered article(s).")
     print(f"[QUEUE STATUS] Number of eligible queued stories in pool: {len(pool_eligible)} (Total candidate backlog: {total_candidates}).")
+    active_provider = ""
+    try:
+        from ai_provider import get_active_provider
+        active_provider = get_active_provider(history_path)
+    except Exception:
+        pass
     prov_label = (active_provider or "none").upper()
     print(f"[AI PROVIDER] Active provider: {prov_label}.")
 

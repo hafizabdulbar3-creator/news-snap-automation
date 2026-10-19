@@ -1,0 +1,62 @@
+name: NEWS SNAP Maintenance Heartbeat
+
+# Daily lightweight heartbeat workflow to maintain repository activity
+# and help prevent GitHub from disabling scheduled workflows after 60 days of inactivity.
+#
+# Safety Guarantees:
+# - Least-privilege permissions: contents: write ONLY.
+# - NEVER triggers Instagram publication, AI inference, or downstream workflows.
+# - Uses [skip ci] in the commit message.
+# - Staggered non-top-of-hour schedule: 04:17 UTC daily.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily at 04:17 UTC
+    - cron: "17 4 * * *"
+
+concurrency:
+  group: maintenance-heartbeat
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Pull latest branch state
+        run: |
+          git pull origin main --rebase || true
+
+      - name: Update heartbeat timestamp
+        run: |
+          NOW_UTC=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          python3 -c "
+          import json
+          data = {
+              'last_heartbeat_utc': '${NOW_UTC}',
+              'actor': 'github-actions[bot]',
+              'event': 'maintenance-heartbeat',
+              'purpose': 'Unattended repository activity keep-alive'
+          }
+          with open('heartbeat.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, indent=2)
+          print(f'[HEARTBEAT] Updated heartbeat.json to {data[\"last_heartbeat_utc\"]}')
+          "
+
+      - name: Commit and push heartbeat
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add heartbeat.json
+          git commit -m "chore: repository maintenance heartbeat [skip ci]" || echo "No changes to commit"
+          git push origin main || echo "Push skipped or nothing to push"

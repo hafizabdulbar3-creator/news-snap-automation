@@ -74,7 +74,53 @@ def sanitize_ai_error(err: Exception | str) -> str:
     return msg
 
 
-def get_active_provider() -> str:
+class QuotaExhaustedError(RuntimeError):
+    """Raised when an AI provider's daily quota is exhausted and a cooldown is active."""
+    pass
+
+
+def get_configured_providers() -> list[str]:
+    """Return list of configured AI providers based on present credentials.
+
+    Priority order:
+    1. If AI_PROVIDER is explicitly set and configured, place it first.
+    2. Then standard preference: cloudflare, groq, gemini.
+    """
+    configured = []
+    if os.environ.get("CLOUDFLARE_API_TOKEN", "").strip() and os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip():
+        configured.append("cloudflare")
+    if os.environ.get("GROQ_API_KEY", "").strip():
+        configured.append("groq")
+    if os.environ.get("GEMINI_API_KEY", "").strip():
+        configured.append("gemini")
+
+    explicit = os.environ.get("AI_PROVIDER", "").strip().lower()
+    if explicit in configured:
+        configured.remove(explicit)
+        configured.insert(0, explicit)
+
+    return configured
+
+
+def get_available_providers(history_path: Path | str | None = None) -> list[str]:
+    """Return list of configured AI providers that are NOT currently in quota cooldown."""
+    configured = list(get_configured_providers())
+    explicit = os.environ.get("AI_PROVIDER", "").strip().lower()
+    if explicit in ("cloudflare", "groq", "gemini") and explicit not in configured:
+        configured.insert(0, explicit)
+
+    if not configured:
+        return []
+
+    hpath = Path(history_path or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json"))
+    try:
+        from quota_manager import is_cooldown_active
+        return [p for p in configured if not is_cooldown_active(hpath, provider=p)]
+    except Exception:
+        return configured
+
+
+def get_active_provider(history_path: Path | str | None = None) -> str:
     """Determine the active AI provider based on environment variables.
 
     Priority:
@@ -196,7 +242,7 @@ def call_groq_chat_completion(
                             set_quota_cooldown(reset_dt, reason, history_path, provider="groq")
                         except Exception:
                             pass
-                        raise RuntimeError(f"Groq API quota exhausted: {reason}") from e
+                        raise QuotaExhaustedError(f"Groq API quota exhausted: {reason}") from e
                 except ImportError:
                     pass
 
@@ -380,7 +426,7 @@ def call_cloudflare_chat_completion(
                             set_quota_cooldown(reset_dt, reason, history_path, provider="cloudflare")
                         except Exception:
                             pass
-                        raise RuntimeError(f"Cloudflare Workers AI quota exhausted: {reason}") from e
+                        raise QuotaExhaustedError(f"Cloudflare Workers AI quota exhausted: {reason}") from e
                 except ImportError:
                     pass
 
@@ -517,7 +563,7 @@ def call_gemini_generate_content(
                             set_quota_cooldown(reset_dt, reason, history_path, provider="gemini")
                         except Exception:
                             pass
-                        raise RuntimeError(f"Gemini API quota exhausted: {reason}") from e
+                        raise QuotaExhaustedError(f"Gemini API quota exhausted: {reason}") from e
                 except ImportError:
                     pass
 
@@ -546,12 +592,18 @@ def call_gemini_generate_content(
     raise RuntimeError(f"Gemini API failed: {sanitize_ai_error(last_error)}")
 
 
-def classify_articles_ai(articles: list[dict]) -> dict:
-    """Classify a batch of news articles using the active AI provider (Cloudflare, Groq, or Gemini)."""
-    provider = get_active_provider()
+def classify_articles_ai(articles: list[dict], history_path: Path | str | None = None) -> dict:
+    """Classify a batch of news articles using the active AI provider with automatic failover."""
+    hpath = Path(history_path or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json"))
+    available = get_available_providers(hpath)
     is_prod = is_production_mode()
 
-    if not provider:
+    if not available:
+        configured = get_configured_providers()
+        if configured:
+            raise QuotaExhaustedError(
+                f"All configured AI providers ({', '.join(configured)}) are in active quota cooldown."
+            )
         if is_prod:
             raise RuntimeError(
                 "CRITICAL: Neither CLOUDFLARE (CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID), GROQ_API_KEY, nor GEMINI_API_KEY is configured in production environment. "
@@ -603,27 +655,51 @@ Return ONLY valid JSON with this exact structure:
 Articles to classify:
 """ + json.dumps(items, ensure_ascii=False)
 
-    print(f"[AI TRIAGE] Routing classification of {len(articles)} articles to provider: {provider.upper()}")
-    if provider == "cloudflare":
-        return call_cloudflare_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
-    elif provider == "groq":
-        return call_groq_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
-    else:
-        return call_gemini_generate_content(prompt=user_prompt, system_prompt=system_prompt)
+    last_error = None
+    for provider in available:
+        print(f"[AI TRIAGE] Routing classification of {len(articles)} articles to provider: {provider.upper()}")
+        try:
+            if provider == "cloudflare":
+                return call_cloudflare_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
+            elif provider == "groq":
+                return call_groq_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
+            elif provider == "gemini":
+                return call_gemini_generate_content(prompt=user_prompt, system_prompt=system_prompt)
+        except QuotaExhaustedError as qe:
+            print(f"[AI TRIAGE FAILOVER] {provider.upper()} quota exhausted: {qe}. Attempting next available provider...")
+            last_error = qe
+            continue
+        except Exception as e:
+            last_error = e
+            sanitized = sanitize_ai_error(e)
+            print(f"[AI TRIAGE ERROR] {provider.upper()} failed: {sanitized}")
+            if len(available) > 1:
+                print(f"[AI TRIAGE FAILOVER] Attempting next available provider...")
+                continue
+            raise
+
+    if isinstance(last_error, QuotaExhaustedError):
+        raise QuotaExhaustedError(f"All available AI providers exhausted: {last_error}")
+    raise RuntimeError(f"All available AI providers failed. Last error: {sanitize_ai_error(last_error)}")
 
 
-def generate_post_content_ai(article: dict, source_evidence: str = "") -> dict:
-    """Generate headline, curiosity line, caption and hashtags using the active AI provider."""
-    provider = get_active_provider()
+def generate_post_content_ai(article: dict, source_evidence: str = "", history_path: Path | str | None = None) -> dict:
+    """Generate headline, curiosity line, caption and hashtags using the active AI provider with automatic failover."""
+    hpath = Path(history_path or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json"))
+    available = get_available_providers(hpath)
     is_prod = is_production_mode()
 
-    if not provider:
+    if not available:
+        configured = get_configured_providers()
+        if configured:
+            raise QuotaExhaustedError(
+                f"All configured AI providers ({', '.join(configured)}) are in active quota cooldown."
+            )
         if is_prod:
             raise RuntimeError(
                 "CRITICAL: Neither CLOUDFLARE, GROQ_API_KEY, nor GEMINI_API_KEY is configured in production environment. "
                 "Refusing to generate or publish synthetic news content."
             )
-        # In offline local mode, caller should invoke generate_mock_post
         raise ValueError("No AI provider key configured.")
 
     source = str(article.get("domain", "")).strip()
@@ -661,24 +737,43 @@ Return ONLY a valid JSON object with these exact keys:
 }}
 """
 
-    print(f"[AI GENERATOR] Routing post generation for '{title[:45]}...' to provider: {provider.upper()}")
-    if provider == "cloudflare":
-        return call_cloudflare_chat_completion(
-            prompt=user_prompt,
-            system_prompt=system_prompt,
-            temperature=0.2,
-            max_tokens=1024
-        )
-    elif provider == "groq":
-        return call_groq_chat_completion(
-            prompt=user_prompt,
-            system_prompt=system_prompt,
-            temperature=0.2,
-            max_tokens=600
-        )
-    else:
-        return call_gemini_generate_content(
-            prompt=user_prompt,
-            system_prompt=system_prompt,
-            temperature=0.2
-        )
+    last_error = None
+    for provider in available:
+        print(f"[AI GENERATOR] Routing post generation for '{title[:45]}...' to provider: {provider.upper()}")
+        try:
+            if provider == "cloudflare":
+                return call_cloudflare_chat_completion(
+                    prompt=user_prompt,
+                    system_prompt=system_prompt,
+                    temperature=0.2,
+                    max_tokens=1024
+                )
+            elif provider == "groq":
+                return call_groq_chat_completion(
+                    prompt=user_prompt,
+                    system_prompt=system_prompt,
+                    temperature=0.2,
+                    max_tokens=600
+                )
+            elif provider == "gemini":
+                return call_gemini_generate_content(
+                    prompt=user_prompt,
+                    system_prompt=system_prompt,
+                    temperature=0.2
+                )
+        except QuotaExhaustedError as qe:
+            print(f"[AI GENERATOR FAILOVER] {provider.upper()} quota exhausted: {qe}. Attempting next available provider...")
+            last_error = qe
+            continue
+        except Exception as e:
+            last_error = e
+            sanitized = sanitize_ai_error(e)
+            print(f"[AI GENERATOR ERROR] {provider.upper()} failed: {sanitized}")
+            if len(available) > 1:
+                print(f"[AI GENERATOR FAILOVER] Attempting next available provider...")
+                continue
+            raise
+
+    if isinstance(last_error, QuotaExhaustedError):
+        raise QuotaExhaustedError(f"All available AI providers exhausted: {last_error}")
+    raise RuntimeError(f"All available AI providers failed. Last error: {sanitize_ai_error(last_error)}")
