@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy &amp; Data Deletion Instructions — NEWS SNAP Auto Publisher</title>
+  <meta name="description" content="Privacy Policy, Data Processing Disclosure, and Data Deletion Instructions for the NEWS SNAP Auto Publisher Meta Developer Application.">
+  <style>
+    :root {
+      --bg: #08101c;
+      --card-bg: #0d1a2d;
+      --card-border: #1e293b;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --heading: #f8fafc;
+      --accent: #ffcf2d;
+      --link: #38bdf8;
+      --link-hover: #7dd3fc;
+      --code-bg: #132238;
+      --badge-bg: #1e3a5f;
+      --badge-text: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 40px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .brand-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--badge-text);
+      background: var(--badge-bg);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 15px;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-item strong {
+      color: var(--accent);
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--heading);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85em;
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--accent);
+    }
+
+    .callout {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--link);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+
+    .callout-warning {
+      background: rgba(255, 207, 45, 0.08);
+      border-left-color: var(--accent);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 14px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--heading);
+      padding: 10px 14px;
+      border: 1px solid var(--card-border);
+      font-weight: 600;
+    }
+
+    td {
+      padding: 10px 14px;
+      border: 1px solid var(--card-border);
+      color: var(--text);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 20px 14px;
+      }
+      h1 {
+        font-size: 1.65rem;
+      }
+      section {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-badge">NEWS SNAP &bull; Automated Publishing System</div>
+      <h1>Privacy Policy &amp; Data Deletion Instructions</h1>
+      <p class="subtitle">Disclosures for the Meta Developer Application <strong>&ldquo;NEWS SNAP Auto Publisher&rdquo;</strong></p>
+      <div class="meta-bar">
+        <div class="meta-item">Application: <strong>NEWS SNAP Auto Publisher</strong></div>
+        <div class="meta-item">Effective Date: <strong>October 19, 2026</strong></div>
+        <div class="meta-item">Version: <strong>1.0</strong></div>
+        <div class="meta-item">Platform: <strong>Meta Graph API / Instagram Login for Business</strong></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="overview">
+        <h2>1. Overview and Application Scope</h2>
+        <p>
+          This Privacy Policy applies to the Meta developer application <strong>&ldquo;NEWS SNAP Auto Publisher&rdquo;</strong>, operating in conjunction with the open-source automation pipeline hosted at <a href="https://github.com/hafizabdulbar3-creator/news-snap-automation" target="_blank" rel="noopener noreferrer">github.com/hafizabdulbar3-creator/news-snap-automation</a>.
+        </p>
+        <p>
+          <strong>NEWS SNAP Auto Publisher</strong> is an unattended, autonomous news aggregation and publishing system designed to discover breaking public global news, verify editorial guidelines, format accessible visual news cards, and publish curated updates directly to the developer&rsquo;s connected Instagram Professional (Business or Creator) account.
+        </p>
+        <p>
+          We are committed to absolute transparency. This document details what information the application accesses, how data is processed, how long it is stored, how security is maintained, and how you can exercise full control over your data, including submitting a deletion request.
+        </p>
+      </section>
+
+      <section id="data-processed">
+        <h2>2. Information We Collect and Process</h2>
+        <p>
+          The application processes strictly limited, technical, and publicly available editorial information necessary for content aggregation and publishing. It does <strong>not</strong> collect personal information from visitors or consumers.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Data Processed</th>
+                <th>Purpose</th>
+                <th>Storage Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Public News Content</strong></td>
+                <td>Public article titles, source URLs, publication timestamps, and domain names from trusted news feeds (Reuters, AP, BBC, etc.).</td>
+                <td>Editorial candidate selection, categorization, and duplicate checking.</td>
+                <td>Temporary workflow memory; recorded in <code>history.json</code> upon publication.</td>
+              </tr>
+              <tr>
+                <td><strong>Public Editorial Images</strong></td>
+                <td>Publicly licensed news imagery from Wikimedia Commons (Creative Commons / Public Domain) and associated attribution metadata.</td>
+                <td>Visual rendering of 1080&times;1350 news cards.</td>
+                <td>Ephemeral GitHub Actions runner; deployed temporarily to GitHub Pages.</td>
+              </tr>
+              <tr>
+                <td><strong>Instagram Account Metadata</strong></td>
+                <td>Professional numeric account ID (<code>user_id</code>), Instagram handle (<code>username</code>), account type (<code>BUSINESS</code>/<code>CREATOR</code>), and granted permission scopes.</td>
+                <td>Authenticating and routing media container creation and publication to the authorized feed.</td>
+                <td>Never stored locally; queried dynamically in-memory via Meta Graph API.</td>
+              </tr>
+              <tr>
+                <td><strong>Instagram Publishing Telemetry</strong></td>
+                <td>Meta container creation IDs, publication media IDs (<code>media_id</code>), publication timestamps, and 24-hour rate-limit quota usage via <code>content_publishing_limit</code>.</td>
+                <td>Confirming successful publication, enforcing the 50-post/24h safety cap, and preventing duplicate posts.</td>
+                <td>Persisted in <code>history.json</code> (media ID and timestamp only).</td>
+              </tr>
+              <tr>
+                <td><strong>Generated Post Content</strong></td>
+                <td>AI-generated headlines, concise captions, and #NewsSnap hashtags created from public news summaries.</td>
+                <td>Publishing accessible editorial context to Instagram.</td>
+                <td>Committed to <code>history.json</code> as public record.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout callout-warning">
+          <strong>What We Do NOT Collect:</strong> NEWS SNAP Auto Publisher does <strong>not</strong> collect, track, or store personal user profiles, end-user email addresses, IP addresses, browser cookies, device telemetry, private messages (DMs), follower lists, or consumer behavioral data. The application does not display advertisements or share data with data brokers.
+        </div>
+      </section>
+
+      <section id="how-data-is-used">
+        <h2>3. How Information Is Used</h2>
+        <p>Information processed by the application is utilized solely for the following technical and editorial functions:</p>
+        <ul>
+          <li><strong>Automated Content Curation:</strong> Ingesting verified public news headlines to determine news importance and topic classification.</li>
+          <li><strong>AI Text &amp; Layout Generation:</strong> Generating factual, non-sensational summaries adhering to journalistic standards without fabricating quotes or events.</li>
+          <li><strong>Deduplication Enforcement:</strong> Comparing candidate news URLs and titles against past entries in <code>history.json</code> and inspecting recent live feed media to ensure the same story is never published twice.</li>
+          <li><strong>Rate Limit Compliance:</strong> Auditing Instagram <code>content_publishing_limit</code> and rolling 24-hour publication counts to strictly comply with Meta Platform Policies and avoid spam or platform degradation.</li>
+          <li><strong>Image Ingestion via GitHub Pages:</strong> Hosting the generated card asset at a public HTTPS URL (<code>https://hafizabdulbar3-creator.github.io/news-snap-automation/news_snap_post.jpg</code>) so Meta&rsquo;s media servers can ingest and process the container before publishing.</li>
+        </ul>
+      </section>
+
+      <section id="third-party-services">
+        <h2>4. Third-Party Services and Sub-Processors</h2>
+        <p>The application interacts with specific trusted third-party APIs under standard developer terms:</p>
+        <ul>
+          <li><strong>Meta Platforms, Inc. (Instagram Graph API):</strong> Used for account identity resolution, media container generation, container status verification, and photo publication under the <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener noreferrer">Meta Platform Terms</a> and <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a>.</li>
+          <li><strong>GitHub &amp; GitHub Actions (Microsoft):</strong> Automated pipeline execution, runner hosting, secrets encryption, and asset hosting through <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">GitHub Pages</a> under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a>.</li>
+          <li><strong>AI Inference Providers:</strong> Cloudflare Workers AI (Cloudflare, Inc.), Groq, Inc., and Google Gemini API (Google LLC). News titles and excerpts are transmitted strictly for real-time natural language classification and post generation. No personal data is transmitted to AI providers.</li>
+          <li><strong>Wikimedia Commons API:</strong> Querying publicly available editorial imagery under documented Creative Commons and Public Domain licenses.</li>
+        </ul>
+      </section>
+
+      <section id="security-and-credentials">
+        <h2>5. Credential Security and Secret Protection</h2>
+        <p>
+          The application follows strict zero-leakage security principles:
+        </p>
+        <ul>
+          <li><strong>Encrypted GitHub Secrets:</strong> All authentication credentials, including <code>INSTAGRAM_ACCESS_TOKEN</code>, <code>INSTAGRAM_ACCOUNT_ID</code>, and AI provider tokens, are stored exclusively within encrypted repository secrets.</li>
+          <li><strong>Never Hardcoded or Committed:</strong> Access tokens and private keys are never hardcoded in source code, committed to Git branches, or printed in workflow logs.</li>
+          <li><strong>Automated Masking &amp; Sanitization:</strong> All network requests, error handlers, and diagnostic scripts actively redact tokens (masking all but the first four and last four characters) to prevent leakage in continuous integration outputs.</li>
+          <li><strong>Read-Only Token Scopes:</strong> The application requires only the minimal permissions necessary for its stated function: <code>instagram_business_basic</code> and <code>instagram_business_content_publish</code>.</li>
+        </ul>
+      </section>
+
+      <section id="data-retention">
+        <h2>6. Data Retention and Lifecycle</h2>
+        <p>Data retention follows automated, self-pruning policies:</p>
+        <ul>
+          <li><strong>Confirmed Published Posts:</strong> Metadata for confirmed published stories (URL, headline, publication timestamp, and Meta <code>media_id</code>) is maintained in <code>history.json</code> up to a maximum cap of 500 entries for deduplication history.</li>
+          <li><strong>Dry-Run Processed Entries:</strong> Test and non-publishing runs are auto-pruned from <code>history.json</code> after <strong>48 hours</strong> (<code>DRY_RUN_RETENTION_HOURS = 48</code>).</li>
+          <li><strong>Hosted Image Assets:</strong> The public card image on GitHub Pages (<code>news_snap_post.jpg</code>) is overwritten with each new publication cycle, ensuring older image files are not permanently hosted on the static web tier.</li>
+        </ul>
+      </section>
+
+      <section id="data-deletion">
+        <h2>7. Data Deletion Instructions (User Rights)</h2>
+        <p>
+          In full compliance with Meta Platform Policy and global privacy standards, account owners and individuals have complete control over data associated with the application.
+        </p>
+
+        <h3>A. Immediate Revocation of Application Permissions</h3>
+        <p>You may revoke the application&rsquo;s access to your Instagram account at any time:</p>
+        <ol>
+          <li>Open the <strong>Instagram</strong> app on your mobile device or navigate to <a href="https://www.instagram.com/accounts/manage_access/" target="_blank" rel="noopener noreferrer">instagram.com/accounts/manage_access/</a>.</li>
+          <li>Go to <strong>Settings and activity &rarr; Website permissions &rarr; Apps and websites</strong>.</li>
+          <li>Under the <strong>Active</strong> tab, locate <strong>&ldquo;NEWS SNAP Auto Publisher&rdquo;</strong> (or your associated Meta App name).</li>
+          <li>Click or tap <strong>Remove</strong>. This immediately revokes all access tokens and halts all API publishing capabilities.</li>
+        </ol>
+
+        <h3>B. Requesting Permanent Deletion of Stored Records</h3>
+        <p>
+          If you are an author, publisher, or account administrator wishing to have specific URLs, headlines, or historical media references permanently purged from the repository&rsquo;s <code>history.json</code> log:
+        </p>
+        <ol>
+          <li>
+            <strong>Via Public GitHub Issue (Recommended):</strong>
+            Submit a deletion request at <a href="https://github.com/hafizabdulbar3-creator/news-snap-automation/issues" target="_blank" rel="noopener noreferrer">github.com/hafizabdulbar3-creator/news-snap-automation/issues</a> with the title <code>Data Deletion Request</code> and provide the URL or headline to be removed.
+          </li>
+          <li>
+            <strong>Via Verified Developer Email:</strong>
+            Send an email to the verified repository maintainer at <a href="mailto:hafizabdulbar3@gmail.com">hafizabdulbar3@gmail.com</a> with the subject <code>[NEWS SNAP] Data Deletion Request</code>.
+          </li>
+        </ol>
+
+        <div class="callout">
+          <strong>Deletion Timeline:</strong> Upon receipt of a verified deletion request, the maintainer will manually delete the designated record from <code>history.json</code>, commit the change, and deploy the update within <strong>48 hours</strong>.
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>8. Developer Contact &amp; Governance</h2>
+        <p>
+          If you have any questions, feedback, or concerns regarding this Privacy Policy or the data practices of NEWS SNAP Auto Publisher, please reach out through our official channels:
+        </p>
+        <ul>
+          <li><strong>Repository Maintainer:</strong> hafizabdulbar3-creator</li>
+          <li><strong>Official Developer Email:</strong> <a href="mailto:hafizabdulbar3@gmail.com">hafizabdulbar3@gmail.com</a></li>
+          <li><strong>Issue Tracker:</strong> <a href="https://github.com/hafizabdulbar3-creator/news-snap-automation/issues" target="_blank" rel="noopener noreferrer">github.com/hafizabdulbar3-creator/news-snap-automation/issues</a></li>
+          <li><strong>Repository URL:</strong> <a href="https://github.com/hafizabdulbar3-creator/news-snap-automation" target="_blank" rel="noopener noreferrer">https://github.com/hafizabdulbar3-creator/news-snap-automation</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 NEWS SNAP Auto Publisher. All rights reserved.</p>
+      <p style="margin-top: 6px;">Hosted publicly via GitHub Pages &bull; <a href="privacy.html">Privacy Policy &amp; Data Deletion</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -99,6 +99,7 @@ jobs:
         run: |
           mkdir -p _site
           cp news_snap_post.jpg _site/news_snap_post.jpg
+          if [ -f privacy.html ]; then cp privacy.html _site/privacy.html; fi
           cat << 'EOF' > _site/index.html
           <!DOCTYPE html>
           <html lang="en">
@@ -111,12 +112,15 @@ jobs:
               img { max-width: 100%; max-height: 80vh; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
               h1 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #ffcf2d; }
               p { color: #8fa0b5; font-size: 0.9rem; }
+              a { color: #38bdf8; text-decoration: none; }
+              a:hover { text-decoration: underline; }
             </style>
           </head>
           <body>
             <h1>NEWS SNAP — Latest Publication</h1>
             <img src="news_snap_post.jpg" alt="NEWS SNAP Latest Post">
             <p>Automated Instagram publication asset hosted via GitHub Pages.</p>
+            <p style="margin-top: 15px;"><a href="privacy.html">Privacy Policy &amp; Data Deletion Instructions</a></p>
           </body>
           </html>
           EOF
