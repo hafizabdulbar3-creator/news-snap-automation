@@ -170,6 +170,15 @@
       "published": true,
       "media_id": "18567443365077187",
       "timestamp": "2026-10-19T13:33:30.127826+00:00"
+    },
+    {
+      "url": "https://calgarysun.com/news/local-news/cfb-wainwright-town-response/wcm/39fe2499-0f17-4784-8750-8bda1d24fedb",
+      "title": "'A shock to all of us': A day after CFB Wainwright disaster, neighbouring town is eerily silent",
+      "headline": "Eerily silent after CFB Wainwright disaster",
+      "domain": "calgarysun.com",
+      "published": true,
+      "media_id": "18432871651148472",
+      "timestamp": "2026-10-19T14:04:33.458301+00:00"
     }
   ],
   "processed": [
@@ -310,17 +319,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'A shock to all of us': A day after CFB Wainwright disaster, neighbouring town is eerily silent",
-      "domain": "calgarysun.com",
-      "url": "https://calgarysun.com/news/local-news/cfb-wainwright-town-response/wcm/39fe2499-0f17-4784-8750-8bda1d24fedb",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic News",
-        "reason": "Local aftermath and community impact following a deadly military base incident."
-      },
-      "classified_at": "2026-10-19T00:07:24.667318+00:00"
-    },
     {
       "title": "Statoil Sees Growth in Energy Demand towards 2040 - The Nordic Page",
       "domain": "tnp.no",
