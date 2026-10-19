@@ -4456,8 +4456,48 @@ class TestInstagramDiagnostic(unittest.TestCase):
             self.assertEqual(res["error"]["code"], 200)
             self.assertEqual(res["error"]["message"], "API access blocked.")
 
+    def test_publisher_fail_closed_on_meta_api_access_blocked(self):
+        """Verify that Meta OAuthException code 200 'API access blocked.' fails closed with diagnostic guidance."""
+        err_body = json.dumps({
+            "error": {
+                "message": "API access blocked.",
+                "type": "OAuthException",
+                "code": 200,
+                "fbtrace_id": "TRACE_BLOCKED_99"
+            }
+        }).encode("utf-8")
+
+        def make_http_err(*args, **kwargs):
+            raise urllib.error.HTTPError(
+                url="https://graph.instagram.com/v22.0/me",
+                code=400,
+                msg="Bad Request",
+                hdrs={"Www-Authenticate": 'OAuth "Facebook Platform" "access_denied" "API access blocked."'},
+                fp=io.BytesIO(err_body)
+            )
+
+        with patch("urllib.request.urlopen", side_effect=make_http_err):
+            # 1. verify_account_and_permissions raises informative RuntimeError
+            with self.assertRaises(RuntimeError) as cm1:
+                instagram_publisher.verify_account_and_permissions("17841400", "test_token")
+            self.assertIn("Meta Platform API access is blocked", str(cm1.exception))
+            self.assertIn("OAuthException code 200", str(cm1.exception))
+            self.assertIn("Meta Developer Dashboard", str(cm1.exception))
+
+            # 2. resolve_instagram_account_id does not swallow API access blocked
+            with self.assertRaises(RuntimeError) as cm2:
+                instagram_publisher.resolve_instagram_account_id("17841400", "test_token")
+            self.assertIn("Meta Platform API access is blocked", str(cm2.exception))
+
+            # 3. fetch_content_publishing_limit also fails closed
+            with self.assertRaises(RuntimeError) as cm3:
+                instagram_publisher.fetch_content_publishing_limit("17841400", "test_token")
+            self.assertIn("Meta Platform API access is blocked", str(cm3.exception))
+
+
 
 if __name__ == "__main__":
     unittest.main()
+
 
 

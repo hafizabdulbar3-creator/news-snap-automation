@@ -89,7 +89,7 @@ def fetch_account_info(access_token: str, graph_base: str = GRAPH_API_BASE) -> d
     """
     if not access_token:
         return {}
-    url = f"{graph_base}/me?fields=user_id,id,username,name,account_type"
+    url = f"{graph_base}/me?fields=user_id,id,username,name,account_type&access_token={urllib.parse.quote(access_token)}"
     req = urllib.request.Request(
         url,
         headers={
@@ -110,15 +110,25 @@ def fetch_account_info(access_token: str, graph_base: str = GRAPH_API_BASE) -> d
             oauth_err = err_json.get("error", {})
             err_code = oauth_err.get("code")
             meta_msg = oauth_err.get("message", "")
-            if err_code == 190 or "OAuthException" in oauth_err.get("type", ""):
+            if err_code == 200 and "API access blocked" in meta_msg:
                 err_msg = (
-                    f"FAIL-CLOSED: Instagram Login access token is invalid or expired (OAuthException code {err_code}): "
+                    f"FAIL-CLOSED: Meta Platform API access is blocked (OAuthException code 200: '{meta_msg}'). "
+                    "This indicates a Meta Developer Dashboard restriction, security checkpoint, missing App Role, "
+                    "or account status restriction. Please check developers.facebook.com and Meta Business Support."
+                )
+            elif err_code == 190:
+                err_msg = (
+                    f"FAIL-CLOSED: Instagram Login access token is invalid or expired (OAuthException code 190): "
                     f"{meta_msg}. Please generate a fresh access token in Meta App Dashboard."
                 )
             elif err.code == 403 or err_code in (10, 200, 294):
                 err_msg = (
                     f"FAIL-CLOSED: Access token lacks required permissions (HTTP {err.code}, code {err_code}): "
                     f"{meta_msg}. Ensure 'instagram_business_basic' and 'instagram_business_content_publish' are granted."
+                )
+            elif "OAuthException" in oauth_err.get("type", ""):
+                err_msg = (
+                    f"FAIL-CLOSED: Meta Graph API OAuthException (code {err_code}): {meta_msg}."
                 )
         except Exception:
             pass
@@ -137,7 +147,7 @@ def fetch_granted_permissions(access_token: str, graph_base: str = GRAPH_API_BAS
     """
     if not access_token:
         return []
-    url = f"{graph_base}/me/permissions"
+    url = f"{graph_base}/me/permissions?access_token={urllib.parse.quote(access_token)}"
     req = urllib.request.Request(
         url,
         headers={
@@ -173,7 +183,7 @@ def fetch_content_publishing_limit(account_id: str, access_token: str, graph_bas
     if not account_id or not access_token:
         raise ValueError("account_id and access_token are required to check content_publishing_limit.")
 
-    url = f"{graph_base}/{account_id}/content_publishing_limit?fields=config,quota_usage"
+    url = f"{graph_base}/{account_id}/content_publishing_limit?fields=config,quota_usage&access_token={urllib.parse.quote(access_token)}"
     req = urllib.request.Request(
         url,
         headers={
@@ -189,6 +199,19 @@ def fetch_content_publishing_limit(account_id: str, access_token: str, graph_bas
         body = err.read().decode("utf-8", errors="replace")
         sanitized = sanitize_token(body, access_token)
         print(f"[WARN] Failed to query content_publishing_limit (HTTP {err.code}): {sanitized}")
+        try:
+            err_json = json.loads(body)
+            oauth_err = err_json.get("error", {})
+            if oauth_err.get("code") == 200 and "API access blocked" in oauth_err.get("message", ""):
+                raise RuntimeError(
+                    f"FAIL-CLOSED: Meta Platform API access is blocked (OAuthException code 200: 'API access blocked.'). "
+                    "This indicates a Meta Developer Dashboard restriction, security checkpoint, missing App Role, "
+                    "or account status restriction. Please check developers.facebook.com and Meta Business Support."
+                ) from err
+        except RuntimeError:
+            raise
+        except Exception:
+            pass
         raise RuntimeError(f"Failed to query content_publishing_limit (HTTP {err.code}): {sanitized}") from err
     except Exception as exc:
         sanitized = sanitize_token(str(exc), access_token)
@@ -325,6 +348,9 @@ def resolve_instagram_account_id(
                     print(f"[OK] Auto-resolved numeric Instagram Professional Account ID: {discovered_id} (handle: @{discovered_username or clean_id})")
                 return discovered_id, account_info
         except Exception as exc:
+            # If Meta API access is explicitly blocked, fail closed immediately
+            if "API access blocked" in str(exc):
+                raise
             # If we already have a valid numeric account ID, allow execution with a warning
             if is_numeric:
                 print(f"[WARN] Could not verify numeric account ID via /me: {exc}")
