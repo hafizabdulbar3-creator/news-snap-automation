@@ -19,7 +19,7 @@ import unittest
 import urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageDraw
 
 import test as discovery
 import select_article
@@ -4494,6 +4494,176 @@ class TestInstagramDiagnostic(unittest.TestCase):
                 instagram_publisher.fetch_content_publishing_limit("17841400", "test_token")
             self.assertIn("Meta Platform API access is blocked", str(cm3.exception))
 
+class TestEditorialImageRedesign(unittest.TestCase):
+    """Test suite for high-impact editorial image redesign templates and visual systems."""
+
+    def setUp(self):
+        self.dummy_img1 = Image.new("RGB", (800, 600), color=(120, 140, 160))
+        self.dummy_img2 = Image.new("RGB", (800, 600), color=(60, 80, 100))
+        self.photo1 = {
+            "image": self.dummy_img1,
+            "title": "Photo One",
+            "author": "Alice Photographer",
+            "license": "CC BY-SA 4.0",
+            "page_url": "https://commons.wikimedia.org/wiki/File:Photo1.jpg",
+            "is_contextual": True,
+        }
+        self.photo2 = {
+            "image": self.dummy_img2,
+            "title": "Photo Two",
+            "author": "Bob Artist",
+            "license": "Public domain",
+            "page_url": "https://commons.wikimedia.org/wiki/File:Photo2.jpg",
+            "is_contextual": False,
+        }
+
+    def test_automatic_template_selection_logic(self):
+        # 1. Politics / Governance -> political (Template A)
+        art_pol = {"title": "Parliament Approves Treaty", "classification": {"topic": "Politics"}}
+        self.assertEqual(generate_image.select_editorial_template(art_pol)[0], "political")
+        self.assertEqual(format_registry.classify_format_for_article(art_pol)[0], "05")
+
+        # 2. Business / Technology -> business_tech (Template B)
+        art_biz = {"title": "Chipmaker Reports Record Revenue", "classification": {"topic": "Technology"}}
+        self.assertEqual(generate_image.select_editorial_template(art_biz)[0], "business_tech")
+        self.assertEqual(format_registry.classify_format_for_article(art_biz)[0], "02")
+
+        # 3. Breaking / Health / Outbreak -> breaking_health (Template C)
+        art_hlth = {"title": "WHO Issues Urgent Alert on Avian Flu", "classification": {"topic": "Health"}}
+        self.assertEqual(generate_image.select_editorial_template(art_hlth)[0], "breaking_health")
+        self.assertEqual(format_registry.classify_format_for_article(art_hlth)[0], "01")
+
+        # 4. Unknown / General -> editorial (Neutral fallback)
+        art_gen = {"title": "International Cultural Festival Opens", "classification": {"topic": "Culture"}}
+        self.assertEqual(generate_image.select_editorial_template(art_gen)[0], "editorial")
+
+        # 5. Special formats preserved
+        art_quote = {
+            "title": "Prime Minister Speaks",
+            "quote_verified": True,
+            "quote_text": "We must unite for progress.",
+            "speaker": "PM",
+            "classification": {"topic": "Politics"},
+        }
+        self.assertEqual(format_registry.classify_format_for_article(art_quote)[0], "06")
+
+    def test_all_editorial_templates_render_1080x1350_and_jpeg_compliant(self):
+        templates = ["political", "business_tech", "breaking_health", "editorial"]
+        article = {
+            "title": "Global Leaders Convene for Multilateral Economic Summit",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/summit",
+            "classification": {"importance": "MAJOR", "topic": "Global News"},
+        }
+        post = {
+            "headline": "GLOBAL LEADERS CONVENE FOR STRATEGIC SUMMIT",
+            "summary": "Delegations from thirty member states gathered today to discuss economic resilience and trade policy.",
+            "caption": "Delegations discussed economic policies. #NewsSnap",
+        }
+
+        for tmpl in templates:
+            # 1. Render with 2 photos
+            img_2p, _, _ = generate_image.render_approved_format(tmpl, article, post, photos=[self.photo1, self.photo2])
+            self.assertEqual(img_2p.size, (1080, 1350), f"{tmpl} with 2 photos dimension mismatch")
+            buf = io.BytesIO()
+            img_2p.convert("RGB").save(buf, format="JPEG", quality=92)
+            self.assertLess(buf.tell(), 8 * 1024 * 1024, f"{tmpl} JPEG size exceeds 8MB")
+            self.assertGreater(buf.tell(), 20000, f"{tmpl} JPEG size unexpectedly small")
+
+            # 2. Render with 1 photo
+            img_1p, _, _ = generate_image.render_approved_format(tmpl, article, post, photos=self.photo1)
+            self.assertEqual(img_1p.size, (1080, 1350), f"{tmpl} with 1 photo dimension mismatch")
+
+            # 3. Render without photo (scientific / vector illustration fallback)
+            img_ill, _, _ = generate_image.render_approved_format(tmpl, article, post, photos=None)
+            self.assertEqual(img_ill.size, (1080, 1350), f"{tmpl} with illustration fallback dimension mismatch")
+
+    def test_health_illustration_fallback_rendering(self):
+        ill = generate_image.render_health_illustration(1080, 600)
+        self.assertEqual(ill.size, (1080, 600))
+        self.assertEqual(ill.mode, "RGB")
+        extrema = ill.getextrema()
+        self.assertTrue(any(ch[0] != ch[1] for ch in extrema), "Health illustration must not be a blank solid color")
+
+    def test_two_tone_headline_with_shadows(self):
+        canvas = Image.new("RGBA", (1080, 1350), (10, 15, 25, 255))
+        d = ImageDraw.Draw(canvas)
+        generate_image.draw_two_tone_headline(
+            d, "HISTORIC CLIMATE ACCORD SIGNED BY FIFTY NATIONS IN GENEVA",
+            (55, 755, 1025, 965),
+            accent_mode="bottom_yellow",
+            max_size=66, min_size=36, max_lines=4,
+            with_shadow=True
+        )
+        generate_image.draw_two_tone_headline(
+            d, "GLOBAL HEALTH CRISIS AVERTED",
+            (55, 755, 1025, 965),
+            accent_mode="bottom_red",
+            max_size=66, min_size=36, max_lines=4,
+            with_shadow=True
+        )
+
+    def test_multi_photo_attribution_credits(self):
+        post = {
+            "headline": "Bilateral Summit Concludes",
+            "caption": "Bilateral talks concluded in Geneva today. #NewsSnap"
+        }
+        # 1. Single photo credit
+        generate_image.annotate_image_credit(post, self.photo1)
+        self.assertIn("Image credit: Photo One by Alice Photographer", post["caption"])
+        self.assertIn("CC BY-SA 4.0", post["caption"])
+
+        # 2. Multi-photo credit
+        post["caption"] = "Bilateral talks concluded in Geneva today. #NewsSnap"
+        generate_image.annotate_image_credit(post, [self.photo1, self.photo2])
+        self.assertIn("Photo 1 Image credit: Photo One by Alice Photographer", post["caption"])
+        self.assertIn("Photo 2 Image credit: Photo Two by Bob Artist", post["caption"])
+
+        # 3. Clean stripping
+        stripped = generate_image.strip_image_credits(post["caption"])
+        self.assertNotIn("Image credit", stripped)
+        self.assertNotIn("Photo 1", stripped)
+        self.assertNotIn("Photo 2", stripped)
+        self.assertIn("Bilateral talks concluded", stripped)
+
+    def test_production_file_contract_with_redesigned_templates(self):
+        article = {
+            "title": "Federal Reserve Holds Benchmark Rate Steady Amid Economic Growth",
+            "domain": "bloomberg.com",
+            "url": "https://bloomberg.com/fed",
+            "classification": {"importance": "MAJOR", "topic": "Economy"},
+        }
+        post = {
+            "headline": "Federal Reserve Holds Benchmark Interest Rates Steady Following Meeting",
+            "summary": "The central bank maintained its target policy rate range following a two-day monetary policy meeting.",
+            "caption": "The Fed maintained policy rates today. #NewsSnap",
+        }
+        out_path = Path("news_snap_post.jpg")
+        article_file = Path("selected_article.json")
+        post_file = Path("post.json")
+        backup_article = article_file.read_text(encoding="utf-8") if article_file.exists() else None
+        backup_post = post_file.read_text(encoding="utf-8") if post_file.exists() else None
+        try:
+            article_file.write_text(json.dumps(article), encoding="utf-8")
+            post_file.write_text(json.dumps(post), encoding="utf-8")
+            with patch.dict(os.environ, {"NEWS_SNAP_OFFLINE_PREVIEW": "1"}):
+                generate_image.main()
+                self.assertTrue(out_path.exists())
+                with Image.open(out_path) as im:
+                    self.assertEqual(im.size, (1080, 1350))
+                    self.assertEqual(im.format, "JPEG")
+                self.assertLess(out_path.stat().st_size, 8 * 1024 * 1024)
+        finally:
+            if backup_article:
+                article_file.write_text(backup_article, encoding="utf-8")
+            elif article_file.exists():
+                article_file.unlink()
+            if backup_post:
+                post_file.write_text(backup_post, encoding="utf-8")
+            elif post_file.exists():
+                post_file.unlink()
+            if out_path.exists():
+                out_path.unlink()
 
 
 if __name__ == "__main__":

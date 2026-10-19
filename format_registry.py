@@ -164,18 +164,18 @@ def classify_format_for_article(article: dict, roundup_exists: bool = False) -> 
     Returns (format_id, reason).
     """
     override = str(article.get("template_override", "")).strip().lower()
-    if override in {"1", "01", "developing", "emergency"}:
-        return "01", "Selected via explicit template_override: Format 01 (Emergency & Developing Story)"
-    if override in {"2", "02", "business", "economy"}:
-        return "02", "Selected via explicit template_override: Format 02 (Business & Economy)"
+    if override in {"1", "01", "developing", "emergency", "c", "breaking_health", "health"}:
+        return "01", "Selected via explicit template_override: Format 01 / Template C (Emergency & Breaking News)"
+    if override in {"2", "02", "business", "economy", "b", "business_tech", "tech"}:
+        return "02", "Selected via explicit template_override: Format 02 / Template B (Business & Technology)"
     if override in {"3", "03", "people", "corporate"}:
-        return "03", "Selected via explicit template_override: Format 03 (People & Corporate)"
+        return "03", "Selected via explicit template_override: Format 03 / Template B (People & Corporate)"
     if override in {"4", "04", "roundup", "daily_headlines"}:
         if not roundup_exists:
             raise ValueError("Format 04 requires roundup.json and roundup_post.json")
         return "04", "Selected via explicit template_override: Format 04 (Daily Headlines Roundup)"
-    if override in {"5", "05", "report", "single_story"}:
-        return "05", "Selected via explicit template_override: Format 05 (Single Story News Report)"
+    if override in {"5", "05", "report", "single_story", "a", "political", "politics"}:
+        return "05", "Selected via explicit template_override: Format 05 / Template A (Political & News Report)"
     if override in {"6", "06", "quote", "statement"}:
         if not (article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker")):
             raise ValueError("Format 06 requires verified quote_text and speaker in selected_article.json")
@@ -188,15 +188,20 @@ def classify_format_for_article(article: dict, roundup_exists: bool = False) -> 
     title = str(article.get("title", "")).lower()
     topic = str(article.get("classification", {}).get("topic", "")).lower()
 
-    # Rule 2: Natural disasters, fires, floods, earthquakes, extreme emergency -> Format 01
+    # Rule 2: Breaking News, Health & Outbreaks, Disasters, Emergencies -> Format 01 / Template C
+    health_keywords = (
+        "health", "outbreak", "virus", "disease", "infection", "epidemic", "pandemic",
+        "plague", "who", "cdc", "vaccine", "medical", "hospital", "cancer", "mpox",
+        "avian flu", "bird flu", "cholera", "fever", "respiratory", "pathogen"
+    )
     emergency_keywords = (
         "wildfire", "wildfires", "forest fire", "flood", "floods", "flooding",
         "earthquake", "quake", "aftershock", "hurricane", "cyclone", "typhoon",
         "tsunami", "evacuation", "evacuations", "landslide", "volcano", "volcanic",
         "explosion", "disaster", "rescue operation", "mass casualty", "severe storm"
     )
-    if any(k in title for k in emergency_keywords):
-        return "01", f"Emergency/disaster keywords detected in headline; matched Format 01 (Emergency & Developing Story)"
+    if any(k in title for k in health_keywords) or any(k in title for k in emergency_keywords) or any(k in topic for k in ("health", "emergency")):
+        return "01", "Breaking health/emergency indicators detected; matched Format 01 / Template C (Breaking & Health News)"
 
     # Rule 3: People & Corporate leadership moves -> Format 03
     person_keywords = (

@@ -64,10 +64,15 @@ STOP_WORDS = {
 }
 
 
-def font(size, bold=False):
+def font(size, bold=False, condensed=False):
     """Load robust, high-quality system font across Ubuntu, Windows, and macOS."""
-    candidates = (
-        [
+    if condensed and bold:
+        candidates = [
+            r"C:\Windows\Fonts\arialnb.ttf",
+            r"C:\Windows\Fonts\impact.ttf",
+            r"C:\Windows\Fonts\trebucbd.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Bold.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf",
             "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
             "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
             "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
@@ -76,8 +81,18 @@ def font(size, bold=False):
             "DejaVuSans-Bold.ttf",
             "Arial-Bold.ttf",
         ]
-        if bold
-        else [
+    elif bold:
+        candidates = [
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+            "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+            "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
+            r"C:\Windows\Fonts\arialbd.ttf",
+            r"C:\Windows\Fonts\segoeuib.ttf",
+            "DejaVuSans-Bold.ttf",
+            "Arial-Bold.ttf",
+        ]
+    else:
+        candidates = [
             "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
             "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
             "/usr/share/fonts/truetype/freefont/FreeSans.ttf",
@@ -86,7 +101,6 @@ def font(size, bold=False):
             "DejaVuSans.ttf",
             "Arial.ttf",
         ]
-    )
     for path in candidates:
         if Path(path).is_file():
             try:
@@ -262,7 +276,7 @@ def draw_standard_footer(draw, category="GLOBAL NEWS", cta="DETAILS IN CAPTION -
     draw.text((1015 - cta_w, y + 2), cta_clean, font=font(22, True), fill=fg)
 
 
-def draw_two_tone_headline(draw, text, box, accent_mode="bottom_yellow", max_size=58, min_size=34, max_lines=4, with_shadow=False):
+def draw_two_tone_headline(draw, text, box, accent_mode="bottom_yellow", max_size=64, min_size=34, max_lines=4, with_shadow=False):
     x1, y1, x2, y2 = box
     max_w = x2 - x1
     max_h = y2 - y1
@@ -270,16 +284,16 @@ def draw_two_tone_headline(draw, text, box, accent_mode="bottom_yellow", max_siz
     best_size = min_size
     best_lines = [text]
     for sz in range(max_size, min_size - 1, -2):
-        ft = font(sz, bold=True)
+        ft = font(sz, bold=True, condensed=True)
         lines = wrap(draw, text, ft, max_w)
-        line_h = int(sz * 1.16)
+        line_h = int(sz * 1.15)
         if len(lines) <= max_lines and len(lines) * line_h <= max_h:
             best_size = sz
             best_lines = lines
             break
 
-    ft = font(best_size, bold=True)
-    line_h = int(best_size * 1.16)
+    ft = font(best_size, bold=True, condensed=True)
+    line_h = int(best_size * 1.15)
     curr_y = y1
 
     for idx, line in enumerate(best_lines):
@@ -287,6 +301,8 @@ def draw_two_tone_headline(draw, text, box, accent_mode="bottom_yellow", max_siz
             col = YELLOW if idx == 0 else WHITE
         elif accent_mode == "bottom_yellow":
             col = YELLOW if idx == len(best_lines) - 1 else WHITE
+        elif accent_mode == "bottom_red":
+            col = RED if idx == len(best_lines) - 1 else WHITE
         elif accent_mode == "all_black":
             col = INK
         elif accent_mode == "all_white":
@@ -294,7 +310,8 @@ def draw_two_tone_headline(draw, text, box, accent_mode="bottom_yellow", max_siz
         else:
             col = WHITE
         if with_shadow and col != INK:
-            draw.text((x1 + 3, curr_y + 3), line, font=ft, fill=(0, 0, 0, 220))
+            for sx, sy in ((3, 3), (2, 2), (1, 1), (-1, 1), (1, -1)):
+                draw.text((x1 + sx, curr_y + sy), line, font=ft, fill=(0, 0, 0, 240))
         draw.text((x1, curr_y), line, font=ft, fill=col)
         curr_y += line_h
     return ft, best_lines
@@ -350,6 +367,7 @@ GENERIC_HEADLINE_VERBS = {
     "approved", "announced", "launched", "unveiled", "extended", "extends",
     "completes", "complete", "outlines", "outline", "sweeps", "sweep",
     "gather", "gathers", "reaches", "prompts", "sets", "takes", "makes",
+    "issues", "issue", "leads", "lead", "holds", "hold",
 }
 
 KNOWN_ENTITIES = [
@@ -888,6 +906,55 @@ def query_commons_image(query_or_article, require_all_terms=False):
     return None
 
 
+def query_commons_images(query_or_article, max_images=2):
+    """Query Wikimedia Commons for up to max_images distinct, verified, permitted photographs.
+
+    Enforces strict factual relevance, permitted licenses (CC BY, CC BY-SA, CC0, PD),
+    and no conflicting entities. Returns a list of photo dicts (0, 1, or 2).
+    """
+    if os.environ.get("NEWS_SNAP_OFFLINE_PREVIEW") == "1":
+        return []
+
+    if max_images <= 1:
+        single = query_commons_image(query_or_article)
+        return [single] if single else []
+
+    candidate_queries = []
+    if isinstance(query_or_article, dict):
+        candidate_queries = build_photo_search_queries(query_or_article)
+    elif isinstance(query_or_article, str) and query_or_article.strip():
+        candidate_queries = [query_or_article.strip()]
+
+    if not candidate_queries:
+        return []
+
+    photos = []
+    seen_urls = set()
+
+    # 1. Search for primary hero photograph
+    primary = query_commons_image(query_or_article)
+    if primary and primary.get("page_url"):
+        photos.append(primary)
+        seen_urls.add(primary["page_url"])
+
+    # 2. If collage requested and multiple queries exist, search for distinct secondary photograph
+    if len(photos) < max_images and len(candidate_queries) >= 2:
+        for secondary_query in candidate_queries[1:]:
+            tokens = [t.lower() for t in secondary_query.split()]
+            if len(tokens) < 2:
+                continue
+            if all(t in BROAD_TERMS or t in STOP_WORDS or t in GENERIC_HEADLINE_VERBS for t in tokens):
+                continue
+            sec = query_commons_image(secondary_query)
+            if sec and sec.get("page_url") and sec["page_url"] not in seen_urls:
+                photos.append(sec)
+                seen_urls.add(sec["page_url"])
+                print(f"Photo sourcing: accepted secondary collage photo for '{secondary_query}'.")
+                break
+
+    return photos
+
+
 def category_label(article):
     raw = str(article.get("classification", {}).get("topic", "global news")).lower()
     tokens = set(re.findall(r"[a-z]+", raw))
@@ -1024,7 +1091,7 @@ def draw_photo_label(canvas, box, text, position="top_right"):
     ph = th + pad_v * 2
 
     margin_x = 8 if is_thumbnail else (24 if x1 == 0 else 18)
-    margin_y = 8 if is_thumbnail else (50 if y1 == 0 else 16)
+    margin_y = 8 if is_thumbnail else (96 if y1 == 0 else 16)
 
     if position == "top_left":
         px1 = x1 + margin_x
@@ -1320,10 +1387,34 @@ def render_election_illustration(w, h):
     return im
 
 
+def render_health_illustration(w, h):
+    """Render a clean, scientific and dignified public-health illustration without frightening imagery."""
+    import math
+    im, d = create_vector_gradient(w, h, (6, 28, 38), (4, 14, 22))
+    cx, cy = w // 2, int(h * 0.44)
+    r = int(min(w, h) * 0.32)
+    # Clean medical cross / health research emblem
+    cw = max(16, int(r * 0.35))
+    ch = max(45, int(r * 0.95))
+    d.rounded_rectangle((cx - cw // 2, cy - ch // 2, cx + cw // 2, cy + ch // 2), radius=cw // 4, fill=(16, 85, 95), outline=(45, 212, 191), width=2)
+    d.rounded_rectangle((cx - ch // 2, cy - cw // 2, cx + ch // 2, cy + cw // 2), radius=cw // 4, fill=(16, 85, 95), outline=(45, 212, 191), width=2)
+    # Subtle circular orbit ring
+    d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=(30, 110, 120), width=1)
+    # Scientific data nodes along the perimeter
+    for ang in range(0, 360, 45):
+        rad = math.radians(ang)
+        nx = int(cx + r * math.cos(rad))
+        ny = int(cy + r * math.sin(rad))
+        d.line((cx, cy, nx, ny), fill=(20, 65, 75), width=1)
+        d.ellipse((nx - 4, ny - 4, nx + 4, ny + 4), fill=(45, 212, 191), outline=(255, 255, 255), width=1)
+    draw_editorial_pill(d, w, h, "PUBLIC HEALTH & SCIENCE RESEARCH", accent=(45, 212, 191), fill=(6, 28, 38))
+    return im
+
+
 def make_illustration(width, height, category="GLOBAL NEWS", article=None):
     """Generate a story-specific, labelled editorial vector illustration.
 
-    Tailors visual to news topic (Finance, Emergency, Tech, Leadership, Quote, Diplomacy, Election)
+    Tailors visual to news topic (Finance, Emergency, Health, Tech, Leadership, Quote, Diplomacy, Election)
     using pure Pillow vector graphics.
     """
     cat = str(category or "").upper()
@@ -1339,6 +1430,8 @@ def make_illustration(width, height, category="GLOBAL NEWS", article=None):
 
     combined = f"{cat} {topic} {title} {summary}".lower()
 
+    if any(k in combined for k in ("health", "medical", "disease", "outbreak", "virus", "infection", "vaccine", "hospital", "who", "cdc", "pandemic", "epidemic", "plague", "cancer", "fever", "mpox", "avian flu", "bird flu", "cholera")):
+        return render_health_illustration(width, height)
     if any(k in combined for k in ("quote", "statement", "remarks", "said", "testimony", "speech")):
         return render_quote_illustration(width, height)
     if any(k in combined for k in ("ballot", "ballots", "election", "elections", "voting", "vote", "votes", "polling", "poll", "polls", "electoral", "primary", "caucus", "referendum", "precinct")):
@@ -1382,121 +1475,354 @@ def draw_footer(draw, source, date_x=700, y=1190, dark=True):
 # THE SIX APPROVED NEWS SNAP FORMAT RENDERERS
 # ==============================================================================
 
-def draw_template_01(article, post, photo):
-    """Format 01: LIVE / DEVELOPING NEWS (Emergencies & Disasters)"""
-    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (8, 14, 24, 255))
-    crop_photo(canvas, photo, (0, 0, WIDTH, 840), category=emergency_event_label(str(article.get("title", ""))), article=article)
-    # Soft cinematic vignette overlay so flames are visible while headline is 100% legible
-    draw_photo_overlay(canvas, (0, 420, WIDTH, 840), 195)
+# ==============================================================================
+# HIGH-IMPACT EDITORIAL TEMPLATES (A: Political, B: Business/Tech, C: Breaking/Health)
+# ==============================================================================
+
+def draw_template_political(article, post, photos=None):
+    """Template A: Political News — High-Impact Editorial Layout.
+
+    Dramatic photo collage or dominant hero photograph using relevant politicians,
+    institutions or locations. Oversized white headline typography with selective
+    yellow and red emphasis, clear headline hierarchy, and strong bottom information strip.
+    """
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (8, 12, 22, 255))
     d = ImageDraw.Draw(canvas)
 
-    # Brand and LIVE badge
-    draw_brand_slash(d, 60, 48, scale=1.1)
-    d.rounded_rectangle((245, 50, 375, 96), radius=15, fill=RED)
-    d.ellipse((262, 67, 274, 79), fill=WHITE)
-    d.text((284, 58), "LIVE", font=font(21, True), fill=WHITE)
+    # 1. Header (y: 35 to 88)
+    draw_brand_slash(d, 55, 42, scale=1.05)
+    draw_globe_icon(d, 790, 62, r=12, color=WHITE)
+    date_str = get_current_date_str("%d %b %Y").upper()
+    d.text((812, 51), date_str, font=font(19, True), fill=WHITE)
 
-    # Event label pill
-    title = str(article.get("title", ""))
-    badge = emergency_event_label(title)
-    add_pill(d, (60, 470, 390, 526), badge, fill=RED, text_fill=WHITE, max_font=23)
+    # 2. Photo Area (y: 105 to 680)
+    photo_box = (45, 105, 1035, 680)
+    photo_list = [photos] if isinstance(photos, dict) else (photos or [])
+    real_photos = [p for p in photo_list if p and isinstance(p.get("image"), Image.Image)]
 
-    # White vertical accent line on left of headline
-    d.rectangle((60, 545, 66, 755), fill=WHITE)
+    pw = photo_box[2] - photo_box[0]
+    ph = photo_box[3] - photo_box[1]
 
-    # Two-tone headline: upper white, bottom yellow with shadow for maximum contrast
-    headline = post["headline"].strip().upper()
-    draw_two_tone_headline(d, headline, (82, 540, 1015, 765), accent_mode="bottom_yellow", max_size=58, min_size=36, max_lines=3, with_shadow=True)
+    if len(real_photos) >= 2:
+        # Editorial Photo Collage: Dominant hero on left (62%), secondary institutional on right (38%)
+        p1, p2 = real_photos[0], real_photos[1]
+        split_x = photo_box[0] + int(pw * 0.62)
+        crop_photo(canvas, p1, (photo_box[0], photo_box[1], split_x, photo_box[3]), category="POLITICS", centering=(0.5, 0.25), article=article, draw_label=True, label_position="top_left")
+        crop_photo(canvas, p2, (split_x, photo_box[1], photo_box[2], photo_box[3]), category="POLITICS", centering=(0.5, 0.5), article=article, draw_label=True, label_position="top_right")
+        # Dramatic slanted red divider line between images
+        cd = ImageDraw.Draw(canvas)
+        slash_offset = 20
+        cd.polygon([
+            (split_x - slash_offset, photo_box[1]),
+            (split_x - slash_offset + 6, photo_box[1]),
+            (split_x + slash_offset + 6, photo_box[3]),
+            (split_x + slash_offset, photo_box[3])
+        ], fill=(230, 31, 45))
+    elif len(real_photos) == 1:
+        crop_photo(canvas, real_photos[0], photo_box, category="POLITICS", centering=(0.5, 0.25), article=article, draw_label=True, label_position="top_right")
+    else:
+        ill = make_illustration(pw, ph, category="POLITICS", article=article)
+        canvas.paste(ill.convert("RGBA"), (photo_box[0], photo_box[1]))
 
-    # Summary card: pure white rounded card
-    d.rounded_rectangle((60, 795, 1020, 1215), radius=22, fill=WHITE)
-    summary = summary_from_caption(post.get("caption", ""), 42)
-    draw_wrapped(d, summary, (95, 830, 985, 1180), max_size=28, min_size=22, bold=False, fill=INK, max_lines=6, line_multiplier=1.28)
+    # Dark bottom gradient overlay
+    draw_photo_overlay(canvas, (photo_box[0], photo_box[3] - 220, photo_box[2], photo_box[3]), strength=230)
 
-    # Standard footer
-    draw_standard_footer(d, "GLOBAL NEWS", cta="DETAILS IN CAPTION →", y=1275, dark=True)
+    d = ImageDraw.Draw(canvas)
+
+    # 3. Category badge
+    cat_text = category_label(article)
+    if cat_text.upper() in {"GLOBAL NEWS", "NEWS"}:
+        cat_text = "POLITICS & GOVERNANCE"
+    add_pill(d, (55, 695, 410, 742), cat_text.upper(), fill=(195, 20, 35), text_fill=WHITE, max_font=19)
+
+    # Red vertical accent bar on left of headline
+    d.rectangle((55, 755, 63, 965), fill=(230, 31, 45))
+
+    # 4. Oversized Headline
+    headline = post.get("headline", "").strip().upper()
+    draw_two_tone_headline(
+        d, headline, (78, 748, 1025, 965),
+        accent_mode="bottom_yellow",
+        max_size=64, min_size=36, max_lines=4,
+        with_shadow=True
+    )
+
+    # 5. Summary
+    summary = post.get("summary", "").strip() or summary_from_caption(post.get("caption", ""), 45)
+    draw_wrapped(
+        d, summary, (78, 980, 1025, 1180),
+        max_size=26, min_size=20, bold=False,
+        fill=(210, 222, 235), max_lines=5, line_multiplier=1.24
+    )
+
+    # 6. Bottom Information Strip
+    d.rounded_rectangle((45, 1215, 1035, 1305), radius=16, fill=(14, 22, 38), outline=(28, 42, 68), width=1)
+    source_domain = str(article.get("domain", "NEWS-SNAP")).strip().upper()
+    d.text((70, 1242), f"SOURCE: {source_domain}  •  {date_str}", font=font(19, True), fill=WHITE)
+    draw_centered(d, (720, 1215, 1010, 1305), "DETAILS IN CAPTION →", font(20, True), (255, 207, 45))
+
     return canvas
+
+
+def draw_template_business_tech(article, post, photos=None):
+    """Template B: Business & Technology News — High-Impact Editorial Layout.
+
+    Large relevant photography / executive portrait, bold typography, high contrast,
+    dramatic composition and selective red/yellow highlights.
+    """
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (6, 10, 18, 255))
+
+    # 1. Photo area: Top 0 to 740
+    photo_box = (0, 0, WIDTH, 740)
+    photo_list = [photos] if isinstance(photos, dict) else (photos or [])
+    real_photos = [p for p in photo_list if p and isinstance(p.get("image"), Image.Image)]
+
+    pw, ph = WIDTH, 740
+
+    if len(real_photos) >= 2:
+        p1, p2 = real_photos[0], real_photos[1]
+        split_x = int(pw * 0.65)
+        crop_photo(canvas, p1, (0, 0, split_x, ph), category="BUSINESS", centering=(0.5, 0.22), article=article, draw_label=False)
+        crop_photo(canvas, p2, (split_x, 0, pw, ph), category="TECHNOLOGY", centering=(0.5, 0.5), article=article, draw_label=True, label_position="top_right")
+        cd = ImageDraw.Draw(canvas)
+        cd.line((split_x, 0, split_x, ph), fill=(56, 189, 248), width=3)
+    elif len(real_photos) == 1:
+        crop_photo(canvas, real_photos[0], photo_box, category="BUSINESS", centering=(0.5, 0.22), article=article, draw_label=False)
+        topic = str(article.get("classification", {}).get("topic", "")).lower()
+        title = str(article.get("title", "")).lower()
+        if any(k in title or k in topic for k in ("ceo", "executive", "founder", "musk", "altman", "nadella", "cook", "leadership", "people")):
+            box_crop = canvas.crop(photo_box).convert("L").convert("RGBA")
+            canvas.paste(box_crop, (0, 0))
+        lbl = determine_photo_label(real_photos[0], article)
+        if lbl:
+            draw_photo_label(canvas, photo_box, lbl, position="top_right")
+    else:
+        ill = make_illustration(pw, ph, category="BUSINESS", article=article)
+        canvas.paste(ill.convert("RGBA"), (0, 0))
+
+    # Dramatic bottom vignette gradient overlay fading into carbon black
+    draw_photo_overlay(canvas, (0, 420, WIDTH, 740), strength=245)
+
+    d = ImageDraw.Draw(canvas)
+
+    # 2. Header
+    draw_brand_slash(d, 55, 45, scale=1.05)
+    date_str = get_current_date_str("%d %b %Y").upper()
+    d.rectangle((760, 52, 782, 74), outline=WHITE, width=2)
+    d.line((760, 60, 782, 60), fill=WHITE, width=2)
+    d.text((794, 50), date_str, font=font(19, True), fill=WHITE)
+
+    # 3. Category badge at (55, 680)
+    badge_label = "BUSINESS & TECH"
+    topic = str(article.get("classification", {}).get("topic", "")).upper()
+    if topic in {"TECHNOLOGY", "TECH", "FINANCE", "BUSINESS", "ECONOMY", "MARKETS"}:
+        badge_label = topic
+    d.rounded_rectangle((55, 680, 55 + 240, 726), radius=14, fill=(10, 24, 45), outline=(56, 189, 248), width=2)
+    draw_centered(d, (55, 680, 55 + 240, 726), badge_label, font(19, True), WHITE)
+
+    # 4. Headline (y: 740 to 950)
+    headline = post.get("headline", "").strip().upper()
+    draw_two_tone_headline(
+        d, headline, (55, 740, 1025, 950),
+        accent_mode="bottom_yellow",
+        max_size=66, min_size=36, max_lines=4,
+        with_shadow=True
+    )
+
+    # 5. Summary (y: 960 to 1090)
+    summary = post.get("summary", "").strip() or summary_from_caption(post.get("caption", ""), 36)
+    draw_wrapped(
+        d, summary, (55, 965, 1025, 1095),
+        max_size=25, min_size=19, bold=False,
+        fill=(245, 248, 255), max_lines=4, line_multiplier=1.22
+    )
+
+    # 6. Dynamic Topic Pills (y: 1110 to 1160)
+    pills = extract_matching_category_tags(article)
+    if not pills:
+        pills = [("Markets", (28, 100, 242)), ("Technology", (118, 56, 198)), ("Business", (24, 138, 78))]
+    px = 55
+    for label, col in pills[:3]:
+        bbox = d.textbbox((0, 0), label, font=font(18, True))
+        pw_pill = max(120, bbox[2] - bbox[0] + 32)
+        d.rounded_rectangle((px, 1112, px + pw_pill, 1160), radius=15, fill=col)
+        draw_centered(d, (px, 1112, px + pw_pill, 1160), label, font(18, True), WHITE)
+        px += pw_pill + 16
+
+    # 7. Bottom Information Strip (y: 1245 to 1305)
+    draw_standard_footer(d, category="TECH & MARKETS", cta="DETAILS IN CAPTION →", y=1255, dark=True)
+
+    return canvas
+
+
+def draw_template_breaking_health(article, post, photos=None):
+    """Template C: Breaking News & Health News — High-Impact Urgent Editorial Layout.
+
+    Prominent BREAKING NEWS or BREAKING HEALTH label (only when justified), high-impact
+    photography or verified collage, large headline, and verified facts information panel.
+    Avoids frightening imagery for disease outbreaks.
+    """
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (10, 14, 24, 255))
+
+    title = str(article.get("title", "")).lower()
+    topic = str(article.get("classification", {}).get("topic", "")).lower()
+    is_health = any(k in title or k in topic for k in (
+        "health", "disease", "outbreak", "virus", "infection", "vaccine",
+        "medical", "hospital", "who", "cdc", "pandemic", "epidemic", "plague",
+        "cancer", "fever", "mpox", "avian flu", "bird flu"
+    ))
+
+    d = ImageDraw.Draw(canvas)
+
+    # 1. Header
+    draw_brand_slash(d, 55, 42, scale=1.05)
+    d.rounded_rectangle((240, 44, 370, 88), radius=14, fill=(230, 31, 45))
+    d.ellipse((256, 60, 268, 72), fill=WHITE)
+    d.text((278, 52), "LIVE", font=font(20, True), fill=WHITE)
+
+    date_str = get_current_date_str("%d %b %Y").upper()
+    d.text((820, 52), date_str, font=font(20, True), fill=WHITE)
+
+    # 2. Urgent Ribbon Banner (y: 105 to 175)
+    if is_health:
+        d.rounded_rectangle((55, 105, 1025, 175), radius=10, fill=(195, 20, 35))
+        d.rectangle((85, 122, 105, 158), fill=WHITE)
+        d.rectangle((76, 131, 114, 149), fill=WHITE)
+        d.text((130, 122), "BREAKING HEALTH & SCIENCE", font=font(34, True), fill=WHITE)
+        for sx in (920, 955):
+            d.polygon([(sx, 115), (sx + 16, 115), (sx - 4, 165), (sx - 20, 165)], fill=WHITE)
+    else:
+        d.rounded_rectangle((55, 105, 1025, 175), radius=10, fill=(230, 31, 45))
+        d.text((85, 122), "BREAKING NEWS", font=font(36, True), fill=WHITE)
+        for sx in (865, 910, 955):
+            d.polygon([(sx, 115), (sx + 20, 115), (sx - 8, 165), (sx - 28, 165)], fill=WHITE)
+
+    # 3. Photo Area (y: 190 to 680)
+    photo_box = (55, 190, 1025, 680)
+    photo_list = [photos] if isinstance(photos, dict) else (photos or [])
+    real_photos = [p for p in photo_list if p and isinstance(p.get("image"), Image.Image)]
+
+    pw = photo_box[2] - photo_box[0]
+    ph = photo_box[3] - photo_box[1]
+
+    category_name = "HEALTH" if is_health else emergency_event_label(title)
+
+    if len(real_photos) >= 2:
+        p1, p2 = real_photos[0], real_photos[1]
+        split_x = photo_box[0] + int(pw * 0.60)
+        crop_photo(canvas, p1, (photo_box[0], photo_box[1], split_x, photo_box[3]), category=category_name, article=article, draw_label=True, label_position="top_left")
+        crop_photo(canvas, p2, (split_x, photo_box[1], photo_box[2], photo_box[3]), category=category_name, article=article, draw_label=True, label_position="top_right")
+        cd = ImageDraw.Draw(canvas)
+        cd.line((split_x, photo_box[1], split_x, photo_box[3]), fill=(230, 31, 45) if not is_health else (195, 20, 35), width=3)
+    elif len(real_photos) == 1:
+        crop_photo(canvas, real_photos[0], photo_box, category=category_name, article=article, draw_label=True, label_position="top_right")
+    else:
+        ill = make_illustration(pw, ph, category=category_name, article=article)
+        canvas.paste(ill.convert("RGBA"), (photo_box[0], photo_box[1]))
+
+    # Dark bottom gradient overlay
+    draw_photo_overlay(canvas, (photo_box[0], photo_box[3] - 200, photo_box[2], photo_box[3]), strength=220)
+
+    d = ImageDraw.Draw(canvas)
+
+    # 4. White vertical accent line on left of headline
+    d.rectangle((55, 705, 62, 925), fill=WHITE)
+
+    # 5. Urgent Headline (y: 695 to 925)
+    headline = post.get("headline", "").strip().upper()
+    draw_two_tone_headline(
+        d, headline, (76, 695, 1025, 925),
+        accent_mode="bottom_yellow",
+        max_size=64, min_size=36, max_lines=4,
+        with_shadow=True
+    )
+
+    # 6. Verified Developments Information Panel (y: 940 to 1195)
+    d.rounded_rectangle((55, 940, 1025, 1195), radius=16, fill=(18, 28, 48), outline=(38, 56, 88), width=1)
+    d.text((80, 960), "VERIFIED DEVELOPMENTS:", font=font(18, True), fill=(255, 207, 45))
+    summary = post.get("summary", "").strip() or summary_from_caption(post.get("caption", ""), 45)
+    draw_wrapped(
+        d, summary, (80, 995, 1000, 1175),
+        max_size=25, min_size=19, bold=False,
+        fill=(240, 246, 255), max_lines=5, line_multiplier=1.24
+    )
+
+    # 7. Bottom Strip (y: 1220 to 1310)
+    source_domain = str(article.get("domain", "NEWS-SNAP")).strip().upper()
+    d.rounded_rectangle((55, 1220, 1025, 1310), radius=16, fill=(12, 18, 30), outline=(24, 36, 56), width=1)
+    draw_globe_icon(d, 82, 1265, r=12, color=WHITE)
+    d.text((106, 1252), f"SOURCE: {source_domain}  •  {date_str}", font=font(19, True), fill=WHITE)
+    draw_centered(d, (720, 1220, 1005, 1310), "DETAILS IN CAPTION →", font(20, True), (255, 207, 45))
+
+    return canvas
+
+
+def draw_template_neutral_editorial(article, post, photos=None):
+    """Neutral Editorial Fallback — Clean, Balanced Editorial Layout."""
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (8, 14, 26, 255))
+
+    d = ImageDraw.Draw(canvas)
+    draw_brand_compass(d, 60, 48, dark=True, scale=1.0)
+
+    # Globe icon + Date
+    draw_globe_icon(d, 790, 68, r=12, color=WHITE)
+    date_str = get_current_date_str("%d %b %Y").upper()
+    d.text((812, 56), date_str, font=font(19, True), fill=WHITE)
+
+    # Photo box
+    photo_box = (55, 115, 1025, 685)
+    photo_list = [photos] if isinstance(photos, dict) else (photos or [])
+    real_photos = [p for p in photo_list if p and isinstance(p.get("image"), Image.Image)]
+
+    pw = photo_box[2] - photo_box[0]
+    ph = photo_box[3] - photo_box[1]
+    if real_photos:
+        crop_photo(canvas, real_photos[0], photo_box, category="GLOBAL NEWS", article=article, draw_label=True, label_position="top_right")
+    else:
+        ill = make_illustration(pw, ph, category="GLOBAL NEWS", article=article)
+        canvas.paste(ill.convert("RGBA"), (photo_box[0], photo_box[1]))
+
+    draw_photo_overlay(canvas, (photo_box[0], photo_box[3] - 200, photo_box[2], photo_box[3]), strength=210)
+
+    d = ImageDraw.Draw(canvas)
+    # Category pill
+    add_pill(d, (55, 705, 330, 755), "EDITORIAL REPORT", fill=(24, 48, 80), text_fill=WHITE, max_font=19)
+
+    # Headline
+    headline = post.get("headline", "").strip().upper()
+    draw_two_tone_headline(
+        d, headline, (55, 765, 1025, 960),
+        accent_mode="top_yellow",
+        max_size=60, min_size=36, max_lines=4,
+        with_shadow=True
+    )
+
+    # Summary
+    summary = post.get("summary", "").strip() or summary_from_caption(post.get("caption", ""), 45)
+    draw_wrapped(
+        d, summary, (55, 980, 1025, 1180),
+        max_size=25, min_size=19, bold=False,
+        fill=(210, 222, 235), max_lines=6, line_multiplier=1.24
+    )
+
+    # Footer
+    draw_standard_footer(d, category="WORLD NEWS", cta="DETAILS IN CAPTION →", y=1255, dark=True)
+    return canvas
+
+
+def draw_template_01(article, post, photo):
+    """Format 01: LIVE / DEVELOPING NEWS (Emergencies & Disasters)"""
+    return draw_template_breaking_health(article, post, [photo] if photo else None)
 
 
 def draw_template_02(article, post, photo):
     """Format 02: BUSINESS & ECONOMY (Markets & Money)"""
-    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (8, 16, 28, 255))
-    d = ImageDraw.Draw(canvas)
-    # Rounded dark navy card container
-    d.rounded_rectangle((45, 30, 1035, 1320), radius=28, fill=(10, 24, 45), outline=(28, 52, 85), width=2)
-
-    # Header: compass logo + date with globe
-    draw_brand_compass(d, 75, 56, dark=True, scale=1.0)
-    draw_globe_icon(d, 760, 75, r=12, color=WHITE)
-    date_str = get_current_date_str("%d %b %Y").upper()
-    d.text((782, 63), date_str, font=font(20, True), fill=WHITE)
-
-    # Top photo card with rounded corners
-    crop_photo(canvas, photo, (65, 125, 1015, 615), category="BUSINESS", article=article)
-    d = ImageDraw.Draw(canvas)
-
-    # Centered yellow BREAKING NEWS pill
-    add_pill(d, (350, 580, 730, 650), "BREAKING NEWS", fill=YELLOW, text_fill=(0, 0, 0), max_font=26)
-
-    # Two-tone headline: top line yellow, second line white
-    headline = post["headline"].strip().upper()
-    draw_two_tone_headline(d, headline, (85, 680, 995, 855), accent_mode="top_yellow", max_size=56, min_size=36, max_lines=3)
-
-    # Summary in light blue-gray
-    summary = validate_english_text(post["summary"].strip(), "summary") if post.get("summary") else summary_from_caption(post.get("caption", ""), 34)
-    draw_wrapped(d, summary, (85, 875, 995, 1080), max_size=26, min_size=20, bold=False, fill=(210, 222, 235), max_lines=5, line_multiplier=1.24)
-
-    # CTA pill button matching reference
-    d.rounded_rectangle((75, 1120, 1005, 1220), radius=22, fill=WHITE, outline=(10, 24, 45), width=3)
-    d.ellipse((120, 1145, 170, 1195), fill=(10, 24, 45))
-    d.text((135, 1148), "→", font=font(26, True), fill=WHITE)
-    draw_centered(d, (190, 1120, 890, 1220), "DETAILS IN CAPTION", font(26, True), (10, 24, 45))
-    d.text((915, 1148), "→", font=font(26, True), fill=(10, 24, 45))
-    return canvas
+    return draw_template_business_tech(article, post, [photo] if photo else None)
 
 
 def draw_template_03(article, post, photo):
     """Format 03: PEOPLE & CORPORATE STORIES"""
-    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (6, 12, 22, 255))
-    is_photo = crop_photo(canvas, photo, (0, 0, WIDTH, 890), category="PEOPLE", centering=(0.5, 0.22), article=article, draw_label=False)
-    # Convert photo area to monochrome / greyscale for dramatic portrait reference look
-    box = (0, 0, WIDTH, 890)
-    photo_crop = canvas.crop(box).convert("L").convert("RGBA")
-    canvas.paste(photo_crop, (0, 0))
-    draw_photo_overlay(canvas, (0, 460, WIDTH, 890), 220)
-    if is_photo:
-        lbl = determine_photo_label(photo, article)
-        if lbl:
-            draw_photo_label(canvas, box, lbl, position="top_right")
-    d = ImageDraw.Draw(canvas)
-
-    # Logo
-    draw_brand_slash(d, 60, 48, scale=1.1)
-
-    # Red BREAKING NEWS pill
-    add_pill(d, (60, 545, 360, 605), "BREAKING NEWS", fill=RED, text_fill=WHITE, max_font=23)
-
-    # Two-tone headline: white lines + yellow bottom line with shadow
-    headline = post["headline"].strip().upper()
-    draw_two_tone_headline(d, headline, (60, 625, 1020, 860), accent_mode="bottom_yellow", max_size=58, min_size=36, max_lines=3, with_shadow=True)
-
-    # Clean white summary
-    summary = summary_from_caption(post.get("caption", ""), 32)
-    draw_wrapped(d, summary, (60, 880, 1020, 1055), max_size=26, min_size=20, bold=False, fill=WHITE, max_lines=4, line_multiplier=1.22)
-
-    # Dynamic category pills strictly matching the article (no hardcoded tags)
-    pills = extract_matching_category_tags(article)
-    px = 60
-    for label, col in pills:
-        bbox = d.textbbox((0, 0), label, font=font(19, True))
-        pw = max(130, bbox[2] - bbox[0] + 32)
-        d.rounded_rectangle((px, 1090, px + pw, 1145), radius=16, fill=col)
-        draw_centered(d, (px, 1090, px + pw, 1145), label, font(19, True), WHITE)
-        px += pw + 16
-
-    topic = str(article.get("classification", {}).get("topic", "CORPORATE NEWS")).upper()
-    draw_standard_footer(d, topic[:18], cta="DETAILS IN CAPTION →", y=1275, dark=True)
-    return canvas
+    return draw_template_business_tech(article, post, [photo] if photo else None)
 
 
 def load_roundup():
@@ -1575,46 +1901,8 @@ def draw_template_04(article, roundup_post, stories, photos):
 
 
 def draw_template_05(article, post, photo):
-    """Format 05: SINGLE-STORY NEWS REPORT (Detailed Update)"""
-    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (6, 12, 22, 255))
-    d = ImageDraw.Draw(canvas)
-    # Inner white card with rounded corners
-    d.rounded_rectangle((45, 30, 1035, 1320), radius=26, fill=WHITE)
-
-    # Brand logo top left
-    draw_brand_compass(d, 75, 54, dark=False, scale=1.0)
-
-    # Red header ribbon: BREAKING NEWS with 3 white hazard stripes
-    d.rounded_rectangle((75, 125, 1005, 205), radius=10, fill=RED)
-    d.text((110, 142), "BREAKING NEWS", font=font(44, True), fill=WHITE)
-    for sx in (860, 905, 950):
-        d.polygon([(sx, 130), (sx + 24, 130), (sx - 10, 200), (sx - 34, 200)], fill=WHITE)
-
-    # Framed rectangular photo
-    crop_photo(canvas, photo, (75, 230, 1005, 650), category=category_label(article), article=article)
-    d = ImageDraw.Draw(canvas)
-
-    # Red vertical accent line
-    d.rectangle((75, 680, 83, 1110), fill=RED)
-
-    # Date line
-    date_str = get_current_date_str("%A, %d %B %Y")
-    d.text((105, 682), date_str, font=font(21, False), fill=(90, 95, 105))
-
-    # Bold black uppercase headline
-    headline = post["headline"].strip().upper()
-    draw_two_tone_headline(d, headline, (105, 720, 995, 880), accent_mode="all_black", max_size=46, min_size=32, max_lines=3)
-
-    # Detailed summary
-    summary = summary_from_caption(post.get("caption", ""), 52)
-    draw_wrapped(d, summary, (105, 895, 995, 1130), max_size=26, min_size=20, bold=False, fill=(40, 45, 55), max_lines=7, line_multiplier=1.24)
-
-    # Dark navy bottom footer bar inside the card
-    d.rounded_rectangle((45, 1205, 1035, 1320), radius=26, fill=(10, 24, 45))
-    d.rectangle((45, 1205, 1035, 1240), fill=(10, 24, 45))
-    draw_globe_icon(d, 85, 1262, r=13, color=WHITE)
-    d.text((112, 1250), "NEWS SNAP  |  WORLD NEWS", font=font(22, True), fill=WHITE)
-    return canvas
+    """Format 05: SINGLE-STORY NEWS REPORT (Political & General)"""
+    return draw_template_political(article, post, [photo] if photo else None)
 
 
 def draw_template_06(article, post, photo):
@@ -1681,15 +1969,24 @@ def strip_image_credits(caption: str) -> str:
     if not caption:
         return ""
     parts = re.split(
-        r"\n\s*(?:(?:Story\s+\d+\s+)?Image credit:|(?:Illustrative )?image credit:|Image licence:|Image source:)",
+        r"\n\s*(?:(?:Story|Photo)\s+\d+\s+)?(?:Image credit:|(?:Illustrative )?image credit:|Image licence:|Image source:)",
         str(caption), maxsplit=1, flags=re.I
     )
     return parts[0].strip()
 
 
-def annotate_image_credit(post, photo_info, caption_path="post.json", story_index=None):
+def annotate_image_credit(post, photo_info, caption_path="post.json", story_index=None, photo_index=None):
     if not photo_info:
         return
+    if isinstance(photo_info, list):
+        valid_photos = [p for p in photo_info if p and isinstance(p.get("image"), Image.Image) and p.get("page_url")]
+        if not valid_photos:
+            return
+        for idx, p in enumerate(valid_photos, start=1):
+            p_idx = idx if len(valid_photos) > 1 else None
+            annotate_image_credit(post, p, caption_path=caption_path, photo_index=p_idx)
+        return
+
     if "image" in photo_info and (photo_info["image"] is None or not isinstance(photo_info["image"], Image.Image)):
         return
     if not photo_info.get("page_url") or not photo_info.get("license"):
@@ -1698,10 +1995,19 @@ def annotate_image_credit(post, photo_info, caption_path="post.json", story_inde
     if photo_info["page_url"] in caption:
         return
 
-    story_prefix = f"Story {story_index} " if story_index else ""
+    if story_index is not None:
+        prefix = f"Story {story_index} "
+    elif photo_index is not None:
+        prefix = f"Photo {photo_index} "
+    else:
+        prefix = ""
+
+    artist_name = photo_info.get("artist") or photo_info.get("author") or "Unknown"
+    title_str = photo_info.get("title") or "Photo"
+    license_str = photo_info.get("license") or "CC"
     credit_parts = [
-        f"{story_prefix}Image credit: {photo_info['title']} by {photo_info['artist']}.",
-        f"Licence: {photo_info['license']}.",
+        f"{prefix}Image credit: {title_str} by {artist_name}.",
+        f"Licence: {license_str}.",
     ]
     if photo_info.get("license_url"):
         credit_parts.append(f"Licence terms: {photo_info['license_url']}")
@@ -1716,42 +2022,152 @@ def annotate_image_credit(post, photo_info, caption_path="post.json", story_inde
     Path(caption_path).write_text(json.dumps(post, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def render_approved_format(template_id, article, post):
-    """Render the exact approved format (01-06) from the format registry."""
-    if template_id not in FORMAT_REGISTRY:
-        raise ValueError(f"Unrecognized format {template_id}. Must be one of {list(FORMAT_REGISTRY.keys())}")
+def select_editorial_template(article: dict, roundup_exists: bool = False) -> tuple[str, str]:
+    """Deterministically select the editorial layout template based on article category and content.
 
-    if template_id == "04":
+    Templates:
+    - 'political': Template A — Political News
+    - 'business_tech': Template B — Business & Technology News
+    - 'breaking_health': Template C — Breaking News & Health News
+    - 'editorial': Neutral Editorial Fallback
+
+    Special preservation formats:
+    - '04': Daily Headlines Roundup
+    - '06': Verified Statement / Quote
+    """
+    override = str(article.get("template_override", "")).strip().lower()
+    if override in {"4", "04", "roundup", "daily_headlines"}:
+        if not roundup_exists:
+            raise ValueError("Format 04 requires roundup.json and roundup_post.json")
+        return "04", "Selected via explicit template_override: Format 04 (Daily Headlines Roundup)"
+    if override in {"6", "06", "quote", "statement"}:
+        if not (article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker")):
+            raise ValueError("Format 06 requires verified quote_text and speaker in selected_article.json")
+        return "06", "Selected via explicit template_override: Format 06 (Verified Statement / Quote)"
+    if override in {"a", "political", "politics", "5", "05"}:
+        return "political", "Selected via explicit template_override: Template A (Political News)"
+    if override in {"b", "business", "tech", "technology", "business_tech", "2", "02", "3", "03"}:
+        return "business_tech", "Selected via explicit template_override: Template B (Business & Technology)"
+    if override in {"c", "breaking", "health", "emergency", "breaking_health", "1", "01"}:
+        return "breaking_health", "Selected via explicit template_override: Template C (Breaking & Health News)"
+    if override in {"editorial", "neutral"}:
+        return "editorial", "Selected via explicit template_override: Neutral Editorial Fallback"
+
+    # Rule 1: Verified statement with quote and speaker -> Format 06
+    if article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker"):
+        return "06", "Article contains source-verified quotation and speaker; qualifies for Format 06 (Verified Statement / Quote)"
+
+    title = str(article.get("title", "")).lower()
+    topic = str(article.get("classification", {}).get("topic", "")).lower()
+    summary = str(article.get("summary") or article.get("description", "")).lower()
+    combined = f"{title} {topic} {summary}"
+
+    # Rule 2: Breaking News & Health News (Template C)
+    health_keywords = (
+        "health", "outbreak", "virus", "disease", "infection", "epidemic", "pandemic",
+        "plague", "who", "cdc", "vaccine", "medical", "hospital", "cancer", "mpox",
+        "avian flu", "bird flu", "cholera", "fever", "respiratory", "pathogen"
+    )
+    emergency_keywords = (
+        "wildfire", "wildfires", "forest fire", "flood", "floods", "flooding",
+        "earthquake", "quake", "aftershock", "hurricane", "cyclone", "typhoon",
+        "tsunami", "evacuation", "evacuations", "landslide", "volcano", "volcanic",
+        "explosion", "disaster", "rescue operation", "mass casualty", "severe storm"
+    )
+    if any(k in combined for k in health_keywords) or any(k in combined for k in emergency_keywords):
+        sub_type = "Health Alert" if any(k in combined for k in health_keywords) else "Urgent Breaking/Emergency"
+        return "breaking_health", f"{sub_type} indicators detected; matched Template C (Breaking News & Health News)"
+
+    # Rule 3: Business & Technology News (Template B)
+    business_tech_keywords = (
+        "business", "economy", "finance", "market", "markets", "trade", "inflation",
+        "interest rate", "gdp", "revenue", "earnings", "profit", "stocks", "shares",
+        "stock market", "nasdaq", "dow", "s&p", "central bank", "federal reserve",
+        "budget", "ceo", "chief executive", "founder", "semiconductor", "chip",
+        "chips", "ai", "artificial intelligence", "tech", "technology", "software",
+        "spacex", "tesla", "apple", "google", "microsoft", "nvidia", "amazon",
+        "meta", "crypto", "bitcoin", "startup", "ipo", "electric vehicle"
+    )
+    if any(k in combined for k in business_tech_keywords) or any(t in topic for t in ("business", "economy", "finance", "market", "technology", "tech")):
+        return "business_tech", "Business or technology indicators detected; matched Template B (Business & Technology News)"
+
+    # Rule 4: Political News (Template A)
+    political_keywords = (
+        "politics", "political", "government", "parliament", "congress", "senate",
+        "election", "vote", "poll", "minister", "prime minister", "president",
+        "bjp", "rahul gandhi", "modi", "biden", "trump", "starmer", "macron",
+        "scholz", "cabinet", "white house", "kremlin", "lok sabha", "rajya sabha",
+        "supreme court", "legislation", "bill passed", "ambassador", "diplomacy",
+        "diplomatic", "sanctions", "treaty", "nato", "united nations"
+    )
+    if any(k in combined for k in political_keywords) or any(t in topic for t in ("politics", "government", "diplomacy", "election")):
+        return "political", "Political or governmental indicators detected; matched Template A (Political News)"
+
+    # Rule 5: Fallback to neutral editorial
+    return "editorial", "Uncertain or general category; matched neutral editorial fallback"
+
+
+def render_approved_format(template_id, article, post, photos=None):
+    """Render the exact approved format (01-06) or editorial template (political, business_tech, breaking_health)."""
+    raw_tid = str(template_id).strip()
+    tid = raw_tid.lower()
+
+    # Map friendly aliases
+    alias_map = {
+        "a": "political",
+        "template_a": "political",
+        "b": "business_tech",
+        "template_b": "business_tech",
+        "c": "breaking_health",
+        "template_c": "breaking_health",
+        "neutral": "editorial",
+    }
+    tid = alias_map.get(tid, tid)
+
+    allowed_ids = list(FORMAT_REGISTRY.keys()) + ["political", "business_tech", "breaking_health", "editorial", "a", "b", "c"]
+    if tid not in allowed_ids and raw_tid.zfill(2) not in FORMAT_REGISTRY:
+        raise ValueError(f"Unrecognized format {template_id}. Must be one of {allowed_ids}")
+
+    if tid == "04":
         stories, roundup_post = load_roundup()
-        photos = [query_commons_image(s) for s in stories]
-        image = draw_template_04(article, roundup_post, stories, photos)
-        return image, roundup_post, photos
+        resolved_photos = photos if photos is not None else [query_commons_image(s) for s in stories]
+        image = draw_template_04(article, roundup_post, stories, resolved_photos)
+        return image, roundup_post, resolved_photos
 
-    if template_id == "06":
+    if tid == "06":
         if article.get("quote_verified") is not True or not article.get("quote_text") or not article.get("speaker"):
             raise ValueError(
                 "Format 06 REFUSAL: Quotation cannot be verified from original source (quote_verified is not True). "
                 "Never present unverified or rewritten quotations inside quotation marks. "
                 "Skip Format 06 and use an appropriate non-quote format instead."
             )
-        photo = query_commons_image(article.get("speaker", ""), require_all_terms=True)
-    else:
-        photo = query_commons_image(article)
-
-    if template_id == "01":
-        image = draw_template_01(article, post, photo)
-    elif template_id == "02":
-        image = draw_template_02(article, post, photo)
-    elif template_id == "03":
-        image = draw_template_03(article, post, photo)
-    elif template_id == "05":
-        image = draw_template_05(article, post, photo)
-    elif template_id == "06":
+        photo = photos if photos is not None else query_commons_image(article.get("speaker", ""), require_all_terms=True)
+        if isinstance(photo, list):
+            photo = photo[0] if photo else None
         image = draw_template_06(article, post, photo)
+        return image, post, [photo]
+
+    # For other templates, query up to 2 genuine relevant photos for collage capability if not provided
+    if photos is None:
+        resolved_photos = query_commons_images(article, max_images=2)
+    elif isinstance(photos, dict):
+        resolved_photos = [photos]
+    else:
+        resolved_photos = list(photos)
+    primary_photo = resolved_photos[0] if resolved_photos else None
+
+    if tid in {"01", "breaking_health"}:
+        image = draw_template_breaking_health(article, post, resolved_photos)
+    elif tid in {"02", "03", "business_tech"}:
+        image = draw_template_business_tech(article, post, resolved_photos)
+    elif tid in {"05", "political"}:
+        image = draw_template_political(article, post, resolved_photos)
+    elif tid == "editorial":
+        image = draw_template_neutral_editorial(article, post, resolved_photos)
     else:
         raise ValueError(f"Unknown NEWS SNAP template: {template_id}")
 
-    return image, post, [photo]
+    return image, post, resolved_photos or [primary_photo]
 
 
 def main():
@@ -1770,26 +2186,24 @@ def main():
     post = json.loads(post_path.read_text(encoding="utf-8"))
     article = json.loads(article_path.read_text(encoding="utf-8"))
 
-    # Determine format using the format registry
+    # Determine template using editorial layout selection
     roundup_exists = Path("roundup.json").is_file() and Path("roundup_post.json").is_file()
-    template_id = os.environ.get("NEWS_SNAP_FORCE_TEMPLATE")
-    if template_id:
-        template_id = template_id.zfill(2)
-        if template_id not in FORMAT_REGISTRY:
-            raise ValueError(f"NEWS_SNAP_FORCE_TEMPLATE must be one of {list(FORMAT_REGISTRY.keys())}")
-        selection_reason = f"Forced via environment variable: Format {template_id} ({FORMAT_REGISTRY[template_id]['name']})"
+    forced = os.environ.get("NEWS_SNAP_FORCE_TEMPLATE")
+    if forced:
+        template_id = forced.strip()
+        selection_reason = f"Forced via environment variable: {template_id}"
     else:
-        template_id, selection_reason = classify_format_for_article(article, roundup_exists)
+        template_id, selection_reason = select_editorial_template(article, roundup_exists)
 
     if template_id == "06" and not (article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker")):
         print("[WARN] Format 06 skipped: quote is not source-verified (quote_verified is not True). Using appropriate non-quote format instead.")
         clean_article = dict(article)
         clean_article.pop("quote_text", None)
         clean_article.pop("quote_verified", None)
-        template_id, selection_reason = classify_format_for_article(clean_article, roundup_exists)
+        template_id, selection_reason = select_editorial_template(clean_article, roundup_exists)
 
-    format_info = FORMAT_REGISTRY[template_id]
-    print(f"Format Selected: Format {template_id} — {format_info['name']}")
+    format_name = FORMAT_REGISTRY.get(template_id, {}).get("name", template_id.upper())
+    print(f"Template Selected: {template_id} — {format_name}")
     print(f"Selection Reason: {selection_reason}")
 
     if template_id == "04":
@@ -1806,6 +2220,7 @@ def main():
 
     image, rendered_post, photo_infos = render_approved_format(template_id, article, post_for_render)
     rendered_post["format"] = template_id
+
     if template_id == "04":
         real_photos = [info for info in photo_infos if info and isinstance(info.get("image"), Image.Image)]
         if real_photos:
@@ -1816,9 +2231,9 @@ def main():
             rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
         Path("roundup_post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
     else:
-        real_photo = photo_infos[0] if (photo_infos and photo_infos[0] and isinstance(photo_infos[0].get("image"), Image.Image)) else None
-        if real_photo:
-            annotate_image_credit(rendered_post, real_photo, caption_path="post.json")
+        valid_photos = [p for p in photo_infos if p and isinstance(p.get("image"), Image.Image)]
+        if valid_photos:
+            annotate_image_credit(rendered_post, valid_photos, caption_path="post.json")
         else:
             rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
     Path("post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -1834,7 +2249,7 @@ def main():
 
     print(f"\nNEWS SNAP post created: {OUTPUT}")
     print(f"Template: {template_id}")
-    print(f"Format Name: {format_info['name']}")
+    print(f"Format Name: {format_name}")
     print(f"Dimensions: {WIDTH}x{HEIGHT}")
     print(f"Source: {source}")
 
