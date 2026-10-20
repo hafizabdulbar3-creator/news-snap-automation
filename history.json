@@ -422,6 +422,15 @@
       "published": true,
       "media_id": "18145411108560847",
       "timestamp": "2026-10-20T09:26:10.565339+00:00"
+    },
+    {
+      "url": "https://theturtleislandnews.com/index.php/2026/10/19/tsawwassen-first-nation-charts-a-bold-path-forward-with-updated-land-use-plan/",
+      "title": "Tsawwassen First Nation charts a bold path forward with updated Land Use Plan - The Turtle Island News",
+      "headline": "Tsawwassen First Nation updates Land Use Plan amid population boom",
+      "domain": "theturtleislandnews.com",
+      "published": true,
+      "media_id": "18023367590712883",
+      "timestamp": "2026-10-20T09:58:12.789241+00:00"
     }
   ],
   "processed": [
@@ -445,17 +454,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Tsawwassen First Nation charts a bold path forward with updated Land Use Plan - The Turtle Island News",
-      "domain": "theturtleislandnews.com",
-      "url": "https://theturtleislandnews.com/index.php/2026/10/19/tsawwassen-first-nation-charts-a-bold-path-forward-with-updated-land-use-plan/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Indigenous Affairs",
-        "reason": "Adoption of an updated strategic land-use plan by a First Nation government."
-      },
-      "classified_at": "2026-10-20T00:06:08.713303+00:00"
-    },
     {
       "title": "A new poll shows what voters are thinking 2 weeks out from Election Day",
       "domain": "wnmufm.org",
