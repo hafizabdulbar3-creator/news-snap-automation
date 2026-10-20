@@ -269,6 +269,15 @@
       "published": true,
       "media_id": "18125778833480405",
       "timestamp": "2026-10-20T01:02:49.607351+00:00"
+    },
+    {
+      "url": "https://www.theguardian.com/australia-news/2026/oct/20/helen-haines-mp-alleged-attack-wangaratta-surgery-ntwnfb",
+      "title": "Car allegedly did U-turn and struck Helen Haines twice, in what some believe was target attack against MP",
+      "headline": "Car allegedly did U-turn and struck MP Helen Haines twice",
+      "domain": "theguardian.com",
+      "published": true,
+      "media_id": "18017674235745405",
+      "timestamp": "2026-10-20T01:33:34.687206+00:00"
     }
   ],
   "processed": [
@@ -409,17 +418,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Car allegedly did U-turn and struck Helen Haines twice, in what some believe was target attack against MP",
-      "domain": "theguardian.com",
-      "url": "https://www.theguardian.com/australia-news/2026/oct/20/helen-haines-mp-alleged-attack-wangaratta-surgery-ntwnfb",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Politics",
-        "reason": "Reports on an alleged targeted vehicular attack against a sitting member of parliament."
-      },
-      "classified_at": "2026-10-20T00:06:08.713243+00:00"
-    },
     {
       "title": "Trump's approval rating slips again, and a deadly incident at a youth soccer game: Weekend Rundown",
       "domain": "nbcnews.com",
