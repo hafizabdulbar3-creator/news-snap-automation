@@ -512,6 +512,15 @@
       "published": true,
       "media_id": "18014702432975783",
       "timestamp": "2026-10-20T14:06:54.345794+00:00"
+    },
+    {
+      "url": "https://apnews.com/article/russia-ukraine-war-trump-sanctions-energy-07e1dfc41bdad7b3292c6c263005fabc",
+      "title": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
+      "headline": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
+      "domain": "apnews.com",
+      "published": true,
+      "media_id": "18114686183011662",
+      "timestamp": "2026-10-20T14:33:04.446697+00:00"
     }
   ],
   "processed": [
@@ -545,17 +554,6 @@
         "reason": "Direct endorsement from a major US political leader in an allied nation's critical national election."
       },
       "classified_at": "2026-10-20T13:07:41.157330+00:00"
-    },
-    {
-      "title": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/russia-ukraine-war-trump-sanctions-energy-07e1dfc41bdad7b3292c6c263005fabc",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Geopolitics & War in Ukraine",
-        "reason": "High-level international diplomacy regarding wartime economic sanctions between the US, Ukraine, and Russia."
-      },
-      "classified_at": "2026-10-20T13:07:41.157345+00:00"
     },
     {
       "title": "Trump touts his power at Kentucky rally to energize voters ahead of midterm elections",
