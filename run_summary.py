@@ -99,11 +99,37 @@ def generate_run_summary(history_path: str = "history.json", discovery_path: str
             except Exception:
                 pass
 
+    # 5. Check for recent safely rejected story
+    recently_rejected = False
+    rejection_reason = ""
+    rejected_title = ""
+    if hist_file.is_file():
+        try:
+            hist_data_full = json.loads(hist_file.read_text(encoding="utf-8"))
+            processed_list = hist_data_full.get("processed", [])
+            if processed_list and isinstance(processed_list, list):
+                last_proc = processed_list[-1]
+                if last_proc.get("rejected") is True:
+                    ts_str = last_proc.get("timestamp")
+                    if ts_str:
+                        try:
+                            entry_ts = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+                            if entry_ts >= recent_cutoff:
+                                recently_rejected = True
+                                rejection_reason = last_proc.get("rejection_reason", "Factual grounding validation refusal")
+                                rejected_title = last_proc.get("title", "")
+                        except Exception:
+                            pass
+        except Exception:
+            pass
+
     # Determine primary run status label
     if confirmed_published:
         run_mode = "LIVE INSTAGRAM PUBLICATION CONFIRMED"
     elif cooldown_active:
         run_mode = "NO-OP: QUOTA COOLDOWN ACTIVE (PUBLICATION SUPPRESSED)"
+    elif recently_rejected:
+        run_mode = "STORY SAFELY REJECTED: FACTUAL GROUNDING SAFEGUARD ENFORCED"
     elif image_generated and not confirmed_published:
         run_mode = "DRY-RUN / PRE-FLIGHT COMPLETED (NO LIVE POST)"
     elif discovered_count == 0 and pool_count == 0:
@@ -124,6 +150,9 @@ def generate_run_summary(history_path: str = "history.json", discovery_path: str
         "confirmed_published": confirmed_published,
         "published_media_id": published_media_id,
         "published_headline": published_headline,
+        "story_rejected": recently_rejected,
+        "rejection_reason": rejection_reason,
+        "rejected_title": rejected_title,
     }
 
     return summary
@@ -147,6 +176,12 @@ def print_run_summary(summary: dict) -> None:
     img_status = f"YES ({summary['image_size_kb']:.1f} KB)" if summary['image_generated'] else "NO"
     print(f"New Image Generated:            {img_status}")
     print(f"GitHub Pages Deployed:          {'YES' if summary['pages_deployed'] else 'NO'}")
+
+    if summary.get("story_rejected"):
+        print(f"Story Rejected (Safeguard):     YES ({summary.get('rejected_title', '')[:50]})")
+        print(f"Rejection Reason:               {summary.get('rejection_reason', '')}")
+    else:
+        print("Story Rejected (Safeguard):     NO")
 
     if summary['confirmed_published']:
         print(f"Instagram Confirmed Published:  YES (Media ID: {summary['published_media_id']})")

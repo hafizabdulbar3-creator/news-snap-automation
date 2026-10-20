@@ -9,6 +9,7 @@ import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
@@ -179,38 +180,80 @@ def extract_numeric_tokens(text: str) -> set[str]:
     return norm
 
 
+# Allegation and unverified claim cues in source headline (whole-word matching)
+ALLEGATION_CUES_PATTERN = re.compile(
+    r"\b(alleged|allegedly|alleges|allegation|allegations|suspected|suspects|accused of|accused|claims|claimed|reportedly|under investigation|under probe)\b",
+    re.IGNORECASE
+)
+
+# Attribution markers required when source contains allegations
+ATTRIBUTION_MARKERS_PATTERN = re.compile(
+    r"\b(alleged|allegedly|claims?|claimed|reportedly|suspected|suspects|accused|may|could|might|probe|probes|investigation|says?|said|stated|states|according to|facing|warns?|warned|reports?|reported)\b",
+    re.IGNORECASE
+)
+
+# Question / inquiry markers indicating preserved questioning or reporting tone
+INQUIRY_MARKERS_PATTERN = re.compile(
+    r"(\?|\b(questions?|questioned|questioning|asks?|asked|scrutiny|scrutinizes|debates?|debated|concerns?|concerned|probes?|probed|probing|inquiry|inquiries|uncertainty|doubts?|explores?|exploring|examines?|examining|what\b.*\bmeans?|how\b.*\baffects?|alleged|allegedly|claims?|claimed|reportedly|says?|said|stated|according to|reports?|reported|may|could|might)\b)",
+    re.IGNORECASE
+)
+
+# Clickbait / sensational terms
+SENSATIONAL_TERMS_PATTERN = re.compile(
+    r"\b(bombshell|shocking truth|mind-blowing|unbelievable|you won't believe|miracle cure|secret plot revealed)\b",
+    re.IGNORECASE
+)
+
+
 def validate_factual_grounding(post: dict, article: dict, source_evidence: str = "") -> None:
     """Ensure generated headline, summary, and caption do not introduce unsupported claims,
-    invented numbers, or convert speculative allegations into established facts.
+    invented numbers, convert speculative allegations into established facts,
+    or convert question headlines into ungrounded affirmative outcomes.
     """
     if not isinstance(post, dict) or not isinstance(article, dict):
         return
 
     headline = str(post.get("headline", "")).strip()
-    caption = str(post.get("caption", "")).strip()
+    # Use body_summary if present, or strip URL lines so URL paths do not falsely satisfy attribution
+    raw_caption = str(post.get("body_summary") or post.get("caption", "")).strip()
+    caption = re.sub(r"(?:Source|Original report):\s*\S+", "", raw_caption, flags=re.IGNORECASE).strip()
     art_title = str(article.get("title", "")).strip()
 
-    # 1. Speculation / Allegation Safeguard
-    uncertainty_cues = (
-        "?", "alleged", "allegedly", "alleges", "allegation", "allegations", "suspected", "may face",
-        "could face", "might face", "claims", "reportedly", "investigating",
-        "under probe", "accused of"
-    )
-    title_has_uncertainty = any(cue in art_title.lower() for cue in uncertainty_cues)
-    if title_has_uncertainty:
-        attribution_markers = (
-            "alleged", "allegedly", "claims", "reportedly", "suspected", "may",
-            "could", "probe", "investigation", "says", "stated", "accused",
-            "according to", "facing", "under", "warns", "reports"
-        )
-        headline_lower = headline.lower()
-        if not any(marker in headline_lower or marker in caption.lower() for marker in attribution_markers):
+    # 1. Genuine Allegations / Accusations Safeguard (Requires explicit attribution)
+    if ALLEGATION_CUES_PATTERN.search(art_title):
+        if not (ATTRIBUTION_MARKERS_PATTERN.search(headline) or ATTRIBUTION_MARKERS_PATTERN.search(caption)):
             raise ValueError(
-                f"FACTUAL GROUNDING REFUSAL: Source title contains uncertainty/allegation ('{art_title}'), "
+                f"FACTUAL GROUNDING REFUSAL: Source title contains unverified allegation ('{art_title}'), "
                 f"but generated post converts it to an established fact without attribution."
             )
 
-    # 2. Number / Quantity Grounding
+    # 2. Question / Inquiry Headline Safeguard
+    # When source title is a question/explainer containing '?', it is NOT an allegation,
+    # but the generated post must not convert an open question into an unverified affirmative outcome.
+    if "?" in art_title:
+        if not (INQUIRY_MARKERS_PATTERN.search(headline) or INQUIRY_MARKERS_PATTERN.search(caption)):
+            raise ValueError(
+                f"FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('{art_title}'), "
+                f"but generated post converts it to a definitive established outcome without inquiry or attribution."
+            )
+
+        # When the title specifically reports people/entities questioning an issue (e.g. 'Senators question Carney government'),
+        # preserve who raised the question; do not erase the questioning entity or turn it into an established outcome.
+        questioning_match = re.search(
+            r"\b([A-Za-z]+)\s+(?:question|questions|questioned|questioning|ask|asks|asked|probe|probes|scrutinize|scrutinizes)\b",
+            art_title,
+            re.IGNORECASE
+        )
+        if questioning_match:
+            questioning_entity = questioning_match.group(1).lower()
+            combined_post = f"{headline} {caption}".lower()
+            if questioning_entity not in combined_post and not INQUIRY_MARKERS_PATTERN.search(headline):
+                raise ValueError(
+                    f"FACTUAL GROUNDING REFUSAL: Source title reports questioning by '{questioning_match.group(1)}' ('{art_title}'), "
+                    f"but generated post does not preserve the questioning entity or inquiry."
+                )
+
+    # 3. Number / Quantity Grounding
     headline_nums = extract_numeric_tokens(headline)
     source_nums = extract_numeric_tokens(f"{art_title} {source_evidence}")
     unsupported_nums = [n for n in headline_nums if n not in source_nums]
@@ -220,12 +263,8 @@ def validate_factual_grounding(post: dict, article: dict, source_evidence: str =
             f"not substantiated in source headline or retrieved evidence."
         )
 
-    # 3. Sensational Clickbait Fabrication Check
-    sensational_terms = (
-        "bombshell", "shocking truth", "mind-blowing", "unbelievable",
-        "you won't believe", "miracle cure", "secret plot revealed"
-    )
-    if any(s in headline.lower() for s in sensational_terms):
+    # 4. Sensational Clickbait Fabrication Check
+    if SENSATIONAL_TERMS_PATTERN.search(headline):
         raise ValueError("FACTUAL GROUNDING REFUSAL: Headline contains sensationalized clickbait fabrication.")
 
 
@@ -492,6 +531,67 @@ def call_gemini_api(payload: dict, api_key: str, model_name: str = MODEL, max_at
     raise RuntimeError(f"Gemini API failed after {max_attempts} attempts. Last error: {sanitize_gemini_error(last_error)}")
 
 
+def emit_post_ready(ready: bool) -> None:
+    """Emit post_ready output variable to GITHUB_OUTPUT if present."""
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        try:
+            with open(github_output, "a", encoding="utf-8") as f:
+                val = "true" if ready else "false"
+                f.write(f"post_ready={val}\n")
+        except Exception as e:
+            print(f"[WARN] Could not write post_ready to GITHUB_OUTPUT: {e}")
+
+
+def record_rejected_story(article: dict, reason: str, history_path: Path | str | None = None) -> None:
+    """Record a rejected story in history.json under 'processed' and remove it from 'classified_pool'.
+
+    Prevents the scheduler from picking the same failing article in an infinite retry loop.
+    """
+    hpath = Path(history_path or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json"))
+    history = {"posted": [], "processed": [], "classified_pool": []}
+    if hpath.is_file():
+        try:
+            history = json.loads(hpath.read_text(encoding="utf-8"))
+        except Exception:
+            history = {"posted": [], "processed": [], "classified_pool": []}
+
+    if "processed" not in history or not isinstance(history["processed"], list):
+        history["processed"] = []
+
+    timestamp = datetime.now(timezone.utc).isoformat()
+    entry = {
+        "url": str(article.get("url", "")).strip(),
+        "title": str(article.get("title", "")).strip(),
+        "domain": str(article.get("domain", "")).strip(),
+        "timestamp": timestamp,
+        "published": False,
+        "rejected": True,
+        "rejection_reason": str(reason),
+    }
+    history["processed"].append(entry)
+
+    try:
+        from instagram_publisher import prune_processed_entries, DRY_RUN_RETENTION_HOURS, MAX_HISTORY_ENTRIES
+        history["processed"] = prune_processed_entries(
+            history["processed"],
+            max_age_hours=DRY_RUN_RETENTION_HOURS,
+            max_entries=MAX_HISTORY_ENTRIES
+        )
+    except Exception:
+        history["processed"] = history["processed"][-200:]
+
+    hpath.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[REJECTION] Recorded rejected article in {hpath} under 'processed' (Reason: {reason})")
+
+    # Remove candidate from classified_pool
+    try:
+        from quota_manager import remove_from_classified_pool
+        remove_from_classified_pool(article.get("url"), article.get("title"), hpath)
+    except Exception as e:
+        print(f"[WARN] Could not remove rejected article from classified pool: {e}")
+
+
 def generate_post(article: dict) -> dict:
     source = str(article.get("domain", "")).strip()
     url = str(article.get("url", "")).strip()
@@ -548,7 +648,21 @@ def generate_post(article: dict) -> dict:
     try:
         post_data = generate_post_content_ai(article, source_evidence=source_summary)
         is_mock = is_mock_fixture_article(article)
-        return validate_post(post_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
+        try:
+            return validate_post(post_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
+        except ValueError as val_err:
+            val_msg = str(val_err)
+            print(f"[FACTUAL GROUNDING WARNING] Initial generation failed validation: {val_msg}")
+            print("[RETRY] Attempting exactly ONE corrective AI post generation retry with feedback...")
+            retry_data = generate_post_content_ai(
+                article,
+                source_evidence=source_summary,
+                validation_feedback=val_msg
+            )
+            return validate_post(retry_data, source, url, is_mock=is_mock, article=article, source_evidence=source_summary)
+    except ValueError as val_err:
+        print(f"[FACTUAL GROUNDING REFUSAL] Post failed validation after corrective retry: {val_err}")
+        raise val_err
     except Exception as e:
         sanitized = sanitize_ai_error(e)
         if is_prod:
@@ -571,6 +685,7 @@ def main():
     article_path = Path("selected_article.json")
     if not article_path.is_file():
         print("[INFO] No selected_article.json found. Skipping post generation to preserve Gemini API quota.")
+        emit_post_ready(False)
         return
 
     try:
@@ -580,11 +695,18 @@ def main():
 
     if not article or not article.get("title"):
         print("[INFO] selected_article.json is empty or invalid. Skipping post generation.")
+        emit_post_ready(False)
         return
 
     print("Generating NEWS SNAP content...")
     try:
         post = generate_post(article)
+    except ValueError as val_err:
+        reason = str(val_err)
+        print(f"[REJECTION] Article safely rejected after validation retry: {reason}", file=sys.stderr)
+        record_rejected_story(article, reason=reason)
+        emit_post_ready(False)
+        sys.exit(0)
     except Exception as e:
         if post_path.is_file():
             try:
@@ -592,6 +714,7 @@ def main():
             except OSError:
                 pass
         print(f"[FATAL ERROR] Post generation failed: {e}", file=sys.stderr)
+        emit_post_ready(False)
         sys.exit(1)
 
     if is_production_mode() and post.get("is_synthetic") is True:
@@ -601,10 +724,13 @@ def main():
             except OSError:
                 pass
         print("[FATAL ERROR] Production safeguard refusal: Generated post is marked synthetic.", file=sys.stderr)
+        emit_post_ready(False)
         sys.exit(1)
 
     with open(post_path, "w", encoding="utf-8") as file:
         json.dump(post, file, ensure_ascii=False, indent=2)
+
+    emit_post_ready(True)
 
     print("\nContent validation passed successfully:")
     print("Headline:", post["headline"])

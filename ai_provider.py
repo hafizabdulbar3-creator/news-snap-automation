@@ -683,7 +683,24 @@ Articles to classify:
     raise RuntimeError(f"All available AI providers failed. Last error: {sanitize_ai_error(last_error)}")
 
 
-def generate_post_content_ai(article: dict, source_evidence: str = "", history_path: Path | str | None = None) -> dict:
+POST_GENERATION_SYSTEM_PROMPT = (
+    "You are the senior editor for NEWS SNAP. "
+    "Your job is to transform this news report into a high-impact, 100% accurate, professional NEWS SNAP Instagram post. "
+    "Strict journalistic accuracy is paramount: "
+    "1. Never fabricate facts, outcomes, or statistics. "
+    "2. If the source headline contains a question (e.g. 'What does X mean for Y?'), do NOT fabricate an answer or conclude an unverified outcome. Preserve the inquiry or explanatory framing. "
+    "3. If the headline reports people or organizations questioning, scrutinizing, or challenging an issue (e.g. 'Senators question Carney government'), preserve who raised the question and attribute the questioning to that entity. "
+    "4. When reporting unverified allegations, suspicions, or ongoing probes, always maintain clear attribution (e.g. 'claims', 'alleged', 'reports', 'according to'). "
+    "Return ONLY a valid JSON object matching the requested schema."
+)
+
+
+def generate_post_content_ai(
+    article: dict,
+    source_evidence: str = "",
+    history_path: Path | str | None = None,
+    validation_feedback: str = ""
+) -> dict:
     """Generate headline, curiosity line, caption and hashtags using the active AI provider with automatic failover."""
     hpath = Path(history_path or os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json"))
     available = get_available_providers(hpath)
@@ -710,23 +727,30 @@ def generate_post_content_ai(article: dict, source_evidence: str = "", history_p
     if source_evidence:
         context_clause = f"\nVerified source context/excerpt:\n\"\"\"{source_evidence[:1500]}\"\"\"\n"
 
-    system_prompt = (
-        "You are the senior editor for NEWS SNAP. "
-        "Your job is to transform this news report into a high-impact, 100% accurate, professional NEWS SNAP Instagram post. "
-        "Return ONLY a valid JSON object matching the requested schema."
-    )
+    feedback_clause = ""
+    if validation_feedback:
+        feedback_clause = (
+            f"\nCORRECTIVE RETRY REQUIRED:\n"
+            f"Your previous generation failed factual grounding validation with error:\n"
+            f"\"{validation_feedback}\"\n"
+            f"Fix this immediately. Adhere strictly to the source headline and context. "
+            f"Do NOT make ungrounded claims, do NOT invent answers to questions, and ensure proper attribution.\n"
+        )
+
+    system_prompt = POST_GENERATION_SYSTEM_PROMPT
 
     user_prompt = f"""Source article:
 Headline: "{title}"
 Source publication: {source}
 Original URL: {url}
-{context_clause}
+{context_clause}{feedback_clause}
 STRICT REQUIREMENTS:
 1. Headline: 4–14 words. Punchy, clear, journalistic, factual. NEVER cut off mid-thought.
 2. Curiosity line: 3–10 words. Summarizes significance or impact.
 3. Caption: 20–80 words. Strictly factual summary of the news. Do NOT extrapolate or hallucinate facts.
-4. Hashtags: 3–6 hashtags, must include "#NewsSnap".
-5. Language: Natural, publication-ready English.
+4. Question / inquiry handling: If the source headline is a question (contains '?') or reports entities questioning an issue (e.g., 'Senators question ...'), preserve who raised the question and do NOT invent an affirmative answer or definitive outcome.
+5. Hashtags: 3–6 hashtags, must include "#NewsSnap".
+6. Language: Natural, publication-ready English.
 
 Return ONLY a valid JSON object with these exact keys:
 {{

@@ -5342,6 +5342,323 @@ class MultiFeedDiscoveryTests(unittest.TestCase):
         self.assertIn("livemint.com", config_data["high_trust_domains"])
 
 
+class TestFactualGroundingAndSafeRejection(unittest.TestCase):
+    """Regression tests for question-headline factual grounding, corrective retry, and safe rejection."""
+
+    def setUp(self):
+        self.temp_dir = tempfile.mkdtemp()
+        self.orig_cwd = os.getcwd()
+        os.chdir(self.temp_dir)
+        self.history_path = Path("history.json")
+        self.history_path.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [],
+            "quota_cooldown": {"active": False}
+        }), encoding="utf-8")
+        os.environ["NEWS_SNAP_HISTORY_PATH"] = str(self.history_path)
+
+    def tearDown(self):
+        os.chdir(self.orig_cwd)
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
+        os.environ.pop("NEWS_SNAP_HISTORY_PATH", None)
+        os.environ.pop("GITHUB_OUTPUT", None)
+
+    def test_01_bill_c39_question_with_senators_passes_validation(self):
+        """1. Bill C-39 question headline with questioning senators passes factual grounding."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/index.php/2026/10/19/what-does-bill-c-39-mean-for-first-nations-senators-question-carney-government/",
+            "source_description": "Senators in Ottawa pressed the Carney government on the potential impact of Bill C-39."
+        }
+        post = {
+            "headline": "Senators Question Carney Government on Bill C-39",
+            "curiosity_line": "First Nations impact debated",
+            "caption": "Canadian senators have questioned the Carney government regarding the potential impacts of Bill C-39 on First Nations communities across the country. #NewsSnap #Canada #Politics",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+        validated = post_generator.validate_post(
+            post,
+            source=article["domain"],
+            url=article["url"],
+            article=article,
+            source_evidence=article["source_description"]
+        )
+        self.assertEqual(validated["headline"], "Senators Question Carney Government on Bill C-39")
+        self.assertIn("#NewsSnap", validated["caption"])
+
+    def test_02_question_headline_preserving_inquiry_passes_validation(self):
+        """2. Title with question mark where post correctly preserves inquiry passes validation."""
+        article = {
+            "title": "Will Global Central Banks Cut Rates This Quarter?",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/rates",
+            "source_description": "Economists discuss potential monetary policy decisions ahead of quarterly meetings."
+        }
+        post = {
+            "headline": "Global Central Banks Face Rate Cut Questions",
+            "curiosity_line": "Quarterly monetary policy preview",
+            "caption": "Financial institutions and central banks face mounting questions over whether benchmark interest rates will be cut this quarter amid shifting economic data. #NewsSnap #WorldNews #Economy",
+            "hashtags": ["#NewsSnap", "#WorldNews", "#Economy"]
+        }
+        validated = post_generator.validate_post(
+            post,
+            source=article["domain"],
+            url=article["url"],
+            article=article,
+            source_evidence=article["source_description"]
+        )
+        self.assertEqual(validated["headline"], "Global Central Banks Face Rate Cut Questions")
+
+    def test_03_question_headline_converted_to_unsupported_outcome_fails(self):
+        """3. Post that converts a question headline into an unsupported definitive outcome fails validation."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/bill-c39",
+            "source_description": "Debate continues regarding the scope and timeline of the bill."
+        }
+        # Post asserts an ungrounded definitive outcome without preserving inquiry or attribution
+        post = {
+            "headline": "Bill C-39 Strips All First Nations Land Rights",
+            "curiosity_line": "Sweeping legal overhaul",
+            "caption": "The Carney government has officially eliminated First Nations treaty land rights through newly enacted provisions under Bill C-39 today without dispute. #NewsSnap #Canada",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post,
+                source=article["domain"],
+                url=article["url"],
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("factual grounding refusal", str(ctx.exception).lower())
+
+    def test_04_genuine_allegations_without_attribution_fail(self):
+        """4. Genuine allegations (containing alleged, accused) without attribution fail validation."""
+        article = {
+            "title": "Former Defense Official Accused of Misappropriating Funds",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/defense-probe",
+            "source_description": "Investigators released an inquiry into procurement spending."
+        }
+        # Post drops allegation and states guilt as settled fact
+        post = {
+            "headline": "Former Defense Official Stole Millions in Procurement Funds",
+            "curiosity_line": "Federal investigation conclusion",
+            "caption": "The former defense official stole millions of dollars from government defense contracts following internal audit discoveries finalized earlier this week. #NewsSnap #Defense",
+            "hashtags": ["#NewsSnap", "#Defense", "#WorldNews"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post,
+                source=article["domain"],
+                url=article["url"],
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("allegation", str(ctx.exception).lower())
+
+    def test_05_unsupported_numbers_in_headline_fail(self):
+        """5. Unsupported numbers in headline fail factual grounding validation."""
+        article = {
+            "title": "European Union Reaches Agreement on New Tech Regulations",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/eu-tech",
+            "source_description": "Ministers agreed on digital market rules."
+        }
+        post = {
+            "headline": "EU Slaps $95 Billion Penalty on Global Tech Giants",
+            "curiosity_line": "Record regulatory fine",
+            "caption": "European Union officials approved digital regulations today that impose unprecedented requirements on major technology firms operating in the bloc. #NewsSnap #Tech",
+            "hashtags": ["#NewsSnap", "#Tech", "#WorldNews"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post,
+                source=article["domain"],
+                url=article["url"],
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("unsupported number", str(ctx.exception).lower())
+
+    def test_06_sensational_clickbait_fails(self):
+        """6. Sensational fabricated clickbait fails validation."""
+        article = {
+            "title": "Parliament Concludes Annual Fiscal Policy Session",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/parliament",
+            "source_description": "Lawmakers reviewed fiscal policy provisions."
+        }
+        post = {
+            "headline": "Shocking Truth Behind Parliament Closed Door Meeting",
+            "curiosity_line": "Key details from the new report",
+            "caption": "Lawmakers completed their review of annual fiscal legislation following intensive parliamentary committee debates across key departments this morning. #NewsSnap #Politics",
+            "hashtags": ["#NewsSnap", "#Politics", "#WorldNews"]
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.validate_post(
+                post,
+                source=article["domain"],
+                url=article["url"],
+                article=article,
+                source_evidence=article["source_description"]
+            )
+        self.assertIn("clickbait", str(ctx.exception).lower())
+
+    def test_07_first_attempt_failure_triggers_one_corrective_retry(self):
+        """7. First generation failure triggers exactly one corrective retry passing feedback."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/c39",
+            "source_description": "Debate in parliament."
+        }
+        invalid_post = {
+            "headline": "Bill C-39 Strips First Nations Funding by $50M",
+            "curiosity_line": "Key details on the new budget",
+            "caption": "The Carney government has stripped funding under the newly debated legislative provisions according to officials in Ottawa today. #NewsSnap #Canada",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+        valid_post = {
+            "headline": "Senators Question Carney Government on Bill C-39",
+            "curiosity_line": "First Nations impact debated",
+            "caption": "Senators pressed government officials on the implications of Bill C-39 for First Nations communities during parliamentary discussions in Ottawa. #NewsSnap #Canada #Politics",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+
+        call_count = 0
+        feedbacks = []
+
+        def mock_generate(art, source_evidence="", history_path=None, validation_feedback=""):
+            nonlocal call_count
+            call_count += 1
+            feedbacks.append(validation_feedback)
+            if call_count == 1:
+                return invalid_post
+            return valid_post
+
+        with unittest.mock.patch("ai_provider.get_active_provider", return_value="gemini"), \
+             unittest.mock.patch("ai_provider.generate_post_content_ai", side_effect=mock_generate), \
+             unittest.mock.patch.dict(os.environ, {"GEMINI_API_KEY": "test_key"}):
+            post = post_generator.generate_post(article)
+            self.assertEqual(call_count, 2, "Must trigger exactly one retry (2 calls total)")
+            self.assertEqual(feedbacks[0], "", "Initial attempt has no feedback")
+            self.assertIn("FACTUAL GROUNDING REFUSAL", feedbacks[1], "Retry must receive failure reason")
+            self.assertEqual(post["headline"], "Senators Question Carney Government on Bill C-39")
+
+    def test_08_double_validation_failure_safely_rejects_story(self):
+        """8. Double validation failure safely rejects story, records in history, removes from pool, emits post_ready=false, and exits 0."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/c39-failure-case",
+            "source_description": "Debate in parliament."
+        }
+        # Populate history with candidate in classified_pool
+        self.history_path.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [article],
+            "quota_cooldown": {"active": False}
+        }), encoding="utf-8")
+
+        # Write selected_article.json
+        Path("selected_article.json").write_text(json.dumps(article), encoding="utf-8")
+
+        # Persistent invalid post (unsupported numbers & outcome)
+        invalid_post = {
+            "headline": "Bill C-39 Strips All First Nations Rights Under $90B Plan",
+            "curiosity_line": "Key details on the new plan",
+            "caption": "The Carney government passed sweeping unilateral changes eliminating First Nations rights completely today without parliamentary approval during high level legislative sessions in Ottawa. #NewsSnap #Canada",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+
+        github_output_file = Path("github_output.txt")
+        with unittest.mock.patch("ai_provider.get_active_provider", return_value="gemini"), \
+             unittest.mock.patch("ai_provider.generate_post_content_ai", return_value=invalid_post), \
+             unittest.mock.patch.dict(os.environ, {
+                 "GEMINI_API_KEY": "test_key",
+                 "GITHUB_OUTPUT": str(github_output_file),
+                 "NEWS_SNAP_HISTORY_PATH": str(self.history_path)
+             }):
+            with self.assertRaises(SystemExit) as cm:
+                post_generator.main()
+            self.assertEqual(cm.exception.code, 0, "Double validation failure must exit cleanly with code 0")
+
+        # Verify history.json updated
+        hist = json.loads(self.history_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(hist["processed"]), 1, "Rejected story must be recorded in processed list")
+        proc_entry = hist["processed"][0]
+        self.assertEqual(proc_entry["url"], article["url"])
+        self.assertTrue(proc_entry.get("rejected"), "Must be marked rejected: True")
+        self.assertIn("FACTUAL GROUNDING REFUSAL", proc_entry.get("rejection_reason", ""))
+        self.assertEqual(len(hist["classified_pool"]), 0, "Rejected story must be removed from classified_pool")
+
+        # Verify post.json was not created
+        self.assertFalse(Path("post.json").is_file(), "post.json must not exist after rejection")
+
+        # Verify GITHUB_OUTPUT has post_ready=false
+        output_content = github_output_file.read_text(encoding="utf-8")
+        self.assertIn("post_ready=false", output_content)
+
+        # Verify run_summary reports the rejection
+        summary = run_summary.generate_run_summary(history_path=str(self.history_path))
+        self.assertEqual(summary["run_mode"], "STORY SAFELY REJECTED: FACTUAL GROUNDING SAFEGUARD ENFORCED")
+        self.assertTrue(summary["story_rejected"])
+
+    def test_09_successful_retry_produces_valid_post_and_emits_ready(self):
+        """9. Successful retry produces valid post.json, emits post_ready=true, and exits 0."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/c39-success-case",
+            "source_description": "Debate in parliament."
+        }
+        Path("selected_article.json").write_text(json.dumps(article), encoding="utf-8")
+
+        invalid_post = {
+            "headline": "Bill C-39 Ends All First Nations Funding in Canada",
+            "curiosity_line": "Key details on the new policy",
+            "caption": "The Carney government completely eliminated First Nations funding across all provinces today without dispute. #NewsSnap #Canada",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+        valid_post = {
+            "headline": "Senators Question Carney Government on Bill C-39",
+            "curiosity_line": "First Nations impact debated",
+            "caption": "Canadian senators questioned the Carney government regarding how Bill C-39 will affect First Nations rights and services across Canada. #NewsSnap #Canada #Politics",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+
+        call_count = 0
+        def mock_generate(art, source_evidence="", history_path=None, validation_feedback=""):
+            nonlocal call_count
+            call_count += 1
+            if call_count == 1:
+                return invalid_post
+            return valid_post
+
+        github_output_file = Path("github_output.txt")
+        with unittest.mock.patch("ai_provider.get_active_provider", return_value="gemini"), \
+             unittest.mock.patch("ai_provider.generate_post_content_ai", side_effect=mock_generate), \
+             unittest.mock.patch.dict(os.environ, {
+                 "GEMINI_API_KEY": "test_key",
+                 "GITHUB_OUTPUT": str(github_output_file),
+                 "NEWS_SNAP_HISTORY_PATH": str(self.history_path)
+             }):
+            post_generator.main()
+
+        self.assertTrue(Path("post.json").is_file(), "post.json must be created")
+        saved_post = json.loads(Path("post.json").read_text(encoding="utf-8"))
+        self.assertEqual(saved_post["headline"], "Senators Question Carney Government on Bill C-39")
+
+        output_content = github_output_file.read_text(encoding="utf-8")
+        self.assertIn("post_ready=true", output_content)
+
+
 if __name__ == "__main__":
     unittest.main()
 
