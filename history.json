@@ -332,6 +332,15 @@
       "published": true,
       "media_id": "18120104827972352",
       "timestamp": "2026-10-20T04:14:24.542467+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/science/environment/marine-life-declined-gulf-mexico-bp-oil-spill-deepwater-horizon-study-rcna604457",
+      "title": "Marine life dramatically declined in Gulf of Mexico in years after BP oil spill, study finds",
+      "headline": "Marine life declined 60% in Gulf after BP oil spill, study finds",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "18113714221843469",
+      "timestamp": "2026-10-20T04:45:31.524345+00:00"
     }
   ],
   "processed": [
@@ -472,17 +481,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Marine life dramatically declined in Gulf of Mexico in years after BP oil spill, study finds",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/science/environment/marine-life-declined-gulf-mexico-bp-oil-spill-deepwater-horizon-study-rcna604457",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "Scientific study highlighting the long-term ecological consequences of a major environmental disaster."
-      },
-      "classified_at": "2026-10-20T00:06:08.713258+00:00"
-    },
     {
       "title": "How the midterms will shape 2028 and beyond: From the Politics Desk",
       "domain": "nbcnews.com",
