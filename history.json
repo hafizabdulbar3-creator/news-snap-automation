@@ -507,15 +507,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.foxnews.com/politics/trump-tries-different-approach-russia-bring-americans-relief-amid-ongoing-war-ukraine",
-      "title": "Trump tries different approach with Russia to bring Americans relief amid ongoing war with Ukraine",
-      "headline": "Trump tries different approach with Russia to bring Americans relief amid ongoing war",
-      "domain": "foxnews.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-18T13:31:51.526666+00:00"
-    },
-    {
       "url": "https://www.ketv.com/article/trump-womens-health-executive-order-task-force-nih/74184386",
       "title": "President Trump signs executive order aimed at improving women's health. How could it impact you?",
       "domain": "ketv.com",
@@ -523,6 +514,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('President Trump signs executive order aimed at improving women's health. How could it impact you?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://apnews.com/article/china-economy-71354a055a412ef13e4e2edad070b4a5",
+      "title": "China's economy accelerated in the July-September quarter on robust exports",
+      "domain": "apnews.com",
+      "timestamp": "2026-10-20T14:01:54.564617+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 15."
     }
   ],
   "classified_pool": [
@@ -536,17 +536,6 @@
         "reason": "Direct endorsement from a major US political leader in an allied nation's critical national election."
       },
       "classified_at": "2026-10-20T13:07:41.157330+00:00"
-    },
-    {
-      "title": "China's economy accelerated in the July-September quarter on robust exports",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/china-economy-71354a055a412ef13e4e2edad070b4a5",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Global Economy",
-        "reason": "Key quarterly growth figures for the world's second-largest economy, directly affecting global trade."
-      },
-      "classified_at": "2026-10-20T13:07:41.157336+00:00"
     },
     {
       "title": "Japan to launch spacecraft on a mission to get samples from a Martian moon",
