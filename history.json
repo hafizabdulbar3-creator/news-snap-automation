@@ -377,6 +377,15 @@
       "published": true,
       "media_id": "17990072919067838",
       "timestamp": "2026-10-20T06:29:43.671564+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/news/us-news/mahmoud-khalil-supreme-court-judges-reverse-immigration-detentions-rcna604475",
+      "title": "Mahmoud Khalil asks Supreme Court to let U.S. judges quickly reverse immigration detentions",
+      "headline": "Supreme Court to Review Immigration Detentions of Mahmoud Khalil",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "18110249306185256",
+      "timestamp": "2026-10-20T06:56:08.302537+00:00"
     }
   ],
   "processed": [
@@ -517,17 +526,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mahmoud Khalil asks Supreme Court to let U.S. judges quickly reverse immigration detentions",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/news/us-news/mahmoud-khalil-supreme-court-judges-reverse-immigration-detentions-rcna604475",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal Affairs",
-        "reason": "A significant legal appeal to the U.S. Supreme Court regarding judicial oversight of immigration detentions."
-      },
-      "classified_at": "2026-10-20T00:06:08.713278+00:00"
-    },
     {
       "title": "A blue-collar bellwether weighs ousting longtime GOP Sen. Susan Collins in Maine",
       "domain": "nbcnews.com",
