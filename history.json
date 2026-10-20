@@ -467,6 +467,15 @@
       "published": true,
       "media_id": "17908405461570191",
       "timestamp": "2026-10-20T11:47:06.807223+00:00"
+    },
+    {
+      "url": "https://theturtleislandnews.com/index.php/2026/10/19/ndp-mla-brooks-arcand-paul-warns-against-promises-of-better-treaties-through-alberta-separation/",
+      "title": "NDP MLA Brooks Arcand-Paul warns against promises of better treaties through Alberta separation - The Turtle Island News",
+      "headline": "NDP MLA warns Alberta separation won't improve treaty negotiations",
+      "domain": "theturtleislandnews.com",
+      "published": true,
+      "media_id": "18154707046567337",
+      "timestamp": "2026-10-20T12:12:43.294607+00:00"
     }
   ],
   "processed": [
@@ -490,17 +499,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "NDP MLA Brooks Arcand-Paul warns against promises of better treaties through Alberta separation - The Turtle Island News",
-      "domain": "theturtleislandnews.com",
-      "url": "https://theturtleislandnews.com/index.php/2026/10/19/ndp-mla-brooks-arcand-paul-warns-against-promises-of-better-treaties-through-alberta-separation/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Provincial political discussion on treaty obligations and proposed regional separation."
-      },
-      "classified_at": "2026-10-20T00:06:08.713324+00:00"
-    },
     {
       "title": "Immigration enforcement in New York among key campaign issues ahead of midterm elections",
       "domain": "wamc.org",
