@@ -359,6 +359,15 @@
       "published": true,
       "media_id": "18043321379684918",
       "timestamp": "2026-10-20T05:37:33.472246+00:00"
+    },
+    {
+      "url": "https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html",
+      "title": "India's finance minister says market liquidity makes it easier for investors to exit",
+      "headline": "India's Finance Minister Cites Market Liquidity as Key for Investor Exits",
+      "domain": "cnbc.com",
+      "published": true,
+      "media_id": "18110663570184552",
+      "timestamp": "2026-10-20T06:03:38.436089+00:00"
     }
   ],
   "processed": [
@@ -499,17 +508,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India's finance minister says market liquidity makes it easier for investors to exit",
-      "domain": "cnbc.com",
-      "url": "https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "Statements by a national finance minister concerning domestic capital market liquidity and investor conditions."
-      },
-      "classified_at": "2026-10-20T00:06:08.713271+00:00"
-    },
     {
       "title": "Texas Democratic candidate for governor sues to review emails between Elon Musk and Greg Abbott",
       "domain": "nbcnews.com",
