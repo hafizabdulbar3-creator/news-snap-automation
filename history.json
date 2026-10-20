@@ -287,6 +287,15 @@
       "published": true,
       "media_id": "18023495105719218",
       "timestamp": "2026-10-20T01:59:34.640060+00:00"
+    },
+    {
+      "url": "https://www.dw.com/en/france-partial-curfews-issued-in-paris-nice-after-unrest/live-79707186",
+      "title": "France: Partial curfews issued in Paris, Nice after unrest",
+      "headline": "France: Partial curfews issued in Paris, Nice after unrest",
+      "domain": "dw.com",
+      "published": true,
+      "media_id": "18118467274950504",
+      "timestamp": "2026-10-20T02:25:47.149461+00:00"
     }
   ],
   "processed": [
@@ -459,17 +468,6 @@
         "reason": "Scientific study highlighting the long-term ecological consequences of a major environmental disaster."
       },
       "classified_at": "2026-10-20T00:06:08.713258+00:00"
-    },
-    {
-      "title": "France: Partial curfews issued in Paris, Nice after unrest",
-      "domain": "dw.com",
-      "url": "https://www.dw.com/en/france-partial-curfews-issued-in-paris-nice-after-unrest/live-79707186",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Widespread civil unrest leading to the imposition of curfews in major French cities."
-      },
-      "classified_at": "2026-10-20T00:06:08.713261+00:00"
     },
     {
       "title": "How the midterms will shape 2028 and beyond: From the Politics Desk",
