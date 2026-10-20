@@ -5658,6 +5658,88 @@ class TestFactualGroundingAndSafeRejection(unittest.TestCase):
         output_content = github_output_file.read_text(encoding="utf-8")
         self.assertIn("post_ready=true", output_content)
 
+    def test_10_instagram_publisher_validates_bill_c39_question_post(self):
+        """10. Regression test: instagram_publisher validate_image_and_post accepts Bill C-39 inquiry post."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/index.php/2026/10/19/what-does-bill-c-39-mean-for-first-nations-senators-question-carney-government/",
+            "source_description": "Senators in Ottawa pressed the Carney government on the potential impact of Bill C-39."
+        }
+        post = {
+            "headline": "Senators Question Carney Government on Bill C-39",
+            "curiosity_line": "First Nations impact debated",
+            "caption": "Canadian senators have questioned the Carney government regarding the potential impacts of Bill C-39 on First Nations communities across the country. #NewsSnap #Canada #Politics\n\nSource: theturtleislandnews.com\nOriginal report: https://theturtleislandnews.com/c39\n\n#NewsSnap #Canada #Politics",
+            "body_summary": "Canadian senators have questioned the Carney government regarding the potential impacts of Bill C-39 on First Nations communities across the country. #NewsSnap #Canada #Politics",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+        Path("post.json").write_text(json.dumps(post), encoding="utf-8")
+        img = Image.new("RGB", (1080, 1350), (15, 25, 45))
+        d = ImageDraw.Draw(img)
+        d.text((50, 50), "NEWS SNAP TEST", fill=(255, 255, 255))
+        img.save("news_snap_post.jpg", format="JPEG", quality=95)
+
+        # Must not raise ValueError
+        validated_post, validated_caption = instagram_publisher.validate_image_and_post(article=article)
+        self.assertEqual(validated_post["headline"], "Senators Question Carney Government on Bill C-39")
+        self.assertIn("#NewsSnap", validated_caption)
+
+    def test_11_instagram_publisher_rejects_unattributed_allegation_and_records_history(self):
+        """11. Regression test: instagram_publisher fails closed on unverified allegation and records rejected history."""
+        article = {
+            "title": "Former Defense Official Accused of Misappropriating Funds",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/defense-probe-case",
+            "source_description": "Inquiry into defense contracts."
+        }
+        # Post drops attribution and declares guilt
+        post = {
+            "headline": "Former Defense Official Stole Millions in Procurement Funds",
+            "curiosity_line": "Federal investigation conclusion",
+            "caption": "The former defense official stole millions of dollars from government defense contracts following internal audit discoveries finalized earlier this week in Washington. #NewsSnap #Defense",
+            "hashtags": ["#NewsSnap", "#Defense", "#WorldNews"]
+        }
+        Path("post.json").write_text(json.dumps(post), encoding="utf-8")
+        Path("selected_article.json").write_text(json.dumps(article), encoding="utf-8")
+        img = Image.new("RGB", (1080, 1350), (15, 25, 45))
+        d = ImageDraw.Draw(img)
+        d.text((50, 50), "NEWS SNAP TEST", fill=(255, 255, 255))
+        img.save("news_snap_post.jpg", format="JPEG", quality=95)
+
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.main()
+        self.assertIn("FACTUAL GROUNDING REFUSAL", str(ctx.exception))
+
+        # Proves rejected story was recorded in history
+        hist = json.loads(self.history_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(hist["processed"]), 1)
+        self.assertTrue(hist["processed"][0].get("rejected"))
+        self.assertEqual(hist["processed"][0]["url"], article["url"])
+
+    def test_12_instagram_publisher_rejects_ungrounded_question_outcome(self):
+        """12. Regression test: instagram_publisher rejects conversion of question headline into affirmative outcome."""
+        article = {
+            "title": "What does Bill C-39 mean for First Nations? Senators question Carney government",
+            "domain": "theturtleislandnews.com",
+            "url": "https://theturtleislandnews.com/c39-bad",
+            "source_description": "Debate in parliament."
+        }
+        post = {
+            "headline": "Bill C-39 Strips All First Nations Rights",
+            "curiosity_line": "Unilateral government move",
+            "caption": "The Carney government passed sweeping unilateral changes eliminating First Nations rights completely today without parliamentary approval during legislative sessions in Ottawa. #NewsSnap #Canada",
+            "hashtags": ["#NewsSnap", "#Canada", "#Politics"]
+        }
+        Path("post.json").write_text(json.dumps(post), encoding="utf-8")
+        img = Image.new("RGB", (1080, 1350), (15, 25, 45))
+        d = ImageDraw.Draw(img)
+        d.text((50, 50), "NEWS SNAP TEST", fill=(255, 255, 255))
+        img.save("news_snap_post.jpg", format="JPEG", quality=95)
+
+        with self.assertRaises(ValueError) as ctx:
+            instagram_publisher.validate_image_and_post(article=article)
+        self.assertIn("FACTUAL GROUNDING REFUSAL", str(ctx.exception))
+
 
 if __name__ == "__main__":
     unittest.main()

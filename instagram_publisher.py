@@ -885,11 +885,9 @@ def validate_image_and_post(article: dict = None):
     if article and isinstance(article, dict):
         art_title = str(article.get("title", "")).strip()
         if art_title:
-            uncertainty_cues = ("?", "alleged", "allegedly", "suspected", "may face", "could face", "claims", "investigating")
-            if any(cue in art_title.lower() for cue in uncertainty_cues):
-                attribution_markers = ("alleged", "allegedly", "claims", "reportedly", "suspected", "may", "could", "probe", "investigation", "says", "stated", "accused", "according to", "facing", "under")
-                if not any(m in headline.lower() or m in caption.lower() for m in attribution_markers):
-                    raise ValueError(f"Factual grounding error: Uncertainty in source title ('{art_title}') converted to settled fact.")
+            from post_generator import validate_factual_grounding
+            evidence = article.get("source_description") or article.get("source_body_excerpt") or ""
+            validate_factual_grounding(post, article, source_evidence=evidence)
 
     return post, caption
 
@@ -907,7 +905,16 @@ def main():
         except Exception:
             pass
 
-    post, caption = validate_image_and_post(article=article)
+    try:
+        post, caption = validate_image_and_post(article=article)
+    except ValueError as val_err:
+        print(f"[SAFETY REFUSAL] Pre-publish validation failed: {val_err}", file=sys.stderr)
+        try:
+            from post_generator import record_rejected_story
+            record_rejected_story(article, reason=str(val_err), history_path=HISTORY_PATH)
+        except Exception as e:
+            print(f"[WARN] Could not record rejected story in history: {e}")
+        raise
     print("[OK] Image validation: 1080x1350 JPEG, within 8MB limit, verified non-empty visual entropy.")
     print("[OK] Caption validation: Under 2,200 characters, #NewsSnap included, text within bounds.")
     print("[OK] Format alignment validation: Image and caption refer to the same story data.")
