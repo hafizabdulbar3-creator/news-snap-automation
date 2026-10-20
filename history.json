@@ -449,6 +449,15 @@
       "published": true,
       "media_id": "18073209326588981",
       "timestamp": "2026-10-20T10:54:46.689359+00:00"
+    },
+    {
+      "url": "https://www.wyomingpublicmedia.org/2026-10-15/african-antelope-spread-american-west-winters-warm",
+      "title": "African antelope could spread across the American West as winters warm, study finds",
+      "headline": "African antelope could spread across the American West as winters warm, study finds",
+      "domain": "wyomingpublicmedia.org",
+      "published": true,
+      "media_id": "17992652175054823",
+      "timestamp": "2026-10-20T11:20:33.542093+00:00"
     }
   ],
   "processed": [
@@ -472,17 +481,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "African antelope could spread across the American West as winters warm, study finds",
-      "domain": "wyomingpublicmedia.org",
-      "url": "https://www.wyomingpublicmedia.org/2026-10-15/african-antelope-spread-american-west-winters-warm",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science & Environment",
-        "reason": "Scientific research into the ecological impacts of warming winters and species migration."
-      },
-      "classified_at": "2026-10-20T00:06:08.713317+00:00"
-    },
     {
       "title": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
       "domain": "wkyt.com",
