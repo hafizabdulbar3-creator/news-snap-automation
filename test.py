@@ -257,17 +257,31 @@ def is_trivial_or_gossip(title: str, url: str) -> bool:
 
 
 def is_feed_enabled(source: dict) -> bool:
-    """Check if a configured feed is enabled based on its configuration and explicit per-feed environment overrides."""
+    """Check if a configured feed is enabled based on sources.json configuration.
+
+    Safety Guard:
+    A feed configured with enabled=False or disabled=True can NEVER be enabled
+    by environment variables (e.g. ENABLE_FEED_BBC_NEWS=1). Disabled feeds
+    strictly require explicit configuration change in sources.json after
+    publisher permission is verified.
+    """
+    # 1. Configured disabled status is final and takes strict precedence
+    if source.get("disabled") is True or source.get("enabled") is False:
+        return False
+
+    # 2. Check if an enabled feed is explicitly disabled via env var (e.g. ENABLE_FEED_NAME=0)
     name_slug = re.sub(r"[^A-Z0-9]+", "_", source.get("name", "").upper()).strip("_")
     env_override = os.environ.get(f"ENABLE_FEED_{name_slug}")
-    if env_override is not None:
-        return env_override in ("1", "true", "TRUE")
+    if env_override is not None and env_override.strip().lower() in ("0", "false", "no"):
+        return False
 
+    # 3. Default to config setting
     if "enabled" in source:
         return bool(source["enabled"])
     if "disabled" in source:
         return not bool(source["disabled"])
     return True
+
 
 
 def fetch_feed(url: str, timeout: int = 10, max_retries: int = 1) -> bytes | None:

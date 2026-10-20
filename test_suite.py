@@ -5284,8 +5284,12 @@ class MultiFeedDiscoveryTests(unittest.TestCase):
         }
         self.assertFalse(discovery.is_feed_enabled(disabled_source))
 
+        # Per-feed environment variable must not enable a disabled feed
         with unittest.mock.patch.dict(os.environ, {"ENABLE_FEED_BBC_NEWS": "1"}):
-            self.assertTrue(discovery.is_feed_enabled(disabled_source))
+            self.assertFalse(
+                discovery.is_feed_enabled(disabled_source),
+                "Per-feed env var must not bypass feed configured as disabled"
+            )
 
     def test_enable_all_feeds_override_cannot_enable_disabled_feeds(self):
         """Regression test: Global ENABLE_ALL_FEEDS must never override disabled feeds."""
@@ -5301,6 +5305,32 @@ class MultiFeedDiscoveryTests(unittest.TestCase):
                 discovery.is_feed_enabled(disabled_source),
                 "ENABLE_ALL_FEEDS=1 must never enable a feed configured as disabled"
             )
+
+    def test_per_feed_env_cannot_enable_disabled_feeds(self):
+        """Regression test: No environment variable can enable a disabled feed; can only disable an enabled feed."""
+        enabled_source = {
+            "name": "Associated Press (Flipboard)",
+            "url": "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss",
+            "enabled": True,
+            "disabled": False
+        }
+        self.assertTrue(discovery.is_feed_enabled(enabled_source))
+        with unittest.mock.patch.dict(os.environ, {"ENABLE_FEED_ASSOCIATED_PRESS_FLIPBOARD": "0"}):
+            self.assertFalse(discovery.is_feed_enabled(enabled_source))
+
+        disabled_source = {
+            "name": "LiveMint - News",
+            "url": "https://www.livemint.com/rss/news",
+            "enabled": False,
+            "disabled": True
+        }
+        for env_val in ("1", "true", "TRUE", "yes"):
+            with unittest.mock.patch.dict(os.environ, {"ENABLE_FEED_LIVEMINT_NEWS": env_val}):
+                self.assertFalse(
+                    discovery.is_feed_enabled(disabled_source),
+                    f"Setting env var to {env_val} must not enable a disabled feed"
+                )
+
 
     def test_existing_live_post_cadence_quotas_and_history_safeguards_unchanged(self):
         self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 25.0)
