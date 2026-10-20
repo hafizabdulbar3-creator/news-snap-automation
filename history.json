@@ -368,6 +368,15 @@
       "published": true,
       "media_id": "18110663570184552",
       "timestamp": "2026-10-20T06:03:38.436089+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/politics/2026-election/texas-democrat-gina-hinojosa-sues-review-emails-elon-musk-greg-abbott-rcna604443",
+      "title": "Texas Democratic candidate for governor sues to review emails between Elon Musk and Greg Abbott",
+      "headline": "Texas Democrat Sues to Review Emails Between Musk and Abbott",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "17990072919067838",
+      "timestamp": "2026-10-20T06:29:43.671564+00:00"
     }
   ],
   "processed": [
@@ -508,17 +517,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Texas Democratic candidate for governor sues to review emails between Elon Musk and Greg Abbott",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/politics/2026-election/texas-democrat-gina-hinojosa-sues-review-emails-elon-musk-greg-abbott-rcna604443",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "State-level legal action involving government transparency and prominent political figures."
-      },
-      "classified_at": "2026-10-20T00:06:08.713275+00:00"
-    },
     {
       "title": "Mahmoud Khalil asks Supreme Court to let U.S. judges quickly reverse immigration detentions",
       "domain": "nbcnews.com",
