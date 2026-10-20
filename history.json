@@ -440,6 +440,15 @@
       "published": true,
       "media_id": "18047525657819985",
       "timestamp": "2026-10-20T10:28:44.716389+00:00"
+    },
+    {
+      "url": "https://www.tnp.no/norway/economy/4261-statoil-awarded-new-acreage-on-the-norwegian-continental-shelf/",
+      "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
+      "headline": "Statoil awarded 10 new production licences on Norwegian shelf",
+      "domain": "tnp.no",
+      "published": true,
+      "media_id": "18073209326588981",
+      "timestamp": "2026-10-20T10:54:46.689359+00:00"
     }
   ],
   "processed": [
@@ -463,17 +472,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
-      "domain": "tnp.no",
-      "url": "https://www.tnp.no/norway/economy/4261-statoil-awarded-new-acreage-on-the-norwegian-continental-shelf/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Energy",
-        "reason": "Allocation of offshore continental shelf exploration acreage by national energy authorities."
-      },
-      "classified_at": "2026-10-20T00:06:08.713313+00:00"
-    },
     {
       "title": "African antelope could spread across the American West as winters warm, study finds",
       "domain": "wyomingpublicmedia.org",
