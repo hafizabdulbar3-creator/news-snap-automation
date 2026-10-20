@@ -395,6 +395,15 @@
       "published": true,
       "media_id": "18122869345945083",
       "timestamp": "2026-10-20T07:22:16.306328+00:00"
+    },
+    {
+      "url": "https://theturtleislandnews.com/index.php/2026/10/19/what-does-bill-c-39-mean-for-first-nations-senators-question-carney-government/",
+      "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
+      "headline": "Senators question Carney government on Bill C-39",
+      "domain": "theturtleislandnews.com",
+      "published": true,
+      "media_id": "18377228620244687",
+      "timestamp": "2026-10-20T08:34:16.482288+00:00"
     }
   ],
   "processed": [
@@ -535,17 +544,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
-      "domain": "theturtleislandnews.com",
-      "url": "https://theturtleislandnews.com/index.php/2026/10/19/what-does-bill-c-39-mean-for-first-nations-senators-question-carney-government/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "National legislative debate regarding the impact of federal legislation on First Nations communities."
-      },
-      "classified_at": "2026-10-20T00:06:08.713286+00:00"
-    },
     {
       "title": "Election tensions escalate in California as DOJ charges 28 people with voting crimes",
       "domain": "wnmufm.org",
