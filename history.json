@@ -350,6 +350,15 @@
       "published": true,
       "media_id": "17950659672054428",
       "timestamp": "2026-10-20T05:11:34.689638+00:00"
+    },
+    {
+      "url": "https://www.bbc.co.uk/news/articles/cv62yzddy6dpo",
+      "title": "Criminals in hospital set to lose benefits under new rules",
+      "headline": "Hospital criminals set to lose benefits under new rules",
+      "domain": "bbc.co.uk",
+      "published": true,
+      "media_id": "18043321379684918",
+      "timestamp": "2026-10-20T05:37:33.472246+00:00"
     }
   ],
   "processed": [
@@ -490,17 +499,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Criminals in hospital set to lose benefits under new rules",
-      "domain": "bbc.co.uk",
-      "url": "https://www.bbc.co.uk/news/articles/cv62yzddy6dpo",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Social Policy",
-        "reason": "Government policy changes altering state benefit eligibility for hospitalized prisoners."
-      },
-      "classified_at": "2026-10-20T00:06:08.713268+00:00"
-    },
     {
       "title": "India's finance minister says market liquidity makes it easier for investors to exit",
       "domain": "cnbc.com",
