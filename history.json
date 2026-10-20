@@ -314,6 +314,15 @@
       "published": true,
       "media_id": "18106903930967035",
       "timestamp": "2026-10-20T03:17:15.209982+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/news/us-news/weekend-rundown-october-18-rcna603917",
+      "title": "Trump's approval rating slips again, and a deadly incident at a youth soccer game: Weekend Rundown",
+      "headline": "Trump's approval rating slips as deadly soccer incident rocks weekend",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "18644760166019840",
+      "timestamp": "2026-10-20T03:48:21.153660+00:00"
     }
   ],
   "processed": [
@@ -454,17 +463,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump's approval rating slips again, and a deadly incident at a youth soccer game: Weekend Rundown",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/news/us-news/weekend-rundown-october-18-rcna603917",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A routine roundup covering national political approval ratings and general news."
-      },
-      "classified_at": "2026-10-20T00:06:08.713247+00:00"
-    },
     {
       "title": "U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says",
       "domain": "cnbc.com",
