@@ -431,6 +431,15 @@
       "published": true,
       "media_id": "18023367590712883",
       "timestamp": "2026-10-20T09:58:12.789241+00:00"
+    },
+    {
+      "url": "https://www.wnmufm.org/2026-10-19/a-new-poll-shows-what-voters-are-thinking-2-weeks-out-from-election-day",
+      "title": "A new poll shows what voters are thinking 2 weeks out from Election Day",
+      "headline": "Poll reveals voter sentiment two weeks before Election Day",
+      "domain": "wnmufm.org",
+      "published": true,
+      "media_id": "18047525657819985",
+      "timestamp": "2026-10-20T10:28:44.716389+00:00"
     }
   ],
   "processed": [
@@ -454,17 +463,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "A new poll shows what voters are thinking 2 weeks out from Election Day",
-      "domain": "wnmufm.org",
-      "url": "https://www.wnmufm.org/2026-10-19/a-new-poll-shows-what-voters-are-thinking-2-weeks-out-from-election-day",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Public opinion polling ahead of national elections."
-      },
-      "classified_at": "2026-10-20T00:06:08.713307+00:00"
-    },
     {
       "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
       "domain": "tnp.no",
