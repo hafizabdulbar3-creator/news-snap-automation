@@ -494,6 +494,15 @@
       "published": true,
       "media_id": "17941933374372039",
       "timestamp": "2026-10-20T13:08:09.159109+00:00"
+    },
+    {
+      "url": "https://apnews.com/article/trump-sanctions-waiver-russa-putin-ukraine-war-3cc9740c39e9e9eb713b1c553b5709e6",
+      "title": "Trump's decision to waive Russian sanctions outrages Congress, but no quick counter seen",
+      "headline": "Trump's sanctions waiver outrages Congress, but no quick counter seen",
+      "domain": "apnews.com",
+      "published": true,
+      "media_id": "18193926571401768",
+      "timestamp": "2026-10-20T13:36:02.442417+00:00"
     }
   ],
   "processed": [
@@ -527,17 +536,6 @@
         "reason": "Direct endorsement from a major US political leader in an allied nation's critical national election."
       },
       "classified_at": "2026-10-20T13:07:41.157330+00:00"
-    },
-    {
-      "title": "Trump's decision to waive Russian sanctions outrages Congress, but no quick counter seen",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/trump-sanctions-waiver-russa-putin-ukraine-war-3cc9740c39e9e9eb713b1c553b5709e6",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Geopolitics & Sanctions",
-        "reason": "A high-impact shift in US foreign policy and sanctions policy regarding Russia, causing institutional conflict."
-      },
-      "classified_at": "2026-10-20T13:07:41.157333+00:00"
     },
     {
       "title": "China's economy accelerated in the July-September quarter on robust exports",
