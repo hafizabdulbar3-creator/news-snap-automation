@@ -323,6 +323,15 @@
       "published": true,
       "media_id": "18644760166019840",
       "timestamp": "2026-10-20T03:48:21.153660+00:00"
+    },
+    {
+      "url": "https://www.cnbc.com/2026/10/16/us-china-mastercard-citigroup-market-access.html",
+      "title": "U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says",
+      "headline": "U.S. presses China on Mastercard, Citigroup market access in Bangkok talks",
+      "domain": "cnbc.com",
+      "published": true,
+      "media_id": "18120104827972352",
+      "timestamp": "2026-10-20T04:14:24.542467+00:00"
     }
   ],
   "processed": [
@@ -463,17 +472,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says",
-      "domain": "cnbc.com",
-      "url": "https://www.cnbc.com/2026/10/16/us-china-mastercard-citigroup-market-access.html",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy & Trade",
-        "reason": "Bilateral trade and financial market access discussions between the U.S. and China."
-      },
-      "classified_at": "2026-10-20T00:06:08.713254+00:00"
-    },
     {
       "title": "Marine life dramatically declined in Gulf of Mexico in years after BP oil spill, study finds",
       "domain": "nbcnews.com",
