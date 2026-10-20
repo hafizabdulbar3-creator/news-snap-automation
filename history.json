@@ -595,6 +595,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 15."
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdTEzTG1HSEl6MVRHYTNGcE9lcmxKWkxRbmVRQUdPYTRTckt6VFBuZzlraElya0NJMm1BLTJxZDV2NE92cF9ULXVRdDdDSnNiVldmbzE2UFhYX0MweThsTUxQYVI3bGNySkgyRU5ZcE5wUWs4RkNMb2tCLU9HcnoxWnBmNHkxTzVnTXQzTk5DZ1FDWlFiazlJcFVuUDJGWUVvdEhNRzlSc2tvX3hxcFZsa00tcjFhb1ZWZDdnQ3htZEhwMWc",
+      "title": "Chinese patrols to Taiwan's east are 'destabilising', US Congress-appointed official says",
+      "domain": "reuters.com",
+      "timestamp": "2026-10-20T17:14:20.755350+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
   "classified_pool": [
@@ -630,17 +639,6 @@
         "reason": "Analysis of a competitive and historically significant US Senate race in Kansas."
       },
       "classified_at": "2026-10-20T13:07:41.157349+00:00"
-    },
-    {
-      "title": "Chinese patrols to Taiwan's east are 'destabilising', US Congress-appointed official says",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdTEzTG1HSEl6MVRHYTNGcE9lcmxKWkxRbmVRQUdPYTRTckt6VFBuZzlraElya0NJMm1BLTJxZDV2NE92cF9ULXVRdDdDSnNiVldmbzE2UFhYX0MweThsTUxQYVI3bGNySkgyRU5ZcE5wUWs4RkNMb2tCLU9HcnoxWnBmNHkxTzVnTXQzTk5DZ1FDWlFiazlJcFVuUDJGWUVvdEhNRzlSc2tvX3hxcFZsa00tcjFhb1ZWZDdnQ3htZEhwMWc",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Defense & Geopolitics",
-        "reason": "Heightened military tensions and strategic assessments regarding Chinese actions near Taiwan."
-      },
-      "classified_at": "2026-10-20T13:07:41.157361+00:00"
     },
     {
       "title": "Trump warns Kansans that US will 'burn' like France if Democrats win",
