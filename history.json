@@ -390,7 +390,305 @@
       "timestamp": "2026-10-18T13:31:51.526666+00:00"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Fatima El Mansouri: What can Morocco's first female prime minister change for women?",
+      "domain": "bbc.co.uk",
+      "url": "https://www.bbc.co.uk/news/articles/cmqxn4gggdw4o",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Covers the historic appointment and policy implications of Morocco's first female prime minister."
+      },
+      "classified_at": "2026-10-20T00:06:08.713170+00:00"
+    },
+    {
+      "title": "Trump's latest moves back Russia, buck Congress and U.S. allies",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/politics/white-house/trumps-latest-moves-back-russia-buck-congress-us-allies-rcna604449",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "International Relations",
+        "reason": "Covers significant shifts in U.S. foreign policy toward Russia, impacting Congress and international alliances."
+      },
+      "classified_at": "2026-10-20T00:06:08.713237+00:00"
+    },
+    {
+      "title": "Car allegedly did U-turn and struck Helen Haines twice, in what some believe was target attack against MP",
+      "domain": "theguardian.com",
+      "url": "https://www.theguardian.com/australia-news/2026/oct/20/helen-haines-mp-alleged-attack-wangaratta-surgery-ntwnfb",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Politics",
+        "reason": "Reports on an alleged targeted vehicular attack against a sitting member of parliament."
+      },
+      "classified_at": "2026-10-20T00:06:08.713243+00:00"
+    },
+    {
+      "title": "Trump's approval rating slips again, and a deadly incident at a youth soccer game: Weekend Rundown",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/news/us-news/weekend-rundown-october-18-rcna603917",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A routine roundup covering national political approval ratings and general news."
+      },
+      "classified_at": "2026-10-20T00:06:08.713247+00:00"
+    },
+    {
+      "title": "More than 100K Ukrainians and Sudanese granted temporary deportation reprieve from the U.S.",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/politics/trump-administration/ukrainians-sudanese-granted-temporary-deportation-reprieve-rcna604474",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Immigration",
+        "reason": "Reports on large-scale federal immigration action affecting over 100,000 individuals fleeing conflict."
+      },
+      "classified_at": "2026-10-20T00:06:08.713251+00:00"
+    },
+    {
+      "title": "U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says",
+      "domain": "cnbc.com",
+      "url": "https://www.cnbc.com/2026/10/16/us-china-mastercard-citigroup-market-access.html",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy & Trade",
+        "reason": "Bilateral trade and financial market access discussions between the U.S. and China."
+      },
+      "classified_at": "2026-10-20T00:06:08.713254+00:00"
+    },
+    {
+      "title": "Marine life dramatically declined in Gulf of Mexico in years after BP oil spill, study finds",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/science/environment/marine-life-declined-gulf-mexico-bp-oil-spill-deepwater-horizon-study-rcna604457",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "Scientific study highlighting the long-term ecological consequences of a major environmental disaster."
+      },
+      "classified_at": "2026-10-20T00:06:08.713258+00:00"
+    },
+    {
+      "title": "France: Partial curfews issued in Paris, Nice after unrest",
+      "domain": "dw.com",
+      "url": "https://www.dw.com/en/france-partial-curfews-issued-in-paris-nice-after-unrest/live-79707186",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Widespread civil unrest leading to the imposition of curfews in major French cities."
+      },
+      "classified_at": "2026-10-20T00:06:08.713261+00:00"
+    },
+    {
+      "title": "How the midterms will shape 2028 and beyond: From the Politics Desk",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/politics/politics-news/midterms-will-shape-2028-beyond-politics-desk-rcna604441",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Analysis of national midterm elections and their future political implications."
+      },
+      "classified_at": "2026-10-20T00:06:08.713265+00:00"
+    },
+    {
+      "title": "Criminals in hospital set to lose benefits under new rules",
+      "domain": "bbc.co.uk",
+      "url": "https://www.bbc.co.uk/news/articles/cv62yzddy6dpo",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Social Policy",
+        "reason": "Government policy changes altering state benefit eligibility for hospitalized prisoners."
+      },
+      "classified_at": "2026-10-20T00:06:08.713268+00:00"
+    },
+    {
+      "title": "India's finance minister says market liquidity makes it easier for investors to exit",
+      "domain": "cnbc.com",
+      "url": "https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "Statements by a national finance minister concerning domestic capital market liquidity and investor conditions."
+      },
+      "classified_at": "2026-10-20T00:06:08.713271+00:00"
+    },
+    {
+      "title": "Texas Democratic candidate for governor sues to review emails between Elon Musk and Greg Abbott",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/politics/2026-election/texas-democrat-gina-hinojosa-sues-review-emails-elon-musk-greg-abbott-rcna604443",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "State-level legal action involving government transparency and prominent political figures."
+      },
+      "classified_at": "2026-10-20T00:06:08.713275+00:00"
+    },
+    {
+      "title": "Mahmoud Khalil asks Supreme Court to let U.S. judges quickly reverse immigration detentions",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/news/us-news/mahmoud-khalil-supreme-court-judges-reverse-immigration-detentions-rcna604475",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal Affairs",
+        "reason": "A significant legal appeal to the U.S. Supreme Court regarding judicial oversight of immigration detentions."
+      },
+      "classified_at": "2026-10-20T00:06:08.713278+00:00"
+    },
+    {
+      "title": "A blue-collar bellwether weighs ousting longtime GOP Sen. Susan Collins in Maine",
+      "domain": "nbcnews.com",
+      "url": "https://www.nbcnews.com/politics/2026-election/blue-collar-bellwether-weighs-ousting-longtime-gop-sen-susan-collins-m-rcna598591",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Electoral analysis of a competitive and significant U.S. Senate race."
+      },
+      "classified_at": "2026-10-20T00:06:08.713283+00:00"
+    },
+    {
+      "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
+      "domain": "theturtleislandnews.com",
+      "url": "https://theturtleislandnews.com/index.php/2026/10/19/what-does-bill-c-39-mean-for-first-nations-senators-question-carney-government/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "National legislative debate regarding the impact of federal legislation on First Nations communities."
+      },
+      "classified_at": "2026-10-20T00:06:08.713286+00:00"
+    },
+    {
+      "title": "Election tensions escalate in California as DOJ charges 28 people with voting crimes",
+      "domain": "wnmufm.org",
+      "url": "https://www.wnmufm.org/2026-10-19/election-tensions-escalate-in-california-as-doj-charges-28-people-with-voting-crimes",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Justice",
+        "reason": "Federal criminal charges filed by the Department of Justice regarding election-related offenses."
+      },
+      "classified_at": "2026-10-20T00:06:08.713289+00:00"
+    },
+    {
+      "title": "Cuba condemns U.S. arrest warrant for Raul Castro",
+      "domain": "english.news.cn",
+      "url": "https://english.news.cn/20261020/05ec970ea535489b901a76a017920532/c.html",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Diplomacy",
+        "reason": "Significant international dispute following an arrest warrant issued against a former Cuban head of state."
+      },
+      "classified_at": "2026-10-20T00:06:08.713292+00:00"
+    },
+    {
+      "title": "Texas man seeks to have armed robbery conviction tossed over no-warrant Flock camera search",
+      "domain": "therecord.com",
+      "url": "https://www.therecord.com/business/texas-man-seeks-to-have-armed-robbery-conviction-tossed-over-no-warrant-flock-camera-search/article_7f437867-863d-5573-84ca-078e7cceb6ad.html",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal & Technology",
+        "reason": "Constitutional legal challenge regarding privacy and automated surveillance camera searches without warrants."
+      },
+      "classified_at": "2026-10-20T00:06:08.713296+00:00"
+    },
+    {
+      "title": "President Trump signs executive order aimed at improving women's health. How could it impact you?",
+      "domain": "ketv.com",
+      "url": "https://www.ketv.com/article/trump-womens-health-executive-order-task-force-nih/74184386",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health Policy",
+        "reason": "Presidential executive order introducing federal policy initiatives focused on healthcare."
+      },
+      "classified_at": "2026-10-20T00:06:08.713300+00:00"
+    },
+    {
+      "title": "Tsawwassen First Nation charts a bold path forward with updated Land Use Plan - The Turtle Island News",
+      "domain": "theturtleislandnews.com",
+      "url": "https://theturtleislandnews.com/index.php/2026/10/19/tsawwassen-first-nation-charts-a-bold-path-forward-with-updated-land-use-plan/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Indigenous Affairs",
+        "reason": "Adoption of an updated strategic land-use plan by a First Nation government."
+      },
+      "classified_at": "2026-10-20T00:06:08.713303+00:00"
+    },
+    {
+      "title": "A new poll shows what voters are thinking 2 weeks out from Election Day",
+      "domain": "wnmufm.org",
+      "url": "https://www.wnmufm.org/2026-10-19/a-new-poll-shows-what-voters-are-thinking-2-weeks-out-from-election-day",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Public opinion polling ahead of national elections."
+      },
+      "classified_at": "2026-10-20T00:06:08.713307+00:00"
+    },
+    {
+      "title": "Alberta voters decide whether to take a step toward separating from Canada",
+      "domain": "wnmufm.org",
+      "url": "https://www.wnmufm.org/2026-10-19/alberta-voters-decide-whether-to-take-a-step-toward-separating-from-canada",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Politics",
+        "reason": "Voter referendum or vote on provincial secession, threatening national territorial integrity."
+      },
+      "classified_at": "2026-10-20T00:06:08.713310+00:00"
+    },
+    {
+      "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
+      "domain": "tnp.no",
+      "url": "https://www.tnp.no/norway/economy/4261-statoil-awarded-new-acreage-on-the-norwegian-continental-shelf/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Energy",
+        "reason": "Allocation of offshore continental shelf exploration acreage by national energy authorities."
+      },
+      "classified_at": "2026-10-20T00:06:08.713313+00:00"
+    },
+    {
+      "title": "African antelope could spread across the American West as winters warm, study finds",
+      "domain": "wyomingpublicmedia.org",
+      "url": "https://www.wyomingpublicmedia.org/2026-10-15/african-antelope-spread-american-west-winters-warm",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Science & Environment",
+        "reason": "Scientific research into the ecological impacts of warming winters and species migration."
+      },
+      "classified_at": "2026-10-20T00:06:08.713317+00:00"
+    },
+    {
+      "title": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
+      "domain": "wkyt.com",
+      "url": "https://www.wkyt.com/2026/10/19/experts-weigh-ahead-kentucky-us-senate-debate-between-barr-booker/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Preview and expert commentary on a statewide U.S. Senate debate."
+      },
+      "classified_at": "2026-10-20T00:06:08.713320+00:00"
+    },
+    {
+      "title": "NDP MLA Brooks Arcand-Paul warns against promises of better treaties through Alberta separation - The Turtle Island News",
+      "domain": "theturtleislandnews.com",
+      "url": "https://theturtleislandnews.com/index.php/2026/10/19/ndp-mla-brooks-arcand-paul-warns-against-promises-of-better-treaties-through-alberta-separation/",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Provincial political discussion on treaty obligations and proposed regional separation."
+      },
+      "classified_at": "2026-10-20T00:06:08.713324+00:00"
+    },
+    {
+      "title": "Immigration enforcement in New York among key campaign issues ahead of midterm elections",
+      "domain": "wamc.org",
+      "url": "https://www.wamc.org/news/2026-10-19/immigration-enforcement-in-new-york-among-key-campaign-issues-ahead-of-midterm-elections",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Coverage of regional campaign dynamics and immigration policy debates ahead of midterm elections."
+      },
+      "classified_at": "2026-10-20T00:06:08.713327+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
