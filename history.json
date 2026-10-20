@@ -386,6 +386,15 @@
       "published": true,
       "media_id": "18110249306185256",
       "timestamp": "2026-10-20T06:56:08.302537+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/politics/2026-election/blue-collar-bellwether-weighs-ousting-longtime-gop-sen-susan-collins-m-rcna598591",
+      "title": "A blue-collar bellwether weighs ousting longtime GOP Sen. Susan Collins in Maine",
+      "headline": "Blue-collar voters in Maine weigh ousting GOP Sen. Susan Collins",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "18122869345945083",
+      "timestamp": "2026-10-20T07:22:16.306328+00:00"
     }
   ],
   "processed": [
@@ -526,17 +535,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "A blue-collar bellwether weighs ousting longtime GOP Sen. Susan Collins in Maine",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/politics/2026-election/blue-collar-bellwether-weighs-ousting-longtime-gop-sen-susan-collins-m-rcna598591",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Electoral analysis of a competitive and significant U.S. Senate race."
-      },
-      "classified_at": "2026-10-20T00:06:08.713283+00:00"
-    },
     {
       "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
       "domain": "theturtleislandnews.com",
