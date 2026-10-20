@@ -260,6 +260,15 @@
       "published": true,
       "media_id": "17964356265230078",
       "timestamp": "2026-10-20T00:36:24.105616+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/politics/white-house/trumps-latest-moves-back-russia-buck-congress-us-allies-rcna604449",
+      "title": "Trump's latest moves back Russia, buck Congress and U.S. allies",
+      "headline": "Trump's moves back Russia, buck Congress and allies",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "18125778833480405",
+      "timestamp": "2026-10-20T01:02:49.607351+00:00"
     }
   ],
   "processed": [
@@ -400,17 +409,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump's latest moves back Russia, buck Congress and U.S. allies",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/politics/white-house/trumps-latest-moves-back-russia-buck-congress-us-allies-rcna604449",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Relations",
-        "reason": "Covers significant shifts in U.S. foreign policy toward Russia, impacting Congress and international alliances."
-      },
-      "classified_at": "2026-10-20T00:06:08.713237+00:00"
-    },
     {
       "title": "Car allegedly did U-turn and struck Helen Haines twice, in what some believe was target attack against MP",
       "domain": "theguardian.com",
