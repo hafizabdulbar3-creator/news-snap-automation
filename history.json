@@ -503,6 +503,15 @@
       "published": true,
       "media_id": "18193926571401768",
       "timestamp": "2026-10-20T13:36:02.442417+00:00"
+    },
+    {
+      "url": "https://apnews.com/article/japan-mars-moon-phobos-deimos-sample-return-1f3b292d89e9381c6e1421c9e3c1e884",
+      "title": "Japan to launch spacecraft on a mission to get samples from a Martian moon",
+      "headline": "Japan to Launch Spacecraft on Mission to Get Samples from a Martian Moon",
+      "domain": "apnews.com",
+      "published": true,
+      "media_id": "18014702432975783",
+      "timestamp": "2026-10-20T14:06:54.345794+00:00"
     }
   ],
   "processed": [
@@ -536,17 +545,6 @@
         "reason": "Direct endorsement from a major US political leader in an allied nation's critical national election."
       },
       "classified_at": "2026-10-20T13:07:41.157330+00:00"
-    },
-    {
-      "title": "Japan to launch spacecraft on a mission to get samples from a Martian moon",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/japan-mars-moon-phobos-deimos-sample-return-1f3b292d89e9381c6e1421c9e3c1e884",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Science & Space Exploration",
-        "reason": "A landmark interplanetary sample-return mission to a Martian moon by a major national space agency."
-      },
-      "classified_at": "2026-10-20T13:07:41.157343+00:00"
     },
     {
       "title": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
