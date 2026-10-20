@@ -305,6 +305,15 @@
       "published": true,
       "media_id": "18143596558587867",
       "timestamp": "2026-10-20T02:51:27.007707+00:00"
+    },
+    {
+      "url": "https://www.wnmufm.org/2026-10-19/alberta-voters-decide-whether-to-take-a-step-toward-separating-from-canada",
+      "title": "Alberta voters decide whether to take a step toward separating from Canada",
+      "headline": "Alberta Voters Decide Whether to Take a Step Toward Separating From Canada",
+      "domain": "wnmufm.org",
+      "published": true,
+      "media_id": "18106903930967035",
+      "timestamp": "2026-10-20T03:17:15.209982+00:00"
     }
   ],
   "processed": [
@@ -609,17 +618,6 @@
         "reason": "Public opinion polling ahead of national elections."
       },
       "classified_at": "2026-10-20T00:06:08.713307+00:00"
-    },
-    {
-      "title": "Alberta voters decide whether to take a step toward separating from Canada",
-      "domain": "wnmufm.org",
-      "url": "https://www.wnmufm.org/2026-10-19/alberta-voters-decide-whether-to-take-a-step-toward-separating-from-canada",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Politics",
-        "reason": "Voter referendum or vote on provincial secession, threatening national territorial integrity."
-      },
-      "classified_at": "2026-10-20T00:06:08.713310+00:00"
     },
     {
       "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
