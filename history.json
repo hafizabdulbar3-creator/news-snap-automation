@@ -426,132 +426,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.chicagotribune.com/2026/10/16/trump-holds-russia-sanctions/",
-      "title": "President Trump puts new Russia sanctions that he recently signed into law on hold",
-      "headline": "President Trump puts new Russia sanctions that he recently signed into law on hold",
-      "domain": "chicagotribune.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T04:25:55.963442+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/international/icc-rejects-us-sanctions-says-history-will-judge-this-moment/article71565060.ece",
-      "title": "ICC rejects U.S. sanctions, says 'history will judge this moment'",
-      "headline": "ICC rejects U.S. sanctions, says 'history will judge this moment",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T05:15:04.104754+00:00"
-    },
-    {
-      "url": "https://www.digbycourier.ca/as-war-rages-in-gaza-rivals-hamas-and-fatah-sign-declaration-to-form-future-government/",
-      "title": "As war rages in Gaza, rivals Hamas and Fatah sign declaration to form future government",
-      "headline": "As war rages in Gaza, rivals Hamas and Fatah sign declaration to form future",
-      "domain": "digbycourier.ca",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T06:04:32.307668+00:00"
-    },
-    {
-      "url": "https://www.nbcnews.com/politics/2026-election/california-officials-process-ballots-suspected-noncitizens-risk-prosec-rcna603992",
-      "title": "California officials who process ballots from suspected noncitizens risk prosecution, U.S. warns",
-      "headline": "US Warns California Officials Over Processing Ballots From Suspected Noncitizens",
-      "domain": "nbcnews.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T06:32:47.250978+00:00"
-    },
-    {
-      "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
-      "title": "Trump waives key Russia-related sanctions, tariffs before they take effect under new law",
-      "headline": "Trump Waives Key Russia Sanctions and Tariffs Under New Law",
-      "domain": "cnbc.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T07:07:28.718595+00:00"
-    },
-    {
-      "url": "https://www.aljazeera.com/news-analysis/2026/10/17/can-yemens-government-forces-sustain-their-offensive-against-the-houthis",
-      "title": "Can Yemen's government forces sustain their offensive against the Houthis?",
-      "headline": "Houthi Missile Strikes Threaten Key Yemen Coast Supply Routes",
-      "domain": "aljazeera.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T07:30:11.871402+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/international/earthquake-of-magnitude-57-jolts-pakistans-balochistan/article71595718.ece",
-      "title": "Earthquake of magnitude 5.7 jolts Pakistan's Balochistan",
-      "headline": "Earthquake of magnitude 5.7 jolts Pakistan's Balochistan",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T08:04:51.512999+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/international/us-ukraine-european-negotiators-meet-in-miami-as-trump-announces-diesel-deal-with-russia/article71567031.ece",
-      "title": "U.S.-Ukraine-European negotiators meet in Miami as Trump announces diesel deal with Russia",
-      "headline": "US, Ukraine, and European Negotiators Hold Miami Talks on War",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T08:28:24.925520+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/national/telangana/hyderabad-man-killed-in-riyadh-airport-attack-two-sons-injured/article71572615.ece",
-      "title": "Hyderabad man killed in Riyadh airport attack, two sons injured",
-      "headline": "Hyderabad Man Killed in Riyadh Airport Attack; Two Sons Injured",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T12:14:25.009833+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/business/Economy/imf-slightly-raises-forecast-for-2026-global-growth-to-31-citing-resilience-to-shocks/article71577836.ece",
-      "title": "IMF upgrades 2026 growth forecast but warns of 'split' outlook",
-      "headline": "IMF Raises 2026 Global Growth Forecast But Warns of Split Outlook",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T15:43:46.367327+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/international/frustrated-with-trump-voters-overwhelmingly-want-change-in-washington-an-ap-norc-poll-finds/article71589722.ece",
-      "title": "Frustrated with Trump, voters overwhelmingly want change in Washington, an AP-NORC poll finds",
-      "headline": "Voters Overwhelmingly Demand Change in Washington, AP-NORC Poll Finds",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-17T22:38:48.415446+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/national/the-debate-over-immunity-to-cec-ecs/article71589739.ece",
-      "title": "The debate over immunity to CEC, ECs",
-      "headline": "The debate over immunity to CEC, ECs",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-18T00:25:13.569452+00:00"
-    },
-    {
-      "url": "https://www.thehindu.com/news/national/jaishankar-rubio-to-hold-meeting-in-mumbai-on-oct-20-mea/article71592380.ece",
-      "title": "Jaishankar to meet Rubio, UAE Foreign Minister, in back-to-back separate visits in Mumbai next week",
-      "headline": "Jaishankar to meet Rubio, UAE Foreign Minister, in back-to-back separate visits in Mumbai next",
-      "domain": "thehindu.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-18T05:00:22.965035+00:00"
-    },
-    {
-      "url": "https://www.dw.com/en/how-reliant-is-ukraine-on-the-us-controlled-starlink-internet-service/a-79689729",
-      "title": "Why Starlink is so important for Ukraine",
-      "headline": "Ukraine Warns of Ongoing Restrictions to Starlink Internet Network",
-      "domain": "dw.com",
-      "published": false,
-      "dry_run": true,
-      "timestamp": "2026-10-18T09:29:59.143778+00:00"
-    },
-    {
       "url": "https://www.foxnews.com/politics/trump-tries-different-approach-russia-bring-americans-relief-amid-ongoing-war-ukraine",
       "title": "Trump tries different approach with Russia to bring Americans relief amid ongoing war with Ukraine",
       "headline": "Trump tries different approach with Russia to bring Americans relief amid ongoing war",
@@ -559,20 +433,18 @@
       "published": false,
       "dry_run": true,
       "timestamp": "2026-10-18T13:31:51.526666+00:00"
+    },
+    {
+      "url": "https://www.ketv.com/article/trump-womens-health-executive-order-task-force-nih/74184386",
+      "title": "President Trump signs executive order aimed at improving women's health. How could it impact you?",
+      "domain": "ketv.com",
+      "timestamp": "2026-10-20T09:52:03.591524+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('President Trump signs executive order aimed at improving women's health. How could it impact you?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
-    {
-      "title": "President Trump signs executive order aimed at improving women's health. How could it impact you?",
-      "domain": "ketv.com",
-      "url": "https://www.ketv.com/article/trump-womens-health-executive-order-task-force-nih/74184386",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Health Policy",
-        "reason": "Presidential executive order introducing federal policy initiatives focused on healthcare."
-      },
-      "classified_at": "2026-10-20T00:06:08.713300+00:00"
-    },
     {
       "title": "Tsawwassen First Nation charts a bold path forward with updated Land Use Plan - The Turtle Island News",
       "domain": "theturtleislandnews.com",
