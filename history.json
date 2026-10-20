@@ -341,6 +341,15 @@
       "published": true,
       "media_id": "18113714221843469",
       "timestamp": "2026-10-20T04:45:31.524345+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/politics/politics-news/midterms-will-shape-2028-beyond-politics-desk-rcna604441",
+      "title": "How the midterms will shape 2028 and beyond: From the Politics Desk",
+      "headline": "Midterms Will Shape 2028 and Beyond",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "17950659672054428",
+      "timestamp": "2026-10-20T05:11:34.689638+00:00"
     }
   ],
   "processed": [
@@ -481,17 +490,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "How the midterms will shape 2028 and beyond: From the Politics Desk",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/politics/politics-news/midterms-will-shape-2028-beyond-politics-desk-rcna604441",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Analysis of national midterm elections and their future political implications."
-      },
-      "classified_at": "2026-10-20T00:06:08.713265+00:00"
-    },
     {
       "title": "Criminals in hospital set to lose benefits under new rules",
       "domain": "bbc.co.uk",
