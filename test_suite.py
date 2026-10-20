@@ -5287,6 +5287,21 @@ class MultiFeedDiscoveryTests(unittest.TestCase):
         with unittest.mock.patch.dict(os.environ, {"ENABLE_FEED_BBC_NEWS": "1"}):
             self.assertTrue(discovery.is_feed_enabled(disabled_source))
 
+    def test_enable_all_feeds_override_cannot_enable_disabled_feeds(self):
+        """Regression test: Global ENABLE_ALL_FEEDS must never override disabled feeds."""
+        disabled_source = {
+            "name": "The Indian Express - India",
+            "url": "https://indianexpress.com/section/india/feed/",
+            "enabled": False,
+            "disabled": True,
+            "reason": "Restricted by terms"
+        }
+        with unittest.mock.patch.dict(os.environ, {"ENABLE_ALL_FEEDS": "1"}):
+            self.assertFalse(
+                discovery.is_feed_enabled(disabled_source),
+                "ENABLE_ALL_FEEDS=1 must never enable a feed configured as disabled"
+            )
+
     def test_existing_live_post_cadence_quotas_and_history_safeguards_unchanged(self):
         self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 25.0)
         self.assertEqual(quota_manager.DEFAULT_MAX_ROLLING_POSTS_24H, 50)

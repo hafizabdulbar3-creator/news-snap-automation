@@ -257,10 +257,7 @@ def is_trivial_or_gossip(title: str, url: str) -> bool:
 
 
 def is_feed_enabled(source: dict) -> bool:
-    """Check if a configured feed is enabled based on its configuration and environment overrides."""
-    if os.environ.get("ENABLE_ALL_FEEDS") == "1":
-        return True
-
+    """Check if a configured feed is enabled based on its configuration and explicit per-feed environment overrides."""
     name_slug = re.sub(r"[^A-Z0-9]+", "_", source.get("name", "").upper()).strip("_")
     env_override = os.environ.get(f"ENABLE_FEED_{name_slug}")
     if env_override is not None:
