@@ -5083,8 +5083,223 @@ class TwoMonthUnattendedHardeningTests(unittest.TestCase):
         self.assertEqual(report["publication"]["target_cadence_minutes"], 25)
 
 
+class MultiFeedDiscoveryTests(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.mkdtemp()
+        self.history_path = Path(self.temp_dir) / "test_history.json"
+        self.sources_path = Path(self.temp_dir) / "test_sources.json"
+
+        self.history_path.write_text(json.dumps({
+            "posted": [
+                {
+                    "title": "Already Posted Story in Past",
+                    "url": "https://example.com/already-posted",
+                    "published": True,
+                    "timestamp": "2026-10-20T00:00:00Z"
+                }
+            ],
+            "processed": []
+        }), encoding="utf-8")
+
+        self.sample_gdelt_xml = b"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GDELT Test</title>
+    <item>
+      <title>Global Leaders Convene for Emergency Climate Treaty - Reuters</title>
+      <link>https://www.reuters.com/world/climate-treaty-summit-2026?utm_source=rss</link>
+    </item>
+    <item>
+      <title>Central Bank Signals Key Interest Rate Strategy Amid Inflation</title>
+      <link>https://apnews.com/article/central-bank-inflation-rates?utm_campaign=feed</link>
+    </item>
+  </channel>
+</rss>"""
+
+        self.sample_ap_xml = b"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Associated Press Test</title>
+    <item>
+      <title>Space Agency Prepares Historic Lunar Rover Expedition</title>
+      <link>https://apnews.com/article/space-agency-moon-mission-2026?utm_source=flipboard&amp;utm_content=Top+Stories</link>
+    </item>
+  </channel>
+</rss>"""
+
+        self.sample_atom_xml = b"""<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Atom News Feed</title>
+  <entry>
+    <title>Artificial Intelligence Accord Finalized by European Union</title>
+    <link href="https://bbc.com/news/tech-ai-accord-europe?at_medium=RSS&amp;at_campaign=rss" rel="alternate"/>
+  </entry>
+</feed>"""
+
+    def tearDown(self):
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_url_normalization_and_discovery_schema(self):
+        url_with_tracking = "https://www.bbc.co.uk/news/articles/c50me4w4x1vyo?at_medium=RSS&at_campaign=rss&keep=param#fragment"
+        normalized = discovery.normalize_url(url_with_tracking)
+        self.assertEqual(normalized, "https://www.bbc.co.uk/news/articles/c50me4w4x1vyo?keep=param")
+        self.assertNotIn("at_medium", normalized)
+        self.assertNotIn("at_campaign", normalized)
+        self.assertNotIn("#fragment", normalized)
+
+        ap_tracking = "https://apnews.com/article/123?utm_source=flipboard&utm_content=Top+Stories"
+        self.assertEqual(discovery.normalize_url(ap_tracking), "https://apnews.com/article/123")
+
+    def test_combined_gdelt_and_publisher_feed_discovery(self):
+        sources = [
+            {"name": "GDELT Global News", "url": "mock://gdelt", "enabled": True},
+            {"name": "Associated Press", "url": "mock://ap", "enabled": True}
+        ]
+
+        def mock_fetch(url, timeout=10, max_retries=1):
+            if url == "mock://gdelt":
+                return self.sample_gdelt_xml
+            if url == "mock://ap":
+                return self.sample_ap_xml
+            return None
+
+        with unittest.mock.patch("test.fetch_feed", side_effect=mock_fetch):
+            articles = discovery.discover_articles(
+                sources=sources,
+                history_path=self.history_path
+            )
+
+        self.assertGreaterEqual(len(articles), 3)
+        titles = [a["title"] for a in articles]
+        self.assertTrue(any("Global Leaders Convene" in t for t in titles))
+        self.assertTrue(any("Space Agency Prepares" in t for t in titles))
+
+        required_keys = {"title", "raw_title", "url", "domain", "score", "is_duplicate"}
+        for art in articles:
+            self.assertTrue(required_keys.issubset(art.keys()), f"Missing keys in {art}")
+            self.assertIsInstance(art["score"], (int, float))
+            self.assertIsInstance(art["is_duplicate"], bool)
+
+    def test_failed_rss_feed_alongside_successful_feeds(self):
+        sources = [
+            {"name": "Broken Feed", "url": "mock://broken", "enabled": True},
+            {"name": "Working AP Feed", "url": "mock://working", "enabled": True}
+        ]
+
+        def mock_fetch(url, timeout=10, max_retries=1):
+            if url == "mock://working":
+                return self.sample_ap_xml
+            return None
+
+        with unittest.mock.patch("test.fetch_feed", side_effect=mock_fetch):
+            articles = discovery.discover_articles(
+                sources=sources,
+                history_path=self.history_path
+            )
+
+        self.assertEqual(len(articles), 1)
+        self.assertIn("Space Agency Prepares", articles[0]["title"])
+        self.assertEqual(articles[0]["source"], "Working AP Feed")
+
+    def test_gdelt_failure_with_successful_publisher_feed(self):
+        sources = [
+            {"name": "GDELT Global News", "url": "mock://gdelt", "enabled": True},
+            {"name": "Associated Press", "url": "mock://ap", "enabled": True}
+        ]
+
+        def mock_fetch(url, timeout=10, max_retries=1):
+            if url == "mock://gdelt":
+                return None
+            if url == "mock://ap":
+                return self.sample_ap_xml
+            return None
+
+        with unittest.mock.patch("test.fetch_feed", side_effect=mock_fetch):
+            articles = discovery.discover_articles(
+                sources=sources,
+                history_path=self.history_path
+            )
+
+        self.assertEqual(len(articles), 1)
+        self.assertIn("Space Agency Prepares", articles[0]["title"])
+        self.assertFalse(articles[0]["is_duplicate"])
+
+    def test_invalid_xml_http_errors_timeouts_and_empty_feeds(self):
+        self.assertEqual(discovery.parse_feed_xml(b"<html><not-xml>"), [])
+        self.assertEqual(discovery.parse_feed_xml(b""), [])
+        self.assertEqual(discovery.parse_feed_xml(None), [])
+
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=urllib.error.HTTPError("url", 404, "Not Found", {}, None)):
+            res = discovery.fetch_feed("http://fake.url/404")
+            self.assertIsNone(res)
+
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=TimeoutError("Timed out")):
+            res = discovery.fetch_feed("http://fake.url/timeout")
+            self.assertIsNone(res)
+
+    def test_duplicate_articles_appearing_in_multiple_feeds(self):
+        sources = [
+            {"name": "Feed A", "url": "mock://feed_a", "enabled": True},
+            {"name": "Feed B", "url": "mock://feed_b", "enabled": True}
+        ]
+
+        def mock_fetch(url, timeout=10, max_retries=1):
+            return self.sample_ap_xml
+
+        with unittest.mock.patch("test.fetch_feed", side_effect=mock_fetch):
+            articles = discovery.discover_articles(
+                sources=sources,
+                history_path=self.history_path
+            )
+
+        self.assertEqual(len(articles), 1)
+
+    def test_atom_feed_parsing_support(self):
+        entries = discovery.parse_feed_xml(self.sample_atom_xml)
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(entries[0]["raw_title"], "Artificial Intelligence Accord Finalized by European Union")
+        self.assertIn("bbc.com", entries[0]["url"])
+
+    def test_no_fabricated_stories_when_every_source_fails(self):
+        sources = [
+            {"name": "Feed 1", "url": "mock://1", "enabled": True},
+            {"name": "Feed 2", "url": "mock://2", "enabled": True}
+        ]
+
+        with unittest.mock.patch("test.fetch_feed", return_value=None):
+            articles = discovery.discover_articles(
+                sources=sources,
+                history_path=self.history_path
+            )
+
+        self.assertEqual(articles, [])
+
+    def test_publisher_feed_disabled_by_terms(self):
+        disabled_source = {
+            "name": "BBC News",
+            "url": "https://feeds.bbci.co.uk/news/rss.xml",
+            "enabled": False,
+            "disabled": True,
+            "reason": "Restricted by terms"
+        }
+        self.assertFalse(discovery.is_feed_enabled(disabled_source))
+
+        with unittest.mock.patch.dict(os.environ, {"ENABLE_FEED_BBC_NEWS": "1"}):
+            self.assertTrue(discovery.is_feed_enabled(disabled_source))
+
+    def test_existing_live_post_cadence_quotas_and_history_safeguards_unchanged(self):
+        self.assertEqual(quota_manager.DEFAULT_CADENCE_MINUTES, 25.0)
+        self.assertEqual(quota_manager.DEFAULT_MAX_ROLLING_POSTS_24H, 50)
+        self.assertTrue(Path("sources.json").is_file())
+        config_data = json.loads(Path("sources.json").read_text(encoding="utf-8"))
+        self.assertIn("rss_sources", config_data)
+        self.assertIn("high_trust_domains", config_data)
+        self.assertIn("livemint.com", config_data["high_trust_domains"])
+
+
 if __name__ == "__main__":
     unittest.main()
+
 
 
 

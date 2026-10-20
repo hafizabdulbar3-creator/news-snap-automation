@@ -1,4 +1,160 @@
 {
+  "rss_sources": [
+    {
+      "name": "GDELT Global News",
+      "url": "https://data.gdeltproject.org/gdeltv3/gal/feed.rss",
+      "type": "gdelt",
+      "publisher": "GDELT Project",
+      "enabled": true,
+      "disabled": false,
+      "primary": true,
+      "notes": "Primary open-data global discovery feed (unrestricted research data)."
+    },
+    {
+      "name": "Associated Press (Flipboard)",
+      "url": "https://flipboard.com/@associatedpress/top-stories-u7govdf1z.rss",
+      "type": "rss",
+      "publisher": "Associated Press",
+      "enabled": true,
+      "disabled": false,
+      "notes": "Verified publisher feed providing headline discovery pointers directly to apnews.com articles."
+    },
+    {
+      "name": "Reuters Fallback (Google News)",
+      "url": "https://news.google.com/rss/search?q=site%3Areuters.com+when%3A24h&hl=en-US&gl=US&ceid=US:en",
+      "type": "search_fallback",
+      "publisher": "Reuters (Google News Search Index)",
+      "enabled": true,
+      "disabled": false,
+      "notes": "Optional search discovery index restricted to site:reuters.com as a fallback source, not a direct Reuters feed."
+    },
+    {
+      "name": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/rss.xml",
+      "type": "rss",
+      "publisher": "BBC",
+      "enabled": false,
+      "disabled": true,
+      "reason": "BBC terms restrict RSS use strictly to non-commercial personal display without third-party redistribution or automated media generation. Requires BBC syndication license for external automated processing."
+    },
+    {
+      "name": "The Indian Express - India",
+      "url": "https://indianexpress.com/section/india/feed/",
+      "type": "rss",
+      "publisher": "The Indian Express",
+      "enabled": false,
+      "disabled": true,
+      "reason": "Indian Express terms prohibit creating derivative works or automated distribution without express written licensing."
+    },
+    {
+      "name": "The Indian Express - World",
+      "url": "https://indianexpress.com/section/world/feed/",
+      "type": "rss",
+      "publisher": "The Indian Express",
+      "enabled": false,
+      "disabled": true,
+      "reason": "Indian Express terms prohibit creating derivative works or automated distribution without express written licensing."
+    },
+    {
+      "name": "The Indian Express - Business",
+      "url": "https://indianexpress.com/section/business/feed/",
+      "type": "rss",
+      "publisher": "The Indian Express",
+      "enabled": false,
+      "disabled": true,
+      "reason": "Indian Express terms prohibit creating derivative works or automated distribution without express written licensing."
+    },
+    {
+      "name": "The Indian Express - Technology",
+      "url": "https://indianexpress.com/section/technology/feed/",
+      "type": "rss",
+      "publisher": "The Indian Express",
+      "enabled": false,
+      "disabled": true,
+      "reason": "Indian Express terms prohibit creating derivative works or automated distribution without express written licensing."
+    },
+    {
+      "name": "The Indian Express - Politics",
+      "url": "https://indianexpress.com/section/politics/feed/",
+      "type": "rss",
+      "publisher": "The Indian Express",
+      "enabled": false,
+      "disabled": true,
+      "reason": "Indian Express terms prohibit creating derivative works or automated distribution without express written licensing."
+    },
+    {
+      "name": "NDTV - Top Stories",
+      "url": "https://feeds.feedburner.com/ndtvnews-top-stories",
+      "type": "rss",
+      "publisher": "NDTV",
+      "enabled": false,
+      "disabled": true,
+      "reason": "NDTV RSS terms strictly prohibit use in automated social feeds or third-party automated processing without prior written agreement."
+    },
+    {
+      "name": "NDTV - Latest",
+      "url": "https://feeds.feedburner.com/ndtvnews-latest",
+      "type": "rss",
+      "publisher": "NDTV",
+      "enabled": false,
+      "disabled": true,
+      "reason": "NDTV RSS terms strictly prohibit use in automated social feeds or third-party automated processing without prior written agreement."
+    },
+    {
+      "name": "NDTV - India News",
+      "url": "https://feeds.feedburner.com/ndtvnews-india-news",
+      "type": "rss",
+      "publisher": "NDTV",
+      "enabled": false,
+      "disabled": true,
+      "reason": "NDTV RSS terms strictly prohibit use in automated social feeds or third-party automated processing without prior written agreement."
+    },
+    {
+      "name": "The Hindu",
+      "url": "https://www.thehindu.com/feeder/default.rss",
+      "type": "rss",
+      "publisher": "The Hindu",
+      "enabled": false,
+      "disabled": true,
+      "reason": "The Hindu terms restrict RSS feeds to personal reading; automated pipeline ingest and derivative summary publication require prior written authorization."
+    },
+    {
+      "name": "LiveMint - News",
+      "url": "https://www.livemint.com/rss/news",
+      "type": "rss",
+      "publisher": "LiveMint",
+      "enabled": false,
+      "disabled": true,
+      "reason": "LiveMint (HT Media) terms restrict RSS use to personal readers and require commercial licensing for automated aggregation and redistribution."
+    },
+    {
+      "name": "LiveMint - Technology",
+      "url": "https://www.livemint.com/rss/technology",
+      "type": "rss",
+      "publisher": "LiveMint",
+      "enabled": false,
+      "disabled": true,
+      "reason": "LiveMint (HT Media) terms restrict RSS use to personal readers and require commercial licensing for automated aggregation and redistribution."
+    },
+    {
+      "name": "LiveMint - Markets",
+      "url": "https://www.livemint.com/rss/markets",
+      "type": "rss",
+      "publisher": "LiveMint",
+      "enabled": false,
+      "disabled": true,
+      "reason": "LiveMint (HT Media) terms restrict RSS use to personal readers and require commercial licensing for automated aggregation and redistribution."
+    },
+    {
+      "name": "LiveMint - Politics",
+      "url": "https://www.livemint.com/rss/politics",
+      "type": "rss",
+      "publisher": "LiveMint",
+      "enabled": false,
+      "disabled": true,
+      "reason": "LiveMint (HT Media) terms restrict RSS use to personal readers and require commercial licensing for automated aggregation and redistribution."
+    }
+  ],
   "high_trust_domains": [
     "reuters.com",
     "apnews.com",
@@ -25,7 +181,8 @@
     "indianexpress.com",
     "thehindu.com",
     "ndtv.com",
-    "indiatoday.in"
+    "indiatoday.in",
+    "livemint.com"
   ],
   "excluded_keywords": [
     "horoscope",
