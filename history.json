@@ -548,6 +548,15 @@
       "published": true,
       "media_id": "17961811994996299",
       "timestamp": "2026-10-20T15:57:00.899500+00:00"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNEt0OVZkdE8tYkUwUDFsdDhhSDV5UURBdVNxVU5JdldQdFl0WkFpdzE4RkhhSUgxZG9LeVB4ZmxnZV9qWlFjNGctenU2T05DZWxlNVNGX3YteEM3TFg3Y2FUN3pJUVNjdF8zSFo4Rm13NGZjWXdUQ0RRZXNpbXpXYVI4UnUxc3F2SkV1OVRFMUpmcWlpN292VjBsM0hCeGFnSGdDaWpBZjg5V2l5TzRWbEhWQjM0eU9sRkpRM2ZCRQ",
+      "title": "Bank of Japan may raise inflation forecast, stand pat on rates, sources say",
+      "headline": "Bank of Japan may raise inflation forecast, stand pat on rates, sources say",
+      "domain": "reuters.com",
+      "published": true,
+      "media_id": "18067190420785176",
+      "timestamp": "2026-10-20T16:22:27.949613+00:00"
     }
   ],
   "processed": [
@@ -612,17 +621,6 @@
         "reason": "Analysis of a competitive and historically significant US Senate race in Kansas."
       },
       "classified_at": "2026-10-20T13:07:41.157349+00:00"
-    },
-    {
-      "title": "Bank of Japan may raise inflation forecast, stand pat on rates, sources say",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNEt0OVZkdE8tYkUwUDFsdDhhSDV5UURBdVNxVU5JdldQdFl0WkFpdzE4RkhhSUgxZG9LeVB4ZmxnZV9qWlFjNGctenU2T05DZWxlNVNGX3YteEM3TFg3Y2FUN3pJUVNjdF8zSFo4Rm13NGZjWXdUQ0RRZXNpbXpXYVI4UnUxc3F2SkV1OVRFMUpmcWlpN292VjBsM0hCeGFnSGdDaWpBZjg5V2l5TzRWbEhWQjM0eU9sRkpRM2ZCRQ",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Central Banking & Macroeconomics",
-        "reason": "Monetary policy and inflation forecast decisions by a G7 central bank affecting global financial markets."
-      },
-      "classified_at": "2026-10-20T13:07:41.157358+00:00"
     },
     {
       "title": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
