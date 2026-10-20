@@ -392,7 +392,7 @@
   ],
   "classified_pool": [],
   "quota_cooldown": {
-    "active": true,
+    "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
     "reason": "Gemini API quota exhausted. Retry required in 85668s (23h 47m 48s).",
     "updated_at": "2026-10-19T00:12:12.446572+00:00"
