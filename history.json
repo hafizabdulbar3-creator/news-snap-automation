@@ -521,6 +521,15 @@
       "published": true,
       "media_id": "18114686183011662",
       "timestamp": "2026-10-20T14:33:04.446697+00:00"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQemV5ZWpZWkdhUzlRTmJsLXMyNVFMa0EzLTYxSGJubDVlSkVWMGVuckZDRVZOOS05eGc1aHlSOGJva3A5d2R2SENNNVBNeTM5eXNEeWJWTDlDbzBUdlZTTDdFZDRlT3dkVWtSWmJJekhvc3BSQk5KbnlTcjR2Q1otUEFlS0JYSUVZclR1d0NGRzJJaHBXbFdBS1RPZWZqOVNXemZtVmlRQQ",
+      "title": "Oil majors face spending test from Iran war windfall cash",
+      "headline": "Oil majors face spending test from Iran war windfall cash",
+      "domain": "reuters.com",
+      "published": true,
+      "media_id": "18055674110801762",
+      "timestamp": "2026-10-20T15:04:54.475434+00:00"
     }
   ],
   "processed": [
@@ -585,17 +594,6 @@
         "reason": "Analysis of a competitive and historically significant US Senate race in Kansas."
       },
       "classified_at": "2026-10-20T13:07:41.157349+00:00"
-    },
-    {
-      "title": "Oil majors face spending test from Iran war windfall cash",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQemV5ZWpZWkdhUzlRTmJsLXMyNVFMa0EzLTYxSGJubDVlSkVWMGVuckZDRVZOOS05eGc1aHlSOGJva3A5d2R2SENNNVBNeTM5eXNEeWJWTDlDbzBUdlZTTDdFZDRlT3dkVWtSWmJJekhvc3BSQk5KbnlTcjR2Q1otUEFlS0JYSUVZclR1d0NGRzJJaHBXbFdBS1RPZWZqOVNXemZtVmlRQQ",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Global Energy & Geopolitics",
-        "reason": "Major financial and strategic consequences of conflict in Iran on global oil producers and energy supplies."
-      },
-      "classified_at": "2026-10-20T13:07:41.157353+00:00"
     },
     {
       "title": "China sends naval forces to monitor US warship near disputed shoal",
