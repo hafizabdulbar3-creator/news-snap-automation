@@ -458,6 +458,15 @@
       "published": true,
       "media_id": "17992652175054823",
       "timestamp": "2026-10-20T11:20:33.542093+00:00"
+    },
+    {
+      "url": "https://www.wkyt.com/2026/10/19/experts-weigh-ahead-kentucky-us-senate-debate-between-barr-booker/",
+      "title": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
+      "headline": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
+      "domain": "wkyt.com",
+      "published": true,
+      "media_id": "17908405461570191",
+      "timestamp": "2026-10-20T11:47:06.807223+00:00"
     }
   ],
   "processed": [
@@ -481,17 +490,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
-      "domain": "wkyt.com",
-      "url": "https://www.wkyt.com/2026/10/19/experts-weigh-ahead-kentucky-us-senate-debate-between-barr-booker/",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Preview and expert commentary on a statewide U.S. Senate debate."
-      },
-      "classified_at": "2026-10-20T00:06:08.713320+00:00"
-    },
     {
       "title": "NDP MLA Brooks Arcand-Paul warns against promises of better treaties through Alberta separation - The Turtle Island News",
       "domain": "theturtleislandnews.com",
