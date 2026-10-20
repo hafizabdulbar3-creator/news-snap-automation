@@ -296,6 +296,15 @@
       "published": true,
       "media_id": "18118467274950504",
       "timestamp": "2026-10-20T02:25:47.149461+00:00"
+    },
+    {
+      "url": "https://english.news.cn/20261020/05ec970ea535489b901a76a017920532/c.html",
+      "title": "Cuba condemns U.S. arrest warrant for Raul Castro",
+      "headline": "Cuba condemns U.S. arrest warrant for Raul Castro",
+      "domain": "english.news.cn",
+      "published": true,
+      "media_id": "18143596558587867",
+      "timestamp": "2026-10-20T02:51:27.007707+00:00"
     }
   ],
   "processed": [
@@ -556,17 +565,6 @@
         "reason": "Federal criminal charges filed by the Department of Justice regarding election-related offenses."
       },
       "classified_at": "2026-10-20T00:06:08.713289+00:00"
-    },
-    {
-      "title": "Cuba condemns U.S. arrest warrant for Raul Castro",
-      "domain": "english.news.cn",
-      "url": "https://english.news.cn/20261020/05ec970ea535489b901a76a017920532/c.html",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Diplomacy",
-        "reason": "Significant international dispute following an arrest warrant issued against a former Cuban head of state."
-      },
-      "classified_at": "2026-10-20T00:06:08.713292+00:00"
     },
     {
       "title": "Texas man seeks to have armed robbery conviction tossed over no-warrant Flock camera search",
