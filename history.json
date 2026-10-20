@@ -476,6 +476,15 @@
       "published": true,
       "media_id": "18154707046567337",
       "timestamp": "2026-10-20T12:12:43.294607+00:00"
+    },
+    {
+      "url": "https://www.wamc.org/news/2026-10-19/immigration-enforcement-in-new-york-among-key-campaign-issues-ahead-of-midterm-elections",
+      "title": "Immigration enforcement in New York among key campaign issues ahead of midterm elections",
+      "headline": "NY Gov Candidates Split Over Lawsuit Challenging ICE Cooperation Ban",
+      "domain": "wamc.org",
+      "published": true,
+      "media_id": "18153014422552270",
+      "timestamp": "2026-10-20T12:38:30.499082+00:00"
     }
   ],
   "processed": [
@@ -498,19 +507,7 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('President Trump signs executive order aimed at improving women's health. How could it impact you?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Immigration enforcement in New York among key campaign issues ahead of midterm elections",
-      "domain": "wamc.org",
-      "url": "https://www.wamc.org/news/2026-10-19/immigration-enforcement-in-new-york-among-key-campaign-issues-ahead-of-midterm-elections",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Coverage of regional campaign dynamics and immigration policy debates ahead of midterm elections."
-      },
-      "classified_at": "2026-10-20T00:06:08.713327+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
