@@ -541,6 +541,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 15."
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRjl5VmhGZHJ1bUpkdTZQaElWaWdnSFVkdVVQOUhzN3Y5SFdHOUNpS0pXQjdsVzhMVm1YOFloSGhHbnNYT29talRoNVJWdlRDVkdCM0VQV1lIUFZSbG9MV3BPclJZZGVtejVZZFNNWWxxdFdBM19hS2pQdHNaWm51MFRFNWxLWHdzVzQwN1ZxeXFFenRPREthTGRvVW9vOW1JdWpiVWk0VE9UQWlqRnZJWEJ0aFVYd2xBR3FN",
+      "title": "As France erupts, Europe's far right gains from fuel-price anger ahead of elections",
+      "domain": "reuters.com",
+      "timestamp": "2026-10-20T14:59:03.348177+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 15."
     }
   ],
   "classified_pool": [
@@ -576,17 +585,6 @@
         "reason": "Analysis of a competitive and historically significant US Senate race in Kansas."
       },
       "classified_at": "2026-10-20T13:07:41.157349+00:00"
-    },
-    {
-      "title": "As France erupts, Europe's far right gains from fuel-price anger ahead of elections",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRjl5VmhGZHJ1bUpkdTZQaElWaWdnSFVkdVVQOUhzN3Y5SFdHOUNpS0pXQjdsVzhMVm1YOFloSGhHbnNYT29talRoNVJWdlRDVkdCM0VQV1lIUFZSbG9MV3BPclJZZGVtejVZZFNNWWxxdFdBM19hS2pQdHNaWm51MFRFNWxLWHdzVzQwN1ZxeXFFenRPREthTGRvVW9vOW1JdWpiVWk0VE9UQWlqRnZJWEJ0aFVYd2xBR3FN",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "European Politics & Civil Unrest",
-        "reason": "Broad political upheaval and far-right resurgence tied to energy costs across Europe."
-      },
-      "classified_at": "2026-10-20T13:07:41.157351+00:00"
     },
     {
       "title": "Oil majors face spending test from Iran war windfall cash",
