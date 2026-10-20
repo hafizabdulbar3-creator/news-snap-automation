@@ -278,6 +278,15 @@
       "published": true,
       "media_id": "18017674235745405",
       "timestamp": "2026-10-20T01:33:34.687206+00:00"
+    },
+    {
+      "url": "https://www.nbcnews.com/politics/trump-administration/ukrainians-sudanese-granted-temporary-deportation-reprieve-rcna604474",
+      "title": "More than 100K Ukrainians and Sudanese granted temporary deportation reprieve from the U.S.",
+      "headline": "More Than 100K Ukrainians and Sudanese Granted Temporary Deportation Reprieve",
+      "domain": "nbcnews.com",
+      "published": true,
+      "media_id": "18023495105719218",
+      "timestamp": "2026-10-20T01:59:34.640060+00:00"
     }
   ],
   "processed": [
@@ -428,17 +437,6 @@
         "reason": "A routine roundup covering national political approval ratings and general news."
       },
       "classified_at": "2026-10-20T00:06:08.713247+00:00"
-    },
-    {
-      "title": "More than 100K Ukrainians and Sudanese granted temporary deportation reprieve from the U.S.",
-      "domain": "nbcnews.com",
-      "url": "https://www.nbcnews.com/politics/trump-administration/ukrainians-sudanese-granted-temporary-deportation-reprieve-rcna604474",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Immigration",
-        "reason": "Reports on large-scale federal immigration action affecting over 100,000 individuals fleeing conflict."
-      },
-      "classified_at": "2026-10-20T00:06:08.713251+00:00"
     },
     {
       "title": "U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says",
