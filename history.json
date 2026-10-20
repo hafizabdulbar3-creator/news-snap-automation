@@ -251,6 +251,15 @@
       "published": true,
       "media_id": "18026361323916462",
       "timestamp": "2026-10-19T20:01:42.863458+00:00"
+    },
+    {
+      "url": "https://www.bbc.co.uk/news/articles/cmqxn4gggdw4o",
+      "title": "Fatima El Mansouri: What can Morocco's first female prime minister change for women?",
+      "headline": "Morocco's first female prime minister takes office",
+      "domain": "bbc.co.uk",
+      "published": true,
+      "media_id": "17964356265230078",
+      "timestamp": "2026-10-20T00:36:24.105616+00:00"
     }
   ],
   "processed": [
@@ -391,17 +400,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Fatima El Mansouri: What can Morocco's first female prime minister change for women?",
-      "domain": "bbc.co.uk",
-      "url": "https://www.bbc.co.uk/news/articles/cmqxn4gggdw4o",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Covers the historic appointment and policy implications of Morocco's first female prime minister."
-      },
-      "classified_at": "2026-10-20T00:06:08.713170+00:00"
-    },
     {
       "title": "Trump's latest moves back Russia, buck Congress and U.S. allies",
       "domain": "nbcnews.com",
