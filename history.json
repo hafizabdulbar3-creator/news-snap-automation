@@ -557,6 +557,15 @@
       "published": true,
       "media_id": "18067190420785176",
       "timestamp": "2026-10-20T16:22:27.949613+00:00"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRG9Wc1hmTWh4V3JfNXMxV3FjbVI1WTJ6Vy1JY1p5ZUdXa2wxbFQ3V2VyMmhFTm9NaG5LMm5NdjJNQ08zbksyODZtd1NFQS03V0x1MGtrZ3JmTGg1Z3lWc0JnNjVjZ1NUUEU1clZLS0g5Y1JqQlpvRTlheG1LQkxrTHY1TUIzQVAzcDh2dVdpMVU5ekUwbFdRTC1wWHBLTFRUY0FuMUhpdDJ0by1OTmp1akRtbTFvT3l1YjczXw",
+      "title": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
+      "headline": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
+      "domain": "reuters.com",
+      "published": true,
+      "media_id": "17995144539020243",
+      "timestamp": "2026-10-20T16:48:33.888817+00:00"
     }
   ],
   "processed": [
@@ -621,17 +630,6 @@
         "reason": "Analysis of a competitive and historically significant US Senate race in Kansas."
       },
       "classified_at": "2026-10-20T13:07:41.157349+00:00"
-    },
-    {
-      "title": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRG9Wc1hmTWh4V3JfNXMxV3FjbVI1WTJ6Vy1JY1p5ZUdXa2wxbFQ3V2VyMmhFTm9NaG5LMm5NdjJNQ08zbksyODZtd1NFQS03V0x1MGtrZ3JmTGg1Z3lWc0JnNjVjZ1NUUEU1clZLS0g5Y1JqQlpvRTlheG1LQkxrTHY1TUIzQVAzcDh2dVdpMVU5ekUwbFdRTC1wWHBLTFRUY0FuMUhpdDJ0by1OTmp1akRtbTFvT3l1YjczXw",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Politics & Elections",
-        "reason": "Significant demographic and political shift toward the far right in Israel's national legislature."
-      },
-      "classified_at": "2026-10-20T13:07:41.157360+00:00"
     },
     {
       "title": "Chinese patrols to Taiwan's east are 'destabilising', US Congress-appointed official says",
