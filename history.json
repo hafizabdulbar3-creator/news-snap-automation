@@ -530,6 +530,15 @@
       "published": true,
       "media_id": "18055674110801762",
       "timestamp": "2026-10-20T15:04:54.475434+00:00"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOOHozWXlncm9jZTU0NmZiWUk0blJ0cHpVeDNpWm9UVUdscHU1V2MteFNUaFBVNF9tazZib0pwWDU4czUxSTZ1Wmg3WlVlMHlCLU1wYzdDaWNrdmdBT3gyOHUzY3dMbXdqTF91SURON1NLcU02bDhJdE9WaE10eW9OSXJQZzlHcFh5c2k2V1dhQ1lJa2Y3bmdMVlRYbVlqQ3NwekpLaHdvbzBud1M1Sl9DN0lRd3BFWG8zZjV3ZlNB",
+      "title": "China sends naval forces to monitor US warship near disputed shoal",
+      "headline": "China sends naval forces to monitor US warship near disputed shoal",
+      "domain": "reuters.com",
+      "published": true,
+      "media_id": "18051709508811265",
+      "timestamp": "2026-10-20T15:30:45.134978+00:00"
     }
   ],
   "processed": [
@@ -594,17 +603,6 @@
         "reason": "Analysis of a competitive and historically significant US Senate race in Kansas."
       },
       "classified_at": "2026-10-20T13:07:41.157349+00:00"
-    },
-    {
-      "title": "China sends naval forces to monitor US warship near disputed shoal",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOOHozWXlncm9jZTU0NmZiWUk0blJ0cHpVeDNpWm9UVUdscHU1V2MteFNUaFBVNF9tazZib0pwWDU4czUxSTZ1Wmg3WlVlMHlCLU1wYzdDaWNrdmdBT3gyOHUzY3dMbXdqTF91SURON1NLcU02bDhJdE9WaE10eW9OSXJQZzlHcFh5c2k2V1dhQ1lJa2Y3bmdMVlRYbVlqQ3NwekpLaHdvbzBud1M1Sl9DN0lRd3BFWG8zZjV3ZlNB",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Military & Geopolitics",
-        "reason": "Direct military maritime standoff between US and Chinese naval forces in the contested South China Sea."
-      },
-      "classified_at": "2026-10-20T13:07:41.157354+00:00"
     },
     {
       "title": "Rubio kicks off India visit with trade deal, Russian oil on agenda",
