@@ -413,6 +413,15 @@
       "published": true,
       "media_id": "18398593690202196",
       "timestamp": "2026-10-20T09:00:17.188036+00:00"
+    },
+    {
+      "url": "https://www.therecord.com/business/texas-man-seeks-to-have-armed-robbery-conviction-tossed-over-no-warrant-flock-camera-search/article_7f437867-863d-5573-84ca-078e7cceb6ad.html",
+      "title": "Texas man seeks to have armed robbery conviction tossed over no-warrant Flock camera search",
+      "headline": "Texas man seeks to toss armed robbery conviction over no-warrant Flock camera search",
+      "domain": "therecord.com",
+      "published": true,
+      "media_id": "18145411108560847",
+      "timestamp": "2026-10-20T09:26:10.565339+00:00"
     }
   ],
   "processed": [
@@ -553,17 +562,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Texas man seeks to have armed robbery conviction tossed over no-warrant Flock camera search",
-      "domain": "therecord.com",
-      "url": "https://www.therecord.com/business/texas-man-seeks-to-have-armed-robbery-conviction-tossed-over-no-warrant-flock-camera-search/article_7f437867-863d-5573-84ca-078e7cceb6ad.html",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal & Technology",
-        "reason": "Constitutional legal challenge regarding privacy and automated surveillance camera searches without warrants."
-      },
-      "classified_at": "2026-10-20T00:06:08.713296+00:00"
-    },
     {
       "title": "President Trump signs executive order aimed at improving women's health. How could it impact you?",
       "domain": "ketv.com",
