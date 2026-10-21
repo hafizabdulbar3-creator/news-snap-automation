@@ -881,12 +881,12 @@
   "quota_cooldowns": {},
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5135990,
-    "refreshed_at": "2026-10-20T08:50:45.402774+00:00",
-    "expires_at": "2026-12-18T19:30:35.402774+00:00",
+    "expires_in": 5184000,
+    "refreshed_at": "2026-10-21T08:50:41.282837+00:00",
+    "expires_at": "2026-12-20T08:50:41.282837+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-10-20T08:50:46.986056+00:00"
+    "updated_at": "2026-10-21T08:50:43.265323+00:00"
   }
 }
