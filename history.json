@@ -584,6 +584,15 @@
       "published": true,
       "media_id": "18643012609041525",
       "timestamp": "2026-10-23T14:42:14.233136+00:00"
+    },
+    {
+      "url": "https://apnews.com/article/canada-carney-alberta-separation-vote-independence-1fd99a12188ff82a33a914a0051a0908",
+      "title": "Albertans vote on path to independence as Carney fights to keep Canada united",
+      "headline": "Albertans vote on path to independence as Carney fights to keep Canada united",
+      "domain": "apnews.com",
+      "published": true,
+      "media_id": "18126414890485672",
+      "timestamp": "2026-10-23T15:08:09.038326+00:00"
     }
   ],
   "processed": [
@@ -778,17 +787,6 @@
         "reason": "National public opinion poll tracking shifts among Asian American and Pacific Islander voters."
       },
       "classified_at": "2026-10-20T13:07:41.157389+00:00"
-    },
-    {
-      "title": "Albertans vote on path to independence as Carney fights to keep Canada united",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/canada-carney-alberta-separation-vote-independence-1fd99a12188ff82a33a914a0051a0908",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Constitutional Politics & Governance",
-        "reason": "A regional sovereignty vote threatening the territorial and political unity of Canada."
-      },
-      "classified_at": "2026-10-20T13:07:41.157391+00:00"
     },
     {
       "title": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide protests",
