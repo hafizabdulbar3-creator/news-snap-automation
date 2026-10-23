@@ -575,6 +575,15 @@
       "published": true,
       "media_id": "18116924993019319",
       "timestamp": "2026-10-23T14:11:52.574957+00:00"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZkJfbTJUSTNGdHptbTBieXhMaFBhamZFaTJFb2JXVllDUnFyX3U2OG1hbWFTQ0ZlbzVfS2U0bmtOTmk3dWExc3hnc0JxQ1o3V2FkODNjWkRzNDVPOEF3YjQ4YWtWMW9mMXJ6ZGJxS3pUNkxzNVZOTDRXTU05Y0xlOHF0X0xtU2ZBeWJkaTBTNjNnWnU0YWVKbXAzaVVoYjBzRmc4MXNiUkM",
+      "title": "Trump says Zelenskiy should get somebody else to negotiate to end war",
+      "headline": "Trump says Zelenskiy should get somebody else to negotiate to end war",
+      "domain": "reuters.com",
+      "published": true,
+      "media_id": "18643012609041525",
+      "timestamp": "2026-10-23T14:42:14.233136+00:00"
     }
   ],
   "processed": [
@@ -703,17 +712,6 @@
         "reason": "Financial earnings forecast adjustment for a major aerospace corporation."
       },
       "classified_at": "2026-10-20T13:07:41.157375+00:00"
-    },
-    {
-      "title": "Trump says Zelenskiy should get somebody else to negotiate to end war",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZkJfbTJUSTNGdHptbTBieXhMaFBhamZFaTJFb2JXVllDUnFyX3U2OG1hbWFTQ0ZlbzVfS2U0bmtOTmk3dWExc3hnc0JxQ1o3V2FkODNjWkRzNDVPOEF3YjQ4YWtWMW9mMXJ6ZGJxS3pUNkxzNVZOTDRXTU05Y0xlOHF0X0xtU2ZBeWJkaTBTNjNnWnU0YWVKbXAzaVVoYjBzRmc4MXNiUkM",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Geopolitics & War in Ukraine",
-        "reason": "Major foreign policy statement concerning peace negotiations and leadership in the Russia-Ukraine war."
-      },
-      "classified_at": "2026-10-20T13:07:41.157377+00:00"
     },
     {
       "title": "DXC in advanced talks to sell insurance software unit for $2.4 billion, sources say",
