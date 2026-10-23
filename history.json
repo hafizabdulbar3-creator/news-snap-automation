@@ -620,6 +620,15 @@
       "published": true,
       "media_id": "17887927230686976",
       "timestamp": "2026-10-23T18:52:29.652192+00:00"
+    },
+    {
+      "url": "https://www.euronews.com/2026/10/23/us-designates-helium-as-critical-material-as-europe-faces-supply-squeeze",
+      "title": "US designates helium as critical amid European supply squeeze",
+      "headline": "US designates helium as critical material amid European supply squeeze",
+      "domain": "euronews.com",
+      "published": true,
+      "media_id": "18111821399171518",
+      "timestamp": "2026-10-23T19:38:55.716504+00:00"
     }
   ],
   "processed": [
@@ -660,7 +669,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump's corporate stakes are a gift to the next Democratic president",
+      "domain": "foxnews.com",
+      "url": "https://www.foxnews.com/opinion/trumps-corporate-stakes-gift-next-democratic-president",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Political analysis regarding corporate holdings and potential future administration impact."
+      },
+      "classified_at": "2026-10-23T19:38:32.935576+00:00"
+    },
+    {
+      "title": "Italy's cities in security 'lockdown' for Saturday protests",
+      "domain": "euronews.com",
+      "url": "https://www.euronews.com/2026/10/23/italy-preparing-with-elite-troops-and-drone-surveillance-for-24-october-protests",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Report on security measures for protests in Italy is a notable regional event but does not rise to the level of major geopolitical consequence."
+      },
+      "classified_at": "2026-10-23T19:38:32.935598+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
