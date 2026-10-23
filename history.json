@@ -593,6 +593,15 @@
       "published": true,
       "media_id": "18126414890485672",
       "timestamp": "2026-10-23T15:08:09.038326+00:00"
+    },
+    {
+      "url": "https://apnews.com/article/france-protests-violence-looting-f5ce07c2ef46ad0c02c6ff7018532a59",
+      "title": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide protests",
+      "headline": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide",
+      "domain": "apnews.com",
+      "published": true,
+      "media_id": "17935098723393679",
+      "timestamp": "2026-10-23T15:34:27.703827+00:00"
     }
   ],
   "processed": [
@@ -787,17 +796,6 @@
         "reason": "National public opinion poll tracking shifts among Asian American and Pacific Islander voters."
       },
       "classified_at": "2026-10-20T13:07:41.157389+00:00"
-    },
-    {
-      "title": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide protests",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/france-protests-violence-looting-f5ce07c2ef46ad0c02c6ff7018532a59",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Civil Unrest & European Politics",
-        "reason": "Nationwide rioting and political crisis threatening state stability in France."
-      },
-      "classified_at": "2026-10-20T13:07:41.157392+00:00"
     },
     {
       "title": "Jeffries likes Democrats' chances in race for the House as he campaigns in Ohio",
