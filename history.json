@@ -602,6 +602,15 @@
       "published": true,
       "media_id": "17935098723393679",
       "timestamp": "2026-10-23T15:34:27.703827+00:00"
+    },
+    {
+      "url": "https://apnews.com/article/trump-rally-kentucky-gallrein-296695e675eb0513edfe9b23be3b81c9",
+      "title": "Trump touts his power at Kentucky rally to energize voters ahead of midterm elections",
+      "headline": "Trump touts power at Kentucky rally to energize voters",
+      "domain": "apnews.com",
+      "published": true,
+      "media_id": "18117645472797543",
+      "timestamp": "2026-10-23T16:01:20.182632+00:00"
     }
   ],
   "processed": [
@@ -653,17 +662,6 @@
         "reason": "Direct endorsement from a major US political leader in an allied nation's critical national election."
       },
       "classified_at": "2026-10-20T13:07:41.157330+00:00"
-    },
-    {
-      "title": "Trump touts his power at Kentucky rally to energize voters ahead of midterm elections",
-      "domain": "apnews.com",
-      "url": "https://apnews.com/article/trump-rally-kentucky-gallrein-296695e675eb0513edfe9b23be3b81c9",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "US Politics",
-        "reason": "Routine national midterm campaign rally coverage."
-      },
-      "classified_at": "2026-10-20T13:07:41.157347+00:00"
     },
     {
       "title": "Could disillusioned Kansas voters send their first Democrat to the US Senate in 94 years?",
