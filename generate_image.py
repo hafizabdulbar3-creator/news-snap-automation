@@ -17,6 +17,7 @@ import html
 import json
 import os
 import re
+import sys
 import unicodedata
 import urllib.parse
 import urllib.request
@@ -141,13 +142,32 @@ def is_likely_english(text, minimum_confidence=0.40):
         return True
     try:
         predictions = detect_langs(text)
-        return bool(
-            predictions
-            and predictions[0].lang == "en"
-            and predictions[0].prob >= minimum_confidence
-        )
+        if not predictions:
+            return True
+        if predictions[0].lang == "en" and predictions[0].prob >= minimum_confidence:
+            return True
+        en_prob = next((p.prob for p in predictions if p.lang == "en"), 0.0)
+        if en_prob >= 0.25:
+            common_english = {
+                "the", "be", "to", "of", "and", "a", "in", "that", "have", "it",
+                "for", "not", "on", "with", "he", "as", "you", "do", "at", "this",
+                "but", "his", "by", "from", "they", "we", "say", "her", "she", "or",
+                "an", "will", "my", "one", "all", "would", "there", "their", "what",
+                "so", "up", "out", "if", "about", "who", "which", "when", "can",
+                "into", "year", "your", "could", "them", "other", "than", "then",
+                "now", "its", "over", "also", "after", "two", "how", "our", "new",
+                "most", "us", "says", "said", "reported", "officials", "state",
+                "court", "global", "trade", "world", "key", "report", "impact",
+                "news", "first", "more", "over", "under", "deal", "plan", "sanctions",
+                "is", "are", "was", "were", "has", "had", "close", "amid", "talks"
+            }
+            tokens = [w.lower() for w in re.findall(r"\b[a-zA-Z]{2,}\b", text)]
+            matches = sum(1 for w in tokens if w in common_english)
+            if matches >= 2 or (len(tokens) <= 5 and matches >= 1):
+                return True
     except Exception:
         return True
+    return False
 
 
 def validate_english_text(text, label, min_words=None, max_words=None):
@@ -2191,72 +2211,83 @@ def main():
     post = json.loads(post_path.read_text(encoding="utf-8"))
     article = json.loads(article_path.read_text(encoding="utf-8"))
 
-    # Determine template using editorial layout selection
-    roundup_exists = Path("roundup.json").is_file() and Path("roundup_post.json").is_file()
-    forced = os.environ.get("NEWS_SNAP_FORCE_TEMPLATE")
-    if forced:
-        template_id = forced.strip()
-        selection_reason = f"Forced via environment variable: {template_id}"
-    else:
-        template_id, selection_reason = select_editorial_template(article, roundup_exists)
-
-    if template_id == "06" and not (article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker")):
-        print("[WARN] Format 06 skipped: quote is not source-verified (quote_verified is not True). Using appropriate non-quote format instead.")
-        clean_article = dict(article)
-        clean_article.pop("quote_text", None)
-        clean_article.pop("quote_verified", None)
-        template_id, selection_reason = select_editorial_template(clean_article, roundup_exists)
-
-    format_name = FORMAT_REGISTRY.get(template_id, {}).get("name", template_id.upper())
-    print(f"Template Selected: {template_id} — {format_name}")
-    print(f"Selection Reason: {selection_reason}")
-
-    if template_id == "04":
-        roundup_post = json.loads(Path("roundup_post.json").read_text(encoding="utf-8"))
-        post_for_render = roundup_post
-        post_for_render["headline"] = validate_english_text(post_for_render.get("headline"), "roundup headline", 3, 12)
-    else:
-        post_for_render = post
-        post_for_render["headline"] = validate_english_text(post_for_render.get("headline"), "headline", 4, 14)
-
-    source = str(article.get("domain", "")).strip().lower()
-    if not source or not re.fullmatch(r"[a-z0-9.-]+", source):
-        raise ValueError("Invalid publisher domain; refusing image")
-
-    image, rendered_post, photo_infos = render_approved_format(template_id, article, post_for_render)
-    rendered_post["format"] = template_id
-
-    if template_id == "04":
-        real_photos = [info for info in photo_infos if info and isinstance(info.get("image"), Image.Image)]
-        if real_photos:
-            for idx, info in enumerate(photo_infos, start=1):
-                if info and isinstance(info.get("image"), Image.Image):
-                    annotate_image_credit(rendered_post, info, caption_path="post.json", story_index=idx)
+    try:
+        # Determine template using editorial layout selection
+        roundup_exists = Path("roundup.json").is_file() and Path("roundup_post.json").is_file()
+        forced = os.environ.get("NEWS_SNAP_FORCE_TEMPLATE")
+        if forced:
+            template_id = forced.strip()
+            selection_reason = f"Forced via environment variable: {template_id}"
         else:
-            rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
-        Path("roundup_post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
-    else:
-        valid_photos = [p for p in photo_infos if p and isinstance(p.get("image"), Image.Image)]
-        if valid_photos:
-            annotate_image_credit(rendered_post, valid_photos, caption_path="post.json")
+            template_id, selection_reason = select_editorial_template(article, roundup_exists)
+
+        if template_id == "06" and not (article.get("quote_verified") is True and article.get("quote_text") and article.get("speaker")):
+            print("[WARN] Format 06 skipped: quote is not source-verified (quote_verified is not True). Using appropriate non-quote format instead.")
+            clean_article = dict(article)
+            clean_article.pop("quote_text", None)
+            clean_article.pop("quote_verified", None)
+            template_id, selection_reason = select_editorial_template(clean_article, roundup_exists)
+
+        format_name = FORMAT_REGISTRY.get(template_id, {}).get("name", template_id.upper())
+        print(f"Template Selected: {template_id} — {format_name}")
+        print(f"Selection Reason: {selection_reason}")
+
+        if template_id == "04":
+            roundup_post = json.loads(Path("roundup_post.json").read_text(encoding="utf-8"))
+            post_for_render = roundup_post
+            post_for_render["headline"] = validate_english_text(post_for_render.get("headline"), "roundup headline", 3, 12)
         else:
-            rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
-    Path("post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
+            post_for_render = post
+            post_for_render["headline"] = validate_english_text(post_for_render.get("headline"), "headline", 4, 14)
 
-    image = image.convert("RGB")
-    image.save(OUTPUT, "JPEG", quality=95, optimize=True)
+        source = str(article.get("domain", "")).strip().lower()
+        if not source or not re.fullmatch(r"[a-z0-9.-]+", source):
+            raise ValueError("Invalid publisher domain; refusing image")
 
-    with Image.open(OUTPUT) as check:
-        if check.size != (WIDTH, HEIGHT) or check.format != "JPEG":
-            raise ValueError("Exported image failed format/dimension validation")
-        if OUTPUT.stat().st_size > 8 * 1024 * 1024:
-            raise ValueError("Image exceeds 8 MB")
+        image, rendered_post, photo_infos = render_approved_format(template_id, article, post_for_render)
+        rendered_post["format"] = template_id
 
-    print(f"\nNEWS SNAP post created: {OUTPUT}")
-    print(f"Template: {template_id}")
-    print(f"Format Name: {format_name}")
-    print(f"Dimensions: {WIDTH}x{HEIGHT}")
-    print(f"Source: {source}")
+        if template_id == "04":
+            real_photos = [info for info in photo_infos if info and isinstance(info.get("image"), Image.Image)]
+            if real_photos:
+                for idx, info in enumerate(photo_infos, start=1):
+                    if info and isinstance(info.get("image"), Image.Image):
+                        annotate_image_credit(rendered_post, info, caption_path="post.json", story_index=idx)
+            else:
+                rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
+            Path("roundup_post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
+        else:
+            valid_photos = [p for p in photo_infos if p and isinstance(p.get("image"), Image.Image)]
+            if valid_photos:
+                annotate_image_credit(rendered_post, valid_photos, caption_path="post.json")
+            else:
+                rendered_post["caption"] = strip_image_credits(rendered_post.get("caption", ""))
+        Path("post.json").write_text(json.dumps(rendered_post, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        image = image.convert("RGB")
+        image.save(OUTPUT, "JPEG", quality=95, optimize=True)
+
+        with Image.open(OUTPUT) as check:
+            if check.size != (WIDTH, HEIGHT) or check.format != "JPEG":
+                raise ValueError("Exported image failed format/dimension validation")
+            if OUTPUT.stat().st_size > 8 * 1024 * 1024:
+                raise ValueError("Image exceeds 8 MB")
+
+        print(f"\nNEWS SNAP post created: {OUTPUT}")
+        print(f"Template: {template_id}")
+        print(f"Format Name: {format_name}")
+        print(f"Dimensions: {WIDTH}x{HEIGHT}")
+        print(f"Source: {source}")
+    except ValueError as val_err:
+        print(f"[IMAGE GENERATION REJECTION] {val_err}", file=sys.stderr)
+        if article and isinstance(article, dict):
+            try:
+                from post_generator import record_rejected_story
+                record_rejected_story(article, reason=str(val_err))
+                print(f"[REJECTION] Recorded unrenderable story in history.json: {val_err}")
+            except Exception as e:
+                print(f"[WARN] Failed to record rejected story: {e}", file=sys.stderr)
+        raise
 
 
 if __name__ == "__main__":

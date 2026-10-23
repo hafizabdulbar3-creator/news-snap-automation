@@ -133,7 +133,8 @@ def is_english(text: str, minimum_confidence: float = 0.60) -> bool:
         "now", "its", "over", "also", "after", "two", "how", "our", "new",
         "most", "us", "says", "said", "reported", "officials", "state",
         "court", "global", "trade", "world", "key", "report", "impact",
-        "news", "first", "more", "over", "under", "deal", "plan", "sanctions"
+        "news", "first", "more", "over", "under", "deal", "plan", "sanctions",
+        "is", "are", "was", "were", "has", "had", "close", "amid", "talks"
     }
     matches = sum(1 for t in tokens if t in common_english)
     return matches >= 1

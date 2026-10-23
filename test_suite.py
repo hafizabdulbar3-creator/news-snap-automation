@@ -5740,6 +5740,53 @@ class TestFactualGroundingAndSafeRejection(unittest.TestCase):
             instagram_publisher.validate_image_and_post(article=article)
         self.assertIn("FACTUAL GROUNDING REFUSAL", str(ctx.exception))
 
+    def test_13_validate_english_text_accepts_proper_noun_headline(self):
+        """13. Regression test: generate_image accepts English headlines containing foreign entity/country names."""
+        headline = "Trump says Mexico and US are close to trade deal"
+        validated = generate_image.validate_english_text(headline, "headline", 4, 14)
+        self.assertEqual(validated, headline)
+
+        headline_canada = "Senators Question Carney Government on Bill C-39"
+        validated_canada = generate_image.validate_english_text(headline_canada, "headline", 4, 14)
+        self.assertEqual(validated_canada, headline_canada)
+
+    def test_14_validate_english_text_rejects_foreign_language(self):
+        """14. Regression test: generate_image rejects genuine non-English headlines."""
+        foreign = "El presidente de México anunció nuevas medidas fiscales para el próximo año"
+        with self.assertRaises(ValueError) as ctx:
+            generate_image.validate_english_text(foreign, "headline", 4, 14)
+        self.assertIn("not confidently English", str(ctx.exception))
+
+    def test_15_generate_image_records_rejection_on_failure(self):
+        """15. Regression test: generate_image safely records rejected story in history and prunes classified_pool on ValueError."""
+        article = {
+            "title": "Invalid Publisher Story",
+            "domain": "invalid_domain@bad!site",
+            "url": "https://bad.example.com/invalid-story"
+        }
+        post = {
+            "headline": "Invalid Publisher Story Occurred Today",
+            "curiosity_line": "Investigation under way",
+            "caption": "A story occurred today from an invalid publisher domain.",
+            "hashtags": ["#NewsSnap"]
+        }
+        Path("selected_article.json").write_text(json.dumps(article), encoding="utf-8")
+        Path("post.json").write_text(json.dumps(post), encoding="utf-8")
+        
+        # Add to classified_pool in history
+        hist = {"posted": [], "processed": [], "classified_pool": [article]}
+        self.history_path.write_text(json.dumps(hist), encoding="utf-8")
+
+        with self.assertRaises(ValueError):
+            generate_image.main()
+
+        # Confirm recorded in processed as rejected and pruned from classified_pool
+        updated_hist = json.loads(self.history_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(updated_hist["classified_pool"]), 0)
+        self.assertEqual(len(updated_hist["processed"]), 1)
+        self.assertTrue(updated_hist["processed"][0].get("rejected"))
+        self.assertEqual(updated_hist["processed"][0]["url"], article["url"])
+
 
 if __name__ == "__main__":
     unittest.main()
