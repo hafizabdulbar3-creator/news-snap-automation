@@ -566,6 +566,15 @@
       "published": true,
       "media_id": "17995144539020243",
       "timestamp": "2026-10-20T16:48:33.888817+00:00"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX3Bkc0ZpcWlrNVo2Y0VQaUlDNFdrXzB5Vmg1OHBLZFd0UVd3dnJkV1QxY2FUWTYyMHlzUHc0NjVoR0U0dllIZGtTZGpoY05xcDlxdVU2cWxNVG92VTNablpxbE5ubUdUWFRidzN0V0c0ZFJGUlY3NnNvbk1LVE1idVFKUUNyS3RPRTQ1NWJmdGZmMUhxQm5j",
+      "title": "Trump says Mexico and US are close to trade deal",
+      "headline": "Trump says Mexico and US are close to trade deal",
+      "domain": "reuters.com",
+      "published": true,
+      "media_id": "18116924993019319",
+      "timestamp": "2026-10-23T14:11:52.574957+00:00"
     }
   ],
   "processed": [
@@ -683,17 +692,6 @@
         "reason": "Industry survey detailing corporate IT expenditure trends."
       },
       "classified_at": "2026-10-20T13:07:41.157370+00:00"
-    },
-    {
-      "title": "Trump says Mexico and US are close to trade deal",
-      "domain": "reuters.com",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX3Bkc0ZpcWlrNVo2Y0VQaUlDNFdrXzB5Vmg1OHBLZFd0UVd3dnJkV1QxY2FUWTYyMHlzUHc0NjVoR0U0dllIZGtTZGpoY05xcDlxdVU2cWxNVG92VTNablpxbE5ubUdUWFRidzN0V0c0ZFJGUlY3NnNvbk1LVE1idVFKUUNyS3RPRTQ1NWJmdGZmMUhxQm5j",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Trade",
-        "reason": "Potential multi-billion-dollar bilateral trade agreement between the United States and Mexico."
-      },
-      "classified_at": "2026-10-20T13:07:41.157372+00:00"
     },
     {
       "title": "GE Aerospace raises 2026 profit forecast as services strength drives growth",
