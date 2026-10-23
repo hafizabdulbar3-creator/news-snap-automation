@@ -203,6 +203,19 @@ def main():
         )
         pool = get_classified_pool(history_path)
         hist_sets = get_history_sets(history_path)
+
+        # Permanently purge unapproved or licensing-restricted candidates from classified_pool
+        valid_pool = [a for a in pool if is_approved_url(a.get("url", ""))]
+        if len(valid_pool) != len(pool):
+            try:
+                hist_p = Path(history_path)
+                raw_data = json.loads(hist_p.read_text(encoding="utf-8"))
+                raw_data["classified_pool"] = valid_pool
+                hist_p.write_text(json.dumps(raw_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            except Exception:
+                pass
+            pool = valid_pool
+
         pool_eligible = [
             a for a in pool
             if is_approved_url(a.get("url", ""))

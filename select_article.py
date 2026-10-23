@@ -66,6 +66,17 @@ def is_candidate_eligible(
     return True, "eligible"
 
 
+def emit_article_selected(selected: bool) -> None:
+    """Emit article_selected output for GitHub Actions workflow gating."""
+    github_output = os.environ.get("GITHUB_OUTPUT")
+    if github_output:
+        try:
+            with open(github_output, "a", encoding="utf-8") as f:
+                f.write(f"article_selected={'true' if selected else 'false'}\n")
+        except Exception as e:
+            print(f"[WARN] Failed to write to GITHUB_OUTPUT: {e}")
+
+
 def select_best_article():
     discovery_path = Path("discovery.json")
     classified_path = Path("classified_sample.json")
@@ -78,6 +89,21 @@ def select_best_article():
 
     articles = json.loads(discovery_path.read_text(encoding="utf-8"))
     classified_data = json.loads(classified_path.read_text(encoding="utf-8"))
+
+    # Early hygiene: Prune unapproved / licensing-restricted stories from persistent classified_pool
+    if history_path.is_file():
+        try:
+            raw_hist = json.loads(history_path.read_text(encoding="utf-8"))
+            if "classified_pool" in raw_hist and isinstance(raw_hist["classified_pool"], list):
+                orig_pool_len = len(raw_hist["classified_pool"])
+                raw_hist["classified_pool"] = [
+                    a for a in raw_hist["classified_pool"]
+                    if isinstance(a, dict) and is_approved_url(a.get("url", ""))
+                ]
+                if len(raw_hist["classified_pool"]) != orig_pool_len:
+                    history_path.write_text(json.dumps(raw_hist, ensure_ascii=False, indent=2), encoding="utf-8")
+        except Exception:
+            pass
 
     # Load history (both published and recently dry-run-processed)
     recently_posted = set()
@@ -167,10 +193,14 @@ def select_best_article():
             break
 
     if selected is None:
-        print("[INFO] No fresh, unposted article available for selection in this run.")
+        print("[SAFE SKIP] No publication-authorized, non-duplicate article available for selection.")
         sel_path = Path("selected_article.json")
         if sel_path.is_file():
-            sel_path.unlink()
+            try:
+                sel_path.unlink()
+            except OSError:
+                pass
+        emit_article_selected(False)
         return None
 
     # Clean up any stale roundup artifacts from prior runs/tests to prevent silent divergence
@@ -190,6 +220,7 @@ def select_best_article():
         json.dumps(selected, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
+    emit_article_selected(True)
 
     # Prune unapproved stories from persistent classified_pool
     if history_path.is_file():

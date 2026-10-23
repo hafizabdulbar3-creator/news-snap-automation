@@ -132,6 +132,8 @@ def generate_run_summary(history_path: str = "history.json", discovery_path: str
         run_mode = "STORY SAFELY REJECTED: FACTUAL GROUNDING SAFEGUARD ENFORCED"
     elif image_generated and not confirmed_published:
         run_mode = "DRY-RUN / PRE-FLIGHT COMPLETED (NO LIVE POST)"
+    elif not selected_file.is_file() and (discovered_count > 0 or pool_count > 0):
+        run_mode = "SAFE SKIP: NO ELIGIBLE APPROVED STORY AVAILABLE"
     elif discovered_count == 0 and pool_count == 0:
         run_mode = "NO-OP: NO FRESH CANDIDATES DISCOVERED"
     else:

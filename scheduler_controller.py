@@ -119,18 +119,32 @@ def dispatch_workflow(
     workflow_file: str,
     ref: str = "main",
     inputs: dict = None,
-    api_url: str = DEFAULT_API_URL
+    api_url: str = DEFAULT_API_URL,
+    max_retries: int = 3,
+    retry_delay: float = 2.0
 ) -> bool:
-    """Dispatch a workflow via workflow_dispatch API. Returns True on success, raises RuntimeError on failure."""
+    """Dispatch a workflow via workflow_dispatch API with retry on transient 5xx errors.
+    Returns True on success, raises RuntimeError on persistent failure.
+    """
     url = f"{api_url}/repos/{repo}/actions/workflows/{workflow_file}/dispatches"
     payload = {"ref": ref}
     if inputs:
         payload["inputs"] = inputs
 
-    status, resp = query_api(url, token, method="POST", payload=payload)
-    if status == 204:
-        return True
-    error_msg = f"Failed to dispatch '{workflow_file}' (HTTP {status}): {resp.get('body') or resp.get('error', 'Unknown error')}"
+    last_error = ""
+    for attempt in range(1, max_retries + 1):
+        status, resp = query_api(url, token, method="POST", payload=payload)
+        if status == 204:
+            return True
+        last_error = f"HTTP {status}: {resp.get('body') or resp.get('error', 'Unknown error')}"
+        if status in (500, 502, 503, 504) and attempt < max_retries:
+            print(f"[RETRY] Dispatch '{workflow_file}' returned {status}; retrying in {retry_delay}s (attempt {attempt}/{max_retries})...")
+            time.sleep(retry_delay)
+            retry_delay *= 2
+        else:
+            break
+
+    error_msg = f"Failed to dispatch '{workflow_file}' after {attempt} attempt(s) ({last_error})"
     raise RuntimeError(error_msg)
 
 
@@ -300,15 +314,19 @@ def run_controller_cycle(
         print("[BOOTSTRAP] No Instagram publishing will occur in this cycle.")
     else:
         print(f"[PUBLISHER] Dispatching production publishing workflow '{publisher_workflow}'...")
-        dispatch_workflow(
-            repo=repo,
-            token=token,
-            workflow_file=publisher_workflow,
-            ref="main",
-            api_url=api_url
-        )
-        publisher_dispatched = True
-        print(f"[PUBLISHER DISPATCHED] Successfully triggered '{publisher_workflow}' via workflow_dispatch.")
+        try:
+            dispatch_workflow(
+                repo=repo,
+                token=token,
+                workflow_file=publisher_workflow,
+                ref="main",
+                api_url=api_url
+            )
+            publisher_dispatched = True
+            print(f"[PUBLISHER DISPATCHED] Successfully triggered '{publisher_workflow}' via workflow_dispatch.")
+        except Exception as pub_err:
+            print(f"[PUBLISHER WARN] Transient failure triggering '{publisher_workflow}': {pub_err}")
+            print("[CADENCE] Recurrence chain will continue to maintain scheduler health.")
 
     # Calculate remaining sleep time to maintain 5-minute recurrence cadence
     elapsed = time.time() - start_time

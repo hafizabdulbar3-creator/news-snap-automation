@@ -6440,6 +6440,124 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
                 post_generator.generate_post({"title": "Aggregator Direct Link", "domain": "gdeltproject.org", "url": url})
             self.assertIn("SAFETY REFUSAL", str(ctx.exception))
 
+    def test_23_article_selection_emits_output_and_handles_safe_skip(self):
+        """23. select_best_article emits article_selected=false on skip and article_selected=true on selection."""
+        gh_out = Path(self.temp_dir) / "github_output.txt"
+        with patch.dict(os.environ, {"GITHUB_OUTPUT": str(gh_out)}):
+            # Case A: No eligible articles -> article_selected=false
+            disc = [{"title": "Unapproved Wire Story", "url": "https://reuters.com/wire", "domain": "reuters.com", "score": 100, "is_duplicate": False}]
+            sample = {"results": [{"id": 1, "importance": "MAJOR"}]}
+            self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+            self.sample_path.write_text(json.dumps(sample), encoding="utf-8")
+            with patch("select_article.Path", side_effect=lambda p: (
+                self.discovery_path if str(p) == "discovery.json"
+                else (self.sample_path if str(p) == "classified_sample.json"
+                else (self.history_path if str(p) == "history.json"
+                else (self.selected_path if str(p) == "selected_article.json"
+                else Path(p))))
+            )):
+                sel = select_article.select_best_article()
+
+            self.assertIsNone(sel)
+            self.assertFalse(self.selected_path.is_file())
+            content_a = gh_out.read_text(encoding="utf-8")
+            self.assertIn("article_selected=false", content_a)
+
+            # Case B: Approved article available -> article_selected=true
+            gh_out.unlink()
+            disc_b = [{"title": "Authorized CNN Major Story Today", "url": "https://edition.cnn.com/world/major", "domain": "cnn.com", "score": 100, "is_duplicate": False}]
+            self.discovery_path.write_text(json.dumps(disc_b), encoding="utf-8")
+            with patch("select_article.Path", side_effect=lambda p: (
+                self.discovery_path if str(p) == "discovery.json"
+                else (self.sample_path if str(p) == "classified_sample.json"
+                else (self.history_path if str(p) == "history.json"
+                else (self.selected_path if str(p) == "selected_article.json"
+                else Path(p))))
+            )):
+                sel_b = select_article.select_best_article()
+
+            self.assertIsNotNone(sel_b)
+            self.assertTrue(self.selected_path.is_file())
+            content_b = gh_out.read_text(encoding="utf-8")
+            self.assertIn("article_selected=true", content_b)
+
+    def test_24_classified_pool_pruned_of_unapproved_even_when_no_selection(self):
+        """24. Classified pool in history.json is immediately cleaned of unapproved sources even when selection returns None."""
+        unapproved_in_pool = {
+            "title": "Unapproved BBC In Pool",
+            "url": "https://www.bbc.com/news/in-pool",
+            "domain": "bbc.com",
+            "classification": {"importance": "MAJOR"}
+        }
+        self.history_path.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [unapproved_in_pool]
+        }), encoding="utf-8")
+
+        # Discovery is empty or unapproved
+        self.discovery_path.write_text(json.dumps([]), encoding="utf-8")
+        self.sample_path.write_text(json.dumps({"results": []}), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.discovery_path if str(p) == "discovery.json"
+            else (self.sample_path if str(p) == "classified_sample.json"
+            else (self.history_path if str(p) == "history.json"
+            else (self.selected_path if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        self.assertIsNone(sel)
+        # Pool must be pruned
+        hist = json.loads(self.history_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(hist.get("classified_pool", [])), 0)
+
+    def test_25_post_generator_cleanly_handles_missing_or_unapproved_article(self):
+        """25. post_generator.main exits cleanly with post_ready=false when selected_article is missing or unapproved."""
+        gh_out = Path(self.temp_dir) / "github_output_gen.txt"
+        with patch.dict(os.environ, {"GITHUB_OUTPUT": str(gh_out)}):
+            # Case A: Missing selected_article.json
+            with patch("post_generator.Path") as mock_path:
+                def path_resolver(p):
+                    if str(p) == "selected_article.json":
+                        m = MagicMock()
+                        m.is_file.return_value = False
+                        return m
+                    return Path(self.temp_dir) / str(p)
+                mock_path.side_effect = path_resolver
+                post_generator.main()
+
+            self.assertIn("post_ready=false", gh_out.read_text(encoding="utf-8"))
+
+    def test_26_run_summary_reports_safe_skip_no_eligible_story(self):
+        """26. run_summary reports SAFE SKIP: NO ELIGIBLE APPROVED STORY AVAILABLE when selection produced no article."""
+        disc_file = Path(self.temp_dir) / "discovery.json"
+        disc_file.write_text(json.dumps([{"title": "Some Story", "url": "https://unapproved.com/1"}]), encoding="utf-8")
+        hist_file = Path(self.temp_dir) / "history.json"
+        hist_file.write_text(json.dumps({"posted": [], "processed": [], "classified_pool": []}), encoding="utf-8")
+
+        # Ensure no selected_article.json or post.json exists in working dir
+        orig_sel = Path("selected_article.json")
+        orig_post = Path("post.json")
+        sel_backup = None
+        post_backup = None
+        if orig_sel.is_file():
+            sel_backup = orig_sel.read_text(encoding="utf-8")
+            orig_sel.unlink()
+        if orig_post.is_file():
+            post_backup = orig_post.read_text(encoding="utf-8")
+            orig_post.unlink()
+
+        try:
+            summary = run_summary.generate_run_summary(history_path=str(hist_file), discovery_path=str(disc_file))
+            self.assertEqual(summary["run_mode"], "SAFE SKIP: NO ELIGIBLE APPROVED STORY AVAILABLE")
+        finally:
+            if sel_backup is not None:
+                orig_sel.write_text(sel_backup, encoding="utf-8")
+            if post_backup is not None:
+                orig_post.write_text(post_backup, encoding="utf-8")
+
 
 if __name__ == "__main__":
     unittest.main()

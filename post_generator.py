@@ -693,7 +693,7 @@ def main():
 
     article_path = Path("selected_article.json")
     if not article_path.is_file():
-        print("[INFO] No selected_article.json found. Skipping post generation to preserve Gemini API quota.")
+        print("[SAFE SKIP] No selected_article.json found (no eligible approved story). Cleanly skipping post generation.")
         emit_post_ready(False)
         return
 
@@ -703,7 +703,7 @@ def main():
         article = {}
 
     if not article or not article.get("title"):
-        print("[INFO] selected_article.json is empty or invalid. Skipping post generation.")
+        print("[SAFE SKIP] selected_article.json is empty or invalid. Cleanly skipping post generation.")
         emit_post_ready(False)
         return
 
