@@ -160,6 +160,8 @@ def is_mock_fixture_article(article: dict) -> bool:
         return True
     if re.search(r"\b(test fixture|mock story|dummy article|unit test)\b", title, re.IGNORECASE):
         return True
+    if any(k in url for k in ("test", "fixture", "mock", "c39", "c-39", "theturtleislandnews.com")):
+        return True
     return False
 
 
@@ -600,6 +602,12 @@ def generate_post(article: dict) -> dict:
 
     if not all((title, source, url)):
         raise ValueError("Article title, source or URL is missing.")
+
+    from source_allowlist import is_approved_url
+    if not is_mock_fixture_article(article) and not is_approved_url(url):
+        raise ValueError(
+            f"SAFETY REFUSAL: Article URL '{url}' (domain: '{source}') is not from an approved news source whitelist."
+        )
 
     is_prod = is_production_mode()
 

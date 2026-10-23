@@ -24,7 +24,7 @@ from PIL import Image
 IMAGE_PATH = Path("news_snap_post.jpg")
 POST_PATH = Path("post.json")
 ARTICLE_PATH = Path("selected_article.json")
-HISTORY_PATH = Path("history.json")
+HISTORY_PATH = Path(os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json"))
 
 # Documented retention window for dry-run processed stories (48 hours by default)
 DRY_RUN_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
@@ -889,10 +889,25 @@ def validate_image_and_post(article: dict = None):
             evidence = article.get("source_description") or article.get("source_body_excerpt") or ""
             validate_factual_grounding(post, article, source_evidence=evidence)
 
+    # 7. Strict approved domain whitelist verification
+    if article and isinstance(article, dict):
+        from post_generator import is_mock_fixture_article
+        from source_allowlist import is_approved_url
+        art_url = str(article.get("url", "")).strip()
+        if not is_mock_fixture_article(article):
+            if not art_url or not is_approved_url(art_url):
+                raise ValueError(
+                    f"SAFETY REFUSAL: Story URL '{art_url}' (domain: '{article.get('domain')}') "
+                    f"does not belong to an approved news source whitelist."
+                )
+
     return post, caption
 
 
 def main():
+    global HISTORY_PATH
+    if os.environ.get("NEWS_SNAP_HISTORY_PATH"):
+        HISTORY_PATH = Path(os.environ["NEWS_SNAP_HISTORY_PATH"])
     print("===== NEWS SNAP INSTAGRAM PUBLISHER =====")
     if not IMAGE_PATH.is_file() or not POST_PATH.is_file():
         print("[INFO] No generated image (news_snap_post.jpg) or post file (post.json) found. Skipping publication.")
@@ -1004,6 +1019,17 @@ def main():
             "Never publish synthetic test stories to Instagram. "
             "Real Gemini API generation is required for live publishing."
         )
+
+    # Safety check: Verify article URL strictly belongs to approved news source whitelist
+    from post_generator import is_mock_fixture_article
+    from source_allowlist import is_approved_url
+    if not is_mock_fixture_article(article):
+        art_url = str(article.get("url", "")).strip()
+        if not art_url or not is_approved_url(art_url):
+            raise ValueError(
+                f"SAFETY REFUSAL: Refusing live publication. Article URL '{art_url}' "
+                f"(domain: '{article.get('domain')}') is not from an approved news source whitelist."
+            )
 
     raw_image_url = os.environ.get("IMAGE_PUBLIC_URL", "").strip()
     repo = os.environ.get("GITHUB_REPOSITORY", "").strip()

@@ -23,6 +23,13 @@ USER_AGENT = "NEWS-SNAP-Discovery/1.0 (https://github.com/hafizabdulbar3-creator
 SOURCES_FILE = Path("sources.json")
 HISTORY_FILE = Path("history.json")
 
+from source_allowlist import (
+    is_approved_url,
+    is_approved_domain,
+    get_canonical_domain,
+    APPROVED_DOMAINS,
+)
+
 # Standard tracking parameters stripped during URL normalization
 TRACKING_PARAMS = {
     "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
@@ -453,12 +460,16 @@ def discover_articles(
             if is_trivial_or_gossip(clean, norm_url):
                 continue
 
-            # Determine domain (for Google News fallback, extract source domain if present)
+            # Strict Approved Domain Whitelist Enforcement:
+            # The final canonical article URL must belong to an approved domain.
+            # Reject GDELT, Google News aggregator URLs, and unapproved publishers.
+            if not is_approved_url(norm_url):
+                continue
+
+            # Determine canonical approved domain
+            canonical_d = get_canonical_domain(norm_url)
             raw_domain = urlparse(norm_url).netloc.lower().replace("www.", "")
-            if raw_domain in ("news.google.com", "google.com") and source_url_meta:
-                domain = urlparse(source_url_meta).netloc.lower().replace("www.", "")
-            else:
-                domain = raw_domain
+            domain = canonical_d or raw_domain
 
             seen_urls.add(norm_url)
             seen_titles.add(norm_title)
@@ -473,7 +484,7 @@ def discover_articles(
             if is_duplicate:
                 score -= 1000
 
-            if domain in high_trust:
+            if domain in APPROVED_DOMAINS or domain in high_trust:
                 score += 100
 
             lower_clean = clean.lower()

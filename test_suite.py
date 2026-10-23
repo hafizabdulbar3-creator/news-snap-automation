@@ -38,6 +38,7 @@ import run_summary
 import ai_provider
 import classify
 import check_candidates
+import source_allowlist
 from unittest.mock import patch, MagicMock
 
 
@@ -857,15 +858,15 @@ class TestScheduleAndFreshCandidates(unittest.TestCase):
             # 2. Add an unposted story alongside duplicates
             articles.append({
                 "title": "Brand New Unposted Story About Scientific Discovery",
-                "url": "https://nature.com/new-discovery",
-                "domain": "nature.com",
+                "url": "https://edition.cnn.com/new-discovery",
+                "domain": "cnn.com",
                 "score": 110,
                 "is_duplicate": False
             })
             temp_discovery.write_text(json.dumps(articles), encoding="utf-8")
             fresh_with_new = check_candidates.get_fresh_candidates(temp_discovery, temp_history)
             self.assertEqual(len(fresh_with_new), 1, "Expected 1 fresh candidate")
-            self.assertEqual(fresh_with_new[0]["domain"], "nature.com")
+            self.assertEqual(fresh_with_new[0]["domain"], "cnn.com")
 
             # 3. Verify select_best_article returns None instead of falling back to duplicate
             # Set up environment where all discovered articles are published
@@ -2407,8 +2408,8 @@ class TestProductionMockFallbackRefusal(unittest.TestCase):
 
         self.real_article = {
             "title": "Global Leaders Finalize Historic Clean Energy Framework",
-            "domain": "reuters.com",
-            "url": "https://reuters.com/world/clean-energy-accord",
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/world/clean-energy-accord",
             "source_description": "Nations agreed on a transition plan to cut carbon emissions over the next decade."
         }
         self.valid_gemini_payload = {
@@ -2420,7 +2421,7 @@ class TestProductionMockFallbackRefusal(unittest.TestCase):
                                 "text": json.dumps({
                                     "headline": "Global Leaders Finalize Historic Clean Energy Framework",
                                     "curiosity_line": "Key climate transition roadmap",
-                                    "caption": "According to reports from reuters.com, Global Leaders Finalize Historic Clean Energy Framework. Observers and delegates are closely monitoring the implementation details as the international situation unfolds across multiple regions.",
+                                    "caption": "According to reports from cnn.com, Global Leaders Finalize Historic Clean Energy Framework. Observers and delegates are closely monitoring the implementation details as the international situation unfolds across multiple regions.",
                                     "hashtags": ["#NewsSnap", "#Climate", "#Energy"]
                                 })
                             }
@@ -2830,8 +2831,8 @@ class TestQuotaManagerAndOptimizations(unittest.TestCase):
             with self.assertRaises(RuntimeError) as ctx:
                 post_generator.generate_post({
                     "title": "Important Headline Story",
-                    "domain": "reuters.com",
-                    "url": "https://reuters.com/story"
+                    "domain": "cnn.com",
+                    "url": "https://edition.cnn.com/story"
                 })
             self.assertIn("active cooldown", str(ctx.exception))
 
@@ -2988,8 +2989,8 @@ class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
         """5. select_article selects best article without dropping candidates from classified_pool prematurely."""
         article = {
             "title": "Major Peace Accord Signed Between World Leaders",
-            "domain": "reuters.com",
-            "url": "https://reuters.com/world/accord-1"
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/world/accord-1"
         }
         self.temp_hist.write_text(json.dumps({
             "posted": [],
@@ -3022,8 +3023,8 @@ class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
         """6. instagram_publisher removes candidate from classified_pool only upon confirmed publication."""
         article = {
             "title": "Major Peace Accord Signed Between World Leaders",
-            "domain": "reuters.com",
-            "url": "https://reuters.com/world/accord-1"
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/world/accord-1"
         }
         post = {
             "headline": "Major Peace Accord Signed",
@@ -3052,8 +3053,8 @@ class TestQuotaAwareSchedulerAndResumption(unittest.TestCase):
         """7. instagram_publisher removes candidate from classified_pool upon dry-run completion."""
         article = {
             "title": "Major Peace Accord Signed Between World Leaders",
-            "domain": "reuters.com",
-            "url": "https://reuters.com/world/accord-1"
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/world/accord-1"
         }
         post = {
             "headline": "Major Peace Accord Signed",
@@ -3422,8 +3423,8 @@ class TestMultiProviderAIClient(unittest.TestCase):
         # 4. post_generator succeeds with Groq without raising cooldown exception
         article = {
             "title": "Major International Accord Reached at Summit",
-            "domain": "reuters.com",
-            "url": "https://reuters.com/world/accord"
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/world/accord"
         }
         mock_groq_output = {
             "headline": "Major International Accord Reached",
@@ -3452,7 +3453,7 @@ class TestMultiProviderAIClient(unittest.TestCase):
         self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist, provider="groq"))
         self.assertTrue(quota_manager.is_cooldown_active(self.temp_hist))
 
-        article = {"title": "Test Title", "domain": "reuters.com", "url": "https://reuters.com/test"}
+        article = {"title": "Test Title", "domain": "cnn.com", "url": "https://edition.cnn.com/test"}
         with self.assertRaises(RuntimeError) as cm:
             post_generator.generate_post(article)
         self.assertIn("GROQ API quota is currently in active cooldown", str(cm.exception))
@@ -3465,8 +3466,8 @@ class TestMultiProviderAIClient(unittest.TestCase):
 
         article = {
             "title": "European Union Reaches Historic Energy Agreement",
-            "domain": "reuters.com",
-            "url": "https://reuters.com/world/europe/energy-agreement"
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/world/europe/energy-agreement"
         }
 
         mock_groq_output = {
@@ -3482,7 +3483,7 @@ class TestMultiProviderAIClient(unittest.TestCase):
         self.assertEqual(post["headline"], "EU Reaches Historic Energy Agreement")
         self.assertEqual(post["curiosity_line"], "Major shift for European energy policy")
         self.assertIn("#NewsSnap", post["hashtags"])
-        self.assertIn("Source: reuters.com", post["caption"])
+        self.assertIn("Source: cnn.com", post["caption"])
         self.assertFalse(post.get("is_synthetic"))
 
     def test_classify_with_groq_provider(self):
@@ -5106,12 +5107,12 @@ class MultiFeedDiscoveryTests(unittest.TestCase):
   <channel>
     <title>GDELT Test</title>
     <item>
-      <title>Global Leaders Convene for Emergency Climate Treaty - Reuters</title>
-      <link>https://www.reuters.com/world/climate-treaty-summit-2026?utm_source=rss</link>
+      <title>Global Leaders Convene for Emergency Climate Treaty - CNN</title>
+      <link>https://edition.cnn.com/world/climate-treaty-summit-2026?utm_source=rss</link>
     </item>
     <item>
       <title>Central Bank Signals Key Interest Rate Strategy Amid Inflation</title>
-      <link>https://apnews.com/article/central-bank-inflation-rates?utm_campaign=feed</link>
+      <link>https://news.sky.com/story/central-bank-inflation-rates?utm_campaign=feed</link>
     </item>
   </channel>
 </rss>"""
@@ -5122,7 +5123,7 @@ class MultiFeedDiscoveryTests(unittest.TestCase):
     <title>Associated Press Test</title>
     <item>
       <title>Space Agency Prepares Historic Lunar Rover Expedition</title>
-      <link>https://apnews.com/article/space-agency-moon-mission-2026?utm_source=flipboard&amp;utm_content=Top+Stories</link>
+      <link>https://www.aljazeera.com/news/space-agency-moon-mission-2026?utm_source=flipboard&amp;utm_content=Top+Stories</link>
     </item>
   </channel>
 </rss>"""
@@ -5786,6 +5787,329 @@ class TestFactualGroundingAndSafeRejection(unittest.TestCase):
         self.assertEqual(len(updated_hist["processed"]), 1)
         self.assertTrue(updated_hist["processed"][0].get("rejected"))
         self.assertEqual(updated_hist["processed"][0]["url"], article["url"])
+
+
+class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
+    """Regression test suite for strict 22 news organizations whitelist and rolling topic diversity."""
+
+    def setUp(self):
+        self.temp_dir = tempfile.mkdtemp()
+        self.history_path = Path(self.temp_dir) / "test_history_allowlist.json"
+        self.discovery_path = Path(self.temp_dir) / "test_discovery_allowlist.json"
+        self.sample_path = Path(self.temp_dir) / "test_sample_allowlist.json"
+        self.selected_path = Path(self.temp_dir) / "test_selected_allowlist.json"
+
+        self.history_path.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": []
+        }), encoding="utf-8")
+
+    def tearDown(self):
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_01_all_28_approved_domains_accepted(self):
+        """1. All 28 approved domains from the 22 news organizations are accepted."""
+        expected_domains = {
+            # International (12 organizations, 14 domains)
+            "bbc.com", "bbc.co.uk",
+            "cnn.com",
+            "foxnews.com",
+            "aljazeera.com",
+            "news.sky.com", "sky.com",
+            "skynews.com.au",
+            "skynewsarabia.com",
+            "msnbc.com",
+            "bloomberg.com",
+            "alarabiya.net",
+            "euronews.com",
+            "ndtv.com",
+            # Indian (10 organizations, 14 domains)
+            "aajtak.in",
+            "news18.com", "cnnnews18.com",
+            "tv9hindi.com", "tv9.com",
+            "indiatvnews.com",
+            "republicbharat.com", "republicworld.com",
+            "zeenews.com", "zeenews.india.com",
+            "abplive.com", "abpnews.com",
+            "timesnownews.com",
+            "ddnews.gov.in"
+        }
+        self.assertEqual(source_allowlist.APPROVED_DOMAINS, expected_domains)
+        self.assertEqual(len(source_allowlist.APPROVED_DOMAINS), 28)
+
+        for d in expected_domains:
+            self.assertTrue(source_allowlist.is_approved_domain(d), f"Domain {d} should be approved")
+            self.assertTrue(source_allowlist.is_approved_url(f"https://{d}/world/news-item"), f"URL for {d} should be approved")
+            self.assertTrue(source_allowlist.is_approved_url(f"https://edition.{d}/world/news-item"), f"Subdomain for {d} should be approved")
+            self.assertTrue(source_allowlist.is_approved_url(f"https://www.{d}/world/news-item"), f"www.{d} should be approved")
+
+    def test_02_unapproved_domains_strictly_rejected(self):
+        """2. Unapproved news organizations, aggregators, and search portals are strictly rejected."""
+        unapproved = [
+            "apnews.com",
+            "reuters.com",
+            "thehindu.com",
+            "indianexpress.com",
+            "livemint.com",
+            "thehindubusinessline.com",
+            "thetimes.co.uk",
+            "nytimes.com",
+            "washingtonpost.com",
+            "news.google.com",
+            "flipboard.com",
+            "yahoo.com",
+            "nature.com",
+            "theguardian.com",
+            "forbes.com",
+            "wsj.com"
+        ]
+        for d in unapproved:
+            self.assertFalse(source_allowlist.is_approved_domain(d), f"Unapproved domain {d} must be rejected")
+            self.assertFalse(source_allowlist.is_approved_url(f"https://{d}/article-123"), f"URL {d} must be rejected")
+            self.assertFalse(source_allowlist.is_approved_url(f"https://www.{d}/article-123"), f"URL www.{d} must be rejected")
+
+    def test_03_lookalike_spoof_and_aggregator_urls_rejected(self):
+        """3. Lookalike, attacker, and spoofed URLs are fail-closed rejected."""
+        lookalikes = [
+            "https://cnn.com.attacker.org/news",
+            "https://fakecnn.com/world/article",
+            "https://aljazeera.com.scam.net/story",
+            "https://evil.com/news?feed=cnn.com",
+            "https://not-bbc.com/world",
+            "https://bbc.com@evil.com/test",
+            "http://cnn.com.spoofed.io",
+            "https://sub.attacker.bloomberg.com.attacker.org"
+        ]
+        for url in lookalikes:
+            self.assertFalse(source_allowlist.is_approved_url(url), f"Lookalike URL {url} must be rejected")
+
+    def test_04_discovery_filters_unapproved_domains(self):
+        """4. test.discover_articles filters out any candidate from unapproved sources or domains."""
+        xml_data = b"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Discovery Feed</title>
+    <item>
+      <title>Approved CNN Headline Story</title>
+      <link>https://edition.cnn.com/world/approved-story</link>
+    </item>
+    <item>
+      <title>Unapproved Reuters Headline Story</title>
+      <link>https://reuters.com/world/unapproved-story</link>
+    </item>
+    <item>
+      <title>Unapproved AP Headline Story</title>
+      <link>https://apnews.com/article/unapproved-story</link>
+    </item>
+  </channel>
+</rss>"""
+        sources = [{"name": "Test Feed", "url": "mock://test_feed", "enabled": True}]
+
+        with patch("test.fetch_feed", return_value=xml_data):
+            articles = discovery.discover_articles(sources=sources, history_path=self.history_path)
+
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(articles[0]["title"], "Approved CNN Headline Story")
+        self.assertEqual(articles[0]["domain"], "cnn.com")
+
+    def test_05_candidate_check_filters_unapproved_domains(self):
+        """5. check_candidates.get_fresh_candidates drops unapproved domains."""
+        disc = [
+            {"title": "Approved CNN Headline Story Today", "url": "https://edition.cnn.com/story-1", "domain": "cnn.com", "is_duplicate": False},
+            {"title": "Unapproved Reuters Headline Story Today", "url": "https://reuters.com/story-2", "domain": "reuters.com", "is_duplicate": False},
+            {"title": "Unapproved AP Headline Story Today", "url": "https://apnews.com/story-3", "domain": "apnews.com", "is_duplicate": False}
+        ]
+        self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+        fresh = check_candidates.get_fresh_candidates(self.discovery_path, self.history_path)
+
+        self.assertEqual(len(fresh), 1)
+        self.assertEqual(fresh[0]["title"], "Approved CNN Headline Story Today")
+
+    def test_06_select_article_refuses_unapproved_candidate(self):
+        """6. select_best_article never selects an unapproved domain even if scored highest."""
+        disc = [
+            {"title": "Unapproved AP Headline Story Today", "url": "https://apnews.com/major-story", "domain": "apnews.com", "score": 200, "is_duplicate": False},
+            {"title": "Approved Sky News Story Today", "url": "https://news.sky.com/major-story", "domain": "news.sky.com", "score": 100, "is_duplicate": False}
+        ]
+        sample = {
+            "results": [
+                {"id": 1, "importance": "MAJOR", "topic": "World", "reason": "Historic"},
+                {"id": 2, "importance": "MAJOR", "topic": "World", "reason": "Historic"}
+            ]
+        }
+        self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+        self.sample_path.write_text(json.dumps(sample), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.discovery_path if str(p) == "discovery.json"
+            else (self.sample_path if str(p) == "classified_sample.json"
+            else (self.history_path if str(p) == "history.json"
+            else (self.selected_path if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        self.assertIsNotNone(sel)
+        self.assertEqual(sel["title"], "Approved Sky News Story Today")
+        self.assertEqual(sel["domain"], "news.sky.com")
+
+    def test_07_select_article_prunes_unapproved_from_classified_pool(self):
+        """7. select_best_article actively prunes unapproved domain entries from history.json['classified_pool']."""
+        unapproved_entry = {
+            "title": "Unapproved Cached Article Headline",
+            "url": "https://reuters.com/cached-story",
+            "domain": "reuters.com",
+            "classification": {"importance": "MAJOR", "topic": "Diplomacy"}
+        }
+        approved_entry = {
+            "title": "Approved Cached Article Published Today",
+            "url": "https://edition.cnn.com/cached-story",
+            "domain": "cnn.com",
+            "classification": {"importance": "MAJOR", "topic": "Diplomacy"}
+        }
+        self.history_path.write_text(json.dumps({
+            "posted": [],
+            "processed": [],
+            "classified_pool": [unapproved_entry, approved_entry]
+        }), encoding="utf-8")
+
+        self.discovery_path.write_text(json.dumps([approved_entry]), encoding="utf-8")
+        self.sample_path.write_text(json.dumps({"results": [{"id": 1, "importance": "MAJOR"}]}), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.discovery_path if str(p) == "discovery.json"
+            else (self.sample_path if str(p) == "classified_sample.json"
+            else (self.history_path if str(p) == "history.json"
+            else (self.selected_path if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        self.assertIsNotNone(sel)
+        self.assertEqual(sel["url"], approved_entry["url"])
+
+        # Check that classified_pool was cleaned
+        hist = json.loads(self.history_path.read_text(encoding="utf-8"))
+        urls_in_pool = [c["url"] for c in hist.get("classified_pool", [])]
+        self.assertNotIn(unapproved_entry["url"], urls_in_pool)
+
+    def test_08_post_generator_safety_refusal_on_unapproved_domain(self):
+        """8. post_generator.generate_post raises ValueError with SAFETY REFUSAL for unapproved domains."""
+        article = {
+            "title": "Unapproved Source Story Headline Today",
+            "domain": "reuters.com",
+            "url": "https://reuters.com/world/unapproved-article"
+        }
+        with self.assertRaises(ValueError) as ctx:
+            post_generator.generate_post(article)
+        self.assertIn("SAFETY REFUSAL", str(ctx.exception))
+        self.assertIn("approved news source whitelist", str(ctx.exception))
+
+    def test_09_publisher_fail_closed_on_unapproved_domain(self):
+        """9. instagram_publisher.validate_image_and_post raises ValueError with SAFETY REFUSAL for unapproved domains."""
+        post = {
+            "headline": "Approved Format Headline For Today",
+            "curiosity_line": "Curiosity detail",
+            "caption": "Full validated caption text for testing. #NewsSnap",
+            "hashtags": ["#NewsSnap"],
+            "is_synthetic": False
+        }
+        article = {
+            "title": "Unapproved Source Story Headline",
+            "domain": "apnews.com",
+            "url": "https://apnews.com/article/unapproved-article"
+        }
+        post_path = Path("post.json")
+        img_path = Path("news_snap_post.jpg")
+        try:
+            post_path.write_text(json.dumps(post), encoding="utf-8")
+            from PIL import ImageDraw
+            dummy_img = Image.new("RGB", (1080, 1350), (10, 24, 45))
+            d = ImageDraw.Draw(dummy_img)
+            d.text((50, 50), "TEST", fill=(255, 255, 255))
+            dummy_img.save(img_path, "JPEG", quality=95)
+
+            with self.assertRaises(ValueError) as ctx:
+                instagram_publisher.validate_image_and_post(article=article)
+            self.assertIn("SAFETY REFUSAL", str(ctx.exception))
+            self.assertIn("approved news source whitelist", str(ctx.exception))
+        finally:
+            if post_path.exists():
+                post_path.unlink()
+            if img_path.exists():
+                img_path.unlink()
+
+    def test_10_topic_diversity_entity_extraction(self):
+        """10. Topic entity extraction identifies known figures and substantive nouns."""
+        entities = source_allowlist.extract_topic_entities("President Donald Trump Signs Historic Trade Agreement")
+        self.assertIn("trump", entities)
+
+        entities_modi = source_allowlist.extract_topic_entities("Prime Minister Narendra Modi Inaugurates Tech Summit")
+        self.assertIn("modi", entities_modi)
+
+        entities_starmer = source_allowlist.extract_topic_entities("Keir Starmer Addresses Parliament on Fiscal Policy")
+        self.assertIn("starmer", entities_starmer)
+
+    def test_11_topic_diversity_max_two_posts_in_rolling_window(self):
+        """11. Rolling topic diversity rejects candidates exceeding 2 posts per entity in last 10 posts."""
+        # 2 Trump posts already in the last 10 posted items
+        recent_posted = [
+            {"title": "Trump Announces New Tariff Policy", "url": "https://edition.cnn.com/1"},
+            {"title": "Global Climate Conference Opens in Geneva", "url": "https://news.sky.com/2"},
+            {"title": "Trump Meets With European Delegations", "url": "https://edition.cnn.com/3"},
+            {"title": "Central Bank Holds Benchmark Interest Rates", "url": "https://bloomberg.com/4"},
+        ]
+        # Candidate 1: Another Trump post -> Must be REJECTED (exceeds max 2)
+        cand_trump = {"title": "Trump Delivers Keynote Address on Economy", "url": "https://foxnews.com/5", "domain": "foxnews.com"}
+        eligible, reason = source_allowlist.check_topic_diversity(cand_trump, recent_posted)
+        self.assertFalse(eligible)
+        self.assertIn("Topic diversity limit reached", reason)
+        self.assertIn("trump", reason.lower())
+
+        # Candidate 2: Different topic -> Must be ACCEPTED
+        cand_ai = {"title": "European Union Reaches Landmark Artificial Intelligence Accord", "url": "https://euronews.com/6", "domain": "euronews.com"}
+        eligible, reason = source_allowlist.check_topic_diversity(cand_ai, recent_posted)
+        self.assertTrue(eligible)
+
+    def test_12_select_article_clean_skip_when_diversity_limits_exceeded(self):
+        """12. select_best_article cleanly returns None when all candidates violate topic diversity."""
+        # History has 2 Trump posts in recent 10
+        posted = [
+            {"title": "Trump Tariff Announcement", "url": "https://edition.cnn.com/1"},
+            {"title": "Trump Trade Negotiations", "url": "https://foxnews.com/2"},
+        ]
+        self.history_path.write_text(json.dumps({
+            "posted": posted,
+            "processed": [],
+            "classified_pool": []
+        }), encoding="utf-8")
+
+        # Discovery only has Trump candidates
+        disc = [
+            {"title": "Trump Holds Press Conference", "url": "https://edition.cnn.com/3", "domain": "cnn.com", "score": 150, "is_duplicate": False},
+            {"title": "Trump Campaign Rally in Ohio", "url": "https://foxnews.com/4", "domain": "foxnews.com", "score": 140, "is_duplicate": False}
+        ]
+        sample = {
+            "results": [
+                {"id": 1, "importance": "MAJOR", "topic": "Politics", "reason": "Trump speech"},
+                {"id": 2, "importance": "MAJOR", "topic": "Politics", "reason": "Trump rally"}
+            ]
+        }
+        self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+        self.sample_path.write_text(json.dumps(sample), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.discovery_path if str(p) == "discovery.json"
+            else (self.sample_path if str(p) == "classified_sample.json"
+            else (self.history_path if str(p) == "history.json"
+            else (self.selected_path if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        # Must skip publishing and return None cleanly rather than violating diversity
+        self.assertIsNone(sel)
 
 
 if __name__ == "__main__":

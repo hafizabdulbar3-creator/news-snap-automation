@@ -5,6 +5,13 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 
+from source_allowlist import (
+    is_approved_url,
+    get_canonical_domain,
+    check_topic_diversity,
+    APPROVED_DOMAINS,
+)
+
 DEFAULT_RETENTION_HOURS = int(os.environ.get("DRY_RUN_RETENTION_HOURS", "48"))
 
 
@@ -27,6 +34,38 @@ def is_genuine_article(title: str, url: str) -> bool:
     return True
 
 
+def is_candidate_eligible(
+    article: dict,
+    classification: dict,
+    recently_posted: set,
+    recently_processed: set,
+    posted_history: list
+) -> tuple[bool, str]:
+    """Strictly verify URL validity, approved whitelist domain, non-duplicate status, and topic diversity."""
+    url = str(article.get("url", "")).strip()
+    title = str(article.get("title", "")).strip()
+
+    if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
+        return False, "invalid url structure or non-genuine article"
+
+    # Absolute Domain Whitelist Enforcement
+    if not is_approved_url(url):
+        return False, f"url domain '{article.get('domain')}' not on approved news whitelist"
+
+    url_low = url.lower()
+    title_low = title.lower()
+    if (url_low in recently_posted or title_low in recently_posted or
+        url_low in recently_processed or title_low in recently_processed):
+        return False, "duplicate (already posted or processed)"
+
+    # Rolling Topic Diversity Safeguard: Max 2 posts per entity/topic in last 10 posts
+    allowed, div_reason = check_topic_diversity(title, posted_history, max_same_topic=2, window_size=10)
+    if not allowed:
+        return False, div_reason
+
+    return True, "eligible"
+
+
 def select_best_article():
     discovery_path = Path("discovery.json")
     classified_path = Path("classified_sample.json")
@@ -43,10 +82,12 @@ def select_best_article():
     # Load history (both published and recently dry-run-processed)
     recently_posted = set()
     recently_processed = set()
+    posted_history = []
     if history_path.is_file():
         try:
             hist = json.loads(history_path.read_text(encoding="utf-8"))
-            for item in hist.get("posted", []):
+            posted_history = hist.get("posted", [])
+            for item in posted_history:
                 if item.get("published") is True:
                     if item.get("url"):
                         recently_posted.add(item["url"].strip().lower())
@@ -79,21 +120,16 @@ def select_best_article():
 
     selected = None
 
-    # Pass 1: Look for MAJOR importance, non-duplicate, valid English title
+    # Pass 1: Look for MAJOR importance, approved whitelist domain, non-duplicate, diverse topic
     for index, article in enumerate(articles[:50], start=1):
-        url = article.get("url", "").strip()
-        title = article.get("title", "").strip()
         classification = classifications.get(index, {})
-
-        if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
-            continue
-
-        if (url.lower() in recently_posted or title.lower() in recently_posted or
-            url.lower() in recently_processed or title.lower() in recently_processed):
+        eligible, reason = is_candidate_eligible(
+            article, classification, recently_posted, recently_processed, posted_history
+        )
+        if not eligible:
             continue
 
         if classification.get("importance") == "MAJOR":
-            # Ensure it's not tagged as Non-English or trivial
             topic = str(classification.get("topic", "")).lower()
             if "non-english" in topic or "foreign" in topic:
                 continue
@@ -103,15 +139,11 @@ def select_best_article():
     # Pass 2: If no MAJOR story found, look for NORMAL importance
     if selected is None:
         for index, article in enumerate(articles[:50], start=1):
-            url = article.get("url", "").strip()
-            title = article.get("title", "").strip()
             classification = classifications.get(index, {})
-
-            if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
-                continue
-
-            if (url.lower() in recently_posted or title.lower() in recently_posted or
-                url.lower() in recently_processed or title.lower() in recently_processed):
+            eligible, reason = is_candidate_eligible(
+                article, classification, recently_posted, recently_processed, posted_history
+            )
+            if not eligible:
                 continue
 
             if classification.get("importance") == "NORMAL":
@@ -121,20 +153,18 @@ def select_best_article():
                 selected = {**article, "classification": classification}
                 break
 
-    # Pass 3: Fallback to the top valid non-duplicate article
+    # Pass 3: Fallback to the top valid approved non-duplicate diverse article
     if selected is None:
         for index, article in enumerate(articles[:50], start=1):
-            url = article.get("url", "").strip()
-            title = article.get("title", "").strip()
             classification = classifications.get(index, {})
-
-            if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
+            eligible, reason = is_candidate_eligible(
+                article, classification, recently_posted, recently_processed, posted_history
+            )
+            if not eligible:
                 continue
 
-            if (url.lower() not in recently_posted and title.lower() not in recently_posted and
-                url.lower() not in recently_processed and title.lower() not in recently_processed):
-                selected = {**article, "classification": classification}
-                break
+            selected = {**article, "classification": classification}
+            break
 
     if selected is None:
         print("[INFO] No fresh, unposted article available for selection in this run.")
@@ -151,10 +181,30 @@ def select_best_article():
             except Exception:
                 pass
 
+    # Normalize canonical domain to verified approved source
+    canonical_d = get_canonical_domain(selected.get("url", ""))
+    if canonical_d:
+        selected["domain"] = canonical_d
+
     Path("selected_article.json").write_text(
         json.dumps(selected, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
+
+    # Prune unapproved stories from persistent classified_pool
+    if history_path.is_file():
+        try:
+            raw_hist = json.loads(history_path.read_text(encoding="utf-8"))
+            if "classified_pool" in raw_hist and isinstance(raw_hist["classified_pool"], list):
+                orig_pool_len = len(raw_hist["classified_pool"])
+                raw_hist["classified_pool"] = [
+                    a for a in raw_hist["classified_pool"]
+                    if isinstance(a, dict) and is_approved_url(a.get("url", ""))
+                ]
+                if len(raw_hist["classified_pool"]) != orig_pool_len:
+                    history_path.write_text(json.dumps(raw_hist, ensure_ascii=False, indent=2), encoding="utf-8")
+        except Exception:
+            pass
 
     # Preserve candidate in classified_pool until confirmed published or processed in instagram_publisher.py
     # This prevents dropping pool candidates if generation, rendering, or publishing fails downstream.

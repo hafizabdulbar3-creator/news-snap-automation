@@ -1,0 +1,411 @@
+"""NEWS SNAP - Strict News Source Whitelist & Topic Diversity Engine.
+
+Defines the 22 strictly approved news organizations and their verified official domains.
+Enforces domain validation throughout discovery, triage, selection, post generation,
+and live Instagram publication.
+Enforces rolling topic diversity limits (maximum 2 posts per principal person/topic
+within the most recent 10 published posts).
+"""
+
+import json
+import os
+import re
+from pathlib import Path
+from urllib.parse import urlparse
+
+SOURCES_FILE = Path(os.environ.get("NEWS_SNAP_SOURCES_PATH", "sources.json"))
+
+# 22 Approved News Organizations and their verified official domains
+APPROVED_NEWS_SOURCES = [
+    # International News Organizations (1-12)
+    {
+        "id": 1,
+        "name": "BBC News",
+        "category": "international",
+        "domains": ["bbc.com", "bbc.co.uk"],
+        "feed_status": "unavailable_licensing",
+        "feed_reason": "BBC terms restrict RSS use to personal non-commercial display; syndication license required."
+    },
+    {
+        "id": 2,
+        "name": "CNN",
+        "category": "international",
+        "domains": ["cnn.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 3,
+        "name": "Fox News",
+        "category": "international",
+        "domains": ["foxnews.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 4,
+        "name": "Al Jazeera",
+        "category": "international",
+        "domains": ["aljazeera.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 5,
+        "name": "Sky News",
+        "category": "international",
+        "domains": ["news.sky.com", "sky.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 6,
+        "name": "Sky News Australia",
+        "category": "international",
+        "domains": ["skynews.com.au"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 7,
+        "name": "Sky News Arabia",
+        "category": "international",
+        "domains": ["skynewsarabia.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 8,
+        "name": "MSNBC",
+        "category": "international",
+        "domains": ["msnbc.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 9,
+        "name": "Bloomberg Television",
+        "category": "international",
+        "domains": ["bloomberg.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 10,
+        "name": "Al Arabiya",
+        "category": "international",
+        "domains": ["alarabiya.net"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 11,
+        "name": "Euronews",
+        "category": "international",
+        "domains": ["euronews.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 12,
+        "name": "NDTV",
+        "category": "international_indian",
+        "domains": ["ndtv.com"],
+        "feed_status": "unavailable_licensing",
+        "feed_reason": "NDTV terms prohibit automated social feeds or third-party automated processing without prior written agreement."
+    },
+    # Indian News Organizations (13-22)
+    {
+        "id": 13,
+        "name": "Aaj Tak",
+        "category": "indian",
+        "domains": ["aajtak.in"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 14,
+        "name": "News18 India",
+        "category": "indian",
+        "domains": ["news18.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 15,
+        "name": "TV9 Bharatvarsh",
+        "category": "indian",
+        "domains": ["tv9hindi.com", "tv9.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official domains: tv9hindi.com (Hindi news portal), tv9.com (network portal)."
+    },
+    {
+        "id": 16,
+        "name": "India TV",
+        "category": "indian",
+        "domains": ["indiatvnews.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Discovered via canonical URLs in open-data discovery index."
+    },
+    {
+        "id": 17,
+        "name": "Republic Bharat",
+        "category": "indian",
+        "domains": ["republicbharat.com", "republicworld.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official domains: republicbharat.com, republicworld.com."
+    },
+    {
+        "id": 18,
+        "name": "Zee News",
+        "category": "indian",
+        "domains": ["zeenews.com", "zeenews.india.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official domains: zeenews.com, zeenews.india.com (Zee Media properties)."
+    },
+    {
+        "id": 19,
+        "name": "ABP News",
+        "category": "indian",
+        "domains": ["abplive.com", "abpnews.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official domains: abplive.com (digital news portal), abpnews.com."
+    },
+    {
+        "id": 20,
+        "name": "Times Now",
+        "category": "indian",
+        "domains": ["timesnownews.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official domain: timesnownews.com."
+    },
+    {
+        "id": 21,
+        "name": "CNN-News18",
+        "category": "indian",
+        "domains": ["cnnnews18.com", "news18.com"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official properties: news18.com, cnnnews18.com."
+    },
+    {
+        "id": 22,
+        "name": "DD News",
+        "category": "indian",
+        "domains": ["ddnews.gov.in"],
+        "feed_status": "discovery_via_gdelt",
+        "feed_reason": "Verified official government news domain: ddnews.gov.in."
+    }
+]
+
+# Set of all verified official domains
+APPROVED_DOMAINS = {
+    domain.lower()
+    for source in APPROVED_NEWS_SOURCES
+    for domain in source["domains"]
+}
+
+
+def get_approved_sources() -> list[dict]:
+    """Return the list of approved news organizations."""
+    return list(APPROVED_NEWS_SOURCES)
+
+
+def get_approved_domains() -> set[str]:
+    """Return the set of approved official domains."""
+    return set(APPROVED_DOMAINS)
+
+
+def is_approved_domain(hostname: str) -> bool:
+    """Strictly verify if a parsed hostname belongs to an approved news domain.
+
+    Correctly matches exact domains and subdomains (e.g. 'edition.cnn.com' matches 'cnn.com').
+    Strictly rejects lookalikes, suffix attacks, and attacker-controlled domains
+    (e.g. 'cnn.com.attacker.org', 'fakecnn.com', 'apnews.com', 'reuters.com').
+    """
+    if not hostname or not isinstance(hostname, str):
+        return False
+
+    clean_host = hostname.strip().lower().rstrip(".")
+    if ":" in clean_host:
+        clean_host = clean_host.split(":", 1)[0]
+
+    if not clean_host:
+        return False
+
+    # Check exact match or legitimate subdomain
+    for approved in APPROVED_DOMAINS:
+        if clean_host == approved or clean_host.endswith("." + approved):
+            return True
+
+    return False
+
+
+def is_approved_url(url: str) -> bool:
+    """Validate that the canonical article URL has a valid scheme and belongs to an approved domain.
+
+    Third-party aggregator URLs (e.g. Google News, Flipboard, GDELT) are rejected.
+    """
+    if not url or not isinstance(url, str):
+        return False
+
+    clean_url = url.strip()
+    try:
+        parsed = urlparse(clean_url)
+        if parsed.scheme not in ("http", "https"):
+            return False
+        hostname = parsed.hostname
+        if not hostname:
+            return False
+        return is_approved_domain(hostname)
+    except Exception:
+        return False
+
+
+def get_canonical_domain(url: str) -> str | None:
+    """Extract canonical domain string if approved, otherwise None."""
+    if not is_approved_url(url):
+        return None
+    try:
+        parsed = urlparse(url.strip())
+        host = (parsed.hostname or "").lower()
+        if host.startswith("www."):
+            host = host[4:]
+        # Find the matching approved root
+        for approved in sorted(APPROVED_DOMAINS, key=len, reverse=True):
+            if host == approved or host.endswith("." + approved):
+                return approved
+        return host
+    except Exception:
+        return None
+
+
+# ---------------------------------------------------------------------------
+# Topic Diversity Engine
+# ---------------------------------------------------------------------------
+
+KNOWN_ENTITIES = {
+    "trump": ("trump", "donald trump"),
+    "biden": ("biden", "joe biden"),
+    "harris": ("harris", "kamala harris"),
+    "modi": ("modi", "narendra modi"),
+    "putin": ("putin", "vladimir putin"),
+    "zelensky": ("zelensky", "zelenskiy", "volodymyr zelensky"),
+    "netanyahu": ("netanyahu", "benjamin netanyahu"),
+    "macron": ("macron", "emmanuel macron"),
+    "starmer": ("starmer", "keir starmer"),
+    "xi": ("xi jinping", "xi"),
+    "trudeau": ("trudeau", "justin trudeau"),
+    "carney": ("carney", "mark carney"),
+    "musk": ("musk", "elon musk"),
+    "obama": ("obama", "barack obama"),
+    "sunak": ("sunak", "rishi sunak"),
+    "scholz": ("scholz", "olaf scholz"),
+}
+
+COMMON_STOPWORDS = {
+    "a", "an", "the", "and", "or", "but", "in", "on", "at", "to", "for", "of", "with",
+    "by", "from", "up", "about", "into", "over", "after", "is", "are", "was", "were",
+    "be", "been", "being", "have", "has", "had", "do", "does", "did", "says", "said",
+    "amid", "as", "it", "its", "that", "this", "these", "those", "will", "would", "shall",
+    "should", "can", "could", "may", "might", "must", "than", "then", "now", "ahead",
+    "touts", "urges", "calls", "plans", "probe", "claims", "condemns", "backs", "warns",
+    "seeks", "eyes", "takes", "gives", "makes", "moves", "hits", "fuels", "faces", "new"
+}
+
+
+def extract_topic_entities(title: str) -> set[str]:
+    """Extract recognized principal entities or substantive content words from a headline."""
+    if not title or not isinstance(title, str):
+        return set()
+
+    lower = title.lower()
+    entities = set()
+
+    # 1. Match known political/world figures
+    for canonical_name, aliases in KNOWN_ENTITIES.items():
+        for alias in aliases:
+            pattern = rf"\b{re.escape(alias)}\b"
+            if re.search(pattern, lower):
+                entities.add(canonical_name)
+                break
+
+    # 2. Extract substantive content words (stem-like nouns/verbs > 3 chars)
+    words = re.findall(r"\b[a-z]{4,}\b", lower)
+    substantive = {w for w in words if w not in COMMON_STOPWORDS}
+
+    return entities or substantive
+
+
+def compute_headline_similarity(title1: str, title2: str) -> float:
+    """Compute Jaccard similarity over substantive words in two headlines."""
+    words1 = {w for w in re.findall(r"\b[a-z]{4,}\b", (title1 or "").lower()) if w not in COMMON_STOPWORDS}
+    words2 = {w for w in re.findall(r"\b[a-z]{4,}\b", (title2 or "").lower()) if w not in COMMON_STOPWORDS}
+    if not words1 or not words2:
+        return 0.0
+    intersection = words1.intersection(words2)
+    union = words1.union(words2)
+    return len(intersection) / len(union)
+
+
+def check_topic_diversity(
+    candidate: str | dict,
+    recent_posts: list[dict],
+    max_same_topic: int = 2,
+    window_size: int = 10
+) -> tuple[bool, str]:
+    """Check if candidate complies with the rolling topic diversity limit.
+
+    Rule: At most `max_same_topic` (default 2) posts about the same principal person
+    or substantially identical topic within the most recent `window_size` (default 10)
+    confirmed published posts.
+
+    Returns:
+        (is_allowed: bool, reason: str)
+    """
+    if isinstance(candidate, dict):
+        candidate_title = str(candidate.get("title") or candidate.get("headline") or "").strip()
+    elif isinstance(candidate, str):
+        candidate_title = candidate.strip()
+    else:
+        return False, "Candidate headline is empty or invalid"
+
+    if not candidate_title:
+        return False, "Candidate headline is empty or invalid"
+
+    candidate_entities = extract_topic_entities(candidate_title)
+
+    # Take the most recent published posts up to window_size
+    confirmed_posts = [p for p in recent_posts if p.get("published") is not False]
+    window = confirmed_posts[-window_size:] if len(confirmed_posts) >= window_size else confirmed_posts
+
+    matched_posts = []
+
+    for post in window:
+        post_title = post.get("title") or post.get("headline") or ""
+        if not post_title:
+            continue
+
+        # Check entity match
+        post_entities = extract_topic_entities(post_title)
+        shared_entities = candidate_entities.intersection(post_entities)
+
+        # If shared entities include a known key figure (e.g. trump, biden, etc.)
+        named_matches = {e for e in shared_entities if e in KNOWN_ENTITIES}
+        if named_matches:
+            matched_posts.append((post_title, f"shared entity '{list(named_matches)[0]}'"))
+            continue
+
+        # Check high lexical/substantive overlap (>50% Jaccard) for non-named story topics
+        sim = compute_headline_similarity(candidate_title, post_title)
+        if sim >= 0.50:
+            matched_posts.append((post_title, f"substantive similarity ({sim:.0%})"))
+
+    if len(matched_posts) >= max_same_topic:
+        top_reason = matched_posts[0][1]
+        msg = (
+            f"Topic diversity limit reached: {len(matched_posts)} of the last {len(window)} posts "
+            f"already cover this topic/person ({top_reason}). Limit is {max_same_topic}/{window_size}."
+        )
+        return False, msg
+
+    return True, "Topic diversity within allowed threshold"

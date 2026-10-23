@@ -13,6 +13,8 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
 
+from source_allowlist import is_approved_url
+
 DISCOVERY_PATH = Path("discovery.json")
 HISTORY_PATH = Path("history.json")
 
@@ -142,6 +144,10 @@ def get_fresh_candidates(discovery_path=DISCOVERY_PATH, history_path=HISTORY_PAT
         if url_low in hist_sets["processed_urls"] or title_low in hist_sets["processed_titles"]:
             continue
 
+        # Strict approved domain whitelist check
+        if not is_approved_url(url):
+            continue
+
         if not is_valid_candidate_url(url) or not is_genuine_headline(title):
             continue
 
@@ -199,7 +205,8 @@ def main():
         hist_sets = get_history_sets(history_path)
         pool_eligible = [
             a for a in pool
-            if a.get("url", "").lower() not in hist_sets["published_urls"]
+            if is_approved_url(a.get("url", ""))
+            and a.get("url", "").lower() not in hist_sets["published_urls"]
             and a.get("url", "").lower() not in hist_sets["processed_urls"]
             and a.get("title", "").lower() not in hist_sets["published_titles"]
             and a.get("title", "").lower() not in hist_sets["processed_titles"]
