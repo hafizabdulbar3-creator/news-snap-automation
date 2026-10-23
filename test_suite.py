@@ -991,8 +991,8 @@ class TestScheduleAndFreshCandidates(unittest.TestCase):
             # 4. Prove a genuinely new story remains eligible
             new_story = {
                 "title": "Space Agency Confirms Discovery Of Subsurface Oceans",
-                "url": "https://bbc.com/science/ocean-discovery-2026",
-                "domain": "bbc.com",
+                "url": "https://edition.cnn.com/science/ocean-discovery-2026",
+                "domain": "cnn.com",
                 "score": 120,
                 "is_duplicate": False
             }
@@ -5808,9 +5808,9 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
 
-    def test_01_all_28_approved_domains_accepted(self):
-        """1. All 28 approved domains from the 22 news organizations are accepted."""
-        expected_domains = {
+    def test_01_whitelist_and_publication_authorization_separation(self):
+        """1. Separation of 28 whitelisted domains from 25 publication-authorized domains."""
+        expected_whitelisted = {
             # International (12 organizations, 14 domains)
             "bbc.com", "bbc.co.uk",
             "cnn.com",
@@ -5835,23 +5835,51 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
             "timesnownews.com",
             "ddnews.gov.in"
         }
-        self.assertEqual(source_allowlist.APPROVED_DOMAINS, expected_domains)
-        self.assertEqual(len(source_allowlist.APPROVED_DOMAINS), 28)
+        self.assertEqual(source_allowlist.USER_WHITELISTED_DOMAINS, expected_whitelisted)
+        self.assertEqual(len(source_allowlist.USER_WHITELISTED_DOMAINS), 28)
 
-        for d in expected_domains:
-            self.assertTrue(source_allowlist.is_approved_domain(d), f"Domain {d} should be approved")
-            self.assertTrue(source_allowlist.is_approved_url(f"https://{d}/world/news-item"), f"URL for {d} should be approved")
-            self.assertTrue(source_allowlist.is_approved_url(f"https://edition.{d}/world/news-item"), f"Subdomain for {d} should be approved")
+        # 6 Licensing-restricted domains
+        expected_restricted = {
+            "bbc.com", "bbc.co.uk", "ndtv.com",
+            "indianexpress.com", "thehindu.com", "livemint.com"
+        }
+        self.assertEqual(source_allowlist.LICENSING_RESTRICTED_DOMAINS, expected_restricted)
+
+        # 25 Publication-authorized domains (USER_WHITELISTED - RESTRICTED)
+        expected_authorized = expected_whitelisted - expected_restricted
+        self.assertEqual(source_allowlist.PUBLICATION_AUTHORIZED_DOMAINS, expected_authorized)
+        self.assertEqual(source_allowlist.APPROVED_DOMAINS, expected_authorized)
+        self.assertEqual(len(source_allowlist.APPROVED_DOMAINS), 25)
+
+        # All 28 user-whitelisted domains pass is_whitelisted_domain and is_whitelisted_url
+        for d in expected_whitelisted:
+            self.assertTrue(source_allowlist.is_whitelisted_domain(d), f"Domain {d} should be whitelisted")
+            self.assertTrue(source_allowlist.is_whitelisted_url(f"https://{d}/world/news-item"), f"URL {d} should be whitelisted")
+
+        # Only the 25 authorized domains pass is_approved_domain and is_approved_url
+        for d in expected_authorized:
+            self.assertTrue(source_allowlist.is_approved_domain(d), f"Domain {d} should be approved for publication")
+            self.assertTrue(source_allowlist.is_approved_url(f"https://{d}/world/news-item"), f"URL {d} should be approved for publication")
+            self.assertTrue(source_allowlist.is_approved_url(f"https://edition.{d}/world/news-item"), f"Subdomain {d} should be approved")
             self.assertTrue(source_allowlist.is_approved_url(f"https://www.{d}/world/news-item"), f"www.{d} should be approved")
+
+        # BBC, NDTV, Indian Express, The Hindu, and LiveMint are strictly rejected from publication
+        for d in expected_restricted:
+            self.assertTrue(source_allowlist.is_licensing_restricted(d), f"{d} must be identified as licensing restricted")
+            self.assertTrue(source_allowlist.is_licensing_restricted(f"https://{d}/article"), f"URL {d} must be licensing restricted")
+            self.assertTrue(source_allowlist.is_licensing_restricted(f"https://www.{d}/article"), f"www.{d} must be licensing restricted")
+            self.assertFalse(source_allowlist.is_approved_domain(d), f"{d} must NOT be approved for automated publication")
+            self.assertFalse(source_allowlist.is_approved_url(f"https://{d}/article"), f"URL {d} must NOT be approved for publication")
+            self.assertFalse(source_allowlist.is_approved_url(f"https://www.{d}/article"), f"www.{d} must NOT be approved for publication")
+            is_ok, reason = source_allowlist.get_publication_eligibility(f"https://{d}/article")
+            self.assertFalse(is_ok)
+            self.assertIn("LICENSING RESTRICTION", reason)
 
     def test_02_unapproved_domains_strictly_rejected(self):
         """2. Unapproved news organizations, aggregators, and search portals are strictly rejected."""
         unapproved = [
             "apnews.com",
             "reuters.com",
-            "thehindu.com",
-            "indianexpress.com",
-            "livemint.com",
             "thehindubusinessline.com",
             "thetimes.co.uk",
             "nytimes.com",
@@ -5868,6 +5896,10 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
             self.assertFalse(source_allowlist.is_approved_domain(d), f"Unapproved domain {d} must be rejected")
             self.assertFalse(source_allowlist.is_approved_url(f"https://{d}/article-123"), f"URL {d} must be rejected")
             self.assertFalse(source_allowlist.is_approved_url(f"https://www.{d}/article-123"), f"URL www.{d} must be rejected")
+            self.assertFalse(source_allowlist.is_whitelisted_domain(d), f"Unapproved domain {d} must not be whitelisted")
+            is_ok, reason = source_allowlist.get_publication_eligibility(f"https://{d}/article-123")
+            self.assertFalse(is_ok)
+            self.assertIn("UNAPPROVED SOURCE", reason)
 
     def test_03_lookalike_spoof_and_aggregator_urls_rejected(self):
         """3. Lookalike, attacker, and spoofed URLs are fail-closed rejected."""
@@ -6110,6 +6142,178 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
 
         # Must skip publishing and return None cleanly rather than violating diversity
         self.assertIsNone(sel)
+
+    def test_13_licensing_restricted_domains_rejected_at_discovery_and_gdelt(self):
+        """13. Discovery filters out licensing-restricted domains (BBC, NDTV, etc.) even when discovered via GDELT."""
+        gdelt_xml = b"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>GDELT Global News</title>
+    <item>
+      <title>BBC Report On European Economic Talks</title>
+      <link>https://www.bbc.com/news/world-europe-123456</link>
+    </item>
+    <item>
+      <title>NDTV Report On Parliament Session</title>
+      <link>https://www.ndtv.com/india-news/parliament-session-789012</link>
+    </item>
+    <item>
+      <title>The Indian Express Report On Infrastructure Project</title>
+      <link>https://indianexpress.com/article/india/infra-project-345678</link>
+    </item>
+    <item>
+      <title>The Hindu Editorial Analysis</title>
+      <link>https://www.thehindu.com/news/national/editorial-analysis-901234</link>
+    </item>
+    <item>
+      <title>LiveMint Market Developments Today</title>
+      <link>https://www.livemint.com/market/market-rally-567890</link>
+    </item>
+    <item>
+      <title>Unapproved Wire Report</title>
+      <link>https://reuters.com/business/market-reuters-112233</link>
+    </item>
+    <item>
+      <title>Authorized Al Jazeera Global Report</title>
+      <link>https://www.aljazeera.com/news/2026/10/23/global-summit-declaration</link>
+    </item>
+  </channel>
+</rss>"""
+        sources = [{"name": "GDELT Global News", "url": "mock://gdelt", "enabled": True}]
+        with patch("test.fetch_feed", return_value=gdelt_xml):
+            articles = discovery.discover_articles(sources=sources, history_path=self.history_path)
+
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(articles[0]["title"], "Authorized Al Jazeera Global Report")
+        self.assertEqual(articles[0]["domain"], "aljazeera.com")
+
+    def test_14_licensing_restricted_candidates_rejected_at_candidate_triage(self):
+        """14. Candidate triage (get_fresh_candidates) rejects licensing-restricted and unapproved domains."""
+        disc = [
+            {"title": "BBC News Headline Today", "url": "https://www.bbc.com/news/article-1", "domain": "bbc.com", "is_duplicate": False},
+            {"title": "NDTV India Headline Today", "url": "https://www.ndtv.com/article-2", "domain": "ndtv.com", "is_duplicate": False},
+            {"title": "LiveMint Financial Story", "url": "https://www.livemint.com/article-3", "domain": "livemint.com", "is_duplicate": False},
+            {"title": "Indian Express Story", "url": "https://indianexpress.com/article-4", "domain": "indianexpress.com", "is_duplicate": False},
+            {"title": "The Hindu Story", "url": "https://thehindu.com/article-5", "domain": "thehindu.com", "is_duplicate": False},
+            {"title": "Reuters Story", "url": "https://reuters.com/article-6", "domain": "reuters.com", "is_duplicate": False},
+            {"title": "Authorized CNN Story Today", "url": "https://edition.cnn.com/article-7", "domain": "cnn.com", "is_duplicate": False},
+        ]
+        self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+        fresh = check_candidates.get_fresh_candidates(self.discovery_path, self.history_path)
+
+        self.assertEqual(len(fresh), 1)
+        self.assertEqual(fresh[0]["title"], "Authorized CNN Story Today")
+        self.assertEqual(fresh[0]["domain"], "cnn.com")
+
+    def test_15_licensing_restricted_candidates_rejected_at_article_selection(self):
+        """15. select_best_article rejects licensing-restricted candidates even if scored higher."""
+        disc = [
+            {"title": "BBC High Scored Headline", "url": "https://www.bbc.co.uk/news/top", "domain": "bbc.co.uk", "score": 300, "is_duplicate": False},
+            {"title": "NDTV High Scored Headline", "url": "https://www.ndtv.com/top", "domain": "ndtv.com", "score": 250, "is_duplicate": False},
+            {"title": "LiveMint High Scored Story", "url": "https://www.livemint.com/top", "domain": "livemint.com", "score": 220, "is_duplicate": False},
+            {"title": "Authorized Fox News Headline", "url": "https://foxnews.com/world/major", "domain": "foxnews.com", "score": 100, "is_duplicate": False},
+        ]
+        sample = {
+            "results": [
+                {"id": 1, "importance": "MAJOR", "topic": "World", "reason": "BBC story"},
+                {"id": 2, "importance": "MAJOR", "topic": "World", "reason": "NDTV story"},
+                {"id": 3, "importance": "MAJOR", "topic": "Business", "reason": "LiveMint story"},
+                {"id": 4, "importance": "MAJOR", "topic": "World", "reason": "Fox story"},
+            ]
+        }
+        self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+        self.sample_path.write_text(json.dumps(sample), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.discovery_path if str(p) == "discovery.json"
+            else (self.sample_path if str(p) == "classified_sample.json"
+            else (self.history_path if str(p) == "history.json"
+            else (self.selected_path if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        self.assertIsNotNone(sel)
+        self.assertEqual(sel["title"], "Authorized Fox News Headline")
+        self.assertEqual(sel["domain"], "foxnews.com")
+
+    def test_16_empty_eligible_candidates_safely_skips_without_fallback(self):
+        """16. If all candidates are licensing-restricted or unapproved, publication safely skips without fallback."""
+        disc = [
+            {"title": "BBC Exclusive Headline", "url": "https://www.bbc.com/news/1", "domain": "bbc.com", "score": 200, "is_duplicate": False},
+            {"title": "NDTV Exclusive Headline", "url": "https://www.ndtv.com/2", "domain": "ndtv.com", "score": 180, "is_duplicate": False},
+            {"title": "The Hindu Exclusive Story", "url": "https://thehindu.com/3", "domain": "thehindu.com", "score": 150, "is_duplicate": False},
+            {"title": "Indian Express Exclusive Story", "url": "https://indianexpress.com/4", "domain": "indianexpress.com", "score": 140, "is_duplicate": False},
+            {"title": "LiveMint Exclusive Report", "url": "https://www.livemint.com/5", "domain": "livemint.com", "score": 130, "is_duplicate": False},
+            {"title": "Reuters Wire Report", "url": "https://reuters.com/6", "domain": "reuters.com", "score": 120, "is_duplicate": False},
+            {"title": "AP Wire Report", "url": "https://apnews.com/7", "domain": "apnews.com", "score": 110, "is_duplicate": False},
+        ]
+        sample = {
+            "results": [{"id": i, "importance": "MAJOR", "topic": "World", "reason": "Story"} for i in range(1, 8)]
+        }
+        self.discovery_path.write_text(json.dumps(disc), encoding="utf-8")
+        self.sample_path.write_text(json.dumps(sample), encoding="utf-8")
+
+        with patch("select_article.Path", side_effect=lambda p: (
+            self.discovery_path if str(p) == "discovery.json"
+            else (self.sample_path if str(p) == "classified_sample.json"
+            else (self.history_path if str(p) == "history.json"
+            else (self.selected_path if str(p) == "selected_article.json"
+            else Path(p))))
+        )):
+            sel = select_article.select_best_article()
+
+        # Must be None - never fall back to another site
+        self.assertIsNone(sel)
+        self.assertFalse(self.selected_path.is_file())
+
+    def test_17_post_generator_rejects_licensing_restricted_domains(self):
+        """17. post_generator raises SAFETY REFUSAL for licensing-restricted domains."""
+        restricted_articles = [
+            {"title": "BBC Exclusive Headline Story", "domain": "bbc.com", "url": "https://www.bbc.com/news/story-1"},
+            {"title": "NDTV Top Headline Story", "domain": "ndtv.com", "url": "https://www.ndtv.com/story-2"},
+            {"title": "Indian Express Report Story", "domain": "indianexpress.com", "url": "https://indianexpress.com/story-3"},
+            {"title": "The Hindu Front Page Story", "domain": "thehindu.com", "url": "https://www.thehindu.com/story-4"},
+            {"title": "LiveMint Market Pulse Story", "domain": "livemint.com", "url": "https://www.livemint.com/story-5"},
+        ]
+        for article in restricted_articles:
+            with self.assertRaises(ValueError) as ctx:
+                post_generator.generate_post(article)
+            self.assertIn("SAFETY REFUSAL", str(ctx.exception))
+
+    def test_18_publisher_preflight_rejects_licensing_restricted_domains(self):
+        """18. instagram_publisher.validate_image_and_post raises SAFETY REFUSAL for licensing-restricted domains."""
+        post = {
+            "headline": "Valid Format Headline For Verification",
+            "curiosity_line": "Curiosity detail",
+            "caption": "Full validated caption text for testing. #NewsSnap",
+            "hashtags": ["#NewsSnap"],
+            "is_synthetic": False
+        }
+        restricted_articles = [
+            {"title": "BBC Exclusive Story", "domain": "bbc.co.uk", "url": "https://www.bbc.co.uk/news/story"},
+            {"title": "NDTV National Report", "domain": "ndtv.com", "url": "https://www.ndtv.com/news/story"},
+            {"title": "LiveMint Markets News", "domain": "livemint.com", "url": "https://www.livemint.com/news/story"},
+        ]
+        post_path = Path("post.json")
+        img_path = Path("news_snap_post.jpg")
+        try:
+            post_path.write_text(json.dumps(post), encoding="utf-8")
+            from PIL import ImageDraw
+            dummy_img = Image.new("RGB", (1080, 1350), (10, 24, 45))
+            d = ImageDraw.Draw(dummy_img)
+            d.text((50, 50), "TEST", fill=(255, 255, 255))
+            dummy_img.save(img_path, "JPEG", quality=95)
+
+            for article in restricted_articles:
+                with self.assertRaises(ValueError) as ctx:
+                    instagram_publisher.validate_image_and_post(article=article)
+                self.assertIn("SAFETY REFUSAL", str(ctx.exception))
+        finally:
+            if post_path.exists():
+                post_path.unlink()
+            if img_path.exists():
+                img_path.unlink()
 
 
 if __name__ == "__main__":
