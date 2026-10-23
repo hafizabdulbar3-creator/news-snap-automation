@@ -24,8 +24,24 @@ from urllib.parse import urlparse
 
 SOURCES_FILE = Path(os.environ.get("NEWS_SNAP_SOURCES_PATH", "sources.json"))
 
-# 22 Approved News Organizations and their verified official domains
-APPROVED_NEWS_SOURCES = [
+# ---------------------------------------------------------------------------
+# Blocked Aggregator and Search Index Domains (never valid article publishers)
+# ---------------------------------------------------------------------------
+BLOCKED_AGGREGATOR_DOMAINS = {
+    "gdeltproject.org",
+    "data.gdeltproject.org",
+    "google.com",
+    "news.google.com",
+    "flipboard.com",
+    "yahoo.com",
+    "news.yahoo.com",
+}
+
+# ---------------------------------------------------------------------------
+# Strict User-Requested Source Discovery Whitelist (22 Organizations)
+# GDELT and open-data feeds may only discover canonical URLs from these 22 orgs.
+# ---------------------------------------------------------------------------
+USER_DISCOVERY_WHITELIST = [
     # International News Organizations (1-12)
     {
         "id": 1,
@@ -228,16 +244,10 @@ APPROVED_NEWS_SOURCES = [
     }
 ]
 
-# User requested source whitelist: 22 organizations across 28 domains
-USER_WHITELISTED_DOMAINS = {
-    domain.lower()
-    for source in APPROVED_NEWS_SOURCES
-    for domain in source["domains"]
-}
-ALL_WHITELISTED_DOMAINS = USER_WHITELISTED_DOMAINS
-
-# Domains strictly restricted from automated publication without commercial licensing/syndication
+# ---------------------------------------------------------------------------
+# Strict Licensing-Restricted Domains
 # BBC, NDTV, The Indian Express, The Hindu, and LiveMint
+# ---------------------------------------------------------------------------
 LICENSING_RESTRICTED_DOMAINS = {
     "bbc.com",
     "bbc.co.uk",
@@ -247,19 +257,46 @@ LICENSING_RESTRICTED_DOMAINS = {
     "livemint.com",
 }
 
-# Domains authorized and eligible for automated publication (20 organizations across 25 domains)
+# ---------------------------------------------------------------------------
+# Strict Discovery Whitelist Domains (22 organizations across 28 domains)
+# ---------------------------------------------------------------------------
+DISCOVERY_WHITELIST_DOMAINS = {
+    domain.lower()
+    for source in USER_DISCOVERY_WHITELIST
+    for domain in source["domains"]
+}
+USER_WHITELISTED_DOMAINS = DISCOVERY_WHITELIST_DOMAINS
+ALL_WHITELISTED_DOMAINS = DISCOVERY_WHITELIST_DOMAINS
+
+# ---------------------------------------------------------------------------
+# Strict Publication-Authorized Sources and Domains (20 orgs / 25 domains)
+# Formed strictly by excluding every source with feed_status == 'unavailable_licensing'
+# and excluding every domain in LICENSING_RESTRICTED_DOMAINS.
+# ---------------------------------------------------------------------------
+APPROVED_NEWS_SOURCES = [
+    source for source in USER_DISCOVERY_WHITELIST
+    if source.get("feed_status") != "unavailable_licensing"
+    and source.get("publication_authorized") is True
+]
+
 PUBLICATION_AUTHORIZED_DOMAINS = {
-    d for d in USER_WHITELISTED_DOMAINS
-    if d not in LICENSING_RESTRICTED_DOMAINS
+    domain.lower()
+    for source in APPROVED_NEWS_SOURCES
+    for domain in source["domains"]
+    if domain.lower() not in LICENSING_RESTRICTED_DOMAINS
 }
 
-# APPROVED_DOMAINS points to the publication-authorized domains
 APPROVED_DOMAINS = PUBLICATION_AUTHORIZED_DOMAINS
 
 
+def get_discovery_whitelisted_domains() -> set[str]:
+    """Return the set of all 28 domains on the user's requested news discovery whitelist."""
+    return set(DISCOVERY_WHITELIST_DOMAINS)
+
+
 def get_whitelisted_domains() -> set[str]:
-    """Return the set of all 28 domains on the user's requested news whitelist."""
-    return set(USER_WHITELISTED_DOMAINS)
+    """Alias for discovery whitelisted domains."""
+    return set(DISCOVERY_WHITELIST_DOMAINS)
 
 
 def get_licensing_restricted_domains() -> set[str]:
@@ -277,18 +314,23 @@ def get_approved_domains() -> set[str]:
     return set(APPROVED_DOMAINS)
 
 
+def get_discovery_sources() -> list[dict]:
+    """Return the list of all 22 user-whitelisted discovery news organizations."""
+    return list(USER_DISCOVERY_WHITELIST)
+
+
 def get_whitelisted_sources() -> list[dict]:
-    """Return the list of all 22 user-whitelisted news organizations."""
-    return list(APPROVED_NEWS_SOURCES)
+    """Alias for discovery sources."""
+    return list(USER_DISCOVERY_WHITELIST)
 
 
 def get_authorized_sources() -> list[dict]:
     """Return only the 20 news organizations currently authorized for automated publication."""
-    return [s for s in APPROVED_NEWS_SOURCES if s.get("publication_authorized") is True]
+    return list(APPROVED_NEWS_SOURCES)
 
 
 def get_approved_sources() -> list[dict]:
-    """Return the list of approved news organizations."""
+    """Return the list of approved news organizations eligible for publication."""
     return list(APPROVED_NEWS_SOURCES)
 
 
@@ -324,27 +366,37 @@ def is_licensing_restricted(url_or_domain: str) -> bool:
     return False
 
 
-def is_whitelisted_domain(hostname: str) -> bool:
-    """Verify if a parsed hostname belongs to any of the 22 user-whitelisted organizations."""
+def is_discovery_whitelisted_domain(hostname: str) -> bool:
+    """Verify if a parsed hostname belongs to any of the user's 22 requested discovery sources.
+
+    Strictly rejects outside publishers (e.g. wnmufm.org, nytimes.com, theguardian.com),
+    wire services (apnews.com, reuters.com), and aggregator/index domains (gdeltproject.org).
+    """
     if not hostname or not isinstance(hostname, str):
         return False
 
     clean_host = hostname.strip().lower().rstrip(".")
     if ":" in clean_host:
         clean_host = clean_host.split(":", 1)[0]
+    if clean_host.startswith("www."):
+        clean_host = clean_host[4:]
 
     if not clean_host:
         return False
 
-    for whitelisted in USER_WHITELISTED_DOMAINS:
+    # Blocked aggregator / search index domains are never article publishers
+    if clean_host in BLOCKED_AGGREGATOR_DOMAINS or any(clean_host.endswith("." + b) for b in BLOCKED_AGGREGATOR_DOMAINS):
+        return False
+
+    for whitelisted in DISCOVERY_WHITELIST_DOMAINS:
         if clean_host == whitelisted or clean_host.endswith("." + whitelisted):
             return True
 
     return False
 
 
-def is_whitelisted_url(url: str) -> bool:
-    """Validate that an article URL belongs to the user-whitelisted organizations."""
+def is_discovery_whitelisted_url(url: str) -> bool:
+    """Validate that an article URL belongs to the user's 22-source discovery whitelist."""
     if not url or not isinstance(url, str):
         return False
 
@@ -356,18 +408,24 @@ def is_whitelisted_url(url: str) -> bool:
         hostname = parsed.hostname
         if not hostname:
             return False
-        return is_whitelisted_domain(hostname)
+        return is_discovery_whitelisted_domain(hostname)
     except Exception:
         return False
 
 
+is_whitelisted_domain = is_discovery_whitelisted_domain
+is_whitelisted_url = is_discovery_whitelisted_url
+
+
 def is_publication_authorized_domain(hostname: str) -> bool:
-    """Strictly verify if a parsed hostname belongs to an authorized news domain.
+    """Strictly verify if a parsed hostname belongs to a publication-authorized news domain.
 
     Rejects:
     1. Licensing-restricted publishers (BBC, NDTV, The Indian Express, The Hindu, LiveMint).
-    2. Unapproved wire services / aggregators (AP, Reuters, Google News, Flipboard).
-    3. Lookalike, attacker, or spoofed domains.
+    2. Any publisher marked 'unavailable_licensing' in the discovery whitelist.
+    3. Outside publishers (e.g. wnmufm.org, nytimes.com, washingtonpost.com).
+    4. Unapproved wire services / aggregators / indices (AP, Reuters, Google News, Flipboard, GDELT).
+    5. Lookalike, attacker, or spoofed domains.
     """
     if not hostname or not isinstance(hostname, str):
         return False
@@ -375,12 +433,18 @@ def is_publication_authorized_domain(hostname: str) -> bool:
     clean_host = hostname.strip().lower().rstrip(".")
     if ":" in clean_host:
         clean_host = clean_host.split(":", 1)[0]
+    if clean_host.startswith("www."):
+        clean_host = clean_host[4:]
 
     if not clean_host:
         return False
 
     # Fail closed on licensing restricted domains
     if is_licensing_restricted(clean_host):
+        return False
+
+    # Blocked aggregator / search index domains are never article publishers
+    if clean_host in BLOCKED_AGGREGATOR_DOMAINS or any(clean_host.endswith("." + b) for b in BLOCKED_AGGREGATOR_DOMAINS):
         return False
 
     # Check authorized domains
@@ -394,7 +458,8 @@ def is_publication_authorized_domain(hostname: str) -> bool:
 def is_publication_authorized_url(url: str) -> bool:
     """Validate that the canonical article URL has a valid scheme and is authorized for publication.
 
-    Aggregators, unapproved sources, and licensing-restricted sources are rejected.
+    Aggregators, unapproved sources, outside publishers (e.g. wnmufm.org), and licensing-restricted
+    sources (BBC, NDTV, LiveMint, etc.) are rejected.
     """
     if not url or not isinstance(url, str):
         return False
@@ -429,7 +494,7 @@ def get_publication_eligibility(url_or_domain: str) -> tuple[bool, str]:
     if is_publication_authorized_url(target) or is_publication_authorized_domain(target):
         return True, "AUTHORIZED: Whitelisted and authorized for automated publication."
 
-    if is_whitelisted_url(target) or is_whitelisted_domain(target):
+    if is_discovery_whitelisted_url(target) or is_discovery_whitelisted_domain(target):
         return False, "WHITELISTED BUT LICENSING INELIGIBLE: Whitelisted organization lacks automated publication license."
 
     return False, "UNAPPROVED SOURCE: Domain is not in the approved news organizations whitelist."

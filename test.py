@@ -26,8 +26,12 @@ HISTORY_FILE = Path("history.json")
 from source_allowlist import (
     is_approved_url,
     is_approved_domain,
+    is_discovery_whitelisted_url,
+    is_publication_authorized_url,
     get_canonical_domain,
     APPROVED_DOMAINS,
+    PUBLICATION_AUTHORIZED_DOMAINS,
+    DISCOVERY_WHITELIST_DOMAINS,
 )
 
 # Standard tracking parameters stripped during URL normalization
@@ -266,23 +270,34 @@ def is_trivial_or_gossip(title: str, url: str) -> bool:
 def is_feed_enabled(source: dict) -> bool:
     """Check if a configured feed is enabled based on sources.json configuration.
 
-    Safety Guard:
-    A feed configured with enabled=False or disabled=True can NEVER be enabled
-    by environment variables (e.g. ENABLE_FEED_BBC_NEWS=1). Disabled feeds
-    strictly require explicit configuration change in sources.json after
-    publisher permission is verified.
+    Safety Guards:
+    1. Permanent Licensing Guard: Any feed URL from a licensing-restricted domain
+       (BBC, NDTV, The Indian Express, The Hindu, LiveMint) or marked with
+       feed_status='unavailable_licensing' is strictly and permanently disabled.
+       It can NEVER be enabled by configuration or environment overrides without
+       verified commercial licensing.
+    2. A feed configured with enabled=False or disabled=True can NEVER be enabled
+       by environment variables (e.g. ENABLE_FEED_BBC_NEWS=1).
     """
-    # 1. Configured disabled status is final and takes strict precedence
+    # 1. Permanent Licensing Guard: fail-closed if licensing restricted
+    if source.get("feed_status") == "unavailable_licensing":
+        return False
+    source_url = source.get("url", "")
+    from source_allowlist import is_licensing_restricted
+    if is_licensing_restricted(source_url):
+        return False
+
+    # 2. Configured disabled status is final and takes strict precedence
     if source.get("disabled") is True or source.get("enabled") is False:
         return False
 
-    # 2. Check if an enabled feed is explicitly disabled via env var (e.g. ENABLE_FEED_NAME=0)
+    # 3. Check if an enabled feed is explicitly disabled via env var (e.g. ENABLE_FEED_NAME=0)
     name_slug = re.sub(r"[^A-Z0-9]+", "_", source.get("name", "").upper()).strip("_")
     env_override = os.environ.get(f"ENABLE_FEED_{name_slug}")
     if env_override is not None and env_override.strip().lower() in ("0", "false", "no"):
         return False
 
-    # 3. Default to config setting
+    # 4. Default to config setting
     if "enabled" in source:
         return bool(source["enabled"])
     if "disabled" in source:
@@ -460,10 +475,12 @@ def discover_articles(
             if is_trivial_or_gossip(clean, norm_url):
                 continue
 
-            # Strict Approved Domain Whitelist Enforcement:
-            # The final canonical article URL must belong to an approved domain.
-            # Reject GDELT, Google News aggregator URLs, and unapproved publishers.
-            if not is_approved_url(norm_url):
+            # Strict Discovery & Licensing Enforcement:
+            # 1. Canonical article URL must belong to the user's 22 requested news organizations.
+            # 2. Outside publishers (including wnmufm.org), aggregators, and search fallbacks are rejected.
+            # 3. Any article from an unapproved or licensing-restricted publisher (BBC, NDTV, etc.)
+            #    discovered via GDELT or feeds must be dropped immediately.
+            if not is_discovery_whitelisted_url(norm_url) or not is_approved_url(norm_url):
                 continue
 
             # Determine canonical approved domain
