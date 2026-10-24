@@ -971,6 +971,15 @@
       "published": true,
       "media_id": "18038520632845786",
       "timestamp": "2026-10-24T21:21:35.829691+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/air-india-air-india-express-extend-saudi-flight-suspension-till-november-amid-security-concerns-2026-10-24-139593",
+      "title": "Air India, Air India Express Extend Saudi Flight Suspension Till November Amid Security Concerns",
+      "headline": "Air India, Air India Express Extend Saudi Flight Suspension Till November",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18075981080468351",
+      "timestamp": "2026-10-24T21:52:18.441463+00:00"
     }
   ],
   "processed": [
@@ -1011,7 +1020,19 @@
       "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "ED Moves Supreme Court Against Delhi HC Order Quashing EOW FIR In NewsClick Case",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/ed-moves-supreme-court-against-delhi-hc-order-quashing-eow-fir-in-newsclick-case-2026-10-24-139592",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics & Law",
+        "reason": "The Enforcement Directorate (ED) challenging a High Court order in the Supreme Court is a significant legal development involving press freedom and regulatory agencies, warranting a NORMAL classification as it is a major legal proceeding."
+      },
+      "classified_at": "2026-10-24T21:51:49.087182+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
