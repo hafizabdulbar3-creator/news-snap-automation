@@ -719,6 +719,15 @@
       "published": true,
       "media_id": "17898724365396320",
       "timestamp": "2026-10-24T07:41:27.368733+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/rajasthan-3-killed-19-injured-as-traveller-collides-with-trailer-on-nh-48-in-bagru-2026-10-24-139558",
+      "title": "Rajasthan: 3 Killed, 19 Injured as Traveller Collides with Trailer on NH-48 in Bagru",
+      "headline": "3 Killed, 19 Injured as Traveller Collides with Trailer on NH-48 in Bagru",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18129730582828077",
+      "timestamp": "2026-10-24T08:07:21.551191+00:00"
     }
   ],
   "processed": [
@@ -760,17 +769,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Rajasthan: 3 Killed, 19 Injured as Traveller Collides with Trailer on NH-48 in Bagru",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/rajasthan-3-killed-19-injured-as-traveller-collides-with-trailer-on-nh-48-in-bagru-2026-10-24-139558",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A traffic accident resulting in casualties is a standard local/regional news event."
-      },
-      "classified_at": "2026-10-24T07:40:58.593362+00:00"
-    },
     {
       "title": "Italy Deploys 3,300 Personnel, Drones Ahead of Oct 24 Protests: Report",
       "domain": "republicworld.com",
