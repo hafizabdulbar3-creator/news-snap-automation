@@ -953,6 +953,15 @@
       "published": true,
       "media_id": "18130019353699235",
       "timestamp": "2026-10-24T19:58:10.124464+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/imd-warns-of-extremely-heavy-rain-in-nilgiris-theni-dindigul-as-system-to-become-cyclone-by-oct-26-2026-10-24-139588",
+      "title": "IMD Warns Of Extremely Heavy Rain In Nilgiris, Theni, Dindigul As System To Become Cyclone By Oct 26",
+      "headline": "IMD Warns Of Extremely Heavy Rain In Nilgiris, Theni, Dindigul",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17996682195048364",
+      "timestamp": "2026-10-24T20:55:23.887417+00:00"
     }
   ],
   "processed": [
@@ -993,7 +1002,19 @@
       "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Will Play One More Season If Body Allows: MS Dhoni Hints At IPL Future Before December Deadline",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/will-play-one-more-season-if-body-allows-ms-dhoni-hints-at-ipl-future-before-december-deadline-2026-10-24-139591",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a sports-related update regarding a player's future, which falls under the category of public interest but is not a major geopolitical event."
+      },
+      "classified_at": "2026-10-24T20:54:55.302216+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
