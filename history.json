@@ -890,6 +890,15 @@
       "published": true,
       "media_id": "18119492723469678",
       "timestamp": "2026-10-24T16:30:52.124274+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-air-quality-improves-to-191-best-october-24-reading-in-a-decade-ws-l-10396343.html?comscorekw=jionews",
+      "title": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
+      "headline": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18119601937754605",
+      "timestamp": "2026-10-24T16:57:28.829250+00:00"
     }
   ],
   "processed": [
@@ -931,17 +940,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-air-quality-improves-to-191-best-october-24-reading-in-a-decade-ws-l-10396343.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "This is a report on environmental conditions (air quality) in a major city, which is a notable public interest story."
-      },
-      "classified_at": "2026-10-24T16:25:08.692638+00:00"
-    },
     {
       "title": "How Joint Loans Affect Both Borrowers' CIBIL Scores",
       "domain": "republicworld.com",
