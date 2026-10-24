@@ -665,6 +665,15 @@
       "published": true,
       "media_id": "18108292838354587",
       "timestamp": "2026-10-24T05:05:22.238760+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/maharashtra-ats-arrests-man-with-alleged-jaish-e-mohammed-links-in-mumbais-mahim-2026-10-24-139552",
+      "title": "Maharashtra ATS Arrests Man With Alleged Jaish-e-Mohammed Links In Mumbai's Mahim",
+      "headline": "Maharashtra ATS Arrests Man With Alleged Jaish-e-Mohammed Links",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18124419674318390",
+      "timestamp": "2026-10-24T05:31:28.190785+00:00"
     }
   ],
   "processed": [
@@ -705,7 +714,41 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Special NIA Court Orders Trial Against Kashmiri Separatist Yasin Malik, Six Others in PMLA Case",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/special-nia-court-orders-trial-against-kashmiri-separatist-yasin-malik-six-others-in-pmla-case-2026-10-24-139551",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime & Justice",
+        "reason": "A court order regarding a high-profile separatist figure and a PMLA case is a significant legal development in the region."
+      },
+      "classified_at": "2026-10-24T05:30:57.846164+00:00"
+    },
+    {
+      "title": "Amitabh Bachchan Shares Health Update After Social Media Break Announcement, Requests More Time",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/amitabh-bachchan-shares-health-update-after-social-media-break-announcement-requests-more-time-to-recover-2026-10-24-139550",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Celebrity News",
+        "reason": "A health update from a major celebrity is a notable public interest story, though it does not reach the level of a geopolitical event."
+      },
+      "classified_at": "2026-10-24T05:30:57.846168+00:00"
+    },
+    {
+      "title": "Zoho's Sridhar Vembu Explains Why He Doesn't Hate Racist People: 'Until India Develops...'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/zohos-sridhar-vembu-explains-why-he-doesnt-hate-racist-people-until-india-develops-ws-l-10395599.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business & Tech",
+        "reason": "A commentary or interview from a prominent tech CEO discussing social issues is a notable public interest story."
+      },
+      "classified_at": "2026-10-24T05:30:57.846171+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
