@@ -899,6 +899,15 @@
       "published": true,
       "media_id": "18119601937754605",
       "timestamp": "2026-10-24T16:57:28.829250+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/how-joint-loans-affect-both-borrowers-cibil-scores-2026-10-24-139576",
+      "title": "How Joint Loans Affect Both Borrowers' CIBIL Scores",
+      "headline": "How Joint Loans Impact Both Borrowers' CIBIL Scores",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17881084140547253",
+      "timestamp": "2026-10-24T17:27:47.398141+00:00"
     }
   ],
   "processed": [
@@ -939,19 +948,7 @@
       "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "How Joint Loans Affect Both Borrowers' CIBIL Scores",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/how-joint-loans-affect-both-borrowers-cibil-scores-2026-10-24-139576",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Finance",
-        "reason": "This article provides financial advice regarding credit scores and loans, which is a standard topic of public interest."
-      },
-      "classified_at": "2026-10-24T16:25:08.692641+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
