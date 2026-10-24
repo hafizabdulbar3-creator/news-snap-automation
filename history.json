@@ -827,6 +827,15 @@
       "published": true,
       "media_id": "17959227735258824",
       "timestamp": "2026-10-24T12:58:23.955176+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/class-12-student-found-burnt-behind-school-guard-room-in-delhi-s-krishna-nagar-probe-underway-2026-10-24-139571",
+      "title": "Class 12 Student Found Burnt Behind School Guard Room in Delhi's Krishna Nagar, Probe Underway",
+      "headline": "Class 12 Student Found Burnt Behind School Guard Room in Delhi",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18132493921689259",
+      "timestamp": "2026-10-24T13:24:14.934961+00:00"
     }
   ],
   "processed": [
@@ -851,17 +860,6 @@
         "reason": "Describes a localized civil unrest situation (protests) affecting a specific country (France), which is a regional news event rather than a global geopolitical crisis."
       },
       "classified_at": "2026-10-24T12:57:55.633224+00:00"
-    },
-    {
-      "title": "Class 12 Student Found Burnt Behind School Guard Room in Delhi's Krishna Nagar, Probe Underway",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/class-12-student-found-burnt-behind-school-guard-room-in-delhi-s-krishna-nagar-probe-underway-2026-10-24-139571",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Reports a serious crime involving the death of a minor student in a major capital city (Delhi), which is a matter of public safety and law and order."
-      },
-      "classified_at": "2026-10-24T12:57:55.633248+00:00"
     },
     {
       "title": "Amit Shah, Delhi CM Rekha Gupta Visit Delhi Police HQ to Discuss Law and Order Situation in Capital",
