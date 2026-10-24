@@ -683,6 +683,15 @@
       "published": true,
       "media_id": "18132609010804543",
       "timestamp": "2026-10-24T05:57:26.291555+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/special-nia-court-orders-trial-against-kashmiri-separatist-yasin-malik-six-others-in-pmla-case-2026-10-24-139551",
+      "title": "Special NIA Court Orders Trial Against Kashmiri Separatist Yasin Malik, Six Others in PMLA Case",
+      "headline": "Special NIA Court Orders Trial Against Yasin Malik in PMLA Case",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18096386291456351",
+      "timestamp": "2026-10-24T06:23:22.311561+00:00"
     }
   ],
   "processed": [
@@ -724,17 +733,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Special NIA Court Orders Trial Against Kashmiri Separatist Yasin Malik, Six Others in PMLA Case",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/special-nia-court-orders-trial-against-kashmiri-separatist-yasin-malik-six-others-in-pmla-case-2026-10-24-139551",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime & Justice",
-        "reason": "A court order regarding a high-profile separatist figure and a PMLA case is a significant legal development in the region."
-      },
-      "classified_at": "2026-10-24T05:30:57.846164+00:00"
-    },
     {
       "title": "Amitabh Bachchan Shares Health Update After Social Media Break Announcement, Requests More Time",
       "domain": "republicworld.com",
