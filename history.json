@@ -809,6 +809,15 @@
       "published": true,
       "media_id": "18637989112050228",
       "timestamp": "2026-10-24T12:06:13.815851+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/sukhbir-badal-demands-accountability-in-jhota-murder-case-accuses-aap-govt-of-mistreating-family-2026-10-24-139568",
+      "title": "Sukhbir Badal Demands Accountability in Jhota Murder Case, Accuses AAP Govt of Mistreating Family",
+      "headline": "Sukhbir Badal Demands Accountability in Jhota Murder Case",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18633704866062187",
+      "timestamp": "2026-10-24T12:32:35.797981+00:00"
     }
   ],
   "processed": [
@@ -822,19 +831,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Sukhbir Badal Demands Accountability in Jhota Murder Case, Accuses AAP Govt of Mistreating Family",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/sukhbir-badal-demands-accountability-in-jhota-murder-case-accuses-aap-govt-of-mistreating-family-2026-10-24-139568",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This involves a political demand regarding a specific murder case and government accountability, which is a standard regional political story."
-      },
-      "classified_at": "2026-10-24T12:05:50.074147+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
