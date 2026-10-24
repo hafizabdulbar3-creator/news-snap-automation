@@ -1027,6 +1027,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 16."
+    },
+    {
+      "url": "https://www.news18.com/cricket/india-a-vs-new-zealand-a-live-score-1st-unofficial-test-day-2-ind-a-vs-nz-a-latest-scorecard-lincoln-match-updates-liveblog-ws-l-10396039.html?comscorekw=jionews",
+      "title": "India-A Bowlers Eye Comeback After Batters' Day 1 Flop vs New Zealand-A",
+      "domain": "news18.com",
+      "timestamp": "2026-10-24T22:43:48.511669+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
