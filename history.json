@@ -818,6 +818,15 @@
       "published": true,
       "media_id": "18633704866062187",
       "timestamp": "2026-10-24T12:32:35.797981+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/saudi-arabia-issues-emergency-alert-over-hostile-aerial-threat-in-mecca-later-claims-danger-has-passed-2026-10-24-139573",
+      "title": "Saudi Arabia: Mecca Under Aerial Threat, Danger Later Passes",
+      "headline": "Saudi Arabia Issues Emergency Alert Over Hostile Aerial Threat in Mecca",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17959227735258824",
+      "timestamp": "2026-10-24T12:58:23.955176+00:00"
     }
   ],
   "processed": [
@@ -831,7 +840,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "France's Luxury Stores Board Up Windows Ahead of Fresh Protests",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/france-s-luxury-stores-board-up-windows-ahead-of-fresh-protests-2026-10-24-139574",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Describes a localized civil unrest situation (protests) affecting a specific country (France), which is a regional news event rather than a global geopolitical crisis."
+      },
+      "classified_at": "2026-10-24T12:57:55.633224+00:00"
+    },
+    {
+      "title": "Class 12 Student Found Burnt Behind School Guard Room in Delhi's Krishna Nagar, Probe Underway",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/class-12-student-found-burnt-behind-school-guard-room-in-delhi-s-krishna-nagar-probe-underway-2026-10-24-139571",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Reports a serious crime involving the death of a minor student in a major capital city (Delhi), which is a matter of public safety and law and order."
+      },
+      "classified_at": "2026-10-24T12:57:55.633248+00:00"
+    },
+    {
+      "title": "Amit Shah, Delhi CM Rekha Gupta Visit Delhi Police HQ to Discuss Law and Order Situation in Capital",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/amit-shah-delhi-cm-rekha-gupta-visit-delhi-police-hq-to-discuss-law-and-order-situation-in-capital-2026-10-24-139572",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Reports on a meeting between high-ranking government officials (Amit Shah, Delhi CM) regarding local law and order, which is a standard political update."
+      },
+      "classified_at": "2026-10-24T12:57:55.633250+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
