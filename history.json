@@ -910,9 +910,52 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/social-justice-and-the-long-term-health-of-indias-market-2026-10-24-139579",
+      "title": "Social Justice and the Long-Term Health of India's Market",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-24T16:25:12.922976+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/nitin-dhaboo-why-selling-is-a-life-skill-everyone-needs-2026-10-24-139577",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "This is a piece of business advice or opinion on a life skill, which falls under legitimate business and career topics."
+      },
+      "classified_at": "2026-10-24T16:25:08.692632+00:00"
+    },
+    {
+      "title": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-air-quality-improves-to-191-best-october-24-reading-in-a-decade-ws-l-10396343.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "This is a report on environmental conditions (air quality) in a major city, which is a notable public interest story."
+      },
+      "classified_at": "2026-10-24T16:25:08.692638+00:00"
+    },
+    {
+      "title": "How Joint Loans Affect Both Borrowers' CIBIL Scores",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/how-joint-loans-affect-both-borrowers-cibil-scores-2026-10-24-139576",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Finance",
+        "reason": "This article provides financial advice regarding credit scores and loans, which is a standard topic of public interest."
+      },
+      "classified_at": "2026-10-24T16:25:08.692641+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
