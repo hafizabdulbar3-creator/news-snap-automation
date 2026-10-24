@@ -764,6 +764,15 @@
       "published": true,
       "media_id": "18107859259962117",
       "timestamp": "2026-10-24T09:51:27.104363+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/france-mounts-huge-security-operation-as-protesters-prepare-to-march-2026-10-24-139567",
+      "title": "France Mounts Huge Security Operation as Protesters Prepare to March",
+      "headline": "France Mobilizes 70,000 Police for Protests",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17898724365396320",
+      "timestamp": "2026-10-24T10:17:09.472186+00:00"
     }
   ],
   "processed": [
@@ -804,7 +813,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Smriti Irani Cracks Whip, Asks Haryana Govt To Withdraw Security For BJP District Presidents",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/smriti-irani-cracks-whip-asks-haryana-govt-to-withdraw-security-for-bjp-district-presidents-ws-l-10395945.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political dispute regarding security details for party officials is a standard internal party matter with limited national or international consequence."
+      },
+      "classified_at": "2026-10-24T10:16:52.323965+00:00"
+    },
+    {
+      "title": "'Poison In The Air': Richa Chadha's Alarm As Mumbai's AQI 'Beats' Delhi's, BMC In Line Of Fire",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/mumbai-news/poison-in-the-air-richa-chadhas-alarm-as-mumbais-aqi-beats-delhis-bmc-in-line-of-fire-ws-l-10395840.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "Air quality issues in a major city are a matter of public health and environmental concern, though they are typically categorized as regional/local news rather than global geopolitical events."
+      },
+      "classified_at": "2026-10-24T10:16:52.323989+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
