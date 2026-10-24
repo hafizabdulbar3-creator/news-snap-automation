@@ -629,6 +629,15 @@
       "published": true,
       "media_id": "18111821399171518",
       "timestamp": "2026-10-23T19:38:55.716504+00:00"
+    },
+    {
+      "url": "https://www.euronews.com/2026/10/23/italy-preparing-with-elite-troops-and-drone-surveillance-for-24-october-protests",
+      "title": "Italy's cities in security 'lockdown' for Saturday protests",
+      "headline": "Italy's major cities enter security 'lockdown' for Saturday protests",
+      "domain": "euronews.com",
+      "published": true,
+      "media_id": "18077663504446698",
+      "timestamp": "2026-10-24T01:16:55.322616+00:00"
     }
   ],
   "processed": [
@@ -680,17 +689,6 @@
         "reason": "Political analysis regarding corporate holdings and potential future administration impact."
       },
       "classified_at": "2026-10-23T19:38:32.935576+00:00"
-    },
-    {
-      "title": "Italy's cities in security 'lockdown' for Saturday protests",
-      "domain": "euronews.com",
-      "url": "https://www.euronews.com/2026/10/23/italy-preparing-with-elite-troops-and-drone-surveillance-for-24-october-protests",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Report on security measures for protests in Italy is a notable regional event but does not rise to the level of major geopolitical consequence."
-      },
-      "classified_at": "2026-10-23T19:38:32.935598+00:00"
     }
   ],
   "quota_cooldown": {
