@@ -865,6 +865,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/india/centre-extends-defence-secretary-rajesh-kumar-singhs-tenure-by-one-year-till-october-2027-ws-l-10396277.html?comscorekw=jionews",
+      "title": "Centre Extends Defence Secretary Rajesh Kumar Singh's Tenure By One Year Till October 2027",
+      "domain": "news18.com",
+      "timestamp": "2026-10-24T14:26:04.631084+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [],
