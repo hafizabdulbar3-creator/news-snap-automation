@@ -674,6 +674,15 @@
       "published": true,
       "media_id": "18124419674318390",
       "timestamp": "2026-10-24T05:31:28.190785+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/zohos-sridhar-vembu-explains-why-he-doesnt-hate-racist-people-until-india-develops-ws-l-10395599.html?comscorekw=jionews",
+      "title": "Zoho's Sridhar Vembu Explains Why He Doesn't Hate Racist People: 'Until India Develops...'",
+      "headline": "Zoho's Sridhar Vembu: India Must Focus on Development Over Hatred",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18132609010804543",
+      "timestamp": "2026-10-24T05:57:26.291555+00:00"
     }
   ],
   "processed": [
@@ -736,17 +745,6 @@
         "reason": "A health update from a major celebrity is a notable public interest story, though it does not reach the level of a geopolitical event."
       },
       "classified_at": "2026-10-24T05:30:57.846168+00:00"
-    },
-    {
-      "title": "Zoho's Sridhar Vembu Explains Why He Doesn't Hate Racist People: 'Until India Develops...'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/zohos-sridhar-vembu-explains-why-he-doesnt-hate-racist-people-until-india-develops-ws-l-10395599.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business & Tech",
-        "reason": "A commentary or interview from a prominent tech CEO discussing social issues is a notable public interest story."
-      },
-      "classified_at": "2026-10-24T05:30:57.846171+00:00"
     }
   ],
   "quota_cooldown": {
