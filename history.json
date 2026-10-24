@@ -863,6 +863,15 @@
       "published": true,
       "media_id": "17910001947483162",
       "timestamp": "2026-10-24T15:07:42.572962+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/dr-priti-adani-calls-for-human-intelligence-and-skilled-talent-to-power-indias-semiconductor-ambitions-2026-10-24-139575",
+      "title": "Dr Priti Adani Calls For Human Intelligence And Skilled Talent To Power India's Semiconductor Ambitions",
+      "headline": "Dr Priti Adani Calls For Human Intelligence To Power India's Semiconductor Ambitions",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18092132126491724",
+      "timestamp": "2026-10-24T15:33:50.474474+00:00"
     }
   ],
   "processed": [
@@ -894,7 +903,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "JNU Campus Sees Fresh Political Row Over 'Naxalbari' Graffiti, ABVP Targets Left Groups",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/jnu-campus-sees-fresh-political-row-over-naxalbari-graffiti-abvp-targets-left-groups-ws-l-10396309.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Campus political disputes are a standard topic of national/regional public interest and political reporting."
+      },
+      "classified_at": "2026-10-24T15:33:16.979985+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
