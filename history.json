@@ -737,6 +737,15 @@
       "published": true,
       "media_id": "18074923823757314",
       "timestamp": "2026-10-24T08:33:23.173511+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/etihad-passenger-claims-being-downgraded-from-business-to-economy-despite-paying-full-fare-not-sure-how-thats-my-problem-ws-l-10395874.html?comscorekw=jionews",
+      "title": "Paid for Business, Got Economy: Etihad Passenger's Downgrade Sparks Fury",
+      "headline": "Etihad Passenger Downgraded From Business To Economy Despite Paying Full Fare",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18203516203326648",
+      "timestamp": "2026-10-24T08:59:33.526646+00:00"
     }
   ],
   "processed": [
@@ -777,7 +786,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Pune Faces Tighter Water Cuts, Kolhapur Braces For 2-Day Shutdown: What Residents Need To Know",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/pune/pune-faces-tighter-water-cuts-kolhapur-braces-for-2-day-shutdown-what-residents-need-to-know-ws-l-10395823.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A local administrative issue regarding water supply and utility management."
+      },
+      "classified_at": "2026-10-24T08:59:02.138594+00:00"
+    },
+    {
+      "title": "Man Abducted After Scorpio Hits His Bike In Punjab, Body Found In Sangrur Drain",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/man-abducted-after-scorpio-hits-his-bike-in-punjab-body-found-in-sangrur-drain-ws-kl-10395829.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A local criminal incident involving a missing person and a traffic accident."
+      },
+      "classified_at": "2026-10-24T08:59:02.138596+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
