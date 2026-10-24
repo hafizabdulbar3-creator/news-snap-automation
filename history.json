@@ -710,6 +710,15 @@
       "published": true,
       "media_id": "18085564664321643",
       "timestamp": "2026-10-24T07:15:27.947369+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/70000-cops-swat-teams-water-cannons-france-braces-for-fresh-protests-after-deadly-riots-ws-lr-10395746.html?comscorekw=jionews",
+      "title": "70,000 Cops, SWAT Teams, Water Cannons: France Braces For Fresh Protests After Deadly Riots",
+      "headline": "France Deploys 70,000 Cops, SWAT Teams, Water Cannons",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17898724365396320",
+      "timestamp": "2026-10-24T07:41:27.368733+00:00"
     }
   ],
   "processed": [
@@ -750,7 +759,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Rajasthan: 3 Killed, 19 Injured as Traveller Collides with Trailer on NH-48 in Bagru",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/rajasthan-3-killed-19-injured-as-traveller-collides-with-trailer-on-nh-48-in-bagru-2026-10-24-139558",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A traffic accident resulting in casualties is a standard local/regional news event."
+      },
+      "classified_at": "2026-10-24T07:40:58.593362+00:00"
+    },
+    {
+      "title": "Italy Deploys 3,300 Personnel, Drones Ahead of Oct 24 Protests: Report",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/italy-deploys-3300-personnel-drones-ahead-of-oct-24-protests-report-2026-10-24-139557",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "Deployment of police and drones for protests is a standard regional security update."
+      },
+      "classified_at": "2026-10-24T07:40:58.593378+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
