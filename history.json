@@ -917,6 +917,15 @@
       "published": true,
       "media_id": "18108029867624506",
       "timestamp": "2026-10-24T17:53:49.761656+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/amit-shahs-nda-sarkar-pitch-and-the-war-on-drugs-how-bjp-is-rewriting-punjabs-political-script-ws-blrt-10396393.html?comscorekw=jionews",
+      "title": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs: How BJP Is Rewriting Punjab's Political Script",
+      "headline": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18058020851569310",
+      "timestamp": "2026-10-24T18:19:29.607118+00:00"
     }
   ],
   "processed": [
@@ -958,17 +967,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs: How BJP Is Rewriting Punjab's Political Script",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/amit-shahs-nda-sarkar-pitch-and-the-war-on-drugs-how-bjp-is-rewriting-punjabs-political-script-ws-blrt-10396393.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Focuses on regional political strategy and policy within India."
-      },
-      "classified_at": "2026-10-24T17:53:25.219199+00:00"
-    },
     {
       "title": "Where Is Trump Rallying Next? From Georgia To Ohio, His Midterm Campaign Trail",
       "domain": "news18.com",
