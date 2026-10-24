@@ -656,6 +656,15 @@
       "published": true,
       "media_id": "17968334940207528",
       "timestamp": "2026-10-24T04:35:01.339245+00:00"
+    },
+    {
+      "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec7",
+      "title": "Ukraine joins NATO's NSPA partnership, gains access to Alliance contracts for defence industry",
+      "headline": "Ukraine joins NATO's NSPA partnership, gains access to Alliance contracts",
+      "domain": "jionews.com",
+      "published": true,
+      "media_id": "18108292838354587",
+      "timestamp": "2026-10-24T05:05:22.238760+00:00"
     }
   ],
   "processed": [
@@ -697,17 +706,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Ukraine joins NATO's NSPA partnership, gains access to Alliance contracts for defence industry",
-      "domain": "jionews.com",
-      "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec7",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Ukraine joining NATO's NSPA partnership and gaining access to defense contracts is a major geopolitical shift impacting regional security and defense industrial capabilities."
-      },
-      "classified_at": "2026-10-24T04:34:36.824634+00:00"
-    },
     {
       "title": "As Israeli election nears, campaign turns ugly with AI clips and bereaved families dragged in",
       "domain": "jionews.com",
