@@ -881,6 +881,15 @@
       "published": true,
       "media_id": "17989056462097582",
       "timestamp": "2026-10-24T15:59:38.880878+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/nitin-dhaboo-why-selling-is-a-life-skill-everyone-needs-2026-10-24-139577",
+      "title": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
+      "headline": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18119492723469678",
+      "timestamp": "2026-10-24T16:30:52.124274+00:00"
     }
   ],
   "processed": [
@@ -922,17 +931,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/nitin-dhaboo-why-selling-is-a-life-skill-everyone-needs-2026-10-24-139577",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "This is a piece of business advice or opinion on a life skill, which falls under legitimate business and career topics."
-      },
-      "classified_at": "2026-10-24T16:25:08.692632+00:00"
-    },
     {
       "title": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
       "domain": "news18.com",
