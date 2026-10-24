@@ -40,24 +40,20 @@ def call_ai(articles):
         except Exception as inner_e:
             print(f"[WARN] Error handling HTTP error in quota manager: {inner_e}")
         raise e
-    except RuntimeError as e:
-        # Check if quota exhaustion error from ai_provider
+    except Exception as e:
+        # Any AI provider failure (e.g. 503, JSON parse, timeout, quota) safely falls back to heuristic triage
+        print(f"[FALLBACK] AI classification unavailable ({e}). Using local journalistic heuristic classification to avoid pipeline failure.")
         try:
-            from quota_manager import is_cooldown_active, heuristic_classify_article
-            history_path = os.environ.get("NEWS_SNAP_HISTORY_PATH", "history.json")
-            active_prov = get_active_provider() or None
-            if is_cooldown_active(history_path, provider=active_prov):
-                print(f"[QUOTA COOLDOWN ACTIVE] {e}")
-                print("[FALLBACK] Using local journalistic heuristic classification to avoid pipeline failure.")
-                results = []
-                for idx, a in enumerate(articles, start=1):
-                    h_res = heuristic_classify_article(a.get("title", ""), a.get("domain", ""))
-                    h_res["id"] = idx
-                    results.append(h_res)
-                return {"results": results, "source": "local_heuristic"}
-        except Exception:
-            pass
-        raise e
+            from quota_manager import heuristic_classify_article
+            results = []
+            for idx, a in enumerate(articles, start=1):
+                h_res = heuristic_classify_article(a.get("title", ""), a.get("domain", ""))
+                h_res["id"] = idx
+                results.append(h_res)
+            return {"results": results, "source": "local_heuristic"}
+        except Exception as inner_e:
+            print(f"[FATAL] Local heuristic classification also failed: {inner_e}")
+            raise e
 
 
 # Maintain backwards compatibility

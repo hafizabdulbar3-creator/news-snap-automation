@@ -660,9 +660,9 @@ Articles to classify:
         print(f"[AI TRIAGE] Routing classification of {len(articles)} articles to provider: {provider.upper()}")
         try:
             if provider == "cloudflare":
-                return call_cloudflare_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
+                return call_cloudflare_chat_completion(prompt=user_prompt, system_prompt=system_prompt, max_tokens=3000)
             elif provider == "groq":
-                return call_groq_chat_completion(prompt=user_prompt, system_prompt=system_prompt)
+                return call_groq_chat_completion(prompt=user_prompt, system_prompt=system_prompt, max_tokens=3000)
             elif provider == "gemini":
                 return call_gemini_generate_content(prompt=user_prompt, system_prompt=system_prompt)
         except QuotaExhaustedError as qe:
