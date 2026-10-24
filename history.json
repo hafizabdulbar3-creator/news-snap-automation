@@ -800,6 +800,15 @@
       "published": true,
       "media_id": "18151653157554090",
       "timestamp": "2026-10-24T11:40:23.911004+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/irgc-claims-full-control-over-hormuz-as-us-contemplates-fresh-strikes-on-iran-2026-10-24-139570",
+      "title": "IRGC Claims Full Control Over Hormuz as US Contemplates Fresh Strikes on Iran",
+      "headline": "IRGC Claims Full Control Over Hormuz as US Contemplates Strikes",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18637989112050228",
+      "timestamp": "2026-10-24T12:06:13.815851+00:00"
     }
   ],
   "processed": [
@@ -813,7 +822,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Sukhbir Badal Demands Accountability in Jhota Murder Case, Accuses AAP Govt of Mistreating Family",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/sukhbir-badal-demands-accountability-in-jhota-murder-case-accuses-aap-govt-of-mistreating-family-2026-10-24-139568",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This involves a political demand regarding a specific murder case and government accountability, which is a standard regional political story."
+      },
+      "classified_at": "2026-10-24T12:05:50.074147+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
