@@ -786,55 +786,16 @@
   ],
   "processed": [
     {
-      "url": "https://www.ketv.com/article/trump-womens-health-executive-order-task-force-nih/74184386",
-      "title": "President Trump signs executive order aimed at improving women's health. How could it impact you?",
-      "domain": "ketv.com",
-      "timestamp": "2026-10-20T09:52:03.591524+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('President Trump signs executive order aimed at improving women's health. How could it impact you?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://apnews.com/article/china-economy-71354a055a412ef13e4e2edad070b4a5",
-      "title": "China's economy accelerated in the July-September quarter on robust exports",
-      "domain": "apnews.com",
-      "timestamp": "2026-10-20T14:01:54.564617+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 15."
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRjl5VmhGZHJ1bUpkdTZQaElWaWdnSFVkdVVQOUhzN3Y5SFdHOUNpS0pXQjdsVzhMVm1YOFloSGhHbnNYT29talRoNVJWdlRDVkdCM0VQV1lIUFZSbG9MV3BPclJZZGVtejVZZFNNWWxxdFdBM19hS2pQdHNaWm51MFRFNWxLWHdzVzQwN1ZxeXFFenRPREthTGRvVW9vOW1JdWpiVWk0VE9UQWlqRnZJWEJ0aFVYd2xBR3FN",
-      "title": "As France erupts, Europe's far right gains from fuel-price anger ahead of elections",
-      "domain": "reuters.com",
-      "timestamp": "2026-10-20T14:59:03.348177+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 15."
-    },
-    {
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdTEzTG1HSEl6MVRHYTNGcE9lcmxKWkxRbmVRQUdPYTRTckt6VFBuZzlraElya0NJMm1BLTJxZDV2NE92cF9ULXVRdDdDSnNiVldmbzE2UFhYX0MweThsTUxQYVI3bGNySkgyRU5ZcE5wUWs4RkNMb2tCLU9HcnoxWnBmNHkxTzVnTXQzTk5DZ1FDWlFiazlJcFVuUDJGWUVvdEhNRzlSc2tvX3hxcFZsa00tcjFhb1ZWZDdnQ3htZEhwMWc",
-      "title": "Chinese patrols to Taiwan's east are 'destabilising', US Congress-appointed official says",
-      "domain": "reuters.com",
-      "timestamp": "2026-10-20T17:14:20.755350+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 17."
-    }
-  ],
-  "classified_pool": [
-    {
+      "url": "https://www.news18.com/cities/mumbai-news/poison-in-the-air-richa-chadhas-alarm-as-mumbais-aqi-beats-delhis-bmc-in-line-of-fire-ws-l-10395840.html?comscorekw=jionews",
       "title": "'Poison In The Air': Richa Chadha's Alarm As Mumbai's AQI 'Beats' Delhi's, BMC In Line Of Fire",
       "domain": "news18.com",
-      "url": "https://www.news18.com/cities/mumbai-news/poison-in-the-air-richa-chadhas-alarm-as-mumbais-aqi-beats-delhis-bmc-in-line-of-fire-ws-l-10395840.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "Air quality issues in a major city are a matter of public health and environmental concern, though they are typically categorized as regional/local news rather than global geopolitical events."
-      },
-      "classified_at": "2026-10-24T10:16:52.323989+00:00"
+      "timestamp": "2026-10-24T11:08:56.456441+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
