@@ -9,6 +9,8 @@ from source_allowlist import (
     is_approved_url,
     get_canonical_domain,
     check_topic_diversity,
+    extract_topic_entities,
+    KNOWN_ENTITIES,
     APPROVED_DOMAINS,
 )
 
@@ -75,6 +77,68 @@ def emit_article_selected(selected: bool) -> None:
                 f.write(f"article_selected={'true' if selected else 'false'}\n")
         except Exception as e:
             print(f"[WARN] Failed to write to GITHUB_OUTPUT: {e}")
+
+
+def rank_by_diversity_preference(candidates: list[dict], posted_history: list[dict]) -> dict | None:
+    """When multiple eligible stories exist, prefer diversity across publishers, people, and topics.
+
+    If only one eligible story exists, returns it directly without forcing artificial variety.
+    """
+    if not candidates:
+        return None
+    if len(candidates) == 1:
+        return candidates[0]
+
+    # Extract recent confirmed published posts (up to last 5 posts)
+    recent_published = [p for p in posted_history if p.get("published") is not False][-5:]
+    recent_domains = [str(p.get("domain", "")).lower() for p in recent_published]
+    last_domain = recent_domains[-1] if recent_domains else ""
+
+    # Count recent entity appearances across recent posts
+    recent_entity_counts = {}
+    for p in recent_published:
+        p_title = p.get("headline") or p.get("title") or ""
+        p_entities = extract_topic_entities(p_title)
+        for e in p_entities:
+            if e in KNOWN_ENTITIES:
+                recent_entity_counts[e] = recent_entity_counts.get(e, 0) + 1
+
+    scored = []
+    for cand in candidates:
+        base_score = float(cand.get("score", 0))
+        title = cand.get("title", "")
+        domain = str(cand.get("domain", "")).lower()
+        cand_entities = extract_topic_entities(title)
+
+        diversity_penalty = 0.0
+
+        # 1. Person/Entity recency penalty:
+        # If the candidate focuses on an entity (e.g. Trump, Biden) already published recently,
+        # apply a penalty so alternative diverse stories are preferred when alternatives exist.
+        for e in cand_entities:
+            if e in recent_entity_counts:
+                # Heavy penalty if entity appeared in the very last published post
+                if recent_published and e in extract_topic_entities(recent_published[-1].get("headline") or recent_published[-1].get("title") or ""):
+                    diversity_penalty += 70.0
+                else:
+                    diversity_penalty += 40.0 * recent_entity_counts[e]
+
+        # 2. Publisher recency penalty:
+        # Avoid posting back-to-back from the exact same news organization
+        if last_domain and (domain == last_domain or domain.endswith("." + last_domain) or last_domain.endswith("." + domain)):
+            diversity_penalty += 35.0
+
+        # 3. Publisher diversity bonus:
+        # Reward publishers not seen in the last 3 published posts
+        if domain not in recent_domains[-3:]:
+            diversity_penalty -= 20.0
+
+        adjusted_score = base_score - diversity_penalty
+        scored.append((adjusted_score, cand))
+
+    # Sort descending by adjusted diversity score
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return scored[0][1]
 
 
 def select_best_article():
@@ -147,6 +211,7 @@ def select_best_article():
     selected = None
 
     # Pass 1: Look for MAJOR importance, approved whitelist domain, non-duplicate, diverse topic
+    major_candidates = []
     for index, article in enumerate(articles[:50], start=1):
         classification = classifications.get(index, {})
         eligible, reason = is_candidate_eligible(
@@ -159,11 +224,14 @@ def select_best_article():
             topic = str(classification.get("topic", "")).lower()
             if "non-english" in topic or "foreign" in topic:
                 continue
-            selected = {**article, "classification": classification}
-            break
+            major_candidates.append({**article, "classification": classification})
+
+    if major_candidates:
+        selected = rank_by_diversity_preference(major_candidates, posted_history)
 
     # Pass 2: If no MAJOR story found, look for NORMAL importance
     if selected is None:
+        normal_candidates = []
         for index, article in enumerate(articles[:50], start=1):
             classification = classifications.get(index, {})
             eligible, reason = is_candidate_eligible(
@@ -176,11 +244,14 @@ def select_best_article():
                 topic = str(classification.get("topic", "")).lower()
                 if "non-english" in topic or "foreign" in topic:
                     continue
-                selected = {**article, "classification": classification}
-                break
+                normal_candidates.append({**article, "classification": classification})
 
-    # Pass 3: Fallback to the top valid approved non-duplicate diverse article
+        if normal_candidates:
+            selected = rank_by_diversity_preference(normal_candidates, posted_history)
+
+    # Pass 3: Fallback to any valid approved non-duplicate diverse article
     if selected is None:
+        fallback_candidates = []
         for index, article in enumerate(articles[:50], start=1):
             classification = classifications.get(index, {})
             eligible, reason = is_candidate_eligible(
@@ -189,8 +260,10 @@ def select_best_article():
             if not eligible:
                 continue
 
-            selected = {**article, "classification": classification}
-            break
+            fallback_candidates.append({**article, "classification": classification})
+
+        if fallback_candidates:
+            selected = rank_by_diversity_preference(fallback_candidates, posted_history)
 
     if selected is None:
         print("[SAFE SKIP] No publication-authorized, non-duplicate article available for selection.")

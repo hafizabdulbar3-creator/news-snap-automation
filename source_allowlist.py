@@ -20,7 +20,7 @@ import json
 import os
 import re
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qsl
 
 SOURCES_FILE = Path(os.environ.get("NEWS_SNAP_SOURCES_PATH", "sources.json"))
 
@@ -408,7 +408,20 @@ def is_discovery_whitelisted_url(url: str) -> bool:
         hostname = parsed.hostname
         if not hostname:
             return False
-        return is_discovery_whitelisted_domain(hostname)
+        if not is_discovery_whitelisted_domain(hostname):
+            return False
+
+        # Reject deceptive redirect parameters (e.g. ?url=https://evil.com or ?dest=...)
+        if parsed.query:
+            for k, v in parse_qsl(parsed.query, keep_blank_values=False):
+                if k.lower() in ("url", "dest", "destination", "redirect", "target", "link", "r", "u", "goto"):
+                    if v.startswith(("http://", "https://")):
+                        target_parsed = urlparse(v)
+                        target_host = target_parsed.hostname or ""
+                        if not is_discovery_whitelisted_domain(target_host):
+                            return False
+
+        return True
     except Exception:
         return False
 
@@ -472,7 +485,20 @@ def is_publication_authorized_url(url: str) -> bool:
         hostname = parsed.hostname
         if not hostname:
             return False
-        return is_publication_authorized_domain(hostname)
+        if not is_publication_authorized_domain(hostname):
+            return False
+
+        # Reject deceptive redirect parameters (e.g. ?url=https://evil.com or ?dest=...)
+        if parsed.query:
+            for k, v in parse_qsl(parsed.query, keep_blank_values=False):
+                if k.lower() in ("url", "dest", "destination", "redirect", "target", "link", "r", "u", "goto"):
+                    if v.startswith(("http://", "https://")):
+                        target_parsed = urlparse(v)
+                        target_host = target_parsed.hostname or ""
+                        if not is_publication_authorized_domain(target_host):
+                            return False
+
+        return True
     except Exception:
         return False
 

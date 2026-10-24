@@ -6558,6 +6558,130 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
             if post_backup is not None:
                 orig_post.write_text(post_backup, encoding="utf-8")
 
+    def test_27_euronews_protest_and_real_words_containing_test_not_mock(self):
+        """27. Genuine news URLs containing 'test' inside words ('protests', 'contest', 'testimony', 'latest') are not mock fixtures."""
+        test_articles = [
+            {"title": "Italy's cities in security 'lockdown' for Saturday protests", "domain": "euronews.com", "url": "https://www.euronews.com/2026/10/23/italy-preparing-with-elite-troops-and-drone-surveillance-for-24-october-protests"},
+            {"title": "France Election Contest Heats Up", "domain": "cnn.com", "url": "https://edition.cnn.com/world/election-contest-2026"},
+            {"title": "Key Testimony in Landmark Hearing", "domain": "foxnews.com", "url": "https://foxnews.com/us/key-testimony-in-court"},
+            {"title": "Latest Economic Report Shows Growth", "domain": "bloomberg.com", "url": "https://bloomberg.com/news/latest-economic-report"},
+            {"title": "Fastest High Speed Rail Launches", "domain": "news.sky.com", "url": "https://news.sky.com/story/fastest-rail-network"},
+        ]
+        for art in test_articles:
+            self.assertFalse(post_generator.is_mock_fixture_article(art), f"Expected genuine article for: {art['url']}")
+            self.assertFalse(prepare_special_formats.is_mock_fixture_article(art), f"Expected genuine article in prepare_special_formats for: {art['url']}")
+
+    def test_28_mock_fixture_detection(self):
+        """28. Mock fixtures and test articles (theturtleislandnews.com, example.com, mock://) are identified as mock fixtures."""
+        mock_articles = [
+            {"title": "What does Bill C-39 mean? Senators question government", "domain": "theturtleislandnews.com", "url": "https://theturtleislandnews.com/c39"},
+            {"title": "Unit Test Story", "domain": "example.com", "url": "https://example.com/mock-fixture/1"},
+            {"title": "Local Mock", "domain": "test.com", "url": "https://test.com/news/123"},
+            {"title": "Mock Protocol", "domain": "mock.com", "url": "mock://localhost/news"},
+        ]
+        for ma in mock_articles:
+            self.assertTrue(post_generator.is_mock_fixture_article(ma), f"Expected mock fixture for: {ma['url']}")
+            self.assertTrue(prepare_special_formats.is_mock_fixture_article(ma), f"Expected mock fixture in prepare_special_formats for: {ma['url']}")
+
+    def test_29_deceptive_domains_and_redirect_query_rejection(self):
+        """29. is_approved_url rejects deceptive subdomains, attacker lookalikes, and redirect queries to unapproved URLs."""
+        # Deceptive domains
+        self.assertFalse(source_allowlist.is_approved_url("https://cnn.com.fake-site.example/news"))
+        self.assertFalse(source_allowlist.is_approved_url("https://fake-cnn.com/world"))
+        self.assertFalse(source_allowlist.is_approved_url("https://cnn.com.evil.co/story"))
+        self.assertFalse(source_allowlist.is_approved_url("https://evil.com/cnn.com/story"))
+        self.assertFalse(source_allowlist.is_approved_url("https://cnn.com@evil.com/news"))
+
+        # Deceptive redirect parameters
+        self.assertFalse(source_allowlist.is_approved_url("https://edition.cnn.com/redirect?url=https://evil.com/fake-news"))
+        self.assertFalse(source_allowlist.is_approved_url("https://news.sky.com/out?dest=https://unapproved.org/wire"))
+        self.assertFalse(source_allowlist.is_approved_url("https://www.foxnews.com/click?target=https://apnews.com/article/123"))
+
+        # Legitimate approved URLs
+        self.assertTrue(source_allowlist.is_approved_url("https://edition.cnn.com/world/article-123"))
+        self.assertTrue(source_allowlist.is_approved_url("https://news.sky.com/story/uk-news-456"))
+        self.assertTrue(source_allowlist.is_approved_url("https://www.foxnews.com/tech/cheap-android-phones"))
+        self.assertTrue(source_allowlist.is_approved_url("https://aajtak.in/national/story-789"))
+        self.assertTrue(source_allowlist.is_approved_url("https://edition.cnn.com/redirect?url=https://edition.cnn.com/world/article-123"))
+
+    def test_30_diversity_ranking_prefers_alternative_when_entity_recent(self):
+        """30. When multiple eligible stories exist, diversity ranking prefers alternatives over recently published entities."""
+        posted_history = [
+            {"published": True, "domain": "foxnews.com", "headline": "Trump Announces Economic Policy Shift"},
+            {"published": True, "domain": "cnn.com", "headline": "Global Climate Conference Concludes in Geneva"},
+        ]
+        candidates = [
+            {"title": "Trump Campaign Rally in Iowa Draws Crowd", "domain": "foxnews.com", "url": "https://foxnews.com/politics/trump-iowa", "score": 140},
+            {"title": "Italy Prepares Security Measures for Weekend Events", "domain": "euronews.com", "url": "https://euronews.com/world/italy-security", "score": 115},
+        ]
+        chosen = select_article.rank_by_diversity_preference(candidates, posted_history)
+        self.assertEqual(chosen["title"], "Italy Prepares Security Measures for Weekend Events",
+                         "Euronews story must be preferred over Trump story since Trump was posted in recent history.")
+
+    def test_31_diversity_ranking_does_not_force_artificial_skip_when_single_story(self):
+        """31. When only one eligible story exists, diversity ranking selects it directly without forcing artificial skips."""
+        posted_history = [
+            {"published": True, "domain": "foxnews.com", "headline": "Trump Announces Policy Shift"},
+        ]
+        candidates = [
+            {"title": "Trump Holds Press Briefing on Foreign Trade", "domain": "cnn.com", "url": "https://cnn.com/politics/trump-briefing", "score": 120},
+        ]
+        chosen = select_article.rank_by_diversity_preference(candidates, posted_history)
+        self.assertEqual(chosen["title"], "Trump Holds Press Briefing on Foreign Trade",
+                         "Single eligible story must be selected directly when no alternatives exist.")
+
+    def test_32_failed_post_generation_prunes_pool_and_records_processed(self):
+        """32. When post_generator encounters a failure, it records a rejection and removes candidate from classified_pool."""
+        hist_path = Path(self.temp_dir) / "hist_failure_test.json"
+        article = {
+            "title": "Bad Failing Story",
+            "domain": "cnn.com",
+            "url": "https://edition.cnn.com/bad-story-fails"
+        }
+        hist_data = {
+            "posted": [],
+            "processed": [],
+            "classified_pool": [article]
+        }
+        hist_path.write_text(json.dumps(hist_data), encoding="utf-8")
+
+        post_generator.record_rejected_story(article, reason="Simulated generation error", history_path=hist_path)
+
+        updated_hist = json.loads(hist_path.read_text(encoding="utf-8"))
+        # Article must be in processed with rejection
+        self.assertTrue(any(p.get("url") == article["url"] and p.get("rejected") is True for p in updated_hist["processed"]))
+        # Article must be REMOVED from classified_pool
+        self.assertEqual(len(updated_hist.get("classified_pool", [])), 0)
+
+    def test_33_classify_pool_reuse_with_topic_diversity(self):
+        """33. classify.py does not reuse pool items that violate rolling topic diversity."""
+        hist_path = Path(self.temp_dir) / "hist_pool_div.json"
+        # 2 Trump stories already published in last 10
+        hist_data = {
+            "posted": [
+                {"published": True, "domain": "foxnews.com", "title": "Trump Policy Decision One"},
+                {"published": True, "domain": "cnn.com", "title": "Trump Policy Decision Two"},
+            ],
+            "processed": [],
+            "classified_pool": [
+                {
+                    "title": "Trump Signs Executive Order Today",
+                    "domain": "foxnews.com",
+                    "url": "https://foxnews.com/trump-eo",
+                    "classification": {"importance": "MAJOR", "topic": "Politics", "reason": "Major news"}
+                }
+            ]
+        }
+        hist_path.write_text(json.dumps(hist_data), encoding="utf-8")
+        pool = quota_manager.get_classified_pool(hist_path)
+        hist_sets = check_candidates.get_history_sets(hist_path)
+        posted = hist_data["posted"]
+
+        # Diversity check must reject the Trump pool item (2 already in history)
+        allowed, reason = source_allowlist.check_topic_diversity("Trump Signs Executive Order Today", posted, max_same_topic=2, window_size=10)
+        self.assertFalse(allowed)
+        self.assertIn("Topic diversity limit reached", reason)
+
 
 if __name__ == "__main__":
     unittest.main()

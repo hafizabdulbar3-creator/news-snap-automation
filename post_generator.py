@@ -76,6 +76,11 @@ def fetch_article_summary(url: str, timeout: int = 6) -> str:
             }
         )
         with urllib.request.urlopen(req, timeout=timeout) as response:
+            final_url = response.geturl()
+            from source_allowlist import is_approved_url
+            if final_url and not is_approved_url(final_url):
+                print(f"[WARN] Article redirected to unapproved URL '{final_url}'; discarding content.")
+                return ""
             raw = response.read(384 * 1024)  # Read first 384KB
             charset = response.headers.get_content_charset() or "utf-8"
             html_text = raw.decode(charset, errors="replace")
@@ -151,16 +156,20 @@ def is_mock_fixture_article(article: dict) -> bool:
     if not url or not domain or not title:
         return True
 
-    mock_domains = {"example.com", "example.org", "test.com", "mock.com", "localhost"}
+    mock_domains = {
+        "example.com", "example.org", "test.com", "mock.com", "localhost",
+        "theturtleislandnews.com"
+    }
     parsed = urlparse(url)
     hostname = (parsed.hostname or "").lower()
     if domain in mock_domains or hostname in mock_domains or hostname.endswith(".example.com"):
         return True
     if any(url.startswith(p) for p in ("https://example.com", "http://example.com", "mock://")):
         return True
-    if re.search(r"\b(test fixture|mock story|dummy article|unit test)\b", title, re.IGNORECASE):
+    if re.search(r"\b(test fixture|mock story|dummy article|unit test|test title)\b", title, re.IGNORECASE):
         return True
-    if any(k in url for k in ("test", "fixture", "mock", "c39", "c-39", "theturtleislandnews.com")):
+    # Explicit boundary check for mock / fixture / dummy tokens in URL path, never naive substring matching like 'test' (which matches 'protests')
+    if re.search(r"(?:[/-]|^)(?:test|mock|fixture|dummy|unit-test|c39|c-39)(?:[/-]|$)", url, re.IGNORECASE):
         return True
     return False
 
@@ -723,6 +732,10 @@ def main():
             except OSError:
                 pass
         print(f"[FATAL ERROR] Post generation failed: {e}", file=sys.stderr)
+        try:
+            record_rejected_story(article, reason=f"Generation failed: {e}")
+        except Exception:
+            pass
         emit_post_ready(False)
         sys.exit(1)
 
@@ -733,6 +746,10 @@ def main():
             except OSError:
                 pass
         print("[FATAL ERROR] Production safeguard refusal: Generated post is marked synthetic.", file=sys.stderr)
+        try:
+            record_rejected_story(article, reason="Safeguard refusal: Generated post is marked synthetic.")
+        except Exception:
+            pass
         emit_post_ready(False)
         sys.exit(1)
 
