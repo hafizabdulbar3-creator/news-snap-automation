@@ -773,6 +773,15 @@
       "published": true,
       "media_id": "17898724365396320",
       "timestamp": "2026-10-24T10:17:09.472186+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/smriti-irani-cracks-whip-asks-haryana-govt-to-withdraw-security-for-bjp-district-presidents-ws-l-10395945.html?comscorekw=jionews",
+      "title": "Smriti Irani Cracks Whip, Asks Haryana Govt To Withdraw Security For BJP District Presidents",
+      "headline": "Smriti Irani Orders Haryana Govt To Withdraw Security For BJP District Presidents",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17963281632239482",
+      "timestamp": "2026-10-24T10:43:19.705365+00:00"
     }
   ],
   "processed": [
@@ -814,17 +823,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Smriti Irani Cracks Whip, Asks Haryana Govt To Withdraw Security For BJP District Presidents",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/smriti-irani-cracks-whip-asks-haryana-govt-to-withdraw-security-for-bjp-district-presidents-ws-l-10395945.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political dispute regarding security details for party officials is a standard internal party matter with limited national or international consequence."
-      },
-      "classified_at": "2026-10-24T10:16:52.323965+00:00"
-    },
     {
       "title": "'Poison In The Air': Richa Chadha's Alarm As Mumbai's AQI 'Beats' Delhi's, BMC In Line Of Fire",
       "domain": "news18.com",
