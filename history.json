@@ -647,6 +647,15 @@
       "published": true,
       "media_id": "18128723590869743",
       "timestamp": "2026-10-24T02:50:32.420757+00:00"
+    },
+    {
+      "url": "https://jionews.com/summary/6adc346cc620738535920579",
+      "title": "OpenAI Resumes Frontier AI Training After Security Overhaul, Discloses Flaw in Widely Used Software",
+      "headline": "OpenAI Resumes Frontier AI Training After Security Overhaul",
+      "domain": "jionews.com",
+      "published": true,
+      "media_id": "17968334940207528",
+      "timestamp": "2026-10-24T04:35:01.339245+00:00"
     }
   ],
   "processed": [
@@ -687,7 +696,162 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Ukraine joins NATO's NSPA partnership, gains access to Alliance contracts for defence industry",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec7",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Ukraine joining NATO's NSPA partnership and gaining access to defense contracts is a major geopolitical shift impacting regional security and defense industrial capabilities."
+      },
+      "classified_at": "2026-10-24T04:34:36.824634+00:00"
+    },
+    {
+      "title": "As Israeli election nears, campaign turns ugly with AI clips and bereaved families dragged in",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec1",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The Israeli election approaching with allegations of AI misuse and the involvement of bereaved families is a major geopolitical event with significant domestic and international implications."
+      },
+      "classified_at": "2026-10-24T04:34:36.824640+00:00"
+    },
+    {
+      "title": "Inside Alnwick's Poison Garden: Hundreds of Dangerous Plants, Strict Warnings.",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc2e7090069ab48dcfc485",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "A feature about a local garden's dangerous plants is a regional interest story of limited international consequence."
+      },
+      "classified_at": "2026-10-24T04:34:36.824643+00:00"
+    },
+    {
+      "title": "Trump: US Warships May Approach Cuba After Iran War; Rubio Calls for Change",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc29c001bc764f28f47d53",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Former President Trump discussing US warships approaching Cuba and a call for policy change involves potential military escalation and high-level political rhetoric."
+      },
+      "classified_at": "2026-10-24T04:34:36.824647+00:00"
+    },
+    {
+      "title": "Union Minister Piyush Goyal interacts with Indian diaspora in Germany, lauds contribution to 'Karmabho...",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc3471b6c3221dd651f0ed",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A minister interacting with the diaspora is a standard diplomatic engagement and public interest story."
+      },
+      "classified_at": "2026-10-24T04:34:36.824650+00:00"
+    },
+    {
+      "title": "Shooting in Paris suburbs kills 1, wounds 5; Macron condemns racist terrorist attack",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec5",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A shooting in Paris suburbs killing one and injuring five, condemned as a terrorist attack, is a major international security event."
+      },
+      "classified_at": "2026-10-24T04:34:36.824653+00:00"
+    },
+    {
+      "title": "Oil exports from Persian Gulf 'surpassed pre-conflict levels', claims US Treasury Secy Bessent",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec3",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A claim regarding oil export levels from the Persian Gulf is a significant economic trend or statement, though the specific claim requires verification."
+      },
+      "classified_at": "2026-10-24T04:34:36.824655+00:00"
+    },
+    {
+      "title": "World Polio Day 2026: Why India must stay alert despite being polio-free",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc321125b7c53c567e782b",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "A public health advisory regarding polio awareness is a notable public interest story."
+      },
+      "classified_at": "2026-10-24T04:34:36.824658+00:00"
+    },
+    {
+      "title": "'Their Service Inspires the Nation': PM Modi Greets ITBP 'Himveers' on Raising Day",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc2fbaa0aa323ecfd9e2d2",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A prime minister greeting a paramilitary force on their raising day is a standard ceremonial and public interest event."
+      },
+      "classified_at": "2026-10-24T04:34:36.824661+00:00"
+    },
+    {
+      "title": "7.2 magnitude earthquake strikes Vanuatu Islands region",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc1e1bf5fbdb9307b0392c",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A 7.2 magnitude earthquake striking a region is a major natural disaster with potential for international humanitarian response."
+      },
+      "classified_at": "2026-10-24T04:34:36.824664+00:00"
+    },
+    {
+      "title": "UGC NET December 2026: Facing live photo capture issues? NTA shares steps to resolve them",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc2e75e305d7880ede4a36",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Education",
+        "reason": "A notification regarding exam technical issues is a standard administrative update."
+      },
+      "classified_at": "2026-10-24T04:34:36.824667+00:00"
+    },
+    {
+      "title": "Noise Protest In Manipur: Thousands bang utensils to denounce govt; demand NRC and end to SoO",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc2e7190069ab48dcfc489",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A protest in Manipur regarding noise and demands for NRC is a significant regional political event."
+      },
+      "classified_at": "2026-10-24T04:34:36.824669+00:00"
+    },
+    {
+      "title": "Fugitive Indian gangster Himanshu Bhau detained by US authorities in Nevada",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc2d5a770c6ccba0bd9db4",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "The detention of a fugitive gangster by US authorities is a significant international law enforcement development."
+      },
+      "classified_at": "2026-10-24T04:34:36.824672+00:00"
+    },
+    {
+      "title": "Delhi AQI Improves Marginally to 190, Enters Moderate Category as Several Areas Remain in Poor Zone",
+      "domain": "jionews.com",
+      "url": "https://jionews.com/summary/6adc28b508badb78ca3e8b88",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "An update on air quality in Delhi is a notable regional environmental story."
+      },
+      "classified_at": "2026-10-24T04:34:36.824676+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
