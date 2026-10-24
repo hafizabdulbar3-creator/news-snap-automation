@@ -782,6 +782,15 @@
       "published": true,
       "media_id": "17963281632239482",
       "timestamp": "2026-10-24T10:43:19.705365+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/regional-cinema/rajinikanth-watches-film-with-fans-for-1st-time-in-40-years-visits-theatre-to-catch-jailer-2-ws-l-10396093.html?comscorekw=jionews",
+      "title": "Rajinikanth Watches Film With Fans For 1st Time In 40 Years, Visits Theatre To Catch Jailer 2",
+      "headline": "Rajinikanth Watches Jailer 2 With Fans In Chennai For 1st Time In 40 Years",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18646006402009706",
+      "timestamp": "2026-10-24T11:14:35.232103+00:00"
     }
   ],
   "processed": [
@@ -795,7 +804,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Subhash Ghai Completes 50 Years in Cinema, Unveils New Look of Manya Starring Shreyas Talpade",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/subhash-ghai-completes-50-years-in-cinema-unveils-new-look-of-manya-starring-shreyas-talpade-ws-l-10395974.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A milestone in cinema history and a film announcement, which falls under notable public interest stories rather than major geopolitical events."
+      },
+      "classified_at": "2026-10-24T11:14:03.122773+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
