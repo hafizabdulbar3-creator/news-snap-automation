@@ -388,9 +388,6 @@ def is_discovery_whitelisted_domain(hostname: str) -> bool:
     if clean_host in BLOCKED_AGGREGATOR_DOMAINS or any(clean_host.endswith("." + b) for b in BLOCKED_AGGREGATOR_DOMAINS):
         return False
 
-    if clean_host == "jionews.com" or clean_host.endswith(".jionews.com"):
-        return True
-
     for whitelisted in DISCOVERY_WHITELIST_DOMAINS:
         if clean_host == whitelisted or clean_host.endswith("." + whitelisted):
             return True
@@ -462,9 +459,6 @@ def is_publication_authorized_domain(hostname: str) -> bool:
     # Blocked aggregator / search index domains are never article publishers
     if clean_host in BLOCKED_AGGREGATOR_DOMAINS or any(clean_host.endswith("." + b) for b in BLOCKED_AGGREGATOR_DOMAINS):
         return False
-
-    if clean_host == "jionews.com" or clean_host.endswith(".jionews.com"):
-        return True
 
     # Check authorized domains
     for authorized in PUBLICATION_AUTHORIZED_DOMAINS:

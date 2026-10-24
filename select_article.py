@@ -50,8 +50,8 @@ def is_candidate_eligible(
     if not is_valid_url(url) or len(title.split()) < 4 or not is_genuine_article(title, url):
         return False, "invalid url structure or non-genuine article"
 
-    # Absolute Domain Whitelist Enforcement
-    if not is_approved_url(url):
+    # Absolute Domain Whitelist Enforcement: must be on approved news whitelist and not jionews.com
+    if str(article.get("domain", "")).lower() == "jionews.com" or not is_approved_url(url):
         return False, f"url domain '{article.get('domain')}' not on approved news whitelist"
 
     url_low = url.lower()

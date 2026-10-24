@@ -87,6 +87,7 @@ def main():
             and a.get("url", "").lower() not in hist_sets["processed_urls"]
             and a.get("title", "").lower() not in hist_sets["published_titles"]
             and a.get("title", "").lower() not in hist_sets["processed_titles"]
+            and str(a.get("domain", "")).lower() != "jionews.com"
             and (
                 a.get("discovery_source") in ("jionews.com", "jionews")
                 or ("discovery_source" not in a and a.get("discovery_source") != "gdelt")

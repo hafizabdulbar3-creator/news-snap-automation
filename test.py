@@ -26,7 +26,6 @@ try:
 except ImportError:
     LANGDETECT_AVAILABLE = False
 
-RSS_URL = "https://data.gdeltproject.org/gdeltv3/gal/feed.rss"
 JIONEWS_GRAPHQL_URL = "https://mobileservice.jionews.com/graphql"
 USER_AGENT = "NEWS-SNAP-Discovery/1.0 (https://github.com/hafizabdulbar3-creator/news-snap-automation)"
 SOURCES_FILE = Path("sources.json")
@@ -37,6 +36,8 @@ from source_allowlist import (
     is_approved_domain,
     is_discovery_whitelisted_url,
     is_publication_authorized_url,
+    is_publication_authorized_domain,
+    is_licensing_restricted,
     get_canonical_domain,
     APPROVED_DOMAINS,
     PUBLICATION_AUTHORIZED_DOMAINS,
@@ -50,15 +51,8 @@ TRACKING_PARAMS = {
     "oc", "ref", "fbclid", "gclid", "msclkid", "mc_cid", "mc_eid"
 }
 
-# Default fallbacks if sources.json was empty or missing
-DEFAULT_HIGH_TRUST = {
-    "reuters.com", "apnews.com", "bbc.com", "bbc.co.uk", "cnn.com",
-    "aljazeera.com", "theguardian.com", "dw.com", "france24.com",
-    "npr.org", "bloomberg.com", "cnbc.com", "ft.com", "wsj.com",
-    "economist.com", "nytimes.com", "washingtonpost.com", "foxnews.com",
-    "nbcnews.com", "cbsnews.com", "abcnews.go.com", "hindustantimes.com",
-    "indianexpress.com", "thehindu.com", "ndtv.com", "indiatoday.in", "livemint.com"
-}
+# High-trust domains restricted strictly to publication-authorized news sources
+DEFAULT_HIGH_TRUST = set(PUBLICATION_AUTHORIZED_DOMAINS)
 
 DEFAULT_EXCLUDED_KEYWORDS = {
     "horoscope", "astrology", "rashi", "tarot", "zodiac", "box office",
@@ -92,11 +86,19 @@ def load_sources_config(config_path: Path = SOURCES_FILE) -> tuple[list[dict], s
                     excluded = set(cfg["excluded_keywords"])
                 if cfg.get("priority_topics"):
                     priority = set(cfg["priority_topics"])
+            else:
+                print(f"[ERROR] sources.json is not a valid JSON object; failing closed with 0 sources.")
+                sources = []
         except Exception as err:
-            print(f"[WARN] Failed loading sources.json ({err}); using standard defaults.")
+            print(f"[ERROR] Failed loading sources.json ({err}); failing closed with 0 sources.")
+            sources = []
+    else:
+        print(f"[ERROR] sources.json configuration file not found at '{config_path}'; failing closed with 0 sources.")
+        sources = []
 
     if not sources:
         # Strictly fail closed: never fall back to GDELT or external sources
+        print("[ERROR] sources.json configuration missing or empty; failing closed without fallback.")
         sources = []
 
     return sources, high_trust, excluded, priority
@@ -515,7 +517,12 @@ def fetch_jionews_entries(url: str = "https://jionews.com/summary/", timeout: in
         return []
 
     entries = []
-    from source_allowlist import is_licensing_restricted
+    from source_allowlist import (
+        is_approved_url,
+        is_publication_authorized_domain,
+        is_licensing_restricted,
+        get_canonical_domain,
+    )
     for b in briefs:
         if not isinstance(b, dict):
             continue
@@ -525,12 +532,37 @@ def fetch_jionews_entries(url: str = "https://jionews.com/summary/", timeout: in
         if lang_code and lang_code != "ENG":
             continue
 
-        # Licensing restriction check on publisher link & publisher name
         pub_link = (b.get("publisherLink") or "").strip()
         pub_name = ((b.get("publisher") or {}).get("name") or "").strip()
-        if is_licensing_restricted(pub_link):
+
+        # 1. Validate publisherLink is an absolute HTTP/HTTPS URL
+        if not pub_link or not pub_link.startswith(("http://", "https://")):
+            continue
+
+        try:
+            parsed_pub = urlparse(pub_link)
+            pub_host = (parsed_pub.hostname or "").lower()
+        except Exception:
+            continue
+
+        if not pub_host:
+            continue
+
+        # 2. Licensing restrictions: BBC, NDTV, The Indian Express, The Hindu, LiveMint remain strictly ineligible
+        if is_licensing_restricted(pub_link) or is_licensing_restricted(pub_host):
             continue
         if any(r in pub_name.lower() for r in ("bbc", "ndtv", "indian express", "the hindu", "livemint")):
+            continue
+
+        # 3. Verify hostname strictly against approved publisher domains
+        # Rejects lookalikes, unrelated publishers (e.g. Times of India, Yuva Dynamite, Economic Times, KETV),
+        # unknown domains, wire services, aggregators
+        if not is_publication_authorized_domain(pub_host) or not is_approved_url(pub_link):
+            continue
+
+        # 4. Canonical domain extraction
+        canonical_pub_domain = get_canonical_domain(pub_link)
+        if not canonical_pub_domain or canonical_pub_domain == "jionews.com":
             continue
 
         raw_title = (b.get("title") or "").strip()
@@ -538,18 +570,26 @@ def fetch_jionews_entries(url: str = "https://jionews.com/summary/", timeout: in
         web_url = (b.get("webUrl") or "").strip()
         if not web_url and card_id:
             web_url = f"https://jionews.com/summary/{card_id}"
-        if not raw_title or not web_url:
+        if not raw_title:
+            continue
+
+        norm_pub_url = normalize_url(pub_link)
+        if not norm_pub_url:
             continue
 
         summary = (b.get("summary") or "").strip()
         published_at = ((b.get("publishedAt") or {}).get("date") or "").strip()
+        displayed_publisher = pub_name or canonical_pub_domain
 
         entries.append({
             "raw_title": raw_title,
-            "url": web_url,
-            "source_url": pub_link,
+            "url": norm_pub_url,
+            "domain": canonical_pub_domain,
+            "source_url": norm_pub_url,
             "summary": summary,
-            "displayed_publisher": pub_name or "JioNews",
+            "displayed_publisher": displayed_publisher,
+            "jionews_url": web_url,
+            "discovery_source": "jionews.com",
             "published_at": published_at,
             "language_code": lang_code,
         })
@@ -632,23 +672,24 @@ def discover_articles(
                 continue
 
             # Strict Discovery & Licensing Enforcement:
-            # 1. Canonical article URL must belong to the user's requested news organizations or JioNews.
+            # 1. Canonical article URL must belong to the user's requested news organizations.
             # 2. Outside publishers (including wnmufm.org), aggregators, and search fallbacks are rejected.
             # 3. Any article from an unapproved or licensing-restricted publisher (BBC, NDTV, etc.)
             #    must be dropped immediately.
             if not is_discovery_whitelisted_url(norm_url) or not is_approved_url(norm_url):
                 continue
+            if is_licensing_restricted(norm_url):
+                continue
 
             # Also verify original publisher link if present
-            if source_url_meta:
-                from source_allowlist import is_licensing_restricted
-                if is_licensing_restricted(source_url_meta):
-                    continue
+            if source_url_meta and is_licensing_restricted(source_url_meta):
+                continue
 
             # Determine canonical approved domain
             canonical_d = get_canonical_domain(norm_url)
-            raw_domain = urlparse(norm_url).netloc.lower().replace("www.", "")
-            domain = canonical_d or raw_domain
+            if not canonical_d or canonical_d == "jionews.com":
+                continue
+            domain = canonical_d
 
             seen_urls.add(norm_url)
             seen_titles.add(norm_title)
@@ -663,7 +704,7 @@ def discover_articles(
             if is_duplicate:
                 score -= 1000
 
-            if domain in APPROVED_DOMAINS or domain in high_trust or domain == "jionews.com":
+            if domain in APPROVED_DOMAINS or domain in high_trust:
                 score += 100
 
             lower_clean = clean.lower()
@@ -678,11 +719,11 @@ def discover_articles(
                 "domain": domain,
                 "score": score,
                 "is_duplicate": is_duplicate,
-                "source": source_name,
+                "source": (displayed_pub or domain) if source_type == "jionews" else source_name,
                 "discovery_source": "jionews.com" if source_type == "jionews" else domain,
                 "displayed_publisher": displayed_pub or domain,
-                "jionews_url": norm_url if source_type == "jionews" else "",
-                "original_publisher_link": source_url_meta,
+                "jionews_url": entry.get("jionews_url", ""),
+                "original_publisher_link": norm_url,
                 "summary": summary,
                 "source_description": summary,
                 "published_at": published_at,

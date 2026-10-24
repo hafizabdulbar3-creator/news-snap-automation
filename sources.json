@@ -228,8 +228,7 @@
     "abpnews.com",
     "timesnownews.com",
     "cnnnews18.com",
-    "ddnews.gov.in",
-    "jionews.com"
+    "ddnews.gov.in"
   ],
   "approved_domains": [
     "cnn.com",
@@ -256,8 +255,7 @@
     "abpnews.com",
     "timesnownews.com",
     "cnnnews18.com",
-    "ddnews.gov.in",
-    "jionews.com"
+    "ddnews.gov.in"
   ],
   "high_trust_domains": [
     "bbc.com",
@@ -288,8 +286,7 @@
     "timesnownews.com",
     "cnnnews18.com",
     "ddnews.gov.in",
-    "livemint.com",
-    "jionews.com"
+    "livemint.com"
   ],
   "excluded_keywords": [
     "horoscope",

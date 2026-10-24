@@ -6729,39 +6729,29 @@ class TestJioNewsExclusiveDiscovery(unittest.TestCase):
             entries2 = discovery.fetch_jionews_entries(timeout=2)
             self.assertEqual(entries2, [])
 
-    def test_04_jionews_fields_mapped_and_licensing_restricted_blocked(self):
-        """4. JioNews cards map fields correctly and drop licensing-restricted publishers (BBC, NDTV, etc.)."""
+    def test_04_approved_original_publisher_url_accepted_and_canonicalized(self):
+        """4. Approved original publisher URLs are accepted and set canonical article url and domain."""
         mock_payload = {
             "data": {
                 "getSummaries": {
                     "newsBriefs": [
                         {
-                            "id": "card001",
-                            "title": "Historic Free Trade Agreement Finalized Between India and European Union",
-                            "summary": "Officials confirmed the formal conclusion of bilateral negotiations.",
-                            "webUrl": "https://jionews.com/summary/card001",
-                            "publisherLink": "https://economictimes.indiatimes.com/news/trade-deal",
-                            "publisher": {"id": "1", "name": "Economic Times"},
+                            "id": "card_news18",
+                            "title": "National Highway Expansion Project Approved by Cabinet Committee",
+                            "summary": "Cabinet committee approved 500 km of new expressways across northern states.",
+                            "webUrl": "https://jionews.com/summary/card_news18",
+                            "publisherLink": "https://www.news18.com/india/highway-expansion-project-12345.html",
+                            "publisher": {"id": "1", "name": "News18 India"},
                             "publishedAt": {"date": "2026-10-24T08:00:00.000Z", "agoFromNow": "1h"},
                             "language": {"languageCode": "ENG"}
                         },
                         {
-                            "id": "card_bbc",
-                            "title": "BBC Investigation Into Regional Energy Grid",
-                            "summary": "A detailed report into power distribution.",
-                            "webUrl": "https://jionews.com/summary/card_bbc",
-                            "publisherLink": "https://www.bbc.com/news/world-12345",
-                            "publisher": {"id": "2", "name": "BBC News"},
-                            "publishedAt": {"date": "2026-10-24T08:00:00.000Z", "agoFromNow": "1h"},
-                            "language": {"languageCode": "ENG"}
-                        },
-                        {
-                            "id": "card_ndtv",
-                            "title": "NDTV Report On Coastal Security Exercises",
-                            "summary": "Naval forces conduct routine drills.",
-                            "webUrl": "https://jionews.com/summary/card_ndtv",
-                            "publisherLink": "https://www.ndtv.com/india-news/security-drill",
-                            "publisher": {"id": "3", "name": "NDTV"},
+                            "id": "card_cnn",
+                            "title": "Diplomatic Summit Concludes With Multilateral Climate Framework",
+                            "summary": "Delegates finalized terms for renewable energy transition investments.",
+                            "webUrl": "https://jionews.com/summary/card_cnn",
+                            "publisherLink": "https://edition.cnn.com/2026/10/24/world/climate-summit/index.html",
+                            "publisher": {"id": "2", "name": "CNN"},
                             "publishedAt": {"date": "2026-10-24T08:00:00.000Z", "agoFromNow": "1h"},
                             "language": {"languageCode": "ENG"}
                         }
@@ -6784,15 +6774,211 @@ class TestJioNewsExclusiveDiscovery(unittest.TestCase):
 
         with unittest.mock.patch("urllib.request.urlopen", side_effect=[mock_login_resp, mock_summary_resp]):
             entries = discovery.fetch_jionews_entries()
-            self.assertEqual(len(entries), 1)
-            self.assertEqual(entries[0]["url"], "https://jionews.com/summary/card001")
-            self.assertEqual(entries[0]["displayed_publisher"], "Economic Times")
-            self.assertIn("India and European Union", entries[0]["raw_title"])
+            self.assertEqual(len(entries), 2)
 
-    def test_05_select_article_rejects_non_jionews_discovery_source(self):
-        """5. Candidates explicitly marked with non-JioNews discovery_source are rejected by select_article."""
+            # First article: News18 canonical
+            self.assertEqual(entries[0]["url"], "https://www.news18.com/india/highway-expansion-project-12345.html")
+            self.assertEqual(entries[0]["domain"], "news18.com")
+            self.assertEqual(entries[0]["displayed_publisher"], "News18 India")
+            self.assertEqual(entries[0]["jionews_url"], "https://jionews.com/summary/card_news18")
+            self.assertEqual(entries[0]["discovery_source"], "jionews.com")
+
+            # Second article: CNN canonical
+            self.assertEqual(entries[1]["url"], "https://edition.cnn.com/2026/10/24/world/climate-summit/index.html")
+            self.assertEqual(entries[1]["domain"], "cnn.com")
+            self.assertEqual(entries[1]["displayed_publisher"], "CNN")
+            self.assertEqual(entries[1]["jionews_url"], "https://jionews.com/summary/card_cnn")
+            self.assertEqual(entries[1]["discovery_source"], "jionews.com")
+
+    def test_05_unapproved_publishers_and_lookalikes_strictly_rejected(self):
+        """5. Unapproved publishers, lookalike domains, and missing publisherLink are dropped immediately."""
+        mock_payload = {
+            "data": {
+                "getSummaries": {
+                    "newsBriefs": [
+                        {
+                            "id": "unapproved_et",
+                            "title": "Corporate Earnings Surge Across Tech Sector",
+                            "summary": "Quarterly earnings beat forecasts.",
+                            "webUrl": "https://jionews.com/summary/unapproved_et",
+                            "publisherLink": "https://economictimes.indiatimes.com/tech-surge",
+                            "publisher": {"id": "1", "name": "Economic Times"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "unapproved_toi",
+                            "title": "Metropolitan Rail Network Expands Service",
+                            "summary": "New stations opened to passengers.",
+                            "webUrl": "https://jionews.com/summary/unapproved_toi",
+                            "publisherLink": "https://timesofindia.indiatimes.com/city-rail",
+                            "publisher": {"id": "2", "name": "Times of India"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "unapproved_yuva",
+                            "title": "Regional Sports Tournament Begins Today",
+                            "summary": "Athletes compete in championships.",
+                            "webUrl": "https://jionews.com/summary/unapproved_yuva",
+                            "publisherLink": "https://yuvadynamite.com/sports/tournament",
+                            "publisher": {"id": "3", "name": "Yuva Dynamite"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "lookalike_cnn",
+                            "title": "Deceptive Lookalike Domain Story Headline",
+                            "summary": "Content from an attacker spoofing CNN.",
+                            "webUrl": "https://jionews.com/summary/lookalike_cnn",
+                            "publisherLink": "https://cnn.com.attacker.com/fake-news",
+                            "publisher": {"id": "4", "name": "Spoofed CNN"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "missing_link",
+                            "title": "Article Without Any Publisher Link Provided",
+                            "summary": "Story lacking external attribution URL.",
+                            "webUrl": "https://jionews.com/summary/missing_link",
+                            "publisherLink": None,
+                            "publisher": {"id": "5", "name": "Unknown"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "invalid_scheme",
+                            "title": "Article With Non-HTTP Publisher Link Given",
+                            "summary": "Invalid protocol used in attribution.",
+                            "webUrl": "https://jionews.com/summary/invalid_scheme",
+                            "publisherLink": "ftp://files.example.com/story.txt",
+                            "publisher": {"id": "6", "name": "FTP News"},
+                            "language": {"languageCode": "ENG"}
+                        }
+                    ]
+                }
+            }
+        }
+
+        mock_login_resp = unittest.mock.MagicMock(status=200)
+        mock_login_resp.read.return_value = json.dumps({"data": {"loginWeb": {"session": {"token": "t"}}}}).encode("utf-8")
+        mock_login_resp.__enter__.return_value = mock_login_resp
+
+        mock_summary_resp = unittest.mock.MagicMock(status=200)
+        mock_summary_resp.read.return_value = json.dumps(mock_payload).encode("utf-8")
+        mock_summary_resp.__enter__.return_value = mock_summary_resp
+
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=[mock_login_resp, mock_summary_resp]):
+            entries = discovery.fetch_jionews_entries()
+            self.assertEqual(len(entries), 0)
+
+    def test_06_licensing_restricted_publishers_remain_ineligible(self):
+        """6. BBC, NDTV, The Indian Express, The Hindu, and LiveMint are strictly dropped from JioNews."""
+        mock_payload = {
+            "data": {
+                "getSummaries": {
+                    "newsBriefs": [
+                        {
+                            "id": "lic_bbc",
+                            "title": "BBC Global News Report on International Relations",
+                            "summary": "Foreign ministers meet for bilateral discussions.",
+                            "webUrl": "https://jionews.com/summary/lic_bbc",
+                            "publisherLink": "https://www.bbc.com/news/world-67890",
+                            "publisher": {"id": "1", "name": "BBC News"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "lic_ndtv",
+                            "title": "NDTV National Security Drill Conducted Off Coast",
+                            "summary": "Coastal patrol vessels carry out scheduled maneuvers.",
+                            "webUrl": "https://jionews.com/summary/lic_ndtv",
+                            "publisherLink": "https://www.ndtv.com/india-news/security-drill-67890",
+                            "publisher": {"id": "2", "name": "NDTV"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "lic_ie",
+                            "title": "Indian Express Report On National Budget Proposals",
+                            "summary": "Finance ministry outlines infrastructure outlay.",
+                            "webUrl": "https://jionews.com/summary/lic_ie",
+                            "publisherLink": "https://indianexpress.com/article/business/budget-proposals-123/",
+                            "publisher": {"id": "3", "name": "The Indian Express"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "lic_hindu",
+                            "title": "The Hindu Report On Renewable Energy Deployment",
+                            "summary": "Solar capacity increases across southern grid.",
+                            "webUrl": "https://jionews.com/summary/lic_hindu",
+                            "publisherLink": "https://www.thehindu.com/news/national/renewable-energy/article123.ece",
+                            "publisher": {"id": "4", "name": "The Hindu"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "lic_mint",
+                            "title": "LiveMint Financial Markets Weekly Performance Review",
+                            "summary": "Equities advance following monetary policy statement.",
+                            "webUrl": "https://jionews.com/summary/lic_mint",
+                            "publisherLink": "https://www.livemint.com/market/stock-market-news/weekly-review-123.html",
+                            "publisher": {"id": "5", "name": "LiveMint"},
+                            "language": {"languageCode": "ENG"}
+                        }
+                    ]
+                }
+            }
+        }
+
+        mock_login_resp = unittest.mock.MagicMock(status=200)
+        mock_login_resp.read.return_value = json.dumps({"data": {"loginWeb": {"session": {"token": "t"}}}}).encode("utf-8")
+        mock_login_resp.__enter__.return_value = mock_login_resp
+
+        mock_summary_resp = unittest.mock.MagicMock(status=200)
+        mock_summary_resp.read.return_value = json.dumps(mock_payload).encode("utf-8")
+        mock_summary_resp.__enter__.return_value = mock_summary_resp
+
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=[mock_login_resp, mock_summary_resp]):
+            entries = discovery.fetch_jionews_entries()
+            self.assertEqual(len(entries), 0)
+
+    def test_07_malformed_or_missing_sources_fails_closed(self):
+        """7. Malformed JSON, non-dict content, or missing sources.json fail closed with 0 sources."""
+        malformed_file = Path(self.temp_dir) / "malformed.json"
+        malformed_file.write_text("{ this is invalid json !!!", encoding="utf-8")
+        sources1, _, _, _ = discovery.load_sources_config(malformed_file)
+        self.assertEqual(sources1, [])
+
+        nondict_file = Path(self.temp_dir) / "nondict.json"
+        nondict_file.write_text(json.dumps(["not", "a", "dict"]), encoding="utf-8")
+        sources2, _, _, _ = discovery.load_sources_config(nondict_file)
+        self.assertEqual(sources2, [])
+
+    def test_08_unapproved_or_jionews_candidates_in_pool_cannot_be_selected(self):
+        """8. Candidates with domain 'jionews.com' or unapproved publishers cannot be reused or selected."""
+        pool_item_jionews = {
+            "title": "Space Agency Launches Earth Observation Satellite Successfully",
+            "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec7",
+            "domain": "jionews.com",
+            "discovery_source": "jionews.com",
+            "classification": {"importance": "MAJOR", "topic": "Science", "reason": "Historic space launch"},
+            "classified_at": "2026-10-24T00:00:00+00:00"
+        }
+        pool_item_unapproved = {
+            "title": "Automobile Manufacturer Unveils Electric Vehicle Prototype",
+            "url": "https://economictimes.indiatimes.com/auto/new-ev-prototype",
+            "domain": "economictimes.indiatimes.com",
+            "discovery_source": "jionews.com",
+            "classification": {"importance": "MAJOR", "topic": "Tech", "reason": "EV innovation"},
+            "classified_at": "2026-10-24T00:00:00+00:00"
+        }
+
+        # select_article candidate check must reject both
+        eligible1, reason1 = select_article.is_candidate_eligible(pool_item_jionews, {}, set(), set(), [])
+        self.assertFalse(eligible1)
+        self.assertIn("not on approved news whitelist", reason1)
+
+        eligible2, reason2 = select_article.is_candidate_eligible(pool_item_unapproved, {}, set(), set(), [])
+        self.assertFalse(eligible2)
+        self.assertIn("not on approved news whitelist", reason2)
+
+    def test_09_select_article_rejects_non_jionews_discovery_source(self):
+        """9. Candidates explicitly marked with non-JioNews discovery_source are rejected by select_article."""
         article_gdelt = {
-            "title": "Global Accord Signed by Major World Powers",
+            "title": "Global Accord Signed by Major World Powers Today",
             "url": "https://edition.cnn.com/world/major",
             "domain": "cnn.com",
             "discovery_source": "gdelt",
@@ -6802,15 +6988,16 @@ class TestJioNewsExclusiveDiscovery(unittest.TestCase):
         self.assertFalse(eligible)
         self.assertIn("unapproved discovery source", reason)
 
-    def test_06_post_generator_skips_crawling_publisher_for_jionews_articles(self):
-        """6. post_generator uses summary directly and does not crawl publisher for JioNews articles."""
+    def test_10_post_generator_skips_crawling_publisher_for_jionews_articles(self):
+        """10. post_generator uses summary directly and does not crawl publisher for JioNews articles."""
         article = {
             "title": "Pacific Island Nation Signs Climate Adaptation Framework",
-            "url": "https://jionews.com/summary/test_card_123",
-            "domain": "jionews.com",
+            "url": "https://www.news18.com/news/climate-adaptation-framework",
+            "domain": "news18.com",
             "discovery_source": "jionews.com",
-            "displayed_publisher": "Yuva Dynamite",
-            "original_publisher_link": "https://example.com/external-article",
+            "displayed_publisher": "News18 India",
+            "jionews_url": "https://jionews.com/summary/test_card_123",
+            "original_publisher_link": "https://www.news18.com/news/climate-adaptation-framework",
             "summary": "Representatives gathered to ratify the regional climate agreement.",
             "source_description": "Representatives gathered to ratify the regional climate agreement."
         }
