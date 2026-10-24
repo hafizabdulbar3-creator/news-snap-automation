@@ -836,6 +836,15 @@
       "published": true,
       "media_id": "18132493921689259",
       "timestamp": "2026-10-24T13:24:14.934961+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/france-s-luxury-stores-board-up-windows-ahead-of-fresh-protests-2026-10-24-139574",
+      "title": "France's Luxury Stores Board Up Windows Ahead of Fresh Protests",
+      "headline": "France Boards Up Luxury Store Windows Ahead of New Protests",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18146118316564589",
+      "timestamp": "2026-10-24T13:55:10.911705+00:00"
     }
   ],
   "processed": [
@@ -850,17 +859,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "France's Luxury Stores Board Up Windows Ahead of Fresh Protests",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/france-s-luxury-stores-board-up-windows-ahead-of-fresh-protests-2026-10-24-139574",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Describes a localized civil unrest situation (protests) affecting a specific country (France), which is a regional news event rather than a global geopolitical crisis."
-      },
-      "classified_at": "2026-10-24T12:57:55.633224+00:00"
-    },
     {
       "title": "Amit Shah, Delhi CM Rekha Gupta Visit Delhi Police HQ to Discuss Law and Order Situation in Capital",
       "domain": "republicworld.com",
