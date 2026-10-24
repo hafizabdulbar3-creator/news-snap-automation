@@ -908,6 +908,15 @@
       "published": true,
       "media_id": "17881084140547253",
       "timestamp": "2026-10-24T17:27:47.398141+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/houthis-in-yemen-claim-attack-on-dammam-riyadh-airports-and-saudi-aramco-facility-amid-rising-tensions-2026-10-24-139582",
+      "title": "Houthis Claim They Hit Riyadh Airport And Aramco Sites Hours After Saudis Say They Shot Down Missiles",
+      "headline": "Houthis Claim Attacks on Dammam, Riyadh Airports, and Aramco Sites",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18108029867624506",
+      "timestamp": "2026-10-24T17:53:49.761656+00:00"
     }
   ],
   "processed": [
@@ -948,7 +957,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs: How BJP Is Rewriting Punjab's Political Script",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/politics/amit-shahs-nda-sarkar-pitch-and-the-war-on-drugs-how-bjp-is-rewriting-punjabs-political-script-ws-blrt-10396393.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Focuses on regional political strategy and policy within India."
+      },
+      "classified_at": "2026-10-24T17:53:25.219199+00:00"
+    },
+    {
+      "title": "Where Is Trump Rallying Next? From Georgia To Ohio, His Midterm Campaign Trail",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/where-is-trump-rallying-next-from-georgia-to-ohio-his-midterm-campaign-trail-ws-l-10396371.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Covers campaign trail activities for a specific election cycle."
+      },
+      "classified_at": "2026-10-24T17:53:25.219219+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
