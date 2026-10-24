@@ -655,6 +655,10 @@ def generate_post(article: dict) -> dict:
         source_summary = article["source_description"]
     elif article.get("source_body_excerpt"):
         source_summary = article["source_body_excerpt"]
+    elif article.get("summary"):
+        source_summary = article["summary"]
+    elif article.get("discovery_source") == "jionews.com":
+        source_summary = ""
     else:
         print(f"Fetching source context from {url}...")
         source_summary = fetch_article_summary(url)

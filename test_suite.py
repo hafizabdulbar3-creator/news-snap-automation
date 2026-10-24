@@ -6683,6 +6683,144 @@ class TestSourceAllowlistAndTopicDiversity(unittest.TestCase):
         self.assertIn("Topic diversity limit reached", reason)
 
 
+class TestJioNewsExclusiveDiscovery(unittest.TestCase):
+    """Regression suite for JioNews exclusive discovery requirement."""
+
+    def setUp(self):
+        self.temp_dir = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def test_01_jionews_is_the_sole_enabled_discovery_feed(self):
+        """1. In sources.json, JioNews is the only enabled discovery feed; GDELT, wire services, and RSS feeds are disabled."""
+        sources, _, _, _ = discovery.load_sources_config(discovery.SOURCES_FILE)
+        enabled_sources = [s for s in sources if discovery.is_feed_enabled(s)]
+        self.assertEqual(len(enabled_sources), 1)
+        jio_source = enabled_sources[0]
+        self.assertEqual(jio_source.get("type"), "jionews")
+        self.assertIn("jionews.com/summary", jio_source.get("url", ""))
+        self.assertTrue(jio_source.get("primary"))
+
+        # Verify GDELT is disabled
+        gdelt_sources = [s for s in sources if s.get("type") == "gdelt"]
+        self.assertTrue(all(not discovery.is_feed_enabled(s) for s in gdelt_sources))
+
+    def test_02_empty_sources_config_fails_closed_without_gdelt_fallback(self):
+        """2. An empty or missing sources config returns empty list without falling back to GDELT."""
+        empty_file = Path(self.temp_dir) / "empty_sources.json"
+        empty_file.write_text(json.dumps({"rss_sources": []}), encoding="utf-8")
+        sources, _, _, _ = discovery.load_sources_config(empty_file)
+        self.assertEqual(sources, [])
+
+        nonexistent_file = Path(self.temp_dir) / "nonexistent.json"
+        sources2, _, _, _ = discovery.load_sources_config(nonexistent_file)
+        self.assertEqual(sources2, [])
+
+    def test_03_jionews_outage_handling_returns_empty_list_safely(self):
+        """3. Network errors or 500 status on JioNews GraphQL safely return empty list without crashing."""
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=urllib.error.URLError("Connection refused")):
+            entries = discovery.fetch_jionews_entries(timeout=2)
+            self.assertEqual(entries, [])
+
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=urllib.error.HTTPError(
+            "https://mobileservice.jionews.com/graphql", 500, "Internal Server Error", {}, None
+        )):
+            entries2 = discovery.fetch_jionews_entries(timeout=2)
+            self.assertEqual(entries2, [])
+
+    def test_04_jionews_fields_mapped_and_licensing_restricted_blocked(self):
+        """4. JioNews cards map fields correctly and drop licensing-restricted publishers (BBC, NDTV, etc.)."""
+        mock_payload = {
+            "data": {
+                "getSummaries": {
+                    "newsBriefs": [
+                        {
+                            "id": "card001",
+                            "title": "Historic Free Trade Agreement Finalized Between India and European Union",
+                            "summary": "Officials confirmed the formal conclusion of bilateral negotiations.",
+                            "webUrl": "https://jionews.com/summary/card001",
+                            "publisherLink": "https://economictimes.indiatimes.com/news/trade-deal",
+                            "publisher": {"id": "1", "name": "Economic Times"},
+                            "publishedAt": {"date": "2026-10-24T08:00:00.000Z", "agoFromNow": "1h"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "card_bbc",
+                            "title": "BBC Investigation Into Regional Energy Grid",
+                            "summary": "A detailed report into power distribution.",
+                            "webUrl": "https://jionews.com/summary/card_bbc",
+                            "publisherLink": "https://www.bbc.com/news/world-12345",
+                            "publisher": {"id": "2", "name": "BBC News"},
+                            "publishedAt": {"date": "2026-10-24T08:00:00.000Z", "agoFromNow": "1h"},
+                            "language": {"languageCode": "ENG"}
+                        },
+                        {
+                            "id": "card_ndtv",
+                            "title": "NDTV Report On Coastal Security Exercises",
+                            "summary": "Naval forces conduct routine drills.",
+                            "webUrl": "https://jionews.com/summary/card_ndtv",
+                            "publisherLink": "https://www.ndtv.com/india-news/security-drill",
+                            "publisher": {"id": "3", "name": "NDTV"},
+                            "publishedAt": {"date": "2026-10-24T08:00:00.000Z", "agoFromNow": "1h"},
+                            "language": {"languageCode": "ENG"}
+                        }
+                    ]
+                }
+            }
+        }
+
+        mock_login_resp = unittest.mock.MagicMock()
+        mock_login_resp.status = 200
+        mock_login_resp.read.return_value = json.dumps({
+            "data": {"loginWeb": {"session": {"token": "mock_test_token"}}}
+        }).encode("utf-8")
+        mock_login_resp.__enter__.return_value = mock_login_resp
+
+        mock_summary_resp = unittest.mock.MagicMock()
+        mock_summary_resp.status = 200
+        mock_summary_resp.read.return_value = json.dumps(mock_payload).encode("utf-8")
+        mock_summary_resp.__enter__.return_value = mock_summary_resp
+
+        with unittest.mock.patch("urllib.request.urlopen", side_effect=[mock_login_resp, mock_summary_resp]):
+            entries = discovery.fetch_jionews_entries()
+            self.assertEqual(len(entries), 1)
+            self.assertEqual(entries[0]["url"], "https://jionews.com/summary/card001")
+            self.assertEqual(entries[0]["displayed_publisher"], "Economic Times")
+            self.assertIn("India and European Union", entries[0]["raw_title"])
+
+    def test_05_select_article_rejects_non_jionews_discovery_source(self):
+        """5. Candidates explicitly marked with non-JioNews discovery_source are rejected by select_article."""
+        article_gdelt = {
+            "title": "Global Accord Signed by Major World Powers",
+            "url": "https://edition.cnn.com/world/major",
+            "domain": "cnn.com",
+            "discovery_source": "gdelt",
+            "score": 100
+        }
+        eligible, reason = select_article.is_candidate_eligible(article_gdelt, {}, set(), set(), [])
+        self.assertFalse(eligible)
+        self.assertIn("unapproved discovery source", reason)
+
+    def test_06_post_generator_skips_crawling_publisher_for_jionews_articles(self):
+        """6. post_generator uses summary directly and does not crawl publisher for JioNews articles."""
+        article = {
+            "title": "Pacific Island Nation Signs Climate Adaptation Framework",
+            "url": "https://jionews.com/summary/test_card_123",
+            "domain": "jionews.com",
+            "discovery_source": "jionews.com",
+            "displayed_publisher": "Yuva Dynamite",
+            "original_publisher_link": "https://example.com/external-article",
+            "summary": "Representatives gathered to ratify the regional climate agreement.",
+            "source_description": "Representatives gathered to ratify the regional climate agreement."
+        }
+        with unittest.mock.patch("post_generator.fetch_article_summary") as mock_crawl:
+            with unittest.mock.patch.dict(os.environ, {"NEWS_SNAP_PROD": "0"}):
+                post = post_generator.generate_mock_post(article)
+                self.assertIsNotNone(post)
+                mock_crawl.assert_not_called()
+
+
 if __name__ == "__main__":
     unittest.main()
 

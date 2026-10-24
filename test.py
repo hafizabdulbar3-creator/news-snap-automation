@@ -2,13 +2,21 @@ import html
 import json
 import os
 import re
+import ssl
 import time
 import unicodedata
 import urllib.error
 import urllib.request
+import uuid
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+
+try:
+    import certifi
+    HAVE_CERTIFI = True
+except ImportError:
+    HAVE_CERTIFI = False
 
 try:
     from langdetect import DetectorFactory, detect_langs
@@ -19,6 +27,7 @@ except ImportError:
     LANGDETECT_AVAILABLE = False
 
 RSS_URL = "https://data.gdeltproject.org/gdeltv3/gal/feed.rss"
+JIONEWS_GRAPHQL_URL = "https://mobileservice.jionews.com/graphql"
 USER_AGENT = "NEWS-SNAP-Discovery/1.0 (https://github.com/hafizabdulbar3-creator/news-snap-automation)"
 SOURCES_FILE = Path("sources.json")
 HISTORY_FILE = Path("history.json")
@@ -87,14 +96,8 @@ def load_sources_config(config_path: Path = SOURCES_FILE) -> tuple[list[dict], s
             print(f"[WARN] Failed loading sources.json ({err}); using standard defaults.")
 
     if not sources:
-        sources = [{
-            "name": "GDELT Global News",
-            "url": RSS_URL,
-            "type": "gdelt",
-            "enabled": True,
-            "disabled": False,
-            "primary": True
-        }]
+        # Strictly fail closed: never fall back to GDELT or external sources
+        sources = []
 
     return sources, high_trust, excluded, priority
 
@@ -409,6 +412,151 @@ def parse_feed_xml(xml_bytes: bytes) -> list[dict]:
     return entries
 
 
+def fetch_jionews_entries(url: str = "https://jionews.com/summary/", timeout: int = 10) -> list[dict]:
+    """Fetch real-time news briefs directly from JioNews public unauthenticated GraphQL endpoint."""
+    ssl_ctx = None
+    if HAVE_CERTIFI:
+        try:
+            ssl_ctx = ssl.create_default_context(cafile=certifi.where())
+        except Exception:
+            pass
+    if ssl_ctx is None:
+        try:
+            ssl_ctx = ssl.create_default_context()
+        except Exception:
+            pass
+
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Origin": "https://jionews.com",
+        "Referer": "https://jionews.com/summary/"
+    }
+
+    # 1. Ephemeral unauthenticated guest session login
+    login_payload = json.dumps({
+        "operationName": "LoginWeb",
+        "variables": {
+            "fingerprint": str(uuid.uuid4()),
+            "deviceType": "browser",
+            "deviceName": "Browser",
+            "languageId": None
+        },
+        "query": """mutation LoginWeb($fingerprint: String!, $deviceType: DeviceType, $deviceName: String, $languageId: ID) {
+  loginWeb(fingerprint: $fingerprint, deviceType: $deviceType, deviceName: $deviceName, languageId: $languageId) {
+    success
+    session {
+      token
+    }
+  }
+}"""
+    }).encode("utf-8")
+
+    token = None
+    try:
+        req = urllib.request.Request(JIONEWS_GRAPHQL_URL, data=login_payload, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=timeout, context=ssl_ctx) as resp:
+            if resp.status == 200:
+                body = json.loads(resp.read().decode("utf-8"))
+                token = body.get("data", {}).get("loginWeb", {}).get("session", {}).get("token")
+    except Exception as err:
+        print(f"[JIONEWS AUTH ERROR] Guest login failed: {err}")
+        return []
+
+    if not token:
+        print("[JIONEWS AUTH ERROR] No session token received from JioNews.")
+        return []
+
+    # 2. Query summaries
+    query_payload = json.dumps({
+        "operationName": "GetSummaries",
+        "variables": {"page": 1, "size": 30},
+        "query": """query GetSummaries($page: Int!, $size: Int!) {
+  getSummaries(page: $page, size: $size) {
+    newsBriefs {
+      id
+      title
+      summary
+      webUrl
+      publisherLink
+      publisher {
+        id
+        name
+      }
+      publishedAt {
+        date
+        agoFromNow
+      }
+      language {
+        id
+        name
+        languageCode
+      }
+    }
+  }
+}"""
+    }).encode("utf-8")
+
+    headers["authorization"] = token
+    try:
+        req = urllib.request.Request(JIONEWS_GRAPHQL_URL, data=query_payload, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=timeout, context=ssl_ctx) as resp:
+            if resp.status != 200:
+                print(f"[JIONEWS HTTP {resp.status}] Failed fetching summaries.")
+                return []
+            body = json.loads(resp.read().decode("utf-8"))
+    except Exception as err:
+        print(f"[JIONEWS FETCH ERROR] Failed fetching summaries: {err}")
+        return []
+
+    briefs = body.get("data", {}).get("getSummaries", {}).get("newsBriefs", [])
+    if not isinstance(briefs, list):
+        return []
+
+    entries = []
+    from source_allowlist import is_licensing_restricted
+    for b in briefs:
+        if not isinstance(b, dict):
+            continue
+
+        # Language filtering: English only
+        lang_code = ((b.get("language") or {}).get("languageCode") or "ENG").upper()
+        if lang_code and lang_code != "ENG":
+            continue
+
+        # Licensing restriction check on publisher link & publisher name
+        pub_link = (b.get("publisherLink") or "").strip()
+        pub_name = ((b.get("publisher") or {}).get("name") or "").strip()
+        if is_licensing_restricted(pub_link):
+            continue
+        if any(r in pub_name.lower() for r in ("bbc", "ndtv", "indian express", "the hindu", "livemint")):
+            continue
+
+        raw_title = (b.get("title") or "").strip()
+        card_id = (b.get("id") or "").strip()
+        web_url = (b.get("webUrl") or "").strip()
+        if not web_url and card_id:
+            web_url = f"https://jionews.com/summary/{card_id}"
+        if not raw_title or not web_url:
+            continue
+
+        summary = (b.get("summary") or "").strip()
+        published_at = ((b.get("publishedAt") or {}).get("date") or "").strip()
+
+        entries.append({
+            "raw_title": raw_title,
+            "url": web_url,
+            "source_url": pub_link,
+            "summary": summary,
+            "displayed_publisher": pub_name or "JioNews",
+            "published_at": published_at,
+            "language_code": lang_code,
+        })
+
+    return entries
+
+
 def discover_articles(
     sources: list[dict] | None = None,
     history_path: Path = HISTORY_FILE,
@@ -438,14 +586,19 @@ def discover_articles(
 
         print(f"Fetching {source_name} ({source_url})...")
         timeout = int(source.get("timeout", 10))
-        xml_data = fetch_feed(source_url, timeout=timeout)
-        if not xml_data:
-            print(f"[FEED EMPTY/FAILED] {source_name}: No response received.")
-            continue
+        source_type = source.get("type", "rss").lower()
 
-        entries = parse_feed_xml(xml_data)
+        if source_type == "jionews":
+            entries = fetch_jionews_entries(source_url, timeout=timeout)
+        else:
+            xml_data = fetch_feed(source_url, timeout=timeout)
+            if not xml_data:
+                print(f"[FEED EMPTY/FAILED] {source_name}: No response received.")
+                continue
+            entries = parse_feed_xml(xml_data)
+
         if not entries:
-            print(f"[FEED PARSE] {source_name}: Parsed 0 items.")
+            print(f"[FEED OK/EMPTY] {source_name}: Parsed 0 items.")
             continue
 
         feed_added = 0
@@ -453,6 +606,9 @@ def discover_articles(
             raw_title = entry["raw_title"]
             url = entry["url"]
             source_url_meta = entry.get("source_url", "")
+            summary = entry.get("summary", "")
+            displayed_pub = entry.get("displayed_publisher", "")
+            published_at = entry.get("published_at", "")
 
             if not raw_title or not url:
                 continue
@@ -476,12 +632,18 @@ def discover_articles(
                 continue
 
             # Strict Discovery & Licensing Enforcement:
-            # 1. Canonical article URL must belong to the user's 22 requested news organizations.
+            # 1. Canonical article URL must belong to the user's requested news organizations or JioNews.
             # 2. Outside publishers (including wnmufm.org), aggregators, and search fallbacks are rejected.
             # 3. Any article from an unapproved or licensing-restricted publisher (BBC, NDTV, etc.)
-            #    discovered via GDELT or feeds must be dropped immediately.
+            #    must be dropped immediately.
             if not is_discovery_whitelisted_url(norm_url) or not is_approved_url(norm_url):
                 continue
+
+            # Also verify original publisher link if present
+            if source_url_meta:
+                from source_allowlist import is_licensing_restricted
+                if is_licensing_restricted(source_url_meta):
+                    continue
 
             # Determine canonical approved domain
             canonical_d = get_canonical_domain(norm_url)
@@ -501,7 +663,7 @@ def discover_articles(
             if is_duplicate:
                 score -= 1000
 
-            if domain in APPROVED_DOMAINS or domain in high_trust:
+            if domain in APPROVED_DOMAINS or domain in high_trust or domain == "jionews.com":
                 score += 100
 
             lower_clean = clean.lower()
@@ -517,6 +679,13 @@ def discover_articles(
                 "score": score,
                 "is_duplicate": is_duplicate,
                 "source": source_name,
+                "discovery_source": "jionews.com" if source_type == "jionews" else domain,
+                "displayed_publisher": displayed_pub or domain,
+                "jionews_url": norm_url if source_type == "jionews" else "",
+                "original_publisher_link": source_url_meta,
+                "summary": summary,
+                "source_description": summary,
+                "published_at": published_at,
             })
             feed_added += 1
 

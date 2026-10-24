@@ -60,6 +60,10 @@ def is_candidate_eligible(
         url_low in recently_processed or title_low in recently_processed):
         return False, "duplicate (already posted or processed)"
 
+    # Strict exclusive discovery source guard: candidate with explicit discovery_source must be jionews.com
+    if article.get("discovery_source") and article.get("discovery_source") not in ("jionews.com", "jionews"):
+        return False, f"unapproved discovery source '{article.get('discovery_source')}' (only jionews.com allowed)"
+
     # Rolling Topic Diversity Safeguard: Max 2 posts per entity/topic in last 10 posts
     allowed, div_reason = check_topic_diversity(title, posted_history, max_same_topic=2, window_size=10)
     if not allowed:

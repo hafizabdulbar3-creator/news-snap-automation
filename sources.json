@@ -1,14 +1,23 @@
 {
   "rss_sources": [
     {
+      "name": "JioNews Summary",
+      "url": "https://jionews.com/summary/",
+      "type": "jionews",
+      "publisher": "JioNews",
+      "enabled": true,
+      "disabled": false,
+      "primary": true,
+      "notes": "Strictly exclusive news discovery source via https://jionews.com/summary/."
+    },
+    {
       "name": "GDELT Global News",
       "url": "https://data.gdeltproject.org/gdeltv3/gal/feed.rss",
       "type": "gdelt",
       "publisher": "GDELT Project",
-      "enabled": true,
-      "disabled": false,
-      "primary": true,
-      "notes": "Primary open-data global discovery feed (unrestricted research data)."
+      "enabled": false,
+      "disabled": true,
+      "reason": "GDELT discovery disabled; JioNews is the strictly exclusive discovery source."
     },
     {
       "name": "Associated Press (Flipboard)",
@@ -183,7 +192,8 @@
     "abpnews.com",
     "timesnownews.com",
     "cnnnews18.com",
-    "ddnews.gov.in"
+    "ddnews.gov.in",
+    "jionews.com"
   ],
   "licensing_restricted_domains": [
     "bbc.com",
@@ -218,7 +228,8 @@
     "abpnews.com",
     "timesnownews.com",
     "cnnnews18.com",
-    "ddnews.gov.in"
+    "ddnews.gov.in",
+    "jionews.com"
   ],
   "approved_domains": [
     "cnn.com",
@@ -245,7 +256,8 @@
     "abpnews.com",
     "timesnownews.com",
     "cnnnews18.com",
-    "ddnews.gov.in"
+    "ddnews.gov.in",
+    "jionews.com"
   ],
   "high_trust_domains": [
     "bbc.com",
@@ -276,7 +288,8 @@
     "timesnownews.com",
     "cnnnews18.com",
     "ddnews.gov.in",
-    "livemint.com"
+    "livemint.com",
+    "jionews.com"
   ],
   "excluded_keywords": [
     "horoscope",
