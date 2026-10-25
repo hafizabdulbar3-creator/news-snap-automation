@@ -1216,9 +1216,63 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/world/student-movement-could-topple-vucics-12-year-rule-as-serbia-heads-to-high-stakes-polls-ws-kl-10396678.html?comscorekw=jionews",
+      "title": "Student Movement Could Topple Vucic's 12-Year Rule As Serbia Heads To High-Stakes Polls",
+      "domain": "news18.com",
+      "timestamp": "2026-10-25T06:56:44.869480+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 19."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "PM Modi: 'Mann Ki Baat' a Pilgrimage, Highlights People's Efforts, River Revival",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/mann-ki-baat-no-less-than-pilgrimage-pm-modi-highlights-peoples-efforts-traditional-farming-uttarakhand-river-revival-2026-10-25-139613",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A routine address by a national leader discussing domestic policy and social initiatives."
+      },
+      "classified_at": "2026-10-25T06:56:33.039096+00:00"
+    },
+    {
+      "title": "Defence Minister Rajnath Singh Welcomes PM Modi to Varanasi for IAF's 'Wings Over Ganges' Aerial Display",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/defence-minister-rajnath-singh-welcomes-pm-modi-to-varanasi-for-iaf-s-wings-over-ganges-aerial-display-2026-10-25-139612",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A standard political event involving a leader's visit and a military display."
+      },
+      "classified_at": "2026-10-25T06:56:33.039110+00:00"
+    },
+    {
+      "title": "Donald Trump Falsely Claims US 'Got Both' Greenland and Venezuela at Georgia Rally",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/donald-trump-falsely-claims-us-got-both-greenland-and-venezuela-at-georgia-rally-2026-10-25-139614",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major geopolitical claim by a former US President regarding territorial acquisition."
+      },
+      "classified_at": "2026-10-25T06:56:33.039113+00:00"
+    },
+    {
+      "title": "Online Swindler Dupes 20 Women Police Officers of ₹24 Lakh, Arrested",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/delhi-man-dupes-20-women-police-constables-of-rs-24-lakh-by-promising-marriage-internet-calls-him-gen-z-ka-ricky-bahl-ws-l-10396687.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A notable crime story involving public officials, but of specific regional interest rather than global consequence."
+      },
+      "classified_at": "2026-10-25T06:56:33.039117+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
