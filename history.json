@@ -1403,6 +1403,15 @@
       "published": true,
       "media_id": "18033508046676576",
       "timestamp": "2026-10-25T20:00:15.902277+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/cricket-has-always-given-me-happiness-after-captaincy-exit-harmanpreet-kaur-responds-with-record-8th-odi-ton-2026-10-25-139657",
+      "title": "Harmanpreet Kaur's Record 8th ODI Ton: Finding Joy After Captaincy Exit",
+      "headline": "Harmanpreet Kaur Hits Record 8th ODI Ton After Captaincy Exit",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18109668866222597",
+      "timestamp": "2026-10-25T20:57:22.284765+00:00"
     }
   ],
   "processed": [
@@ -1524,7 +1533,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Delhi Food Safety Department Raids Nihal Vihar And Mori Gate, Destroys 922 Kg Adulterated Sweets",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-food-safety-department-raids-nihal-vihar-and-mori-gate-destroys-922-kg-adulterated-sweets-2026-10-25-139656",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "A significant regulatory action regarding food safety and public health, but classified as a regional/local administrative matter."
+      },
+      "classified_at": "2026-10-25T20:56:53.227557+00:00"
+    },
+    {
+      "title": "Air India Group Shifts Flights to Navi Mumbai Airport by Summer 2027",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/air-india-group-and-adani-airports-announce-phased-transition-of-flight-operations-from-mumbai-to-navi-mumbai-airport-2026-10-25-139655",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A major corporate operational shift involving a national airline, representing a significant economic trend and infrastructure development."
+      },
+      "classified_at": "2026-10-25T20:56:53.227560+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
