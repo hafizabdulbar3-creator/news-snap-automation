@@ -1259,6 +1259,15 @@
       "published": true,
       "media_id": "18100720841382008",
       "timestamp": "2026-10-25T12:18:53.188467+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/nana-patole-claims-ib-report-predicted-160-mva-seats-alleges-plot-over-polling-data-ws-klt-10396822.html?comscorekw=jionews",
+      "title": "Nana Patole Claims IB Report Predicted 160 MVA Seats, Alleges Plot Over Polling Data",
+      "headline": "Nana Patole Claims IB Report Predicted 160 MVA Seats",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18116660087017067",
+      "timestamp": "2026-10-25T12:55:02.155750+00:00"
     }
   ],
   "processed": [
@@ -1373,17 +1382,6 @@
         "reason": "A regional infrastructure and utility issue affecting a major city."
       },
       "classified_at": "2026-10-25T12:18:20.923052+00:00"
-    },
-    {
-      "title": "Nana Patole Claims IB Report Predicted 160 MVA Seats, Alleges Plot Over Polling Data",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/nana-patole-claims-ib-report-predicted-160-mva-seats-alleges-plot-over-polling-data-ws-klt-10396822.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political allegation regarding election data and internal party disputes."
-      },
-      "classified_at": "2026-10-25T12:18:20.923058+00:00"
     }
   ],
   "quota_cooldown": {
