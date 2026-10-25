@@ -1448,6 +1448,15 @@
       "published": true,
       "media_id": "17919340827455502",
       "timestamp": "2026-10-25T22:56:51.201570+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/yemen-army-launches-753-strikes-claims-218-houthi-fighters-neutralised-in-24-hours-2026-10-25-139664",
+      "title": "Yemen Army Launches 753 Strikes, Claims 218 Houthi Fighters Neutralised In 24 Hours",
+      "headline": "Yemen Army Launches 753 Strikes, Claims 218 Houthi Fighters Neutralised",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18108651977248944",
+      "timestamp": "2026-10-25T23:22:41.127884+00:00"
     }
   ],
   "processed": [
@@ -1587,7 +1596,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Mbappe Double Downs Yamal's Barcelona As Real Madrid Win 2-1 Clasico At Camp Nou",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/mbappe-double-downs-yamal-s-barcelona-as-real-madrid-win-2-1-clasico-at-camp-nou-2026-10-25-139663",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a standard sports report covering a football match result. While notable, it is classified as a regional sporting event rather than a major geopolitical or economic event."
+      },
+      "classified_at": "2026-10-25T23:22:11.153641+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
