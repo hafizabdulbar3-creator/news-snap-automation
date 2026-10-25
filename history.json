@@ -1421,6 +1421,15 @@
       "published": true,
       "media_id": "17962256922000774",
       "timestamp": "2026-10-25T21:28:41.421829+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/mass-unrest-in-france-1314-arrested-53-cops-injured-as-cost-of-living-protests-turn-violent-for-second-weekend-2026-10-25-139659",
+      "title": "France Rocked by Violent Cost-of-Living Protests: Over 1,300 Arrested, Dozens Injured.",
+      "headline": "France Rocked by Violent Cost-of-Living Protests",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18115740089039529",
+      "timestamp": "2026-10-25T21:54:29.390048+00:00"
     }
   ],
   "processed": [
@@ -1551,7 +1560,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Cyclone Arnab Alert: Andhra CM Naidu Puts Officials On High Alert, Orders Control Rooms In Districts",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cyclone-arnab-alert-andhra-cm-naidu-puts-officials-on-high-alert-orders-control-rooms-in-districts-2026-10-25-139660",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Natural Disasters",
+        "reason": "A weather alert and government response to a cyclone is a standard regional emergency management procedure."
+      },
+      "classified_at": "2026-10-25T21:54:01.530754+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
