@@ -1423,9 +1423,41 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Headline appears clipped/incomplete (ends with trailing connector 'To')."
+    },
+    {
+      "url": "https://www.republicworld.com/india/house-collapses-in-delhis-harsh-vihar-area-rescue-operation-underway-2026-10-25-139648",
+      "title": "House Collapses In Delhi's Harsh Vihar Area, Rescue Operation Underway",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-25T16:01:36.862449+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Congress President Kharge Faces Complaint Over Derogatory Remark on PM Modi's Father.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/congress-president-mallikarjun-kharge-in-trouble-over-derogatory-remark-on-pm-modi-s-father-complaint-lodged-in-patna-2026-10-25-139650",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "A complaint regarding a political figure's comment falls under standard domestic political discourse rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-25T16:01:26.595941+00:00"
+    },
+    {
+      "title": "Jamia Millia Islamia Files Complaint, Delhi Police Registers FIR Against Congress, SP MPs For Trespassing",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/jamia-millia-islamia-files-complaint-delhi-police-registers-fir-against-congress-sp-mps-for-trespassing-2026-10-25-139649",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "A complaint and FIR regarding MPs trespassing is a standard legal/political matter within the national jurisdiction."
+      },
+      "classified_at": "2026-10-25T16:01:26.595957+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
