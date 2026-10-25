@@ -1322,6 +1322,15 @@
       "published": true,
       "media_id": "17946411981359420",
       "timestamp": "2026-10-25T15:35:52.679730+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/congress-president-mallikarjun-kharge-in-trouble-over-derogatory-remark-on-pm-modi-s-father-complaint-lodged-in-patna-2026-10-25-139650",
+      "title": "Congress President Kharge Faces Complaint Over Derogatory Remark on PM Modi's Father.",
+      "headline": "Congress President Kharge Faces Complaint Over Derogatory Remark on PM Modi's Father",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18131373310841045",
+      "timestamp": "2026-10-25T16:06:57.943873+00:00"
     }
   ],
   "processed": [
@@ -1435,17 +1444,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Congress President Kharge Faces Complaint Over Derogatory Remark on PM Modi's Father.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/congress-president-mallikarjun-kharge-in-trouble-over-derogatory-remark-on-pm-modi-s-father-complaint-lodged-in-patna-2026-10-25-139650",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "A complaint regarding a political figure's comment falls under standard domestic political discourse rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-25T16:01:26.595941+00:00"
-    },
     {
       "title": "Jamia Millia Islamia Files Complaint, Delhi Police Registers FIR Against Congress, SP MPs For Trespassing",
       "domain": "republicworld.com",
