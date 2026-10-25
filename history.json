@@ -1385,6 +1385,15 @@
       "published": true,
       "media_id": "18357383032218602",
       "timestamp": "2026-10-25T19:08:38.799338+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/iwf-awards-2029-world-weightlifting-championships-to-ahmedabad-first-time-for-india-2026-10-25-139654",
+      "title": "IWF Awards 2029 World Weightlifting Championships To Ahmedabad, First Time For India",
+      "headline": "IWF Awards 2029 World Weightlifting Championships To Ahmedabad",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18116349242517794",
+      "timestamp": "2026-10-25T19:34:42.093007+00:00"
     }
   ],
   "processed": [
@@ -1506,7 +1515,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "IndiGo and Adani Launch New International Hub in Navi Mumbai.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/indigo-and-adani-airports-announce-phased-expansion-of-international-flight-operations-at-navi-mumbai-airport-2026-10-25-139652",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A significant development in regional infrastructure and aviation, representing a major corporate milestone and economic trend."
+      },
+      "classified_at": "2026-10-25T19:34:02.941551+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
