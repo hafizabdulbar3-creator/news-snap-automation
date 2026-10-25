@@ -1342,20 +1342,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 19."
+    },
+    {
+      "url": "https://www.news18.com/cities/bengaluru-news/kannadigas-first-karnataka-cm-dk-shivakumar-warns-of-action-against-firms-denying-jobs-to-sons-of-soil-ws-klrt-10397002.html?comscorekw=jionews",
+      "title": "'Kannadigas First': Karnataka CM DK Shivakumar Issues Stern Warning To Firms Denying Jobs To Sons Of Soil",
+      "domain": "news18.com",
+      "timestamp": "2026-10-25T12:44:08.030003+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Kannadigas First': Karnataka CM DK Shivakumar Issues Stern Warning To Firms Denying Jobs To Sons Of Soil",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/bengaluru-news/kannadigas-first-karnataka-cm-dk-shivakumar-warns-of-action-against-firms-denying-jobs-to-sons-of-soil-ws-klrt-10397002.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional political policy regarding employment quotas for local candidates."
-      },
-      "classified_at": "2026-10-25T12:18:20.923031+00:00"
-    },
     {
       "title": "Pakistan: Karachi Power Crisis Deepens as K-Electric Extends Loadshedding",
       "domain": "republicworld.com",
