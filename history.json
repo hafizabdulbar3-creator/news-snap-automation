@@ -1061,6 +1061,15 @@
       "published": true,
       "media_id": "18161082691503523",
       "timestamp": "2026-10-25T01:56:05.972220+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/no-offer-made-to-us-no-proposal-sent-to-pak-mediator-on-hormuz-reopening-iranian-media-rejects-reports-2026-10-25-139602",
+      "title": "No Offer Made to US, No Proposal Sent to Pak Mediator on Hormuz Reopening: Iranian Media Rejects Reports",
+      "headline": "Iranian Media Deny US Deal for Hormuz Reopening",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18112893968614807",
+      "timestamp": "2026-10-25T02:22:09.709355+00:00"
     }
   ],
   "processed": [
@@ -1119,7 +1128,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Possibility I Will': Trump Says US Could Attack Iran Again, Hopes For 'Big, Beautiful Agreement'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/possibility-i-will-trump-says-us-could-attack-iran-again-hopes-for-big-beautiful-agreement-ws-kl-10396501.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Statement by a former US President regarding potential military action against Iran constitutes a significant geopolitical risk and major international news."
+      },
+      "classified_at": "2026-10-25T02:21:37.523628+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
