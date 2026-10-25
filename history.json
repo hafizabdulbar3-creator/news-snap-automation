@@ -1151,6 +1151,15 @@
       "published": true,
       "media_id": "18118781348045530",
       "timestamp": "2026-10-25T07:02:17.991279+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/delhi-man-dupes-20-women-police-constables-of-rs-24-lakh-by-promising-marriage-internet-calls-him-gen-z-ka-ricky-bahl-ws-l-10396687.html?comscorekw=jionews",
+      "title": "Online Swindler Dupes 20 Women Police Officers of ₹24 Lakh, Arrested",
+      "headline": "Delhi Man Arrested for Duping 20 Women Police Officers of ₹24 Lakh",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17909201058663839",
+      "timestamp": "2026-10-25T07:28:01.054173+00:00"
     }
   ],
   "processed": [
@@ -1258,17 +1267,6 @@
         "reason": "A major geopolitical claim by a former US President regarding territorial acquisition."
       },
       "classified_at": "2026-10-25T06:56:33.039113+00:00"
-    },
-    {
-      "title": "Online Swindler Dupes 20 Women Police Officers of ₹24 Lakh, Arrested",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/delhi-man-dupes-20-women-police-constables-of-rs-24-lakh-by-promising-marriage-internet-calls-him-gen-z-ka-ricky-bahl-ws-l-10396687.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A notable crime story involving public officials, but of specific regional interest rather than global consequence."
-      },
-      "classified_at": "2026-10-25T06:56:33.039117+00:00"
     }
   ],
   "quota_cooldown": {
