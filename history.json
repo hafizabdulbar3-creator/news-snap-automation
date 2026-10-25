@@ -1286,6 +1286,15 @@
       "published": true,
       "media_id": "18152999143547051",
       "timestamp": "2026-10-25T13:46:54.747899+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/heinous-attack-muslim-world-league-condemns-houthi-missile-attack-targeting-mecca-and-medina-regions-2026-10-25-139641",
+      "title": "'Heinous Attack': Muslim World League Condemns Houthi Missile Attack Targeting Mecca and Medina Regions",
+      "headline": "Muslim World League Condemns Houthi Missile Attack on Mecca and Medina",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18114281288335315",
+      "timestamp": "2026-10-25T14:12:39.692823+00:00"
     }
   ],
   "processed": [
@@ -1411,17 +1420,6 @@
         "reason": "A legal hearing regarding a plea to deport a foreign national is a significant legal matter, but falls under domestic legal proceedings rather than a major geopolitical event."
       },
       "classified_at": "2026-10-25T13:46:27.251454+00:00"
-    },
-    {
-      "title": "'Heinous Attack': Muslim World League Condemns Houthi Missile Attack Targeting Mecca and Medina Regions",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/heinous-attack-muslim-world-league-condemns-houthi-missile-attack-targeting-mecca-and-medina-regions-2026-10-25-139641",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A missile attack targeting holy cities like Mecca and Medina is a major geopolitical event with significant religious and international implications."
-      },
-      "classified_at": "2026-10-25T13:46:27.251461+00:00"
     }
   ],
   "quota_cooldown": {
