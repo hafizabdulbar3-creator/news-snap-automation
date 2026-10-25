@@ -1126,6 +1126,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/india/farooq-abdullah-says-pakistan-protects-kashmiris-bjp-slams-remarks-as-seditious-demands-action-against-nc-chief-2026-10-25-139604",
+      "title": "Farooq Abdullah's Pakistan Remarks Spark Sedition Row; BJP Demands Action",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-25T02:47:38.514860+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
