@@ -1295,6 +1295,15 @@
       "published": true,
       "media_id": "18114281288335315",
       "timestamp": "2026-10-25T14:12:39.692823+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/imran-khan-leave-india-notice-row-bombay-hc-to-hear-plea-on-october-26-possible-outcomes-and-case-explained-ws-lr-10397093.html?comscorekw=jionews",
+      "title": "Imran Khan's Future in India at Stake: High Court to Hear \"Leave India\" Plea",
+      "headline": "Imran Khan's Future in India at Stake: Bombay HC to Hear Plea",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18039809552839901",
+      "timestamp": "2026-10-25T14:44:28.849720+00:00"
     }
   ],
   "processed": [
@@ -1409,17 +1418,6 @@
         "reason": "A regional political strategy meeting involving a party leader and a central minister is a standard political activity, though not a major geopolitical event."
       },
       "classified_at": "2026-10-25T13:46:27.251439+00:00"
-    },
-    {
-      "title": "Imran Khan's Future in India at Stake: High Court to Hear \"Leave India\" Plea",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/imran-khan-leave-india-notice-row-bombay-hc-to-hear-plea-on-october-26-possible-outcomes-and-case-explained-ws-lr-10397093.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal",
-        "reason": "A legal hearing regarding a plea to deport a foreign national is a significant legal matter, but falls under domestic legal proceedings rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-25T13:46:27.251454+00:00"
     }
   ],
   "quota_cooldown": {
