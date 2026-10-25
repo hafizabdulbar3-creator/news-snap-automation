@@ -1351,6 +1351,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/world/no-low-he-wont-sink-to-obama-tears-into-ramaswamy-over-ad-exploiting-rivals-childhood-sexual-abuse-ws-lrt-10397026.html?comscorekw=jionews",
+      "title": "'No Low He Won't Sink To': Obama Tears Into Ramaswamy Over Ad Exploiting Rival's Childhood Sexual Abuse",
+      "domain": "news18.com",
+      "timestamp": "2026-10-25T12:49:45.784680+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Headline appears clipped/incomplete (ends with trailing connector 'To')."
     }
   ],
   "classified_pool": [
@@ -1364,17 +1373,6 @@
         "reason": "A regional infrastructure and utility issue affecting a major city."
       },
       "classified_at": "2026-10-25T12:18:20.923052+00:00"
-    },
-    {
-      "title": "'No Low He Won't Sink To': Obama Tears Into Ramaswamy Over Ad Exploiting Rival's Childhood Sexual Abuse",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/no-low-he-wont-sink-to-obama-tears-into-ramaswamy-over-ad-exploiting-rivals-childhood-sexual-abuse-ws-lrt-10397026.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political attack ad controversy involving a public figure and a rival."
-      },
-      "classified_at": "2026-10-25T12:18:20.923055+00:00"
     },
     {
       "title": "Nana Patole Claims IB Report Predicted 160 MVA Seats, Alleges Plot Over Polling Data",
