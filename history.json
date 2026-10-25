@@ -1358,6 +1358,15 @@
       "published": true,
       "media_id": "17911489026509460",
       "timestamp": "2026-10-25T17:50:45.670975+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/voter-id-cards-found-dumped-on-narmada-riverbank-in-mps-khargone-congress-demands-fir-after-recovery-in-mandleshwar-2026-10-25-139651",
+      "title": "Voter ID Cards Found Dumped In Narmada In MP's Khargone: Congress Demands FIR After Recovery",
+      "headline": "Voter ID Cards Dumped In Narmada River In MP's Khargone",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18467652052138249",
+      "timestamp": "2026-10-25T18:17:07.227329+00:00"
     }
   ],
   "processed": [
@@ -1479,19 +1488,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Voter ID Cards Found Dumped In Narmada In MP's Khargone: Congress Demands FIR After Recovery",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/voter-id-cards-found-dumped-on-narmada-riverbank-in-mps-khargone-congress-demands-fir-after-recovery-in-mandleshwar-2026-10-25-139651",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A local political dispute regarding the dumping of voter ID cards in Madhya Pradesh. While it involves election materials, it is classified as a regional/local incident rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-25T17:50:17.743102+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
