@@ -1531,20 +1531,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-food-safety-department-raids-nihal-vihar-and-mori-gate-destroys-922-kg-adulterated-sweets-2026-10-25-139656",
+      "title": "Delhi Food Safety Department Raids Nihal Vihar And Mori Gate, Destroys 922 Kg Adulterated Sweets",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-25T21:22:59.542446+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Food Safety Department Raids Nihal Vihar And Mori Gate, Destroys 922 Kg Adulterated Sweets",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-food-safety-department-raids-nihal-vihar-and-mori-gate-destroys-922-kg-adulterated-sweets-2026-10-25-139656",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "A significant regulatory action regarding food safety and public health, but classified as a regional/local administrative matter."
-      },
-      "classified_at": "2026-10-25T20:56:53.227557+00:00"
-    },
     {
       "title": "Air India Group Shifts Flights to Navi Mumbai Airport by Summer 2027",
       "domain": "republicworld.com",
