@@ -1232,6 +1232,15 @@
       "published": true,
       "media_id": "18170446168464795",
       "timestamp": "2026-10-25T10:55:42.259133+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/former-army-officer-arrested-in-vellore-for-allegedly-leaking-military-secrets-to-unidentified-woman-2026-10-25-139635",
+      "title": "Former Army Officer Arrested in Vellore for Allegedly Leaking Military Secrets to Unidentified Woman",
+      "headline": "Former Army Captain Arrested in Vellore Over Alleged Military Secrets Leak",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18273603916306290",
+      "timestamp": "2026-10-25T11:21:42.692094+00:00"
     }
   ],
   "processed": [
@@ -1318,17 +1327,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Former Army Officer Arrested in Vellore for Allegedly Leaking Military Secrets to Unidentified Woman",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/former-army-officer-arrested-in-vellore-for-allegedly-leaking-military-secrets-to-unidentified-woman-2026-10-25-139635",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A specific arrest for espionage is a crime story, but it is localized to a specific officer and lacks broad international geopolitical consequence."
-      },
-      "classified_at": "2026-10-25T10:55:14.177334+00:00"
-    },
     {
       "title": "Karnataka Pilgrims Stranded in Mecca: Haj Committee to Move Supreme Court",
       "domain": "news18.com",
