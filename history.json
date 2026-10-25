@@ -1250,6 +1250,15 @@
       "published": true,
       "media_id": "18091506746235042",
       "timestamp": "2026-10-25T11:48:05.503419+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/this-is-how-russia-responds-to-diplomacy-and-deisolation-volodymyr-zelenskyy-condemns-recent-strikes-on-ukraine-2026-10-25-139637",
+      "title": "'This is How Russia Responds to Diplomacy and Deisolation': Zelenskyy Condemns Recent Strikes on Ukraine",
+      "headline": "Zelenskyy Condemns Russia's Response to Diplomacy",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18100720841382008",
+      "timestamp": "2026-10-25T12:18:53.188467+00:00"
     }
   ],
   "processed": [
@@ -1335,7 +1344,52 @@
       "rejection_reason": "Caption must contain 20–80 words, got 19."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Kannadigas First': Karnataka CM DK Shivakumar Issues Stern Warning To Firms Denying Jobs To Sons Of Soil",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/bengaluru-news/kannadigas-first-karnataka-cm-dk-shivakumar-warns-of-action-against-firms-denying-jobs-to-sons-of-soil-ws-klrt-10397002.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional political policy regarding employment quotas for local candidates."
+      },
+      "classified_at": "2026-10-25T12:18:20.923031+00:00"
+    },
+    {
+      "title": "Pakistan: Karachi Power Crisis Deepens as K-Electric Extends Loadshedding",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/pakistan-karachi-power-crisis-deepens-as-k-electric-extends-loadshedding-2026-10-25-139638",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A regional infrastructure and utility issue affecting a major city."
+      },
+      "classified_at": "2026-10-25T12:18:20.923052+00:00"
+    },
+    {
+      "title": "'No Low He Won't Sink To': Obama Tears Into Ramaswamy Over Ad Exploiting Rival's Childhood Sexual Abuse",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/no-low-he-wont-sink-to-obama-tears-into-ramaswamy-over-ad-exploiting-rivals-childhood-sexual-abuse-ws-lrt-10397026.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political attack ad controversy involving a public figure and a rival."
+      },
+      "classified_at": "2026-10-25T12:18:20.923055+00:00"
+    },
+    {
+      "title": "Nana Patole Claims IB Report Predicted 160 MVA Seats, Alleges Plot Over Polling Data",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/nana-patole-claims-ib-report-predicted-160-mva-seats-alleges-plot-over-polling-data-ws-klt-10396822.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political allegation regarding election data and internal party disputes."
+      },
+      "classified_at": "2026-10-25T12:18:20.923058+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
