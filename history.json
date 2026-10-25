@@ -1115,6 +1115,15 @@
       "published": true,
       "media_id": "18132454522780641",
       "timestamp": "2026-10-25T05:08:29.551431+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/possibility-i-will-trump-says-us-could-attack-iran-again-hopes-for-big-beautiful-agreement-ws-kl-10396501.html?comscorekw=jionews",
+      "title": "'Possibility I Will': Trump Says US Could Attack Iran Again, Hopes For 'Big, Beautiful Agreement'",
+      "headline": "Trump Says US Could Attack Iran Again, Hopes For 'Big, Beautiful Agreement",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18396760954205186",
+      "timestamp": "2026-10-25T05:33:52.717368+00:00"
     }
   ],
   "processed": [
@@ -1182,19 +1191,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'Possibility I Will': Trump Says US Could Attack Iran Again, Hopes For 'Big, Beautiful Agreement'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/possibility-i-will-trump-says-us-could-attack-iran-again-hopes-for-big-beautiful-agreement-ws-kl-10396501.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Statement by a former US President regarding potential military action against Iran constitutes a significant geopolitical risk and major international news."
-      },
-      "classified_at": "2026-10-25T02:21:37.523628+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
