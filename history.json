@@ -1223,6 +1223,15 @@
       "published": true,
       "media_id": "17894214735614522",
       "timestamp": "2026-10-25T10:29:39.248080+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/republicans-are-going-to-lose-it-former-us-congress-speaker-who-ushered-gop-revival-last-midterms-shares-stark-prediction-ws-lrt-10396912.html?comscorekw=jionews",
+      "title": "Former Speaker McCarthy: Republicans Will 'Lose It' in Midterms",
+      "headline": "Former Speaker McCarthy: Republicans Will 'Lose It' in Midterms",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18170446168464795",
+      "timestamp": "2026-10-25T10:55:42.259133+00:00"
     }
   ],
   "processed": [
@@ -1308,7 +1317,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 19."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Former Army Officer Arrested in Vellore for Allegedly Leaking Military Secrets to Unidentified Woman",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/former-army-officer-arrested-in-vellore-for-allegedly-leaking-military-secrets-to-unidentified-woman-2026-10-25-139635",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A specific arrest for espionage is a crime story, but it is localized to a specific officer and lacks broad international geopolitical consequence."
+      },
+      "classified_at": "2026-10-25T10:55:14.177334+00:00"
+    },
+    {
+      "title": "Karnataka Pilgrims Stranded in Mecca: Haj Committee to Move Supreme Court",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/600-karnataka-umrah-pilgrims-stranded-minister-says-haj-committee-to-move-sc-as-cm-shivakumar-seeks-centres-help-ws-bklr-10396794.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional",
+        "reason": "This is a specific administrative issue regarding pilgrims stranded in Mecca, which is a regional/regulatory matter rather than a major global event."
+      },
+      "classified_at": "2026-10-25T10:55:14.177357+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
