@@ -1277,6 +1277,15 @@
       "published": true,
       "media_id": "18128900875886464",
       "timestamp": "2026-10-25T13:20:50.442637+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/very-severe-storm-imd-issues-red-alert-in-odisha-ahead-of-cyclone-arnab-2026-10-25-139640",
+      "title": "'Very Severe Storm': IMD Issues Red Alert in Odisha Ahead of Cyclone Arnab",
+      "headline": "IMD Issues Red Alert in Odisha Ahead of Cyclone Arnab",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18152999143547051",
+      "timestamp": "2026-10-25T13:46:54.747899+00:00"
     }
   ],
   "processed": [
@@ -1380,7 +1389,41 @@
       "rejection_reason": "Headline appears clipped/incomplete (ends with trailing connector 'To')."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Nitin Nabin Chairs BJP Meeting for Strategy for Upcoming Assembly Elections in Presence of Amit Shah",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/nitin-nabin-chairs-bjp-meeting-for-strategy-for-upcoming-assembly-elections-in-presence-of-amit-shah-2026-10-25-139642",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional political strategy meeting involving a party leader and a central minister is a standard political activity, though not a major geopolitical event."
+      },
+      "classified_at": "2026-10-25T13:46:27.251439+00:00"
+    },
+    {
+      "title": "Imran Khan's Future in India at Stake: High Court to Hear \"Leave India\" Plea",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/imran-khan-leave-india-notice-row-bombay-hc-to-hear-plea-on-october-26-possible-outcomes-and-case-explained-ws-lr-10397093.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A legal hearing regarding a plea to deport a foreign national is a significant legal matter, but falls under domestic legal proceedings rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-25T13:46:27.251454+00:00"
+    },
+    {
+      "title": "'Heinous Attack': Muslim World League Condemns Houthi Missile Attack Targeting Mecca and Medina Regions",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/heinous-attack-muslim-world-league-condemns-houthi-missile-attack-targeting-mecca-and-medina-regions-2026-10-25-139641",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A missile attack targeting holy cities like Mecca and Medina is a major geopolitical event with significant religious and international implications."
+      },
+      "classified_at": "2026-10-25T13:46:27.251461+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
