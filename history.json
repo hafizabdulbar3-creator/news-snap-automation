@@ -1196,6 +1196,15 @@
       "published": true,
       "media_id": "18140520892620194",
       "timestamp": "2026-10-25T09:11:50.019205+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/defence-minister-rajnath-singh-welcomes-pm-modi-to-varanasi-for-iaf-s-wings-over-ganges-aerial-display-2026-10-25-139612",
+      "title": "Defence Minister Rajnath Singh Welcomes PM Modi to Varanasi for IAF's 'Wings Over Ganges' Aerial Display",
+      "headline": "Defence Minister Rajnath Singh Welcomes PM Modi to Varanasi for IAF Display",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17964278364236542",
+      "timestamp": "2026-10-25T09:37:56.379088+00:00"
     }
   ],
   "processed": [
@@ -1282,17 +1291,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Defence Minister Rajnath Singh Welcomes PM Modi to Varanasi for IAF's 'Wings Over Ganges' Aerial Display",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/defence-minister-rajnath-singh-welcomes-pm-modi-to-varanasi-for-iaf-s-wings-over-ganges-aerial-display-2026-10-25-139612",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A standard political event involving a leader's visit and a military display."
-      },
-      "classified_at": "2026-10-25T06:56:33.039110+00:00"
-    },
     {
       "title": "Donald Trump Falsely Claims US 'Got Both' Greenland and Venezuela at Georgia Rally",
       "domain": "republicworld.com",
