@@ -1142,6 +1142,15 @@
       "published": true,
       "media_id": "18132893164688555",
       "timestamp": "2026-10-25T06:31:03.721505+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/mann-ki-baat-no-less-than-pilgrimage-pm-modi-highlights-peoples-efforts-traditional-farming-uttarakhand-river-revival-2026-10-25-139613",
+      "title": "PM Modi: 'Mann Ki Baat' a Pilgrimage, Highlights People's Efforts, River Revival",
+      "headline": "PM Modi Calls 'Mann Ki Baat' a Pilgrimage, Highlights People's Efforts",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18118781348045530",
+      "timestamp": "2026-10-25T07:02:17.991279+00:00"
     }
   ],
   "processed": [
@@ -1228,17 +1237,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "PM Modi: 'Mann Ki Baat' a Pilgrimage, Highlights People's Efforts, River Revival",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/mann-ki-baat-no-less-than-pilgrimage-pm-modi-highlights-peoples-efforts-traditional-farming-uttarakhand-river-revival-2026-10-25-139613",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A routine address by a national leader discussing domestic policy and social initiatives."
-      },
-      "classified_at": "2026-10-25T06:56:33.039096+00:00"
-    },
     {
       "title": "Defence Minister Rajnath Singh Welcomes PM Modi to Varanasi for IAF's 'Wings Over Ganges' Aerial Display",
       "domain": "republicworld.com",
