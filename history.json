@@ -1099,9 +1099,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/cricket/on-the-fastest-track-how-an-overlooked-bcci-rule-put-shikhar-mohan-on-india-test-radar-ws-l-10395193.html?comscorekw=jionews",
+      "title": "On The Fastest Track: How An Overlooked BCCI Rule Put Shikhar Mohan On India Test Radar",
+      "domain": "news18.com",
+      "timestamp": "2026-10-25T01:50:39.614807+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "MS Dhoni Breaks Silence On His IPL Future After Missing 2026 Season: 'I Will Need To...'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/ms-dhoni-breaks-silence-on-his-ipl-future-after-missing-2026-season-i-will-need-to-ws-l-10396480.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "Concerns a sports figure's retirement plans and personal statement, falling under the category of entertainment/sports trivia rather than a major news event."
+      },
+      "classified_at": "2026-10-25T01:50:35.947113+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
