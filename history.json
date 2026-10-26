@@ -1520,6 +1520,15 @@
       "published": true,
       "media_id": "17932450437419610",
       "timestamp": "2026-10-26T03:10:58.334715+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-building-collapse-body-recovered-2-feared-trapped-under-debris-in-harsh-vihar-2026-10-26-139675",
+      "title": "Delhi Building Collapse: Body Recovered, 2 Feared Trapped Under Debris In Harsh Vihar",
+      "headline": "Delhi Building Collapse: Body Recovered, 2 Feared Trapped",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17984324078906104",
+      "timestamp": "2026-10-26T03:41:53.688408+00:00"
     }
   ],
   "processed": [
@@ -1697,17 +1706,6 @@
         "reason": "A personal milestone regarding the end of a captaincy tenure in cricket, which is of interest to sports fans but lacks broad geopolitical or economic significance."
       },
       "classified_at": "2026-10-26T03:36:24.656860+00:00"
-    },
-    {
-      "title": "Delhi Building Collapse: Body Recovered, 2 Feared Trapped Under Debris In Harsh Vihar",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-building-collapse-body-recovered-2-feared-trapped-under-debris-in-harsh-vihar-2026-10-26-139675",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Disaster",
-        "reason": "A reported building collapse resulting in casualties, which is a matter of public safety and local consequence."
-      },
-      "classified_at": "2026-10-26T03:36:24.656881+00:00"
     },
     {
       "title": "Jamia Protest Over? Students Reject Withdrawal Notice, Say 'Demands Remain Unmet'",
