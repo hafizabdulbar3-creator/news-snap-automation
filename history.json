@@ -1664,6 +1664,15 @@
       "published": true,
       "media_id": "17998096965046202",
       "timestamp": "2026-10-26T10:33:04.924436+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/coordinated-inauthentic-behaviour-exposed-army-fact-checks-claims-of-chinese-vehicles-unauthorised-entry-into-india-2026-10-26-139701",
+      "title": "Army Debunks Fake Chinese Intrusion Claims, Exposes Disinformation Campaign",
+      "headline": "Army Debunks Fake Chinese Intrusion Claims",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18119779853083397",
+      "timestamp": "2026-10-26T11:00:02.115011+00:00"
     }
   ],
   "processed": [
@@ -1866,7 +1875,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Rs 500-Crore Jarange Patil Row: Sanjay Raut Seeks ED Probe, Writes To Amit Shah",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/rs-500-crore-jarange-patil-row-sanjay-raut-seeks-ed-probe-writes-to-amit-shah-ws-klrt-10398132.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National Politics",
+        "reason": "Concerns a domestic political dispute and legal request for an investigation into a regional issue."
+      },
+      "classified_at": "2026-10-26T10:59:33.750951+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
