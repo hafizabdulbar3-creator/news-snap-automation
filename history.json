@@ -1954,6 +1954,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/single-media-report-to-target-cec-eci-s-15-point-rebuttal-exposes-congress-cjp-campaign-in-sc-2026-10-26-139720",
+      "title": "'Single Media Report To Target CEC': ECI's 15-Point Rebuttal Exposes Congress-CJP Campaign In SC",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-26T16:15:50.472191+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [],
