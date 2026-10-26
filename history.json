@@ -1601,6 +1601,15 @@
       "published": true,
       "media_id": "18099141296449600",
       "timestamp": "2026-10-26T07:14:35.604908+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/mehbooba-invokes-accession-promises-alleges-erosion-of-rights-in-jk-2026-10-26-139690",
+      "title": "Mehbooba Invokes Accession Promises, Alleges Erosion of Rights in J&K",
+      "headline": "Mehbooba Invokes Accession Promises, Alleges Erosion of Rights in J&K",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18102939416372871",
+      "timestamp": "2026-10-26T07:41:02.925814+00:00"
     }
   ],
   "processed": [
@@ -1776,7 +1785,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "PM Modi Arrives at Inauguration of 12th BRICS Parliamentary Forum; Welcomes Foreign Delegations",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/pm-modi-arrives-at-inauguration-of-12th-brics-parliamentary-forum-welcomes-foreign-delegations-2026-10-26-139688",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "PM Modi attending a major international summit (BRICS Parliamentary Forum) with foreign delegations."
+      },
+      "classified_at": "2026-10-26T07:40:04.974176+00:00"
+    },
+    {
+      "title": "'I'm Unemployed': Employee Claims He Was Fired After Reporting 'Workplace Abuse' To HR, Shares Emails",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/im-unemployed-employee-claims-he-was-fired-after-reporting-workplace-abuse-to-hr-shares-emails-ws-l-10397614.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A workplace dispute involving an employee's termination and reporting of abuse."
+      },
+      "classified_at": "2026-10-26T07:40:04.974197+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
