@@ -1749,33 +1749,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cities/mumbai-news/poison-in-the-air-richa-chadhas-alarm-as-mumbais-aqi-beats-delhis-bmc-in-line-of-fire-ws-l-10395840.html?comscorekw=jionews",
-      "title": "'Poison In The Air': Richa Chadha's Alarm As Mumbai's AQI 'Beats' Delhi's, BMC In Line Of Fire",
-      "domain": "news18.com",
-      "timestamp": "2026-10-24T11:08:56.456441+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.republicworld.com/india/amit-shah-delhi-cm-rekha-gupta-visit-delhi-police-hq-to-discuss-law-and-order-situation-in-capital-2026-10-24-139572",
-      "title": "Amit Shah, Delhi CM Rekha Gupta Visit Delhi Police HQ to Discuss Law and Order Situation in Capital",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-24T14:20:48.411154+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/india/centre-extends-defence-secretary-rajesh-kumar-singhs-tenure-by-one-year-till-october-2027-ws-l-10396277.html?comscorekw=jionews",
-      "title": "Centre Extends Defence Secretary Rajesh Kumar Singh's Tenure By One Year Till October 2027",
-      "domain": "news18.com",
-      "timestamp": "2026-10-24T14:26:04.631084+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/social-justice-and-the-long-term-health-of-indias-market-2026-10-24-139579",
       "title": "Social Justice and the Long-Term Health of India's Market",
       "domain": "republicworld.com",
@@ -1945,6 +1918,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-israel-ties-won-t-change-even-for-slightest-by-election-outcome-israel-embassy-spokesperson-mishelle-sirota-2026-10-26-139714",
+      "title": "Israel-India Ties Unwavering Despite Election Outcome, Says Embassy Spokesperson",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-26T15:02:29.699710+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [
