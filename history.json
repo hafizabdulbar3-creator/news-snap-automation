@@ -1675,9 +1675,63 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/samajwadi-yadav-parivar-owaisi-launches-sharp-attack-on-akhilesh-questions-muslim-representation-ahead-of-up-polls-2026-10-26-139674",
+      "title": "Owaisi Slams Akhilesh: Calls SP 'Yadav Parivar,' Cites Muzaffarnagar Riots",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-26T03:36:36.408090+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'This Is The Reality': Harmanpreet Kaur Embraces Life After India Captaincy",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/this-is-the-reality-harmanpreet-kaur-embraces-life-after-india-captaincy-ws-klt-10397378.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A personal milestone regarding the end of a captaincy tenure in cricket, which is of interest to sports fans but lacks broad geopolitical or economic significance."
+      },
+      "classified_at": "2026-10-26T03:36:24.656860+00:00"
+    },
+    {
+      "title": "Delhi Building Collapse: Body Recovered, 2 Feared Trapped Under Debris In Harsh Vihar",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-building-collapse-body-recovered-2-feared-trapped-under-debris-in-harsh-vihar-2026-10-26-139675",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Disaster",
+        "reason": "A reported building collapse resulting in casualties, which is a matter of public safety and local consequence."
+      },
+      "classified_at": "2026-10-26T03:36:24.656881+00:00"
+    },
+    {
+      "title": "Jamia Protest Over? Students Reject Withdrawal Notice, Say 'Demands Remain Unmet'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/jamia-protest-over-students-reject-withdrawal-notice-say-demands-remain-unmet-ws-l-10397377.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Social Issues",
+        "reason": "A report on student protests regarding an institutional notice, representing a local social issue rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-26T03:36:24.656884+00:00"
+    },
+    {
+      "title": "Flight Cancelled? Here's What The GST Tribunal Ruling Means For Your Refund",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/flight-cancelled-heres-what-the-gst-tribunal-ruling-means-for-your-refund-ws-kl-10397321.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A report on a legal ruling affecting consumer refunds, which is a matter of economic policy and consumer rights."
+      },
+      "classified_at": "2026-10-26T03:36:24.656887+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
