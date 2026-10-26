@@ -1817,6 +1817,15 @@
       "published": true,
       "media_id": "17951711325315355",
       "timestamp": "2026-10-26T18:36:50.476040+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/agra-teachers-mlc-poll-row-eci-suspends-6-officers-for-lapses-orders-action-against-21-others-2026-10-26-139719",
+      "title": "Agra Teachers' MLC Poll Row: ECI Suspends 6 Officers For Lapses, Orders Action Against 21 Others",
+      "headline": "ECI Suspends 6 Officers Over Agra Teachers' MLC Poll Lapses",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17973370683155349",
+      "timestamp": "2026-10-26T19:03:46.670875+00:00"
     }
   ],
   "processed": [
@@ -2020,17 +2029,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Agra Teachers' MLC Poll Row: ECI Suspends 6 Officers For Lapses, Orders Action Against 21 Others",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/agra-teachers-mlc-poll-row-eci-suspends-6-officers-for-lapses-orders-action-against-21-others-2026-10-26-139719",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "The suspension of election officials for procedural lapses is a standard administrative response to a regional election dispute."
-      },
-      "classified_at": "2026-10-26T18:36:17.594277+00:00"
-    },
     {
       "title": "Maharashtra Govt To Assess Impact of Telangana Irrigation Project, Orders Joint Study",
       "domain": "news18.com",
