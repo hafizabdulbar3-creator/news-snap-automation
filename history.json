@@ -1574,6 +1574,15 @@
       "published": true,
       "media_id": "18128519032831726",
       "timestamp": "2026-10-26T05:51:43.677178+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/netanyahu-vs-eisenkot-trumps-endorsement-iran-threat-and-holocaust-warning-shake-israel-poll-battle-2026-10-26-139678",
+      "title": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
+      "headline": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18067624016789192",
+      "timestamp": "2026-10-26T06:17:27.413260+00:00"
     }
   ],
   "processed": [
@@ -1741,17 +1750,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/netanyahu-vs-eisenkot-trumps-endorsement-iran-threat-and-holocaust-warning-shake-israel-poll-battle-2026-10-26-139678",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The Israeli election battle involving Netanyahu, Eisenkot, and Trump's endorsement is a major geopolitical event with international implications."
-      },
-      "classified_at": "2026-10-26T05:25:29.667501+00:00"
-    },
     {
       "title": "PM Modi Extends Valmiki Jayanti Greetings, Hails Sage's Enduring Messages",
       "domain": "republicworld.com",
