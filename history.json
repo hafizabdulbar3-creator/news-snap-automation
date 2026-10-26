@@ -1808,6 +1808,15 @@
       "published": true,
       "media_id": "18136827421638993",
       "timestamp": "2026-10-26T18:10:37.359122+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/wanted-in-nearly-20-cases-punjab-gangster-amritpal-bath-held-in-canada-extradition-underway-ws-l-10398778.html?comscorekw=jionews",
+      "title": "Wanted In Nearly 20 Cases, Punjab Gangster Amritpal Bath Held In Canada; Extradition Underway",
+      "headline": "Wanted Gangster Amritpal Bath Held In Canada, Extradition Underway",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17951711325315355",
+      "timestamp": "2026-10-26T18:36:50.476040+00:00"
     }
   ],
   "processed": [
@@ -2010,7 +2019,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Agra Teachers' MLC Poll Row: ECI Suspends 6 Officers For Lapses, Orders Action Against 21 Others",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/agra-teachers-mlc-poll-row-eci-suspends-6-officers-for-lapses-orders-action-against-21-others-2026-10-26-139719",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "The suspension of election officials for procedural lapses is a standard administrative response to a regional election dispute."
+      },
+      "classified_at": "2026-10-26T18:36:17.594277+00:00"
+    },
+    {
+      "title": "Maharashtra Govt To Assess Impact of Telangana Irrigation Project, Orders Joint Study",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/maharashtra-govt-to-assess-impact-of-telangana-irrigation-project-orders-joint-study-ws-l-10398756.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "The government ordering a joint study on an irrigation project is a regional policy decision regarding infrastructure and resource management."
+      },
+      "classified_at": "2026-10-26T18:36:17.594281+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
