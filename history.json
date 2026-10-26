@@ -1700,6 +1700,15 @@
       "published": true,
       "media_id": "18099307376098224",
       "timestamp": "2026-10-26T12:18:47.440652+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/to-make-ai-morally-good-tech-companies-are-turning-to-religion-but-some-say-it-isnt-that-simple-2026-10-26-139706",
+      "title": "To Make AI Morally Good, Tech Companies Are Turning to Religion. But Some Say It Isn't That Simple",
+      "headline": "Tech Giants Turn to Religion to Make AI Morally Good",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17914361298550187",
+      "timestamp": "2026-10-26T12:44:29.698470+00:00"
     }
   ],
   "processed": [
@@ -1903,17 +1912,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "To Make AI Morally Good, Tech Companies Are Turning to Religion. But Some Say It Isn't That Simple",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/to-make-ai-morally-good-tech-companies-are-turning-to-religion-but-some-say-it-isnt-that-simple-2026-10-26-139706",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A cultural and ethical discussion regarding the application of religious concepts to AI development, which is a notable public interest topic but not a major geopolitical event."
-      },
-      "classified_at": "2026-10-26T12:18:18.423145+00:00"
-    },
     {
       "title": "Three Dead in Firing Incident in Lucknow, Accused Arrested",
       "domain": "republicworld.com",
