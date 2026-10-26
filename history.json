@@ -1639,6 +1639,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/netanyahu-idf-chief-face-off-over-possible-iran-strike-ahead-of-crucial-israel-election-report-2026-10-26-139669",
+      "title": "Netanyahu- IDF Chief Face-Off Over Possible Iran Strike Ahead Of Crucial Israel Election: Report",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-26T01:47:51.748329+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
