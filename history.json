@@ -1630,6 +1630,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/we-have-a-great-bench-trump-names-jd-vance-marco-rubio-as-potential-2028-presidential-contenders-takes-dig-at-democrats-2026-10-26-139668",
+      "title": "Trump Touts Vance, Rubio for 2028 Presidential Race, Criticizes Democrats",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-26T01:31:53.187672+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
