@@ -1538,6 +1538,15 @@
       "published": true,
       "media_id": "17951669940276961",
       "timestamp": "2026-10-26T04:07:51.598780+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/jamia-protest-over-students-reject-withdrawal-notice-say-demands-remain-unmet-ws-l-10397377.html?comscorekw=jionews",
+      "title": "Jamia Protest Over? Students Reject Withdrawal Notice, Say 'Demands Remain Unmet'",
+      "headline": "Jamia Protest Over? Students Reject Withdrawal Notice, Say Demands Remain Unmet",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17914261827515170",
+      "timestamp": "2026-10-26T04:34:04.528797+00:00"
     }
   ],
   "processed": [
@@ -1705,17 +1714,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Jamia Protest Over? Students Reject Withdrawal Notice, Say 'Demands Remain Unmet'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/jamia-protest-over-students-reject-withdrawal-notice-say-demands-remain-unmet-ws-l-10397377.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Social Issues",
-        "reason": "A report on student protests regarding an institutional notice, representing a local social issue rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-26T03:36:24.656884+00:00"
-    },
     {
       "title": "Flight Cancelled? Here's What The GST Tribunal Ruling Means For Your Refund",
       "domain": "news18.com",
