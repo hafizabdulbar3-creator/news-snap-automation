@@ -1565,6 +1565,15 @@
       "published": true,
       "media_id": "18111502019213351",
       "timestamp": "2026-10-26T05:25:56.514402+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/guilty-of-ballot-harvesting-republican-senator-takes-aim-at-california-as-trump-threatens-jail-time-ws-lrt-10397400.html?comscorekw=jionews",
+      "title": "'Guilty Of Ballot Harvesting': Republican Senator Takes Aim At California As Trump Threatens Jail Time",
+      "headline": "Republican Senator Accuses California Of Ballot Harvesting",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18128519032831726",
+      "timestamp": "2026-10-26T05:51:43.677178+00:00"
     }
   ],
   "processed": [
@@ -1742,17 +1751,6 @@
         "reason": "The Israeli election battle involving Netanyahu, Eisenkot, and Trump's endorsement is a major geopolitical event with international implications."
       },
       "classified_at": "2026-10-26T05:25:29.667501+00:00"
-    },
-    {
-      "title": "'Guilty Of Ballot Harvesting': Republican Senator Takes Aim At California As Trump Threatens Jail Time",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/guilty-of-ballot-harvesting-republican-senator-takes-aim-at-california-as-trump-threatens-jail-time-ws-lrt-10397400.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The article covers a major national election in the United States, involving high-profile figures like Trump and a Republican senator."
-      },
-      "classified_at": "2026-10-26T05:25:29.667506+00:00"
     },
     {
       "title": "PM Modi Extends Valmiki Jayanti Greetings, Hails Sage's Enduring Messages",
