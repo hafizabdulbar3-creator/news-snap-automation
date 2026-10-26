@@ -1556,6 +1556,15 @@
       "published": true,
       "media_id": "17895832404683164",
       "timestamp": "2026-10-26T04:59:43.211382+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/12th-brics-parliamentary-forum-21-nation-delegations-arrive-in-delhi-pm-modi-to-meet-speakers-2026-10-26-139679",
+      "title": "12th BRICS Parliamentary Forum: 21-Nation Delegations Arrive In Delhi, PM Modi To Meet Speakers",
+      "headline": "21 Nations Arrive In Delhi For 12th BRICS Parliamentary Forum",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18111502019213351",
+      "timestamp": "2026-10-26T05:25:56.514402+00:00"
     }
   ],
   "processed": [
@@ -1722,7 +1731,63 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/netanyahu-vs-eisenkot-trumps-endorsement-iran-threat-and-holocaust-warning-shake-israel-poll-battle-2026-10-26-139678",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The Israeli election battle involving Netanyahu, Eisenkot, and Trump's endorsement is a major geopolitical event with international implications."
+      },
+      "classified_at": "2026-10-26T05:25:29.667501+00:00"
+    },
+    {
+      "title": "'Guilty Of Ballot Harvesting': Republican Senator Takes Aim At California As Trump Threatens Jail Time",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/guilty-of-ballot-harvesting-republican-senator-takes-aim-at-california-as-trump-threatens-jail-time-ws-lrt-10397400.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The article covers a major national election in the United States, involving high-profile figures like Trump and a Republican senator."
+      },
+      "classified_at": "2026-10-26T05:25:29.667506+00:00"
+    },
+    {
+      "title": "PM Modi Extends Valmiki Jayanti Greetings, Hails Sage's Enduring Messages",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/his-messages-for-humanity-will-forever-serve-as-guiding-lights-pm-modi-extends-greetings-on-valmiki-jayanti-2026-10-26-139680",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "While a greeting from a national leader, this is a routine ceremonial gesture rather than a major geopolitical event or policy shift."
+      },
+      "classified_at": "2026-10-26T05:25:29.667509+00:00"
+    },
+    {
+      "title": "Serbia's 'Youthquake': Student Movement Shakes Vucic's 12-Year Grip On Power In High-Turnout Poll",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/serbias-youthquake-student-movement-shakes-vucics-12-year-grip-on-power-in-high-turnout-poll-ws-l-10397476.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A significant political shift in Serbia, where a student movement has challenged the long-standing grip of the ruling party in a high-turnout poll."
+      },
+      "classified_at": "2026-10-26T05:25:29.667512+00:00"
+    },
+    {
+      "title": "'Poisonous Hate, Uncultured Politics': BJP Demands Apology From Kharge Over PM Modi Remark",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/poisonous-hate-uncultured-politics-bjp-demands-apology-from-kharge-over-pm-modi-remark-ws-kl-10397434.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "This involves a political dispute and demand for an apology between party leaders, which is a standard aspect of domestic political reporting."
+      },
+      "classified_at": "2026-10-26T05:25:29.667515+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
