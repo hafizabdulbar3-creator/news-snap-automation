@@ -1547,6 +1547,15 @@
       "published": true,
       "media_id": "17914261827515170",
       "timestamp": "2026-10-26T04:34:04.528797+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/flight-cancelled-heres-what-the-gst-tribunal-ruling-means-for-your-refund-ws-kl-10397321.html?comscorekw=jionews",
+      "title": "Flight Cancelled? Here's What The GST Tribunal Ruling Means For Your Refund",
+      "headline": "GST Tribunal Ruling: What It Means For Your Flight Refund",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17895832404683164",
+      "timestamp": "2026-10-26T04:59:43.211382+00:00"
     }
   ],
   "processed": [
@@ -1713,19 +1722,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Flight Cancelled? Here's What The GST Tribunal Ruling Means For Your Refund",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/flight-cancelled-heres-what-the-gst-tribunal-ruling-means-for-your-refund-ws-kl-10397321.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "A report on a legal ruling affecting consumer refunds, which is a matter of economic policy and consumer rights."
-      },
-      "classified_at": "2026-10-26T03:36:24.656887+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
