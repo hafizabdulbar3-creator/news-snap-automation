@@ -1529,6 +1529,15 @@
       "published": true,
       "media_id": "17984324078906104",
       "timestamp": "2026-10-26T03:41:53.688408+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cricket/this-is-the-reality-harmanpreet-kaur-embraces-life-after-india-captaincy-ws-klt-10397378.html?comscorekw=jionews",
+      "title": "'This Is The Reality': Harmanpreet Kaur Embraces Life After India Captaincy",
+      "headline": "Harmanpreet Kaur Embraces Life After India Captaincy",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17951669940276961",
+      "timestamp": "2026-10-26T04:07:51.598780+00:00"
     }
   ],
   "processed": [
@@ -1696,17 +1705,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'This Is The Reality': Harmanpreet Kaur Embraces Life After India Captaincy",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cricket/this-is-the-reality-harmanpreet-kaur-embraces-life-after-india-captaincy-ws-klt-10397378.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A personal milestone regarding the end of a captaincy tenure in cricket, which is of interest to sports fans but lacks broad geopolitical or economic significance."
-      },
-      "classified_at": "2026-10-26T03:36:24.656860+00:00"
-    },
     {
       "title": "Jamia Protest Over? Students Reject Withdrawal Notice, Say 'Demands Remain Unmet'",
       "domain": "news18.com",
