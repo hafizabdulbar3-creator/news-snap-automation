@@ -1837,6 +1837,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/pratap-trailer-amit-sadh-esha-deol-lead-intense-action-drama-about-a-cop-who-lands-behind-bars-ws-kl-10398035.html?comscorekw=jionews",
+      "title": "Pratap Trailer: Amit Sadh, Esha Deol Lead Intense Action Drama About A Cop Who Lands Behind Bars",
+      "domain": "news18.com",
+      "timestamp": "2026-10-26T10:00:43.549720+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
