@@ -1828,6 +1828,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/movies/telugu-cinema/rashmika-mandanna-slams-trolls-targeting-vijay-deverakonda-says-thats-not-feminism-thats-bullying-ws-l-10398022.html?comscorekw=jionews",
+      "title": "Rashmika Mandanna Slams Trolls Targeting Vijay Deverakonda, Says 'That's Not Feminism, That's Bullying'",
+      "domain": "news18.com",
+      "timestamp": "2026-10-26T09:55:33.964414+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
