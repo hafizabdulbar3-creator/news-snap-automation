@@ -1792,6 +1792,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/ramayanas-mangal-rang-scene-goes-viral-internet-debates-whether-its-haldi-or-chumawan-ws-kl-10397844.html?comscorekw=jionews",
+      "title": "Ramayana's Mangal Rang Scene Goes Viral; Internet Debates Whether It's Haldi Or Chumawan",
+      "domain": "news18.com",
+      "timestamp": "2026-10-26T08:32:13.828339+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
