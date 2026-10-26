@@ -1772,6 +1772,15 @@
       "published": true,
       "media_id": "17913855675542247",
       "timestamp": "2026-10-26T16:26:53.656378+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/sennheiser-momentum-5-wireless-review-excellent-sound-immersive-audio-and-battery-life-that-keeps-going-2026-10-26-139722",
+      "title": "Sennheiser Momentum 5 Wireless: Premium Headphones Deliver Excellent Sound, Long Battery Life",
+      "headline": "Sennheiser Momentum 5 Wireless Review: Premium Sound and Long Battery Life",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17904200661600498",
+      "timestamp": "2026-10-26T16:52:41.824367+00:00"
     }
   ],
   "processed": [
@@ -1974,7 +1983,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "ECI Rebuts Allegations: Form 6 Unchanged, No Deletion Without ERO Order",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/form-6-not-amended-no-deletion-without-ero-order-cec-can-t-be-restrained-ec-s-15-point-reply-in-sc-heres-the-full-breakdown-2026-10-26-139721",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A statement from a national election authority regarding administrative procedures, which is a standard public interest update."
+      },
+      "classified_at": "2026-10-26T16:52:16.656471+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
