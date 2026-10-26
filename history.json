@@ -1756,20 +1756,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/india/his-messages-for-humanity-will-forever-serve-as-guiding-lights-pm-modi-extends-greetings-on-valmiki-jayanti-2026-10-26-139680",
+      "title": "PM Modi Extends Valmiki Jayanti Greetings, Hails Sage's Enduring Messages",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-26T07:09:46.015401+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "PM Modi Extends Valmiki Jayanti Greetings, Hails Sage's Enduring Messages",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/his-messages-for-humanity-will-forever-serve-as-guiding-lights-pm-modi-extends-greetings-on-valmiki-jayanti-2026-10-26-139680",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "While a greeting from a national leader, this is a routine ceremonial gesture rather than a major geopolitical event or policy shift."
-      },
-      "classified_at": "2026-10-26T05:25:29.667509+00:00"
-    },
     {
       "title": "'Poisonous Hate, Uncultured Politics': BJP Demands Apology From Kharge Over PM Modi Remark",
       "domain": "news18.com",
