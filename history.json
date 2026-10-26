@@ -1844,11 +1844,11 @@
   "token_metadata": {
     "token_type": "bearer",
     "expires_in": 5184000,
-    "refreshed_at": "2026-10-25T08:41:22.467449+00:00",
-    "expires_at": "2026-12-24T08:41:22.467449+00:00",
+    "refreshed_at": "2026-10-26T09:18:57.556597+00:00",
+    "expires_at": "2026-12-25T09:18:57.556597+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-10-25T08:41:23.906963+00:00"
+    "updated_at": "2026-10-26T09:18:59.034761+00:00"
   }
 }
