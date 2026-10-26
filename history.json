@@ -1727,6 +1727,15 @@
       "published": true,
       "media_id": "17992232534859302",
       "timestamp": "2026-10-26T13:36:55.801509+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bulgarian-national-dies-in-paragliding-mishap-in-dharamshala-british-companion-rescued-by-sdrf-2026-10-26-139712",
+      "title": "Bulgarian National Dies in Paragliding Mishap in Dharamshala; British Companion Rescued By SDRF",
+      "headline": "Bulgarian National Dies in Dharamshala Paragliding Accident",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18065332910716541",
+      "timestamp": "2026-10-26T14:02:39.374627+00:00"
     }
   ],
   "processed": [
@@ -1930,17 +1939,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Bulgarian National Dies in Paragliding Mishap in Dharamshala; British Companion Rescued By SDRF",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bulgarian-national-dies-in-paragliding-mishap-in-dharamshala-british-companion-rescued-by-sdrf-2026-10-26-139712",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A localized accident involving a foreign national in India; while tragic, it lacks broad international geopolitical significance."
-      },
-      "classified_at": "2026-10-26T13:36:28.587969+00:00"
-    },
     {
       "title": "BRICS Forum: Modi, Jaishankar Engage Iranian MPs, Emphasize Bilateral Relations",
       "domain": "republicworld.com",
