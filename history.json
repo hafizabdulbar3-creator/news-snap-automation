@@ -1880,6 +1880,15 @@
       "published": true,
       "media_id": "18129800293843196",
       "timestamp": "2026-10-26T23:14:38.287329+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/trump-calls-brazil-election-rigged-and-terrible-look-after-lula-defeats-flavio-bolsonaro-in-run-off-2026-10-26-139734",
+      "title": "Trump Calls Brazil Election 'Rigged' And 'Terrible Look' After Lula Defeats Flavio Bolsonaro In Run-Off",
+      "headline": "Trump Calls Brazil Election 'Rigged' After Lula Defeats Bolsonaro",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17908341615665332",
+      "timestamp": "2026-10-26T23:45:31.056139+00:00"
     }
   ],
   "processed": [
@@ -2082,7 +2091,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "ATROS Water and the Mystery of the Changing Tap: Why One Purifier May Not Suit Every Home",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/atros-water-and-the-mystery-of-the-changing-tap-why-one-purifier-may-not-suit-every-home-2026-10-26-139735",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A product review or consumer advice article regarding a specific water purifier, which falls under general consumer interest."
+      },
+      "classified_at": "2026-10-26T23:44:54.003568+00:00"
+    },
+    {
+      "title": "Formalin Truck Overturns, Gas Leak Prompts CM's High Alert.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/lucknow-gas-leak-scare-formalin-truck-overturns-on-kisan-path-after-tyre-burst-cm-yogi-adityanath-orders-full-alertness-2026-10-26-139731",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Disaster",
+        "reason": "A chemical leak incident involving a formalin truck that has prompted a high alert from the Chief Minister, indicating a significant safety and public health emergency."
+      },
+      "classified_at": "2026-10-26T23:44:54.003572+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
