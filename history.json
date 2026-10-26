@@ -1583,6 +1583,15 @@
       "published": true,
       "media_id": "18067624016789192",
       "timestamp": "2026-10-26T06:17:27.413260+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/serbias-youthquake-student-movement-shakes-vucics-12-year-grip-on-power-in-high-turnout-poll-ws-l-10397476.html?comscorekw=jionews",
+      "title": "Serbia's 'Youthquake': Student Movement Shakes Vucic's 12-Year Grip On Power In High-Turnout Poll",
+      "headline": "Serbia's Student Movement Challenges Vucic's 12-Year Grip",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18130597718506075",
+      "timestamp": "2026-10-26T06:43:18.760436+00:00"
     }
   ],
   "processed": [
@@ -1760,17 +1769,6 @@
         "reason": "While a greeting from a national leader, this is a routine ceremonial gesture rather than a major geopolitical event or policy shift."
       },
       "classified_at": "2026-10-26T05:25:29.667509+00:00"
-    },
-    {
-      "title": "Serbia's 'Youthquake': Student Movement Shakes Vucic's 12-Year Grip On Power In High-Turnout Poll",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/serbias-youthquake-student-movement-shakes-vucics-12-year-grip-on-power-in-high-turnout-poll-ws-l-10397476.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A significant political shift in Serbia, where a student movement has challenged the long-standing grip of the ruling party in a high-turnout poll."
-      },
-      "classified_at": "2026-10-26T05:25:29.667512+00:00"
     },
     {
       "title": "'Poisonous Hate, Uncultured Politics': BJP Demands Apology From Kharge Over PM Modi Remark",
