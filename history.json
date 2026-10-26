@@ -1718,6 +1718,15 @@
       "published": true,
       "media_id": "18113211752169097",
       "timestamp": "2026-10-26T13:10:41.146377+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/pm-modi-wants-gurugram-metro-fast-tracked-1662-crore-phase-2-tender-floated-ws-klrt-10398432.html?comscorekw=jionews",
+      "title": "PM Modi Wants Gurugram Metro Fast-Tracked, ₹1,662-Crore Phase 2 Tender Floated",
+      "headline": "PM Modi Pushes for Fast-Track Gurugram Metro Phase 2",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17992232534859302",
+      "timestamp": "2026-10-26T13:36:55.801509+00:00"
     }
   ],
   "processed": [
@@ -1920,7 +1929,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Bulgarian National Dies in Paragliding Mishap in Dharamshala; British Companion Rescued By SDRF",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bulgarian-national-dies-in-paragliding-mishap-in-dharamshala-british-companion-rescued-by-sdrf-2026-10-26-139712",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A localized accident involving a foreign national in India; while tragic, it lacks broad international geopolitical significance."
+      },
+      "classified_at": "2026-10-26T13:36:28.587969+00:00"
+    },
+    {
+      "title": "BRICS Forum: Modi, Jaishankar Engage Iranian MPs, Emphasize Bilateral Relations",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/pm-modi-jaishankar-hold-courtesy-calls-with-iranian-parliamentary-representatives-at-brics-parliamentary-forum-2026-10-26-139711",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A diplomatic engagement involving a BRICS forum; while significant for bilateral relations, it is a standard diplomatic activity rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-26T13:36:28.587986+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
