@@ -1610,6 +1610,15 @@
       "published": true,
       "media_id": "18102939416372871",
       "timestamp": "2026-10-26T07:41:02.925814+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/im-unemployed-employee-claims-he-was-fired-after-reporting-workplace-abuse-to-hr-shares-emails-ws-l-10397614.html?comscorekw=jionews",
+      "title": "'I'm Unemployed': Employee Claims He Was Fired After Reporting 'Workplace Abuse' To HR, Shares Emails",
+      "headline": "Employee Claims Fired After Reporting Workplace Abuse to HR",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18096861530408372",
+      "timestamp": "2026-10-26T08:06:28.183981+00:00"
     }
   ],
   "processed": [
@@ -1796,17 +1805,6 @@
         "reason": "PM Modi attending a major international summit (BRICS Parliamentary Forum) with foreign delegations."
       },
       "classified_at": "2026-10-26T07:40:04.974176+00:00"
-    },
-    {
-      "title": "'I'm Unemployed': Employee Claims He Was Fired After Reporting 'Workplace Abuse' To HR, Shares Emails",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/im-unemployed-employee-claims-he-was-fired-after-reporting-workplace-abuse-to-hr-shares-emails-ws-l-10397614.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A workplace dispute involving an employee's termination and reporting of abuse."
-      },
-      "classified_at": "2026-10-26T07:40:04.974197+00:00"
     }
   ],
   "quota_cooldown": {
