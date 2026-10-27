@@ -1916,6 +1916,15 @@
       "published": true,
       "media_id": "18284915521288720",
       "timestamp": "2026-10-27T01:03:34.505097+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/trump-offers-1-million-bounty-for-voter-fraud-proof-leading-to-arrest-and-conviction-before-midterms-2026-10-26-139738",
+      "title": "Trump Offers $1 Million Bounty For Voter Fraud Proof Leading To Arrest And Conviction Before Midterms",
+      "headline": "Trump Offers $1 Million Bounty For Voter Fraud Proof",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18098668778415648",
+      "timestamp": "2026-10-27T01:34:21.236145+00:00"
     }
   ],
   "processed": [
@@ -2118,19 +2127,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Trump Offers $1 Million Bounty For Voter Fraud Proof Leading To Arrest And Conviction Before Midterms",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/trump-offers-1-million-bounty-for-voter-fraud-proof-leading-to-arrest-and-conviction-before-midterms-2026-10-26-139738",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political offer regarding election integrity, though controversial, is a standard political news item."
-      },
-      "classified_at": "2026-10-27T01:02:39.383654+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
