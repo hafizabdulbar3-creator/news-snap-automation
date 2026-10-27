@@ -2060,6 +2060,15 @@
       "published": true,
       "media_id": "18649792165051974",
       "timestamp": "2026-10-27T08:18:54.525462+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/congress-says-gyanesh-kumar-impeachment-setup-blocked-at-ramlila-maidan-delhi-police-fact-checks-claim-ws-l-10399555.html?comscorekw=jionews",
+      "title": "Congress Says 'Gyanesh Kumar Impeachment' Setup Blocked At Ramlila Maidan, Delhi Police Fact-Checks Claim",
+      "headline": "Congress Claims Impeachment Setup Blocked At Ramlila Maidan",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18108931217251586",
+      "timestamp": "2026-10-27T08:45:05.303575+00:00"
     }
   ],
   "processed": [
@@ -2262,7 +2271,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha As Congress Leaders Barred From Entry",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/aap-congress-clash-erupts-at-punjab-vidhan-sabha-as-congress-leaders-barred-from-entry-2026-10-27-139766",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political clash between the AAP and Congress parties in the Punjab Vidhan Sabha is a regional legislative dispute."
+      },
+      "classified_at": "2026-10-27T08:44:41.283914+00:00"
+    },
+    {
+      "title": "UP CEO Apologises Over Bizarre 'Thank God Ram Didn't Kill Any Minority' Post, Vows Formal Communication",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/up-ceo-apologises-over-bizarre-thank-god-ram-didn-t-kill-any-minority-post-vows-formal-communication-2026-10-27-139764",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "An official's apology regarding a controversial social media post is a minor administrative incident and local public interest story."
+      },
+      "classified_at": "2026-10-27T08:44:41.283919+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
