@@ -2087,6 +2087,15 @@
       "published": true,
       "media_id": "18110191286212758",
       "timestamp": "2026-10-27T09:36:57.607981+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/global/rigged-and-corrupt-trump-blasts-brazil-election-as-flavio-bolsonaro-moves-to-overturn-lula-s-win-2026-10-27-139773",
+      "title": "'RIGGED AND CORRUPT': Trump Blasts Brazil Election As Flávio Bolsonaro Moves To Overturn Lula's Win",
+      "headline": "Trump Calls Brazil Election 'RIGGED' As Bolsonaro Seeks Overturn",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17969993789962887",
+      "timestamp": "2026-10-27T10:03:37.607217+00:00"
     }
   ],
   "processed": [
@@ -2289,7 +2298,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Supreme Court Seeks Rahul Gandhi's Response Over Alleged Push To Pregnant Journalist",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/supreme-court-seeks-rahul-gandhi-s-response-over-alleged-push-to-pregnant-journalist-2026-10-27-139775",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A significant legal proceeding involving a national political figure, indicating public interest and judicial oversight."
+      },
+      "classified_at": "2026-10-27T10:02:36.502106+00:00"
+    },
+    {
+      "title": "From Festive Lights To Flight Nights: Gen Z Is Turning Diwali Into A Holiday With These Indian Getaways",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/travel/from-festive-lights-to-flight-nights-gen-z-is-turning-diwali-into-a-holiday-with-these-indian-getaways-ws-l-10399621.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "A regional trend regarding holiday travel and consumer behavior, falling under public interest rather than geopolitical consequence."
+      },
+      "classified_at": "2026-10-27T10:02:36.502112+00:00"
+    },
+    {
+      "title": "India Break World Record For Fastest Team 100 In T20Is",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/india-break-world-record-for-fastest-team-100-in-t20is-ws-l-10399340.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A specific sports achievement within a niche category (T20Is), which is of limited international consequence."
+      },
+      "classified_at": "2026-10-27T10:02:36.502117+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
