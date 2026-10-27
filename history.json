@@ -2078,6 +2078,15 @@
       "published": true,
       "media_id": "17873655636649277",
       "timestamp": "2026-10-27T09:10:54.913573+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/up-ceo-apologises-over-bizarre-thank-god-ram-didn-t-kill-any-minority-post-vows-formal-communication-2026-10-27-139764",
+      "title": "UP CEO Apologises Over Bizarre 'Thank God Ram Didn't Kill Any Minority' Post, Vows Formal Communication",
+      "headline": "UP CEO Apologises Over 'Thank God Ram Didn't Kill Any Minority' Post",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18110191286212758",
+      "timestamp": "2026-10-27T09:36:57.607981+00:00"
     }
   ],
   "processed": [
@@ -2280,19 +2289,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "UP CEO Apologises Over Bizarre 'Thank God Ram Didn't Kill Any Minority' Post, Vows Formal Communication",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/up-ceo-apologises-over-bizarre-thank-god-ram-didn-t-kill-any-minority-post-vows-formal-communication-2026-10-27-139764",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "An official's apology regarding a controversial social media post is a minor administrative incident and local public interest story."
-      },
-      "classified_at": "2026-10-27T08:44:41.283919+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
