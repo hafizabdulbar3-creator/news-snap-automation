@@ -2163,24 +2163,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cities/bengaluru-news/kannadigas-first-karnataka-cm-dk-shivakumar-warns-of-action-against-firms-denying-jobs-to-sons-of-soil-ws-klrt-10397002.html?comscorekw=jionews",
-      "title": "'Kannadigas First': Karnataka CM DK Shivakumar Issues Stern Warning To Firms Denying Jobs To Sons Of Soil",
-      "domain": "news18.com",
-      "timestamp": "2026-10-25T12:44:08.030003+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/world/no-low-he-wont-sink-to-obama-tears-into-ramaswamy-over-ad-exploiting-rivals-childhood-sexual-abuse-ws-lrt-10397026.html?comscorekw=jionews",
-      "title": "'No Low He Won't Sink To': Obama Tears Into Ramaswamy Over Ad Exploiting Rival's Childhood Sexual Abuse",
-      "domain": "news18.com",
-      "timestamp": "2026-10-25T12:49:45.784680+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Headline appears clipped/incomplete (ends with trailing connector 'To')."
-    },
-    {
       "url": "https://www.republicworld.com/india/house-collapses-in-delhis-harsh-vihar-area-rescue-operation-underway-2026-10-25-139648",
       "title": "House Collapses In Delhi's Harsh Vihar Area, Rescue Operation Underway",
       "domain": "republicworld.com",
@@ -2323,6 +2305,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/tech/whatsapp-and-telegram-may-require-an-active-sim-from-january-1-2027-under-indias-new-rules-ws-l-10400024.html?comscorekw=jionews",
+      "title": "WhatsApp and Telegram May Require an Active SIM From January 1, 2027 Under India's New Rules",
+      "domain": "news18.com",
+      "timestamp": "2026-10-27T14:49:48.621403+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [
@@ -2336,17 +2327,6 @@
         "reason": "A government conclave focused on science and innovation; relevant to policy and development but not a major geopolitical event."
       },
       "classified_at": "2026-10-27T13:20:22.123223+00:00"
-    },
-    {
-      "title": "WhatsApp and Telegram May Require an Active SIM From January 1, 2027 Under India's New Rules",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/tech/whatsapp-and-telegram-may-require-an-active-sim-from-january-1-2027-under-indias-new-rules-ws-l-10400024.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "Updates to communication regulations and platform policies have significant implications for users and the tech sector."
-      },
-      "classified_at": "2026-10-27T13:20:22.123226+00:00"
     },
     {
       "title": "Voter Roll Shock: 99 Lakh Names Removed in Karnataka; EC Explains How to Re-apply",
