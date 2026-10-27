@@ -2276,6 +2276,15 @@
       "published": true,
       "media_id": "18007715369789412",
       "timestamp": "2026-10-27T20:40:04.011885+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/north-24-parganas-encounter-rape-murder-accused-snatched-revolver-fired-at-police-near-bangladesh-border-shot-dead-2026-10-27-139801",
+      "title": "Accused Rapist-Murderer Shot Dead in Dramatic Police Encounter Near Border",
+      "headline": "Accused Rapist-Murderer Killed in Police Encounter Near Border",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18038570180656373",
+      "timestamp": "2026-10-27T21:05:52.488381+00:00"
     }
   ],
   "processed": [
@@ -2442,7 +2451,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "13 Of 17 Theni Jail Escapees Arrested After Drone Surveillance, 9 Prison Officials Suspended: DGP Rathore",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/13-of-17-theni-jail-escapees-arrested-after-drone-surveillance-9-prison-officials-suspended-dgp-rathore-2026-10-27-139800",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "The arrest of jail escapees and suspension of officials is a regional law enforcement matter of public interest, though not a major geopolitical event."
+      },
+      "classified_at": "2026-10-27T21:05:26.258461+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
