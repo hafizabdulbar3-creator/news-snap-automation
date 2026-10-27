@@ -2033,6 +2033,15 @@
       "published": true,
       "media_id": "18009123632989800",
       "timestamp": "2026-10-27T07:01:26.260000+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/pm-modi-holds-talks-with-liechtensteins-prince-alois-as-both-sides-look-to-boost-trade-ties-2026-10-27-139756",
+      "title": "PM Modi Holds Talks With Liechtenstein's Prince Alois As Both Sides Look To Boost Trade Ties",
+      "headline": "PM Modi Holds Talks With Liechtenstein's Prince Alois",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18411625909093958",
+      "timestamp": "2026-10-27T07:27:19.475412+00:00"
     }
   ],
   "processed": [
@@ -2235,7 +2244,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Mumbai's 'Tower of Corruption' Redeveloped: Celebs, Gangsters, and a New Skyscraper",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/mumbai-news/mumbais-tower-of-corruption-set-for-redevelopment-where-is-it-how-is-it-linked-to-lata-mangeshkar-asha-bhosle-ws-klrt-10399334.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "A redevelopment story involving local celebrities and gangsters is a notable regional development but lacks broad international consequence."
+      },
+      "classified_at": "2026-10-27T07:26:51.546160+00:00"
+    },
+    {
+      "title": "Five Dead Due To Hotel Lease Dispute In A Shootout In Guwahati | Assam",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/five-dead-due-to-hotel-lease-dispute-in-a-shootout-in-guwahati-assam-2026-10-27-139759",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A shooting resulting in five deaths is a tragic event, but it is classified as a local dispute rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-27T07:26:51.546164+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
