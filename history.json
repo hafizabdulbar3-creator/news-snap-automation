@@ -2006,6 +2006,15 @@
       "published": true,
       "media_id": "18079429970740893",
       "timestamp": "2026-10-27T05:43:18.937530+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/tiger-shroff-firing-was-to-extort-money-assert-lawrence-bishnoi-gangs-power-crime-branch-sources-ws-l-10399037.html?comscorekw=jionews",
+      "title": "Tiger Shroff Firing Was To Extort Money, Assert Lawrence Bishnoi Gang's Power: Crime Branch Sources",
+      "headline": "Tiger Shroff Firing Was To Extort Money, Assert Gang's Power: Crime Branch",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18128599609880957",
+      "timestamp": "2026-10-27T06:09:24.805034+00:00"
     }
   ],
   "processed": [
@@ -2219,17 +2228,6 @@
         "reason": "Involves potential major political shifts in Israel, including coalition talks and US diplomatic intervention."
       },
       "classified_at": "2026-10-27T04:51:12.586042+00:00"
-    },
-    {
-      "title": "Tiger Shroff Firing Was To Extort Money, Assert Lawrence Bishnoi Gang's Power: Crime Branch Sources",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/tiger-shroff-firing-was-to-extort-money-assert-lawrence-bishnoi-gangs-power-crime-branch-sources-ws-l-10399037.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime & Justice",
-        "reason": "A crime report regarding a specific incident and gang dynamics, lacking broad geopolitical consequence."
-      },
-      "classified_at": "2026-10-27T04:51:12.586066+00:00"
     },
     {
       "title": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days, But There's A Catch",
