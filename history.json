@@ -2024,6 +2024,15 @@
       "published": true,
       "media_id": "17982064328914353",
       "timestamp": "2026-10-27T06:35:13.650186+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-airport-route-gets-relief-old-rtr-flyover-reopens-after-6-days-but-theres-a-catch-ws-l-10398943.html?comscorekw=jionews",
+      "title": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days, But There's A Catch",
+      "headline": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18009123632989800",
+      "timestamp": "2026-10-27T07:01:26.260000+00:00"
     }
   ],
   "processed": [
@@ -2226,19 +2235,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days, But There's A Catch",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-airport-route-gets-relief-old-rtr-flyover-reopens-after-6-days-but-theres-a-catch-ws-l-10398943.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A localized infrastructure update regarding road closures and reopenings at an airport."
-      },
-      "classified_at": "2026-10-27T04:51:12.586069+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
