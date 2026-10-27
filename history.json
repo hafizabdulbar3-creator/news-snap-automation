@@ -1988,6 +1988,15 @@
       "published": true,
       "media_id": "18110854361266657",
       "timestamp": "2026-10-27T04:51:34.020262+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/bengaluru-news/how-a-refund-request-for-leaking-curd-packet-cost-bengaluru-woman-rs-98000-ws-l-10399041.html?comscorekw=jionews",
+      "title": "How A Refund Request For Leaking Curd Packet Cost Bengaluru Woman Rs 98,000",
+      "headline": "Bengaluru Woman Loses Rs 98,000 After Refund Request For Leaking Curd",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18399166243163311",
+      "timestamp": "2026-10-27T05:17:34.177057+00:00"
     }
   ],
   "processed": [
@@ -2201,17 +2210,6 @@
         "reason": "Involves potential major political shifts in Israel, including coalition talks and US diplomatic intervention."
       },
       "classified_at": "2026-10-27T04:51:12.586042+00:00"
-    },
-    {
-      "title": "How A Refund Request For Leaking Curd Packet Cost Bengaluru Woman Rs 98,000",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/bengaluru-news/how-a-refund-request-for-leaking-curd-packet-cost-bengaluru-woman-rs-98000-ws-l-10399041.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A localized consumer dispute regarding a refund that resulted in a financial loss."
-      },
-      "classified_at": "2026-10-27T04:51:12.586056+00:00"
     },
     {
       "title": "UP, Bihar, Maharashtra, Karnataka Begin Counting For 28 Legislative Council Seats",
