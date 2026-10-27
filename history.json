@@ -2330,6 +2330,15 @@
       "published": true,
       "media_id": "18022433849951788",
       "timestamp": "2026-10-27T23:20:55.794670+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/ra-am-chief-mansour-abbas-claims-both-netanyahu-and-change-bloc-in-contact-as-arab-parties-turn-kingmakers-2026-10-27-139809",
+      "title": "Israel's Election Deadlock: Ra'am Chief Engages Both Netanyahu and Opposition",
+      "headline": "Israel's Election Deadlock: Arab Parties Turn Kingmakers",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18185195173374955",
+      "timestamp": "2026-10-27T23:47:18.137625+00:00"
     }
   ],
   "processed": [
@@ -2496,7 +2505,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "India Welcomes Liechtenstein Royals; Murmu Champions $100B TEPA Partnership",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/president-murmu-hosts-liechtenstein-prince-alois-and-princess-sophie-at-rashtrapati-bhavan-banquet-pitches-partnership-under-india-efta-tepa-2026-10-27-139810",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A diplomatic visit and trade agreement between India and Liechtenstein, while positive, is a regional/national policy milestone rather than a global crisis."
+      },
+      "classified_at": "2026-10-27T23:46:29.625924+00:00"
+    },
+    {
+      "title": "At 77.7% Turnout, Israel Sees Record Mobilisation But No Bloc Reaches Majority Mark Of 61",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/at-777-turnout-israel-sees-record-mobilisation-but-no-bloc-reaches-majority-mark-of-61-2026-10-27-139808",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Israel's election results and record turnout constitute a major geopolitical event with significant consequences for the country's governance."
+      },
+      "classified_at": "2026-10-27T23:46:29.625927+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
