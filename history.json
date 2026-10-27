@@ -2231,6 +2231,15 @@
       "published": true,
       "media_id": "18008741187005192",
       "timestamp": "2026-10-27T18:03:24.075230+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/hasina-moves-un-seeking-fresh-bangladesh-election-with-awami-league-ahead-of-her-december-return-ws-blt-10400466.html?comscorekw=jionews",
+      "title": "Hasina Moves UN Seeking Fresh Bangladesh Election With Awami League Ahead Of Her December Return",
+      "headline": "Hasina Seeks UN Help For Fresh Bangladesh Election",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18130024432876909",
+      "timestamp": "2026-10-27T18:29:17.002385+00:00"
     }
   ],
   "processed": [
@@ -2397,7 +2406,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Israel Hits Historic 66.7% Turnout By 6 PM, Highest Ever, As Netanyahu Warns Of Leftist Government",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/israel-hits-historic-667-turnout-by-6-pm-highest-ever-as-netanyahu-warns-of-leftist-government-2026-10-27-139796",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic election turnout report involving a specific political figure and party, which is significant to the region but does not meet the threshold for a major geopolitical event."
+      },
+      "classified_at": "2026-10-27T18:28:54.532087+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
