@@ -1961,6 +1961,15 @@
       "published": true,
       "media_id": "18048164096820884",
       "timestamp": "2026-10-27T03:33:46.927168+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cyclone-arnab-nears-andhra-coast-with-140-kmph-gusts-16-districts-on-alert-1763-shelters-ready-for-evacuations-2026-10-27-139741",
+      "title": "Cyclone Arnab Nears Andhra Coast: 140 Kmph Gusts, 16 Districts on High Alert",
+      "headline": "Cyclone Arnab Nears Andhra Coast With 140 Kmph Gusts",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18443000023177653",
+      "timestamp": "2026-10-27T03:59:33.872248+00:00"
     }
   ],
   "processed": [
@@ -2163,7 +2172,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Alexia Putellas Wins Her Third Ballon d'Or Feminin Award",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/sports/football/alexia-putellas-wins-her-third-ballon-dor-feminin-award-ws-lt-10398932.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A major individual achievement in sports, but limited to the specific sport of football and the individual athlete."
+      },
+      "classified_at": "2026-10-27T03:59:05.832925+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
