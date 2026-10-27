@@ -2302,12 +2302,12 @@
   "quota_cooldowns": {},
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5184000,
-    "refreshed_at": "2026-10-26T09:18:57.556597+00:00",
-    "expires_at": "2026-12-25T09:18:57.556597+00:00",
+    "expires_in": 5097655,
+    "refreshed_at": "2026-10-27T09:18:02.773654+00:00",
+    "expires_at": "2026-12-25T09:18:57.773654+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-10-26T09:18:59.034761+00:00"
+    "updated_at": "2026-10-27T09:18:03.921261+00:00"
   }
 }
