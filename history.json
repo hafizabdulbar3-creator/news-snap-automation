@@ -1907,6 +1907,15 @@
       "published": true,
       "media_id": "18338668918279697",
       "timestamp": "2026-10-27T00:37:08.422255+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/india-dominate-nigeria-in-commonwealth-kabaddi-championship-women-book-semis-with-38-10-win-2026-10-26-139737",
+      "title": "India Dominate Nigeria In Commonwealth Kabaddi Championship, Women Book Semis With 38-10 Win",
+      "headline": "India Dominate Nigeria In Commonwealth Kabaddi Championship",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18284915521288720",
+      "timestamp": "2026-10-27T01:03:34.505097+00:00"
     }
   ],
   "processed": [
@@ -2109,7 +2118,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Offers $1 Million Bounty For Voter Fraud Proof Leading To Arrest And Conviction Before Midterms",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/trump-offers-1-million-bounty-for-voter-fraud-proof-leading-to-arrest-and-conviction-before-midterms-2026-10-26-139738",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political offer regarding election integrity, though controversial, is a standard political news item."
+      },
+      "classified_at": "2026-10-27T01:02:39.383654+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
