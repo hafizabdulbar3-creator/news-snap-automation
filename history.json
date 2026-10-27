@@ -2287,20 +2287,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-police-sets-conditions-for-congress-rally-at-ramlila-maidan-on-november-1-what-are-they-2026-10-27-139783",
+      "title": "Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-27T12:22:57.554225+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-police-sets-conditions-for-congress-rally-at-ramlila-maidan-on-november-1-what-are-they-2026-10-27-139783",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "A specific administrative condition regarding a political rally in a major city. While politically relevant, it is a localized logistical and regulatory issue rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-27T11:56:56.826627+00:00"
-    },
     {
       "title": "Indian Army Debunks Fake China Videos; Minister Demands Congress Apology",
       "domain": "republicworld.com",
