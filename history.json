@@ -1997,6 +1997,15 @@
       "published": true,
       "media_id": "18399166243163311",
       "timestamp": "2026-10-27T05:17:34.177057+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/up-bihar-maharashtra-karnataka-begin-counting-for-28-legislative-council-seats-2026-10-27-139743",
+      "title": "UP, Bihar, Maharashtra, Karnataka Begin Counting For 28 Legislative Council Seats",
+      "headline": "Counting Begins for 28 Legislative Council Seats in UP, Bihar, Maharashtra, Karnataka",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18079429970740893",
+      "timestamp": "2026-10-27T05:43:18.937530+00:00"
     }
   ],
   "processed": [
@@ -2210,17 +2219,6 @@
         "reason": "Involves potential major political shifts in Israel, including coalition talks and US diplomatic intervention."
       },
       "classified_at": "2026-10-27T04:51:12.586042+00:00"
-    },
-    {
-      "title": "UP, Bihar, Maharashtra, Karnataka Begin Counting For 28 Legislative Council Seats",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/up-bihar-maharashtra-karnataka-begin-counting-for-28-legislative-council-seats-2026-10-27-139743",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A routine legislative procedure involving the counting of votes for a specific set of council seats."
-      },
-      "classified_at": "2026-10-27T04:51:12.586063+00:00"
     },
     {
       "title": "Tiger Shroff Firing Was To Extort Money, Assert Lawrence Bishnoi Gang's Power: Crime Branch Sources",
