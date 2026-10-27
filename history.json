@@ -2314,6 +2314,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 18."
+    },
+    {
+      "url": "https://www.news18.com/india/115-day-sir-9932303-voters-deleted-those-missing-from-karnatakas-final-electoral-roll-can-still-apply-says-ec-ws-klrt-10399915.html?comscorekw=jionews",
+      "title": "Voter Roll Shock: 99 Lakh Names Removed in Karnataka; EC Explains How to Re-apply",
+      "domain": "news18.com",
+      "timestamp": "2026-10-27T14:54:50.558920+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
@@ -2327,17 +2336,6 @@
         "reason": "A government conclave focused on science and innovation; relevant to policy and development but not a major geopolitical event."
       },
       "classified_at": "2026-10-27T13:20:22.123223+00:00"
-    },
-    {
-      "title": "Voter Roll Shock: 99 Lakh Names Removed in Karnataka; EC Explains How to Re-apply",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/115-day-sir-9932303-voters-deleted-those-missing-from-karnatakas-final-electoral-roll-can-still-apply-says-ec-ws-klrt-10399915.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A significant administrative update regarding voter rolls in a major state, affecting the electoral process."
-      },
-      "classified_at": "2026-10-27T13:20:22.123228+00:00"
     }
   ],
   "quota_cooldown": {
