@@ -1889,6 +1889,15 @@
       "published": true,
       "media_id": "17908341615665332",
       "timestamp": "2026-10-26T23:45:31.056139+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/lucknow-gas-leak-scare-formalin-truck-overturns-on-kisan-path-after-tyre-burst-cm-yogi-adityanath-orders-full-alertness-2026-10-26-139731",
+      "title": "Formalin Truck Overturns, Gas Leak Prompts CM's High Alert.",
+      "headline": "Formalin Truck Overturns in Lucknow, Gas Leak Prompts CM's High Alert",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18036259832887320",
+      "timestamp": "2026-10-27T00:11:16.221267+00:00"
     }
   ],
   "processed": [
@@ -2102,17 +2111,6 @@
         "reason": "A product review or consumer advice article regarding a specific water purifier, which falls under general consumer interest."
       },
       "classified_at": "2026-10-26T23:44:54.003568+00:00"
-    },
-    {
-      "title": "Formalin Truck Overturns, Gas Leak Prompts CM's High Alert.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/lucknow-gas-leak-scare-formalin-truck-overturns-on-kisan-path-after-tyre-burst-cm-yogi-adityanath-orders-full-alertness-2026-10-26-139731",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Disaster",
-        "reason": "A chemical leak incident involving a formalin truck that has prompted a high alert from the Chief Minister, indicating a significant safety and public health emergency."
-      },
-      "classified_at": "2026-10-26T23:44:54.003572+00:00"
     }
   ],
   "quota_cooldown": {
