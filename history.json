@@ -2015,6 +2015,15 @@
       "published": true,
       "media_id": "18128599609880957",
       "timestamp": "2026-10-27T06:09:24.805034+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/netanyahus-allies-float-unity-government-with-rival-eisenkot-as-trump-backs-post-poll-deal-report-2026-10-27-139742",
+      "title": "Netanyahu's Allies Float Unity Government With Rival Eisenkot As Trump Backs Post-Poll Deal: Report",
+      "headline": "Netanyahu Allies Explore Unity Government With Rival Eisenkot",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17982064328914353",
+      "timestamp": "2026-10-27T06:35:13.650186+00:00"
     }
   ],
   "processed": [
@@ -2218,17 +2227,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Netanyahu's Allies Float Unity Government With Rival Eisenkot As Trump Backs Post-Poll Deal: Report",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/netanyahus-allies-float-unity-government-with-rival-eisenkot-as-trump-backs-post-poll-deal-report-2026-10-27-139742",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves potential major political shifts in Israel, including coalition talks and US diplomatic intervention."
-      },
-      "classified_at": "2026-10-27T04:51:12.586042+00:00"
-    },
     {
       "title": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days, But There's A Catch",
       "domain": "news18.com",
