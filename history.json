@@ -2051,6 +2051,15 @@
       "published": true,
       "media_id": "18152595760557185",
       "timestamp": "2026-10-27T07:53:05.208333+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/five-dead-due-to-hotel-lease-dispute-in-a-shootout-in-guwahati-assam-2026-10-27-139759",
+      "title": "Five Dead Due To Hotel Lease Dispute In A Shootout In Guwahati | Assam",
+      "headline": "Five Dead In Guwahati Shootout Over Hotel Lease Dispute",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18649792165051974",
+      "timestamp": "2026-10-27T08:18:54.525462+00:00"
     }
   ],
   "processed": [
@@ -2253,19 +2262,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Five Dead Due To Hotel Lease Dispute In A Shootout In Guwahati | Assam",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/five-dead-due-to-hotel-lease-dispute-in-a-shootout-in-guwahati-assam-2026-10-27-139759",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A shooting resulting in five deaths is a tragic event, but it is classified as a local dispute rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-27T07:26:51.546164+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
