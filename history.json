@@ -2042,6 +2042,15 @@
       "published": true,
       "media_id": "18411625909093958",
       "timestamp": "2026-10-27T07:27:19.475412+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/mumbai-news/mumbais-tower-of-corruption-set-for-redevelopment-where-is-it-how-is-it-linked-to-lata-mangeshkar-asha-bhosle-ws-klrt-10399334.html?comscorekw=jionews",
+      "title": "Mumbai's 'Tower of Corruption' Redeveloped: Celebs, Gangsters, and a New Skyscraper",
+      "headline": "Mumbai's 'Tower of Corruption' Redeveloped: Celebs, Gangsters, and a New Skyscraper",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18152595760557185",
+      "timestamp": "2026-10-27T07:53:05.208333+00:00"
     }
   ],
   "processed": [
@@ -2245,17 +2254,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mumbai's 'Tower of Corruption' Redeveloped: Celebs, Gangsters, and a New Skyscraper",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/mumbai-news/mumbais-tower-of-corruption-set-for-redevelopment-where-is-it-how-is-it-linked-to-lata-mangeshkar-asha-bhosle-ws-klrt-10399334.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "A redevelopment story involving local celebrities and gangsters is a notable regional development but lacks broad international consequence."
-      },
-      "classified_at": "2026-10-27T07:26:51.546160+00:00"
-    },
     {
       "title": "Five Dead Due To Hotel Lease Dispute In A Shootout In Guwahati | Assam",
       "domain": "republicworld.com",
