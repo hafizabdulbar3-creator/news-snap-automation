@@ -2069,6 +2069,15 @@
       "published": true,
       "media_id": "18108931217251586",
       "timestamp": "2026-10-27T08:45:05.303575+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/aap-congress-clash-erupts-at-punjab-vidhan-sabha-as-congress-leaders-barred-from-entry-2026-10-27-139766",
+      "title": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha As Congress Leaders Barred From Entry",
+      "headline": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17873655636649277",
+      "timestamp": "2026-10-27T09:10:54.913573+00:00"
     }
   ],
   "processed": [
@@ -2272,17 +2281,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha As Congress Leaders Barred From Entry",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/aap-congress-clash-erupts-at-punjab-vidhan-sabha-as-congress-leaders-barred-from-entry-2026-10-27-139766",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political clash between the AAP and Congress parties in the Punjab Vidhan Sabha is a regional legislative dispute."
-      },
-      "classified_at": "2026-10-27T08:44:41.283914+00:00"
-    },
     {
       "title": "UP CEO Apologises Over Bizarre 'Thank God Ram Didn't Kill Any Minority' Post, Vows Formal Communication",
       "domain": "republicworld.com",
