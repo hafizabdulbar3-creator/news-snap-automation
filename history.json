@@ -2100,60 +2100,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/initiatives/social-justice-and-the-long-term-health-of-indias-market-2026-10-24-139579",
-      "title": "Social Justice and the Long-Term Health of India's Market",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-24T16:25:12.922976+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 16."
-    },
-    {
-      "url": "https://www.news18.com/cricket/india-a-vs-new-zealand-a-live-score-1st-unofficial-test-day-2-ind-a-vs-nz-a-latest-scorecard-lincoln-match-updates-liveblog-ws-l-10396039.html?comscorekw=jionews",
-      "title": "India-A Bowlers Eye Comeback After Batters' Day 1 Flop vs New Zealand-A",
-      "domain": "news18.com",
-      "timestamp": "2026-10-24T22:43:48.511669+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/cricket/on-the-fastest-track-how-an-overlooked-bcci-rule-put-shikhar-mohan-on-india-test-radar-ws-l-10395193.html?comscorekw=jionews",
-      "title": "On The Fastest Track: How An Overlooked BCCI Rule Put Shikhar Mohan On India Test Radar",
-      "domain": "news18.com",
-      "timestamp": "2026-10-25T01:50:39.614807+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.republicworld.com/india/farooq-abdullah-says-pakistan-protects-kashmiris-bjp-slams-remarks-as-seditious-demands-action-against-nc-chief-2026-10-25-139604",
-      "title": "Farooq Abdullah's Pakistan Remarks Spark Sedition Row; BJP Demands Action",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-25T02:47:38.514860+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.news18.com/world/us-midterms-2026-dan-sullivan-vs-dan-sullivan-trump-turns-up-the-heat-in-frigid-alaska-as-doj-seeks-to-block-senate-results-ws-lrt-10396637.html?comscorekw=jionews",
-      "title": "DOJ Sues Alaska Over Two \"Dan Sullivans\" on Senate Ballot",
-      "domain": "news18.com",
-      "timestamp": "2026-10-25T05:59:55.031941+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/world/student-movement-could-topple-vucics-12-year-rule-as-serbia-heads-to-high-stakes-polls-ws-kl-10396678.html?comscorekw=jionews",
-      "title": "Student Movement Could Topple Vucic's 12-Year Rule As Serbia Heads To High-Stakes Polls",
-      "domain": "news18.com",
-      "timestamp": "2026-10-25T06:56:44.869480+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 19."
-    },
-    {
       "url": "https://www.news18.com/cities/bengaluru-news/kannadigas-first-karnataka-cm-dk-shivakumar-warns-of-action-against-firms-denying-jobs-to-sons-of-soil-ws-klrt-10397002.html?comscorekw=jionews",
       "title": "'Kannadigas First': Karnataka CM DK Shivakumar Issues Stern Warning To Firms Denying Jobs To Sons Of Soil",
       "domain": "news18.com",
@@ -2296,6 +2242,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/travel/from-festive-lights-to-flight-nights-gen-z-is-turning-diwali-into-a-holiday-with-these-indian-getaways-ws-l-10399621.html?comscorekw=jionews",
+      "title": "From Festive Lights To Flight Nights: Gen Z Is Turning Diwali Into A Holiday With These Indian Getaways",
+      "domain": "news18.com",
+      "timestamp": "2026-10-27T10:33:49.959198+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -2309,17 +2264,6 @@
         "reason": "A significant legal proceeding involving a national political figure, indicating public interest and judicial oversight."
       },
       "classified_at": "2026-10-27T10:02:36.502106+00:00"
-    },
-    {
-      "title": "From Festive Lights To Flight Nights: Gen Z Is Turning Diwali Into A Holiday With These Indian Getaways",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/lifestyle/travel/from-festive-lights-to-flight-nights-gen-z-is-turning-diwali-into-a-holiday-with-these-indian-getaways-ws-l-10399621.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Lifestyle",
-        "reason": "A regional trend regarding holiday travel and consumer behavior, falling under public interest rather than geopolitical consequence."
-      },
-      "classified_at": "2026-10-27T10:02:36.502112+00:00"
     },
     {
       "title": "India Break World Record For Fastest Team 100 In T20Is",
