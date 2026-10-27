@@ -2195,6 +2195,15 @@
       "published": true,
       "media_id": "18464981488187258",
       "timestamp": "2026-10-27T16:18:55.113430+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/maharashtra-govt-to-pay-5000-advance-aid-to-eligible-drought-hit-farmers-before-diwali-ws-l-10400370.html?comscorekw=jionews",
+      "title": "Maharashtra Govt To Pay ₹5,000 Advance Aid To Eligible Drought-Hit Farmers Before Diwali",
+      "headline": "Maharashtra Govt To Pay ₹5,000 Advance Aid To Drought-Hit Farmers Before Diwali",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18132540934826601",
+      "timestamp": "2026-10-27T16:44:52.926431+00:00"
     }
   ],
   "processed": [
@@ -2361,19 +2370,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Maharashtra Govt To Pay ₹5,000 Advance Aid To Eligible Drought-Hit Farmers Before Diwali",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/maharashtra-govt-to-pay-5000-advance-aid-to-eligible-drought-hit-farmers-before-diwali-ws-l-10400370.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Policy",
-        "reason": "A regional government announcement regarding financial aid for farmers, which is a significant local policy matter."
-      },
-      "classified_at": "2026-10-27T16:18:26.984406+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
