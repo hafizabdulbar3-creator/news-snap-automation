@@ -2159,6 +2159,15 @@
       "published": true,
       "media_id": "17872829676647461",
       "timestamp": "2026-10-27T13:20:50.462777+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/pm-modi-inaugurates-emerging-science-technology-and-innovation-conclave-2026-2026-10-27-139787",
+      "title": "PM Modi Inaugurates Emerging Science, Technology and Innovation Conclave 2026",
+      "headline": "PM Modi Inaugurates Emerging Science, Technology and Innovation Conclave 2026",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18114359594522162",
+      "timestamp": "2026-10-27T15:00:30.984614+00:00"
     }
   ],
   "processed": [
@@ -2325,19 +2334,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "PM Modi Inaugurates Emerging Science, Technology and Innovation Conclave 2026",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/pm-modi-inaugurates-emerging-science-technology-and-innovation-conclave-2026-2026-10-27-139787",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science & Technology",
-        "reason": "A government conclave focused on science and innovation; relevant to policy and development but not a major geopolitical event."
-      },
-      "classified_at": "2026-10-27T13:20:22.123223+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
