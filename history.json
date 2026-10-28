@@ -2600,6 +2600,15 @@
       "published": true,
       "media_id": "18184492270420805",
       "timestamp": "2026-10-28T13:54:35.027802+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/jio-ipo-broke-records-in-every-investor-category-akash-ambani-says-response-surpassed-imagination-ws-klrs-10401973.html?comscorekw=jionews",
+      "title": "'Jio IPO Broke Records In Every Investor Category': Akash Ambani Says 'Response Surpassed Imagination'",
+      "headline": "Jio IPO Breaks Records In Every Investor Category",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17974794342160355",
+      "timestamp": "2026-10-28T14:20:49.645516+00:00"
     }
   ],
   "processed": [
@@ -2754,17 +2763,6 @@
         "reason": "A judicial order regarding courtroom decorum. This is a notable administrative or legal development but lacks the broad international consequence required for a MAJOR classification."
       },
       "classified_at": "2026-10-28T13:54:07.497976+00:00"
-    },
-    {
-      "title": "'Jio IPO Broke Records In Every Investor Category': Akash Ambani Says 'Response Surpassed Imagination'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/jio-ipo-broke-records-in-every-investor-category-akash-ambani-says-response-surpassed-imagination-ws-klrs-10401973.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A statement regarding the success of a corporate IPO. This is a significant business milestone but is classified as a corporate milestone rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-28T13:54:07.497980+00:00"
     }
   ],
   "quota_cooldown": {
