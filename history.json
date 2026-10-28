@@ -2456,6 +2456,15 @@
       "published": true,
       "media_id": "18220998913342626",
       "timestamp": "2026-10-28T06:42:11.691616+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/im-literally-shaking-bengaluru-woman-confronts-man-for-filming-her-at-metro-station-video-sparks-outrage-ws-l-10400734.html?comscorekw=jionews",
+      "title": "Metro Passenger Confronts Man Filming Her; Viral Video Sparks Safety Debate",
+      "headline": "Woman Confronts Filming Man at Bengaluru Metro Station",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18140883004626780",
+      "timestamp": "2026-10-28T07:08:18.585609+00:00"
     }
   ],
   "processed": [
@@ -2597,17 +2606,6 @@
         "reason": "The conviction of individuals in a specific riot case is a legal matter of national/regional consequence, fitting the NORMAL category."
       },
       "classified_at": "2026-10-28T04:58:01.612541+00:00"
-    },
-    {
-      "title": "Metro Passenger Confronts Man Filming Her; Viral Video Sparks Safety Debate",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/im-literally-shaking-bengaluru-woman-confronts-man-for-filming-her-at-metro-station-video-sparks-outrage-ws-l-10400734.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A viral video regarding a public safety incident in a metro system is a notable public interest story but lacks the scale of a major disaster or geopolitical event."
-      },
-      "classified_at": "2026-10-28T04:58:01.612544+00:00"
     },
     {
       "title": "FC Barcelona Asked To Pay $672 Fine After Complaint Over Julian Alvarez Pursuit",
