@@ -2555,6 +2555,15 @@
       "published": true,
       "media_id": "18037283162896918",
       "timestamp": "2026-10-28T11:44:10.756330+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/serbian-police-kill-knife-wielding-assailant-after-attack-on-officer-guarding-israeli-embassy-in-belgrade-2026-10-28-139850",
+      "title": "Serbian Police Kill Knife-Wielding Assailant After Attack on Officer Guarding Israeli Embassy in Belgrade",
+      "headline": "Serbian Police Kill Knifeman After Attack on Israeli Embassy Guard",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18636756139004326",
+      "timestamp": "2026-10-28T12:10:26.801307+00:00"
     }
   ],
   "processed": [
@@ -2709,17 +2718,6 @@
         "reason": "A regional political story focusing on the personal lives of politicians, which is of local/regional interest rather than broad international consequence."
       },
       "classified_at": "2026-10-28T11:17:48.053917+00:00"
-    },
-    {
-      "title": "Serbian Police Kill Knife-Wielding Assailant After Attack on Officer Guarding Israeli Embassy in Belgrade",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/serbian-police-kill-knife-wielding-assailant-after-attack-on-officer-guarding-israeli-embassy-in-belgrade-2026-10-28-139850",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A terrorist attack on a diplomatic mission and the subsequent police response constitutes a major geopolitical security event."
-      },
-      "classified_at": "2026-10-28T11:17:48.053923+00:00"
     }
   ],
   "quota_cooldown": {
