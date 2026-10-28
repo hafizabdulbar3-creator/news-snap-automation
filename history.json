@@ -2654,6 +2654,15 @@
       "published": true,
       "media_id": "17867361741679015",
       "timestamp": "2026-10-28T16:57:30.389194+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/science/space/scientists-identify-possible-new-dwarf-planet-beyond-pluto-using-chile-based-rubin-observatory-telescope-2026-10-28-139890",
+      "title": "Scientists Identify Possible New Dwarf Planet Beyond Pluto Using Chile-Based Rubin Observatory Telescope",
+      "headline": "Scientists Identify Possible New Dwarf Planet Beyond Pluto",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18440871676181803",
+      "timestamp": "2026-10-28T17:23:35.961905+00:00"
     }
   ],
   "processed": [
@@ -2739,7 +2748,19 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Gyanu Must Go': Cockroach Janata Party Extends Support To INDIA Bloc's November 1 Rally",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/gyanu-must-go-cockroach-janta-party-extends-support-to-india-blocs-november-1-rally-10401970.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Support for a political rally by a satirical party is a notable regional political development but lacks broad international consequence."
+      },
+      "classified_at": "2026-10-28T17:23:13.840903+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
