@@ -2492,6 +2492,15 @@
       "published": true,
       "media_id": "18132500725697426",
       "timestamp": "2026-10-28T08:32:32.530876+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/jamia-unrest-enters-day-16-amid-vandalism-allegations-what-actually-happened-at-gate-4c-last-night-ws-klrt-10400919.html?comscorekw=jionews",
+      "title": "Jamia Unrest Enters Day 16 Amid Vandalism Allegations: What Actually Happened At Gate 4C Last Night?",
+      "headline": "Jamia Unrest Enters Day 16 Amid Vandalism Allegations",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17955616938038525",
+      "timestamp": "2026-10-28T09:03:45.964934+00:00"
     }
   ],
   "processed": [
@@ -2613,7 +2622,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Netanyahu Lost': Yair Golan Urges Opposition To Join Arab Parties, Form Government Of Change",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/netanyahu-lost-yair-golan-urges-opposition-to-join-arab-parties-form-government-of-change-2026-10-28-139843",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Calls for a change in government leadership and political alliances in Israel constitute a major geopolitical event with significant international implications."
+      },
+      "classified_at": "2026-10-28T09:02:41.520334+00:00"
+    },
+    {
+      "title": "Rare Nanotyrannus Skeleton 'Jodi' Sells For $47.3 Million At New York Auction",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/lifestyle/art-culture/rare-nanotyrannus-skeleton-jodi-sells-for-473-million-at-new-york-auction-2026-10-28-139844",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Science & Tech",
+        "reason": "A high-value auction of a rare scientific specimen is a notable event within the science and collecting communities but lacks broad international consequence."
+      },
+      "classified_at": "2026-10-28T09:02:41.520351+00:00"
+    },
+    {
+      "title": "3 Dead As Cyclone Arnab Leaves Trail of Destruction in Andhra Pradesh; Rains Batter Coastal Districts",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cyclone-arnab-leaves-trail-of-destruction-in-andhra-pradesh-3-dead-rains-batter-coastal-districts-2026-10-28-139842",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A cyclone causing multiple deaths and widespread destruction is a major natural disaster with significant humanitarian and economic impact."
+      },
+      "classified_at": "2026-10-28T09:02:41.520354+00:00"
+    },
+    {
+      "title": "Allahabad HC Orders Demolition Of 2 Towers At Ghaziabad's Gulmohar Greens Society, Builder Fined ₹25 Lakh",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/allahabad-hc-orders-demolition-of-2-towers-at-ghaziabad-society-builder-fined-25-lakh-2026-10-28-139845",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "A court order regarding a local real estate dispute is a significant legal matter for the specific community but lacks broader international relevance."
+      },
+      "classified_at": "2026-10-28T09:02:41.520357+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
