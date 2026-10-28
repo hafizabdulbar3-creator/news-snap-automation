@@ -2519,6 +2519,15 @@
       "published": true,
       "media_id": "17967048671984401",
       "timestamp": "2026-10-28T10:00:15.640631+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/lifestyle/art-culture/rare-nanotyrannus-skeleton-jodi-sells-for-473-million-at-new-york-auction-2026-10-28-139844",
+      "title": "Rare Nanotyrannus Skeleton 'Jodi' Sells For $47.3 Million At New York Auction",
+      "headline": "Nanotyrannus Skeleton 'Jodi' Sells For $47.3 Million At New York Auction",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17909213658332388",
+      "timestamp": "2026-10-28T10:26:23.768230+00:00"
     }
   ],
   "processed": [
@@ -2641,17 +2650,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Rare Nanotyrannus Skeleton 'Jodi' Sells For $47.3 Million At New York Auction",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/lifestyle/art-culture/rare-nanotyrannus-skeleton-jodi-sells-for-473-million-at-new-york-auction-2026-10-28-139844",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science & Tech",
-        "reason": "A high-value auction of a rare scientific specimen is a notable event within the science and collecting communities but lacks broad international consequence."
-      },
-      "classified_at": "2026-10-28T09:02:41.520351+00:00"
-    },
     {
       "title": "Allahabad HC Orders Demolition Of 2 Towers At Ghaziabad's Gulmohar Greens Society, Builder Fined ₹25 Lakh",
       "domain": "republicworld.com",
