@@ -2609,6 +2609,15 @@
       "published": true,
       "media_id": "17974794342160355",
       "timestamp": "2026-10-28T14:20:49.645516+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-prefers-israeli-government-excluding-ben-gvir-and-smotrich-report-2026-10-28-139872",
+      "title": "Trump Prefers Israeli Government Excluding Ben-Gvir and Smotrich: Report",
+      "headline": "Trump Prefers Israeli Government Excluding Ben-Gvir and Smotrich: Report",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18082949723367168",
+      "timestamp": "2026-10-28T15:02:24.102262+00:00"
     }
   ],
   "processed": [
@@ -2731,17 +2740,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump Prefers Israeli Government Excluding Ben-Gvir and Smotrich: Report",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/trump-prefers-israeli-government-excluding-ben-gvir-and-smotrich-report-2026-10-28-139872",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Political commentary regarding a potential shift in Israeli coalition composition, which is a matter of public interest but falls under regional political analysis rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-28T13:54:07.497952+00:00"
-    },
     {
       "title": "'Those Involved Are Hooligans; Action Will Be Taken': Pralhad Joshi on Jamia Protest Row",
       "domain": "republicworld.com",
