@@ -2429,6 +2429,15 @@
       "published": true,
       "media_id": "18082680887354091",
       "timestamp": "2026-10-28T05:24:09.442079+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/netanyahu-says-zionist-jewish-majority-must-unite-to-form-strong-right-wing-government-2026-10-28-139823",
+      "title": "Netanyahu Says 'Zionist Jewish Majority Must Unite' To Form Strong Right-Wing Government",
+      "headline": "Netanyahu Calls For 'Zionist Jewish Majority' To Form Strong Right-Wing Government",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18480617548118445",
+      "timestamp": "2026-10-28T05:50:33.948316+00:00"
     }
   ],
   "processed": [
@@ -2560,17 +2569,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Netanyahu Says 'Zionist Jewish Majority Must Unite' To Form Strong Right-Wing Government",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/netanyahu-says-zionist-jewish-majority-must-unite-to-form-strong-right-wing-government-2026-10-28-139823",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Political developments regarding the formation of a government in Israel involve major geopolitical shifts and international relations."
-      },
-      "classified_at": "2026-10-28T04:58:01.612528+00:00"
-    },
     {
       "title": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali, Video Goes Viral | Watch",
       "domain": "news18.com",
