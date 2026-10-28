@@ -2627,6 +2627,15 @@
       "published": true,
       "media_id": "18127033465875247",
       "timestamp": "2026-10-28T15:33:41.447595+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/at-least-10-dead-in-collision-between-two-high-speed-trains-in-spains-toledo-province-2026-10-28-139849",
+      "title": "At Least 68 Dead in Spain After One High-Speed Train Slams Into Another Stopped on Tracks",
+      "headline": "At Least 68 Dead After Two High-Speed Trains Collide in Spain",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18116596163034334",
+      "timestamp": "2026-10-28T15:59:51.913494+00:00"
     }
   ],
   "processed": [
@@ -2721,7 +2730,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Arrive With an Open Mind': Israeli President Herzog Urges Party Leaders Ahead of Coalition Talks",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/arrive-with-an-open-mind-israeli-president-herzog-urges-party-leaders-ahead-of-coalition-talks-2026-10-28-139882",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Domestic coalition talks in Israel are significant but fall under regional political developments."
+      },
+      "classified_at": "2026-10-28T15:59:25.312552+00:00"
+    },
+    {
+      "title": "India Pursuing Release of Citizens Stranded in Ukraine and Russia: MEA",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/india-pursuing-release-of-citizens-stranded-in-ukraine-and-russia-mea-2026-10-28-139883",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "The MEA's efforts to repatriate citizens from a conflict zone is a matter of public interest and foreign policy."
+      },
+      "classified_at": "2026-10-28T15:59:25.312571+00:00"
+    },
+    {
+      "title": "CJP Backs INDIA Bloc's November 1 Rally, Seeks CEC Gyanesh Kumar's Resignation Over SIR",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cjp-backs-india-blocs-november-1-rally-seeks-cec-gyanesh-kumars-resignation-over-sir-2026-10-28-139880",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Political rallies and calls for the resignation of election officials are standard political news."
+      },
+      "classified_at": "2026-10-28T15:59:25.312574+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
