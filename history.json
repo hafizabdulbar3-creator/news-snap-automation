@@ -2640,24 +2640,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/world-news/pm-modi-jaishankar-hold-courtesy-calls-with-iranian-parliamentary-representatives-at-brics-parliamentary-forum-2026-10-26-139711",
-      "title": "BRICS Forum: Modi, Jaishankar Engage Iranian MPs, Emphasize Bilateral Relations",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-26T15:33:53.448146+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/single-media-report-to-target-cec-eci-s-15-point-rebuttal-exposes-congress-cjp-campaign-in-sc-2026-10-26-139720",
-      "title": "'Single Media Report To Target CEC': ECI's 15-Point Rebuttal Exposes Congress-CJP Campaign In SC",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-26T16:15:50.472191+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
       "url": "https://www.news18.com/lifestyle/travel/from-festive-lights-to-flight-nights-gen-z-is-turning-diwali-into-a-holiday-with-these-indian-getaways-ws-l-10399621.html?comscorekw=jionews",
       "title": "From Festive Lights To Flight Nights: Gen Z Is Turning Diwali Into A Holiday With These Indian Getaways",
       "domain": "news18.com",
@@ -2728,20 +2710,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/arrive-with-an-open-mind-israeli-president-herzog-urges-party-leaders-ahead-of-coalition-talks-2026-10-28-139882",
+      "title": "'Arrive With an Open Mind': Israeli President Herzog Urges Party Leaders Ahead of Coalition Talks",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-28T16:25:41.113965+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Arrive With an Open Mind': Israeli President Herzog Urges Party Leaders Ahead of Coalition Talks",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/arrive-with-an-open-mind-israeli-president-herzog-urges-party-leaders-ahead-of-coalition-talks-2026-10-28-139882",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Domestic coalition talks in Israel are significant but fall under regional political developments."
-      },
-      "classified_at": "2026-10-28T15:59:25.312552+00:00"
-    },
     {
       "title": "India Pursuing Release of Citizens Stranded in Ukraine and Russia: MEA",
       "domain": "republicworld.com",
