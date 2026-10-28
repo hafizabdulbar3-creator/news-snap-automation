@@ -2546,6 +2546,15 @@
       "published": true,
       "media_id": "18189060667414783",
       "timestamp": "2026-10-28T11:18:11.424664+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/flavio-bolsonaro-flees-brazil-through-argentina-and-is-expected-to-land-in-miami-2026-10-28-139852",
+      "title": "Flávio Bolsonaro Flees Brazil Through Argentina and Is Expected to Land in Miami",
+      "headline": "Flávio Bolsonaro Flees Brazil Through Argentina to Miami",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18037283162896918",
+      "timestamp": "2026-10-28T11:44:10.756330+00:00"
     }
   ],
   "processed": [
@@ -2700,17 +2709,6 @@
         "reason": "A regional political story focusing on the personal lives of politicians, which is of local/regional interest rather than broad international consequence."
       },
       "classified_at": "2026-10-28T11:17:48.053917+00:00"
-    },
-    {
-      "title": "Flávio Bolsonaro Flees Brazil Through Argentina and Is Expected to Land in Miami",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/flavio-bolsonaro-flees-brazil-through-argentina-and-is-expected-to-land-in-miami-2026-10-28-139852",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The escape of a former head of state from a country and his arrival in the US represents a significant geopolitical event with international implications."
-      },
-      "classified_at": "2026-10-28T11:17:48.053921+00:00"
     },
     {
       "title": "Serbian Police Kill Knife-Wielding Assailant After Attack on Officer Guarding Israeli Embassy in Belgrade",
