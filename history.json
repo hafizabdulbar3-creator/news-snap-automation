@@ -2339,6 +2339,15 @@
       "published": true,
       "media_id": "18185195173374955",
       "timestamp": "2026-10-27T23:47:18.137625+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/at-777-turnout-israel-sees-record-mobilisation-but-no-bloc-reaches-majority-mark-of-61-2026-10-27-139808",
+      "title": "At 77.7% Turnout, Israel Sees Record Mobilisation But No Bloc Reaches Majority Mark Of 61",
+      "headline": "Israel Sees Record 77.7% Turnout But No Bloc Reaches 61-Majority Mark",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18109135514222149",
+      "timestamp": "2026-10-28T00:13:01.301088+00:00"
     }
   ],
   "processed": [
@@ -2516,17 +2525,6 @@
         "reason": "A diplomatic visit and trade agreement between India and Liechtenstein, while positive, is a regional/national policy milestone rather than a global crisis."
       },
       "classified_at": "2026-10-27T23:46:29.625924+00:00"
-    },
-    {
-      "title": "At 77.7% Turnout, Israel Sees Record Mobilisation But No Bloc Reaches Majority Mark Of 61",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/at-777-turnout-israel-sees-record-mobilisation-but-no-bloc-reaches-majority-mark-of-61-2026-10-27-139808",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Israel's election results and record turnout constitute a major geopolitical event with significant consequences for the country's governance."
-      },
-      "classified_at": "2026-10-27T23:46:29.625927+00:00"
     }
   ],
   "quota_cooldown": {
