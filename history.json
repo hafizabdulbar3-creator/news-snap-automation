@@ -2573,6 +2573,15 @@
       "published": true,
       "media_id": "18023196719941835",
       "timestamp": "2026-10-28T12:36:37.169262+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/to-be-or-not-to-be-national-award-winning-writer-s-short-film-kothala-rekindles-debate-on-female-infanticide-2026-10-28-139853",
+      "title": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
+      "headline": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18130230446478689",
+      "timestamp": "2026-10-28T13:02:46.113507+00:00"
     }
   ],
   "processed": [
@@ -2695,17 +2704,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/to-be-or-not-to-be-national-award-winning-writer-s-short-film-kothala-rekindles-debate-on-female-infanticide-2026-10-28-139853",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Social Issues",
-        "reason": "A film sparking a debate on a serious social issue, which is a notable public interest story but falls under social commentary rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-28T11:17:48.053914+00:00"
-    },
     {
       "title": "Baraat Vs Badebandi: Why Rajasthan's Winning Netas Have Nowhere To Hide This Wedding Season",
       "domain": "news18.com",
