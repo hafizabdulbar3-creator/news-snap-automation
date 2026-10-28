@@ -2438,6 +2438,15 @@
       "published": true,
       "media_id": "18480617548118445",
       "timestamp": "2026-10-28T05:50:33.948316+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/haryana-company-gifts-kia-sonet-suvs-to-four-employees-ahead-of-diwali-video-goes-viral-watch-ws-l-10400771.html?comscorekw=jionews",
+      "title": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali, Video Goes Viral | Watch",
+      "headline": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17988694197089167",
+      "timestamp": "2026-10-28T06:16:26.205635+00:00"
     }
   ],
   "processed": [
@@ -2569,17 +2578,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali, Video Goes Viral | Watch",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/haryana-company-gifts-kia-sonet-suvs-to-four-employees-ahead-of-diwali-video-goes-viral-watch-ws-l-10400771.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Corporate employee rewards are a standard business practice and do not rise to the level of major geopolitical or economic news."
-      },
-      "classified_at": "2026-10-28T04:58:01.612535+00:00"
-    },
     {
       "title": "'Easier Not To Write Than To Write': Justice Sanjay Kishen Kaul On His Memoir 'Without Fear Of Favour'",
       "domain": "republicworld.com",
