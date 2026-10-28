@@ -2402,6 +2402,15 @@
       "published": true,
       "media_id": "18151757134510817",
       "timestamp": "2026-10-28T04:06:29.027233+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/ipo/jio-platforms-listing-ceremony-live-streaming-watch-jio-ipo-listing-on-youtube-facebook-x-and-instagram-ws-ls-10400626.html?comscorekw=jionews",
+      "title": "Jio Platforms IPO: Watch Historic Listing Ceremony Live Today",
+      "headline": "Jio Platforms IPO: Watch Historic Listing Ceremony Live Today",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18080105015710472",
+      "timestamp": "2026-10-28T04:32:39.961798+00:00"
     }
   ],
   "processed": [
@@ -2532,19 +2541,7 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry (''How Did They Manage This?': Why Abhishek & Sooryavanshi Left Iyer Stunned'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Jio Platforms IPO: Watch Historic Listing Ceremony Live Today",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/ipo/jio-platforms-listing-ceremony-live-streaming-watch-jio-ipo-listing-on-youtube-facebook-x-and-instagram-ws-ls-10400626.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "The listing of a major corporate IPO is a significant financial event, though it is classified as a corporate milestone rather than a geopolitical crisis."
-      },
-      "classified_at": "2026-10-28T03:39:54.939997+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
