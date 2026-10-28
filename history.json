@@ -2622,42 +2622,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/movies/bollywood/ramayanas-mangal-rang-scene-goes-viral-internet-debates-whether-its-haldi-or-chumawan-ws-kl-10397844.html?comscorekw=jionews",
-      "title": "Ramayana's Mangal Rang Scene Goes Viral; Internet Debates Whether It's Haldi Or Chumawan",
-      "domain": "news18.com",
-      "timestamp": "2026-10-26T08:32:13.828339+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/movies/telugu-cinema/rashmika-mandanna-slams-trolls-targeting-vijay-deverakonda-says-thats-not-feminism-thats-bullying-ws-l-10398022.html?comscorekw=jionews",
-      "title": "Rashmika Mandanna Slams Trolls Targeting Vijay Deverakonda, Says 'That's Not Feminism, That's Bullying'",
-      "domain": "news18.com",
-      "timestamp": "2026-10-26T09:55:33.964414+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.news18.com/movies/bollywood/pratap-trailer-amit-sadh-esha-deol-lead-intense-action-drama-about-a-cop-who-lands-behind-bars-ws-kl-10398035.html?comscorekw=jionews",
-      "title": "Pratap Trailer: Amit Sadh, Esha Deol Lead Intense Action Drama About A Cop Who Lands Behind Bars",
-      "domain": "news18.com",
-      "timestamp": "2026-10-26T10:00:43.549720+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.republicworld.com/world-news/india-israel-ties-won-t-change-even-for-slightest-by-election-outcome-israel-embassy-spokesperson-mishelle-sirota-2026-10-26-139714",
-      "title": "Israel-India Ties Unwavering Despite Election Outcome, Says Embassy Spokesperson",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-26T15:02:29.699710+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
       "url": "https://www.republicworld.com/world-news/pm-modi-jaishankar-hold-courtesy-calls-with-iranian-parliamentary-representatives-at-brics-parliamentary-forum-2026-10-26-139711",
       "title": "BRICS Forum: Modi, Jaishankar Engage Iranian MPs, Emphasize Bilateral Relations",
       "domain": "republicworld.com",
@@ -2737,20 +2701,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/those-involved-are-hooligans-action-will-be-taken-pralhad-joshi-on-jamia-protest-row-2026-10-28-139870",
+      "title": "'Those Involved Are Hooligans; Action Will Be Taken': Pralhad Joshi on Jamia Protest Row",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-28T15:28:20.411017+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Those Involved Are Hooligans; Action Will Be Taken': Pralhad Joshi on Jamia Protest Row",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/those-involved-are-hooligans-action-will-be-taken-pralhad-joshi-on-jamia-protest-row-2026-10-28-139870",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A statement from a government minister regarding a student protest. This is a standard political response to civil unrest and falls under national/regional policy and public interest."
-      },
-      "classified_at": "2026-10-28T13:54:07.497972+00:00"
-    },
     {
       "title": "Courtroom Chaos: High Court Orders CCTV ID for Disruptive Lawyers",
       "domain": "republicworld.com",
