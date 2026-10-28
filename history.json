@@ -2636,6 +2636,15 @@
       "published": true,
       "media_id": "18116596163034334",
       "timestamp": "2026-10-28T15:59:51.913494+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/india-pursuing-release-of-citizens-stranded-in-ukraine-and-russia-mea-2026-10-28-139883",
+      "title": "India Pursuing Release of Citizens Stranded in Ukraine and Russia: MEA",
+      "headline": "India Pursuing Release of Citizens Stranded in Ukraine and Russia",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17923255866444895",
+      "timestamp": "2026-10-28T16:31:18.351768+00:00"
     }
   ],
   "processed": [
@@ -2722,17 +2731,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India Pursuing Release of Citizens Stranded in Ukraine and Russia: MEA",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/india-pursuing-release-of-citizens-stranded-in-ukraine-and-russia-mea-2026-10-28-139883",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "The MEA's efforts to repatriate citizens from a conflict zone is a matter of public interest and foreign policy."
-      },
-      "classified_at": "2026-10-28T15:59:25.312571+00:00"
-    },
     {
       "title": "CJP Backs INDIA Bloc's November 1 Rally, Seeks CEC Gyanesh Kumar's Resignation Over SIR",
       "domain": "republicworld.com",
