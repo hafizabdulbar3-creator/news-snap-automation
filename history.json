@@ -2591,6 +2591,15 @@
       "published": true,
       "media_id": "18341348929260602",
       "timestamp": "2026-10-28T13:28:24.127849+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/we-have-lost-22-indian-nationals-including-14-seafarers-mea-deeply-concerned-about-west-asia-conflict-2026-10-28-139867",
+      "title": "West Asia Conflict: 22 Indian Lives Lost, MEA Voices Deep Concern",
+      "headline": "MEA Confirms 22 Indian Nationals Lost in West Asia Conflict",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18184492270420805",
+      "timestamp": "2026-10-28T13:54:35.027802+00:00"
     }
   ],
   "processed": [
@@ -2712,7 +2721,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Prefers Israeli Government Excluding Ben-Gvir and Smotrich: Report",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-prefers-israeli-government-excluding-ben-gvir-and-smotrich-report-2026-10-28-139872",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Political commentary regarding a potential shift in Israeli coalition composition, which is a matter of public interest but falls under regional political analysis rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-28T13:54:07.497952+00:00"
+    },
+    {
+      "title": "'Those Involved Are Hooligans; Action Will Be Taken': Pralhad Joshi on Jamia Protest Row",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/those-involved-are-hooligans-action-will-be-taken-pralhad-joshi-on-jamia-protest-row-2026-10-28-139870",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A statement from a government minister regarding a student protest. This is a standard political response to civil unrest and falls under national/regional policy and public interest."
+      },
+      "classified_at": "2026-10-28T13:54:07.497972+00:00"
+    },
+    {
+      "title": "Courtroom Chaos: High Court Orders CCTV ID for Disruptive Lawyers",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/allahabad-hc-directs-identification-of-lawyers-through-cctv-footage-amid-sloganeering-disruption-of-judicial-proceedings-2026-10-28-139868",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A judicial order regarding courtroom decorum. This is a notable administrative or legal development but lacks the broad international consequence required for a MAJOR classification."
+      },
+      "classified_at": "2026-10-28T13:54:07.497976+00:00"
+    },
+    {
+      "title": "'Jio IPO Broke Records In Every Investor Category': Akash Ambani Says 'Response Surpassed Imagination'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/jio-ipo-broke-records-in-every-investor-category-akash-ambani-says-response-surpassed-imagination-ws-klrs-10401973.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A statement regarding the success of a corporate IPO. This is a significant business milestone but is classified as a corporate milestone rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-28T13:54:07.497980+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
