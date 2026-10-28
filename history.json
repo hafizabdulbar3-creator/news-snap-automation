@@ -2564,6 +2564,15 @@
       "published": true,
       "media_id": "18636756139004326",
       "timestamp": "2026-10-28T12:10:26.801307+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/mlc-poll-results-28-mlc-seats-0-wins-congress-draws-a-blank-in-4-states-karnataka-delivers-biggest-blow-ws-lrt-10401486.html?comscorekw=jionews",
+      "title": "28 MLC Seats, 0 Wins: Congress Draws A Blank In 4 States, Karnataka Delivers Biggest Blow",
+      "headline": "Congress Draws Blank In MLC Polls, Karnataka Delivers Biggest Blow",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18023196719941835",
+      "timestamp": "2026-10-28T12:36:37.169262+00:00"
     }
   ],
   "processed": [
@@ -2686,17 +2695,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "28 MLC Seats, 0 Wins: Congress Draws A Blank In 4 States, Karnataka Delivers Biggest Blow",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/mlc-poll-results-28-mlc-seats-0-wins-congress-draws-a-blank-in-4-states-karnataka-delivers-biggest-blow-ws-lrt-10401486.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A significant political setback for a major party in regional elections, relevant to domestic politics but not a global geopolitical event."
-      },
-      "classified_at": "2026-10-28T11:17:48.053894+00:00"
-    },
     {
       "title": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
       "domain": "republicworld.com",
