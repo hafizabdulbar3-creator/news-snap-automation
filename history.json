@@ -2501,6 +2501,15 @@
       "published": true,
       "media_id": "17955616938038525",
       "timestamp": "2026-10-28T09:03:45.964934+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/netanyahu-lost-yair-golan-urges-opposition-to-join-arab-parties-form-government-of-change-2026-10-28-139843",
+      "title": "'Netanyahu Lost': Yair Golan Urges Opposition To Join Arab Parties, Form Government Of Change",
+      "headline": "Yair Golan Urges Opposition To Join Arab Parties, Form Government Of Change",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18031098026857873",
+      "timestamp": "2026-10-28T09:34:02.642957+00:00"
     }
   ],
   "processed": [
@@ -2623,17 +2632,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Netanyahu Lost': Yair Golan Urges Opposition To Join Arab Parties, Form Government Of Change",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/netanyahu-lost-yair-golan-urges-opposition-to-join-arab-parties-form-government-of-change-2026-10-28-139843",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Calls for a change in government leadership and political alliances in Israel constitute a major geopolitical event with significant international implications."
-      },
-      "classified_at": "2026-10-28T09:02:41.520334+00:00"
-    },
     {
       "title": "Rare Nanotyrannus Skeleton 'Jodi' Sells For $47.3 Million At New York Auction",
       "domain": "republicworld.com",
