@@ -2465,6 +2465,15 @@
       "published": true,
       "media_id": "18140883004626780",
       "timestamp": "2026-10-28T07:08:18.585609+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-hc-upholds-conviction-of-5-men-in-monish-s-2020-delhi-riots-killing-2026-10-28-139821",
+      "title": "Delhi HC Upholds Conviction Of 5 Men In Monish's 2020 Delhi Riots Killing",
+      "headline": "Delhi HC Upholds Conviction Of 5 Men In Monish's 2020 Delhi Riots Killing",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18382175653238274",
+      "timestamp": "2026-10-28T07:34:28.321304+00:00"
     }
   ],
   "processed": [
@@ -2596,17 +2605,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi HC Upholds Conviction Of 5 Men In Monish's 2020 Delhi Riots Killing",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-hc-upholds-conviction-of-5-men-in-monish-s-2020-delhi-riots-killing-2026-10-28-139821",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "The conviction of individuals in a specific riot case is a legal matter of national/regional consequence, fitting the NORMAL category."
-      },
-      "classified_at": "2026-10-28T04:58:01.612541+00:00"
-    },
     {
       "title": "FC Barcelona Asked To Pay $672 Fine After Complaint Over Julian Alvarez Pursuit",
       "domain": "news18.com",
