@@ -2510,6 +2510,15 @@
       "published": true,
       "media_id": "18031098026857873",
       "timestamp": "2026-10-28T09:34:02.642957+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cyclone-arnab-leaves-trail-of-destruction-in-andhra-pradesh-3-dead-rains-batter-coastal-districts-2026-10-28-139842",
+      "title": "3 Dead As Cyclone Arnab Leaves Trail of Destruction in Andhra Pradesh; Rains Batter Coastal Districts",
+      "headline": "3 Dead As Cyclone Arnab Leaves Trail of Destruction in Andhra Pradesh",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17967048671984401",
+      "timestamp": "2026-10-28T10:00:15.640631+00:00"
     }
   ],
   "processed": [
@@ -2642,17 +2651,6 @@
         "reason": "A high-value auction of a rare scientific specimen is a notable event within the science and collecting communities but lacks broad international consequence."
       },
       "classified_at": "2026-10-28T09:02:41.520351+00:00"
-    },
-    {
-      "title": "3 Dead As Cyclone Arnab Leaves Trail of Destruction in Andhra Pradesh; Rains Batter Coastal Districts",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/cyclone-arnab-leaves-trail-of-destruction-in-andhra-pradesh-3-dead-rains-batter-coastal-districts-2026-10-28-139842",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A cyclone causing multiple deaths and widespread destruction is a major natural disaster with significant humanitarian and economic impact."
-      },
-      "classified_at": "2026-10-28T09:02:41.520354+00:00"
     },
     {
       "title": "Allahabad HC Orders Demolition Of 2 Towers At Ghaziabad's Gulmohar Greens Society, Builder Fined ₹25 Lakh",
