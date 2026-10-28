@@ -2393,6 +2393,15 @@
       "published": true,
       "media_id": "17966479181981218",
       "timestamp": "2026-10-28T03:40:19.967992+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-pollution-crackdown-4572-puc-challans-issued-heres-how-to-check-your-certificate-validity-ws-l-10400630.html?comscorekw=jionews",
+      "title": "Delhi Pollution Crackdown: 4,572 PUC Challans Issued, Here's How To Check Your Certificate Validity",
+      "headline": "Delhi Issues 4,572 PUC Challans Amid Winter Pollution Concerns",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18151757134510817",
+      "timestamp": "2026-10-28T04:06:29.027233+00:00"
     }
   ],
   "processed": [
@@ -2524,17 +2533,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Pollution Crackdown: 4,572 PUC Challans Issued, Here's How To Check Your Certificate Validity",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-pollution-crackdown-4572-puc-challans-issued-heres-how-to-check-your-certificate-validity-ws-l-10400630.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "Issuing pollution challans is a standard administrative enforcement action regarding environmental regulations, falling under regional policy and public interest."
-      },
-      "classified_at": "2026-10-28T03:39:54.939993+00:00"
-    },
     {
       "title": "Jio Platforms IPO: Watch Historic Listing Ceremony Live Today",
       "domain": "news18.com",
