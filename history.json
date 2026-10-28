@@ -2411,6 +2411,15 @@
       "published": true,
       "media_id": "18080105015710472",
       "timestamp": "2026-10-28T04:32:39.961798+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/hackers-target-us-election-watchdog-s-filing-system-days-before-midterm-polls-report-2026-10-28-139824",
+      "title": "Hackers Target US Election Watchdog's Filing System Days Before Midterm Polls: Report",
+      "headline": "US Election Watchdog's System Hacked Days Before Midterms",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17979933009069164",
+      "timestamp": "2026-10-28T04:58:23.318663+00:00"
     }
   ],
   "processed": [
@@ -2541,7 +2550,85 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry (''How Did They Manage This?': Why Abhishek & Sooryavanshi Left Iyer Stunned'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Netanyahu Says 'Zionist Jewish Majority Must Unite' To Form Strong Right-Wing Government",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/netanyahu-says-zionist-jewish-majority-must-unite-to-form-strong-right-wing-government-2026-10-28-139823",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Political developments regarding the formation of a government in Israel involve major geopolitical shifts and international relations."
+      },
+      "classified_at": "2026-10-28T04:58:01.612528+00:00"
+    },
+    {
+      "title": "Governments Grapple with AI's Power: Is Stronger Regulation Coming Before It's Too Late?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/ais-evolving-capabilities-demand-stronger-regulatory-oversight-can-governments-control-ai-before-its-too-late-shil-ws-l-10400676.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "The global debate on regulating artificial intelligence is a critical issue with broad international consequences for the future of technology and society."
+      },
+      "classified_at": "2026-10-28T04:58:01.612532+00:00"
+    },
+    {
+      "title": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali, Video Goes Viral | Watch",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/haryana-company-gifts-kia-sonet-suvs-to-four-employees-ahead-of-diwali-video-goes-viral-watch-ws-l-10400771.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Corporate employee rewards are a standard business practice and do not rise to the level of major geopolitical or economic news."
+      },
+      "classified_at": "2026-10-28T04:58:01.612535+00:00"
+    },
+    {
+      "title": "'Easier Not To Write Than To Write': Justice Sanjay Kishen Kaul On His Memoir 'Without Fear Of Favour'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/easier-not-to-write-than-to-write-justice-sanjay-kishen-kaul-on-his-memoir-without-fear-of-favour-2026-10-28-139822",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "An interview or memoir release by a judge is a standard public interest story regarding the judiciary, not a major geopolitical event."
+      },
+      "classified_at": "2026-10-28T04:58:01.612538+00:00"
+    },
+    {
+      "title": "Delhi HC Upholds Conviction Of 5 Men In Monish's 2020 Delhi Riots Killing",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-hc-upholds-conviction-of-5-men-in-monish-s-2020-delhi-riots-killing-2026-10-28-139821",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "The conviction of individuals in a specific riot case is a legal matter of national/regional consequence, fitting the NORMAL category."
+      },
+      "classified_at": "2026-10-28T04:58:01.612541+00:00"
+    },
+    {
+      "title": "Metro Passenger Confronts Man Filming Her; Viral Video Sparks Safety Debate",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/im-literally-shaking-bengaluru-woman-confronts-man-for-filming-her-at-metro-station-video-sparks-outrage-ws-l-10400734.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A viral video regarding a public safety incident in a metro system is a notable public interest story but lacks the scale of a major disaster or geopolitical event."
+      },
+      "classified_at": "2026-10-28T04:58:01.612544+00:00"
+    },
+    {
+      "title": "FC Barcelona Asked To Pay $672 Fine After Complaint Over Julian Alvarez Pursuit",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/sports/football/fc-barcelona-asked-to-pay-672-fine-after-complaint-over-julian-alvarez-pursuit-ws-kl-10400656.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A fine issued to a football club regarding transfer compliance is a standard administrative matter within the sports industry."
+      },
+      "classified_at": "2026-10-28T04:58:01.612546+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
