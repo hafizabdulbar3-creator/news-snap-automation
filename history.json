@@ -2663,6 +2663,15 @@
       "published": true,
       "media_id": "18440871676181803",
       "timestamp": "2026-10-28T17:23:35.961905+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/gyanu-must-go-cockroach-janta-party-extends-support-to-india-blocs-november-1-rally-10401970.html?comscorekw=jionews",
+      "title": "'Gyanu Must Go': Cockroach Janata Party Extends Support To INDIA Bloc's November 1 Rally",
+      "headline": "Cockroach Janata Party Extends Support To INDIA Bloc's Nov 1 Rally",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18001561029041553",
+      "timestamp": "2026-10-28T17:50:35.431525+00:00"
     }
   ],
   "processed": [
@@ -2748,19 +2757,7 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'Gyanu Must Go': Cockroach Janata Party Extends Support To INDIA Bloc's November 1 Rally",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/gyanu-must-go-cockroach-janta-party-extends-support-to-india-blocs-november-1-rally-10401970.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Support for a political rally by a satirical party is a notable regional political development but lacks broad international consequence."
-      },
-      "classified_at": "2026-10-28T17:23:13.840903+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
