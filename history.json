@@ -2870,6 +2870,15 @@
       "published": true,
       "media_id": "18218326831347806",
       "timestamp": "2026-10-29T11:01:19.295803+00:00"
+    },
+    {
+      "url": "https://www.news18.com/tech/sundar-pichai-announces-alphabets-q3-results-as-elon-musk-reacts-with-wow-wall-street-raises-concerns-over-ai-spending-ws-l-10403246.html?comscorekw=jionews",
+      "title": "Google's Parent Reports Strong Q3, But AI Costs Spark Investor Alarm",
+      "headline": "Alphabet Reports Strong Q3, But AI Costs Spark Investor Alarm",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18137835676641728",
+      "timestamp": "2026-10-29T11:32:57.761658+00:00"
     }
   ],
   "processed": [
@@ -3004,17 +3013,6 @@
         "reason": "This is a routine administrative meeting regarding government policy (water management) and lacks the urgency or scale of a major disaster or crisis."
       },
       "classified_at": "2026-10-29T10:34:53.166598+00:00"
-    },
-    {
-      "title": "Google's Parent Reports Strong Q3, But AI Costs Spark Investor Alarm",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/tech/sundar-pichai-announces-alphabets-q3-results-as-elon-musk-reacts-with-wow-wall-street-raises-concerns-over-ai-spending-ws-l-10403246.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "This is a standard financial report on a major corporation's earnings and investor concerns regarding operational costs."
-      },
-      "classified_at": "2026-10-29T10:34:53.166603+00:00"
     },
     {
       "title": "Ramayana: Pakistani Hindus Chant 'Jai Shree Ram', Cheer For Ranbir Kapoor And Yash's Film",
