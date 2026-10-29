@@ -2852,6 +2852,15 @@
       "published": true,
       "media_id": "18118260736812721",
       "timestamp": "2026-10-29T10:04:34.630925+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/israel-police-say-they-will-not-allow-purity-of-election-to-be-undermined-assure-full-investigation-of-alleged-fraud-2026-10-29-139936",
+      "title": "Foreign Funding Claims Rock Israeli Elections; Police Launch Probe",
+      "headline": "Police Launch Probe Into Alleged Foreign Funding in Israeli Elections",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18015700934975387",
+      "timestamp": "2026-10-29T10:35:22.217282+00:00"
     }
   ],
   "processed": [
@@ -2964,7 +2973,74 @@
       "rejection_reason": "Caption must contain 20–80 words, got 19."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump, India & The Ring Of Fire | Wargaming By Retd. Major Gen. GD Bakshi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/defence/trump-india-the-ring-of-fire-wargaming-by-retd-major-gen-gd-bakshi-2026-10-29-139934",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "This is an opinion piece or analysis regarding geopolitical strategy. While it touches on international relations, it is a commentary rather than a breaking news event."
+      },
+      "classified_at": "2026-10-29T10:34:53.166591+00:00"
+    },
+    {
+      "title": "Instagram CEO Adam Mosseri Predicts Growing Anger Over AI, Says Backlash Will Extend Beyond Creators",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/tech/instagram-ceo-adam-mosseri-predicts-growing-anger-over-ai-says-backlash-will-extend-beyond-creators-ws-l-10403272.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A prediction from a tech CEO regarding public sentiment towards AI is a notable business and tech trend story, but not a major geopolitical event."
+      },
+      "classified_at": "2026-10-29T10:34:53.166595+00:00"
+    },
+    {
+      "title": "Union Minister Of Jal Shakti C R Patil Chairs 19th Meeting Of Ganga Flood Control Board In New Delhi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/union-minister-of-jal-shakti-c-r-patil-chairs-19th-meeting-of-ganga-flood-control-board-in-new-delhi-2026-10-29-139935",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This is a routine administrative meeting regarding government policy (water management) and lacks the urgency or scale of a major disaster or crisis."
+      },
+      "classified_at": "2026-10-29T10:34:53.166598+00:00"
+    },
+    {
+      "title": "Bangladesh Air Force Officer Linked To Former PM Hasina Escape Video Found Dead In River",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/bangladesh-air-force-officer-linked-to-former-pm-hasina-escape-video-found-dead-in-river-2026-10-29-139938",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The death of a military officer linked to a high-profile political escape involving a former Prime Minister is a significant development in regional geopolitics."
+      },
+      "classified_at": "2026-10-29T10:34:53.166601+00:00"
+    },
+    {
+      "title": "Google's Parent Reports Strong Q3, But AI Costs Spark Investor Alarm",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/tech/sundar-pichai-announces-alphabets-q3-results-as-elon-musk-reacts-with-wow-wall-street-raises-concerns-over-ai-spending-ws-l-10403246.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "This is a standard financial report on a major corporation's earnings and investor concerns regarding operational costs."
+      },
+      "classified_at": "2026-10-29T10:34:53.166603+00:00"
+    },
+    {
+      "title": "Ramayana: Pakistani Hindus Chant 'Jai Shree Ram', Cheer For Ranbir Kapoor And Yash's Film",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/ramayana-pakistani-hindus-chant-jai-shree-ram-cheer-for-ranbir-kapoor-and-yashs-film-ws-lrt-10403066.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "This is a cultural event report regarding the reception of a film. While it highlights cross-border cultural sentiment, it is not a major geopolitical event."
+      },
+      "classified_at": "2026-10-29T10:34:53.166606+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
