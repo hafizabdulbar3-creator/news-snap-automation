@@ -2762,6 +2762,15 @@
       "published": true,
       "media_id": "18461727634189090",
       "timestamp": "2026-10-29T05:28:08.353276+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/can-whatsapp-win-elections-how-brazils-lulas-army-mobilised-millions-of-voters-shil-ws-l-10402583.html?comscorekw=jionews",
+      "title": "Can WhatsApp Win Elections? How Brazil's 'Lula's Army' Mobilised Millions Of Voters",
+      "headline": "Can WhatsApp Win Elections? Brazil's 'Lula's Army' Mobilised Millions",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17879065815567037",
+      "timestamp": "2026-10-29T05:54:24.487710+00:00"
     }
   ],
   "processed": [
@@ -2856,7 +2865,41 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Talking Of 'Regime Change'? Read UP's New Rules For Government Jobs",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/keen-on-regime-change-ups-new-rules-may-block-your-government-job-ws-l-10402524.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Update on regional government policy regarding job recruitment rules."
+      },
+      "classified_at": "2026-10-29T05:53:52.387306+00:00"
+    },
+    {
+      "title": "AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/ai-replacing-tech-workers-amazon-lays-off-250-employees-in-devices-unit-2026-10-29-139905",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Corporate news regarding workforce reductions in the tech sector."
+      },
+      "classified_at": "2026-10-29T05:53:52.387311+00:00"
+    },
+    {
+      "title": "Malaysia Seizes $12.1 Million Worth of AI Chips Hidden in Servers at Kuala Lumpur Airport",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/tech/malaysia-seizes-12-1-million-worth-of-ai-chips-hidden-in-servers-at-kuala-lumpur-airport-ws-l-10402529.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Significant disruption to global supply chains and national security implications regarding the seizure of advanced technology."
+      },
+      "classified_at": "2026-10-29T05:53:52.387315+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
