@@ -2753,6 +2753,15 @@
       "published": true,
       "media_id": "17994579855064616",
       "timestamp": "2026-10-29T05:02:23.782915+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/from-rs-40000-to-rs-2700-cancer-drug-prices-fall-by-up-to-93-but-costliest-medicines-stay-unchanged-ws-l-10402414.html?comscorekw=jionews",
+      "title": "From Rs 40,000 To Rs 2,700: Cancer Drug Prices Fall By Up To 93%, But Costliest Medicines Stay Unchanged",
+      "headline": "Cancer Drug Prices Fall By Up To 93%, But Costliest Medicines Stay Unchanged",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18461727634189090",
+      "timestamp": "2026-10-29T05:28:08.353276+00:00"
     }
   ],
   "processed": [
@@ -2847,19 +2856,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "From Rs 40,000 To Rs 2,700: Cancer Drug Prices Fall By Up To 93%, But Costliest Medicines Stay Unchanged",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/from-rs-40000-to-rs-2700-cancer-drug-prices-fall-by-up-to-93-but-costliest-medicines-stay-unchanged-ws-l-10402414.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Health",
-        "reason": "A significant drop in the price of cancer drugs is a major public health and economic story, but it is classified as NORMAL as it is a specific policy/economic trend rather than a geopolitical crisis."
-      },
-      "classified_at": "2026-10-29T04:09:41.003239+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
