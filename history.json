@@ -2951,6 +2951,15 @@
       "published": true,
       "media_id": "18188222566411208",
       "timestamp": "2026-10-29T15:16:32.814897+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/khushaal-on-the-vijay-theory-and-why-too-many-choices-can-leave-you-stuck-youre-not-hungry-anymore-exclusive-ws-kl-10403589.html?comscorekw=jionews",
+      "title": "Khushaal's 'The Vijay Theory': Why endless choices leave us 'not hungry anymore'.",
+      "headline": "Khushaal on 'The Vijay Theory': Why endless choices leave us 'not hungry anymore",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17975597213942899",
+      "timestamp": "2026-10-29T15:42:09.906954+00:00"
     }
   ],
   "processed": [
@@ -3085,17 +3094,6 @@
         "reason": "A corporate technology innovation (AI try-on) for small businesses, which is a regional economic trend."
       },
       "classified_at": "2026-10-29T15:15:55.985809+00:00"
-    },
-    {
-      "title": "Khushaal's 'The Vijay Theory': Why endless choices leave us 'not hungry anymore'.",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/khushaal-on-the-vijay-theory-and-why-too-many-choices-can-leave-you-stuck-youre-not-hungry-anymore-exclusive-ws-kl-10403589.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science & Tech",
-        "reason": "An article discussing a psychological theory regarding consumer behavior and choice, which is a notable public interest story."
-      },
-      "classified_at": "2026-10-29T15:15:55.985816+00:00"
     },
     {
       "title": "Gurdas Maan Defends Daler Mehndi Amid Uttarakhand Row, Says 'Give The Benefit Of The Doubt'",
