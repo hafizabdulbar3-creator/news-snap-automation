@@ -2699,6 +2699,15 @@
       "published": true,
       "media_id": "18122736592935114",
       "timestamp": "2026-10-29T02:15:50.083642+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/israel-erupts-in-protests-hundreds-hit-streets-in-tel-aviv-jerusalem-haifa-demand-jewish-arab-government-2026-10-29-139893",
+      "title": "'Freedom For All...': Hundreds Hit Streets In Tel Aviv, Jerusalem, Haifa, Demand Jewish-Arab Government",
+      "headline": "Israelis Protest for Jewish-Arab Government as Netanyahu Bloc Falls Short",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17991405101866649",
+      "timestamp": "2026-10-29T02:41:40.702761+00:00"
     }
   ],
   "processed": [
@@ -2785,17 +2794,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Freedom For All...': Hundreds Hit Streets In Tel Aviv, Jerusalem, Haifa, Demand Jewish-Arab Government",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/israel-erupts-in-protests-hundreds-hit-streets-in-tel-aviv-jerusalem-haifa-demand-jewish-arab-government-2026-10-29-139893",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Large-scale public protests in Israel regarding political representation and governance structure."
-      },
-      "classified_at": "2026-10-29T02:15:23.179075+00:00"
-    },
     {
       "title": "'What About Nagpur And Varanasi?': Congress Hits Back At PM Modi Over Zero-Seat Jibe After MLC Polls",
       "domain": "news18.com",
