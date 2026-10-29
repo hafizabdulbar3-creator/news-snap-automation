@@ -2879,6 +2879,15 @@
       "published": true,
       "media_id": "18137835676641728",
       "timestamp": "2026-10-29T11:32:57.761658+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/defence/trump-india-the-ring-of-fire-wargaming-by-retd-major-gen-gd-bakshi-2026-10-29-139934",
+      "title": "Trump, India & The Ring Of Fire | Wargaming By Retd. Major Gen. GD Bakshi",
+      "headline": "Trump, India & The Ring Of Fire: Wargaming By Retd. Major Gen. GD Bakshi",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18567401386078324",
+      "timestamp": "2026-10-29T12:04:19.309503+00:00"
     }
   ],
   "processed": [
@@ -2992,17 +3001,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump, India & The Ring Of Fire | Wargaming By Retd. Major Gen. GD Bakshi",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/defence/trump-india-the-ring-of-fire-wargaming-by-retd-major-gen-gd-bakshi-2026-10-29-139934",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "This is an opinion piece or analysis regarding geopolitical strategy. While it touches on international relations, it is a commentary rather than a breaking news event."
-      },
-      "classified_at": "2026-10-29T10:34:53.166591+00:00"
-    },
     {
       "title": "Union Minister Of Jal Shakti C R Patil Chairs 19th Meeting Of Ganga Flood Control Board In New Delhi",
       "domain": "republicworld.com",
