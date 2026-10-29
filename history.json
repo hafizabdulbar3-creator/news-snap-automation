@@ -2906,6 +2906,15 @@
       "published": true,
       "media_id": "18051735434608319",
       "timestamp": "2026-10-29T13:06:13.396904+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/trump-was-told-nvidia-chief-jensen-huang-was-target-of-a-chinese-spy-plot-but-did-nothing-report-ws-klrt-10403661.html?comscorekw=jionews",
+      "title": "Trump Was Told Nvidia Chief Jensen Huang Was Target Of A Chinese Spy Plot, But Did Nothing: Report",
+      "headline": "Trump Told Of Chinese Spy Plot Targeting Jensen Huang, Did Nothing: Report",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18122836232283069",
+      "timestamp": "2026-10-29T13:32:31.065329+00:00"
     }
   ],
   "processed": [
@@ -3019,17 +3028,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump Was Told Nvidia Chief Jensen Huang Was Target Of A Chinese Spy Plot, But Did Nothing: Report",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/trump-was-told-nvidia-chief-jensen-huang-was-target-of-a-chinese-spy-plot-but-did-nothing-report-ws-klrt-10403661.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "This involves national security concerns regarding a Chinese spy plot targeting a top U.S. technology executive, which has significant implications for global tech and geopolitics."
-      },
-      "classified_at": "2026-10-29T13:05:28.971075+00:00"
-    },
     {
       "title": "Tiger Shroff Firing Case: 11 Accused Face MCOCA, Remanded to Custody",
       "domain": "republicworld.com",
