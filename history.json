@@ -3005,6 +3005,15 @@
       "published": true,
       "media_id": "18643372210053770",
       "timestamp": "2026-10-29T18:03:25.183478+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/chinese-citizen-alice-huang-aka-huang-le-accused-of-using-relationship-with-nvidia-ceo-to-collect-ai-chip-info-for-beijing-2026-10-29-139973",
+      "title": "Shocking Allegations: Chinese Citizen Used Nvidia CEO Link for AI Chip Espionage",
+      "headline": "Chinese Citizen Accused of Using Nvidia CEO Link for AI Chip Espionage",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18114094508225156",
+      "timestamp": "2026-10-29T18:34:03.203663+00:00"
     }
   ],
   "processed": [
@@ -3119,17 +3128,6 @@
         "reason": "Film industry news regarding celebrity involvement in a production."
       },
       "classified_at": "2026-10-29T17:05:22.235980+00:00"
-    },
-    {
-      "title": "Shocking Allegations: Chinese Citizen Used Nvidia CEO Link for AI Chip Espionage",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/chinese-citizen-alice-huang-aka-huang-le-accused-of-using-relationship-with-nvidia-ceo-to-collect-ai-chip-info-for-beijing-2026-10-29-139973",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "Corporate/technology industry news regarding a specific executive."
-      },
-      "classified_at": "2026-10-29T17:05:22.235982+00:00"
     },
     {
       "title": "OG Rajshri Heroine Madhuri Dixit And Sooraj Barjatya's Newest Muse Sharvari Make A Pretty Case For Pink",
