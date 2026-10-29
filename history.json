@@ -2987,6 +2987,15 @@
       "published": true,
       "media_id": "18042882896651428",
       "timestamp": "2026-10-29T17:06:27.787932+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/sindh-ambulance-blast-at-least-10-dead-after-oxygen-cylinder-explosion-in-nagarparkar-area-2026-10-29-139972",
+      "title": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion In Nagarparkar Area",
+      "headline": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17990089878075449",
+      "timestamp": "2026-10-29T17:36:54.780951+00:00"
     }
   ],
   "processed": [
@@ -3091,17 +3100,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion In Nagarparkar Area",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/sindh-ambulance-blast-at-least-10-dead-after-oxygen-cylinder-explosion-in-nagarparkar-area-2026-10-29-139972",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Major terrorist attack resulting in significant loss of life."
-      },
-      "classified_at": "2026-10-29T17:05:22.235975+00:00"
-    },
     {
       "title": "Dhanush, The New Celluloid Arrow Aimed At The Political Arena",
       "domain": "news18.com",
