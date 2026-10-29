@@ -2735,6 +2735,15 @@
       "published": true,
       "media_id": "18220330051354750",
       "timestamp": "2026-10-29T04:10:09.751295+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/heavy-rain-batters-parts-of-delhi-ncr-imd-issues-yellow-alert-aqi-crosses-200-ws-l-10402384.html?comscorekw=jionews",
+      "title": "Heavy Rain Batters Parts Of Delhi-NCR, IMD Issues Yellow Alert; AQI Crosses 200",
+      "headline": "Heavy Rain Batters Delhi-NCR, IMD Issues Yellow Alert",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18085151552704953",
+      "timestamp": "2026-10-29T04:36:15.342979+00:00"
     }
   ],
   "processed": [
@@ -2840,17 +2849,6 @@
         "reason": "A regional electoral victory in Nagpur is a notable political development but does not constitute a major geopolitical event."
       },
       "classified_at": "2026-10-29T04:09:41.003216+00:00"
-    },
-    {
-      "title": "Heavy Rain Batters Parts Of Delhi-NCR, IMD Issues Yellow Alert; AQI Crosses 200",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/heavy-rain-batters-parts-of-delhi-ncr-imd-issues-yellow-alert-aqi-crosses-200-ws-l-10402384.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Weather",
-        "reason": "Heavy rainfall and an air quality alert in a major capital region are significant local/regional events but do not rise to the level of a major international disaster."
-      },
-      "classified_at": "2026-10-29T04:09:41.003236+00:00"
     },
     {
       "title": "From Rs 40,000 To Rs 2,700: Cancer Drug Prices Fall By Up To 93%, But Costliest Medicines Stay Unchanged",
