@@ -2744,6 +2744,15 @@
       "published": true,
       "media_id": "18085151552704953",
       "timestamp": "2026-10-29T04:36:15.342979+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/congress-scores-first-mlc-poll-win-as-abhijit-wanjari-defeats-bjp-in-nagpur-2026-10-29-139896",
+      "title": "Congress Scores First MLC Poll Win As Abhijit Wanjari Defeats BJP In Nagpur",
+      "headline": "Congress Scores First MLC Poll Win As Abhijit Wanjari Defeats BJP In Nagpur",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17994579855064616",
+      "timestamp": "2026-10-29T05:02:23.782915+00:00"
     }
   ],
   "processed": [
@@ -2839,17 +2848,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Congress Scores First MLC Poll Win As Abhijit Wanjari Defeats BJP In Nagpur",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/congress-scores-first-mlc-poll-win-as-abhijit-wanjari-defeats-bjp-in-nagpur-2026-10-29-139896",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional electoral victory in Nagpur is a notable political development but does not constitute a major geopolitical event."
-      },
-      "classified_at": "2026-10-29T04:09:41.003216+00:00"
-    },
     {
       "title": "From Rs 40,000 To Rs 2,700: Cancer Drug Prices Fall By Up To 93%, But Costliest Medicines Stay Unchanged",
       "domain": "news18.com",
