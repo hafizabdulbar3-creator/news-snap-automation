@@ -2960,6 +2960,15 @@
       "published": true,
       "media_id": "17975597213942899",
       "timestamp": "2026-10-29T15:42:09.906954+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/football-belongs-to-fans-cristiano-ronaldo-thanks-supporters-after-winning-inaugural-boat-award-2026-10-29-139964",
+      "title": "'Football Belongs to Fans': Cristiano Ronaldo Thanks Supporters After Winning Inaugural BOAT Award",
+      "headline": "Ronaldo Wins Inaugural BOAT Award for 2008 Season",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18140795812618887",
+      "timestamp": "2026-10-29T16:08:28.546520+00:00"
     }
   ],
   "processed": [
@@ -3073,17 +3082,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Football Belongs to Fans': Cristiano Ronaldo Thanks Supporters After Winning Inaugural BOAT Award",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/sports/football-belongs-to-fans-cristiano-ronaldo-thanks-supporters-after-winning-inaugural-boat-award-2026-10-29-139964",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A sports award ceremony event involving a celebrity athlete, which is a notable public interest story but not a geopolitical event."
-      },
-      "classified_at": "2026-10-29T15:15:55.985791+00:00"
-    },
     {
       "title": "Petpooja Invoice Brings Virtual Try-On To Small Clothing Shops With AI Try-On",
       "domain": "republicworld.com",
