@@ -2978,6 +2978,15 @@
       "published": true,
       "media_id": "18098976443394559",
       "timestamp": "2026-10-29T16:39:38.874835+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/iran-declares-strait-of-hormuz-closed-as-army-reports-tanker-fire-following-naval-mine-strike-2026-10-29-139974",
+      "title": "Iran Declares Strait of Hormuz Closed as Army Reports Tanker Fire Following Naval Mine Strike",
+      "headline": "Iran Declares Strait of Hormuz Closed After Tanker Fire",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18042882896651428",
+      "timestamp": "2026-10-29T17:06:27.787932+00:00"
     }
   ],
   "processed": [
@@ -3081,7 +3090,63 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion In Nagarparkar Area",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/sindh-ambulance-blast-at-least-10-dead-after-oxygen-cylinder-explosion-in-nagarparkar-area-2026-10-29-139972",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Major terrorist attack resulting in significant loss of life."
+      },
+      "classified_at": "2026-10-29T17:05:22.235975+00:00"
+    },
+    {
+      "title": "Dhanush, The New Celluloid Arrow Aimed At The Political Arena",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/politics/dhanush-the-new-celluloid-arrow-aimed-at-the-political-arena-ws-lrt-10404006.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Film industry news regarding a celebrity's career transition."
+      },
+      "classified_at": "2026-10-29T17:05:22.235978+00:00"
+    },
+    {
+      "title": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Indian Short We Were Here As Executive Producers",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/priyanka-chopra-andrew-scott-join-oscar-qualified-indian-short-we-were-here-as-executive-producers-ws-kl-10404002.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Film industry news regarding celebrity involvement in a production."
+      },
+      "classified_at": "2026-10-29T17:05:22.235980+00:00"
+    },
+    {
+      "title": "Shocking Allegations: Chinese Citizen Used Nvidia CEO Link for AI Chip Espionage",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/chinese-citizen-alice-huang-aka-huang-le-accused-of-using-relationship-with-nvidia-ceo-to-collect-ai-chip-info-for-beijing-2026-10-29-139973",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "Corporate/technology industry news regarding a specific executive."
+      },
+      "classified_at": "2026-10-29T17:05:22.235982+00:00"
+    },
+    {
+      "title": "OG Rajshri Heroine Madhuri Dixit And Sooraj Barjatya's Newest Muse Sharvari Make A Pretty Case For Pink",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/fashion/og-rajshri-heroine-madhuri-dixit-and-sooraj-barjatyas-newest-muse-sharvari-make-a-pretty-case-for-pink-ws-l-10403975.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Entertainment industry gossip and fashion news."
+      },
+      "classified_at": "2026-10-29T17:05:22.235984+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
