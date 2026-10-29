@@ -2717,6 +2717,15 @@
       "published": true,
       "media_id": "18103210595378403",
       "timestamp": "2026-10-29T03:13:02.046923+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/up-mlc-polls-bjps-reality-check-on-candidates-cadre-and-local-connect-ahead-of-2027-battle-ws-kl-10402395.html?comscorekw=jionews",
+      "title": "UP MLC Polls: BJP's Reality Check On Candidates, Cadre And Local Connect Ahead Of 2027 Battle",
+      "headline": "BJP Faces Reality Check Ahead Of 2027 Battle",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18356766091174426",
+      "timestamp": "2026-10-29T03:44:08.196420+00:00"
     }
   ],
   "processed": [
@@ -2811,19 +2820,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "UP MLC Polls: BJP's Reality Check On Candidates, Cadre And Local Connect Ahead Of 2027 Battle",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/up-mlc-polls-bjps-reality-check-on-candidates-cadre-and-local-connect-ahead-of-2027-battle-ws-kl-10402395.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional political analysis regarding upcoming elections, which is a legitimate national/regional policy and political trend story."
-      },
-      "classified_at": "2026-10-29T03:12:31.206475+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
