@@ -2872,6 +2872,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/tech/ai-replacing-tech-workers-amazon-lays-off-250-employees-in-devices-unit-2026-10-29-139905",
+      "title": "AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-29T06:45:57.121593+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
@@ -2885,17 +2894,6 @@
         "reason": "Update on regional government policy regarding job recruitment rules."
       },
       "classified_at": "2026-10-29T05:53:52.387306+00:00"
-    },
-    {
-      "title": "AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/ai-replacing-tech-workers-amazon-lays-off-250-employees-in-devices-unit-2026-10-29-139905",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Corporate news regarding workforce reductions in the tech sector."
-      },
-      "classified_at": "2026-10-29T05:53:52.387311+00:00"
     }
   ],
   "quota_cooldown": {
