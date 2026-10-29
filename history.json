@@ -2944,20 +2944,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/building-on-a-rice-legacy-a-conversation-with-aman-gupta-managing-director-ssiel-group-2026-10-29-139912",
+      "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-29T09:58:26.720268+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 19."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/building-on-a-rice-legacy-a-conversation-with-aman-gupta-managing-director-ssiel-group-2026-10-29-139912",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A corporate profile or interview regarding a business leader is a standard business news item."
-      },
-      "classified_at": "2026-10-29T07:17:20.447520+00:00"
-    },
     {
       "title": "Kochi Crash Case: Bail Battle Intensifies As Victim's Side Challenges Relief To Judge's Son",
       "domain": "republicworld.com",
