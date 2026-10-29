@@ -2825,6 +2825,15 @@
       "published": true,
       "media_id": "17947085643361019",
       "timestamp": "2026-10-29T08:40:42.460712+00:00"
+    },
+    {
+      "url": "https://news.abplive.com/elections/up-mlc-election-results-varanasi-bjp-kedarnath-singh-concedes-defeat-accept-mandate-with-humility-1873725/amp",
+      "title": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
+      "headline": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
+      "domain": "abplive.com",
+      "published": true,
+      "media_id": "18107253383199651",
+      "timestamp": "2026-10-29T09:06:38.014006+00:00"
     }
   ],
   "processed": [
@@ -2929,17 +2938,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
-      "domain": "abplive.com",
-      "url": "https://news.abplive.com/elections/up-mlc-election-results-varanasi-bjp-kedarnath-singh-concedes-defeat-accept-mandate-with-humility-1873725/amp",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A specific electoral result for a local graduate constituency is a regional political update, not a major global event."
-      },
-      "classified_at": "2026-10-29T07:17:20.447510+00:00"
-    },
     {
       "title": "Diwali Business or Political Protest? Nitin Nabin's Big Attack on Rahul Gandhi",
       "domain": "republicworld.com",
