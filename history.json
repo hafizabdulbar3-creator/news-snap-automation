@@ -2996,6 +2996,15 @@
       "published": true,
       "media_id": "17990089878075449",
       "timestamp": "2026-10-29T17:36:54.780951+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/dhanush-the-new-celluloid-arrow-aimed-at-the-political-arena-ws-lrt-10404006.html?comscorekw=jionews",
+      "title": "Dhanush, The New Celluloid Arrow Aimed At The Political Arena",
+      "headline": "Dhanush Enters Politics With New Film",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18643372210053770",
+      "timestamp": "2026-10-29T18:03:25.183478+00:00"
     }
   ],
   "processed": [
@@ -3100,17 +3109,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Dhanush, The New Celluloid Arrow Aimed At The Political Arena",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/dhanush-the-new-celluloid-arrow-aimed-at-the-political-arena-ws-lrt-10404006.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Film industry news regarding a celebrity's career transition."
-      },
-      "classified_at": "2026-10-29T17:05:22.235978+00:00"
-    },
     {
       "title": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Indian Short We Were Here As Executive Producers",
       "domain": "news18.com",
