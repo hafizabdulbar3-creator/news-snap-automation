@@ -2892,15 +2892,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/delhi-police-sets-conditions-for-congress-rally-at-ramlila-maidan-on-november-1-what-are-they-2026-10-27-139783",
-      "title": "Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-27T12:22:57.554225+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
       "url": "https://www.news18.com/tech/whatsapp-and-telegram-may-require-an-active-sim-from-january-1-2027-under-indias-new-rules-ws-l-10400024.html?comscorekw=jionews",
       "title": "WhatsApp and Telegram May Require an Active SIM From January 1, 2027 Under India's New Rules",
       "domain": "news18.com",
@@ -2998,6 +2989,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 17."
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/ramayana-pakistani-hindus-chant-jai-shree-ram-cheer-for-ranbir-kapoor-and-yashs-film-ws-lrt-10403066.html?comscorekw=jionews",
+      "title": "Ramayana: Pakistani Hindus Chant 'Jai Shree Ram', Cheer For Ranbir Kapoor And Yash's Film",
+      "domain": "news18.com",
+      "timestamp": "2026-10-29T12:34:16.194305+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -3011,17 +3011,6 @@
         "reason": "This is a routine administrative meeting regarding government policy (water management) and lacks the urgency or scale of a major disaster or crisis."
       },
       "classified_at": "2026-10-29T10:34:53.166598+00:00"
-    },
-    {
-      "title": "Ramayana: Pakistani Hindus Chant 'Jai Shree Ram', Cheer For Ranbir Kapoor And Yash's Film",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/ramayana-pakistani-hindus-chant-jai-shree-ram-cheer-for-ranbir-kapoor-and-yashs-film-ws-lrt-10403066.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "This is a cultural event report regarding the reception of a film. While it highlights cross-border cultural sentiment, it is not a major geopolitical event."
-      },
-      "classified_at": "2026-10-29T10:34:53.166606+00:00"
     }
   ],
   "quota_cooldown": {
