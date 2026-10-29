@@ -2975,11 +2975,11 @@
   "token_metadata": {
     "token_type": "bearer",
     "expires_in": 5184000,
-    "refreshed_at": "2026-10-28T09:59:05.128756+00:00",
-    "expires_at": "2026-12-27T09:59:05.128756+00:00",
+    "refreshed_at": "2026-10-29T10:22:08.035189+00:00",
+    "expires_at": "2026-12-28T10:22:08.035189+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-10-28T09:59:07.048241+00:00"
+    "updated_at": "2026-10-29T10:22:09.910235+00:00"
   }
 }
