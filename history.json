@@ -2834,6 +2834,15 @@
       "published": true,
       "media_id": "18107253383199651",
       "timestamp": "2026-10-29T09:06:38.014006+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/diwali-business-or-political-protest-nitin-nabins-big-attack-on-rahul-gandhi-2026-10-29-139910",
+      "title": "Diwali Business or Political Protest? Nitin Nabin's Big Attack on Rahul Gandhi",
+      "headline": "Diwali Business or Political Protest? Nitin Nabin Attacks Rahul Gandhi",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17995280925062463",
+      "timestamp": "2026-10-29T09:33:14.891741+00:00"
     }
   ],
   "processed": [
@@ -2938,17 +2947,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Diwali Business or Political Protest? Nitin Nabin's Big Attack on Rahul Gandhi",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/diwali-business-or-political-protest-nitin-nabins-big-attack-on-rahul-gandhi-2026-10-29-139910",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political attack on a leader during a festival is a standard political narrative and does not rise to the level of a major international event."
-      },
-      "classified_at": "2026-10-29T07:17:20.447515+00:00"
-    },
     {
       "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
       "domain": "republicworld.com",
