@@ -3032,6 +3032,15 @@
       "published": true,
       "media_id": "18094006781283320",
       "timestamp": "2026-10-29T19:31:36.860075+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/tripura-sir-rescheduled-fresh-timeline-out-house-to-house-visits-from-december-26-ws-lr-10404141.html?comscorekw=jionews",
+      "title": "Tripura SIR Rescheduled: Fresh Timeline Out, House-to-House Visits From December 26",
+      "headline": "Tripura SIR Rescheduled: House-to-House Visits Begin December 26",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18175080613395998",
+      "timestamp": "2026-10-29T20:03:12.068079+00:00"
     }
   ],
   "processed": [
@@ -3153,19 +3162,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Tripura SIR Rescheduled: Fresh Timeline Out, House-to-House Visits From December 26",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/tripura-sir-rescheduled-fresh-timeline-out-house-to-house-visits-from-december-26-ws-lr-10404141.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National Politics",
-        "reason": "The rescheduling of a local assembly election (SIR) in the Indian state of Tripura is a standard political update regarding regional governance and election administration."
-      },
-      "classified_at": "2026-10-29T19:56:58.157756+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
