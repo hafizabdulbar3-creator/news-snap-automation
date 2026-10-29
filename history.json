@@ -2897,6 +2897,15 @@
       "published": true,
       "media_id": "17956548723287176",
       "timestamp": "2026-10-29T12:39:51.248805+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/pm-modi-to-launch-development-projects-worth-rs-14000-crore-on-his-two-day-gujarat-visit-2026-10-29-139941",
+      "title": "PM Modi To Launch Development Projects Worth Rs 14,000 Crore On His Two Day Gujarat Visit",
+      "headline": "PM Modi To Launch Rs 14,000 Crore Development Projects In Gujarat",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18051735434608319",
+      "timestamp": "2026-10-29T13:06:13.396904+00:00"
     }
   ],
   "processed": [
@@ -3009,7 +3018,30 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Was Told Nvidia Chief Jensen Huang Was Target Of A Chinese Spy Plot, But Did Nothing: Report",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/trump-was-told-nvidia-chief-jensen-huang-was-target-of-a-chinese-spy-plot-but-did-nothing-report-ws-klrt-10403661.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "This involves national security concerns regarding a Chinese spy plot targeting a top U.S. technology executive, which has significant implications for global tech and geopolitics."
+      },
+      "classified_at": "2026-10-29T13:05:28.971075+00:00"
+    },
+    {
+      "title": "Tiger Shroff Firing Case: 11 Accused Face MCOCA, Remanded to Custody",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/tiger-shroff-firing-case-mumbai-court-remands-all-11-accused-to-police-custody-till-november-6-under-mcoca-2026-10-29-139951",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A firing case involving the remand of 11 accused is a significant local crime story, but it does not rise to the level of a major geopolitical event."
+      },
+      "classified_at": "2026-10-29T13:05:28.971098+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
