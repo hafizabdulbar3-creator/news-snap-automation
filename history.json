@@ -2726,6 +2726,15 @@
       "published": true,
       "media_id": "18356766091174426",
       "timestamp": "2026-10-29T03:44:08.196420+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/jd-vance-reaches-out-to-iran-hardliner-at-trumps-direction-as-us-weighs-fresh-strikes-peace-talks-hang-in-balance-2026-10-29-139897",
+      "title": "Vance Reaches Iran Hardliner Amid Trump's Strike Threats, Peace Talks Uncertain",
+      "headline": "Vance Reaches Out to Iran Hardliner Amid Trump's Strike Threats",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18220330051354750",
+      "timestamp": "2026-10-29T04:10:09.751295+00:00"
     }
   ],
   "processed": [
@@ -2820,7 +2829,41 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Congress Scores First MLC Poll Win As Abhijit Wanjari Defeats BJP In Nagpur",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/congress-scores-first-mlc-poll-win-as-abhijit-wanjari-defeats-bjp-in-nagpur-2026-10-29-139896",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional electoral victory in Nagpur is a notable political development but does not constitute a major geopolitical event."
+      },
+      "classified_at": "2026-10-29T04:09:41.003216+00:00"
+    },
+    {
+      "title": "Heavy Rain Batters Parts Of Delhi-NCR, IMD Issues Yellow Alert; AQI Crosses 200",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/heavy-rain-batters-parts-of-delhi-ncr-imd-issues-yellow-alert-aqi-crosses-200-ws-l-10402384.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Weather",
+        "reason": "Heavy rainfall and an air quality alert in a major capital region are significant local/regional events but do not rise to the level of a major international disaster."
+      },
+      "classified_at": "2026-10-29T04:09:41.003236+00:00"
+    },
+    {
+      "title": "From Rs 40,000 To Rs 2,700: Cancer Drug Prices Fall By Up To 93%, But Costliest Medicines Stay Unchanged",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/from-rs-40000-to-rs-2700-cancer-drug-prices-fall-by-up-to-93-but-costliest-medicines-stay-unchanged-ws-l-10402414.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "A significant drop in the price of cancer drugs is a major public health and economic story, but it is classified as NORMAL as it is a specific policy/economic trend rather than a geopolitical crisis."
+      },
+      "classified_at": "2026-10-29T04:09:41.003239+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
