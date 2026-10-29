@@ -2874,15 +2874,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/lifestyle/travel/from-festive-lights-to-flight-nights-gen-z-is-turning-diwali-into-a-holiday-with-these-indian-getaways-ws-l-10399621.html?comscorekw=jionews",
-      "title": "From Festive Lights To Flight Nights: Gen Z Is Turning Diwali Into A Holiday With These Indian Getaways",
-      "domain": "news18.com",
-      "timestamp": "2026-10-27T10:33:49.959198+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-police-sets-conditions-for-congress-rally-at-ramlila-maidan-on-november-1-what-are-they-2026-10-27-139783",
       "title": "Delhi Police Sets Conditions for Congress Rally at Ramlila Maidan on November 1 | What Are They?",
       "domain": "republicworld.com",
@@ -2980,6 +2971,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 19."
+    },
+    {
+      "url": "https://www.news18.com/tech/instagram-ceo-adam-mosseri-predicts-growing-anger-over-ai-says-backlash-will-extend-beyond-creators-ws-l-10403272.html?comscorekw=jionews",
+      "title": "Instagram CEO Adam Mosseri Predicts Growing Anger Over AI, Says Backlash Will Extend Beyond Creators",
+      "domain": "news18.com",
+      "timestamp": "2026-10-29T11:26:41.301643+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
   "classified_pool": [
@@ -2993,17 +2993,6 @@
         "reason": "This is an opinion piece or analysis regarding geopolitical strategy. While it touches on international relations, it is a commentary rather than a breaking news event."
       },
       "classified_at": "2026-10-29T10:34:53.166591+00:00"
-    },
-    {
-      "title": "Instagram CEO Adam Mosseri Predicts Growing Anger Over AI, Says Backlash Will Extend Beyond Creators",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/tech/instagram-ceo-adam-mosseri-predicts-growing-anger-over-ai-says-backlash-will-extend-beyond-creators-ws-l-10403272.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A prediction from a tech CEO regarding public sentiment towards AI is a notable business and tech trend story, but not a major geopolitical event."
-      },
-      "classified_at": "2026-10-29T10:34:53.166595+00:00"
     },
     {
       "title": "Union Minister Of Jal Shakti C R Patil Chairs 19th Meeting Of Ganga Flood Control Board In New Delhi",
