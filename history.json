@@ -3014,6 +3014,15 @@
       "published": true,
       "media_id": "18114094508225156",
       "timestamp": "2026-10-29T18:34:03.203663+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/priyanka-chopra-andrew-scott-join-oscar-qualified-indian-short-we-were-here-as-executive-producers-ws-kl-10404002.html?comscorekw=jionews",
+      "title": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Indian Short We Were Here As Executive Producers",
+      "headline": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Short Film 'We Were Here",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18096682922148006",
+      "timestamp": "2026-10-29T19:00:13.894584+00:00"
     }
   ],
   "processed": [
@@ -3118,17 +3127,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Indian Short We Were Here As Executive Producers",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/priyanka-chopra-andrew-scott-join-oscar-qualified-indian-short-we-were-here-as-executive-producers-ws-kl-10404002.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Film industry news regarding celebrity involvement in a production."
-      },
-      "classified_at": "2026-10-29T17:05:22.235980+00:00"
-    },
     {
       "title": "OG Rajshri Heroine Madhuri Dixit And Sooraj Barjatya's Newest Muse Sharvari Make A Pretty Case For Pink",
       "domain": "news18.com",
