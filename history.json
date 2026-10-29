@@ -2690,6 +2690,15 @@
       "published": true,
       "media_id": "17958808968258306",
       "timestamp": "2026-10-29T01:34:22.661874+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/israel-election-results-netanyahu-bloc-stuck-at-53-seats-as-opposition-eyes-government-change-coalition-talks-begin-2026-10-29-139894",
+      "title": "Netanyahu Bloc Stalled: Opposition Eyes Israel Government Change",
+      "headline": "Netanyahu Bloc Stalled at 53 Seats as Opposition Eyes Government Change",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18122736592935114",
+      "timestamp": "2026-10-29T02:15:50.083642+00:00"
     }
   ],
   "processed": [
@@ -2775,7 +2784,30 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Freedom For All...': Hundreds Hit Streets In Tel Aviv, Jerusalem, Haifa, Demand Jewish-Arab Government",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/israel-erupts-in-protests-hundreds-hit-streets-in-tel-aviv-jerusalem-haifa-demand-jewish-arab-government-2026-10-29-139893",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Large-scale public protests in Israel regarding political representation and governance structure."
+      },
+      "classified_at": "2026-10-29T02:15:23.179075+00:00"
+    },
+    {
+      "title": "'What About Nagpur And Varanasi?': Congress Hits Back At PM Modi Over Zero-Seat Jibe After MLC Polls",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/what-about-nagpur-and-varanasi-congress-hits-back-at-pm-modi-over-zero-seat-jibe-after-mlc-polls-ws-l-10402352.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic political response to election results within a specific national context."
+      },
+      "classified_at": "2026-10-29T02:15:23.179081+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
