@@ -2973,24 +2973,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/tech/whatsapp-and-telegram-may-require-an-active-sim-from-january-1-2027-under-indias-new-rules-ws-l-10400024.html?comscorekw=jionews",
-      "title": "WhatsApp and Telegram May Require an Active SIM From January 1, 2027 Under India's New Rules",
-      "domain": "news18.com",
-      "timestamp": "2026-10-27T14:49:48.621403+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
-      "url": "https://www.news18.com/india/115-day-sir-9932303-voters-deleted-those-missing-from-karnatakas-final-electoral-roll-can-still-apply-says-ec-ws-klrt-10399915.html?comscorekw=jionews",
-      "title": "Voter Roll Shock: 99 Lakh Names Removed in Karnataka; EC Explains How to Re-apply",
-      "domain": "news18.com",
-      "timestamp": "2026-10-27T14:54:50.558920+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/india/president-murmu-hosts-liechtenstein-prince-alois-and-princess-sophie-at-rashtrapati-bhavan-banquet-pitches-partnership-under-india-efta-tepa-2026-10-27-139810",
       "title": "India Welcomes Liechtenstein Royals; Murmu Champions $100B TEPA Partnership",
       "domain": "republicworld.com",
@@ -3079,6 +3061,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/gurdas-maan-defends-daler-mehndi-amid-uttarakhand-row-says-give-the-benefit-of-the-doubt-ws-l-10403876.html?comscorekw=jionews",
+      "title": "Gurdas Maan Defends Daler Mehndi Amid Uttarakhand Row, Says 'Give The Benefit Of The Doubt'",
+      "domain": "news18.com",
+      "timestamp": "2026-10-29T16:34:07.877219+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -3092,17 +3083,6 @@
         "reason": "A corporate technology innovation (AI try-on) for small businesses, which is a regional economic trend."
       },
       "classified_at": "2026-10-29T15:15:55.985809+00:00"
-    },
-    {
-      "title": "Gurdas Maan Defends Daler Mehndi Amid Uttarakhand Row, Says 'Give The Benefit Of The Doubt'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/gurdas-maan-defends-daler-mehndi-amid-uttarakhand-row-says-give-the-benefit-of-the-doubt-ws-l-10403876.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A cultural dispute involving celebrities and a regional political row, which is a notable public interest story."
-      },
-      "classified_at": "2026-10-29T15:15:55.985818+00:00"
     }
   ],
   "quota_cooldown": {
