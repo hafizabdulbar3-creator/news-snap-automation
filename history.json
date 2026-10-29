@@ -2816,6 +2816,15 @@
       "published": true,
       "media_id": "17914561200498581",
       "timestamp": "2026-10-29T08:14:46.560093+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/nasal-spray-for-depression-could-a-toad-venom-psychedelic-help-scientists-experimental-drug-ws-l-10402912.html?comscorekw=jionews",
+      "title": "Nasal Spray For Depression: Could A Toad-Venom Psychedelic Help? Scientists Experimental Drug",
+      "headline": "Toad Venom Nasal Spray: Could This Psychedelic Help Depression?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17947085643361019",
+      "timestamp": "2026-10-29T08:40:42.460712+00:00"
     }
   ],
   "processed": [
@@ -2963,17 +2972,6 @@
         "reason": "A legal battle regarding bail in a specific crash case is a local/regional legal matter."
       },
       "classified_at": "2026-10-29T07:17:20.447524+00:00"
-    },
-    {
-      "title": "Nasal Spray For Depression: Could A Toad-Venom Psychedelic Help? Scientists Experimental Drug",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/lifestyle/health-and-fitness/nasal-spray-for-depression-could-a-toad-venom-psychedelic-help-scientists-experimental-drug-ws-l-10402912.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Science",
-        "reason": "A major scientific breakthrough involving a new experimental drug for depression is a significant technological and medical advancement."
-      },
-      "classified_at": "2026-10-29T07:17:20.447529+00:00"
     }
   ],
   "quota_cooldown": {
