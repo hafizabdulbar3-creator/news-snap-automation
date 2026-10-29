@@ -2789,6 +2789,15 @@
       "published": true,
       "media_id": "18127143985919077",
       "timestamp": "2026-10-29T06:51:36.560003+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/israelis-await-final-election-results-as-difficult-choices-lie-ahead-2026-10-29-139914",
+      "title": "Israelis Await Final Election Results as Difficult Choices Lie Ahead",
+      "headline": "Israelis Await Final Election Results Amid Difficult Choices",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17977369658936204",
+      "timestamp": "2026-10-29T07:18:27.491347+00:00"
     }
   ],
   "processed": [
@@ -2892,7 +2901,85 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
+      "domain": "abplive.com",
+      "url": "https://news.abplive.com/elections/up-mlc-election-results-varanasi-bjp-kedarnath-singh-concedes-defeat-accept-mandate-with-humility-1873725/amp",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A specific electoral result for a local graduate constituency is a regional political update, not a major global event."
+      },
+      "classified_at": "2026-10-29T07:17:20.447510+00:00"
+    },
+    {
+      "title": "Diwali Business or Political Protest? Nitin Nabin's Big Attack on Rahul Gandhi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/diwali-business-or-political-protest-nitin-nabins-big-attack-on-rahul-gandhi-2026-10-29-139910",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political attack on a leader during a festival is a standard political narrative and does not rise to the level of a major international event."
+      },
+      "classified_at": "2026-10-29T07:17:20.447515+00:00"
+    },
+    {
+      "title": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/global/obama-slams-trump-for-iran-war-40t-debt-ukraine-at-georgia-rally-full-speech-2026-10-29-139915",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A former U.S. President commenting on critical international issues like Iran, debt, and Ukraine is a major geopolitical development."
+      },
+      "classified_at": "2026-10-29T07:17:20.447518+00:00"
+    },
+    {
+      "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/building-on-a-rice-legacy-a-conversation-with-aman-gupta-managing-director-ssiel-group-2026-10-29-139912",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A corporate profile or interview regarding a business leader is a standard business news item."
+      },
+      "classified_at": "2026-10-29T07:17:20.447520+00:00"
+    },
+    {
+      "title": "Kochi Crash Case: Bail Battle Intensifies As Victim's Side Challenges Relief To Judge's Son",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/kochi-crash-case-bail-battle-intensifies-as-victims-side-challenges-relief-to-judges-son-2026-10-29-139906",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A legal battle regarding bail in a specific crash case is a local/regional legal matter."
+      },
+      "classified_at": "2026-10-29T07:17:20.447524+00:00"
+    },
+    {
+      "title": "Bolsonaro, Like The Shah Of Iran: America's 'Welcome' For Defeated Leaders Raises Questions",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/bolsonaro-like-the-shah-of-iran-americas-welcome-for-defeated-leaders-raises-questions-ws-lr-10402920.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The political situation of a former head of state and its comparison to historical geopolitical events is a major international story."
+      },
+      "classified_at": "2026-10-29T07:17:20.447526+00:00"
+    },
+    {
+      "title": "Nasal Spray For Depression: Could A Toad-Venom Psychedelic Help? Scientists Experimental Drug",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/nasal-spray-for-depression-could-a-toad-venom-psychedelic-help-scientists-experimental-drug-ws-l-10402912.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Science",
+        "reason": "A major scientific breakthrough involving a new experimental drug for depression is a significant technological and medical advancement."
+      },
+      "classified_at": "2026-10-29T07:17:20.447529+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
