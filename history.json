@@ -2771,6 +2771,15 @@
       "published": true,
       "media_id": "17879065815567037",
       "timestamp": "2026-10-29T05:54:24.487710+00:00"
+    },
+    {
+      "url": "https://www.news18.com/tech/malaysia-seizes-12-1-million-worth-of-ai-chips-hidden-in-servers-at-kuala-lumpur-airport-ws-l-10402529.html?comscorekw=jionews",
+      "title": "Malaysia Seizes $12.1 Million Worth of AI Chips Hidden in Servers at Kuala Lumpur Airport",
+      "headline": "Malaysia Seizes $12.1 Million in AI Chips Hidden in Servers",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17951019096078849",
+      "timestamp": "2026-10-29T06:20:18.054725+00:00"
     }
   ],
   "processed": [
@@ -2887,17 +2896,6 @@
         "reason": "Corporate news regarding workforce reductions in the tech sector."
       },
       "classified_at": "2026-10-29T05:53:52.387311+00:00"
-    },
-    {
-      "title": "Malaysia Seizes $12.1 Million Worth of AI Chips Hidden in Servers at Kuala Lumpur Airport",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/tech/malaysia-seizes-12-1-million-worth-of-ai-chips-hidden-in-servers-at-kuala-lumpur-airport-ws-l-10402529.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Significant disruption to global supply chains and national security implications regarding the seizure of advanced technology."
-      },
-      "classified_at": "2026-10-29T05:53:52.387315+00:00"
     }
   ],
   "quota_cooldown": {
