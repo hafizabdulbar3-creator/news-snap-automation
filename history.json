@@ -2807,6 +2807,15 @@
       "published": true,
       "media_id": "17897806014415988",
       "timestamp": "2026-10-29T07:48:58.926165+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/global/obama-slams-trump-for-iran-war-40t-debt-ukraine-at-georgia-rally-full-speech-2026-10-29-139915",
+      "title": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
+      "headline": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17914561200498581",
+      "timestamp": "2026-10-29T08:14:46.560093+00:00"
     }
   ],
   "processed": [
@@ -2932,17 +2941,6 @@
         "reason": "A political attack on a leader during a festival is a standard political narrative and does not rise to the level of a major international event."
       },
       "classified_at": "2026-10-29T07:17:20.447515+00:00"
-    },
-    {
-      "title": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/global/obama-slams-trump-for-iran-war-40t-debt-ukraine-at-georgia-rally-full-speech-2026-10-29-139915",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A former U.S. President commenting on critical international issues like Iran, debt, and Ukraine is a major geopolitical development."
-      },
-      "classified_at": "2026-10-29T07:17:20.447518+00:00"
     },
     {
       "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
