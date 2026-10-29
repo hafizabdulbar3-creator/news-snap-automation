@@ -2861,6 +2861,15 @@
       "published": true,
       "media_id": "18015700934975387",
       "timestamp": "2026-10-29T10:35:22.217282+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/bangladesh-air-force-officer-linked-to-former-pm-hasina-escape-video-found-dead-in-river-2026-10-29-139938",
+      "title": "Bangladesh Air Force Officer Linked To Former PM Hasina Escape Video Found Dead In River",
+      "headline": "Bangladesh Air Force Officer Linked to Hasina Escape Video Found Dead",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18218326831347806",
+      "timestamp": "2026-10-29T11:01:19.295803+00:00"
     }
   ],
   "processed": [
@@ -3006,17 +3015,6 @@
         "reason": "This is a routine administrative meeting regarding government policy (water management) and lacks the urgency or scale of a major disaster or crisis."
       },
       "classified_at": "2026-10-29T10:34:53.166598+00:00"
-    },
-    {
-      "title": "Bangladesh Air Force Officer Linked To Former PM Hasina Escape Video Found Dead In River",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/bangladesh-air-force-officer-linked-to-former-pm-hasina-escape-video-found-dead-in-river-2026-10-29-139938",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The death of a military officer linked to a high-profile political escape involving a former Prime Minister is a significant development in regional geopolitics."
-      },
-      "classified_at": "2026-10-29T10:34:53.166601+00:00"
     },
     {
       "title": "Google's Parent Reports Strong Q3, But AI Costs Spark Investor Alarm",
