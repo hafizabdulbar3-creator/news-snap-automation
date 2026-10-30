@@ -3149,6 +3149,15 @@
       "published": true,
       "media_id": "18041558252839023",
       "timestamp": "2026-10-30T04:06:36.567005+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/netanyahu-wins-the-battle-loses-the-numbers-as-israel-heads-for-political-deadlock-arab-parties-hold-key-ws-lr-10404252.html?comscorekw=jionews",
+      "title": "Netanyahu Wins The Battle, Loses The Numbers As Israel Enters Deadlock; Arab Parties Hold Key",
+      "headline": "Netanyahu Wins Battle, Loses Numbers As Israel Heads For Deadlock",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18635058799017912",
+      "timestamp": "2026-10-30T04:32:51.323943+00:00"
     }
   ],
   "processed": [
@@ -3270,7 +3279,41 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Prasidh Krishna Ruled Out Of New Zealand ODIs, No Replacement Named",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/prasidh-krishna-ruled-out-of-new-zealand-odis-no-replacement-named-ws-klnr-10404335.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a standard sports injury update regarding a player's absence from a cricket series. It falls under regional sports news rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-30T04:32:13.627611+00:00"
+    },
+    {
+      "title": "Delhi Breathes Easy As Rain Brings AQI To Satisfactory Zone; Mumbai Wakes Up To Haze",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-breathes-easy-as-rain-brings-aqi-to-satisfactory-zone-mumbai-wakes-up-to-haze-2026-10-30-139996",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "This is a regional environmental story regarding air quality improvements due to weather patterns. It is a notable public interest story but not a major geopolitical event."
+      },
+      "classified_at": "2026-10-30T04:32:13.627635+00:00"
+    },
+    {
+      "title": "Two Impeachments, Two Acquittals: Could Trump Face A Third If Republicans Lose Midterms?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/two-impeachments-two-acquittals-could-trump-face-a-third-if-republicans-lose-midterms-ws-l-10404304.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Politics",
+        "reason": "This discusses the potential legal and political trajectory of a former president (Trump) in the context of upcoming elections, which is a major political story with broad international consequence."
+      },
+      "classified_at": "2026-10-30T04:32:13.627642+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
