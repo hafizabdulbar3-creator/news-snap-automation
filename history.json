@@ -3158,6 +3158,15 @@
       "published": true,
       "media_id": "18635058799017912",
       "timestamp": "2026-10-30T04:32:51.323943+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/two-impeachments-two-acquittals-could-trump-face-a-third-if-republicans-lose-midterms-ws-l-10404304.html?comscorekw=jionews",
+      "title": "Two Impeachments, Two Acquittals: Could Trump Face A Third If Republicans Lose Midterms?",
+      "headline": "Two Impeachments, Two Acquittals: Could Trump Face A Third If Republicans Lose Midterms?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18118048919107708",
+      "timestamp": "2026-10-30T04:58:23.261710+00:00"
     }
   ],
   "processed": [
@@ -3301,17 +3310,6 @@
         "reason": "This is a regional environmental story regarding air quality improvements due to weather patterns. It is a notable public interest story but not a major geopolitical event."
       },
       "classified_at": "2026-10-30T04:32:13.627635+00:00"
-    },
-    {
-      "title": "Two Impeachments, Two Acquittals: Could Trump Face A Third If Republicans Lose Midterms?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/two-impeachments-two-acquittals-could-trump-face-a-third-if-republicans-lose-midterms-ws-l-10404304.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Politics",
-        "reason": "This discusses the potential legal and political trajectory of a former president (Trump) in the context of upcoming elections, which is a major political story with broad international consequence."
-      },
-      "classified_at": "2026-10-30T04:32:13.627642+00:00"
     }
   ],
   "quota_cooldown": {
