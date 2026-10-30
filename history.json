@@ -3167,6 +3167,15 @@
       "published": true,
       "media_id": "18118048919107708",
       "timestamp": "2026-10-30T04:58:23.261710+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-breathes-easy-as-rain-brings-aqi-to-satisfactory-zone-mumbai-wakes-up-to-haze-2026-10-30-139996",
+      "title": "Delhi Breathes Easy As Rain Brings AQI To Satisfactory Zone; Mumbai Wakes Up To Haze",
+      "headline": "Delhi Breathes Easy As Rain Brings AQI To Satisfactory Zone",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18106680917302533",
+      "timestamp": "2026-10-30T05:24:17.972817+00:00"
     }
   ],
   "processed": [
@@ -3299,17 +3308,6 @@
         "reason": "This is a standard sports injury update regarding a player's absence from a cricket series. It falls under regional sports news rather than a major geopolitical event."
       },
       "classified_at": "2026-10-30T04:32:13.627611+00:00"
-    },
-    {
-      "title": "Delhi Breathes Easy As Rain Brings AQI To Satisfactory Zone; Mumbai Wakes Up To Haze",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-breathes-easy-as-rain-brings-aqi-to-satisfactory-zone-mumbai-wakes-up-to-haze-2026-10-30-139996",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "This is a regional environmental story regarding air quality improvements due to weather patterns. It is a notable public interest story but not a major geopolitical event."
-      },
-      "classified_at": "2026-10-30T04:32:13.627635+00:00"
     }
   ],
   "quota_cooldown": {
