@@ -3185,6 +3185,15 @@
       "published": true,
       "media_id": "18093287942280166",
       "timestamp": "2026-10-30T05:50:16.496738+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/does-anyone-want-baltic-sea-to-become-like-hormuz-putin-warns-europe-amid-rising-tensions-2026-10-30-140006",
+      "title": "'Does Anyone Want Baltic Sea To Become Like Hormuz?' Putin Warns Europe Amid Rising Tensions",
+      "headline": "Putin Warns Europe: Baltic Sea Could Become Like Hormuz",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17957821005278750",
+      "timestamp": "2026-10-30T06:16:42.278261+00:00"
     }
   ],
   "processed": [
@@ -3306,7 +3315,85 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Israel Election Deadlock: Can Netanyahu Be Ousted? 4 Possible Ways To Form The Next Government",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/israel-election-deadlock-can-netanyahu-be-ousted-4-possible-ways-to-form-the-next-government-shil-ws-l-10404411.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Israel is a major geopolitical player; an election deadlock and potential leadership change have significant international consequences."
+      },
+      "classified_at": "2026-10-30T06:15:54.629708+00:00"
+    },
+    {
+      "title": "Traders Urge Sonia Gandhi: Defer November 1 Rally, ₹10,000 Crore Diwali Loss Feared",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/2-million-traders-at-risk-cti-appeals-to-sonia-gandhi-to-defer-india-s-nov-1-rally-warns-of-10000-crore-hit-2026-10-30-140004",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A request by traders regarding a political rally and financial losses is a regional economic/political matter of specific interest to that market."
+      },
+      "classified_at": "2026-10-30T06:15:54.629732+00:00"
+    },
+    {
+      "title": "Jamia Agrees To Students' Union Elections By August 2027 After 18-Day Hunger Strike, Students Celebrate",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/jamia-agrees-to-students-union-elections-by-august-2027-after-18-day-hunger-strike-students-celebrate-2026-10-30-140002",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A resolution to student union elections following a protest is a significant regional/national policy or institutional development."
+      },
+      "classified_at": "2026-10-30T06:15:54.629734+00:00"
+    },
+    {
+      "title": "Bhutan GLOF Alert: CWC Warns Of Sudden Flooding In Assam, Bengal; Sankosh River On Watch",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bhutan-glof-alert-cwc-warns-of-sudden-flooding-in-assam-bengal-sankosh-river-on-watch-2026-10-30-140000",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A Glacial Lake Outburst Flood (GLOF) warning affecting multiple states in India constitutes a major natural disaster and public safety alert."
+      },
+      "classified_at": "2026-10-30T06:15:54.629736+00:00"
+    },
+    {
+      "title": "Setback For Anant Singh As SC Cancels Bail In Dularchand Yadav Murder Case, Orders Surrender By Dec 1",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/setback-for-anant-singh-as-sc-cancels-bail-in-dularchand-yadav-murder-case-orders-surrender-by-dec-1-10404513.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A Supreme Court ruling on a bail cancellation in a murder case is a significant legal development, though it is a specific judicial matter rather than a global crisis."
+      },
+      "classified_at": "2026-10-30T06:15:54.629738+00:00"
+    },
+    {
+      "title": "Diljit Dosanjh's Delhi Concert: Traffic Restrictions, Diversions, Metro Routes Around JLN Stadium",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/awards-events/diljit-dosanjhs-delhi-concert-traffic-restrictions-diversions-metro-routes-around-jln-stadium-2026-10-30-140001",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "Traffic restrictions for a concert are a logistical and public safety issue specific to a city event."
+      },
+      "classified_at": "2026-10-30T06:15:54.629740+00:00"
+    },
+    {
+      "title": "'Kept Waiting For Uddhav's Call After 2019': Fadnavis's Banter Steals The Show At Mumbai Event",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/kept-waiting-for-uddhavs-call-after-2019-fadnaviss-banter-steals-the-show-at-mumbai-event-ws-l-10404428.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political quip or banter at an event is a regional political anecdote rather than a major news event."
+      },
+      "classified_at": "2026-10-30T06:15:54.629741+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
