@@ -3108,15 +3108,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/president-murmu-hosts-liechtenstein-prince-alois-and-princess-sophie-at-rashtrapati-bhavan-banquet-pitches-partnership-under-india-efta-tepa-2026-10-27-139810",
-      "title": "India Welcomes Liechtenstein Royals; Murmu Champions $100B TEPA Partnership",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-28T00:38:30.306898+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
       "url": "https://www.news18.com/cricket/how-did-they-manage-this-why-abhishek-sooryavanshi-left-iyer-stunned-ws-bklt-10400612.html?comscorekw=jionews",
       "title": "'How Did They Manage This?': Why Abhishek & Sooryavanshi Left Iyer Stunned",
       "domain": "news18.com",
@@ -3223,6 +3214,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/movies/hollywood/patrick-stewart-star-trek-and-x-men-veteran-passes-away-at-92-after-battling-alzheimers-disease-ws-l-10404199.html?comscorekw=jionews",
+      "title": "Patrick Stewart, Star Trek And X-Men Veteran, Passes Away At 92 After Battling Alzheimer's Disease",
+      "domain": "news18.com",
+      "timestamp": "2026-10-30T02:06:33.224130+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [],
