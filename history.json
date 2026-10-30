@@ -3252,24 +3252,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/how-did-they-manage-this-why-abhishek-sooryavanshi-left-iyer-stunned-ws-bklt-10400612.html?comscorekw=jionews",
-      "title": "'How Did They Manage This?': Why Abhishek & Sooryavanshi Left Iyer Stunned",
-      "domain": "news18.com",
-      "timestamp": "2026-10-28T03:08:52.784105+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry (''How Did They Manage This?': Why Abhishek & Sooryavanshi Left Iyer Stunned'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.news18.com/sports/football/fc-barcelona-asked-to-pay-672-fine-after-complaint-over-julian-alvarez-pursuit-ws-kl-10400656.html?comscorekw=jionews",
-      "title": "FC Barcelona Asked To Pay $672 Fine After Complaint Over Julian Alvarez Pursuit",
-      "domain": "news18.com",
-      "timestamp": "2026-10-28T07:59:54.790531+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.republicworld.com/india/those-involved-are-hooligans-action-will-be-taken-pralhad-joshi-on-jamia-protest-row-2026-10-28-139870",
       "title": "'Those Involved Are Hooligans; Action Will Be Taken': Pralhad Joshi on Jamia Protest Row",
       "domain": "republicworld.com",
@@ -3367,21 +3349,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
-    }
-  ],
-  "classified_pool": [
+    },
     {
+      "url": "https://www.republicworld.com/entertainment/awards-events/diljit-dosanjhs-delhi-concert-traffic-restrictions-diversions-metro-routes-around-jln-stadium-2026-10-30-140001",
       "title": "Diljit Dosanjh's Delhi Concert: Traffic Restrictions, Diversions, Metro Routes Around JLN Stadium",
       "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/awards-events/diljit-dosanjhs-delhi-concert-traffic-restrictions-diversions-metro-routes-around-jln-stadium-2026-10-30-140001",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "Traffic restrictions for a concert are a logistical and public safety issue specific to a city event."
-      },
-      "classified_at": "2026-10-30T06:15:54.629740+00:00"
+      "timestamp": "2026-10-30T09:17:56.933898+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
