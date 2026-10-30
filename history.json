@@ -3284,6 +3284,15 @@
       "published": true,
       "media_id": "18287844145292558",
       "timestamp": "2026-10-30T10:41:19.153612+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/west-bengal-s-alipurduar-on-alert-after-glof-in-bhutans-shintaphu-lake-thousands-shifted-to-safety-2026-10-30-140039",
+      "title": "West Bengal's Alipurduar On Alert After GLOF In Bhutan's Shintaphu Lake; Thousands Shifted To Safety",
+      "headline": "West Bengal's Alipurduar On High Alert After GLOF In Bhutan",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18099178826409131",
+      "timestamp": "2026-10-30T11:07:22.052712+00:00"
     }
   ],
   "processed": [
@@ -3396,7 +3405,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Blockchain Intelligence Firms Link North Korea to $6.3b Hack on Binance",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/business/blockchain-intelligence-firms-link-north-korea-to-63b-hack-on-binance-2026-10-30-140037",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Cybersecurity",
+        "reason": "A cyberattack involving $6.3 billion in stolen funds is linked to a state-sponsored actor (North Korea), representing a major financial crime and geopolitical security issue."
+      },
+      "classified_at": "2026-10-30T11:06:55.566519+00:00"
+    },
+    {
+      "title": "Ukraine Hits Russia's Novokuybyshevsk Oil Refinery, Ending Two-Week Pause Amid US Pressure",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/ukraine-hits-russias-novokuybyshevsk-oil-refinery-ending-two-week-pause-amid-us-pressure-2026-10-30-140035",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "This is a significant military action in an ongoing war zone (Ukraine-Russia conflict) with direct implications for energy supplies and geopolitical pressure."
+      },
+      "classified_at": "2026-10-30T11:06:55.566525+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
