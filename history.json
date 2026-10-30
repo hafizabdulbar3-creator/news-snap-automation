@@ -3347,6 +3347,15 @@
       "published": true,
       "media_id": "18099413960210563",
       "timestamp": "2026-10-30T15:39:33.535821+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/punjab-asi-tests-positive-for-substance-use-after-being-caught-in-unstable-condition-during-anti-drug-protest-2026-10-30-140053",
+      "title": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
+      "headline": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18118620581004624",
+      "timestamp": "2026-10-30T16:10:12.837707+00:00"
     }
   ],
   "processed": [
@@ -3469,17 +3478,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/punjab-asi-tests-positive-for-substance-use-after-being-caught-in-unstable-condition-during-anti-drug-protest-2026-10-30-140053",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A corruption or misconduct scandal involving a police officer is a notable public interest story."
-      },
-      "classified_at": "2026-10-30T13:27:21.141323+00:00"
-    },
     {
       "title": "Delhi Police Special Cell Seeks Polygraph Test of Woman Accused in Rs 2-Crore Carbon Credit Fraud Case",
       "domain": "republicworld.com",
