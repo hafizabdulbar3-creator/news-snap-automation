@@ -3194,6 +3194,15 @@
       "published": true,
       "media_id": "17957821005278750",
       "timestamp": "2026-10-30T06:16:42.278261+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bhutan-glof-alert-cwc-warns-of-sudden-flooding-in-assam-bengal-sankosh-river-on-watch-2026-10-30-140000",
+      "title": "Bhutan GLOF Alert: CWC Warns Of Sudden Flooding In Assam, Bengal; Sankosh River On Watch",
+      "headline": "CWC Issues Flood Advisory For Assam, Bengal After Bhutan GLOF",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18076931507766136",
+      "timestamp": "2026-10-30T06:42:09.945967+00:00"
     }
   ],
   "processed": [
@@ -3348,17 +3357,6 @@
         "reason": "A resolution to student union elections following a protest is a significant regional/national policy or institutional development."
       },
       "classified_at": "2026-10-30T06:15:54.629734+00:00"
-    },
-    {
-      "title": "Bhutan GLOF Alert: CWC Warns Of Sudden Flooding In Assam, Bengal; Sankosh River On Watch",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bhutan-glof-alert-cwc-warns-of-sudden-flooding-in-assam-bengal-sankosh-river-on-watch-2026-10-30-140000",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A Glacial Lake Outburst Flood (GLOF) warning affecting multiple states in India constitutes a major natural disaster and public safety alert."
-      },
-      "classified_at": "2026-10-30T06:15:54.629736+00:00"
     },
     {
       "title": "Setback For Anant Singh As SC Cancels Bail In Dularchand Yadav Murder Case, Orders Surrender By Dec 1",
