@@ -3338,6 +3338,15 @@
       "published": true,
       "media_id": "17989085105878755",
       "timestamp": "2026-10-30T13:27:55.675512+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/yashs-children-ayra-and-yatharv-watch-ramayana-have-their-first-movie-experience-ws-lt-10405439.html?comscorekw=jionews",
+      "title": "Yash's Children Ayra And Yatharv Watch Ramayana, Have Their First Movie Experience",
+      "headline": "Yash's Kids Ayra And Yatharv Attend Ramayana Premiere In LA",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18099413960210563",
+      "timestamp": "2026-10-30T15:39:33.535821+00:00"
     }
   ],
   "processed": [
@@ -3460,17 +3469,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Yash's Children Ayra And Yatharv Watch Ramayana, Have Their First Movie Experience",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/yashs-children-ayra-and-yatharv-watch-ramayana-have-their-first-movie-experience-ws-lt-10405439.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A celebrity family watching a movie is a standard entertainment news item."
-      },
-      "classified_at": "2026-10-30T13:27:21.141319+00:00"
-    },
     {
       "title": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
       "domain": "republicworld.com",
