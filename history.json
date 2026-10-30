@@ -3365,6 +3365,15 @@
       "published": true,
       "media_id": "18199662013378371",
       "timestamp": "2026-10-30T16:51:53.815484+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/cryptocurrency/6-3-billion-binance-heist-north-korea-suspected-as-us-secret-service-launches-global-hunt-for-crypto-hackers-ws-lrt-10405822.html?comscorekw=jionews",
+      "title": "North Korea Suspected in Massive $6.3 Billion Binance Crypto Heist, US Launches Global Hunt",
+      "headline": "US Launches Global Hunt After $6.3 Billion Binance Crypto Heist",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18489506806129979",
+      "timestamp": "2026-10-30T17:18:11.857290+00:00"
     }
   ],
   "processed": [
@@ -3477,7 +3486,30 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Mossad Joins Shin Bet Probe Into Alleged Foreign Interference in Israel Elections",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/mossad-joins-shin-bet-probe-into-alleged-foreign-interference-in-israel-elections-2026-10-30-140078",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Involves national security agencies investigating alleged foreign interference in a national election, a critical matter for the country's democratic integrity."
+      },
+      "classified_at": "2026-10-30T17:17:27.836695+00:00"
+    },
+    {
+      "title": "PM Modi Inaugurates Bharat Parv, Unveils Projects, Witnesses 'Anand Math' Play",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/pm-modi-inaugurates-bharat-parv-ahead-of-sardar-patel-s-birth-anniversary-witnesses-play-on-bankim-chattopadhyays-anand-math-2026-10-30-140077",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic political event involving a Prime Minister inaugurating a cultural festival and unveiling projects; significant to the region but not of broad international consequence."
+      },
+      "classified_at": "2026-10-30T17:17:27.836715+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
