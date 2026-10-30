@@ -3293,6 +3293,15 @@
       "published": true,
       "media_id": "18099178826409131",
       "timestamp": "2026-10-30T11:07:22.052712+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/blockchain-intelligence-firms-link-north-korea-to-63b-hack-on-binance-2026-10-30-140037",
+      "title": "Blockchain Intelligence Firms Link North Korea to $6.3b Hack on Binance",
+      "headline": "Blockchain Firms Link North Korea to $6.3B Binance Hack",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18099411629407601",
+      "timestamp": "2026-10-30T11:35:52.045321+00:00"
     }
   ],
   "processed": [
@@ -3406,17 +3415,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Blockchain Intelligence Firms Link North Korea to $6.3b Hack on Binance",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/business/blockchain-intelligence-firms-link-north-korea-to-63b-hack-on-binance-2026-10-30-140037",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Cybersecurity",
-        "reason": "A cyberattack involving $6.3 billion in stolen funds is linked to a state-sponsored actor (North Korea), representing a major financial crime and geopolitical security issue."
-      },
-      "classified_at": "2026-10-30T11:06:55.566519+00:00"
-    },
     {
       "title": "Ukraine Hits Russia's Novokuybyshevsk Oil Refinery, Ending Two-Week Pause Amid US Pressure",
       "domain": "republicworld.com",
