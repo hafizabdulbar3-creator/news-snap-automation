@@ -3140,6 +3140,15 @@
       "published": true,
       "media_id": "18038731952909813",
       "timestamp": "2026-10-30T03:40:34.333764+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cricket/virat-kohli-triggers-fan-frenzy-gets-mobbed-at-auckland-airport-after-arriving-in-new-zealand-watch-ws-bklt-10404208.html?comscorekw=jionews",
+      "title": "Virat Kohli Triggers Fan Frenzy, Gets Mobbed At Auckland Airport After Arriving In New Zealand | Watch",
+      "headline": "Virat Kohli Arrives In New Zealand For ODI Series",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18041558252839023",
+      "timestamp": "2026-10-30T04:06:36.567005+00:00"
     }
   ],
   "processed": [
@@ -3261,19 +3270,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Virat Kohli Triggers Fan Frenzy, Gets Mobbed At Auckland Airport After Arriving In New Zealand | Watch",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cricket/virat-kohli-triggers-fan-frenzy-gets-mobbed-at-auckland-airport-after-arriving-in-new-zealand-watch-ws-bklt-10404208.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "This is a sports-related story about a celebrity athlete's arrival and fan reaction, which is notable but lacks the broad international consequence required for a MAJOR classification."
-      },
-      "classified_at": "2026-10-30T03:14:16.522422+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
