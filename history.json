@@ -3374,6 +3374,15 @@
       "published": true,
       "media_id": "18489506806129979",
       "timestamp": "2026-10-30T17:18:11.857290+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/mossad-joins-shin-bet-probe-into-alleged-foreign-interference-in-israel-elections-2026-10-30-140078",
+      "title": "Mossad Joins Shin Bet Probe Into Alleged Foreign Interference in Israel Elections",
+      "headline": "Mossad Joins Shin Bet Probe Into Alleged Foreign Election Interference",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18390568771224524",
+      "timestamp": "2026-10-30T23:47:39.341932+00:00"
     }
   ],
   "processed": [
@@ -3487,17 +3496,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mossad Joins Shin Bet Probe Into Alleged Foreign Interference in Israel Elections",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/mossad-joins-shin-bet-probe-into-alleged-foreign-interference-in-israel-elections-2026-10-30-140078",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves national security agencies investigating alleged foreign interference in a national election, a critical matter for the country's democratic integrity."
-      },
-      "classified_at": "2026-10-30T17:17:27.836695+00:00"
-    },
     {
       "title": "PM Modi Inaugurates Bharat Parv, Unveils Projects, Witnesses 'Anand Math' Play",
       "domain": "republicworld.com",
