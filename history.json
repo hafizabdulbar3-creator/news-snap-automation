@@ -3131,6 +3131,15 @@
       "published": true,
       "media_id": "18098785223443694",
       "timestamp": "2026-10-30T03:14:42.019839+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/ankur-rathee-calls-indian-cinemas-fair-skin-bias-dangerous-west-idolises-lupita-nyongo-exclusive-ws-kl-10404062.html?comscorekw=jionews",
+      "title": "Ankur Rathee Calls Indian Cinema's Fair-Skin Bias 'Dangerous': 'West Idolises Lupita Nyong'O' | Exclusive",
+      "headline": "Ankur Rathee Calls Fair-Skin Bias in Indian Cinema 'Dangerous",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18038731952909813",
+      "timestamp": "2026-10-30T03:40:34.333764+00:00"
     }
   ],
   "processed": [
@@ -3253,17 +3262,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Ankur Rathee Calls Indian Cinema's Fair-Skin Bias 'Dangerous': 'West Idolises Lupita Nyong'O' | Exclusive",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/ankur-rathee-calls-indian-cinemas-fair-skin-bias-dangerous-west-idolises-lupita-nyongo-exclusive-ws-kl-10404062.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Culture",
-        "reason": "This is a commentary on industry standards and representation within the film industry, which is a matter of public interest but falls under cultural discourse rather than major news."
-      },
-      "classified_at": "2026-10-30T03:14:16.522418+00:00"
-    },
     {
       "title": "Virat Kohli Triggers Fan Frenzy, Gets Mobbed At Auckland Airport After Arriving In New Zealand | Watch",
       "domain": "news18.com",
