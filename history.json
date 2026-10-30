@@ -3311,6 +3311,15 @@
       "published": true,
       "media_id": "18125309686926228",
       "timestamp": "2026-10-30T12:09:48.680425+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/container-turns-fireball-on-tonks-banas-river-bridge-after-tyre-burst-driver-jumps-to-safety-2026-10-30-140047",
+      "title": "Container Turns Fireball On Tonk's Banas River Bridge After Tyre Burst, Driver Jumps To Safety",
+      "headline": "Container Turns Fireball On Tonk's Banas River Bridge After Tyre Burst",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18114000542176531",
+      "timestamp": "2026-10-30T12:35:42.927757+00:00"
     }
   ],
   "processed": [
@@ -3433,17 +3442,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Container Turns Fireball On Tonk's Banas River Bridge After Tyre Burst, Driver Jumps To Safety",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/container-turns-fireball-on-tonks-banas-river-bridge-after-tyre-burst-driver-jumps-to-safety-2026-10-30-140047",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Accidents",
-        "reason": "A major road accident involving a fireball and potential loss of life."
-      },
-      "classified_at": "2026-10-30T12:09:19.550524+00:00"
-    },
     {
       "title": "Man Found Dead Inside Parked Car in Pune, Probe Underway",
       "domain": "republicworld.com",
