@@ -3230,6 +3230,15 @@
       "published": true,
       "media_id": "18099433052422327",
       "timestamp": "2026-10-30T08:00:03.108040+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/jamia-agrees-to-students-union-elections-by-august-2027-after-18-day-hunger-strike-students-celebrate-2026-10-30-140002",
+      "title": "Jamia Agrees To Students' Union Elections By August 2027 After 18-Day Hunger Strike, Students Celebrate",
+      "headline": "Jamia Agrees To Students' Union Elections By August 2027",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18140417299713056",
+      "timestamp": "2026-10-30T08:25:54.910750+00:00"
     }
   ],
   "processed": [
@@ -3352,17 +3361,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Jamia Agrees To Students' Union Elections By August 2027 After 18-Day Hunger Strike, Students Celebrate",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/jamia-agrees-to-students-union-elections-by-august-2027-after-18-day-hunger-strike-students-celebrate-2026-10-30-140002",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A resolution to student union elections following a protest is a significant regional/national policy or institutional development."
-      },
-      "classified_at": "2026-10-30T06:15:54.629734+00:00"
-    },
     {
       "title": "Diljit Dosanjh's Delhi Concert: Traffic Restrictions, Diversions, Metro Routes Around JLN Stadium",
       "domain": "republicworld.com",
