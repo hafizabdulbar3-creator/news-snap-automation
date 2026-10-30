@@ -3203,6 +3203,15 @@
       "published": true,
       "media_id": "18076931507766136",
       "timestamp": "2026-10-30T06:42:09.945967+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/israel-election-deadlock-can-netanyahu-be-ousted-4-possible-ways-to-form-the-next-government-shil-ws-l-10404411.html?comscorekw=jionews",
+      "title": "Israel Election Deadlock: Can Netanyahu Be Ousted? 4 Possible Ways To Form The Next Government",
+      "headline": "Israel Election Deadlock: 4 Ways To Form The Next Government",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17984613686897957",
+      "timestamp": "2026-10-30T07:08:13.254404+00:00"
     }
   ],
   "processed": [
@@ -3325,17 +3334,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Israel Election Deadlock: Can Netanyahu Be Ousted? 4 Possible Ways To Form The Next Government",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/israel-election-deadlock-can-netanyahu-be-ousted-4-possible-ways-to-form-the-next-government-shil-ws-l-10404411.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Israel is a major geopolitical player; an election deadlock and potential leadership change have significant international consequences."
-      },
-      "classified_at": "2026-10-30T06:15:54.629708+00:00"
-    },
     {
       "title": "Traders Urge Sonia Gandhi: Defer November 1 Rally, ₹10,000 Crore Diwali Loss Feared",
       "domain": "republicworld.com",
