@@ -3221,6 +3221,15 @@
       "published": true,
       "media_id": "17975324231947902",
       "timestamp": "2026-10-30T07:33:57.440424+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/setback-for-anant-singh-as-sc-cancels-bail-in-dularchand-yadav-murder-case-orders-surrender-by-dec-1-10404513.html?comscorekw=jionews",
+      "title": "Setback For Anant Singh As SC Cancels Bail In Dularchand Yadav Murder Case, Orders Surrender By Dec 1",
+      "headline": "SC Cancels Bail For Anant Singh In Dularchand Yadav Murder Case",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18099433052422327",
+      "timestamp": "2026-10-30T08:00:03.108040+00:00"
     }
   ],
   "processed": [
@@ -3353,17 +3362,6 @@
         "reason": "A resolution to student union elections following a protest is a significant regional/national policy or institutional development."
       },
       "classified_at": "2026-10-30T06:15:54.629734+00:00"
-    },
-    {
-      "title": "Setback For Anant Singh As SC Cancels Bail In Dularchand Yadav Murder Case, Orders Surrender By Dec 1",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/setback-for-anant-singh-as-sc-cancels-bail-in-dularchand-yadav-murder-case-orders-surrender-by-dec-1-10404513.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A Supreme Court ruling on a bail cancellation in a murder case is a significant legal development, though it is a specific judicial matter rather than a global crisis."
-      },
-      "classified_at": "2026-10-30T06:15:54.629738+00:00"
     },
     {
       "title": "Diljit Dosanjh's Delhi Concert: Traffic Restrictions, Diversions, Metro Routes Around JLN Stadium",
