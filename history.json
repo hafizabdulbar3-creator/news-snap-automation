@@ -3248,6 +3248,15 @@
       "published": true,
       "media_id": "18119194510961505",
       "timestamp": "2026-10-30T08:52:12.207671+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/forbidden-to-form-government-with-them-netanyahu-ramps-up-rhetoric-against-alliance-with-arab-parties-2026-10-30-140028",
+      "title": "'Forbidden To Form Government With Them': Netanyahu Ramps Up Rhetoric Against Alliance With Arab Parties",
+      "headline": "Netanyahu Rules Out Government With Arab Parties",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17984613686897957",
+      "timestamp": "2026-10-30T09:23:20.989927+00:00"
     }
   ],
   "processed": [
@@ -3360,7 +3369,30 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Rain Delays INDI Bloc's Impeachment Program Against CEC Gyanesh Kumar; New Date Set",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/rain-delays-indi-bloc-s-public-impeachment-programme-against-cec-gyanesh-kumar-rahul-gandhi-announces-new-date-2026-10-30-140030",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A procedural delay in an impeachment process is a matter of national/regional policy and institutional procedure."
+      },
+      "classified_at": "2026-10-30T09:22:56.904327+00:00"
+    },
+    {
+      "title": "New Zealand Break Record For Highest Total Against India In T20Is",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/new-zealand-break-record-for-highest-total-against-india-in-t20is-ws-l-10404914.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A record-breaking performance in a cricket match falls under the category of sports-only news."
+      },
+      "classified_at": "2026-10-30T09:22:56.904331+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
