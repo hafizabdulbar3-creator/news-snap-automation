@@ -3239,6 +3239,15 @@
       "published": true,
       "media_id": "18140417299713056",
       "timestamp": "2026-10-30T08:25:54.910750+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/kept-waiting-for-uddhavs-call-after-2019-fadnaviss-banter-steals-the-show-at-mumbai-event-ws-l-10404428.html?comscorekw=jionews",
+      "title": "'Kept Waiting For Uddhav's Call After 2019': Fadnavis's Banter Steals The Show At Mumbai Event",
+      "headline": "Fadnavis Jokes About Waiting For Uddhav's Call After 2019",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18119194510961505",
+      "timestamp": "2026-10-30T08:52:12.207671+00:00"
     }
   ],
   "processed": [
@@ -3371,17 +3380,6 @@
         "reason": "Traffic restrictions for a concert are a logistical and public safety issue specific to a city event."
       },
       "classified_at": "2026-10-30T06:15:54.629740+00:00"
-    },
-    {
-      "title": "'Kept Waiting For Uddhav's Call After 2019': Fadnavis's Banter Steals The Show At Mumbai Event",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/kept-waiting-for-uddhavs-call-after-2019-fadnaviss-banter-steals-the-show-at-mumbai-event-ws-l-10404428.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political quip or banter at an event is a regional political anecdote rather than a major news event."
-      },
-      "classified_at": "2026-10-30T06:15:54.629741+00:00"
     }
   ],
   "quota_cooldown": {
