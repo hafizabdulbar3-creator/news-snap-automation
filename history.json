@@ -3212,6 +3212,15 @@
       "published": true,
       "media_id": "17984613686897957",
       "timestamp": "2026-10-30T07:08:13.254404+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/2-million-traders-at-risk-cti-appeals-to-sonia-gandhi-to-defer-india-s-nov-1-rally-warns-of-10000-crore-hit-2026-10-30-140004",
+      "title": "Traders Urge Sonia Gandhi: Defer November 1 Rally, ₹10,000 Crore Diwali Loss Feared",
+      "headline": "Traders Urge Sonia Gandhi to Postpone November 1 Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17975324231947902",
+      "timestamp": "2026-10-30T07:33:57.440424+00:00"
     }
   ],
   "processed": [
@@ -3334,17 +3343,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Traders Urge Sonia Gandhi: Defer November 1 Rally, ₹10,000 Crore Diwali Loss Feared",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/2-million-traders-at-risk-cti-appeals-to-sonia-gandhi-to-defer-india-s-nov-1-rally-warns-of-10000-crore-hit-2026-10-30-140004",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A request by traders regarding a political rally and financial losses is a regional economic/political matter of specific interest to that market."
-      },
-      "classified_at": "2026-10-30T06:15:54.629732+00:00"
-    },
     {
       "title": "Jamia Agrees To Students' Union Elections By August 2027 After 18-Day Hunger Strike, Students Celebrate",
       "domain": "republicworld.com",
