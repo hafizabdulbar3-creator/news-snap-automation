@@ -3554,6 +3554,15 @@
       "published": true,
       "media_id": "17972072901158510",
       "timestamp": "2026-10-31T08:16:23.096325+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/bollywood/r-madhavan-to-headline-vishal-furia-s-next-horror-film-after-13b-and-shaitaan-2026-10-31-140113",
+      "title": "R Madhavan To Headline Vishal Furia's Next Horror Film After 13B And Shaitaan",
+      "headline": "R Madhavan To Headline Vishal Furia's Next Horror Film",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18133212526706245",
+      "timestamp": "2026-10-31T08:47:21.699279+00:00"
     }
   ],
   "processed": [
@@ -3667,17 +3676,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "R Madhavan To Headline Vishal Furia's Next Horror Film After 13B And Shaitaan",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/bollywood/r-madhavan-to-headline-vishal-furia-s-next-horror-film-after-13b-and-shaitaan-2026-10-31-140113",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Casting announcements for a film are standard industry news and do not meet the threshold for major international consequence."
-      },
-      "classified_at": "2026-10-31T07:44:50.516051+00:00"
-    },
     {
       "title": "AAP Announces Candidates For 2027 Punjab Assembly Polls, Mann To Contest From Dhuri | Check Full List",
       "domain": "news18.com",
