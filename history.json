@@ -3655,20 +3655,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/bollywood/ramayana-day-1-advance-booking-ranbir-kapoor-starrer-sells-405-lakh-earns-1981-crore-in-india-2026-10-31-140112",
+      "title": "Ramayana Day 1 Advance Booking: Ranbir Kapoor Starrer Sells 4.05 Lakh, Earns ₹19.81 Crore In India",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-31T08:42:06.349740+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Ramayana Day 1 Advance Booking: Ranbir Kapoor Starrer Sells 4.05 Lakh, Earns ₹19.81 Crore In India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/bollywood/ramayana-day-1-advance-booking-ranbir-kapoor-starrer-sells-405-lakh-earns-1981-crore-in-india-2026-10-31-140112",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Box office numbers for a film release are a standard industry metric and do not constitute a major geopolitical or economic event."
-      },
-      "classified_at": "2026-10-31T07:44:50.516047+00:00"
-    },
     {
       "title": "R Madhavan To Headline Vishal Furia's Next Horror Film After 13B And Shaitaan",
       "domain": "republicworld.com",
