@@ -3428,6 +3428,15 @@
       "published": true,
       "media_id": "18390344821238738",
       "timestamp": "2026-10-31T02:02:49.709564+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/india-bloc-rally-in-delhi-250-cctv-cameras-face-recognition-system-to-keep-ramlila-maidan-under-watch-2026-10-30-140056",
+      "title": "INDI Bloc Rally in Delhi: 250 CCTV Cameras, Face Recognition System to Keep Ramlila Maidan Under Watch",
+      "headline": "Delhi Police Deploy 250 CCTV Cameras for INDI Bloc Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18182677153438301",
+      "timestamp": "2026-10-31T02:33:33.766276+00:00"
     }
   ],
   "processed": [
@@ -3541,17 +3550,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "INDI Bloc Rally in Delhi: 250 CCTV Cameras, Face Recognition System to Keep Ramlila Maidan Under Watch",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/india-bloc-rally-in-delhi-250-cctv-cameras-face-recognition-system-to-keep-ramlila-maidan-under-watch-2026-10-30-140056",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A domestic security measure for a political rally, representing standard crowd control and public safety procedures rather than a major geopolitical event."
-      },
-      "classified_at": "2026-10-31T00:43:55.396513+00:00"
-    },
     {
       "title": "4 Dead, 2 Injured After Massive Fire Rips Through Shoe Factory In Delhi's Mangolpuri",
       "domain": "republicworld.com",
