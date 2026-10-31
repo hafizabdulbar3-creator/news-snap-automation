@@ -3721,12 +3721,12 @@
   "quota_cooldowns": {},
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5184000,
-    "refreshed_at": "2026-10-30T10:24:42.246318+00:00",
-    "expires_at": "2026-12-29T10:24:42.246318+00:00",
+    "expires_in": 5099383,
+    "refreshed_at": "2026-10-31T09:54:59.249705+00:00",
+    "expires_at": "2026-12-29T10:24:42.249705+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-10-30T10:24:43.904447+00:00"
+    "updated_at": "2026-10-31T09:55:00.679258+00:00"
   }
 }
