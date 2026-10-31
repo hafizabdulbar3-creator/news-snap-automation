@@ -3702,33 +3702,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/initiatives/building-on-a-rice-legacy-a-conversation-with-aman-gupta-managing-director-ssiel-group-2026-10-29-139912",
-      "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-29T09:58:26.720268+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 19."
-    },
-    {
-      "url": "https://www.news18.com/tech/instagram-ceo-adam-mosseri-predicts-growing-anger-over-ai-says-backlash-will-extend-beyond-creators-ws-l-10403272.html?comscorekw=jionews",
-      "title": "Instagram CEO Adam Mosseri Predicts Growing Anger Over AI, Says Backlash Will Extend Beyond Creators",
-      "domain": "news18.com",
-      "timestamp": "2026-10-29T11:26:41.301643+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 17."
-    },
-    {
-      "url": "https://www.news18.com/movies/bollywood/ramayana-pakistani-hindus-chant-jai-shree-ram-cheer-for-ranbir-kapoor-and-yashs-film-ws-lrt-10403066.html?comscorekw=jionews",
-      "title": "Ramayana: Pakistani Hindus Chant 'Jai Shree Ram', Cheer For Ranbir Kapoor And Yash's Film",
-      "domain": "news18.com",
-      "timestamp": "2026-10-29T12:34:16.194305+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/gurdas-maan-defends-daler-mehndi-amid-uttarakhand-row-says-give-the-benefit-of-the-doubt-ws-l-10403876.html?comscorekw=jionews",
       "title": "Gurdas Maan Defends Daler Mehndi Amid Uttarakhand Row, Says 'Give The Benefit Of The Doubt'",
       "domain": "news18.com",
@@ -3826,9 +3799,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/grand-nuptials-of-aishwarya-and-sireesh-unite-prominent-bengaluru-families-2026-10-31-140148",
+      "title": "Grand Nuptials of Aishwarya and Sireesh Unite Prominent Bengaluru Families",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-31T16:03:05.683630+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Protect Your Parents' Health: Best Insurance Plans To Secure Their Future",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/protect-your-parents-health-best-insurance-plans-to-secure-their-future-2026-10-31-140149",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business & Finance",
+        "reason": "An article promoting insurance products is a commercial or consumer interest story, falling under normal news classification rather than major events."
+      },
+      "classified_at": "2026-10-31T16:02:58.223433+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
