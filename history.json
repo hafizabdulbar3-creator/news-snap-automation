@@ -3446,6 +3446,15 @@
       "published": true,
       "media_id": "18097424762653708",
       "timestamp": "2026-10-31T02:59:14.325137+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/events/national-unity-day-2026-sardar-vallabhbhai-patel-legacy-role-uniting-india-ws-lr-10405973.html?comscorekw=jionews",
+      "title": "National Unity Day 2026: Sardar Vallabhbhai Patel's Legacy And His Role In Uniting India",
+      "headline": "National Unity Day 2026: Sardar Patel's Legacy And Role In Uniting India",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18096724874446135",
+      "timestamp": "2026-10-31T03:25:32.734623+00:00"
     }
   ],
   "processed": [
@@ -3558,7 +3567,30 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Amit Shah Honors Sardar Patel's Legacy, Flags Off 'Run for Unity'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/in-1218-days-sardar-patel-forged-a-united-india-amit-shah-marks-national-unity-day-flags-off-run-for-unity-2026-10-31-140096",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A standard political event involving a cabinet minister honoring a national figure and flagging off a public run, which is a routine domestic activity."
+      },
+      "classified_at": "2026-10-31T03:25:07.069554+00:00"
+    },
+    {
+      "title": "INDI Bloc Reschedules Public Impeachment Programme Against CEC Gyanesh Kumar To Saturday After Rain",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/indi-bloc-reschedules-public-impeachment-programme-against-cec-gyanesh-kumar-to-saturday-after-rain-2026-10-31-140094",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on the rescheduling of a political protest or event due to weather, which is a routine domestic political matter."
+      },
+      "classified_at": "2026-10-31T03:25:07.069573+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
