@@ -3509,6 +3509,15 @@
       "published": true,
       "media_id": "18249268507310869",
       "timestamp": "2026-10-31T06:01:17.905283+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/bengaluru-news/german-slovak-nationals-electrocuted-in-bengaluru-hotel-pool-us-guest-and-attendant-injured-ws-l-10406167.html?comscorekw=jionews",
+      "title": "German, Slovak Nationals Electrocuted In Bengaluru Hotel Pool, US Guest And Attendant Injured",
+      "headline": "German, Slovak Nationals Electrocuted In Bengaluru Hotel Pool",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18200770954387347",
+      "timestamp": "2026-10-31T06:27:13.522216+00:00"
     }
   ],
   "processed": [
@@ -3643,17 +3652,6 @@
         "reason": "Political commentary and debate regarding a regional election campaign."
       },
       "classified_at": "2026-10-31T06:00:46.873112+00:00"
-    },
-    {
-      "title": "German, Slovak Nationals Electrocuted In Bengaluru Hotel Pool, US Guest And Attendant Injured",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/bengaluru-news/german-slovak-nationals-electrocuted-in-bengaluru-hotel-pool-us-guest-and-attendant-injured-ws-l-10406167.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Report on a major accident involving foreign nationals in a major city."
-      },
-      "classified_at": "2026-10-31T06:00:46.873115+00:00"
     }
   ],
   "quota_cooldown": {
