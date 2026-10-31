@@ -3635,6 +3635,15 @@
       "published": true,
       "media_id": "18118945031049958",
       "timestamp": "2026-10-31T12:31:03.367937+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/mojtaba-khamenei-orders-effective-unrestricted-geographical-response-if-us-strikes-2026-10-31-140134",
+      "title": "Mojtaba Khamenei Orders 'Effective, Unrestricted Geographical Response' If US Strikes",
+      "headline": "Iran's Supreme Leader Orders Unrestricted Response to US Strikes",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18123457280285499",
+      "timestamp": "2026-10-31T12:56:53.916588+00:00"
     }
   ],
   "processed": [
@@ -3765,7 +3774,74 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Retd. Maj Gen GD Bakshi On Media Panic Over ITBP Statement Unwarranted; 'Thaw With China Works'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/defence/retd-maj-gen-gd-bakshi-on-media-panic-over-itbp-statement-unwarranted-thaw-with-china-works-2026-10-31-140130",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "India",
+        "reason": "Opinion piece regarding diplomatic relations and media coverage."
+      },
+      "classified_at": "2026-10-31T12:56:28.834391+00:00"
+    },
+    {
+      "title": "GitHub Says Indian Government Agencies Are Emerging As Major Drivers Of AI Adoption: Here's Why",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/tech/github-says-indian-government-agencies-are-emerging-as-major-drivers-of-ai-adoption-heres-why-ws-l-10406739.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "Report on corporate adoption trends and economic data."
+      },
+      "classified_at": "2026-10-31T12:56:28.834409+00:00"
+    },
+    {
+      "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-hc-denies-anticipatory-bail-to-medical-student-of-pmch-in-rape-case-2026-10-31-140139",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "India",
+        "reason": "Legal proceeding involving a public figure."
+      },
+      "classified_at": "2026-10-31T12:56:28.834412+00:00"
+    },
+    {
+      "title": "Manipur Unites: Huge Rally Demands SoO Scrapping, Safe IDP Return.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/manipur-large-number-of-people-join-cocomi-rally-in-imphal-demand-scrapping-of-soo-agreement-safe-return-of-idps-2026-10-31-140137",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "India",
+        "reason": "Regional political rally regarding internal security."
+      },
+      "classified_at": "2026-10-31T12:56:28.834415+00:00"
+    },
+    {
+      "title": "Delhi Fire Services to Get 2,345 Additional Posts in First Major Cadre Restructuring in 84 Years",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-fire-services-to-get-2345-additional-posts-in-first-major-cadre-restructuring-in-84-years-2026-10-31-140138",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "India",
+        "reason": "Administrative policy regarding public safety staffing."
+      },
+      "classified_at": "2026-10-31T12:56:28.834418+00:00"
+    },
+    {
+      "title": "'We Plan To Expand Our Organisation in UP': Nishant Kumar On JDU's Plan Ahead of 2027 Assembly Polls",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/we-plan-to-expand-our-organisation-in-uttar-pradesh-nishant-kumar-on-jdu-s-plan-ahead-of-2027-assembly-elections-2026-10-31-140136",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "India",
+        "reason": "Political strategy discussion ahead of upcoming elections."
+      },
+      "classified_at": "2026-10-31T12:56:28.834420+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
