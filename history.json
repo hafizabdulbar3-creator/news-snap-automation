@@ -3392,6 +3392,15 @@
       "published": true,
       "media_id": "18289471495288783",
       "timestamp": "2026-10-31T00:18:20.718704+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/jaishankar-flags-attacks-on-civilian-shipping-at-g20-says-global-south-hit-hardest-2026-10-30-140085",
+      "title": "Jaishankar Flags Attacks On Civilian Shipping At G20, Says Global South Hit Hardest",
+      "headline": "Jaishankar Flags Attacks On Civilian Shipping At G20",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18141075811724104",
+      "timestamp": "2026-10-31T00:44:21.416842+00:00"
     }
   ],
   "processed": [
@@ -3504,7 +3513,63 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Don't Weaponise Rape Law In Broken Relationships': Supreme Court Warns Against Misuse",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/dont-weaponise-rape-law-in-broken-relationships-supreme-court-warns-against-misuse-ws-lrt-10405911.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal & Civil Rights",
+        "reason": "A judicial advisory regarding the potential misuse of legal statutes in personal matters, which is significant for legal discourse but not a major geopolitical event."
+      },
+      "classified_at": "2026-10-31T00:43:55.396492+00:00"
+    },
+    {
+      "title": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bjp-president-nitin-nabin-hosts-50-nations-envoys-for-diwali-milan-at-party-hq-2026-10-30-140082",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic political event involving a party leader hosting diplomats, which is of regional/national interest but does not rise to the level of a major international summit or election."
+      },
+      "classified_at": "2026-10-31T00:43:55.396509+00:00"
+    },
+    {
+      "title": "INDI Bloc Rally in Delhi: 250 CCTV Cameras, Face Recognition System to Keep Ramlila Maidan Under Watch",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/india-bloc-rally-in-delhi-250-cctv-cameras-face-recognition-system-to-keep-ramlila-maidan-under-watch-2026-10-30-140056",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic security measure for a political rally, representing standard crowd control and public safety procedures rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-31T00:43:55.396513+00:00"
+    },
+    {
+      "title": "ISRO Places Third Indigenous Atomic Clock In Orbit With NVS-03 Launch",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/science/isro-places-third-indigenous-atomic-clock-in-orbit-with-nvs-03-launch-2026-10-30-140084",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Science & Technology",
+        "reason": "ISRO's successful launch of an indigenous atomic clock marks a major scientific and technological breakthrough in space capabilities."
+      },
+      "classified_at": "2026-10-31T00:43:55.396519+00:00"
+    },
+    {
+      "title": "4 Dead, 2 Injured After Massive Fire Rips Through Shoe Factory In Delhi's Mangolpuri",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/4-dead-2-injured-after-massive-fire-rips-through-shoe-factory-in-delhi-s-mangolpuri-2026-10-30-140083",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Disaster & Emergency",
+        "reason": "A major industrial fire resulting in casualties is a significant local news event, but it is classified as a disaster rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-31T00:43:55.396522+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
