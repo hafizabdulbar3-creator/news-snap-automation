@@ -3419,6 +3419,15 @@
       "published": true,
       "media_id": "18101284682370846",
       "timestamp": "2026-10-31T01:36:10.779524+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bjp-president-nitin-nabin-hosts-50-nations-envoys-for-diwali-milan-at-party-hq-2026-10-30-140082",
+      "title": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
+      "headline": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18390344821238738",
+      "timestamp": "2026-10-31T02:02:49.709564+00:00"
     }
   ],
   "processed": [
@@ -3532,17 +3541,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bjp-president-nitin-nabin-hosts-50-nations-envoys-for-diwali-milan-at-party-hq-2026-10-30-140082",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A domestic political event involving a party leader hosting diplomats, which is of regional/national interest but does not rise to the level of a major international summit or election."
-      },
-      "classified_at": "2026-10-31T00:43:55.396509+00:00"
-    },
     {
       "title": "INDI Bloc Rally in Delhi: 250 CCTV Cameras, Face Recognition System to Keep Ramlila Maidan Under Watch",
       "domain": "republicworld.com",
