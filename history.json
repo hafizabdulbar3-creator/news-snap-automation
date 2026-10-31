@@ -3581,6 +3581,15 @@
       "published": true,
       "media_id": "18131024464829726",
       "timestamp": "2026-10-31T09:54:53.095890+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/andhra-school-horror-man-attacks-class-10-girl-with-chainsaw-cm-orders-swift-action-2026-10-31-140123",
+      "title": "Andhra School Horror: Man Attacks Class 10 Girl With Chainsaw, Cuts Her Throat; Accused Arrested",
+      "headline": "Andhra School Horror: Man Attacks Student With Chainsaw",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17952506397300983",
+      "timestamp": "2026-10-31T10:20:52.168707+00:00"
     }
   ],
   "processed": [
@@ -3711,7 +3720,41 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Stamp Honouring Mata Bhagwati Devi Sharma Released as Gayatri Pariwar Centenary Begins in Delhi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/stamp-honouring-mata-bhagwati-devi-sharma-released-as-gayatri-pariwar-centenary-begins-in-delhi-2026-10-31-140122",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Culture",
+        "reason": "A ceremonial release of a stamp for a cultural figure is a regional/regional cultural event rather than a major geopolitical event."
+      },
+      "classified_at": "2026-10-31T10:20:22.464737+00:00"
+    },
+    {
+      "title": "Sanjay Gupta Passes Away: Hansal Mehta Calls Him 'My Only Boss In The Film Industry'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/sanjay-gupta-passes-away-hansal-mehta-calls-him-my-only-boss-in-the-film-industry-ws-l-10406521.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Obituaries",
+        "reason": "The passing of a film industry professional is a notable public interest story but does not rise to the level of a major geopolitical event."
+      },
+      "classified_at": "2026-10-31T10:20:22.464758+00:00"
+    },
+    {
+      "title": "Fresher Fired for Demanding Developer Work: Was He Wrong?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/fresher-says-he-was-fired-after-asking-company-to-give-him-developer-work-wanted-to-do-what-i-was-hired-for-ws-l-10406517.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A workplace dispute regarding job responsibilities is a corporate or labor issue of regional/national interest."
+      },
+      "classified_at": "2026-10-31T10:20:22.464760+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
