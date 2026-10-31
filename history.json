@@ -3662,6 +3662,15 @@
       "published": true,
       "media_id": "18098823362112329",
       "timestamp": "2026-10-31T13:48:35.671058+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-hc-denies-anticipatory-bail-to-medical-student-of-pmch-in-rape-case-2026-10-31-140139",
+      "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
+      "headline": "Delhi HC Denies Anticipatory Bail To PMCH Medical Student In Rape Case",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17942934216373539",
+      "timestamp": "2026-10-31T14:14:27.927464+00:00"
     }
   ],
   "processed": [
@@ -3793,17 +3802,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-hc-denies-anticipatory-bail-to-medical-student-of-pmch-in-rape-case-2026-10-31-140139",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "India",
-        "reason": "Legal proceeding involving a public figure."
-      },
-      "classified_at": "2026-10-31T12:56:28.834412+00:00"
-    },
     {
       "title": "Manipur Unites: Huge Rally Demands SoO Scrapping, Safe IDP Return.",
       "domain": "republicworld.com",
