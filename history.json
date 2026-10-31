@@ -3545,6 +3545,15 @@
       "published": true,
       "media_id": "18643787935031621",
       "timestamp": "2026-10-31T07:45:17.469453+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/yogi-govt-reaches-22-62-lakh-more-paddy-farmers-than-sp-govt-in-uttar-pradesh-ws-kl-10406233.html?comscorekw=jionews",
+      "title": "Yogi Govt Reaches 22.62 Lakh More Paddy Farmers Than SP Govt In Uttar Pradesh",
+      "headline": "Yogi Govt Procures Paddy For 22.62 Lakh More Farmers Than SP Govt",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17972072901158510",
+      "timestamp": "2026-10-31T08:16:23.096325+00:00"
     }
   ],
   "processed": [
@@ -3670,17 +3679,6 @@
         "reason": "Casting announcements for a film are standard industry news and do not meet the threshold for major international consequence."
       },
       "classified_at": "2026-10-31T07:44:50.516051+00:00"
-    },
-    {
-      "title": "Yogi Govt Reaches 22.62 Lakh More Paddy Farmers Than SP Govt In Uttar Pradesh",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/yogi-govt-reaches-22-62-lakh-more-paddy-farmers-than-sp-govt-in-uttar-pradesh-ws-kl-10406233.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A comparative statistic regarding government schemes for farmers in a specific state is a regional political development rather than a major international event."
-      },
-      "classified_at": "2026-10-31T07:44:50.516056+00:00"
     },
     {
       "title": "AAP Announces Candidates For 2027 Punjab Assembly Polls, Mann To Contest From Dhuri | Check Full List",
