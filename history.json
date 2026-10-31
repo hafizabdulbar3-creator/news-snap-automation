@@ -3716,6 +3716,15 @@
       "published": true,
       "media_id": "18092116364238638",
       "timestamp": "2026-10-31T16:34:57.643361+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/indi-bloc-rally-over-4000-cops-capf-companies-to-be-deployed-at-delhi-s-ramlila-maidan-2026-10-31-140155",
+      "title": "INDI Bloc Rally: Over 4,000 Cops, CAPF Companies To Be Deployed At Delhi's Ramlila Maidan",
+      "headline": "4,000 Police & CAPF Deployed For INDI Bloc Rally At Ramlila Maidan",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18010372401004704",
+      "timestamp": "2026-10-31T17:01:25.205986+00:00"
     }
   ],
   "processed": [
@@ -3829,17 +3838,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "INDI Bloc Rally: Over 4,000 Cops, CAPF Companies To Be Deployed At Delhi's Ramlila Maidan",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/indi-bloc-rally-over-4000-cops-capf-companies-to-be-deployed-at-delhi-s-ramlila-maidan-2026-10-31-140155",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "The deployment of police and security forces for a political rally is a standard logistical and security matter related to national/regional policy and public order."
-      },
-      "classified_at": "2026-10-31T16:34:29.079262+00:00"
-    },
     {
       "title": "Panchkula School Assault Case: FIR Against Management Over Negligence; Six-Year-Old Girl Out of Danger",
       "domain": "republicworld.com",
