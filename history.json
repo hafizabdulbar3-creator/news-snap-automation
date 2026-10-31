@@ -3707,6 +3707,15 @@
       "published": true,
       "media_id": "18080365640420164",
       "timestamp": "2026-10-31T16:08:32.078674+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/iranian-envoys-meet-qatari-mediators-as-threat-looms-of-us-strikes-after-midterm-elections-2026-10-31-140153",
+      "title": "Iranian Envoys Meet Qatari Mediators as Threat Looms of US Strikes on Iran After Midterm Elections",
+      "headline": "Iranian Envoys Meet Qatari Mediators Amid US Strike Threats",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18092116364238638",
+      "timestamp": "2026-10-31T16:34:57.643361+00:00"
     }
   ],
   "processed": [
@@ -3819,7 +3828,30 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "INDI Bloc Rally: Over 4,000 Cops, CAPF Companies To Be Deployed At Delhi's Ramlila Maidan",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/indi-bloc-rally-over-4000-cops-capf-companies-to-be-deployed-at-delhi-s-ramlila-maidan-2026-10-31-140155",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "The deployment of police and security forces for a political rally is a standard logistical and security matter related to national/regional policy and public order."
+      },
+      "classified_at": "2026-10-31T16:34:29.079262+00:00"
+    },
+    {
+      "title": "Panchkula School Assault Case: FIR Against Management Over Negligence; Six-Year-Old Girl Out of Danger",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/panchkula-school-assault-case-fir-against-management-over-negligence-six-year-old-girl-out-of-danger-2026-10-31-140151",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "The article covers a specific legal case involving a school assault and an FIR filed against management for negligence, which is a notable public interest story but not of broad international consequence."
+      },
+      "classified_at": "2026-10-31T16:34:29.079267+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
