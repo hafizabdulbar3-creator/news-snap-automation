@@ -3653,6 +3653,15 @@
       "published": true,
       "media_id": "18113793367892956",
       "timestamp": "2026-10-31T13:22:39.486825+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/defence/retd-maj-gen-gd-bakshi-on-media-panic-over-itbp-statement-unwarranted-thaw-with-china-works-2026-10-31-140130",
+      "title": "Retd. Maj Gen GD Bakshi On Media Panic Over ITBP Statement Unwarranted; 'Thaw With China Works'",
+      "headline": "Retd. Maj Gen Bakshi Calls Media Panic Over ITBP Statement Unwarranted",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18098823362112329",
+      "timestamp": "2026-10-31T13:48:35.671058+00:00"
     }
   ],
   "processed": [
@@ -3784,17 +3793,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Retd. Maj Gen GD Bakshi On Media Panic Over ITBP Statement Unwarranted; 'Thaw With China Works'",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/defence/retd-maj-gen-gd-bakshi-on-media-panic-over-itbp-statement-unwarranted-thaw-with-china-works-2026-10-31-140130",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "India",
-        "reason": "Opinion piece regarding diplomatic relations and media coverage."
-      },
-      "classified_at": "2026-10-31T12:56:28.834391+00:00"
-    },
     {
       "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
       "domain": "republicworld.com",
