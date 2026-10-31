@@ -3671,6 +3671,15 @@
       "published": true,
       "media_id": "17942934216373539",
       "timestamp": "2026-10-31T14:14:27.927464+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/manipur-large-number-of-people-join-cocomi-rally-in-imphal-demand-scrapping-of-soo-agreement-safe-return-of-idps-2026-10-31-140137",
+      "title": "Manipur Unites: Huge Rally Demands SoO Scrapping, Safe IDP Return.",
+      "headline": "Manipur Rally Demands Scrapping of SoO Agreement",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18119063210084629",
+      "timestamp": "2026-10-31T14:40:21.471175+00:00"
     }
   ],
   "processed": [
@@ -3802,17 +3811,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Manipur Unites: Huge Rally Demands SoO Scrapping, Safe IDP Return.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/manipur-large-number-of-people-join-cocomi-rally-in-imphal-demand-scrapping-of-soo-agreement-safe-return-of-idps-2026-10-31-140137",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "India",
-        "reason": "Regional political rally regarding internal security."
-      },
-      "classified_at": "2026-10-31T12:56:28.834415+00:00"
-    },
     {
       "title": "Delhi Fire Services to Get 2,345 Additional Posts in First Major Cadre Restructuring in 84 Years",
       "domain": "republicworld.com",
