@@ -3500,6 +3500,15 @@
       "published": true,
       "media_id": "17994164439025549",
       "timestamp": "2026-10-31T05:35:19.173406+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/took-stock-of-our-bilateral-cooperation-eam-jaishankar-meets-us-secy-of-state-rubio-on-sidelines-of-g20-2026-10-31-140105",
+      "title": "Jaishankar, Rubio Meet at G20: India Urges Diplomacy Amid Global Conflicts",
+      "headline": "Jaishankar Meets Rubio at G20: India Urges Diplomacy",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18249268507310869",
+      "timestamp": "2026-10-31T06:01:17.905283+00:00"
     }
   ],
   "processed": [
@@ -3612,7 +3621,41 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Uttar Pradesh Elections: BJP At Its Aggressive Best, Yogi Has the Advantage | Arnab's Lead",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/uttar-pradesh-elections-bjp-at-its-aggressive-best-yogi-has-the-advantage-arnabs-lead-2026-10-31-140104",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Regional election coverage focusing on a specific state's political dynamics."
+      },
+      "classified_at": "2026-10-31T06:00:46.873107+00:00"
+    },
+    {
+      "title": "Debate With Arnab: It's Yogi Vs The Rest In The Big Battle of Uttar Pradesh?",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/shows/the-debate-with-arnab/debate-with-arnab-its-yogi-vs-the-rest-in-the-big-battle-of-uttar-pradesh-2026-10-31-140102",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Political commentary and debate regarding a regional election campaign."
+      },
+      "classified_at": "2026-10-31T06:00:46.873112+00:00"
+    },
+    {
+      "title": "German, Slovak Nationals Electrocuted In Bengaluru Hotel Pool, US Guest And Attendant Injured",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/bengaluru-news/german-slovak-nationals-electrocuted-in-bengaluru-hotel-pool-us-guest-and-attendant-injured-ws-l-10406167.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Report on a major accident involving foreign nationals in a major city."
+      },
+      "classified_at": "2026-10-31T06:00:46.873115+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
