@@ -3482,6 +3482,15 @@
       "published": true,
       "media_id": "18480365569113334",
       "timestamp": "2026-10-31T04:43:40.328610+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/india-at-unga-warns-against-weaponisation-of-human-rights-calls-out-double-standards-2026-10-31-140098",
+      "title": "India At UNGA Warns Against 'Weaponisation' Of Human Rights, Calls Out Double Standards",
+      "headline": "India Warns Against Weaponisation Of Human Rights At UNGA",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18102824306357224",
+      "timestamp": "2026-10-31T05:09:29.094503+00:00"
     }
   ],
   "processed": [
@@ -3594,7 +3603,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Jaishankar Holds Key Bilateral Talks With EU, Germany, Canada, Brazil, Mexico At G20 In Atlanta",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/jaishankar-holds-key-bilateral-talks-with-eu-germany-canada-brazil-mexico-at-g20-in-atlanta-2026-10-31-140099",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Foreign Minister S. Jaishankar's participation in high-level bilateral talks at the G20 summit represents significant diplomatic engagement on the global stage."
+      },
+      "classified_at": "2026-10-31T05:08:57.927707+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
