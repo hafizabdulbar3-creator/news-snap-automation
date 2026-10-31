@@ -3563,6 +3563,15 @@
       "published": true,
       "media_id": "18133212526706245",
       "timestamp": "2026-10-31T08:47:21.699279+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/aap-announces-candidates-for-2027-punjab-assembly-polls-mann-to-contest-from-dhuri-check-full-list-ws-kl-10406273.html?comscorekw=jionews",
+      "title": "AAP Announces Candidates For 2027 Punjab Assembly Polls, Mann To Contest From Dhuri | Check Full List",
+      "headline": "AAP Announces Candidates For 2027 Punjab Assembly Polls",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18120164087054303",
+      "timestamp": "2026-10-31T09:13:18.420175+00:00"
     }
   ],
   "processed": [
@@ -3676,17 +3685,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "AAP Announces Candidates For 2027 Punjab Assembly Polls, Mann To Contest From Dhuri | Check Full List",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/aap-announces-candidates-for-2027-punjab-assembly-polls-mann-to-contest-from-dhuri-check-full-list-ws-kl-10406273.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "The announcement of candidates for a state assembly election in 2027 is a routine political activity and does not qualify as a major event."
-      },
-      "classified_at": "2026-10-31T07:44:50.516058+00:00"
-    },
     {
       "title": "'He Was My Guru': Milap Zaveri Breaks Down Remembering Filmmaker Sanjay Gupta | Exclusive",
       "domain": "news18.com",
