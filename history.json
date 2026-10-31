@@ -3590,6 +3590,15 @@
       "published": true,
       "media_id": "17952506397300983",
       "timestamp": "2026-10-31T10:20:52.168707+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/sanjay-gupta-passes-away-hansal-mehta-calls-him-my-only-boss-in-the-film-industry-ws-l-10406521.html?comscorekw=jionews",
+      "title": "Sanjay Gupta Passes Away: Hansal Mehta Calls Him 'My Only Boss In The Film Industry'",
+      "headline": "Sanjay Gupta Passes Away: Hansal Mehta Calls Him 'My Only Boss",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18127737883677309",
+      "timestamp": "2026-10-31T10:46:35.890127+00:00"
     }
   ],
   "processed": [
@@ -3731,17 +3740,6 @@
         "reason": "A ceremonial release of a stamp for a cultural figure is a regional/regional cultural event rather than a major geopolitical event."
       },
       "classified_at": "2026-10-31T10:20:22.464737+00:00"
-    },
-    {
-      "title": "Sanjay Gupta Passes Away: Hansal Mehta Calls Him 'My Only Boss In The Film Industry'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/sanjay-gupta-passes-away-hansal-mehta-calls-him-my-only-boss-in-the-film-industry-ws-l-10406521.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Obituaries",
-        "reason": "The passing of a film industry professional is a notable public interest story but does not rise to the level of a major geopolitical event."
-      },
-      "classified_at": "2026-10-31T10:20:22.464758+00:00"
     },
     {
       "title": "Fresher Fired for Demanding Developer Work: Was He Wrong?",
