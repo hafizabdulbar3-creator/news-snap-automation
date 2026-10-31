@@ -3549,24 +3549,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/india/what-about-nagpur-and-varanasi-congress-hits-back-at-pm-modi-over-zero-seat-jibe-after-mlc-polls-ws-l-10402352.html?comscorekw=jionews",
-      "title": "'What About Nagpur And Varanasi?': Congress Hits Back At PM Modi Over Zero-Seat Jibe After MLC Polls",
-      "domain": "news18.com",
-      "timestamp": "2026-10-29T03:07:19.345398+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
-      "url": "https://www.republicworld.com/tech/ai-replacing-tech-workers-amazon-lays-off-250-employees-in-devices-unit-2026-10-29-139905",
-      "title": "AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-29T06:45:57.121593+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('AI Replacing Tech Workers? Amazon Lays Off 250 Employees Via Early Morning Emails'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/building-on-a-rice-legacy-a-conversation-with-aman-gupta-managing-director-ssiel-group-2026-10-29-139912",
       "title": "Building on a Rice Legacy: A Conversation with Aman Gupta, Managing Director, SSIEL Group",
       "domain": "republicworld.com",
@@ -3655,6 +3637,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/cjp-abhijeet-dipke-attends-diljit-dosanjh-delhi-concert-after-im-an-artist-row-chota-bhai-samajh-ke-mitti-pao-ws-kl-10405938.html?comscorekw=jionews",
+      "title": "Abhijeet Dipke Pens Open Letter to Diljit Dosanjh After \"I'm An Artist\" Row",
+      "domain": "news18.com",
+      "timestamp": "2026-10-31T08:10:47.111063+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -3679,17 +3670,6 @@
         "reason": "Casting announcements for a film are standard industry news and do not meet the threshold for major international consequence."
       },
       "classified_at": "2026-10-31T07:44:50.516051+00:00"
-    },
-    {
-      "title": "Abhijeet Dipke Pens Open Letter to Diljit Dosanjh After \"I'm An Artist\" Row",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/cjp-abhijeet-dipke-attends-diljit-dosanjh-delhi-concert-after-im-an-artist-row-chota-bhai-samajh-ke-mitti-pao-ws-kl-10405938.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A public dispute between artists regarding creative differences is a matter of public interest but lacks the gravity of major geopolitical events."
-      },
-      "classified_at": "2026-10-31T07:44:50.516053+00:00"
     },
     {
       "title": "Yogi Govt Reaches 22.62 Lakh More Paddy Farmers Than SP Govt In Uttar Pradesh",
