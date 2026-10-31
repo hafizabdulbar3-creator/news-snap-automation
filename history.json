@@ -3691,9 +3691,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/india/organised-mock-parliament-to-soothe-its-troubled-prince-sudhanshu-trivedi-targets-congress-cites-world-bank-report-on-poverty-reduction-2026-10-31-140121",
+      "title": "BJP's Trivedi Slams Congress Over 'Mock Parliament,' Cites World Bank Report",
+      "domain": "republicworld.com",
+      "timestamp": "2026-10-31T09:44:10.791352+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Proud Moment: Ex-ISRO Chief Praises NVS-03 Launch, Boosts India's Space Confidence.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/science/proud-moment-for-india-ex-isro-chief-hails-nvs-03-launch-says-mission-restores-confidence-after-setback-2026-10-31-140119",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Science & Technology",
+        "reason": "A specific launch event and praise from a former chief are notable but do not meet the threshold for a major geopolitical event."
+      },
+      "classified_at": "2026-10-31T09:44:05.294926+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
