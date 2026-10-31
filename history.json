@@ -3797,6 +3797,15 @@
       "published": true,
       "media_id": "18347279431271234",
       "timestamp": "2026-10-31T22:13:00.569332+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/eam-jaishankar-meets-russian-counterpart-lavrov-in-atlanta-to-discuss-ukraine-conflict-and-gulf-situation-2026-10-31-140163",
+      "title": "EAM Jaishankar Meets Russian Counterpart Lavrov In Atlanta To Discuss Ukraine Conflict And Gulf Situation",
+      "headline": "EAM Jaishankar Meets Lavrov In Atlanta To Discuss Ukraine And Gulf Situation",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18090456815267680",
+      "timestamp": "2026-10-31T22:38:54.881352+00:00"
     }
   ],
   "processed": [
@@ -3909,7 +3918,19 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "KTR Slams Rahul, Revanth as 'MLA-Chor' & 'Vote-for-Note-Chor'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/mla-chor-with-vote-for-note-chor-ktr-s-sarcastic-swipe-at-rahul-gandhi-and-revanth-reddy-ahead-of-indi-bloc-rally-in-delhi-2026-10-31-140162",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Political criticism and verbal sparring between opposition leaders in a regional legislative assembly context."
+      },
+      "classified_at": "2026-10-31T22:38:21.811076+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
