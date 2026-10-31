@@ -3617,6 +3617,15 @@
       "published": true,
       "media_id": "18120175351950738",
       "timestamp": "2026-10-31T11:38:46.701328+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/republic-business-to-launch-on-november-2-as-republic-media-network-s-fifth-news-channel-2026-10-31-140132",
+      "title": "Republic Business to Launch on November 2 as Republic Media Network's Fifth News Channel",
+      "headline": "Republic Media Network Launches Fifth News Channel: Republic Business",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18639398794006161",
+      "timestamp": "2026-10-31T12:04:36.535468+00:00"
     }
   ],
   "processed": [
@@ -3747,7 +3756,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Sanjay Gupta Death: Suniel Shetty, John Abraham, Sonu Sood And Others Mourn Kaante Filmmaker",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/sanjay-gupta-death-suniel-shetty-john-abraham-sonu-sood-and-others-mourn-kaante-filmmaker-ws-klt-10406689.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "This is a celebrity obituary and industry reaction, which is a standard public interest story but lacks broad geopolitical or economic significance."
+      },
+      "classified_at": "2026-10-31T12:04:10.599323+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
