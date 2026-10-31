@@ -3455,6 +3455,15 @@
       "published": true,
       "media_id": "18096724874446135",
       "timestamp": "2026-10-31T03:25:32.734623+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/in-1218-days-sardar-patel-forged-a-united-india-amit-shah-marks-national-unity-day-flags-off-run-for-unity-2026-10-31-140096",
+      "title": "Amit Shah Honors Sardar Patel's Legacy, Flags Off 'Run for Unity'",
+      "headline": "Amit Shah Honors Sardar Patel, Flags Off 'Run for Unity",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18639174589004671",
+      "timestamp": "2026-10-31T03:51:15.774117+00:00"
     }
   ],
   "processed": [
@@ -3568,17 +3577,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Amit Shah Honors Sardar Patel's Legacy, Flags Off 'Run for Unity'",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/in-1218-days-sardar-patel-forged-a-united-india-amit-shah-marks-national-unity-day-flags-off-run-for-unity-2026-10-31-140096",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A standard political event involving a cabinet minister honoring a national figure and flagging off a public run, which is a routine domestic activity."
-      },
-      "classified_at": "2026-10-31T03:25:07.069554+00:00"
-    },
     {
       "title": "INDI Bloc Reschedules Public Impeachment Programme Against CEC Gyanesh Kumar To Saturday After Rain",
       "domain": "republicworld.com",
