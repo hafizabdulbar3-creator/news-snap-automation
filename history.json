@@ -3698,6 +3698,15 @@
       "published": true,
       "media_id": "18215597050362808",
       "timestamp": "2026-10-31T15:33:11.329707+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/protect-your-parents-health-best-insurance-plans-to-secure-their-future-2026-10-31-140149",
+      "title": "Protect Your Parents' Health: Best Insurance Plans To Secure Their Future",
+      "headline": "Best Health Insurance Plans To Secure Your Parents' Future",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18080365640420164",
+      "timestamp": "2026-10-31T16:08:32.078674+00:00"
     }
   ],
   "processed": [
@@ -3810,19 +3819,7 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Protect Your Parents' Health: Best Insurance Plans To Secure Their Future",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/protect-your-parents-health-best-insurance-plans-to-secure-their-future-2026-10-31-140149",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business & Finance",
-        "reason": "An article promoting insurance products is a commercial or consumer interest story, falling under normal news classification rather than major events."
-      },
-      "classified_at": "2026-10-31T16:02:58.223433+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
