@@ -3536,6 +3536,15 @@
       "published": true,
       "media_id": "18104151737322229",
       "timestamp": "2026-10-31T07:19:16.485584+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/poland-president-accuses-tusk-government-of-forcible-takeover-of-constitutional-tribunal-2026-10-31-140111",
+      "title": "Poland President Accuses Tusk Government Of 'Forcible Takeover' Of Constitutional Tribunal",
+      "headline": "Poland President Accuses Tusk Government Of 'Forcible Takeover' Of Constitutional Tribunal",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18643787935031621",
+      "timestamp": "2026-10-31T07:45:17.469453+00:00"
     }
   ],
   "processed": [
@@ -3648,7 +3657,74 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Ramayana Day 1 Advance Booking: Ranbir Kapoor Starrer Sells 4.05 Lakh, Earns ₹19.81 Crore In India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/bollywood/ramayana-day-1-advance-booking-ranbir-kapoor-starrer-sells-405-lakh-earns-1981-crore-in-india-2026-10-31-140112",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Box office numbers for a film release are a standard industry metric and do not constitute a major geopolitical or economic event."
+      },
+      "classified_at": "2026-10-31T07:44:50.516047+00:00"
+    },
+    {
+      "title": "R Madhavan To Headline Vishal Furia's Next Horror Film After 13B And Shaitaan",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/bollywood/r-madhavan-to-headline-vishal-furia-s-next-horror-film-after-13b-and-shaitaan-2026-10-31-140113",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Casting announcements for a film are standard industry news and do not meet the threshold for major international consequence."
+      },
+      "classified_at": "2026-10-31T07:44:50.516051+00:00"
+    },
+    {
+      "title": "Abhijeet Dipke Pens Open Letter to Diljit Dosanjh After \"I'm An Artist\" Row",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/cjp-abhijeet-dipke-attends-diljit-dosanjh-delhi-concert-after-im-an-artist-row-chota-bhai-samajh-ke-mitti-pao-ws-kl-10405938.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A public dispute between artists regarding creative differences is a matter of public interest but lacks the gravity of major geopolitical events."
+      },
+      "classified_at": "2026-10-31T07:44:50.516053+00:00"
+    },
+    {
+      "title": "Yogi Govt Reaches 22.62 Lakh More Paddy Farmers Than SP Govt In Uttar Pradesh",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/yogi-govt-reaches-22-62-lakh-more-paddy-farmers-than-sp-govt-in-uttar-pradesh-ws-kl-10406233.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A comparative statistic regarding government schemes for farmers in a specific state is a regional political development rather than a major international event."
+      },
+      "classified_at": "2026-10-31T07:44:50.516056+00:00"
+    },
+    {
+      "title": "AAP Announces Candidates For 2027 Punjab Assembly Polls, Mann To Contest From Dhuri | Check Full List",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/aap-announces-candidates-for-2027-punjab-assembly-polls-mann-to-contest-from-dhuri-check-full-list-ws-kl-10406273.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "The announcement of candidates for a state assembly election in 2027 is a routine political activity and does not qualify as a major event."
+      },
+      "classified_at": "2026-10-31T07:44:50.516058+00:00"
+    },
+    {
+      "title": "'He Was My Guru': Milap Zaveri Breaks Down Remembering Filmmaker Sanjay Gupta | Exclusive",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/he-was-my-guru-milap-zaveri-breaks-down-remembering-filmmaker-sanjay-gupta-exclusive-ws-l-10406234.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "An interview or tribute regarding a filmmaker is a standard entertainment industry story and does not meet the criteria for a major news event."
+      },
+      "classified_at": "2026-10-31T07:44:50.516061+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
