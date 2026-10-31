@@ -3401,6 +3401,15 @@
       "published": true,
       "media_id": "18141075811724104",
       "timestamp": "2026-10-31T00:44:21.416842+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/science/isro-places-third-indigenous-atomic-clock-in-orbit-with-nvs-03-launch-2026-10-30-140084",
+      "title": "ISRO Places Third Indigenous Atomic Clock In Orbit With NVS-03 Launch",
+      "headline": "ISRO Launches Third Indigenous Atomic Clock Into Orbit",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18121097468074579",
+      "timestamp": "2026-10-31T01:10:03.254306+00:00"
     }
   ],
   "processed": [
@@ -3546,17 +3555,6 @@
         "reason": "A domestic security measure for a political rally, representing standard crowd control and public safety procedures rather than a major geopolitical event."
       },
       "classified_at": "2026-10-31T00:43:55.396513+00:00"
-    },
-    {
-      "title": "ISRO Places Third Indigenous Atomic Clock In Orbit With NVS-03 Launch",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/science/isro-places-third-indigenous-atomic-clock-in-orbit-with-nvs-03-launch-2026-10-30-140084",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Science & Technology",
-        "reason": "ISRO's successful launch of an indigenous atomic clock marks a major scientific and technological breakthrough in space capabilities."
-      },
-      "classified_at": "2026-10-31T00:43:55.396519+00:00"
     },
     {
       "title": "4 Dead, 2 Injured After Massive Fire Rips Through Shoe Factory In Delhi's Mangolpuri",
