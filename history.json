@@ -3410,6 +3410,15 @@
       "published": true,
       "media_id": "18121097468074579",
       "timestamp": "2026-10-31T01:10:03.254306+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/dont-weaponise-rape-law-in-broken-relationships-supreme-court-warns-against-misuse-ws-lrt-10405911.html?comscorekw=jionews",
+      "title": "'Don't Weaponise Rape Law In Broken Relationships': Supreme Court Warns Against Misuse",
+      "headline": "SC Warns Against Weaponising Rape Law In Broken Relationships",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18101284682370846",
+      "timestamp": "2026-10-31T01:36:10.779524+00:00"
     }
   ],
   "processed": [
@@ -3523,17 +3532,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Don't Weaponise Rape Law In Broken Relationships': Supreme Court Warns Against Misuse",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/dont-weaponise-rape-law-in-broken-relationships-supreme-court-warns-against-misuse-ws-lrt-10405911.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal & Civil Rights",
-        "reason": "A judicial advisory regarding the potential misuse of legal statutes in personal matters, which is significant for legal discourse but not a major geopolitical event."
-      },
-      "classified_at": "2026-10-31T00:43:55.396492+00:00"
-    },
     {
       "title": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
       "domain": "republicworld.com",
