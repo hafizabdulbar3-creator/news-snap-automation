@@ -3644,6 +3644,15 @@
       "published": true,
       "media_id": "18123457280285499",
       "timestamp": "2026-10-31T12:56:53.916588+00:00"
+    },
+    {
+      "url": "https://www.news18.com/tech/github-says-indian-government-agencies-are-emerging-as-major-drivers-of-ai-adoption-heres-why-ws-l-10406739.html?comscorekw=jionews",
+      "title": "GitHub Says Indian Government Agencies Are Emerging As Major Drivers Of AI Adoption: Here's Why",
+      "headline": "GitHub Reports Indian Agencies Leading AI Adoption",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18113793367892956",
+      "timestamp": "2026-10-31T13:22:39.486825+00:00"
     }
   ],
   "processed": [
@@ -3785,17 +3794,6 @@
         "reason": "Opinion piece regarding diplomatic relations and media coverage."
       },
       "classified_at": "2026-10-31T12:56:28.834391+00:00"
-    },
-    {
-      "title": "GitHub Says Indian Government Agencies Are Emerging As Major Drivers Of AI Adoption: Here's Why",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/tech/github-says-indian-government-agencies-are-emerging-as-major-drivers-of-ai-adoption-heres-why-ws-l-10406739.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "Report on corporate adoption trends and economic data."
-      },
-      "classified_at": "2026-10-31T12:56:28.834409+00:00"
     },
     {
       "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
