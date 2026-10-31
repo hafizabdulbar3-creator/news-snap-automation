@@ -3518,6 +3518,15 @@
       "published": true,
       "media_id": "18200770954387347",
       "timestamp": "2026-10-31T06:27:13.522216+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/uttar-pradesh-elections-bjp-at-its-aggressive-best-yogi-has-the-advantage-arnabs-lead-2026-10-31-140104",
+      "title": "Uttar Pradesh Elections: BJP At Its Aggressive Best, Yogi Has the Advantage | Arnab's Lead",
+      "headline": "Uttar Pradesh Elections: BJP At Its Aggressive Best",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17881807812545350",
+      "timestamp": "2026-10-31T06:53:25.495209+00:00"
     }
   ],
   "processed": [
@@ -3631,17 +3640,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Uttar Pradesh Elections: BJP At Its Aggressive Best, Yogi Has the Advantage | Arnab's Lead",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/uttar-pradesh-elections-bjp-at-its-aggressive-best-yogi-has-the-advantage-arnabs-lead-2026-10-31-140104",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Regional election coverage focusing on a specific state's political dynamics."
-      },
-      "classified_at": "2026-10-31T06:00:46.873107+00:00"
-    },
     {
       "title": "Debate With Arnab: It's Yogi Vs The Rest In The Big Battle of Uttar Pradesh?",
       "domain": "republicworld.com",
