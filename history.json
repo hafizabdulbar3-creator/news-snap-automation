@@ -4121,6 +4121,15 @@
       "published": true,
       "media_id": "18199889113386961",
       "timestamp": "2026-11-01T14:43:34.091696+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/100-students-detained-on-delhis-minto-road-while-marching-towards-connaught-place-during-anti-sir-protest-ws-l-10407809.html?comscorekw=jionews",
+      "title": "100 Students Detained in Delhi During Electoral Roll Protest March",
+      "headline": "100 Students Detained in Delhi During Electoral Roll Protest March",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17903829921377468",
+      "timestamp": "2026-11-01T15:09:36.351114+00:00"
     }
   ],
   "processed": [
@@ -4217,17 +4226,6 @@
         "reason": "The extradition of a promoter associated with a betting app, which is a significant crime but falls under specific legal enforcement rather than a broad geopolitical event."
       },
       "classified_at": "2026-11-01T14:17:18.839700+00:00"
-    },
-    {
-      "title": "100 Students Detained in Delhi During Electoral Roll Protest March",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/100-students-detained-on-delhis-minto-road-while-marching-towards-connaught-place-during-anti-sir-protest-ws-l-10407809.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A protest related to electoral rolls in a specific region (Delhi)."
-      },
-      "classified_at": "2026-11-01T14:17:18.839702+00:00"
     },
     {
       "title": "'40% of Ramlila Maidan Vacant': Sambit Patra Questions INDI Bloc's 10 Lakh Turnout Claim at Delhi Rally",
