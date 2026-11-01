@@ -4049,6 +4049,15 @@
       "published": true,
       "media_id": "18097881356126284",
       "timestamp": "2026-11-01T11:05:44.115472+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/binance-resumes-bitcoin-ether-withdrawals-after-recovering-bulk-of-stolen-63-billion-funds-2026-11-01-140194",
+      "title": "Binance Resumes Bitcoin, Ether Withdrawals After Recovering Bulk of Stolen $6.3 Billion Funds",
+      "headline": "Binance Resumes Bitcoin, Ether Withdrawals After Recovering Stolen Funds",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18092809034700938",
+      "timestamp": "2026-11-01T11:31:55.133182+00:00"
     }
   ],
   "processed": [
@@ -4145,17 +4154,6 @@
         "reason": "A record-breaking achievement in cricket, but limited to a specific sport and league."
       },
       "classified_at": "2026-11-01T10:39:32.475712+00:00"
-    },
-    {
-      "title": "Binance Resumes Bitcoin, Ether Withdrawals After Recovering Bulk of Stolen $6.3 Billion Funds",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/business/binance-resumes-bitcoin-ether-withdrawals-after-recovering-bulk-of-stolen-63-billion-funds-2026-11-01-140194",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Finance",
-        "reason": "A major cybersecurity event involving billions in stolen funds and the subsequent resolution affecting a top cryptocurrency exchange."
-      },
-      "classified_at": "2026-11-01T10:39:32.475735+00:00"
     },
     {
       "title": "Search Operation Intensifies For 8 Missing Trekkers in Uttarkashi",
