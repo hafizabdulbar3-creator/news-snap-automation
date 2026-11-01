@@ -4112,6 +4112,15 @@
       "published": true,
       "media_id": "18073362425606374",
       "timestamp": "2026-11-01T14:17:45.554654+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/will-proceed-in-accordance-with-law-tukaram-mundhe-on-vimal-elaichi-ad-controversy-2026-11-01-140209",
+      "title": "'Will Proceed in Accordance With Law': Tukaram Mundhe on Vimal Elaichi Ad Controversy",
+      "headline": "FDA Commissioner Tukaram Mundhe on Vimal Elaichi Ad Controversy",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18199889113386961",
+      "timestamp": "2026-11-01T14:43:34.091696+00:00"
     }
   ],
   "processed": [
@@ -4198,17 +4207,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Will Proceed in Accordance With Law': Tukaram Mundhe on Vimal Elaichi Ad Controversy",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/will-proceed-in-accordance-with-law-tukaram-mundhe-on-vimal-elaichi-ad-controversy-2026-11-01-140209",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A local controversy regarding an advertisement and a political figure's response."
-      },
-      "classified_at": "2026-11-01T14:17:18.839676+00:00"
-    },
     {
       "title": "Mahadev Betting App Promoter Sourabh Chandrakar Extradited From Oman To India",
       "domain": "republicworld.com",
