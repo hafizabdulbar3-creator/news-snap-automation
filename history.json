@@ -3869,6 +3869,15 @@
       "published": true,
       "media_id": "17909309721568870",
       "timestamp": "2026-11-01T02:17:13.980789+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/hold-energy-prices-hostage-jaishankar-criticises-sanctions-chokepoints-disrupting-oil-supplies-ws-kl-10407149.html?comscorekw=jionews",
+      "title": "'Hold Energy Prices Hostage': Jaishankar Criticises Sanctions, Chokepoints Disrupting Oil Supplies",
+      "headline": "Jaishankar Criticises Sanctions, Chokepoints Disrupting Oil Supplies",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18125123131924237",
+      "timestamp": "2026-11-01T02:47:41.175537+00:00"
     }
   ],
   "processed": [
@@ -3954,7 +3963,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Jaishankar at G20: No Military Solutions, Calls for Energy Stability & Diversified Supply Chains.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/jaishankar-at-g20-rules-out-military-solutions-to-conflicts-calls-for-energy-stability-and-diversified-supply-chains-2026-11-01-140173",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Foreign Minister Jaishankar addresses the G20, discussing critical global energy security and supply chain diversification."
+      },
+      "classified_at": "2026-11-01T02:47:13.573737+00:00"
+    },
+    {
+      "title": "US Keeps Iran Talks Open, Gives No Deadline",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/us-keeps-iran-talks-open-gives-no-deadline-2026-11-01-140174",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The US maintains open negotiations with Iran regarding nuclear talks, a significant geopolitical development."
+      },
+      "classified_at": "2026-11-01T02:47:13.573758+00:00"
+    },
+    {
+      "title": "Iran Says US Has 'Completely Shifted Tone' in JD Vance's Letter on Peace Talks",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/iran-says-us-has-completely-shifted-tone-in-jd-vance-s-letter-on-peace-talks-2026-11-01-140171",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Iran comments on the US shift in tone regarding peace talks, indicating ongoing diplomatic tensions."
+      },
+      "classified_at": "2026-11-01T02:47:13.573761+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
