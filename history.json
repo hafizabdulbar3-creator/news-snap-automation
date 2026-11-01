@@ -4312,6 +4312,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 18."
+    },
+    {
+      "url": "https://www.republicworld.com/india/declare-you-won-t-contest-till-gyanesh-kumar-is-cec-assam-cm-himanta-biswa-sarma-s-open-challenge-to-rahul-gandhi-on-vote-theft-charge-2026-11-01-140221",
+      "title": "Assam CM Challenges Rahul Gandhi on 'Vote Theft' Allegations",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-01T23:16:54.237022+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
