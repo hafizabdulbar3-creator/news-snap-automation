@@ -4013,6 +4013,15 @@
       "published": true,
       "media_id": "18138953740648035",
       "timestamp": "2026-11-01T09:16:50.791520+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/ed-brings-sp-leader-azam-khan-to-ghaziabad-for-production-before-pmla-court-2026-11-01-140183",
+      "title": "ED Brings SP Leader Azam Khan to Ghaziabad for Production Before PMLA Court",
+      "headline": "ED Brings SP Leader Azam Khan to Ghaziabad for PMLA Court Appearance",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18634852384009507",
+      "timestamp": "2026-11-01T09:42:46.118526+00:00"
     }
   ],
   "processed": [
@@ -4109,17 +4118,6 @@
         "reason": "A report on the US Midterms, a major geopolitical event with broad international consequence."
       },
       "classified_at": "2026-11-01T08:24:41.289837+00:00"
-    },
-    {
-      "title": "ED Brings SP Leader Azam Khan to Ghaziabad for Production Before PMLA Court",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/ed-brings-sp-leader-azam-khan-to-ghaziabad-for-production-before-pmla-court-2026-11-01-140183",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A report on a legal action against a political leader, which is a standard political news topic."
-      },
-      "classified_at": "2026-11-01T08:24:41.289839+00:00"
     },
     {
       "title": "BJP Launches 'Save Democracy' Counter-Protest Against Opposition's 'False Narratives'",
