@@ -3923,6 +3923,15 @@
       "published": true,
       "media_id": "17952546744053543",
       "timestamp": "2026-11-01T04:57:16.453912+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/trump-ditches-kansas-iowa-rallies-for-telerallies-as-republicans-face-midterm-jitters-ws-klr-10407210.html?comscorekw=jionews",
+      "title": "Trump Dismisses Health Concerns After Ditching Key Midterm Rallies For Telerallies: 'I Feel Perfect'",
+      "headline": "Trump Dismisses Health Concerns After Skipping Key Midterm Rallies",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18117621614033286",
+      "timestamp": "2026-11-01T05:23:20.901730+00:00"
     }
   ],
   "processed": [
@@ -4008,19 +4017,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Trump Dismisses Health Concerns After Ditching Key Midterm Rallies For Telerallies: 'I Feel Perfect'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/trump-ditches-kansas-iowa-rallies-for-telerallies-as-republicans-face-midterm-jitters-ws-klr-10407210.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A significant political figure addressing health concerns during a high-stakes election cycle."
-      },
-      "classified_at": "2026-11-01T04:31:02.211877+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
