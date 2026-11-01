@@ -3977,6 +3977,15 @@
       "published": true,
       "media_id": "18131459959875717",
       "timestamp": "2026-11-01T07:33:16.015214+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cti-claims-25-lakh-shops-may-remain-shut-in-delhi-over-indi-bloc-rally-warns-of-trade-losses-2026-11-01-140181",
+      "title": "CTI Claims 2.5 Lakh Shops May Remain Shut in Delhi Over INDI Bloc Rally, Warns of Trade Losses",
+      "headline": "CTI Warns 2.5 Lakh Shops May Shut in Delhi Over INDIA Bloc Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18103333688567203",
+      "timestamp": "2026-11-01T07:59:03.581656+00:00"
     }
   ],
   "processed": [
@@ -4062,19 +4071,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "CTI Claims 2.5 Lakh Shops May Remain Shut in Delhi Over INDI Bloc Rally, Warns of Trade Losses",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/cti-claims-25-lakh-shops-may-remain-shut-in-delhi-over-indi-bloc-rally-warns-of-trade-losses-2026-11-01-140181",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "A localized economic dispute regarding potential business closures due to a political rally, which is a regional economic concern rather than a global event."
-      },
-      "classified_at": "2026-11-01T07:32:41.762470+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
