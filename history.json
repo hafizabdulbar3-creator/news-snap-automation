@@ -3986,6 +3986,15 @@
       "published": true,
       "media_id": "18103333688567203",
       "timestamp": "2026-11-01T07:59:03.581656+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/hardeep-singh-puri-questions-congress-over-1984-sikh-riots-ahead-of-indi-bloc-s-ramlila-maidan-rally-2026-11-01-140185",
+      "title": "Hardeep Puri Questions Congress on 1984 Sikh Riots Before INDIA Bloc Rally",
+      "headline": "Hardeep Puri Questions Congress Over 1984 Sikh Riots Ahead of INDIA Bloc Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18134182141744949",
+      "timestamp": "2026-11-01T08:25:01.524671+00:00"
     }
   ],
   "processed": [
@@ -4071,7 +4080,63 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Delhi Dangal: INDI Bloc's 'Chalo Delhi' Rally to Clash with BJP's 1984 Anti-Sikh Riots Protest",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-dangal-indi-bloc-s-chalo-delhi-rally-to-clash-with-bjp-s-1984-anti-sikh-riots-protest-2026-11-01-140187",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on a political rally clash, which is a standard political news topic."
+      },
+      "classified_at": "2026-11-01T08:24:41.289830+00:00"
+    },
+    {
+      "title": "Delhi Hit by Dual Gridlock as Strict Non-BS6 Entry Restrictions Clash with High-Security Rallies",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-hit-by-dual-gridlock-as-strict-non-bs6-entry-restrictions-clash-with-high-security-rallies-2026-11-01-140184",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on traffic and security issues surrounding political rallies, which is a standard political news topic."
+      },
+      "classified_at": "2026-11-01T08:24:41.289834+00:00"
+    },
+    {
+      "title": "Days Before US Midterms, Trump Admin Targeted Voters In 5 States, Put All 50 On Notice",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/days-before-us-midterms-trump-admin-targeted-voters-in-5-states-put-all-50-on-notice-ws-lr-10407479.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A report on the US Midterms, a major geopolitical event with broad international consequence."
+      },
+      "classified_at": "2026-11-01T08:24:41.289837+00:00"
+    },
+    {
+      "title": "ED Brings SP Leader Azam Khan to Ghaziabad for Production Before PMLA Court",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/ed-brings-sp-leader-azam-khan-to-ghaziabad-for-production-before-pmla-court-2026-11-01-140183",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on a legal action against a political leader, which is a standard political news topic."
+      },
+      "classified_at": "2026-11-01T08:24:41.289839+00:00"
+    },
+    {
+      "title": "BJP Launches 'Save Democracy' Counter-Protest Against Opposition's 'False Narratives'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/lokshahi-bachao-anarajakta-hatao-bjp-launches-mumbai-counter-protest-ahead-of-nitin-nabins-rohtak-padyatra-2026-11-01-140182",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on a political protest and counter-protest, which is a standard political news topic."
+      },
+      "classified_at": "2026-11-01T08:24:41.289841+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
