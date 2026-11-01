@@ -4058,6 +4058,15 @@
       "published": true,
       "media_id": "18092809034700938",
       "timestamp": "2026-11-01T11:31:55.133182+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/cricket/india-create-history-become-first-team-to-smash-400-sixes-in-t20-internationals-in-a-calendar-year-2026-11-01-140196",
+      "title": "India Create History, Become First Team to Smash 400 Sixes in T20 Internationals in a Calendar Year",
+      "headline": "India Script History, First Team to Smash 400 Sixes in T20Is in a Calendar",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18143190223615061",
+      "timestamp": "2026-11-01T11:57:35.992753+00:00"
     }
   ],
   "processed": [
@@ -4144,17 +4153,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India Create History, Become First Team to Smash 400 Sixes in T20 Internationals in a Calendar Year",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/cricket/india-create-history-become-first-team-to-smash-400-sixes-in-t20-internationals-in-a-calendar-year-2026-11-01-140196",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A record-breaking achievement in cricket, but limited to a specific sport and league."
-      },
-      "classified_at": "2026-11-01T10:39:32.475712+00:00"
-    },
     {
       "title": "Search Operation Intensifies For 8 Missing Trekkers in Uttarkashi",
       "domain": "republicworld.com",
