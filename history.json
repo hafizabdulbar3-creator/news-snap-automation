@@ -4139,6 +4139,15 @@
       "published": true,
       "media_id": "18134247760706048",
       "timestamp": "2026-11-01T15:35:27.123690+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/bangladesh-garment-workers-wage-protests-turn-violent-police-outposts-vandalised-bbg-deployed-2026-11-01-140211",
+      "title": "Bangladesh Garment Workers' Wage Protests Turn Violent, Police Outposts Vandalised, BBG Deployed",
+      "headline": "Violent Protests Rock Bangladesh Garment Sector Over Wage Demands",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17980313066917992",
+      "timestamp": "2026-11-01T16:06:48.672307+00:00"
     }
   ],
   "processed": [
@@ -4233,7 +4242,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Amitabh Bachchan Greets Fans From Bulletproof Enclosure After Bomb Threat, Abhishek Watches Over Him",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/amitabh-bachchan-greets-fans-from-bulletproof-enclosure-after-bomb-threat-abhishek-watches-over-him-ws-l-10407884.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "A celebrity security incident involving a bomb threat is a notable public interest story."
+      },
+      "classified_at": "2026-11-01T16:06:19.662973+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
