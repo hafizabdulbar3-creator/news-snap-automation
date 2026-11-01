@@ -3887,6 +3887,15 @@
       "published": true,
       "media_id": "18225764872339198",
       "timestamp": "2026-11-01T03:13:27.763160+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-keeps-iran-talks-open-gives-no-deadline-2026-11-01-140174",
+      "title": "US Keeps Iran Talks Open, Gives No Deadline",
+      "headline": "US Keeps Iran Talks Open, Gives No Deadline",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18101123627638923",
+      "timestamp": "2026-11-01T03:39:28.294111+00:00"
     }
   ],
   "processed": [
@@ -3973,17 +3982,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "US Keeps Iran Talks Open, Gives No Deadline",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/us-keeps-iran-talks-open-gives-no-deadline-2026-11-01-140174",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The US maintains open negotiations with Iran regarding nuclear talks, a significant geopolitical development."
-      },
-      "classified_at": "2026-11-01T02:47:13.573758+00:00"
-    },
     {
       "title": "Iran Says US Has 'Completely Shifted Tone' in JD Vance's Letter on Peace Talks",
       "domain": "republicworld.com",
