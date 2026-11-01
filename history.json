@@ -4031,6 +4031,15 @@
       "published": true,
       "media_id": "17908895778604602",
       "timestamp": "2026-11-01T10:08:50.449259+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/iran-designates-uk-s-royal-navy-royal-air-force-as-terrorist-organisations-classifies-mi6-as-hostile-group-2026-11-01-140195",
+      "title": "Iran Labels UK Royal Navy, Air Force 'Terrorist Organizations,' MI6 'Hostile Group'",
+      "headline": "Iran Labels UK Royal Navy, RAF 'Terrorist Organizations,' MI6 'Hostile Group",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18224428792338885",
+      "timestamp": "2026-11-01T10:40:06.926942+00:00"
     }
   ],
   "processed": [
@@ -4116,7 +4125,52 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "India Create History, Become First Team to Smash 400 Sixes in T20 Internationals in a Calendar Year",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/cricket/india-create-history-become-first-team-to-smash-400-sixes-in-t20-internationals-in-a-calendar-year-2026-11-01-140196",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A record-breaking achievement in cricket, but limited to a specific sport and league."
+      },
+      "classified_at": "2026-11-01T10:39:32.475712+00:00"
+    },
+    {
+      "title": "'Your Father Is Waiting Upstairs': Boy Lures, Brutally Attacks 6-Year-Old in School",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/your-father-is-waiting-upstairs-how-class-3-student-lured-6-year-old-into-empty-panchkula-school-classroom-ws-klrt-10407461.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Crime",
+        "reason": "A brutal attack on a minor in a school setting is a significant public safety and criminal matter."
+      },
+      "classified_at": "2026-11-01T10:39:32.475727+00:00"
+    },
+    {
+      "title": "Binance Resumes Bitcoin, Ether Withdrawals After Recovering Bulk of Stolen $6.3 Billion Funds",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/business/binance-resumes-bitcoin-ether-withdrawals-after-recovering-bulk-of-stolen-63-billion-funds-2026-11-01-140194",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Finance",
+        "reason": "A major cybersecurity event involving billions in stolen funds and the subsequent resolution affecting a top cryptocurrency exchange."
+      },
+      "classified_at": "2026-11-01T10:39:32.475735+00:00"
+    },
+    {
+      "title": "Search Operation Intensifies For 8 Missing Trekkers in Uttarkashi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/search-operation-intensifies-for-8-missing-trekkers-in-uttarkashi-2026-11-01-140193",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Disaster",
+        "reason": "A search and rescue operation for missing individuals in a natural disaster context."
+      },
+      "classified_at": "2026-11-01T10:39:32.475738+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
