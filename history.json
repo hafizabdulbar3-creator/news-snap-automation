@@ -3842,6 +3842,15 @@
       "published": true,
       "media_id": "17876109642593754",
       "timestamp": "2026-11-01T00:27:39.063733+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/india-and-turkey-propose-ideas-to-move-grain-vessels-through-black-sea-us-secretary-marco-rubio-at-g20-meet-2026-11-01-140168",
+      "title": "Urgent Talks: India, Turkey Propose Black Sea Grain Route at G20",
+      "headline": "India, Turkey Propose Black Sea Grain Route at G20",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18145509616606254",
+      "timestamp": "2026-11-01T00:53:53.331677+00:00"
     }
   ],
   "processed": [
@@ -3954,7 +3963,19 @@
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Filmmaker Alleges Cheating In Doordarshan Project: PIB Media Assistant, 3 Others Named In Chargesheet",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/filmmaker-alleges-cheating-in-doordarshan-project-pib-media-assistant-3-others-named-in-fir-2026-10-31-140167",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "Reports on a specific legal case involving allegations of misconduct within a government media agency, which is a matter of public interest but lacks broad international consequence."
+      },
+      "classified_at": "2026-11-01T00:53:27.602236+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
