@@ -4179,15 +4179,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/delhi-police-special-cell-seeks-polygraph-test-of-woman-accused-in-rs-2-crore-carbon-credit-fraud-case-2026-10-30-140054",
-      "title": "Delhi Police Special Cell Seeks Polygraph Test of Woman Accused in Rs 2-Crore Carbon Credit Fraud Case",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-30T16:36:12.324487+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/cjp-abhijeet-dipke-attends-diljit-dosanjh-delhi-concert-after-im-an-artist-row-chota-bhai-samajh-ke-mitti-pao-ws-kl-10405938.html?comscorekw=jionews",
       "title": "Abhijeet Dipke Pens Open Letter to Diljit Dosanjh After \"I'm An Artist\" Row",
       "domain": "news18.com",
@@ -4267,20 +4258,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/diljit-dosanjh-concert-delhi-police-arrest-3-over-pro-khalistan-graffiti-at-metro-stations-2026-11-01-140214",
+      "title": "Diljit Dosanjh Concert: Delhi Police Arrest 3 Over Pro-Khalistan Graffiti at Metro Stations",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-01T17:55:16.146555+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Diljit Dosanjh Concert: Delhi Police Arrest 3 Over Pro-Khalistan Graffiti at Metro Stations",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/diljit-dosanjh-concert-delhi-police-arrest-3-over-pro-khalistan-graffiti-at-metro-stations-2026-11-01-140214",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "Arrests related to political graffiti at a concert fall under local law enforcement and public order issues, which are classified as normal rather than major geopolitical events."
-      },
-      "classified_at": "2026-11-01T17:03:19.295034+00:00"
-    },
     {
       "title": "Nita Ambani Announces 'Anant Ashray': Lifelong Home for 5000 in Need.",
       "domain": "republicworld.com",
