@@ -4022,6 +4022,15 @@
       "published": true,
       "media_id": "18634852384009507",
       "timestamp": "2026-11-01T09:42:46.118526+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/days-before-us-midterms-trump-admin-targeted-voters-in-5-states-put-all-50-on-notice-ws-lr-10407479.html?comscorekw=jionews",
+      "title": "Days Before US Midterms, Trump Admin Targeted Voters In 5 States, Put All 50 On Notice",
+      "headline": "Trump Admin Targets Voters in 5 States, Warns All 50",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17908895778604602",
+      "timestamp": "2026-11-01T10:08:50.449259+00:00"
     }
   ],
   "processed": [
@@ -4108,17 +4117,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Days Before US Midterms, Trump Admin Targeted Voters In 5 States, Put All 50 On Notice",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/days-before-us-midterms-trump-admin-targeted-voters-in-5-states-put-all-50-on-notice-ws-lr-10407479.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A report on the US Midterms, a major geopolitical event with broad international consequence."
-      },
-      "classified_at": "2026-11-01T08:24:41.289837+00:00"
-    },
     {
       "title": "BJP Launches 'Save Democracy' Counter-Protest Against Opposition's 'False Narratives'",
       "domain": "republicworld.com",
