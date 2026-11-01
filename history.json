@@ -4040,6 +4040,15 @@
       "published": true,
       "media_id": "18224428792338885",
       "timestamp": "2026-11-01T10:40:06.926942+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/your-father-is-waiting-upstairs-how-class-3-student-lured-6-year-old-into-empty-panchkula-school-classroom-ws-klrt-10407461.html?comscorekw=jionews",
+      "title": "'Your Father Is Waiting Upstairs': Boy Lures, Brutally Attacks 6-Year-Old in School",
+      "headline": "Class 3 Student Lures 6-Year-Old to Empty Classroom",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18097881356126284",
+      "timestamp": "2026-11-01T11:05:44.115472+00:00"
     }
   ],
   "processed": [
@@ -4136,17 +4145,6 @@
         "reason": "A record-breaking achievement in cricket, but limited to a specific sport and league."
       },
       "classified_at": "2026-11-01T10:39:32.475712+00:00"
-    },
-    {
-      "title": "'Your Father Is Waiting Upstairs': Boy Lures, Brutally Attacks 6-Year-Old in School",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/your-father-is-waiting-upstairs-how-class-3-student-lured-6-year-old-into-empty-panchkula-school-classroom-ws-klrt-10407461.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Crime",
-        "reason": "A brutal attack on a minor in a school setting is a significant public safety and criminal matter."
-      },
-      "classified_at": "2026-11-01T10:39:32.475727+00:00"
     },
     {
       "title": "Binance Resumes Bitcoin, Ether Withdrawals After Recovering Bulk of Stolen $6.3 Billion Funds",
