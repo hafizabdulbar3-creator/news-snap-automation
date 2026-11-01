@@ -4089,15 +4089,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/world-news/ukraine-hits-russias-novokuybyshevsk-oil-refinery-ending-two-week-pause-amid-us-pressure-2026-10-30-140035",
-      "title": "Ukraine Hits Russia's Novokuybyshevsk Oil Refinery, Ending Two-Week Pause Amid US Pressure",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-30T12:04:11.777513+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-police-special-cell-seeks-polygraph-test-of-woman-accused-in-rs-2-crore-carbon-credit-fraud-case-2026-10-30-140054",
       "title": "Delhi Police Special Cell Seeks Polygraph Test of Woman Accused in Rs 2-Crore Carbon Credit Fraud Case",
       "domain": "republicworld.com",
@@ -4168,6 +4159,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/india/gyanesh-kumar-will-go-to-jail-for-rahul-gandhi-attacks-cec-bjp-at-ramlila-maidan-rally-ws-klrt-10407684.html?comscorekw=jionews",
+      "title": "'Gyanesh Kumar Will Go To Jail For...': Rahul Gandhi Attacks CEC, BJP At Ramlila Maidan Rally",
+      "domain": "news18.com",
+      "timestamp": "2026-11-01T13:15:01.446109+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -4192,17 +4192,6 @@
         "reason": "Updates on the legal status of a political figure following a court ruling."
       },
       "classified_at": "2026-11-01T12:49:02.125554+00:00"
-    },
-    {
-      "title": "'Gyanesh Kumar Will Go To Jail For...': Rahul Gandhi Attacks CEC, BJP At Ramlila Maidan Rally",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/gyanesh-kumar-will-go-to-jail-for-rahul-gandhi-attacks-cec-bjp-at-ramlila-maidan-rally-ws-klrt-10407684.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Reports on political rhetoric and attacks during a public rally."
-      },
-      "classified_at": "2026-11-01T12:49:02.125561+00:00"
     }
   ],
   "quota_cooldown": {
