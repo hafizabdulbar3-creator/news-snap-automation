@@ -3878,6 +3878,15 @@
       "published": true,
       "media_id": "18125123131924237",
       "timestamp": "2026-11-01T02:47:41.175537+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/jaishankar-at-g20-rules-out-military-solutions-to-conflicts-calls-for-energy-stability-and-diversified-supply-chains-2026-11-01-140173",
+      "title": "Jaishankar at G20: No Military Solutions, Calls for Energy Stability & Diversified Supply Chains.",
+      "headline": "Jaishankar Rules Out Military Solutions at G20, Calls for Energy Stability",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18225764872339198",
+      "timestamp": "2026-11-01T03:13:27.763160+00:00"
     }
   ],
   "processed": [
@@ -3964,17 +3973,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Jaishankar at G20: No Military Solutions, Calls for Energy Stability & Diversified Supply Chains.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/jaishankar-at-g20-rules-out-military-solutions-to-conflicts-calls-for-energy-stability-and-diversified-supply-chains-2026-11-01-140173",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Foreign Minister Jaishankar addresses the G20, discussing critical global energy security and supply chain diversification."
-      },
-      "classified_at": "2026-11-01T02:47:13.573737+00:00"
-    },
     {
       "title": "US Keeps Iran Talks Open, Gives No Deadline",
       "domain": "republicworld.com",
