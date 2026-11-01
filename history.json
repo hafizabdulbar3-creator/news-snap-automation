@@ -4130,6 +4130,15 @@
       "published": true,
       "media_id": "17903829921377468",
       "timestamp": "2026-11-01T15:09:36.351114+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/mahadev-betting-app-promoter-sourabh-chandrakar-extradited-from-oman-to-india-2026-11-01-140208",
+      "title": "Mahadev Betting App Promoter Sourabh Chandrakar Extradited From Oman To India",
+      "headline": "Mahadev Betting App Promoter Extradited From Oman To India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18134247760706048",
+      "timestamp": "2026-11-01T15:35:27.123690+00:00"
     }
   ],
   "processed": [
@@ -4216,17 +4225,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mahadev Betting App Promoter Sourabh Chandrakar Extradited From Oman To India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/mahadev-betting-app-promoter-sourabh-chandrakar-extradited-from-oman-to-india-2026-11-01-140208",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "The extradition of a promoter associated with a betting app, which is a significant crime but falls under specific legal enforcement rather than a broad geopolitical event."
-      },
-      "classified_at": "2026-11-01T14:17:18.839700+00:00"
-    },
     {
       "title": "'40% of Ramlila Maidan Vacant': Sambit Patra Questions INDI Bloc's 10 Lakh Turnout Claim at Delhi Rally",
       "domain": "republicworld.com",
