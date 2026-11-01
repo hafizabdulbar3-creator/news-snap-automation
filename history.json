@@ -3968,6 +3968,15 @@
       "published": true,
       "media_id": "18131025082882133",
       "timestamp": "2026-11-01T07:07:00.759372+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-says-remaining-iran-nuclear-sites-can-be-hit-in-10-minutes-claims-tehran-wants-to-make-a-deal-2026-11-01-140180",
+      "title": "Trump Says Remaining Iran Nuclear Sites Can Be Hit 'In 10 Minutes,' Claims Tehran Wants to 'Make a Deal'",
+      "headline": "Trump Claims Iran Nuclear Sites Can Be Hit in 10 Minutes",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18131459959875717",
+      "timestamp": "2026-11-01T07:33:16.015214+00:00"
     }
   ],
   "processed": [
@@ -4053,7 +4062,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "CTI Claims 2.5 Lakh Shops May Remain Shut in Delhi Over INDI Bloc Rally, Warns of Trade Losses",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cti-claims-25-lakh-shops-may-remain-shut-in-delhi-over-indi-bloc-rally-warns-of-trade-losses-2026-11-01-140181",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A localized economic dispute regarding potential business closures due to a political rally, which is a regional economic concern rather than a global event."
+      },
+      "classified_at": "2026-11-01T07:32:41.762470+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
