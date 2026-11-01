@@ -4004,6 +4004,15 @@
       "published": true,
       "media_id": "18453991297120923",
       "timestamp": "2026-11-01T08:50:50.733457+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-hit-by-dual-gridlock-as-strict-non-bs6-entry-restrictions-clash-with-high-security-rallies-2026-11-01-140184",
+      "title": "Delhi Hit by Dual Gridlock as Strict Non-BS6 Entry Restrictions Clash with High-Security Rallies",
+      "headline": "Delhi Gridlock: Non-BS6 Bans Clash with High-Security Rallies",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18138953740648035",
+      "timestamp": "2026-11-01T09:16:50.791520+00:00"
     }
   ],
   "processed": [
@@ -4090,17 +4099,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Hit by Dual Gridlock as Strict Non-BS6 Entry Restrictions Clash with High-Security Rallies",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-hit-by-dual-gridlock-as-strict-non-bs6-entry-restrictions-clash-with-high-security-rallies-2026-11-01-140184",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A report on traffic and security issues surrounding political rallies, which is a standard political news topic."
-      },
-      "classified_at": "2026-11-01T08:24:41.289834+00:00"
-    },
     {
       "title": "Days Before US Midterms, Trump Admin Targeted Voters In 5 States, Put All 50 On Notice",
       "domain": "news18.com",
