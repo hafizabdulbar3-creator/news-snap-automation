@@ -3864,42 +3864,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/movies/bollywood/gurdas-maan-defends-daler-mehndi-amid-uttarakhand-row-says-give-the-benefit-of-the-doubt-ws-l-10403876.html?comscorekw=jionews",
-      "title": "Gurdas Maan Defends Daler Mehndi Amid Uttarakhand Row, Says 'Give The Benefit Of The Doubt'",
-      "domain": "news18.com",
-      "timestamp": "2026-10-29T16:34:07.877219+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/lifestyle/fashion/og-rajshri-heroine-madhuri-dixit-and-sooraj-barjatyas-newest-muse-sharvari-make-a-pretty-case-for-pink-ws-l-10403975.html?comscorekw=jionews",
-      "title": "OG Rajshri Heroine Madhuri Dixit And Sooraj Barjatya's Newest Muse Sharvari Make A Pretty Case For Pink",
-      "domain": "news18.com",
-      "timestamp": "2026-10-29T19:25:48.938341+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/global-news/israel-in-hung-knesset-again-netanyahu-bloc-gets-53-opposition-48-arab-parties-19-no-one-reaches-61-majority-2026-10-29-139982",
-      "title": "Israel's Knesset Hung Again: No Clear Majority After Vote Count",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-29T19:57:02.284466+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/movies/hollywood/patrick-stewart-star-trek-and-x-men-veteran-passes-away-at-92-after-battling-alzheimers-disease-ws-l-10404199.html?comscorekw=jionews",
-      "title": "Patrick Stewart, Star Trek And X-Men Veteran, Passes Away At 92 After Battling Alzheimer's Disease",
-      "domain": "news18.com",
-      "timestamp": "2026-10-30T02:06:33.224130+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/awards-events/diljit-dosanjhs-delhi-concert-traffic-restrictions-diversions-metro-routes-around-jln-stadium-2026-10-30-140001",
       "title": "Diljit Dosanjh's Delhi Concert: Traffic Restrictions, Diversions, Metro Routes Around JLN Stadium",
       "domain": "republicworld.com",
@@ -3970,6 +3934,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-netanyahu-speak-as-us-weighs-renewed-iran-strikes-report-2026-11-01-140170",
+      "title": "Trump, Netanyahu Speak as US Weighs Renewed Iran Strikes: Report",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-01T02:10:52.368799+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
