@@ -4157,6 +4157,15 @@
       "published": true,
       "media_id": "18126216655904717",
       "timestamp": "2026-11-01T16:33:08.995796+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/alabama-football-game-mass-shooting-near-legion-field-leaves-one-dead-eight-others-injured-2026-11-01-140205",
+      "title": "Police Say 4 Dead, 15 Injured in Separate Shootings in Dallas on Halloween Night",
+      "headline": "Police Say 4 Dead, 15 Injured in Separate Shootings in Dallas",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18438792457176446",
+      "timestamp": "2026-11-01T17:03:52.859740+00:00"
     }
   ],
   "processed": [
@@ -4251,7 +4260,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "India Beat Malaysia 3-1 as Harmanpreet Scores Hat-Trick in Asian Champions Trophy",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/india-beat-malaysia-3-1-as-harmanpreet-scores-hat-trick-in-asian-champions-trophy-2026-11-01-140215",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A national sports victory (hockey) is a notable regional event but does not rise to the level of a major geopolitical crisis or global economic event."
+      },
+      "classified_at": "2026-11-01T17:03:19.295014+00:00"
+    },
+    {
+      "title": "Diljit Dosanjh Concert: Delhi Police Arrest 3 Over Pro-Khalistan Graffiti at Metro Stations",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/diljit-dosanjh-concert-delhi-police-arrest-3-over-pro-khalistan-graffiti-at-metro-stations-2026-11-01-140214",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "Arrests related to political graffiti at a concert fall under local law enforcement and public order issues, which are classified as normal rather than major geopolitical events."
+      },
+      "classified_at": "2026-11-01T17:03:19.295034+00:00"
+    },
+    {
+      "title": "Nita Ambani Announces 'Anant Ashray': Lifelong Home for 5000 in Need.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/on-her-birthday-nita-ambani-announces-anant-ashray-100-acre-township-to-be-lifelong-home-for-5000-orphans-elderly-and-people-with-disabilities-2026-11-01-140213",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Social Welfare",
+        "reason": "The announcement of a charitable initiative by a prominent figure is a positive social development but is classified as a regional public interest story rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-01T17:03:19.295036+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
