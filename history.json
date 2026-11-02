@@ -4382,6 +4382,15 @@
       "published": true,
       "media_id": "18091110236254920",
       "timestamp": "2026-11-02T07:23:10.882327+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/internship-of-5-years-is-over-why-3-aap-leaders-joined-bjp-ahead-of-2027-punjab-polls-ws-l-10408393.html?comscorekw=jionews",
+      "title": "'Internship Of 5 Years Is Over': Why 3 AAP Leaders Joined BJP Ahead Of 2027 Punjab Polls",
+      "headline": "3 AAP Leaders Join BJP Ahead Of 2027 Punjab Polls",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17865793752691934",
+      "timestamp": "2026-11-02T07:49:12.582513+00:00"
     }
   ],
   "processed": [
@@ -4513,17 +4522,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Internship Of 5 Years Is Over': Why 3 AAP Leaders Joined BJP Ahead Of 2027 Punjab Polls",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/internship-of-5-years-is-over-why-3-aap-leaders-joined-bjp-ahead-of-2027-punjab-polls-ws-l-10408393.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This is a political story regarding a shift in leadership within a regional party (AAP) ahead of local elections, which is a legitimate national/regional policy and political development."
-      },
-      "classified_at": "2026-11-02T06:56:21.565456+00:00"
-    },
     {
       "title": "Ahead of Diwali, Delhi-NCR mandates WFH, construction curbs, vehicle checks to fight pollution.",
       "domain": "news18.com",
