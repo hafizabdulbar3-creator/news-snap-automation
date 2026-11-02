@@ -4256,6 +4256,15 @@
       "published": true,
       "media_id": "18357483517170041",
       "timestamp": "2026-11-02T01:01:32.018862+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-traders-claim-rs-10000-11000-crore-loss-due-to-indi-bloc-rally-at-ramlila-maidan-2026-11-02-140228",
+      "title": "Delhi Traders Claim Rs 10,000-11,000 Crore Loss Due To INDI Bloc Rally At Ramlila Maidan",
+      "headline": "Delhi Traders Claim Rs 10,000-11,000 Crore Loss From INDI Bloc Rally",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18480015331116513",
+      "timestamp": "2026-11-02T01:33:14.395296+00:00"
     }
   ],
   "processed": [
@@ -4369,17 +4378,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Traders Claim Rs 10,000-11,000 Crore Loss Due To INDI Bloc Rally At Ramlila Maidan",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-traders-claim-rs-10000-11000-crore-loss-due-to-indi-bloc-rally-at-ramlila-maidan-2026-11-02-140228",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A local economic dispute regarding a political rally in Delhi."
-      },
-      "classified_at": "2026-11-02T01:00:50.158799+00:00"
-    },
     {
       "title": "Delhi Police Checked 7279 Vehicles On November 1 Under GRAP, 714 Turned Back, 38 Impounded",
       "domain": "republicworld.com",
