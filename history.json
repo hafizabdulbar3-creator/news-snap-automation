@@ -4337,6 +4337,15 @@
       "published": true,
       "media_id": "17912374986474315",
       "timestamp": "2026-11-02T05:07:11.269891+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/ukraine-s-air-raid-alerts-hacked-with-fake-radiation-warnings-russia-reports-cyberattack-on-emergency-app-2026-11-02-140237",
+      "title": "Fake Radiation Warnings Hack Ukraine's Air Alerts; Russia's Emergency App Also Cyberattacked",
+      "headline": "Fake Radiation Warnings Hack Ukraine's Air Alerts",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17873513079644901",
+      "timestamp": "2026-11-02T05:33:09.791194+00:00"
     }
   ],
   "processed": [
@@ -4459,17 +4468,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Fake Radiation Warnings Hack Ukraine's Air Alerts; Russia's Emergency App Also Cyberattacked",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/ukraine-s-air-raid-alerts-hacked-with-fake-radiation-warnings-russia-reports-cyberattack-on-emergency-app-2026-11-02-140237",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Cyberattacks on national air alert systems during a conflict constitute a major security and geopolitical incident."
-      },
-      "classified_at": "2026-11-02T05:06:44.710623+00:00"
-    },
     {
       "title": "IMD Weather Today: Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
       "domain": "news18.com",
