@@ -4310,6 +4310,15 @@
       "published": true,
       "media_id": "18128002204856469",
       "timestamp": "2026-11-02T03:49:11.438107+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/savings-and-investments/epfo-launches-whatsapp-services-check-epf-balance-last-5-transactions-download-passbook-ws-l-10408066.html?comscorekw=jionews",
+      "title": "EPFO Launches WhatsApp Services: Check EPF Balance, Last 5 Transactions, Download Passbook",
+      "headline": "EPFO Launches WhatsApp Services for Members",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18504453871097197",
+      "timestamp": "2026-11-02T04:14:52.932577+00:00"
     }
   ],
   "processed": [
@@ -4432,17 +4441,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "EPFO Launches WhatsApp Services: Check EPF Balance, Last 5 Transactions, Download Passbook",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/savings-and-investments/epfo-launches-whatsapp-services-check-epf-balance-last-5-transactions-download-passbook-ws-l-10408066.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "The launch of a digital service for citizens is a standard government administrative update and a convenience for the public, lacking broad international consequence."
-      },
-      "classified_at": "2026-11-02T03:22:33.806886+00:00"
-    },
     {
       "title": "Kimi Antonelli Breaks Sebastian Vettel's Record To Become Youngest F1 World Champion In History",
       "domain": "news18.com",
