@@ -4474,20 +4474,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/ed-raids-former-punjab-minister-sunder-sham-arora-s-hoshiarpur-residence-in-industrial-land-case-2026-11-02-140236",
+      "title": "ED Raids Former Punjab Minister Sunder Sham Arora's Hoshiarpur Residence In Industrial Land Case",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-02T06:24:45.987085+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "ED Raids Former Punjab Minister Sunder Sham Arora's Hoshiarpur Residence In Industrial Land Case",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/ed-raids-former-punjab-minister-sunder-sham-arora-s-hoshiarpur-residence-in-industrial-land-case-2026-11-02-140236",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A raid by a financial enforcement agency on a former minister is a notable legal/political development."
-      },
-      "classified_at": "2026-11-02T05:06:44.710630+00:00"
-    },
     {
       "title": "Sensex Jumps Nearly 800 Points, Nifty Opens Above 23,250; RIL, Tata Steel Lead Gains",
       "domain": "news18.com",
