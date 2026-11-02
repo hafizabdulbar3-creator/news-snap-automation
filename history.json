@@ -4346,6 +4346,15 @@
       "published": true,
       "media_id": "17873513079644901",
       "timestamp": "2026-11-02T05:33:09.791194+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/imd-weather-today-delhi-ncr-sees-dry-spell-hazardous-aqi-cyclone-murasu-puts-4-states-on-alert-ws-l-10408112.html?comscorekw=jionews",
+      "title": "IMD Weather Today: Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
+      "headline": "Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18012991274988748",
+      "timestamp": "2026-11-02T05:59:27.087166+00:00"
     }
   ],
   "processed": [
@@ -4468,17 +4477,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "IMD Weather Today: Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/imd-weather-today-delhi-ncr-sees-dry-spell-hazardous-aqi-cyclone-murasu-puts-4-states-on-alert-ws-l-10408112.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Severe weather events and air quality hazards are significant public interest stories, though regional in scope."
-      },
-      "classified_at": "2026-11-02T05:06:44.710627+00:00"
-    },
     {
       "title": "ED Raids Former Punjab Minister Sunder Sham Arora's Hoshiarpur Residence In Industrial Land Case",
       "domain": "republicworld.com",
