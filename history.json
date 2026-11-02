@@ -4301,6 +4301,15 @@
       "published": true,
       "media_id": "18001153410044786",
       "timestamp": "2026-11-02T03:23:04.077594+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/indias-data-leak-problem-govt-analysis-flags-security-lapses-third-party-alerts-raise-concern-exclusive-ws-l-10408079.html?comscorekw=jionews",
+      "title": "India's Data Security in Peril: Government Report Reveals Widespread Lapses",
+      "headline": "India's Data Security in Peril: Government Report Reveals Widespread Lapses",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18128002204856469",
+      "timestamp": "2026-11-02T03:49:11.438107+00:00"
     }
   ],
   "processed": [
@@ -4423,17 +4432,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India's Data Security in Peril: Government Report Reveals Widespread Lapses",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/indias-data-leak-problem-govt-analysis-flags-security-lapses-third-party-alerts-raise-concern-exclusive-ws-l-10408079.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A report on data security lapses is a significant policy and privacy issue, but it is a specific sectoral concern rather than a global geopolitical crisis."
-      },
-      "classified_at": "2026-11-02T03:22:33.806862+00:00"
-    },
     {
       "title": "EPFO Launches WhatsApp Services: Check EPF Balance, Last 5 Transactions, Download Passbook",
       "domain": "news18.com",
