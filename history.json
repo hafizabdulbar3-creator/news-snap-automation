@@ -4292,6 +4292,15 @@
       "published": true,
       "media_id": "18377979367212110",
       "timestamp": "2026-11-02T02:56:19.555190+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-chokes-as-aqi-touches-428-714-vehicles-turned-back-38-impounded-in-grap-crackdown-2026-11-02-140230",
+      "title": "Delhi Chokes As AQI Touches 428; 714 Vehicles Turned Back, 38 Impounded In GRAP Crackdown",
+      "headline": "Delhi Air Quality Hits Severe 428 As Authorities Impound Vehicles",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18001153410044786",
+      "timestamp": "2026-11-02T03:23:04.077594+00:00"
     }
   ],
   "processed": [
@@ -4413,7 +4422,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "India's Data Security in Peril: Government Report Reveals Widespread Lapses",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/indias-data-leak-problem-govt-analysis-flags-security-lapses-third-party-alerts-raise-concern-exclusive-ws-l-10408079.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A report on data security lapses is a significant policy and privacy issue, but it is a specific sectoral concern rather than a global geopolitical crisis."
+      },
+      "classified_at": "2026-11-02T03:22:33.806862+00:00"
+    },
+    {
+      "title": "EPFO Launches WhatsApp Services: Check EPF Balance, Last 5 Transactions, Download Passbook",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/savings-and-investments/epfo-launches-whatsapp-services-check-epf-balance-last-5-transactions-download-passbook-ws-l-10408066.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "The launch of a digital service for citizens is a standard government administrative update and a convenience for the public, lacking broad international consequence."
+      },
+      "classified_at": "2026-11-02T03:22:33.806886+00:00"
+    },
+    {
+      "title": "Kimi Antonelli Breaks Sebastian Vettel's Record To Become Youngest F1 World Champion In History",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/sports/formula-one/kimi-antonelli-breaks-sebastian-vettels-record-to-become-youngest-f1-world-champion-in-history-ws-l-10408077.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a sports-specific record-breaking achievement. While notable to fans, it does not meet the threshold for major geopolitical or international consequence."
+      },
+      "classified_at": "2026-11-02T03:22:33.806889+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
