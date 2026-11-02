@@ -4373,6 +4373,15 @@
       "published": true,
       "media_id": "18383565847232579",
       "timestamp": "2026-11-02T06:56:47.546756+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/british-couple-takes-indian-auto-rickshaw-to-uk-after-4218-km-journey-across-india-video-goes-viral-ws-l-10408406.html?comscorekw=jionews",
+      "title": "British Couple Takes Indian Auto-Rickshaw To UK After 4,218-Km Journey Across India, Video Goes Viral",
+      "headline": "British Couple Ship Indian Auto-Rickshaw To UK After 4,218-Km Journey",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18091110236254920",
+      "timestamp": "2026-11-02T07:23:10.882327+00:00"
     }
   ],
   "processed": [
@@ -4504,17 +4513,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "British Couple Takes Indian Auto-Rickshaw To UK After 4,218-Km Journey Across India, Video Goes Viral",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/british-couple-takes-indian-auto-rickshaw-to-uk-after-4218-km-journey-across-india-video-goes-viral-ws-l-10408406.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Travel",
-        "reason": "This is a regional/national travel story about a couple's journey, which is a notable public interest story but lacks broad geopolitical consequence."
-      },
-      "classified_at": "2026-11-02T06:56:21.565437+00:00"
-    },
     {
       "title": "'Internship Of 5 Years Is Over': Why 3 AAP Leaders Joined BJP Ahead Of 2027 Punjab Polls",
       "domain": "news18.com",
