@@ -4328,6 +4328,15 @@
       "published": true,
       "media_id": "18145330759515389",
       "timestamp": "2026-11-02T04:41:07.053876+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/us-midterm-elections-2026-democrats-gain-ground-in-key-senate-races-lead-in-5-republican-held-states-2026-11-02-140234",
+      "title": "US Midterm Elections 2026: Democrats Gain Ground In Key Senate Races, Lead In 5 Republican-Held States",
+      "headline": "Democrats Lead In 5 Key Senate Races Ahead Of US Midterms",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17912374986474315",
+      "timestamp": "2026-11-02T05:07:11.269891+00:00"
     }
   ],
   "processed": [
@@ -4449,7 +4458,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Fake Radiation Warnings Hack Ukraine's Air Alerts; Russia's Emergency App Also Cyberattacked",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/ukraine-s-air-raid-alerts-hacked-with-fake-radiation-warnings-russia-reports-cyberattack-on-emergency-app-2026-11-02-140237",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Cyberattacks on national air alert systems during a conflict constitute a major security and geopolitical incident."
+      },
+      "classified_at": "2026-11-02T05:06:44.710623+00:00"
+    },
+    {
+      "title": "IMD Weather Today: Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/imd-weather-today-delhi-ncr-sees-dry-spell-hazardous-aqi-cyclone-murasu-puts-4-states-on-alert-ws-l-10408112.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Severe weather events and air quality hazards are significant public interest stories, though regional in scope."
+      },
+      "classified_at": "2026-11-02T05:06:44.710627+00:00"
+    },
+    {
+      "title": "ED Raids Former Punjab Minister Sunder Sham Arora's Hoshiarpur Residence In Industrial Land Case",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/ed-raids-former-punjab-minister-sunder-sham-arora-s-hoshiarpur-residence-in-industrial-land-case-2026-11-02-140236",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A raid by a financial enforcement agency on a former minister is a notable legal/political development."
+      },
+      "classified_at": "2026-11-02T05:06:44.710630+00:00"
+    },
+    {
+      "title": "Sensex Jumps Nearly 800 Points, Nifty Opens Above 23,250; RIL, Tata Steel Lead Gains",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/markets/sensex-jumps-nearly-800-points-nifty-opens-above-23250-ril-tata-steel-lead-gains-ws-l-10408100.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Major stock market movements are a significant economic trend and public interest story."
+      },
+      "classified_at": "2026-11-02T05:06:44.710633+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
