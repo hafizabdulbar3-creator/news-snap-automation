@@ -4274,6 +4274,15 @@
       "published": true,
       "media_id": "17885008449627198",
       "timestamp": "2026-11-02T02:04:24.000761+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/diwali-week-begins-with-delhis-air-turning-very-poor-aqi-hits-349-ws-l-10408020.html?comscorekw=jionews",
+      "title": "Diwali Week Begins With Delhi's Air Turning 'Very Poor', AQI Hits 349",
+      "headline": "Delhi's Air Quality Deteriorates To 'Very Poor' Ahead Of Diwali",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18091637705247194",
+      "timestamp": "2026-11-02T02:29:59.307864+00:00"
     }
   ],
   "processed": [
@@ -4395,19 +4404,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Diwali Week Begins With Delhi's Air Turning 'Very Poor', AQI Hits 349",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/diwali-week-begins-with-delhis-air-turning-very-poor-aqi-hits-349-ws-l-10408020.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "While a significant environmental issue, the deterioration of air quality in a specific region is a regional public interest story rather than a major geopolitical event."
-      },
-      "classified_at": "2026-11-02T02:03:44.852360+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
