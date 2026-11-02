@@ -4364,6 +4364,15 @@
       "published": true,
       "media_id": "17963246936999619",
       "timestamp": "2026-11-02T06:30:22.142968+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/india-eu-fta-rollout-in-focus-as-both-sides-discuss-customs-reforms-market-access-in-brussels-2026-11-02-140246",
+      "title": "India-EU FTA Rollout In Focus As Both Sides Discuss Customs Reforms, Market Access In Brussels",
+      "headline": "India-EU FTA Rollout In Focus As Both Sides Discuss Customs Reforms",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18383565847232579",
+      "timestamp": "2026-11-02T06:56:47.546756+00:00"
     }
   ],
   "processed": [
@@ -4494,7 +4503,52 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "British Couple Takes Indian Auto-Rickshaw To UK After 4,218-Km Journey Across India, Video Goes Viral",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/british-couple-takes-indian-auto-rickshaw-to-uk-after-4218-km-journey-across-india-video-goes-viral-ws-l-10408406.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Travel",
+        "reason": "This is a regional/national travel story about a couple's journey, which is a notable public interest story but lacks broad geopolitical consequence."
+      },
+      "classified_at": "2026-11-02T06:56:21.565437+00:00"
+    },
+    {
+      "title": "'Internship Of 5 Years Is Over': Why 3 AAP Leaders Joined BJP Ahead Of 2027 Punjab Polls",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/internship-of-5-years-is-over-why-3-aap-leaders-joined-bjp-ahead-of-2027-punjab-polls-ws-l-10408393.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This is a political story regarding a shift in leadership within a regional party (AAP) ahead of local elections, which is a legitimate national/regional policy and political development."
+      },
+      "classified_at": "2026-11-02T06:56:21.565456+00:00"
+    },
+    {
+      "title": "Ahead of Diwali, Delhi-NCR mandates WFH, construction curbs, vehicle checks to fight pollution.",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-ncr-pollution-plan-50-wfh-vehicle-checks-and-construction-curbs-what-has-the-govt-ordered-ahead-of-diwali-ws-l-10408178.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "This is a regional news story about pollution control measures ahead of a festival, which is a notable public interest story but lacks broad international consequence."
+      },
+      "classified_at": "2026-11-02T06:56:21.565459+00:00"
+    },
+    {
+      "title": "Chennai Weather Today: Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut; Check IMD Forecast",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/chennai-news/chennai-weather-today-cyclone-murasu-triggers-heavy-rain-alert-schools-shut-check-imd-forecast-ws-l-10408259.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Weather",
+        "reason": "This is a regional weather alert story regarding a cyclone, which is a notable public safety issue but lacks broad geopolitical consequence."
+      },
+      "classified_at": "2026-11-02T06:56:21.565462+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
