@@ -4357,6 +4357,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/netanyahu-pushes-trump-for-iran-strikes-immediately-after-midterms-trump-wants-talks-to-continue-report-2026-11-01-140225",
+      "title": "Netanyahu Pushes Trump For Iran Strikes Immediately After Midterms, Trump Wants Talks To Continue: Report",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-02T01:27:23.487594+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -4381,17 +4390,6 @@
         "reason": "A specific administrative action regarding traffic control and pollution measures."
       },
       "classified_at": "2026-11-02T01:00:50.158818+00:00"
-    },
-    {
-      "title": "Netanyahu Pushes Trump For Iran Strikes Immediately After Midterms, Trump Wants Talks To Continue: Report",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/netanyahu-pushes-trump-for-iran-strikes-immediately-after-midterms-trump-wants-talks-to-continue-report-2026-11-01-140225",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "International Relations",
-        "reason": "A significant geopolitical development involving potential military action and high-level diplomacy."
-      },
-      "classified_at": "2026-11-02T01:00:50.158827+00:00"
     }
   ],
   "quota_cooldown": {
