@@ -4554,12 +4554,12 @@
   "quota_cooldowns": {},
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5184000,
-    "refreshed_at": "2026-11-02T11:38:18.374677+00:00",
-    "expires_at": "2027-01-01T11:38:18.374677+00:00",
+    "expires_in": 5098932,
+    "refreshed_at": "2026-11-03T11:16:06.298826+00:00",
+    "expires_at": "2027-01-01T11:38:18.298826+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-02T11:38:20.144233+00:00"
+    "updated_at": "2026-11-03T11:16:07.620362+00:00"
   }
 }
