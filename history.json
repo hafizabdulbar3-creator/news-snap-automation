@@ -4555,11 +4555,11 @@
   "token_metadata": {
     "token_type": "bearer",
     "expires_in": 5184000,
-    "refreshed_at": "2026-11-11T11:24:07.199789+00:00",
-    "expires_at": "2027-01-10T11:24:07.199789+00:00",
+    "refreshed_at": "2026-11-12T11:44:38.889711+00:00",
+    "expires_at": "2027-01-11T11:44:38.889711+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-11T11:24:08.594999+00:00"
+    "updated_at": "2026-11-12T11:44:40.579573+00:00"
   }
 }
