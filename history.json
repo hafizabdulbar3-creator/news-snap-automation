@@ -4449,130 +4449,13 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/movies/bollywood/cjp-abhijeet-dipke-attends-diljit-dosanjh-delhi-concert-after-im-an-artist-row-chota-bhai-samajh-ke-mitti-pao-ws-kl-10405938.html?comscorekw=jionews",
-      "title": "Abhijeet Dipke Pens Open Letter to Diljit Dosanjh After \"I'm An Artist\" Row",
-      "domain": "news18.com",
-      "timestamp": "2026-10-31T08:10:47.111063+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/entertainment/bollywood/ramayana-day-1-advance-booking-ranbir-kapoor-starrer-sells-405-lakh-earns-1981-crore-in-india-2026-10-31-140112",
-      "title": "Ramayana Day 1 Advance Booking: Ranbir Kapoor Starrer Sells 4.05 Lakh, Earns ₹19.81 Crore In India",
+      "url": "https://www.republicworld.com/india/bcci-u-19-woman-cricketer-commits-suicide-in-telangana-s-vikarabad-family-alleges-harassment-over-love-affair-2026-11-13-141011",
+      "title": "Tragedy Strikes: U-19 Woman Cricketer Dies by Suicide, Family Alleges Harassment",
       "domain": "republicworld.com",
-      "timestamp": "2026-10-31T08:42:06.349740+00:00",
+      "timestamp": "2026-11-13T18:59:02.500156+00:00",
       "published": false,
       "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.news18.com/movies/bollywood/he-was-my-guru-milap-zaveri-breaks-down-remembering-filmmaker-sanjay-gupta-exclusive-ws-l-10406234.html?comscorekw=jionews",
-      "title": "'He Was My Guru': Milap Zaveri Breaks Down Remembering Filmmaker Sanjay Gupta | Exclusive",
-      "domain": "news18.com",
-      "timestamp": "2026-10-31T09:38:55.992682+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.republicworld.com/india/organised-mock-parliament-to-soothe-its-troubled-prince-sudhanshu-trivedi-targets-congress-cites-world-bank-report-on-poverty-reduction-2026-10-31-140121",
-      "title": "BJP's Trivedi Slams Congress Over 'Mock Parliament,' Cites World Bank Report",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-31T09:44:10.791352+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.republicworld.com/initiatives/grand-nuptials-of-aishwarya-and-sireesh-unite-prominent-bengaluru-families-2026-10-31-140148",
-      "title": "Grand Nuptials of Aishwarya and Sireesh Unite Prominent Bengaluru Families",
-      "domain": "republicworld.com",
-      "timestamp": "2026-10-31T16:03:05.683630+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption plus required image attribution exceeds 2,200 characters; refusing output"
-    },
-    {
-      "url": "https://www.republicworld.com/world-news/trump-netanyahu-speak-as-us-weighs-renewed-iran-strikes-report-2026-11-01-140170",
-      "title": "Trump, Netanyahu Speak as US Weighs Renewed Iran Strikes: Report",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-01T02:10:52.368799+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/lokshahi-bachao-anarajakta-hatao-bjp-launches-mumbai-counter-protest-ahead-of-nitin-nabins-rohtak-padyatra-2026-11-01-140182",
-      "title": "BJP Launches 'Save Democracy' Counter-Protest Against Opposition's 'False Narratives'",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-01T10:34:15.910714+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.news18.com/india/gyanesh-kumar-will-go-to-jail-for-rahul-gandhi-attacks-cec-bjp-at-ramlila-maidan-rally-ws-klrt-10407684.html?comscorekw=jionews",
-      "title": "'Gyanesh Kumar Will Go To Jail For...': Rahul Gandhi Attacks CEC, BJP At Ramlila Maidan Rally",
-      "domain": "news18.com",
-      "timestamp": "2026-11-01T13:15:01.446109+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/40-of-ramlila-maidan-vacant-sambit-patra-questions-ndi-bloc-s-10-lakh-turnout-claim-at-delhi-rally-2026-11-01-140206",
-      "title": "'40% of Ramlila Maidan Vacant': Sambit Patra Questions INDI Bloc's 10 Lakh Turnout Claim at Delhi Rally",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-01T16:01:05.585709+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.republicworld.com/entertainment/diljit-dosanjh-concert-delhi-police-arrest-3-over-pro-khalistan-graffiti-at-metro-stations-2026-11-01-140214",
-      "title": "Diljit Dosanjh Concert: Delhi Police Arrest 3 Over Pro-Khalistan Graffiti at Metro Stations",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-01T17:55:16.146555+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
-      "url": "https://www.republicworld.com/india/declare-you-won-t-contest-till-gyanesh-kumar-is-cec-assam-cm-himanta-biswa-sarma-s-open-challenge-to-rahul-gandhi-on-vote-theft-charge-2026-11-01-140221",
-      "title": "Assam CM Challenges Rahul Gandhi on 'Vote Theft' Allegations",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-01T23:16:54.237022+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/global-news/netanyahu-pushes-trump-for-iran-strikes-immediately-after-midterms-trump-wants-talks-to-continue-report-2026-11-01-140225",
-      "title": "Netanyahu Pushes Trump For Iran Strikes Immediately After Midterms, Trump Wants Talks To Continue: Report",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-02T01:27:23.487594+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/delhi-police-checked-7279-vehicles-november-1-under-grap-714-turned-back-38-impounded-2026-11-02-140227",
-      "title": "Delhi Police Checked 7279 Vehicles On November 1 Under GRAP, 714 Turned Back, 38 Impounded",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-02T01:58:34.957698+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/ed-raids-former-punjab-minister-sunder-sham-arora-s-hoshiarpur-residence-in-industrial-land-case-2026-11-02-140236",
-      "title": "ED Raids Former Punjab Minister Sunder Sham Arora's Hoshiarpur Residence In Industrial Land Case",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-02T06:24:45.987085+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains unverified allegation ('Tragedy Strikes: U-19 Woman Cricketer Dies by Suicide, Family Alleges Harassment'), but generated post converts it to an established fact without attribution."
     }
   ],
   "classified_pool": [],
