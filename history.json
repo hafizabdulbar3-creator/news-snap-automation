@@ -4391,6 +4391,15 @@
       "published": true,
       "media_id": "17865793752691934",
       "timestamp": "2026-11-02T07:49:12.582513+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-ncr-pollution-plan-50-wfh-vehicle-checks-and-construction-curbs-what-has-the-govt-ordered-ahead-of-diwali-ws-l-10408178.html?comscorekw=jionews",
+      "title": "Ahead of Diwali, Delhi-NCR mandates WFH, construction curbs, vehicle checks to fight pollution.",
+      "headline": "Delhi-NCR mandates WFH, construction curbs, vehicle checks ahead of Diwali",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18078798263569174",
+      "timestamp": "2026-11-13T16:23:01.022809+00:00"
     }
   ],
   "processed": [
@@ -4522,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Ahead of Diwali, Delhi-NCR mandates WFH, construction curbs, vehicle checks to fight pollution.",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-ncr-pollution-plan-50-wfh-vehicle-checks-and-construction-curbs-what-has-the-govt-ordered-ahead-of-diwali-ws-l-10408178.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "This is a regional news story about pollution control measures ahead of a festival, which is a notable public interest story but lacks broad international consequence."
-      },
-      "classified_at": "2026-11-02T06:56:21.565459+00:00"
-    },
     {
       "title": "Chennai Weather Today: Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut; Check IMD Forecast",
       "domain": "news18.com",
