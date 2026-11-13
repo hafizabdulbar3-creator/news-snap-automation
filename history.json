@@ -4418,6 +4418,15 @@
       "published": true,
       "media_id": "17970960372237324",
       "timestamp": "2026-11-13T17:15:08.563409+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/web-series/tvfs-family-kirana-store-season-3-releases-on-youtube-clocks-three-seasons-in-10-months-ws-l-10424550.html?comscorekw=jionews",
+      "title": "TVF's Family Kirana Store Season 3 Releases On YouTube, Clocks Three Seasons In 10 Months",
+      "headline": "TVF's Family Kirana Store Season 3 Premieres On YouTube",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18034575416889746",
+      "timestamp": "2026-11-13T17:41:19.556876+00:00"
     }
   ],
   "processed": [
@@ -4549,17 +4558,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "TVF's Family Kirana Store Season 3 Releases On YouTube, Clocks Three Seasons In 10 Months",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/web-series/tvfs-family-kirana-store-season-3-releases-on-youtube-clocks-three-seasons-in-10-months-ws-l-10424550.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A release announcement for a web series, which is a standard industry update."
-      },
-      "classified_at": "2026-11-13T17:14:44.247207+00:00"
-    },
     {
       "title": "Sidharth Malhotra Marks Chhath Puja With A Nostalgic Note About 'Vvan': 'Feels Truly Special'",
       "domain": "news18.com",
