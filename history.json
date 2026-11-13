@@ -4436,6 +4436,15 @@
       "published": true,
       "media_id": "18212208937367602",
       "timestamp": "2026-11-13T18:07:07.057321+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/sidharth-malhotra-marks-chhath-puja-with-a-nostalgic-note-about-vvan-feels-truly-special-ws-l-10424909.html?comscorekw=jionews",
+      "title": "Sidharth Malhotra Marks Chhath Puja With A Nostalgic Note About 'Vvan': 'Feels Truly Special'",
+      "headline": "Sidharth Malhotra Shares Nostalgic Note About 'Vaan' on Chhath Puja",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18396574117167619",
+      "timestamp": "2026-11-13T18:33:11.005351+00:00"
     }
   ],
   "processed": [
@@ -4566,19 +4575,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Sidharth Malhotra Marks Chhath Puja With A Nostalgic Note About 'Vvan': 'Feels Truly Special'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/sidharth-malhotra-marks-chhath-puja-with-a-nostalgic-note-about-vvan-feels-truly-special-ws-l-10424909.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A celebrity social media post regarding a personal festival observation."
-      },
-      "classified_at": "2026-11-13T17:14:44.247210+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
