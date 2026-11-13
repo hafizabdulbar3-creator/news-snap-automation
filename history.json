@@ -4400,6 +4400,15 @@
       "published": true,
       "media_id": "18078798263569174",
       "timestamp": "2026-11-13T16:23:01.022809+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/chennai-news/chennai-weather-today-cyclone-murasu-triggers-heavy-rain-alert-schools-shut-check-imd-forecast-ws-l-10408259.html?comscorekw=jionews",
+      "title": "Chennai Weather Today: Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut; Check IMD Forecast",
+      "headline": "Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut in Chennai",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18376172470245088",
+      "timestamp": "2026-11-13T16:48:45.291462+00:00"
     }
   ],
   "processed": [
@@ -4530,19 +4539,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Chennai Weather Today: Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut; Check IMD Forecast",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/chennai-news/chennai-weather-today-cyclone-murasu-triggers-heavy-rain-alert-schools-shut-check-imd-forecast-ws-l-10408259.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Weather",
-        "reason": "This is a regional weather alert story regarding a cyclone, which is a notable public safety issue but lacks broad geopolitical consequence."
-      },
-      "classified_at": "2026-11-02T06:56:21.565462+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
