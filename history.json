@@ -4492,6 +4492,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains unverified allegation ('Tragedy Strikes: U-19 Woman Cricketer Dies by Suicide, Family Alleges Harassment'), but generated post converts it to an established fact without attribution."
+    },
+    {
+      "url": "https://www.republicworld.com/science/spacex-starship-historic-test-booster-ends-in-gulf-sea-landing-after-abort-spacecraft-eyes-first-ever-chopsticks-catch-on-saturday-2026-11-13-141013",
+      "title": "SpaceX Starship Test: Booster Lands in Gulf, Eyes Saturday's Chopsticks Catch",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-13T23:55:21.192423+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
