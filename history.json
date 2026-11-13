@@ -4409,6 +4409,15 @@
       "published": true,
       "media_id": "18376172470245088",
       "timestamp": "2026-11-13T16:48:45.291462+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/mossad-official-arrives-in-us-for-high-level-talks-as-netanyahu-pushes-for-resumed-war-against-iran-report-2026-11-13-141003",
+      "title": "High-Stakes US-Mossad Talks on Iran War as Netanyahu Pressures Trump",
+      "headline": "Mossad Official Arrives in US for High-Level Talks Amid Netanyahu War Push",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17970960372237324",
+      "timestamp": "2026-11-13T17:15:08.563409+00:00"
     }
   ],
   "processed": [
@@ -4539,7 +4548,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "TVF's Family Kirana Store Season 3 Releases On YouTube, Clocks Three Seasons In 10 Months",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/web-series/tvfs-family-kirana-store-season-3-releases-on-youtube-clocks-three-seasons-in-10-months-ws-l-10424550.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A release announcement for a web series, which is a standard industry update."
+      },
+      "classified_at": "2026-11-13T17:14:44.247207+00:00"
+    },
+    {
+      "title": "Sidharth Malhotra Marks Chhath Puja With A Nostalgic Note About 'Vvan': 'Feels Truly Special'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/sidharth-malhotra-marks-chhath-puja-with-a-nostalgic-note-about-vvan-feels-truly-special-ws-l-10424909.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A celebrity social media post regarding a personal festival observation."
+      },
+      "classified_at": "2026-11-13T17:14:44.247210+00:00"
+    },
+    {
+      "title": "Four Held Within Six Hours for Alleged Gang-rape of Minor Girl in Nainital",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/four-held-within-six-hours-for-alleged-gang-rape-of-minor-girl-in-nainital-2026-11-13-141004",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A report on a specific local crime incident, which is of public interest but lacks broad international consequence."
+      },
+      "classified_at": "2026-11-13T17:14:44.247212+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
