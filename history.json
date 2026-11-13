@@ -4427,6 +4427,15 @@
       "published": true,
       "media_id": "18034575416889746",
       "timestamp": "2026-11-13T17:41:19.556876+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/four-held-within-six-hours-for-alleged-gang-rape-of-minor-girl-in-nainital-2026-11-13-141004",
+      "title": "Four Held Within Six Hours for Alleged Gang-rape of Minor Girl in Nainital",
+      "headline": "Four Held Within Six Hours for Alleged Gang-rape of Minor Girl in Nainital",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18212208937367602",
+      "timestamp": "2026-11-13T18:07:07.057321+00:00"
     }
   ],
   "processed": [
@@ -4568,17 +4577,6 @@
         "reason": "A celebrity social media post regarding a personal festival observation."
       },
       "classified_at": "2026-11-13T17:14:44.247210+00:00"
-    },
-    {
-      "title": "Four Held Within Six Hours for Alleged Gang-rape of Minor Girl in Nainital",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/four-held-within-six-hours-for-alleged-gang-rape-of-minor-girl-in-nainital-2026-11-13-141004",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A report on a specific local crime incident, which is of public interest but lacks broad international consequence."
-      },
-      "classified_at": "2026-11-13T17:14:44.247212+00:00"
     }
   ],
   "quota_cooldown": {
