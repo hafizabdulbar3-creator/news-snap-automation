@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.dw.com/en/canada-fire-at-military-base-in-alberta-leaves-four-dead/a-79690515",
-      "title": "Canada: Fire at military base in Alberta leaves four dead",
-      "headline": "Four Dead After Major Fire at Alberta Military Base",
-      "domain": "dw.com",
-      "published": true,
-      "media_id": "18115313231031549",
-      "timestamp": "2026-10-18T18:39:44.781287+00:00"
-    },
-    {
       "url": "https://www.tnp.no/norway/politics/4402-usa-and-germany-support-former-norway-prime-minister-stoltenberg-as-new-nato-secretary/",
       "title": "USA and Germany Support Former Norway Prime Minister Stoltenberg as New NATO Secretary - The Nordic Page",
       "headline": "USA and Germany Back Former Norway PM Stoltenberg for NATO Secretary",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17911230276572080",
       "timestamp": "2026-11-14T04:52:08.456595+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/death-toll-in-kaziranga-road-accident-rises-to-25-two-remain-unidentified-2026-11-14-141027",
+      "title": "Death Toll in Kaziranga Road Accident Rises to 25, Two Remain Unidentified",
+      "headline": "Death Toll in Kaziranga Road Accident Rises to 25",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18113154011180561",
+      "timestamp": "2026-11-14T05:17:59.232270+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Death Toll in Kaziranga Road Accident Rises to 25, Two Remain Unidentified",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/death-toll-in-kaziranga-road-accident-rises-to-25-two-remain-unidentified-2026-11-14-141027",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A road accident with a high death toll is a tragic local/regional event but is not a major geopolitical story."
-      },
-      "classified_at": "2026-11-14T02:36:15.780610+00:00"
-    },
     {
       "title": "Nvidia Tips Arm Holdings CEO Haas to Take over Jensen Huang's Job, Musk Backs Huang's Reinstatement",
       "domain": "republicworld.com",
