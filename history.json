@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.theguardian.com/world/2026/oct/18/french-government-crisis-talks-violent-unrest-policing-macron",
-      "title": "French government in crisis talks after 'colossal failure of the state'",
-      "headline": "French Government Holds Crisis Talks Following Days of Violent Unrest",
-      "domain": "theguardian.com",
-      "published": true,
-      "media_id": "18100627301063835",
-      "timestamp": "2026-10-18T15:41:46.009161+00:00"
-    },
-    {
       "url": "https://www.thehindu.com/news/international/irans-new-defence-minister-akhlaghi-threatens-enormous-damage-if-us-attacks/article71600872.ece",
       "title": "Iran's new Defence Minister Akhlaghi threatens 'enormous damage' if U.S. attacks",
       "headline": "Iran's New Defence Minister Threatens 'Enormous Damage' If U.S. Attacks",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18398757895161515",
       "timestamp": "2026-11-14T01:19:04.337984+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/pm-modi-reviews-crucial-rail-project-for-andhras-new-capital-amaravati-exclusive-ws-blrt-10425013.html?comscorekw=jionews",
+      "title": "PM Modi Reviews Crucial Rail Project For Andhra's New Capital Amaravati | Exclusive",
+      "headline": "PM Modi Reviews Crucial Rail Project For Amaravati",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18348198457262362",
+      "timestamp": "2026-11-14T01:44:57.315839+00:00"
     }
   ],
   "processed": [
@@ -4521,7 +4521,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Global Microsoft 365 Outage Enters Second Day, Disrupts Outlook, Teams And Copilot In 74 Countries",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/global-microsoft-365-outage-enters-second-day-disrupts-outlook-teams-and-copilot-in-74-countries-2026-11-14-141016",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A significant service outage affecting a major global corporation, impacting productivity and communication for users in 74 countries."
+      },
+      "classified_at": "2026-11-14T01:44:31.406025+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
