@@ -4546,6 +4546,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/world/pakistans-much-hyped-minerals-forum-ends-with-no-big-ticket-foreign-investment-13-mous-signed-ws-l-10425970.html?comscorekw=jionews",
+      "title": "Pakistan's Much-Hyped Minerals Forum Ends With No Big-Ticket Foreign Investment, 13 MoUs Signed",
+      "domain": "news18.com",
+      "timestamp": "2026-11-14T16:23:04.893194+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [],
