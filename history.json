@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.digbycourier.ca/government-shutdown-senate-leaders-reach-deal-on-short-term-spending-bill-to-avoid-shutdown/",
-      "title": "Government shutdown: Senate leaders reach deal on short-term spending bill to avoid shutdown",
-      "headline": "Senate leaders reach deal on short-term spending bill to avoid shutdown",
-      "domain": "digbycourier.ca",
-      "published": true,
-      "media_id": "18075557237744595",
-      "timestamp": "2026-10-19T08:20:45.344933+00:00"
-    },
-    {
       "url": "https://www.digbycourier.ca/chinas-economy-slows-in-may-and-stimulus-is-expected/",
       "title": "China's economy slows in May, and stimulus is expected",
       "headline": "China's Economy Slows in May, Stimulus Expected",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18117123353600347",
       "timestamp": "2026-11-14T05:43:55.662954+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/3100-flights-in-the-air-zero-allowed-to-take-off-why-faa-froze-us-departures-in-second-shutdown-since-911-2026-11-13-141014",
+      "title": "FAA Halts US Departures: 3100 Flights Airborne, Zero Takeoffs Allowed",
+      "headline": "FAA Halts All US Departures: 3100 Flights In Air",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18081928259723184",
+      "timestamp": "2026-11-14T06:09:53.202876+00:00"
     }
   ],
   "processed": [
@@ -4530,19 +4530,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "FAA Halts US Departures: 3100 Flights Airborne, Zero Takeoffs Allowed",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/3100-flights-in-the-air-zero-allowed-to-take-off-why-faa-froze-us-departures-in-second-shutdown-since-911-2026-11-13-141014",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A widespread FAA ground stop is a significant logistical event but is classified as NORMAL due to the lack of a confirmed security threat."
-      },
-      "classified_at": "2026-11-14T02:36:15.780617+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
