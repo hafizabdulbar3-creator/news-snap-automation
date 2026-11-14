@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.bbc.co.uk/news/articles/c60rl1xvjv89o",
-      "title": "Don't fall for this - how to protect yourself from AI scams",
-      "headline": "AI scams are super-charging existing frauds, say experts",
-      "domain": "bbc.co.uk",
-      "published": true,
-      "media_id": "17951231643055761",
-      "timestamp": "2026-10-19T12:30:49.075846+00:00"
-    },
-    {
       "url": "https://www.westerntelegraph.co.uk/news/national/26646884.39-people-hospital-fire-canadian-military-base-says-alberta-premier/",
       "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
       "headline": "39 hospitalized after fire at Canadian military base",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18147941359571873",
       "timestamp": "2026-11-14T08:20:20.855334+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-air-stays-very-poor-with-aqi-at-348-severe-pollution-grips-key-areas-2026-11-14-141046",
+      "title": "Delhi Air Stays 'Very Poor' with AQI at 348; Severe Pollution Grips Key Areas",
+      "headline": "Delhi Air Stays 'Very Poor' with AQI at 348",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17999289255032121",
+      "timestamp": "2026-11-14T08:45:54.237869+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Air Stays 'Very Poor' with AQI at 348; Severe Pollution Grips Key Areas",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-air-stays-very-poor-with-aqi-at-348-severe-pollution-grips-key-areas-2026-11-14-141046",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "Severe air pollution in a major capital city is a significant public health and environmental issue, though it is a recurring seasonal event rather than a singular geopolitical crisis."
-      },
-      "classified_at": "2026-11-14T07:27:44.021676+00:00"
-    },
     {
       "title": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued In 'Miracle On Mississippi'",
       "domain": "republicworld.com",
