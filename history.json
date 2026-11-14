@@ -4585,12 +4585,12 @@
   "quota_cooldowns": {},
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5098602,
-    "refreshed_at": "2026-11-13T11:27:56.810652+00:00",
-    "expires_at": "2027-01-11T11:44:38.810652+00:00",
+    "expires_in": 5184000,
+    "refreshed_at": "2026-11-14T10:51:09.070624+00:00",
+    "expires_at": "2027-01-13T10:51:09.070624+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-13T11:27:57.981604+00:00"
+    "updated_at": "2026-11-14T10:51:10.128013+00:00"
   }
 }
