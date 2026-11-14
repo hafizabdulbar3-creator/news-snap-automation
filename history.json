@@ -4555,6 +4555,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-cricket-score-2nd-test-day-2-afg-vs-zim-latest-scorecard-sharjah-match-updates-liveblog-ws-l-10425257.html?comscorekw=jionews",
+      "title": "Afghanistan Vs Zimbabwe Highlights, 2nd Test Day 2: ZIM Take Massive Lead Before Moving Day",
+      "domain": "news18.com",
+      "timestamp": "2026-11-14T18:37:52.651638+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
