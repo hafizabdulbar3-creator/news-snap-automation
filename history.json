@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.nbcnews.com/news/us-news/mahmoud-khalil-supreme-court-judges-reverse-immigration-detentions-rcna604475",
-      "title": "Mahmoud Khalil asks Supreme Court to let U.S. judges quickly reverse immigration detentions",
-      "headline": "Supreme Court to Review Immigration Detentions of Mahmoud Khalil",
-      "domain": "nbcnews.com",
-      "published": true,
-      "media_id": "18110249306185256",
-      "timestamp": "2026-10-20T06:56:08.302537+00:00"
-    },
-    {
       "url": "https://www.nbcnews.com/politics/2026-election/blue-collar-bellwether-weighs-ousting-longtime-gop-sen-susan-collins-m-rcna598591",
       "title": "A blue-collar bellwether weighs ousting longtime GOP Sen. Susan Collins in Maine",
       "headline": "Blue-collar voters in Maine weigh ousting GOP Sen. Susan Collins",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17934015153161968",
       "timestamp": "2026-11-14T23:03:21.582071+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/wire-glitch-short-circuited-us-aviation-faa-says-full-recovery-by-sunday-night-as-over-8000-flights-grounded-ws-lr-10426096.html?comscorekw=jionews",
+      "title": "Wire Glitch Grounds US Flights: Over 8,000 Cancelled, Recovery Expected Soon",
+      "headline": "US Aviation Grounded by Wire Glitch: 8,000+ Flights Cancelled",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17924163282449536",
+      "timestamp": "2026-11-14T23:29:24.622110+00:00"
     }
   ],
   "processed": [
