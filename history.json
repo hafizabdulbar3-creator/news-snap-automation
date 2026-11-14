@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://jowhar.com/four-killed-dozens-hurt-in-fire-at-canadian-military-base/",
-      "title": "Four Killed, Dozens Hurt in Fire at Canadian Military Base - Jowhar News Leader | Somali News",
-      "headline": "Four Killed, Dozens Hurt in Fire at Canadian Military Base",
-      "domain": "jowhar.com",
-      "published": true,
-      "media_id": "18152833456528394",
-      "timestamp": "2026-10-19T15:06:59.763284+00:00"
-    },
-    {
       "url": "https://cedarnews.net/newstasks/1083645/major-fire-canada-military-base-leaves-four/",
       "title": "Major fire at Canada military base leaves four dead, dozens injured | Cedar News",
       "headline": "Major fire at Canada military base leaves four dead, dozens injured",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18116576878841832",
       "timestamp": "2026-11-14T10:30:22.893452+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/web-series/student-of-the-year-after-dark-review-shanaya-kapoors-double-role-is-interesting-but-the-mystery-is-not-ws-kl-10425506.html?comscorekw=jionews",
+      "title": "Shanaya Kapoor's Double Role Shines in Dark SOTY Spinoff, But Mystery Falls Flat",
+      "headline": "Shanaya Kapoor's Double Role Shines in SOTY Spinoff, But Mystery Falls Flat",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18116393015326410",
+      "timestamp": "2026-11-14T10:56:06.333410+00:00"
     }
   ],
   "processed": [
@@ -4563,17 +4563,6 @@
         "reason": "A gathering of the Uttarakhandi diaspora and a cultural message are regional community events."
       },
       "classified_at": "2026-11-14T09:37:52.573111+00:00"
-    },
-    {
-      "title": "Shanaya Kapoor's Double Role Shines in Dark SOTY Spinoff, But Mystery Falls Flat",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/web-series/student-of-the-year-after-dark-review-shanaya-kapoors-double-role-is-interesting-but-the-mystery-is-not-ws-kl-10425506.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A review of a movie spinoff is entertainment industry news."
-      },
-      "classified_at": "2026-11-14T09:37:52.573113+00:00"
     }
   ],
   "quota_cooldown": {
