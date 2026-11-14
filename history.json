@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.foxnews.com/politics/trump-says-netanyahu-needs-reelected-else-us-finish-job-against-iran-alone",
-      "title": "Trump says Netanyahu needs to be re-elected, or else US will have to 'finish the job' against Iran alone",
-      "headline": "Trump Backs Netanyahu Re-Election, Warns US May Face Iran Alone",
-      "domain": "foxnews.com",
-      "published": true,
-      "media_id": "18113867039177546",
-      "timestamp": "2026-10-18T17:37:43.092022+00:00"
-    },
-    {
       "url": "https://www.thehindu.com/news/international/houthi-media-says-saudi-strike-kills-9-in-northern-yemen/article71600958.ece",
       "title": "Houthi media says Saudi strike kills 9 in northern Yemen",
       "headline": "Houthi Media Reports Saudi Strike Kills Nine in Yemen",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18009151224008106",
       "timestamp": "2026-11-14T02:10:56.298727+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/rubio-breaks-with-trump-on-economy-admits-americans-are-struggling-defends-iran-war-and-lashes-un-over-weaponization-of-international-law-2026-11-14-141018",
+      "title": "Rubio Breaks With Trump on Economy, Defends Iran War, Lashes UN",
+      "headline": "Rubio Breaks With Trump on Economy, Defends Iran War",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18392061826225070",
+      "timestamp": "2026-11-14T02:36:45.420505+00:00"
     }
   ],
   "processed": [
@@ -4521,7 +4521,107 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "India, Malaysia To Hold Joint Military Exercise Harimau Shakti 2026 From Nov 18-30",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/india-malaysia-to-hold-joint-military-exercise-harimau-shakti-2026-from-nov-18-30-2026-11-14-141028",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A scheduled joint military exercise between two nations is a routine diplomatic and defense activity."
+      },
+      "classified_at": "2026-11-14T02:36:15.780597+00:00"
+    },
+    {
+      "title": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/air-india-warns-of-possible-flight-disruptions-amid-us-air-traffic-outage-2026-11-14-141020",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A specific airline warning regarding flight disruptions due to external factors is a regional operational news item."
+      },
+      "classified_at": "2026-11-14T02:36:15.780601+00:00"
+    },
+    {
+      "title": "SpaceX Starship Reaches Orbit, Deploys 26 Starlink Satellites After Booster Falls Into Gulf And Explodes",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/science/spacex-starship-reaches-orbit-deploys-26-starlink-satellites-after-booster-falls-into-gulf-and-explodes-2026-11-14-141019",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Science & Technology",
+        "reason": "SpaceX's Starship reaching orbit and deploying satellites represents a major milestone in space exploration and commercial spaceflight."
+      },
+      "classified_at": "2026-11-14T02:36:15.780603+00:00"
+    },
+    {
+      "title": "Tribal Girl Accuses Jharkhand Congress MLA of Rape, Assault; POCSO Case Filed",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/14-year-old-tribal-girl-accuses-jharkhand-congress-mla-of-rape-assault-and-death-threats-fir-registered-under-pocso-2026-11-14-141017",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A criminal case involving a local politician is a significant local/regional story but does not rise to the level of a major international event."
+      },
+      "classified_at": "2026-11-14T02:36:15.780606+00:00"
+    },
+    {
+      "title": "Nationwide Ground Stop: US Homeland Security Dismisses 9/11 Terror Link",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/this-isnt-the-same-comparison-to-911-us-homeland-security-secy-rules-out-threat-behind-nationwide-ground-stop-2026-11-14-141025",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A nationwide ground stop due to technical issues is a major logistical event but lacks the severity of a confirmed security threat."
+      },
+      "classified_at": "2026-11-14T02:36:15.780608+00:00"
+    },
+    {
+      "title": "Death Toll in Kaziranga Road Accident Rises to 25, Two Remain Unidentified",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/death-toll-in-kaziranga-road-accident-rises-to-25-two-remain-unidentified-2026-11-14-141027",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A road accident with a high death toll is a tragic local/regional event but is not a major geopolitical story."
+      },
+      "classified_at": "2026-11-14T02:36:15.780610+00:00"
+    },
+    {
+      "title": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks Alongside EU Institutions",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/france-germany-italy-poland-uk-to-represent-europe-in-ukraine-peace-talks-alongside-eu-institutions-2026-11-14-141022",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The participation of major European powers in peace talks regarding the ongoing war in Ukraine is a major geopolitical development."
+      },
+      "classified_at": "2026-11-14T02:36:15.780613+00:00"
+    },
+    {
+      "title": "Nvidia Tips Arm Holdings CEO Haas to Take over Jensen Huang's Job, Musk Backs Huang's Reinstatement",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/nvidia-tips-arm-holdings-ceo-haas-to-take-over-jensen-huang-s-job-musk-backs-huang-s-reinstatement-2026-11-14-141024",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business & Finance",
+        "reason": "Speculation regarding executive leadership changes in the tech sector is a notable business news item."
+      },
+      "classified_at": "2026-11-14T02:36:15.780614+00:00"
+    },
+    {
+      "title": "FAA Halts US Departures: 3100 Flights Airborne, Zero Takeoffs Allowed",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/3100-flights-in-the-air-zero-allowed-to-take-off-why-faa-froze-us-departures-in-second-shutdown-since-911-2026-11-13-141014",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A widespread FAA ground stop is a significant logistical event but is classified as NORMAL due to the lack of a confirmed security threat."
+      },
+      "classified_at": "2026-11-14T02:36:15.780617+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
