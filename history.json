@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.westerntelegraph.co.uk/news/national/26646884.39-people-hospital-fire-canadian-military-base-says-alberta-premier/",
-      "title": "39 people in hospital after fire at Canadian military base, says Alberta premier",
-      "headline": "39 hospitalized after fire at Canadian military base",
-      "domain": "westerntelegraph.co.uk",
-      "published": true,
-      "media_id": "17917418751465211",
-      "timestamp": "2026-10-19T13:02:16.360679+00:00"
-    },
-    {
       "url": "https://www.irrigator.com.au/story/9370788/support-frays-over-bumper-trade-deal-with-europe/",
       "title": "Support frays over bumper trade deal with Europe",
       "headline": "Support frays over bumper trade deal with Europe",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17999289255032121",
       "timestamp": "2026-11-14T08:45:54.237869+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/global/cruise-ship-hit-by-tanker-in-new-orleans-all-130-rescued-in-miracle-on-mississippi-2026-11-14-141044",
+      "title": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued In 'Miracle On Mississippi'",
+      "headline": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18091319753286491",
+      "timestamp": "2026-11-14T09:11:57.569570+00:00"
     }
   ],
   "processed": [
@@ -4530,19 +4530,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued In 'Miracle On Mississippi'",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/global/cruise-ship-hit-by-tanker-in-new-orleans-all-130-rescued-in-miracle-on-mississippi-2026-11-14-141044",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Disasters",
-        "reason": "A maritime collision resulting in a rescue operation is a notable public safety event, though it is a localized incident without broad international geopolitical consequence."
-      },
-      "classified_at": "2026-11-14T07:27:44.021679+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
