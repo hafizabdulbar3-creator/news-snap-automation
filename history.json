@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.tnp.no/norway/politics/4402-usa-and-germany-support-former-norway-prime-minister-stoltenberg-as-new-nato-secretary/",
-      "title": "USA and Germany Support Former Norway Prime Minister Stoltenberg as New NATO Secretary - The Nordic Page",
-      "headline": "USA and Germany Back Former Norway PM Stoltenberg for NATO Secretary",
-      "domain": "tnp.no",
-      "published": true,
-      "media_id": "18115735508122230",
-      "timestamp": "2026-10-19T07:49:36.952336+00:00"
-    },
-    {
       "url": "https://www.digbycourier.ca/government-shutdown-senate-leaders-reach-deal-on-short-term-spending-bill-to-avoid-shutdown/",
       "title": "Government shutdown: Senate leaders reach deal on short-term spending bill to avoid shutdown",
       "headline": "Senate leaders reach deal on short-term spending bill to avoid shutdown",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18113154011180561",
       "timestamp": "2026-11-14T05:17:59.232270+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/nvidia-tips-arm-holdings-ceo-haas-to-take-over-jensen-huang-s-job-musk-backs-huang-s-reinstatement-2026-11-14-141024",
+      "title": "Nvidia Tips Arm Holdings CEO Haas to Take over Jensen Huang's Job, Musk Backs Huang's Reinstatement",
+      "headline": "Nvidia Eyes Arm CEO Haas for Jensen Huang's Role",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18117123353600347",
+      "timestamp": "2026-11-14T05:43:55.662954+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Nvidia Tips Arm Holdings CEO Haas to Take over Jensen Huang's Job, Musk Backs Huang's Reinstatement",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/nvidia-tips-arm-holdings-ceo-haas-to-take-over-jensen-huang-s-job-musk-backs-huang-s-reinstatement-2026-11-14-141024",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business & Finance",
-        "reason": "Speculation regarding executive leadership changes in the tech sector is a notable business news item."
-      },
-      "classified_at": "2026-11-14T02:36:15.780614+00:00"
-    },
     {
       "title": "FAA Halts US Departures: 3100 Flights Airborne, Zero Takeoffs Allowed",
       "domain": "republicworld.com",
