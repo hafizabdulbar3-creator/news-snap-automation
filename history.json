@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.theyeshivaworld.com/news/israel-news/2611192/heightened-alert-idf-chief-orders-military-leave-freeze-on-election-day-amid-fears-of-terror-attacks.html",
-      "title": "HEIGHTENED ALERT: IDF Chief Orders Military Leave Freeze On Election Day Amid Fears Of Terror Attacks",
-      "headline": "IDF Freezes Military Leave on Israel's Election Day Amid Terror Fears",
-      "domain": "theyeshivaworld.com",
-      "published": true,
-      "media_id": "17940591117391627",
-      "timestamp": "2026-10-18T17:53:14.737485+00:00"
-    },
-    {
       "url": "https://www.chinafile.com/reporting-opinion/viewpoint/china-saudi-rmb-settlement-will-insulate-oil-trade-us-sanctions",
       "title": "China-Saudi RMB Settlement Will Insulate the Oil Trade from U.S. Sanctions",
       "headline": "China Pushes Saudi Oil Deals in RMB to Shield Against Sanctions",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17998671966108218",
       "timestamp": "2026-11-14T03:28:43.774389+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/air-india-warns-of-possible-flight-disruptions-amid-us-air-traffic-outage-2026-11-14-141020",
+      "title": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
+      "headline": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17938538745410965",
+      "timestamp": "2026-11-14T03:59:57.841367+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/air-india-warns-of-possible-flight-disruptions-amid-us-air-traffic-outage-2026-11-14-141020",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A specific airline warning regarding flight disruptions due to external factors is a regional operational news item."
-      },
-      "classified_at": "2026-11-14T02:36:15.780601+00:00"
-    },
     {
       "title": "Tribal Girl Accuses Jharkhand Congress MLA of Rape, Assault; POCSO Case Filed",
       "domain": "republicworld.com",
