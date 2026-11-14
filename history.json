@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.thehindu.com/news/international/houthi-media-says-saudi-strike-kills-9-in-northern-yemen/article71600958.ece",
-      "title": "Houthi media says Saudi strike kills 9 in northern Yemen",
-      "headline": "Houthi Media Reports Saudi Strike Kills Nine in Yemen",
-      "domain": "thehindu.com",
-      "published": true,
-      "media_id": "18145304215572162",
-      "timestamp": "2026-10-18T17:43:12.339578+00:00"
-    },
-    {
       "url": "https://www.foxnews.com/tech/oracle-health-data-breach-exposes-nearly-20-million-patients",
       "title": "Oracle Health data breach exposes nearly 20 million patients",
       "headline": "Oracle Health Data Breach Exposes Nearly 20 Million Patients' Records",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18392061826225070",
       "timestamp": "2026-11-14T02:36:45.420505+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/science/spacex-starship-reaches-orbit-deploys-26-starlink-satellites-after-booster-falls-into-gulf-and-explodes-2026-11-14-141019",
+      "title": "SpaceX Starship Reaches Orbit, Deploys 26 Starlink Satellites After Booster Falls Into Gulf And Explodes",
+      "headline": "SpaceX Starship Reaches Orbit, Deploys 26 Satellites",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18013206584771252",
+      "timestamp": "2026-11-14T03:02:37.370046+00:00"
     }
   ],
   "processed": [
@@ -4543,17 +4543,6 @@
         "reason": "A specific airline warning regarding flight disruptions due to external factors is a regional operational news item."
       },
       "classified_at": "2026-11-14T02:36:15.780601+00:00"
-    },
-    {
-      "title": "SpaceX Starship Reaches Orbit, Deploys 26 Starlink Satellites After Booster Falls Into Gulf And Explodes",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/science/spacex-starship-reaches-orbit-deploys-26-starlink-satellites-after-booster-falls-into-gulf-and-explodes-2026-11-14-141019",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Science & Technology",
-        "reason": "SpaceX's Starship reaching orbit and deploying satellites represents a major milestone in space exploration and commercial spaceflight."
-      },
-      "classified_at": "2026-11-14T02:36:15.780603+00:00"
     },
     {
       "title": "Tribal Girl Accuses Jharkhand Congress MLA of Rape, Assault; POCSO Case Filed",
