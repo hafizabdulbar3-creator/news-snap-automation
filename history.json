@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://english.news.cn/20261020/05ec970ea535489b901a76a017920532/c.html",
-      "title": "Cuba condemns U.S. arrest warrant for Raul Castro",
-      "headline": "Cuba condemns U.S. arrest warrant for Raul Castro",
-      "domain": "english.news.cn",
-      "published": true,
-      "media_id": "18143596558587867",
-      "timestamp": "2026-10-20T02:51:27.007707+00:00"
-    },
-    {
       "url": "https://www.wnmufm.org/2026-10-19/alberta-voters-decide-whether-to-take-a-step-toward-separating-from-canada",
       "title": "Alberta voters decide whether to take a step toward separating from Canada",
       "headline": "Alberta Voters Decide Whether to Take a Step Toward Separating From Canada",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17953122741055113",
       "timestamp": "2026-11-14T16:59:45.419061+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/kartik-aaryan-joins-hanuman-anshs-success-celebrations-at-mumbais-iskcon-temple-videos-go-viral-ws-kl-10425983.html?comscorekw=jionews",
+      "title": "Kartik Aaryan Joins Hanuman Ansh's Success Celebrations At Mumbai's ISKCON Temple; Videos Go Viral",
+      "headline": "Kartik Aaryan Attends Hanuman Ansh Success Party at ISKCON Temple",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18104866310383328",
+      "timestamp": "2026-11-14T17:40:58.932840+00:00"
     }
   ],
   "processed": [
