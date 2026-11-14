@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.foxnews.com/tech/oracle-health-data-breach-exposes-nearly-20-million-patients",
-      "title": "Oracle Health data breach exposes nearly 20 million patients",
-      "headline": "Oracle Health Data Breach Exposes Nearly 20 Million Patients' Records",
-      "domain": "foxnews.com",
-      "published": true,
-      "media_id": "18118406524966418",
-      "timestamp": "2026-10-18T17:48:05.163428+00:00"
-    },
-    {
       "url": "https://www.theyeshivaworld.com/news/israel-news/2611192/heightened-alert-idf-chief-orders-military-leave-freeze-on-election-day-amid-fears-of-terror-attacks.html",
       "title": "HEIGHTENED ALERT: IDF Chief Orders Military Leave Freeze On Election Day Amid Fears Of Terror Attacks",
       "headline": "IDF Freezes Military Leave on Israel's Election Day Amid Terror Fears",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18013206584771252",
       "timestamp": "2026-11-14T03:02:37.370046+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/france-germany-italy-poland-uk-to-represent-europe-in-ukraine-peace-talks-alongside-eu-institutions-2026-11-14-141022",
+      "title": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks Alongside EU Institutions",
+      "headline": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17998671966108218",
+      "timestamp": "2026-11-14T03:28:43.774389+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
         "reason": "A road accident with a high death toll is a tragic local/regional event but is not a major geopolitical story."
       },
       "classified_at": "2026-11-14T02:36:15.780610+00:00"
-    },
-    {
-      "title": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks Alongside EU Institutions",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/france-germany-italy-poland-uk-to-represent-europe-in-ukraine-peace-talks-alongside-eu-institutions-2026-11-14-141022",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The participation of major European powers in peace talks regarding the ongoing war in Ukraine is a major geopolitical development."
-      },
-      "classified_at": "2026-11-14T02:36:15.780613+00:00"
     },
     {
       "title": "Nvidia Tips Arm Holdings CEO Haas to Take over Jensen Huang's Job, Musk Backs Huang's Reinstatement",
