@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.tnp.no/norway/economy/3046-statoil-sees-growth-in-energy-demand-towards-2040/",
-      "title": "Statoil Sees Growth in Energy Demand towards 2040 - The Nordic Page",
-      "headline": "Statoil Sees Growth in Energy Demand towards 2040",
-      "domain": "tnp.no",
-      "published": true,
-      "media_id": "18020880287934696",
-      "timestamp": "2026-10-19T14:35:26.278506+00:00"
-    },
-    {
       "url": "https://jowhar.com/four-killed-dozens-hurt-in-fire-at-canadian-military-base/",
       "title": "Four Killed, Dozens Hurt in Fire at Canadian Military Base - Jowhar News Leader | Somali News",
       "headline": "Four Killed, Dozens Hurt in Fire at Canadian Military Base",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18172624951481507",
       "timestamp": "2026-11-14T10:03:56.594443+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/health/this-surprising-brain-difference-may-explain-why-some-kids-struggle-with-math-study-2026-11-14-141062",
+      "title": "This Surprising Brain Difference May Explain Why Some Kids Struggle With Math: Study",
+      "headline": "Brain Difference May Explain Math Struggles in Kids",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18116576878841832",
+      "timestamp": "2026-11-14T10:30:22.893452+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "This Surprising Brain Difference May Explain Why Some Kids Struggle With Math: Study",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/health/this-surprising-brain-difference-may-explain-why-some-kids-struggle-with-math-study-2026-11-14-141062",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science & Health",
-        "reason": "A study on a brain difference affecting children's math skills is a notable scientific finding, but it is not a major geopolitical event."
-      },
-      "classified_at": "2026-11-14T09:37:52.573081+00:00"
-    },
     {
       "title": "IFFI 2026: CM Pramod Sawant Welcomes Global Filmmakers To Goa",
       "domain": "republicworld.com",
