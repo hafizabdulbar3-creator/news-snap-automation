@@ -4537,6 +4537,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Attending Diljit Dosanjh's Mumbai Concert? Phone Rules, and What to Expect Amid High Security'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/ramayana-parineeti-chopra-praises-films-3d-experience-says-she-felt-part-of-the-universe-ws-kl-10425936.html?comscorekw=jionews",
+      "title": "Ramayana: Parineeti Chopra Praises Film's 3D Experience, Says She Felt 'Part Of The Universe'",
+      "domain": "news18.com",
+      "timestamp": "2026-11-14T15:15:36.550492+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [],
