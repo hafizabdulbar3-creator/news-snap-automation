@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.newstalkzb.co.nz/news/politics/election-2026-labour-wants-to-force-social-media-companies-to-give-users-options-about-what-they-see/",
-      "title": "Election 2026: Labour promise to enforce new conditions on social media companies",
-      "headline": "Labour vows to force social media companies to give users feed options",
-      "domain": "newstalkzb.co.nz",
-      "published": true,
-      "media_id": "17913150189504340",
-      "timestamp": "2026-10-19T19:34:50.815605+00:00"
-    },
-    {
       "url": "http://www.bignewsnetwork.com/news/279383603/fatal-fire-at-canadian-military-base-linked-to-live-fire-exercise-official",
       "title": "Fatal fire at Canadian military base linked to live-fire exercise: official",
       "headline": "Fatal fire at Canadian military base linked to live-fire exercise",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18643918930030695",
       "timestamp": "2026-11-14T12:45:09.870614+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/kashmirs-autumn-of-contrasts-when-golden-leaves-flowers-and-gunfire-share-the-landscape-ws-l-10425744.html?comscorekw=jionews",
+      "title": "Kashmir's Autumn Of Contrasts: When Golden Leaves, Flowers And Gunfire Share The Landscape",
+      "headline": "Kashmir's Autumn: Golden Leaves Amidst Gunfire And Chaos",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18114381866611956",
+      "timestamp": "2026-11-14T13:11:13.287059+00:00"
     }
   ],
   "processed": [
@@ -4530,7 +4530,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Attending Diljit Dosanjh's Mumbai Concert? Phone Rules, and What to Expect Amid High Security",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/attending-diljit-dosanjhs-mumbai-concert-phone-rules-and-what-to-expect-amid-high-security-2026-11-14-141068",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A news report regarding security measures and logistics for a celebrity concert, falling under the category of entertainment and public interest events."
+      },
+      "classified_at": "2026-11-14T13:10:48.253257+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
