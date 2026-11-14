@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.nbcnews.com/politics/trump-administration/ukrainians-sudanese-granted-temporary-deportation-reprieve-rcna604474",
-      "title": "More than 100K Ukrainians and Sudanese granted temporary deportation reprieve from the U.S.",
-      "headline": "More Than 100K Ukrainians and Sudanese Granted Temporary Deportation Reprieve",
-      "domain": "nbcnews.com",
-      "published": true,
-      "media_id": "18023495105719218",
-      "timestamp": "2026-10-20T01:59:34.640060+00:00"
-    },
-    {
       "url": "https://www.dw.com/en/france-partial-curfews-issued-in-paris-nice-after-unrest/live-79707186",
       "title": "France: Partial curfews issued in Paris, Nice after unrest",
       "headline": "France: Partial curfews issued in Paris, Nice after unrest",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18649271662058934",
       "timestamp": "2026-11-14T15:57:12.838730+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/south-cinema/jr-ntr-announces-his-next-film-with-anil-ravipudi-this-ones-going-to-be-a-laugh-riot-ws-kl-10425986.html?comscorekw=jionews",
+      "title": "Jr NTR Announces His Next Film With Anil Ravipudi: 'This One's Going To Be A Laugh Riot'",
+      "headline": "Jr NTR Announces Next Film With Anil Ravipudi",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18115005929163353",
+      "timestamp": "2026-11-14T16:28:32.820031+00:00"
     }
   ],
   "processed": [
