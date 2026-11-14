@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html",
-      "title": "India's finance minister says market liquidity makes it easier for investors to exit",
-      "headline": "India's Finance Minister Cites Market Liquidity as Key for Investor Exits",
-      "domain": "cnbc.com",
-      "published": true,
-      "media_id": "18110663570184552",
-      "timestamp": "2026-10-20T06:03:38.436089+00:00"
-    },
-    {
       "url": "https://www.nbcnews.com/politics/2026-election/texas-democrat-gina-hinojosa-sues-review-emails-elon-musk-greg-abbott-rcna604443",
       "title": "Texas Democratic candidate for governor sues to review emails between Elon Musk and Greg Abbott",
       "headline": "Texas Democrat Sues to Review Emails Between Musk and Abbott",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18506005615102838",
       "timestamp": "2026-11-14T22:11:20.091005+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/microsofts-global-meltdown-how-indias-govt-digital-backbone-stayed-up-running-ws-lr-10426094.html?comscorekw=jionews",
+      "title": "Microsoft's Global Meltdown: How India's Govt Digital Backbone Stayed Up & Running",
+      "headline": "Microsoft's Global Meltdown: India's Digital Backbone Stays Up",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17918212272497131",
+      "timestamp": "2026-11-14T22:37:16.465078+00:00"
     }
   ],
   "processed": [
