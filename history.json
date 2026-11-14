@@ -4519,20 +4519,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-malaysia-to-hold-joint-military-exercise-harimau-shakti-2026-from-nov-18-30-2026-11-14-141028",
+      "title": "India, Malaysia To Hold Joint Military Exercise Harimau Shakti 2026 From Nov 18-30",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-14T03:54:40.076150+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "India, Malaysia To Hold Joint Military Exercise Harimau Shakti 2026 From Nov 18-30",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/india-malaysia-to-hold-joint-military-exercise-harimau-shakti-2026-from-nov-18-30-2026-11-14-141028",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A scheduled joint military exercise between two nations is a routine diplomatic and defense activity."
-      },
-      "classified_at": "2026-11-14T02:36:15.780597+00:00"
-    },
     {
       "title": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
       "domain": "republicworld.com",
