@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.bbc.co.uk/news/articles/cv62yzddy6dpo",
-      "title": "Criminals in hospital set to lose benefits under new rules",
-      "headline": "Hospital criminals set to lose benefits under new rules",
-      "domain": "bbc.co.uk",
-      "published": true,
-      "media_id": "18043321379684918",
-      "timestamp": "2026-10-20T05:37:33.472246+00:00"
-    },
-    {
       "url": "https://www.cnbc.com/2026/10/18/india-ai-nifty50-sensex-investors.html",
       "title": "India's finance minister says market liquidity makes it easier for investors to exit",
       "headline": "India's Finance Minister Cites Market Liquidity as Key for Investor Exits",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18066191366792372",
       "timestamp": "2026-11-14T21:29:50.543357+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/science/historic-chopsticks-catch-spacex-arms-grab-starship-make-reusable-rockets-look-routine-2026-11-14-141074",
+      "title": "Historic Chopsticks Catch: SpaceX Arms Grab Starship, Make Reusable Rockets Look Routine",
+      "headline": "SpaceX Successfully Catches Starship With Chopsticks Arms",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18506005615102838",
+      "timestamp": "2026-11-14T22:11:20.091005+00:00"
     }
   ],
   "processed": [
