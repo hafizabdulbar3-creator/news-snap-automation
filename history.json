@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://cedarnews.net/newstasks/1083645/major-fire-canada-military-base-leaves-four/",
-      "title": "Major fire at Canada military base leaves four dead, dozens injured | Cedar News",
-      "headline": "Major fire at Canada military base leaves four dead, dozens injured",
-      "domain": "cedarnews.net",
-      "published": true,
-      "media_id": "18115313231031549",
-      "timestamp": "2026-10-19T17:43:29.349257+00:00"
-    },
-    {
       "url": "https://dailycaller.com/2026/10/18/gold-star-spouse-joey-amor-questions-jd-vance-accountability-military-failures-cbs-news-town-hall/",
       "title": "Gold Star Spouse Questions JD Vance On 'Accountability' For Military's 'Failures' During VP Town Hall",
       "headline": "Gold Star Spouse Questions JD Vance On Military Accountability",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18116393015326410",
       "timestamp": "2026-11-14T10:56:06.333410+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/celebrities/iffi-2026-cm-pramod-sawant-welcomes-global-filmmakers-to-goa-2026-11-14-141060",
+      "title": "IFFI 2026: CM Pramod Sawant Welcomes Global Filmmakers To Goa",
+      "headline": "Goa Set to Host 57th IFFI From Nov 20",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18101712614644827",
+      "timestamp": "2026-11-14T11:23:03.414107+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "IFFI 2026: CM Pramod Sawant Welcomes Global Filmmakers To Goa",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/celebrities/iffi-2026-cm-pramod-sawant-welcomes-global-filmmakers-to-goa-2026-11-14-141060",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Arts & Culture",
-        "reason": "The announcement of the International Film Festival of India (IFFI) 2026 is a regional cultural event, not a major international news story."
-      },
-      "classified_at": "2026-11-14T09:37:52.573102+00:00"
-    },
     {
       "title": "Varun Dhawan To Lead YRF's First Horror Film, Abhay Pannu To Direct",
       "domain": "republicworld.com",
