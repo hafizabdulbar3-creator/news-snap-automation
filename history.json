@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.nbcnews.com/news/us-news/weekend-rundown-october-18-rcna603917",
-      "title": "Trump's approval rating slips again, and a deadly incident at a youth soccer game: Weekend Rundown",
-      "headline": "Trump's approval rating slips as deadly soccer incident rocks weekend",
-      "domain": "nbcnews.com",
-      "published": true,
-      "media_id": "18644760166019840",
-      "timestamp": "2026-10-20T03:48:21.153660+00:00"
-    },
-    {
       "url": "https://www.cnbc.com/2026/10/16/us-china-mastercard-citigroup-market-access.html",
       "title": "U.S. presses China on Mastercard, Citigroup market access in bilateral Bangkok talks, official says",
       "headline": "U.S. presses China on Mastercard, Citigroup market access in Bangkok talks",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18060427547646568",
       "timestamp": "2026-11-14T18:12:05.109682+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/opinion/when-nvidia-sneezed-who-in-india-caught-cold-2026-11-14-141073",
+      "title": "When Nvidia Sneezed, Who In India Caught Cold?",
+      "headline": "Nvidia's $1 Trillion Loss: Who In India Caught Cold?",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18038860628702155",
+      "timestamp": "2026-11-14T18:43:30.602473+00:00"
     }
   ],
   "processed": [
