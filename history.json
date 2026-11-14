@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.webindia123.com/news/Articles/World/20261018/4512505.html",
-      "title": "Trump endorses Netanyahu for re-election, warns US could \"finish the job\" against Iran",
-      "headline": "Trump Endorses Netanyahu for Re-Election, Praising Leadership on Iran",
-      "domain": "news.webindia123.com",
-      "published": true,
-      "media_id": "17974857735153100",
-      "timestamp": "2026-10-18T18:03:27.535549+00:00"
-    },
-    {
       "url": "https://www.dw.com/en/canada-fire-at-military-base-in-alberta-leaves-four-dead/a-79690515",
       "title": "Canada: Fire at military base in Alberta leaves four dead",
       "headline": "Four Dead After Major Fire at Alberta Military Base",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18147948184565055",
       "timestamp": "2026-11-14T04:25:53.743932+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/this-isnt-the-same-comparison-to-911-us-homeland-security-secy-rules-out-threat-behind-nationwide-ground-stop-2026-11-14-141025",
+      "title": "Nationwide Ground Stop: US Homeland Security Dismisses 9/11 Terror Link",
+      "headline": "US Homeland Security Rules Out 9/11 Terror Link to Airport Ground Stop",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17911230276572080",
+      "timestamp": "2026-11-14T04:52:08.456595+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Nationwide Ground Stop: US Homeland Security Dismisses 9/11 Terror Link",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/this-isnt-the-same-comparison-to-911-us-homeland-security-secy-rules-out-threat-behind-nationwide-ground-stop-2026-11-14-141025",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A nationwide ground stop due to technical issues is a major logistical event but lacks the severity of a confirmed security threat."
-      },
-      "classified_at": "2026-11-14T02:36:15.780608+00:00"
-    },
     {
       "title": "Death Toll in Kaziranga Road Accident Rises to 25, Two Remain Unidentified",
       "domain": "republicworld.com",
