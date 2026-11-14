@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.dw.com/en/france-partial-curfews-issued-in-paris-nice-after-unrest/live-79707186",
-      "title": "France: Partial curfews issued in Paris, Nice after unrest",
-      "headline": "France: Partial curfews issued in Paris, Nice after unrest",
-      "domain": "dw.com",
-      "published": true,
-      "media_id": "18118467274950504",
-      "timestamp": "2026-10-20T02:25:47.149461+00:00"
-    },
-    {
       "url": "https://english.news.cn/20261020/05ec970ea535489b901a76a017920532/c.html",
       "title": "Cuba condemns U.S. arrest warrant for Raul Castro",
       "headline": "Cuba condemns U.S. arrest warrant for Raul Castro",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115005929163353",
       "timestamp": "2026-11-14T16:28:32.820031+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/india-says-yes-to-palestine-at-un-us-and-israel-say-no-151-nations-back-resolution-ws-lrt-10426007.html?comscorekw=jionews",
+      "title": "India Says YES To Palestine At UN; US And Israel Say NO: 151 Nations Back Resolution",
+      "headline": "India Backs Palestine At UN As 151 Nations Back Resolution",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17953122741055113",
+      "timestamp": "2026-11-14T16:59:45.419061+00:00"
     }
   ],
   "processed": [
