@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://newsradio1170.iheart.com/content/2026-10-18-trump-endorses-netanyahu-ahead-of-israeli-elections/",
-      "title": "Trump Endorses Netanyahu Ahead Of Israeli Elections | NewsRadio 1170 WWVA",
-      "headline": "Trump Endorses Netanyahu Ahead Of Israeli Elections",
-      "domain": "newsradio1170.iheart.com",
-      "published": true,
-      "media_id": "18147612055492716",
-      "timestamp": "2026-10-19T10:56:56.813884+00:00"
-    },
-    {
       "url": "https://seekingalpha.com/news/4654077-google-cuts-quantum-errors-40-fold-in-step-toward-practical-use",
       "title": "Google cuts quantum errors 40-fold in step toward practical use (GOOG:NASDAQ)",
       "headline": "Google cuts quantum errors 40-fold in step toward practical use",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17920517565465586",
       "timestamp": "2026-11-14T07:02:13.940431+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/ukraine-expects-largest-ever-prisoner-exchange-with-russia-since-war-involving-over-1000-from-each-side-zelenskyy-2026-11-14-141050",
+      "title": "Ukraine, Russia Poised for Largest Prisoner Exchange Since War Began",
+      "headline": "Ukraine, Russia Poised for Largest Prisoner Exchange Since War Began",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17919533220260056",
+      "timestamp": "2026-11-14T07:28:10.528118+00:00"
     }
   ],
   "processed": [
@@ -4530,7 +4530,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Two Oil Tankers Explode, Catch Fire After Hitting Naval Mines Near Hormuz: Iran's IRGC Navy",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/two-oil-tankers-explode-catch-fire-after-hitting-naval-mines-near-hormuz-iran-s-irgc-navy-2026-11-14-141049",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "An attack on commercial shipping in a critical global oil transit chokepoint (Strait of Hormuz) raises immediate international security and economic concerns."
+      },
+      "classified_at": "2026-11-14T07:27:44.021669+00:00"
+    },
+    {
+      "title": "FAA Ground Stop: US Airports Halted by Communication Outage, Thousands Affected",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/faa-issues-nationwide-ground-stop-across-us-airports-after-communication-outage-thousands-of-flights-disrupted-2026-11-14-141048",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A widespread communication outage causing a ground stop at US airports affects thousands of travelers and highlights critical infrastructure vulnerabilities."
+      },
+      "classified_at": "2026-11-14T07:27:44.021673+00:00"
+    },
+    {
+      "title": "Delhi Air Stays 'Very Poor' with AQI at 348; Severe Pollution Grips Key Areas",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-air-stays-very-poor-with-aqi-at-348-severe-pollution-grips-key-areas-2026-11-14-141046",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "Severe air pollution in a major capital city is a significant public health and environmental issue, though it is a recurring seasonal event rather than a singular geopolitical crisis."
+      },
+      "classified_at": "2026-11-14T07:27:44.021676+00:00"
+    },
+    {
+      "title": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued In 'Miracle On Mississippi'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/global/cruise-ship-hit-by-tanker-in-new-orleans-all-130-rescued-in-miracle-on-mississippi-2026-11-14-141044",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Disasters",
+        "reason": "A maritime collision resulting in a rescue operation is a notable public safety event, though it is a localized incident without broad international geopolitical consequence."
+      },
+      "classified_at": "2026-11-14T07:27:44.021679+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
