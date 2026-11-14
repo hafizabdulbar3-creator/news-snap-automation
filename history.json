@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.bbc.co.uk/news/articles/cwdd8z6gyy96o",
-      "title": "EU tariffs aimed at China hitting Ukraine, steel boss says",
-      "headline": "EU tariffs aimed at China hitting Ukraine, steel boss says",
-      "domain": "bbc.co.uk",
-      "published": true,
-      "media_id": "17963159502249217",
-      "timestamp": "2026-10-19T11:59:36.623060+00:00"
-    },
-    {
       "url": "https://www.bbc.co.uk/news/articles/c60rl1xvjv89o",
       "title": "Don't fall for this - how to protect yourself from AI scams",
       "headline": "AI scams are super-charging existing frauds, say experts",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18141639964642218",
       "timestamp": "2026-11-14T07:54:32.769067+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/faa-issues-nationwide-ground-stop-across-us-airports-after-communication-outage-thousands-of-flights-disrupted-2026-11-14-141048",
+      "title": "FAA Ground Stop: US Airports Halted by Communication Outage, Thousands Affected",
+      "headline": "FAA Ground Stop Halts US Airports After Communication Outage",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18147941359571873",
+      "timestamp": "2026-11-14T08:20:20.855334+00:00"
     }
   ],
   "processed": [
@@ -4531,17 +4531,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "FAA Ground Stop: US Airports Halted by Communication Outage, Thousands Affected",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/faa-issues-nationwide-ground-stop-across-us-airports-after-communication-outage-thousands-of-flights-disrupted-2026-11-14-141048",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A widespread communication outage causing a ground stop at US airports affects thousands of travelers and highlights critical infrastructure vulnerabilities."
-      },
-      "classified_at": "2026-11-14T07:27:44.021673+00:00"
-    },
     {
       "title": "Delhi Air Stays 'Very Poor' with AQI at 348; Severe Pollution Grips Key Areas",
       "domain": "republicworld.com",
