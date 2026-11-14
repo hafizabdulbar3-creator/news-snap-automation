@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://calgarysun.com/news/local-news/cfb-wainwright-town-response/wcm/39fe2499-0f17-4784-8750-8bda1d24fedb",
-      "title": "'A shock to all of us': A day after CFB Wainwright disaster, neighbouring town is eerily silent",
-      "headline": "Eerily silent after CFB Wainwright disaster",
-      "domain": "calgarysun.com",
-      "published": true,
-      "media_id": "18432871651148472",
-      "timestamp": "2026-10-19T14:04:33.458301+00:00"
-    },
-    {
       "url": "https://www.tnp.no/norway/economy/3046-statoil-sees-growth-in-energy-demand-towards-2040/",
       "title": "Statoil Sees Growth in Energy Demand towards 2040 - The Nordic Page",
       "headline": "Statoil Sees Growth in Energy Demand towards 2040",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17981660594915380",
       "timestamp": "2026-11-14T09:38:15.214236+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/chandigarh/punjab-da-crorepati-are-you-aged-15-30-you-could-win-rs-1-crore-by-answering-these-questions-ws-l-10425523.html?comscorekw=jionews",
+      "title": "'Punjab Da Crorepati': Are You Aged 15-30? You Could Win Rs 1 Crore By Answering These Questions",
+      "headline": "Punjab Da Crorepati: Win Rs 1 Crore By Answering Questions",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18172624951481507",
+      "timestamp": "2026-11-14T10:03:56.594443+00:00"
     }
   ],
   "processed": [
@@ -4563,17 +4563,6 @@
         "reason": "News about a Bollywood actor leading a film and a director's project falls under entertainment industry updates."
       },
       "classified_at": "2026-11-14T09:37:52.573105+00:00"
-    },
-    {
-      "title": "'Punjab Da Crorepati': Are You Aged 15-30? You Could Win Rs 1 Crore By Answering These Questions",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/chandigarh/punjab-da-crorepati-are-you-aged-15-30-you-could-win-rs-1-crore-by-answering-these-questions-ws-l-10425523.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business & Economy",
-        "reason": "A contest offering a cash prize is a promotional or public interest story, not a major news event."
-      },
-      "classified_at": "2026-11-14T09:37:52.573107+00:00"
     },
     {
       "title": "Pravasi Uttarakhandi Sammelan 2026: Prasoon Joshi Urges Youth To Preserve Their Cultural Roots",
