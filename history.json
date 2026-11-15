@@ -4582,9 +4582,52 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/business/bring-back-jensen-over-132-lakh-sign-petition-to-reinstate-huang-as-nvidia-ceo-2026-11-15-141099",
+      "title": "Bring Back Jensen? Over 1.32 Lakh Sign Petition to Reinstate Huang as Nvidia CEO",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-15T08:08:41.809781+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bring Back Jensen? Over 1.32 Lakh Sign Petition to Reinstate Huang as Nvidia CEO'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Don't Raise Your Voice In Front Of Me': Salman Khan Warns Kanika Mann, Tells Her To Stop Justifying",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/television/dont-raise-your-voice-in-front-of-me-salman-khan-warns-bigg-boss-20-contestant-kanika-mann-tells-her-to-stop-justifying-ws-l-10426371.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "This is a celebrity gossip or entertainment news item regarding a verbal disagreement between actors, which falls under normal public interest rather than geopolitical significance."
+      },
+      "classified_at": "2026-11-15T08:08:35.105056+00:00"
+    },
+    {
+      "title": "Bawana Double Murder: 27-Year-Old Hacked to Death; Killed by Victim's Brother in Retaliation",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bawana-double-murder-27-year-old-hacked-to-death-killed-by-victim-s-brother-in-retaliation-2026-11-15-141098",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "This is a local crime report involving a double murder. While tragic, it is classified as a local/regional incident rather than a major geopolitical event or a story of broad international consequence."
+      },
+      "classified_at": "2026-11-15T08:08:35.105076+00:00"
+    },
+    {
+      "title": "Test Cricket Begins! Bangladesh Wins Toss, Elects to Bat Against South Africa",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/south-africa-vs-bangladesh-live-cricket-score-1st-test-day-1-sa-vs-ban-latest-scorecard-johannesburg-match-updates-liveblog-ws-l-10426107.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a standard sports update regarding a cricket match. It is a notable event within the sport but does not meet the criteria for a major geopolitical event or broad international consequence."
+      },
+      "classified_at": "2026-11-15T08:08:35.105079+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
