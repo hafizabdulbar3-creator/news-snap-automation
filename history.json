@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.foxnews.com/tech/cheap-android-phones-found-malware-already-installed",
-      "title": "Cheap Android phones found with malware already installed",
-      "headline": "Malware pre-installed on cheap Android phones",
-      "domain": "foxnews.com",
-      "published": true,
-      "media_id": "17887927230686976",
-      "timestamp": "2026-10-23T18:52:29.652192+00:00"
-    },
-    {
       "url": "https://www.euronews.com/2026/10/23/us-designates-helium-as-critical-material-as-europe-faces-supply-squeeze",
       "title": "US designates helium as critical amid European supply squeeze",
       "headline": "US designates helium as critical material amid European supply squeeze",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17955852444329874",
       "timestamp": "2026-11-15T12:23:22.098013+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/sonu-sood-reportedly-offers-sharad-kapoor-medical-support-explores-possible-acting-opportunity-ws-kl-10426619.html?comscorekw=jionews",
+      "title": "Sonu Sood Reportedly Offers Sharad Kapoor Medical Support, Explores Possible Acting Opportunity",
+      "headline": "Sonu Sood Offers Medical Support to Sharad Kapoor, Explores Acting Opportunity",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18098757944656061",
+      "timestamp": "2026-11-15T12:54:27.526191+00:00"
     }
   ],
   "processed": [
