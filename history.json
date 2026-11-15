@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://apnews.com/article/japan-mars-moon-phobos-deimos-sample-return-1f3b292d89e9381c6e1421c9e3c1e884",
-      "title": "Japan to launch spacecraft on a mission to get samples from a Martian moon",
-      "headline": "Japan to Launch Spacecraft on Mission to Get Samples from a Martian Moon",
-      "domain": "apnews.com",
-      "published": true,
-      "media_id": "18014702432975783",
-      "timestamp": "2026-10-20T14:06:54.345794+00:00"
-    },
-    {
       "url": "https://apnews.com/article/russia-ukraine-war-trump-sanctions-energy-07e1dfc41bdad7b3292c6c263005fabc",
       "title": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
       "headline": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18054974831811287",
       "timestamp": "2026-11-15T06:51:10.185680+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/kunal-kapoor-reacts-to-thailand-fan-frenzy-after-ramayana-cameo-as-lord-indra-overwhelmed-by-the-love-ws-l-10426282.html?comscorekw=jionews",
+      "title": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra: 'Overwhelmed By The Love'",
+      "headline": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17916902193493560",
+      "timestamp": "2026-11-15T07:17:04.522673+00:00"
     }
   ],
   "processed": [
@@ -4585,17 +4585,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra: 'Overwhelmed By The Love'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/kunal-kapoor-reacts-to-thailand-fan-frenzy-after-ramayana-cameo-as-lord-indra-overwhelmed-by-the-love-ws-l-10426282.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A reaction from an actor regarding fan response to a movie cameo is a standard entertainment news item."
-      },
-      "classified_at": "2026-11-15T06:50:42.415525+00:00"
-    },
     {
       "title": "Qualcomm Engineer Who Wanted To Quit Gets Laid Off With 15 Months' Salary: 'Blessing In Disguise'",
       "domain": "news18.com",
