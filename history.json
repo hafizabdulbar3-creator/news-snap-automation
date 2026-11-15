@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/man-abducted-after-scorpio-hits-his-bike-in-punjab-body-found-in-sangrur-drain-ws-kl-10395829.html?comscorekw=jionews",
-      "title": "Man Abducted After Scorpio Hits His Bike In Punjab, Body Found In Sangrur Drain",
-      "headline": "Man Abducted After Scorpio Hits Bike In Punjab, Body Found In Sangrur Drain",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18107859259962117",
-      "timestamp": "2026-10-24T09:51:27.104363+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/france-mounts-huge-security-operation-as-protesters-prepare-to-march-2026-10-24-139567",
       "title": "France Mounts Huge Security Operation as Protesters Prepare to March",
       "headline": "France Mobilizes 70,000 Police for Protests",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18102468311429823",
       "timestamp": "2026-11-15T20:10:45.649913+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/3-drones-targeting-mecca-and-medina-shot-down-saudi-coalition-blames-houthis-2026-11-15-141120",
+      "title": "3 Drones Targeting Mecca And Medina Shot Down, Saudi Coalition Blames Houthis",
+      "headline": "3 Drones Targeting Mecca and Medina Shot Down by Saudi Coalition",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18135642931813805",
+      "timestamp": "2026-11-15T22:36:28.981540+00:00"
     }
   ],
   "processed": [
