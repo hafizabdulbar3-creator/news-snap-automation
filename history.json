@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRG9Wc1hmTWh4V3JfNXMxV3FjbVI1WTJ6Vy1JY1p5ZUdXa2wxbFQ3V2VyMmhFTm9NaG5LMm5NdjJNQ08zbksyODZtd1NFQS03V0x1MGtrZ3JmTGg1Z3lWc0JnNjVjZ1NUUEU1clZLS0g5Y1JqQlpvRTlheG1LQkxrTHY1TUIzQVAzcDh2dVdpMVU5ekUwbFdRTC1wWHBLTFRUY0FuMUhpdDJ0by1OTmp1akRtbTFvT3l1YjczXw",
-      "title": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
-      "headline": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
-      "domain": "reuters.com",
-      "published": true,
-      "media_id": "17995144539020243",
-      "timestamp": "2026-10-20T16:48:33.888817+00:00"
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX3Bkc0ZpcWlrNVo2Y0VQaUlDNFdrXzB5Vmg1OHBLZFd0UVd3dnJkV1QxY2FUWTYyMHlzUHc0NjVoR0U0dllIZGtTZGpoY05xcDlxdVU2cWxNVG92VTNablpxbE5ubUdUWFRidzN0V0c0ZFJGUlY3NnNvbk1LVE1idVFKUUNyS3RPRTQ1NWJmdGZmMUhxQm5j",
       "title": "Trump says Mexico and US are close to trade deal",
       "headline": "Trump says Mexico and US are close to trade deal",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18101663033089429",
       "timestamp": "2026-11-15T09:42:14.425729+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/defence/india-has-strengthened-indigenous-defence-ecosystem-rajnath-singh-calls-for-quality-assurance-in-defence-manufacturing-2026-11-15-141100",
+      "title": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance.",
+      "headline": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18080637125769590",
+      "timestamp": "2026-11-15T10:08:25.000268+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/defence/india-has-strengthened-indigenous-defence-ecosystem-rajnath-singh-calls-for-quality-assurance-in-defence-manufacturing-2026-11-15-141100",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A government official discussing indigenous defense manufacturing is a standard political and economic update."
-      },
-      "classified_at": "2026-11-15T08:50:20.402970+00:00"
-    },
     {
       "title": "J-K: 4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
       "domain": "republicworld.com",
