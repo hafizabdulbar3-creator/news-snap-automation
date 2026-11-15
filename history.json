@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://apnews.com/article/france-protests-violence-looting-f5ce07c2ef46ad0c02c6ff7018532a59",
-      "title": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide protests",
-      "headline": "Macron condemns those who 'sought to bring down the Republic' after rioting mars nationwide",
-      "domain": "apnews.com",
-      "published": true,
-      "media_id": "17935098723393679",
-      "timestamp": "2026-10-23T15:34:27.703827+00:00"
-    },
-    {
       "url": "https://apnews.com/article/trump-rally-kentucky-gallrein-296695e675eb0513edfe9b23be3b81c9",
       "title": "Trump touts his power at Kentucky rally to energize voters ahead of midterm elections",
       "headline": "Trump touts power at Kentucky rally to energize voters",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18134948386703844",
       "timestamp": "2026-11-15T11:31:26.687229+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/stopping-glp-1-weight-loss-drugs-study-flags-nearly-double-risk-of-heart-attack-stroke-and-death-ws-l-10426572.html?comscorekw=jionews",
+      "title": "Stopping GLP-1 Weight-Loss Drugs? Study Flags Nearly Double Risk Of Heart Attack, Stroke And Death",
+      "headline": "Study Links Stopping GLP-1 Drugs To Nearly Double Risk Of Heart Issues",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17957353140039507",
+      "timestamp": "2026-11-15T11:57:39.023921+00:00"
     }
   ],
   "processed": [
@@ -4620,7 +4620,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "A Week After Diwali, My N99 Mask And I Are Still Inseparable: First-Person Account",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/my-n99-mask-and-i-are-still-inseparable-first-person-account-a-week-after-diwali-in-delhi-ws-l-10426528.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "This is a first-person account of post-Diwali health precautions, which is a notable public interest story but lacks the geopolitical or economic weight of a major event."
+      },
+      "classified_at": "2026-11-15T11:57:14.580090+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
