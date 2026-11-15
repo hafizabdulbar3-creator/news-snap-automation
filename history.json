@@ -4618,6 +4618,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/movies/television/karan-kundrra-and-tejasswi-prakash-to-get-married-on-desi-bling-2-heres-what-we-know-ws-lr-10426600.html?comscorekw=jionews",
+      "title": "Karan Kundrra And Tejasswi Prakash To Get Married On Desi Bling 2? Here's What We Know",
+      "domain": "news18.com",
+      "timestamp": "2026-11-15T12:48:59.196326+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
