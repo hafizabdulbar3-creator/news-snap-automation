@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOOHozWXlncm9jZTU0NmZiWUk0blJ0cHpVeDNpWm9UVUdscHU1V2MteFNUaFBVNF9tazZib0pwWDU4czUxSTZ1Wmg3WlVlMHlCLU1wYzdDaWNrdmdBT3gyOHUzY3dMbXdqTF91SURON1NLcU02bDhJdE9WaE10eW9OSXJQZzlHcFh5c2k2V1dhQ1lJa2Y3bmdMVlRYbVlqQ3NwekpLaHdvbzBud1M1Sl9DN0lRd3BFWG8zZjV3ZlNB",
-      "title": "China sends naval forces to monitor US warship near disputed shoal",
-      "headline": "China sends naval forces to monitor US warship near disputed shoal",
-      "domain": "reuters.com",
-      "published": true,
-      "media_id": "18051709508811265",
-      "timestamp": "2026-10-20T15:30:45.134978+00:00"
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQSzVIbWZvOEliSS16aVNWeUNsMlVlcG9wSDVMUkJsdjVrSzM0TUxueEQ5YThPUGtqMFNJbGM3MkROXzVoNzhaNnhCSmpRZEZBX0Zka0Fuci1YbGxVcEpmY3FzbFU2ck0zYVRSZVJYdnJpUkpVaWRRMGd4Z3J3cnhnbFJuWGI1YmRsOHlvSlE3SDJjcnZ5MWtyOFhKRmhFVVEzOFRnLVFIQUZ1YnBFamVN",
       "title": "Rubio kicks off India visit with trade deal, Russian oil on agenda",
       "headline": "Rubio kicks off India visit with trade deal, Russian oil on agenda",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18002470821019402",
       "timestamp": "2026-11-15T08:14:03.450318+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/pilot-admits-going-too-far-after-ups-boeing-767-and-copa-airlines-jet-collide-on-miami-airport-taxiway-2026-11-15-141106",
+      "title": "Pilot Admits Going 'Too Far' After UPS Boeing 767 and Copa Airlines Jet Collide on Miami Airport Taxiway",
+      "headline": "UPS Pilot Admits Crew 'Went Too Far' After Miami Airport Collision",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18230257312333442",
+      "timestamp": "2026-11-15T08:50:45.215374+00:00"
     }
   ],
   "processed": [
@@ -4611,7 +4611,52 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport After Gear Malfunction",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/indigo-flight-with-192-on-board-makes-emergency-landing-at-pune-airport-after-gear-malfunction-2026-11-15-141107",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Emergency landing of a commercial flight due to technical malfunction is a standard aviation safety event."
+      },
+      "classified_at": "2026-11-15T08:50:20.402963+00:00"
+    },
+    {
+      "title": "Iran's IRGC Says It Attacked US Radar System at a Base in Bahrain",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/irans-irgc-says-it-attacked-us-radar-system-at-a-base-in-bahrain-2026-11-15-141104",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "An attack by a state military wing (IRGC) on a US military base in a foreign country constitutes a significant geopolitical escalation."
+      },
+      "classified_at": "2026-11-15T08:50:20.402968+00:00"
+    },
+    {
+      "title": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/defence/india-has-strengthened-indigenous-defence-ecosystem-rajnath-singh-calls-for-quality-assurance-in-defence-manufacturing-2026-11-15-141100",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A government official discussing indigenous defense manufacturing is a standard political and economic update."
+      },
+      "classified_at": "2026-11-15T08:50:20.402970+00:00"
+    },
+    {
+      "title": "J-K: 4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/j-k-4-sustain-minor-burn-injuries-as-fire-breaks-out-at-baramulla-s-jamia-masjid-2026-11-15-141103",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A fire at a religious site resulting in minor injuries is a local incident."
+      },
+      "classified_at": "2026-11-15T08:50:20.402972+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
