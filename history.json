@@ -4627,6 +4627,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/armaan-malik-reacts-to-ramayana-song-mangal-rangs-criticism-i-surrendered-to-ar-rahmans-vision-ws-kl-10426785.html?comscorekw=jionews",
+      "title": "Armaan Malik Reacts To Ramayana Song Mangal Rang's Criticism: 'I Surrendered To AR Rahman's Vision'",
+      "domain": "news18.com",
+      "timestamp": "2026-11-15T16:11:30.884458+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [],
