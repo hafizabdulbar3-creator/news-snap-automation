@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.wnmufm.org/2026-10-19/election-tensions-escalate-in-california-as-doj-charges-28-people-with-voting-crimes",
-      "title": "Election tensions escalate in California as DOJ charges 28 people with voting crimes",
-      "headline": "DOJ charges 28 people with voting crimes amid California tensions",
-      "domain": "wnmufm.org",
-      "published": true,
-      "media_id": "18398593690202196",
-      "timestamp": "2026-10-20T09:00:17.188036+00:00"
-    },
-    {
       "url": "https://www.therecord.com/business/texas-man-seeks-to-have-armed-robbery-conviction-tossed-over-no-warrant-flock-camera-search/article_7f437867-863d-5573-84ca-078e7cceb6ad.html",
       "title": "Texas man seeks to have armed robbery conviction tossed over no-warrant Flock camera search",
       "headline": "Texas man seeks to toss armed robbery conviction over no-warrant Flock camera search",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18125090890935540",
       "timestamp": "2026-11-15T01:54:55.250853+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/three-oil-tankers-catch-fire-after-hitting-naval-mines-in-hormuz-claims-iran-s-navy-2026-11-15-141075",
+      "title": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz: Iran's Navy",
+      "headline": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18163383628504728",
+      "timestamp": "2026-11-15T02:20:48.632611+00:00"
     }
   ],
   "processed": [
@@ -4566,19 +4566,7 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz: Iran's Navy",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/three-oil-tankers-catch-fire-after-hitting-naval-mines-in-hormuz-claims-iran-s-navy-2026-11-15-141075",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The incident involves naval mines and oil tankers in a critical global shipping chokepoint (Strait of Hormuz), posing risks to global energy supplies and international trade."
-      },
-      "classified_at": "2026-11-15T01:54:29.327416+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
