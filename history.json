@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/70000-cops-swat-teams-water-cannons-france-braces-for-fresh-protests-after-deadly-riots-ws-lr-10395746.html?comscorekw=jionews",
-      "title": "70,000 Cops, SWAT Teams, Water Cannons: France Braces For Fresh Protests After Deadly Riots",
-      "headline": "France Deploys 70,000 Cops, SWAT Teams, Water Cannons",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17898724365396320",
-      "timestamp": "2026-10-24T07:41:27.368733+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/rajasthan-3-killed-19-injured-as-traveller-collides-with-trailer-on-nh-48-in-bagru-2026-10-24-139558",
       "title": "Rajasthan: 3 Killed, 19 Injured as Traveller Collides with Trailer on NH-48 in Bagru",
       "headline": "3 Killed, 19 Injured as Traveller Collides with Trailer on NH-48 in Bagru",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17899297683416802",
       "timestamp": "2026-11-15T17:51:19.010915+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/mumbai-lights-up-bandra-worli-sea-link-ahead-of-prince-william-kates-india-visit-2026-11-15-141114",
+      "title": "Mumbai Lights Up Bandra-Worli Sea Link Ahead Of Prince William, Kate's India Visit",
+      "headline": "Mumbai Sea Link Illuminated Ahead of Prince William and Kate's India Visit",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18036897821909450",
+      "timestamp": "2026-11-15T18:16:43.520018+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mumbai Lights Up Bandra-Worli Sea Link Ahead Of Prince William, Kate's India Visit",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/mumbai-lights-up-bandra-worli-sea-link-ahead-of-prince-william-kates-india-visit-2026-11-15-141114",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A local infrastructure decoration event related to a royal visit is a regional public interest story, not a major international event."
-      },
-      "classified_at": "2026-11-15T17:50:27.582416+00:00"
-    },
     {
       "title": "DGP, IGP Rush To Kulgam As Forces Hunt Bike-Borne Attackers",
       "domain": "republicworld.com",
