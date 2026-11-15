@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.wnmufm.org/2026-10-19/a-new-poll-shows-what-voters-are-thinking-2-weeks-out-from-election-day",
-      "title": "A new poll shows what voters are thinking 2 weeks out from Election Day",
-      "headline": "Poll reveals voter sentiment two weeks before Election Day",
-      "domain": "wnmufm.org",
-      "published": true,
-      "media_id": "18047525657819985",
-      "timestamp": "2026-10-20T10:28:44.716389+00:00"
-    },
-    {
       "url": "https://www.tnp.no/norway/economy/4261-statoil-awarded-new-acreage-on-the-norwegian-continental-shelf/",
       "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
       "headline": "Statoil awarded 10 new production licences on Norwegian shelf",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18081671234732412",
       "timestamp": "2026-11-15T03:12:46.388283+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-chokes-under-severe-smog-as-overall-aqi-breaches-400-mark-2026-11-15-141082",
+      "title": "Delhi Chokes Under 'Severe' Smog as Overall AQI Breaches 400 Mark",
+      "headline": "Delhi Chokes Under Severe Smog as AQI Breaches 400",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18132565390866885",
+      "timestamp": "2026-11-15T03:38:52.442204+00:00"
     }
   ],
   "processed": [
@@ -4567,17 +4567,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Chokes Under 'Severe' Smog as Overall AQI Breaches 400 Mark",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-chokes-under-severe-smog-as-overall-aqi-breaches-400-mark-2026-11-15-141082",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "Severe air pollution is a significant public health and environmental issue affecting a major city."
-      },
-      "classified_at": "2026-11-15T02:46:21.181790+00:00"
-    },
     {
       "title": "Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion",
       "domain": "republicworld.com",
