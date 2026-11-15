@@ -4609,9 +4609,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/viral/tripura-techie-quits-job-after-9-months-company-demands-90000-training-fee-i-thought-that-was-it-ws-l-10426565.html?comscorekw=jionews",
+      "title": "Tripura Techie Quits Job After 9 Months, Company Demands ₹90,000 Training Fee: 'I Thought That Was It'",
+      "domain": "news18.com",
+      "timestamp": "2026-11-15T10:59:59.311270+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'NC's Infighting Will Sink It': BJP Slams Omar Govt As Larmi Demands Promises Be Kept",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/politics/ncs-infighting-will-sink-it-bjp-slams-omar-govt-as-larmi-demands-promises-be-kept-ws-klr-10426402.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on political infighting and criticism of a state government, which is a notable regional political story."
+      },
+      "classified_at": "2026-11-15T10:59:54.149471+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
