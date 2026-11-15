@@ -4591,20 +4591,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bring Back Jensen? Over 1.32 Lakh Sign Petition to Reinstate Huang as Nvidia CEO'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/movies/television/dont-raise-your-voice-in-front-of-me-salman-khan-warns-bigg-boss-20-contestant-kanika-mann-tells-her-to-stop-justifying-ws-l-10426371.html?comscorekw=jionews",
+      "title": "'Don't Raise Your Voice In Front Of Me': Salman Khan Warns Kanika Mann, Tells Her To Stop Justifying",
+      "domain": "news18.com",
+      "timestamp": "2026-11-15T08:39:52.099287+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Don't Raise Your Voice In Front Of Me': Salman Khan Warns Kanika Mann, Tells Her To Stop Justifying",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/television/dont-raise-your-voice-in-front-of-me-salman-khan-warns-bigg-boss-20-contestant-kanika-mann-tells-her-to-stop-justifying-ws-l-10426371.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "This is a celebrity gossip or entertainment news item regarding a verbal disagreement between actors, which falls under normal public interest rather than geopolitical significance."
-      },
-      "classified_at": "2026-11-15T08:08:35.105056+00:00"
-    },
     {
       "title": "Test Cricket Begins! Bangladesh Wins Toss, Elects to Bat Against South Africa",
       "domain": "news18.com",
