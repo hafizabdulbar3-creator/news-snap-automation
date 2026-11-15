@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX3Bkc0ZpcWlrNVo2Y0VQaUlDNFdrXzB5Vmg1OHBLZFd0UVd3dnJkV1QxY2FUWTYyMHlzUHc0NjVoR0U0dllIZGtTZGpoY05xcDlxdVU2cWxNVG92VTNablpxbE5ubUdUWFRidzN0V0c0ZFJGUlY3NnNvbk1LVE1idVFKUUNyS3RPRTQ1NWJmdGZmMUhxQm5j",
-      "title": "Trump says Mexico and US are close to trade deal",
-      "headline": "Trump says Mexico and US are close to trade deal",
-      "domain": "reuters.com",
-      "published": true,
-      "media_id": "18116924993019319",
-      "timestamp": "2026-10-23T14:11:52.574957+00:00"
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZkJfbTJUSTNGdHptbTBieXhMaFBhamZFaTJFb2JXVllDUnFyX3U2OG1hbWFTQ0ZlbzVfS2U0bmtOTmk3dWExc3hnc0JxQ1o3V2FkODNjWkRzNDVPOEF3YjQ4YWtWMW9mMXJ6ZGJxS3pUNkxzNVZOTDRXTU05Y0xlOHF0X0xtU2ZBeWJkaTBTNjNnWnU0YWVKbXAzaVVoYjBzRmc4MXNiUkM",
       "title": "Trump says Zelenskiy should get somebody else to negotiate to end war",
       "headline": "Trump says Zelenskiy should get somebody else to negotiate to end war",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18080637125769590",
       "timestamp": "2026-11-15T10:08:25.000268+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/j-k-4-sustain-minor-burn-injuries-as-fire-breaks-out-at-baramulla-s-jamia-masjid-2026-11-15-141103",
+      "title": "J-K: 4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
+      "headline": "4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17902372938674120",
+      "timestamp": "2026-11-15T10:34:18.705127+00:00"
     }
   ],
   "processed": [
@@ -4611,19 +4611,7 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "J-K: 4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/j-k-4-sustain-minor-burn-injuries-as-fire-breaks-out-at-baramulla-s-jamia-masjid-2026-11-15-141103",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A fire at a religious site resulting in minor injuries is a local incident."
-      },
-      "classified_at": "2026-11-15T08:50:20.402972+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
