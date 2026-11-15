@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://apnews.com/article/russia-ukraine-war-trump-sanctions-energy-07e1dfc41bdad7b3292c6c263005fabc",
-      "title": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
-      "headline": "Zelenskyy urges support for new US sanctions on Russia put on hold by Trump",
-      "domain": "apnews.com",
-      "published": true,
-      "media_id": "18114686183011662",
-      "timestamp": "2026-10-20T14:33:04.446697+00:00"
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQemV5ZWpZWkdhUzlRTmJsLXMyNVFMa0EzLTYxSGJubDVlSkVWMGVuckZDRVZOOS05eGc1aHlSOGJva3A5d2R2SENNNVBNeTM5eXNEeWJWTDlDbzBUdlZTTDdFZDRlT3dkVWtSWmJJekhvc3BSQk5KbnlTcjR2Q1otUEFlS0JYSUVZclR1d0NGRzJJaHBXbFdBS1RPZWZqOVNXemZtVmlRQQ",
       "title": "Oil majors face spending test from Iran war windfall cash",
       "headline": "Oil majors face spending test from Iran war windfall cash",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17916902193493560",
       "timestamp": "2026-11-15T07:17:04.522673+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/qualcomm-engineer-who-wanted-to-quit-gets-laid-off-with-15-months-salary-blessing-in-disguise-ws-l-10426289.html?comscorekw=jionews",
+      "title": "Qualcomm Engineer Who Wanted To Quit Gets Laid Off With 15 Months' Salary: 'Blessing In Disguise'",
+      "headline": "Qualcomm Engineer Gets 15 Months' Salary After Being Laid Off",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18031223981914668",
+      "timestamp": "2026-11-15T07:42:55.296857+00:00"
     }
   ],
   "processed": [
@@ -4584,19 +4584,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Qualcomm Engineer Who Wanted To Quit Gets Laid Off With 15 Months' Salary: 'Blessing In Disguise'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/qualcomm-engineer-who-wanted-to-quit-gets-laid-off-with-15-months-salary-blessing-in-disguise-ws-l-10426289.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "An anecdotal story about a corporate layoff is a notable economic trend but lacks the scale of a major geopolitical event."
-      },
-      "classified_at": "2026-11-15T06:50:42.415529+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
