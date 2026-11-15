@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://theturtleislandnews.com/index.php/2026/10/19/what-does-bill-c-39-mean-for-first-nations-senators-question-carney-government/",
-      "title": "What does Bill C-39 mean for First Nations? Senators question Carney government - The Turtle Island News",
-      "headline": "Senators question Carney government on Bill C-39",
-      "domain": "theturtleislandnews.com",
-      "published": true,
-      "media_id": "18377228620244687",
-      "timestamp": "2026-10-20T08:34:16.482288+00:00"
-    },
-    {
       "url": "https://www.wnmufm.org/2026-10-19/election-tensions-escalate-in-california-as-doj-charges-28-people-with-voting-crimes",
       "title": "Election tensions escalate in California as DOJ charges 28 people with voting crimes",
       "headline": "DOJ charges 28 people with voting crimes amid California tensions",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18012395594779761",
       "timestamp": "2026-11-15T00:16:17.277825+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/focus-now-on-facilitating-direct-engagement-between-russia-europe-on-ukraine-peace-talks-us-envoy-kushner-2026-11-15-141076",
+      "title": "US Pushes Direct Russia-Europe Talks for Ukraine Peace",
+      "headline": "US Envoy Kushner Pushes Direct Russia-Europe Talks for Ukraine Peace",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18125090890935540",
+      "timestamp": "2026-11-15T01:54:55.250853+00:00"
     }
   ],
   "processed": [
@@ -4566,7 +4566,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz: Iran's Navy",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/three-oil-tankers-catch-fire-after-hitting-naval-mines-in-hormuz-claims-iran-s-navy-2026-11-15-141075",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The incident involves naval mines and oil tankers in a critical global shipping chokepoint (Strait of Hormuz), posing risks to global energy supplies and international trade."
+      },
+      "classified_at": "2026-11-15T01:54:29.327416+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
