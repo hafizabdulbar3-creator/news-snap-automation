@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.tnp.no/norway/economy/4261-statoil-awarded-new-acreage-on-the-norwegian-continental-shelf/",
-      "title": "Statoil awarded new acreage on the Norwegian continental shelf - The Nordic Page",
-      "headline": "Statoil awarded 10 new production licences on Norwegian shelf",
-      "domain": "tnp.no",
-      "published": true,
-      "media_id": "18073209326588981",
-      "timestamp": "2026-10-20T10:54:46.689359+00:00"
-    },
-    {
       "url": "https://www.wyomingpublicmedia.org/2026-10-15/african-antelope-spread-american-west-winters-warm",
       "title": "African antelope could spread across the American West as winters warm, study finds",
       "headline": "African antelope could spread across the American West as winters warm, study finds",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18132565390866885",
       "timestamp": "2026-11-15T03:38:52.442204+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/did-facebook-peek-into-your-phone-gallery-without-telling-you-italy-says-yes-fines-meta-887-million-2026-11-15-141077",
+      "title": "Did Facebook Peek Into Your Phone Gallery Without Telling You? Italy Says Yes, Fines Meta $887 Million",
+      "headline": "Italy Fines Meta $887 Million Over Unauthorized Photo Access",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18000209313031156",
+      "timestamp": "2026-11-15T04:10:07.592295+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Did Facebook Peek Into Your Phone Gallery Without Telling You? Italy Says Yes, Fines Meta $887 Million",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/did-facebook-peek-into-your-phone-gallery-without-telling-you-italy-says-yes-fines-meta-887-million-2026-11-15-141077",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A major regulatory fine against a tech giant for privacy violations is a significant economic and tech news story."
-      },
-      "classified_at": "2026-11-15T02:46:21.181800+00:00"
-    },
     {
       "title": "4 Killed, 18 Injured as Two Buses Carrying Pilgrims Collide in Punjab's Tarn Taran",
       "domain": "republicworld.com",
