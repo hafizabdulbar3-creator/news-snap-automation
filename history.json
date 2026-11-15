@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.therecord.com/business/texas-man-seeks-to-have-armed-robbery-conviction-tossed-over-no-warrant-flock-camera-search/article_7f437867-863d-5573-84ca-078e7cceb6ad.html",
-      "title": "Texas man seeks to have armed robbery conviction tossed over no-warrant Flock camera search",
-      "headline": "Texas man seeks to toss armed robbery conviction over no-warrant Flock camera search",
-      "domain": "therecord.com",
-      "published": true,
-      "media_id": "18145411108560847",
-      "timestamp": "2026-10-20T09:26:10.565339+00:00"
-    },
-    {
       "url": "https://theturtleislandnews.com/index.php/2026/10/19/tsawwassen-first-nation-charts-a-bold-path-forward-with-updated-land-use-plan/",
       "title": "Tsawwassen First Nation charts a bold path forward with updated Land Use Plan - The Turtle Island News",
       "headline": "Tsawwassen First Nation updates Land Use Plan amid population boom",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18163383628504728",
       "timestamp": "2026-11-15T02:20:48.632611+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/senior-hamas-commander-samir-abu-younis-killed-in-israeli-airstrike-in-southern-gaza-2026-11-15-141079",
+      "title": "Senior Hamas Commander Samir Abu Younis Killed in Israeli Airstrike in Southern Gaza",
+      "headline": "Senior Hamas Commander Samir Abu Younis Killed in Israeli Airstrike",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18138297742727924",
+      "timestamp": "2026-11-15T02:46:48.717814+00:00"
     }
   ],
   "processed": [
@@ -4566,7 +4566,63 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Netanyahu Urges Unity Government; Rival Dismisses Offer as 'Spin'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/netanyahu-calls-for-unity-government-talks-with-eisenkot-yashar-leader-dismisses-offer-as-another-spin-2026-11-15-141078",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Political maneuvering and internal coalition discussions are significant but standard political news."
+      },
+      "classified_at": "2026-11-15T02:46:21.181771+00:00"
+    },
+    {
+      "title": "Delhi Chokes Under 'Severe' Smog as Overall AQI Breaches 400 Mark",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-chokes-under-severe-smog-as-overall-aqi-breaches-400-mark-2026-11-15-141082",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "Severe air pollution is a significant public health and environmental issue affecting a major city."
+      },
+      "classified_at": "2026-11-15T02:46:21.181790+00:00"
+    },
+    {
+      "title": "Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cross-border-conspiracy-two-arrested-over-rajasthan-s-sri-ganganagar-rail-track-explosion-2026-11-15-141083",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "Arrests regarding a rail track explosion fall under national security and law enforcement."
+      },
+      "classified_at": "2026-11-15T02:46:21.181794+00:00"
+    },
+    {
+      "title": "Did Facebook Peek Into Your Phone Gallery Without Telling You? Italy Says Yes, Fines Meta $887 Million",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/did-facebook-peek-into-your-phone-gallery-without-telling-you-italy-says-yes-fines-meta-887-million-2026-11-15-141077",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A major regulatory fine against a tech giant for privacy violations is a significant economic and tech news story."
+      },
+      "classified_at": "2026-11-15T02:46:21.181800+00:00"
+    },
+    {
+      "title": "4 Killed, 18 Injured as Two Buses Carrying Pilgrims Collide in Punjab's Tarn Taran",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/4-killed-18-injured-as-two-buses-carrying-pilgrims-collide-in-punjab-s-tarn-taran-2026-11-15-141080",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Disaster",
+        "reason": "A bus collision resulting in casualties is a major disaster and public safety incident."
+      },
+      "classified_at": "2026-11-15T02:46:21.181803+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
