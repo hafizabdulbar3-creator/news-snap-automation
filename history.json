@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNNEt0OVZkdE8tYkUwUDFsdDhhSDV5UURBdVNxVU5JdldQdFl0WkFpdzE4RkhhSUgxZG9LeVB4ZmxnZV9qWlFjNGctenU2T05DZWxlNVNGX3YteEM3TFg3Y2FUN3pJUVNjdF8zSFo4Rm13NGZjWXdUQ0RRZXNpbXpXYVI4UnUxc3F2SkV1OVRFMUpmcWlpN292VjBsM0hCeGFnSGdDaWpBZjg5V2l5TzRWbEhWQjM0eU9sRkpRM2ZCRQ",
-      "title": "Bank of Japan may raise inflation forecast, stand pat on rates, sources say",
-      "headline": "Bank of Japan may raise inflation forecast, stand pat on rates, sources say",
-      "domain": "reuters.com",
-      "published": true,
-      "media_id": "18067190420785176",
-      "timestamp": "2026-10-20T16:22:27.949613+00:00"
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRG9Wc1hmTWh4V3JfNXMxV3FjbVI1WTJ6Vy1JY1p5ZUdXa2wxbFQ3V2VyMmhFTm9NaG5LMm5NdjJNQ08zbksyODZtd1NFQS03V0x1MGtrZ3JmTGg1Z3lWc0JnNjVjZ1NUUEU1clZLS0g5Y1JqQlpvRTlheG1LQkxrTHY1TUIzQVAzcDh2dVdpMVU5ekUwbFdRTC1wWHBLTFRUY0FuMUhpdDJ0by1OTmp1akRtbTFvT3l1YjczXw",
       "title": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
       "headline": "Israel's Ben-Gvir poised for election gains as young voters turn to far right",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18064555058803484",
       "timestamp": "2026-11-15T09:16:32.213551+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/indigo-flight-with-192-on-board-makes-emergency-landing-at-pune-airport-after-gear-malfunction-2026-11-15-141107",
+      "title": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport After Gear Malfunction",
+      "headline": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18101663033089429",
+      "timestamp": "2026-11-15T09:42:14.425729+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport After Gear Malfunction",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/indigo-flight-with-192-on-board-makes-emergency-landing-at-pune-airport-after-gear-malfunction-2026-11-15-141107",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Emergency landing of a commercial flight due to technical malfunction is a standard aviation safety event."
-      },
-      "classified_at": "2026-11-15T08:50:20.402963+00:00"
-    },
     {
       "title": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance.",
       "domain": "republicworld.com",
