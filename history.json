@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://theturtleislandnews.com/index.php/2026/10/19/ndp-mla-brooks-arcand-paul-warns-against-promises-of-better-treaties-through-alberta-separation/",
-      "title": "NDP MLA Brooks Arcand-Paul warns against promises of better treaties through Alberta separation - The Turtle Island News",
-      "headline": "NDP MLA warns Alberta separation won't improve treaty negotiations",
-      "domain": "theturtleislandnews.com",
-      "published": true,
-      "media_id": "18154707046567337",
-      "timestamp": "2026-10-20T12:12:43.294607+00:00"
-    },
-    {
       "url": "https://www.wamc.org/news/2026-10-19/immigration-enforcement-in-new-york-among-key-campaign-issues-ahead-of-midterm-elections",
       "title": "Immigration enforcement in New York among key campaign issues ahead of midterm elections",
       "headline": "NY Gov Candidates Split Over Lawsuit Challenging ICE Cooperation Ban",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18138891763562621",
       "timestamp": "2026-11-15T05:02:13.658841+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/20-year-old-arrested-for-conducting-recce-of-mumbai-s-2611-target-nariman-house-2026-11-15-141097",
+      "title": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
+      "headline": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18140478556709415",
+      "timestamp": "2026-11-15T05:28:01.123528+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/20-year-old-arrested-for-conducting-recce-of-mumbai-s-2611-target-nariman-house-2026-11-15-141097",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A significant security incident involving a potential terrorist plot targeting a location associated with a major historical tragedy."
-      },
-      "classified_at": "2026-11-15T05:01:50.681350+00:00"
-    },
     {
       "title": "Chinese Father Uses AI To Curb Son's TV Addiction, Turns Television Time Into Quiz Sessions",
       "domain": "news18.com",
