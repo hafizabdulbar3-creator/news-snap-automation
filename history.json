@@ -4573,6 +4573,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/i-acted-alone-nikhil-gupta-takes-full-blame-in-plot-to-kill-sikh-terrorist-gurpatwant-singh-pannun-2026-11-15-141091",
+      "title": "'I Acted Alone': Nikhil Gupta Takes Full Blame In Plot To Kill Sikh Terrorist Gurpatwant Singh Pannun",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-15T05:53:33.268253+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -4597,17 +4606,6 @@
         "reason": "A discussion on a specific trend within the healthcare workforce, which is a matter of public interest but not a major geopolitical event."
       },
       "classified_at": "2026-11-15T05:01:50.681355+00:00"
-    },
-    {
-      "title": "'I Acted Alone': Nikhil Gupta Takes Full Blame In Plot To Kill Sikh Terrorist Gurpatwant Singh Pannun",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/i-acted-alone-nikhil-gupta-takes-full-blame-in-plot-to-kill-sikh-terrorist-gurpatwant-singh-pannun-2026-11-15-141091",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major legal development involving an international plot to assassinate a prominent political figure, carrying significant geopolitical implications."
-      },
-      "classified_at": "2026-11-15T05:01:50.681357+00:00"
     }
   ],
   "quota_cooldown": {
