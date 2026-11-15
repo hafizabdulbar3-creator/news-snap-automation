@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.wkyt.com/2026/10/19/experts-weigh-ahead-kentucky-us-senate-debate-between-barr-booker/",
-      "title": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
-      "headline": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
-      "domain": "wkyt.com",
-      "published": true,
-      "media_id": "17908405461570191",
-      "timestamp": "2026-10-20T11:47:06.807223+00:00"
-    },
-    {
       "url": "https://theturtleislandnews.com/index.php/2026/10/19/ndp-mla-brooks-arcand-paul-warns-against-promises-of-better-treaties-through-alberta-separation/",
       "title": "NDP MLA Brooks Arcand-Paul warns against promises of better treaties through Alberta separation - The Turtle Island News",
       "headline": "NDP MLA warns Alberta separation won't improve treaty negotiations",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18126530809910806",
       "timestamp": "2026-11-15T04:36:06.710458+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/hegseth-hails-elon-musk-as-great-american-after-spacexs-starship-returns-to-launch-pad-from-orbit-in-victory-for-company-2026-11-15-141094",
+      "title": "Elon Musk's SpaceX Achieves 'Science Fiction' Starship Catch, Reshaping Rocketry",
+      "headline": "SpaceX Achieves 'Science Fiction' Starship Catch",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18138891763562621",
+      "timestamp": "2026-11-15T05:02:13.658841+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,52 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/20-year-old-arrested-for-conducting-recce-of-mumbai-s-2611-target-nariman-house-2026-11-15-141097",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A significant security incident involving a potential terrorist plot targeting a location associated with a major historical tragedy."
+      },
+      "classified_at": "2026-11-15T05:01:50.681350+00:00"
+    },
+    {
+      "title": "Chinese Father Uses AI To Curb Son's TV Addiction, Turns Television Time Into Quiz Sessions",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/chinese-father-uses-ai-to-curb-sons-tv-addiction-turns-television-time-into-quiz-sessions-ws-l-10426248.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A regional story about the application of AI technology in parenting, which is of interest but lacks broad international geopolitical consequence."
+      },
+      "classified_at": "2026-11-15T05:01:50.681353+00:00"
+    },
+    {
+      "title": "Why Health Benefits Are Becoming Part of the Healthcare Workforce Conversation",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/why-health-benefits-are-becoming-part-of-the-healthcare-workforce-conversation-2026-11-15-141095",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "A discussion on a specific trend within the healthcare workforce, which is a matter of public interest but not a major geopolitical event."
+      },
+      "classified_at": "2026-11-15T05:01:50.681355+00:00"
+    },
+    {
+      "title": "'I Acted Alone': Nikhil Gupta Takes Full Blame In Plot To Kill Sikh Terrorist Gurpatwant Singh Pannun",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/i-acted-alone-nikhil-gupta-takes-full-blame-in-plot-to-kill-sikh-terrorist-gurpatwant-singh-pannun-2026-11-15-141091",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major legal development involving an international plot to assassinate a prominent political figure, carrying significant geopolitical implications."
+      },
+      "classified_at": "2026-11-15T05:01:50.681357+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
