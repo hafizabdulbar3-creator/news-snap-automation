@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/special-nia-court-orders-trial-against-kashmiri-separatist-yasin-malik-six-others-in-pmla-case-2026-10-24-139551",
-      "title": "Special NIA Court Orders Trial Against Kashmiri Separatist Yasin Malik, Six Others in PMLA Case",
-      "headline": "Special NIA Court Orders Trial Against Yasin Malik in PMLA Case",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18096386291456351",
-      "timestamp": "2026-10-24T06:23:22.311561+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/amitabh-bachchan-shares-health-update-after-social-media-break-announcement-requests-more-time-to-recover-2026-10-24-139550",
       "title": "Amitabh Bachchan Shares Health Update After Social Media Break Announcement, Requests More Time",
       "headline": "Amitabh Bachchan Requests More Time to Recover After Health Update",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17930521125430651",
       "timestamp": "2026-11-15T16:32:46.834326+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/us-flights-to-fully-recover-by-sunday-after-longest-ground-stop-in-25-years-2026-11-15-141112",
+      "title": "US Flights To Fully Recover By Sunday After Longest Ground Stop In 25 Years",
+      "headline": "US Flights To Fully Recover By Sunday After Longest Ground Stop In 25 Years",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18152660134616229",
+      "timestamp": "2026-11-15T16:58:54.820573+00:00"
     }
   ],
   "processed": [
@@ -4638,7 +4638,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "China Upgrades Pakistan's VT-4 Tanks: Thicker Armor, Bigger Gun, Smarter Sensors",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/defence/china-supercharges-vt-4-tank-used-by-pakistan-with-thicker-armour-bigger-gun-smarter-sensors-should-india-worry-2026-11-15-141111",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A significant military upgrade involving a strategic ally (Pakistan) and a major power (China), impacting regional security dynamics."
+      },
+      "classified_at": "2026-11-15T16:58:31.041580+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
