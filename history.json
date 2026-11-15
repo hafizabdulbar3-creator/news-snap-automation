@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZkJfbTJUSTNGdHptbTBieXhMaFBhamZFaTJFb2JXVllDUnFyX3U2OG1hbWFTQ0ZlbzVfS2U0bmtOTmk3dWExc3hnc0JxQ1o3V2FkODNjWkRzNDVPOEF3YjQ4YWtWMW9mMXJ6ZGJxS3pUNkxzNVZOTDRXTU05Y0xlOHF0X0xtU2ZBeWJkaTBTNjNnWnU0YWVKbXAzaVVoYjBzRmc4MXNiUkM",
-      "title": "Trump says Zelenskiy should get somebody else to negotiate to end war",
-      "headline": "Trump says Zelenskiy should get somebody else to negotiate to end war",
-      "domain": "reuters.com",
-      "published": true,
-      "media_id": "18643012609041525",
-      "timestamp": "2026-10-23T14:42:14.233136+00:00"
-    },
-    {
       "url": "https://apnews.com/article/canada-carney-alberta-separation-vote-independence-1fd99a12188ff82a33a914a0051a0908",
       "title": "Albertans vote on path to independence as Carney fights to keep Canada united",
       "headline": "Albertans vote on path to independence as Carney fights to keep Canada united",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17902372938674120",
       "timestamp": "2026-11-15T10:34:18.705127+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/ncs-infighting-will-sink-it-bjp-slams-omar-govt-as-larmi-demands-promises-be-kept-ws-klr-10426402.html?comscorekw=jionews",
+      "title": "'NC's Infighting Will Sink It': BJP Slams Omar Govt As Larmi Demands Promises Be Kept",
+      "headline": "BJP Slams NC Govt Over Infighting, Larmi Demands Promises Kept",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17961914382015500",
+      "timestamp": "2026-11-15T11:05:26.142901+00:00"
     }
   ],
   "processed": [
@@ -4620,19 +4620,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'NC's Infighting Will Sink It': BJP Slams Omar Govt As Larmi Demands Promises Be Kept",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/ncs-infighting-will-sink-it-bjp-slams-omar-govt-as-larmi-demands-promises-be-kept-ws-klr-10426402.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A report on political infighting and criticism of a state government, which is a notable regional political story."
-      },
-      "classified_at": "2026-11-15T10:59:54.149471+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
