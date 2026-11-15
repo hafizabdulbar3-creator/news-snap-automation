@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://apnews.com/article/trump-sanctions-waiver-russa-putin-ukraine-war-3cc9740c39e9e9eb713b1c553b5709e6",
-      "title": "Trump's decision to waive Russian sanctions outrages Congress, but no quick counter seen",
-      "headline": "Trump's sanctions waiver outrages Congress, but no quick counter seen",
-      "domain": "apnews.com",
-      "published": true,
-      "media_id": "18193926571401768",
-      "timestamp": "2026-10-20T13:36:02.442417+00:00"
-    },
-    {
       "url": "https://apnews.com/article/japan-mars-moon-phobos-deimos-sample-return-1f3b292d89e9381c6e1421c9e3c1e884",
       "title": "Japan to launch spacecraft on a mission to get samples from a Martian moon",
       "headline": "Japan to Launch Spacecraft on Mission to Get Samples from a Martian Moon",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17920102548550627",
       "timestamp": "2026-11-15T06:25:07.084640+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/diabetes-breakthrough-treatment-immune-cell-off-switch-insulin-iit-kanpur-research-ws-el-10426327.html?comscorekw=jionews",
+      "title": "Breakthrough In Fight Against Diabetes? IIT Kanpur Researchers Find Immune Cell 'Off Switch' For Insulin",
+      "headline": "IIT Kanpur Researchers Identify Immune Cell 'Off Switch' For Insulin",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18054974831811287",
+      "timestamp": "2026-11-15T06:51:10.185680+00:00"
     }
   ],
   "processed": [
@@ -4584,7 +4584,30 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra: 'Overwhelmed By The Love'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/kunal-kapoor-reacts-to-thailand-fan-frenzy-after-ramayana-cameo-as-lord-indra-overwhelmed-by-the-love-ws-l-10426282.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A reaction from an actor regarding fan response to a movie cameo is a standard entertainment news item."
+      },
+      "classified_at": "2026-11-15T06:50:42.415525+00:00"
+    },
+    {
+      "title": "Qualcomm Engineer Who Wanted To Quit Gets Laid Off With 15 Months' Salary: 'Blessing In Disguise'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/qualcomm-engineer-who-wanted-to-quit-gets-laid-off-with-15-months-salary-blessing-in-disguise-ws-l-10426289.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "An anecdotal story about a corporate layoff is a notable economic trend but lacks the scale of a major geopolitical event."
+      },
+      "classified_at": "2026-11-15T06:50:42.415529+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
