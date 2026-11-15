@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://jionews.com/summary/6adc346cc620738535920579",
-      "title": "OpenAI Resumes Frontier AI Training After Security Overhaul, Discloses Flaw in Widely Used Software",
-      "headline": "OpenAI Resumes Frontier AI Training After Security Overhaul",
-      "domain": "jionews.com",
-      "published": true,
-      "media_id": "17968334940207528",
-      "timestamp": "2026-10-24T04:35:01.339245+00:00"
-    },
-    {
       "url": "https://jionews.com/summary/6adc3218cc8c58f263063ec7",
       "title": "Ukraine joins NATO's NSPA partnership, gains access to Alliance contracts for defence industry",
       "headline": "Ukraine joins NATO's NSPA partnership, gains access to Alliance contracts",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18426698224159910",
       "timestamp": "2026-11-15T14:12:22.836529+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/devotion-bhojpuri-beats-and-festive-spirit-jammu-witnesses-grand-chhath-puja-celebrations-ws-klrt-10426648.html?comscorekw=jionews",
+      "title": "Devotion, Bhojpuri Beats And Festive Spirit: Jammu Witnesses Grand Chhath Puja Celebrations",
+      "headline": "Devotion, Bhojpuri Beats And Festive Spirit: Jammu Witnesses Grand Chhath Puja Celebrations",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18134215114615241",
+      "timestamp": "2026-11-15T14:38:36.745658+00:00"
     }
   ],
   "processed": [
