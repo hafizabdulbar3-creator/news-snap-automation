@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.wamc.org/news/2026-10-19/immigration-enforcement-in-new-york-among-key-campaign-issues-ahead-of-midterm-elections",
-      "title": "Immigration enforcement in New York among key campaign issues ahead of midterm elections",
-      "headline": "NY Gov Candidates Split Over Lawsuit Challenging ICE Cooperation Ban",
-      "domain": "wamc.org",
-      "published": true,
-      "media_id": "18153014422552270",
-      "timestamp": "2026-10-20T12:38:30.499082+00:00"
-    },
-    {
       "url": "https://apnews.com/article/brazil-election-debate-lula-flavio-bolsonaro-d80a6c41edf9c9e0ac5cfd0afeb53ed7",
       "title": "Brazil's Lula and Flávio Bolsonaro trade barbs in 1st debate only days before presidential runoff",
       "headline": "Lula and Flávio Bolsonaro trade barbs in Brazil's 1st debate",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18140478556709415",
       "timestamp": "2026-11-15T05:28:01.123528+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/chinese-father-uses-ai-to-curb-sons-tv-addiction-turns-television-time-into-quiz-sessions-ws-l-10426248.html?comscorekw=jionews",
+      "title": "Chinese Father Uses AI To Curb Son's TV Addiction, Turns Television Time Into Quiz Sessions",
+      "headline": "Chinese Father Uses AI To Curb Son's TV Addiction",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18092088962308130",
+      "timestamp": "2026-11-15T05:59:05.140679+00:00"
     }
   ],
   "processed": [
@@ -4585,17 +4585,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Chinese Father Uses AI To Curb Son's TV Addiction, Turns Television Time Into Quiz Sessions",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/chinese-father-uses-ai-to-curb-sons-tv-addiction-turns-television-time-into-quiz-sessions-ws-l-10426248.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A regional story about the application of AI technology in parenting, which is of interest but lacks broad international geopolitical consequence."
-      },
-      "classified_at": "2026-11-15T05:01:50.681353+00:00"
-    },
     {
       "title": "Why Health Benefits Are Becoming Part of the Healthcare Workforce Conversation",
       "domain": "republicworld.com",
