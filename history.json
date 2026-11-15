@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQemV5ZWpZWkdhUzlRTmJsLXMyNVFMa0EzLTYxSGJubDVlSkVWMGVuckZDRVZOOS05eGc1aHlSOGJva3A5d2R2SENNNVBNeTM5eXNEeWJWTDlDbzBUdlZTTDdFZDRlT3dkVWtSWmJJekhvc3BSQk5KbnlTcjR2Q1otUEFlS0JYSUVZclR1d0NGRzJJaHBXbFdBS1RPZWZqOVNXemZtVmlRQQ",
-      "title": "Oil majors face spending test from Iran war windfall cash",
-      "headline": "Oil majors face spending test from Iran war windfall cash",
-      "domain": "reuters.com",
-      "published": true,
-      "media_id": "18055674110801762",
-      "timestamp": "2026-10-20T15:04:54.475434+00:00"
-    },
-    {
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOOHozWXlncm9jZTU0NmZiWUk0blJ0cHpVeDNpWm9UVUdscHU1V2MteFNUaFBVNF9tazZib0pwWDU4czUxSTZ1Wmg3WlVlMHlCLU1wYzdDaWNrdmdBT3gyOHUzY3dMbXdqTF91SURON1NLcU02bDhJdE9WaE10eW9OSXJQZzlHcFh5c2k2V1dhQ1lJa2Y3bmdMVlRYbVlqQ3NwekpLaHdvbzBud1M1Sl9DN0lRd3BFWG8zZjV3ZlNB",
       "title": "China sends naval forces to monitor US warship near disputed shoal",
       "headline": "China sends naval forces to monitor US warship near disputed shoal",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18031223981914668",
       "timestamp": "2026-11-15T07:42:55.296857+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bawana-double-murder-27-year-old-hacked-to-death-killed-by-victim-s-brother-in-retaliation-2026-11-15-141098",
+      "title": "Bawana Double Murder: 27-Year-Old Hacked to Death; Killed by Victim's Brother in Retaliation",
+      "headline": "Brother Hacks 27-Year-Old to Death in Bawana Retaliation",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18002470821019402",
+      "timestamp": "2026-11-15T08:14:03.450318+00:00"
     }
   ],
   "processed": [
@@ -4604,17 +4604,6 @@
         "reason": "This is a celebrity gossip or entertainment news item regarding a verbal disagreement between actors, which falls under normal public interest rather than geopolitical significance."
       },
       "classified_at": "2026-11-15T08:08:35.105056+00:00"
-    },
-    {
-      "title": "Bawana Double Murder: 27-Year-Old Hacked to Death; Killed by Victim's Brother in Retaliation",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bawana-double-murder-27-year-old-hacked-to-death-killed-by-victim-s-brother-in-retaliation-2026-11-15-141098",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "This is a local crime report involving a double murder. While tragic, it is classified as a local/regional incident rather than a major geopolitical event or a story of broad international consequence."
-      },
-      "classified_at": "2026-11-15T08:08:35.105076+00:00"
     },
     {
       "title": "Test Cricket Begins! Bangladesh Wins Toss, Elects to Bat Against South Africa",
