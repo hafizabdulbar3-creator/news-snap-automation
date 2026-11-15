@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.wyomingpublicmedia.org/2026-10-15/african-antelope-spread-american-west-winters-warm",
-      "title": "African antelope could spread across the American West as winters warm, study finds",
-      "headline": "African antelope could spread across the American West as winters warm, study finds",
-      "domain": "wyomingpublicmedia.org",
-      "published": true,
-      "media_id": "17992652175054823",
-      "timestamp": "2026-10-20T11:20:33.542093+00:00"
-    },
-    {
       "url": "https://www.wkyt.com/2026/10/19/experts-weigh-ahead-kentucky-us-senate-debate-between-barr-booker/",
       "title": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
       "headline": "Experts weigh in ahead of Kentucky U.S. Senate debate between Barr and Booker",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18000209313031156",
       "timestamp": "2026-11-15T04:10:07.592295+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/4-killed-18-injured-as-two-buses-carrying-pilgrims-collide-in-punjab-s-tarn-taran-2026-11-15-141080",
+      "title": "4 Killed, 18 Injured as Two Buses Carrying Pilgrims Collide in Punjab's Tarn Taran",
+      "headline": "4 Killed, 18 Injured as Two Buses Collide in Punjab's Tarn Taran",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18126530809910806",
+      "timestamp": "2026-11-15T04:36:06.710458+00:00"
     }
   ],
   "processed": [
@@ -4575,19 +4575,7 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "4 Killed, 18 Injured as Two Buses Carrying Pilgrims Collide in Punjab's Tarn Taran",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/4-killed-18-injured-as-two-buses-carrying-pilgrims-collide-in-punjab-s-tarn-taran-2026-11-15-141080",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Disaster",
-        "reason": "A bus collision resulting in casualties is a major disaster and public safety incident."
-      },
-      "classified_at": "2026-11-15T02:46:21.181803+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
