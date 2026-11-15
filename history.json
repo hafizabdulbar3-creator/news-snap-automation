@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-traders-body-urges-rahul-gandhi-to-postpone-nov-1-rally-cites-festive-season-impact-2026-10-24-139556",
-      "title": "Delhi Traders Body Urges Rahul Gandhi to Postpone Nov 1 Rally, Cites Festive Season Impact",
-      "headline": "Delhi Traders Body Urges Rahul Gandhi to Postpone Nov 1 Rally",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18085564664321643",
-      "timestamp": "2026-10-24T07:15:27.947369+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/70000-cops-swat-teams-water-cannons-france-braces-for-fresh-protests-after-deadly-riots-ws-lr-10395746.html?comscorekw=jionews",
       "title": "70,000 Cops, SWAT Teams, Water Cannons: France Braces For Fresh Protests After Deadly Riots",
       "headline": "France Deploys 70,000 Cops, SWAT Teams, Water Cannons",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17996516109062536",
       "timestamp": "2026-11-15T17:24:42.299799+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/hollywood/glenn-close-to-receive-honorary-oscar-after-eight-nominations-without-a-win-ridley-scott-also-honoured-ws-kl-10426816.html?comscorekw=jionews",
+      "title": "Glenn Close To Receive Honorary Oscar After Eight Nominations Without A Win; Ridley Scott Also Honoured",
+      "headline": "Glenn Close To Receive Honorary Oscar After Eight Nominations",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17899297683416802",
+      "timestamp": "2026-11-15T17:51:19.010915+00:00"
     }
   ],
   "processed": [
@@ -4638,7 +4638,30 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Mumbai Lights Up Bandra-Worli Sea Link Ahead Of Prince William, Kate's India Visit",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/mumbai-lights-up-bandra-worli-sea-link-ahead-of-prince-william-kates-india-visit-2026-11-15-141114",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A local infrastructure decoration event related to a royal visit is a regional public interest story, not a major international event."
+      },
+      "classified_at": "2026-11-15T17:50:27.582416+00:00"
+    },
+    {
+      "title": "DGP, IGP Rush To Kulgam As Forces Hunt Bike-Borne Attackers",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/breaking-dgp-igp-rush-to-kulgam-as-forces-hunt-bike-borne-attackers-2026-11-15-141113",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A law enforcement response to an attack is a significant local security matter, but it is not a major geopolitical event."
+      },
+      "classified_at": "2026-11-15T17:50:27.582420+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
