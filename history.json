@@ -4564,20 +4564,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/india/cross-border-conspiracy-two-arrested-over-rajasthan-s-sri-ganganagar-rail-track-explosion-2026-11-15-141083",
+      "title": "Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-15T04:04:35.745606+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/cross-border-conspiracy-two-arrested-over-rajasthan-s-sri-ganganagar-rail-track-explosion-2026-11-15-141083",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "Arrests regarding a rail track explosion fall under national security and law enforcement."
-      },
-      "classified_at": "2026-11-15T02:46:21.181794+00:00"
-    },
     {
       "title": "Did Facebook Peek Into Your Phone Gallery Without Telling You? Italy Says Yes, Fines Meta $887 Million",
       "domain": "republicworld.com",
