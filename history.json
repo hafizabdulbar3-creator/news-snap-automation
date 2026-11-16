@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/yahan-hamare-ghar-par-goliyan-chal-rahi-hain-rohit-shetty-breaks-silence-on-juhu-firing-on-bigg-boss-20-2026-10-24-139596",
-      "title": "Rohit Shetty Breaks Silence on Juhu Firing Incident on Bigg Boss 20",
-      "headline": "Rohit Shetty Addresses Juhu Firing Incident on Bigg Boss 20",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18085130390337018",
-      "timestamp": "2026-10-24T22:49:14.797847+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/boxer-mary-kom-evicted-from-bigg-boss-20-house-after-7-week-stay-2026-10-24-139594",
       "title": "Boxer Mary Kom Evicted From Bigg Boss 20 House After 7-Week Stay",
       "headline": "Boxer Mary Kom Evicted From Bigg Boss 20 House After 7-Week Stay",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18135365258493027",
       "timestamp": "2026-11-16T11:32:37.294525+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/economy/falling-crude-prices-stronger-rupee-more-why-fpi-inflows-are-breaking-records-after-months-of-outflows-ws-l-10427224.html?comscorekw=jionews",
+      "title": "Record FPI Inflows Flood India's Market: Crude Prices, Rupee Fuel Surge",
+      "headline": "Record FPI Inflows Flood India's Market",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18364078660220852",
+      "timestamp": "2026-11-16T12:08:56.632553+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Record FPI Inflows Flood India's Market: Crude Prices, Rupee Fuel Surge",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/economy/falling-crude-prices-stronger-rupee-more-why-fpi-inflows-are-breaking-records-after-months-of-outflows-ws-l-10427224.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "Significant economic indicator regarding foreign portfolio investment and market trends."
-      },
-      "classified_at": "2026-11-16T06:58:42.888248+00:00"
-    },
     {
       "title": "India's Air Force to get LCA Mark 1A this fiscal; Mark 2 next year.",
       "domain": "republicworld.com",
