@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/air-india-air-india-express-extend-saudi-flight-suspension-till-november-amid-security-concerns-2026-10-24-139593",
-      "title": "Air India, Air India Express Extend Saudi Flight Suspension Till November Amid Security Concerns",
-      "headline": "Air India, Air India Express Extend Saudi Flight Suspension Till November",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18075981080468351",
-      "timestamp": "2026-10-24T21:52:18.441463+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/ed-moves-supreme-court-against-delhi-hc-order-quashing-eow-fir-in-newsclick-case-2026-10-24-139592",
       "title": "ED Moves Supreme Court Against Delhi HC Order Quashing EOW FIR In NewsClick Case",
       "headline": "ED Moves Supreme Court Against Delhi HC Order Quashing EOW FIR",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18085366661542142",
       "timestamp": "2026-11-16T10:40:43.146336+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/gully-cricket-kulhad-chai-how-prince-william-kate-began-3-day-india-visit-in-mumbai-ws-l-10427151.html?comscorekw=jionews",
+      "title": "'Gully' Cricket, 'Kulhad' Chai: How Prince William, Kate Began 3-Day India Visit In Mumbai",
+      "headline": "Prince William, Kate Middleton Begin India Visit In Mumbai",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18154480639468117",
+      "timestamp": "2026-11-16T11:06:24.284740+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
       },
       "classified_at": "2026-11-16T06:58:42.888234+00:00"
-    },
-    {
-      "title": "'Gully' Cricket, 'Kulhad' Chai: How Prince William, Kate Began 3-Day India Visit In Mumbai",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/gully-cricket-kulhad-chai-how-prince-william-kate-began-3-day-india-visit-in-mumbai-ws-l-10427151.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Lifestyle and celebrity news coverage of a royal visit, lacking broad international consequence."
-      },
-      "classified_at": "2026-11-16T06:58:42.888246+00:00"
     },
     {
       "title": "Record FPI Inflows Flood India's Market: Crude Prices, Rupee Fuel Surge",
