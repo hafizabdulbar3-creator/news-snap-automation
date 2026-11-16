@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/oleshky-ceasefire-from-oct-27-how-us-first-lady-brokered-deal-between-russia-and-ukraine-for-humanitarian-pause-2026-10-24-139598",
-      "title": "Melania Trump's surprise diplomacy: Ukraine ceasefire for Oleshky aid.",
-      "headline": "Melania Trump brokers localized ceasefire in Oleshky, Kherson",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17962608747232191",
-      "timestamp": "2026-10-25T00:07:26.412755+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/ukraine-violated-terms-used-starlink-for-drone-strikes-to-kill-elon-musk-says-loophole-closed-2026-10-24-139599",
       "title": "Ukraine Violated Terms, Used Starlink For Drone Strikes To Kill: Elon Musk Says Loophole Closed",
       "headline": "Elon Musk Claims Ukraine Violated Starlink Terms For Drone Strikes",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18113886617178787",
       "timestamp": "2026-11-16T13:01:29.634744+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/pm-modi-arrives-for-gala-dinner-hosted-by-philippines-president-ferdinand-marcos-in-manila-2026-11-16-141174",
+      "title": "PM Modi Arrives for Gala Dinner Hosted by Philippines President Ferdinand Marcos in Manila",
+      "headline": "PM Modi Arrives for Gala Dinner Hosted by Philippines President",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18134599531746775",
+      "timestamp": "2026-11-16T13:44:18.553778+00:00"
     }
   ],
   "processed": [
@@ -4638,7 +4638,74 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Huge Spending, No Improvement': Supreme Court Warns States, UTs Of Penalties As Yamuna Pollution Worsens",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/huge-spending-no-improvement-supreme-court-warns-states-uts-of-penalties-as-yamuna-pollution-worsens-2026-11-16-141172",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "A judicial warning regarding pollution levels and administrative penalties is a significant local/regional environmental issue."
+      },
+      "classified_at": "2026-11-16T13:43:55.685984+00:00"
+    },
+    {
+      "title": "Pakistan Link Suspected: More Bombs Defused in Rajasthan Railway Blast Case.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/sri-ganganagar-railway-blast-case-two-more-bombs-found-near-ramsinghpur-track-defused-after-accused-s-leads-2026-11-16-141175",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A railway blast with suspected international links (Pakistan) constitutes a major security incident and potential terrorist activity."
+      },
+      "classified_at": "2026-11-16T13:43:55.685989+00:00"
+    },
+    {
+      "title": "CRPF Attack Mastermind, LeT Terrorist Lateef Bhat, Killed in Kulgam Encounter",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/kulgam-encounter-let-terrorist-lateef-bhat-suspected-mastermind-of-crpf-attack-among-2-killed-2026-11-16-141162",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The killing of a terrorist mastermind involved in a CRPF attack is a significant event related to national security and counter-terrorism."
+      },
+      "classified_at": "2026-11-16T13:43:55.685992+00:00"
+    },
+    {
+      "title": "Manila Matters: Why India Remains Central To America's Indo-Pacific Bet",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/manila-matters-why-india-remains-central-to-americas-indo-pacific-bet-ws-klrt-10427835.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "An analysis of geopolitical strategy regarding the Philippines and the Indo-Pacific is a notable regional policy and international relations story."
+      },
+      "classified_at": "2026-11-16T13:43:55.685995+00:00"
+    },
+    {
+      "title": "PM Modi Kicks Off Manila Visit by Interacting With Indian Diaspora, Attends Local Ramayana Staging",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/pm-modi-kicks-off-manila-visit-by-interacting-with-indian-diaspora-attends-local-ramayana-staging-2026-11-16-141173",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Coverage of a leader's itinerary, including interactions with the diaspora and cultural events, is a standard diplomatic reporting topic."
+      },
+      "classified_at": "2026-11-16T13:43:55.685997+00:00"
+    },
+    {
+      "title": "Bengal Police Seeks Performance Reports On ICs, OCs Of Border Police Stations, Major Reshuffle Likely",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/west-bengal-police-seeks-confidential-performance-reports-on-ics-ocs-of-border-police-stations-major-reshuffle-likely-ws-klrt-10427854.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A police reshuffle and request for performance reports is a significant administrative and political development within a specific state."
+      },
+      "classified_at": "2026-11-16T13:43:55.685999+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
