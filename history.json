@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/ukraine-violated-terms-used-starlink-for-drone-strikes-to-kill-elon-musk-says-loophole-closed-2026-10-24-139599",
-      "title": "Ukraine Violated Terms, Used Starlink For Drone Strikes To Kill: Elon Musk Says Loophole Closed",
-      "headline": "Elon Musk Claims Ukraine Violated Starlink Terms For Drone Strikes",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18081917342441836",
-      "timestamp": "2026-10-25T00:33:24.550709+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/like-saddam-hussein-opened-a-cheesecake-factory-obama-s-savage-jibe-at-trump-s-gold-plated-white-house-in-ohio-2026-10-25-139600",
       "title": "Obama's Savage Jibe: Trump's White House Like \"Saddam's Cheesecake Factory\"",
       "headline": "Obama Mocks Trump's White House Renovations",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18134599531746775",
       "timestamp": "2026-11-16T13:44:18.553778+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/sri-ganganagar-railway-blast-case-two-more-bombs-found-near-ramsinghpur-track-defused-after-accused-s-leads-2026-11-16-141175",
+      "title": "Pakistan Link Suspected: More Bombs Defused in Rajasthan Railway Blast Case.",
+      "headline": "Pakistan Link Suspected: More Bombs Defused in Rajasthan Blast Case",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17929350285427962",
+      "timestamp": "2026-11-16T14:10:21.989995+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "A judicial warning regarding pollution levels and administrative penalties is a significant local/regional environmental issue."
       },
       "classified_at": "2026-11-16T13:43:55.685984+00:00"
-    },
-    {
-      "title": "Pakistan Link Suspected: More Bombs Defused in Rajasthan Railway Blast Case.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/sri-ganganagar-railway-blast-case-two-more-bombs-found-near-ramsinghpur-track-defused-after-accused-s-leads-2026-11-16-141175",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A railway blast with suspected international links (Pakistan) constitutes a major security incident and potential terrorist activity."
-      },
-      "classified_at": "2026-11-16T13:43:55.685989+00:00"
     },
     {
       "title": "CRPF Attack Mastermind, LeT Terrorist Lateef Bhat, Killed in Kulgam Encounter",
