@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/subhash-ghai-completes-50-years-in-cinema-unveils-new-look-of-manya-starring-shreyas-talpade-ws-l-10395974.html?comscorekw=jionews",
-      "title": "Subhash Ghai Completes 50 Years in Cinema, Unveils New Look of Manya Starring Shreyas Talpade",
-      "headline": "Subhash Ghai Completes 50 Years in Cinema, Unveils New Look of Manya Starring Shreyas",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18151653157554090",
-      "timestamp": "2026-10-24T11:40:23.911004+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/irgc-claims-full-control-over-hormuz-as-us-contemplates-fresh-strikes-on-iran-2026-10-24-139570",
       "title": "IRGC Claims Full Control Over Hormuz as US Contemplates Fresh Strikes on Iran",
       "headline": "IRGC Claims Full Control Over Hormuz as US Contemplates Strikes",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18100376495426184",
       "timestamp": "2026-11-16T01:12:47.821994+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/houthis-claim-missile-strikes-on-king-khalid-airport-financial-centre-in-saudi-s-riyadh-2026-11-16-141125",
+      "title": "Houthis Claim Missile Strikes on King Khalid Airport, Financial Centre in Saudi's Riyadh",
+      "headline": "Houthis Claim Missile Strikes on Riyadh Targets",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18002406534013191",
+      "timestamp": "2026-11-16T01:38:31.320316+00:00"
     }
   ],
   "processed": [
