@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/dr-priti-adani-calls-for-human-intelligence-and-skilled-talent-to-power-indias-semiconductor-ambitions-2026-10-24-139575",
-      "title": "Dr Priti Adani Calls For Human Intelligence And Skilled Talent To Power India's Semiconductor Ambitions",
-      "headline": "Dr Priti Adani Calls For Human Intelligence To Power India's Semiconductor Ambitions",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18092132126491724",
-      "timestamp": "2026-10-24T15:33:50.474474+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/jnu-campus-sees-fresh-political-row-over-naxalbari-graffiti-abvp-targets-left-groups-ws-l-10396309.html?comscorekw=jionews",
       "title": "JNU Campus Sees Fresh Political Row Over 'Naxalbari' Graffiti, ABVP Targets Left Groups",
       "headline": "JNU Campus Sees Fresh Political Row Over 'Naxalbari' Graffiti",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18014478113987281",
       "timestamp": "2026-11-16T05:12:54.680585+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/softer-chip-rules-chinese-clients-and-family-ties-the-questions-facing-howard-lutnick-ws-kl-10427007.html?comscorekw=jionews",
+      "title": "Softer Chip Rules, Chinese Clients And Family Ties: The Questions Facing Howard Lutnick",
+      "headline": "Questions Facing Howard Lutnick: Chip Rules, Chinese Clients & Family Ties",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18018182147977430",
+      "timestamp": "2026-11-16T05:39:26.169400+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Softer Chip Rules, Chinese Clients And Family Ties: The Questions Facing Howard Lutnick",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/softer-chip-rules-chinese-clients-and-family-ties-the-questions-facing-howard-lutnick-ws-kl-10427007.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A profile piece regarding a business executive and policy changes, which is of general interest but not a major geopolitical event."
-      },
-      "classified_at": "2026-11-16T05:12:28.780081+00:00"
-    },
     {
       "title": "Four Women Arrested In Gurugram Over Alleged Religious Conversion At School For Poor Children",
       "domain": "news18.com",
