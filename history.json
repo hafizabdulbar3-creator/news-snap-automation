@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/irgc-claims-full-control-over-hormuz-as-us-contemplates-fresh-strikes-on-iran-2026-10-24-139570",
-      "title": "IRGC Claims Full Control Over Hormuz as US Contemplates Fresh Strikes on Iran",
-      "headline": "IRGC Claims Full Control Over Hormuz as US Contemplates Strikes",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18637989112050228",
-      "timestamp": "2026-10-24T12:06:13.815851+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/sukhbir-badal-demands-accountability-in-jhota-murder-case-accuses-aap-govt-of-mistreating-family-2026-10-24-139568",
       "title": "Sukhbir Badal Demands Accountability in Jhota Murder Case, Accuses AAP Govt of Mistreating Family",
       "headline": "Sukhbir Badal Demands Accountability in Jhota Murder Case",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18002406534013191",
       "timestamp": "2026-11-16T01:38:31.320316+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/still-in-state-of-war-iran-s-deputy-fm-says-tehran-prepared-for-diplomacy-blockade-or-military-action-with-us-2026-11-16-141126",
+      "title": "Iran: \"Still in State of War\" with US, Ready for Diplomacy, Blockade, or Military Action.",
+      "headline": "Iran: Still in State of War with US, Ready for Diplomacy or Military Action",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18019745009957573",
+      "timestamp": "2026-11-16T02:05:34.518114+00:00"
     }
   ],
   "processed": [
@@ -4638,7 +4638,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Nvidia Founder Jensen Huang Mulls Comeback Amidst Controversy",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/jensen-huang-is-mulling-comeback-as-silicon-valley-war-room-launches-to-restore-nvidia-founder-why-his-return-is-far-from-certain-2026-11-16-141124",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "Corporate news regarding a technology executive's potential return to the public eye."
+      },
+      "classified_at": "2026-11-16T02:04:38.510024+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
