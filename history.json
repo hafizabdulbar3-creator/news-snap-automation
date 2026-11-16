@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/how-joint-loans-affect-both-borrowers-cibil-scores-2026-10-24-139576",
-      "title": "How Joint Loans Affect Both Borrowers' CIBIL Scores",
-      "headline": "How Joint Loans Impact Both Borrowers' CIBIL Scores",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17881084140547253",
-      "timestamp": "2026-10-24T17:27:47.398141+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/houthis-in-yemen-claim-attack-on-dammam-riyadh-airports-and-saudi-aramco-facility-amid-rising-tensions-2026-10-24-139582",
       "title": "Houthis Claim They Hit Riyadh Airport And Aramco Sites Hours After Saudis Say They Shot Down Missiles",
       "headline": "Houthis Claim Attacks on Dammam, Riyadh Airports, and Aramco Sites",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18482750314119854",
       "timestamp": "2026-11-16T06:59:08.407412+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/how-china-is-bypassing-us-ai-chip-blockade-the-backdoor-routes-to-nvidias-powerful-processors-shil-ws-l-10427234.html?comscorekw=jionews",
+      "title": "How China Is Bypassing US' AI Chip Blockade: The Backdoor Routes To Nvidia's Powerful Processors",
+      "headline": "China Bypasses US AI Chip Blockade via Backdoor Routes",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18416494252089234",
+      "timestamp": "2026-11-16T07:29:31.437889+00:00"
     }
   ],
   "processed": [
@@ -4671,17 +4671,6 @@
         "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
       },
       "classified_at": "2026-11-16T06:58:42.888234+00:00"
-    },
-    {
-      "title": "How China Is Bypassing US' AI Chip Blockade: The Backdoor Routes To Nvidia's Powerful Processors",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/how-china-is-bypassing-us-ai-chip-blockade-the-backdoor-routes-to-nvidias-powerful-processors-shil-ws-l-10427234.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "Major geopolitical and economic conflict regarding technology supply chains and AI dominance."
-      },
-      "classified_at": "2026-11-16T06:58:42.888236+00:00"
     },
     {
       "title": "India Joins US-Led Pact To Secure AI Supply Chains From China Amid Nvidia Row",
