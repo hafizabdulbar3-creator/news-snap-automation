@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-air-quality-improves-to-191-best-october-24-reading-in-a-decade-ws-l-10396343.html?comscorekw=jionews",
-      "title": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
-      "headline": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18119601937754605",
-      "timestamp": "2026-10-24T16:57:28.829250+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/how-joint-loans-affect-both-borrowers-cibil-scores-2026-10-24-139576",
       "title": "How Joint Loans Affect Both Borrowers' CIBIL Scores",
       "headline": "How Joint Loans Impact Both Borrowers' CIBIL Scores",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17885477103628454",
       "timestamp": "2026-11-16T06:31:30.283687+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/india-asean-trade-hits-usd-12837-billion-in-fy26-as-pm-modi-departs-for-philippines-summit-2026-11-16-141149",
+      "title": "India-ASEAN Trade Hits USD 128.37 Billion In FY26 As PM Modi Departs For Philippines Summit",
+      "headline": "India-ASEAN Trade Reaches $128.37 Billion in FY26",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18482750314119854",
+      "timestamp": "2026-11-16T06:59:08.407412+00:00"
     }
   ],
   "processed": [
@@ -4638,7 +4638,151 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Bay of Bengal Cyclone Alert: IMD Warns of Severe Cyclonic Storm; Four States Brace for Heavy Rainfall",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bay-of-bengal-cyclone-alert-imd-warns-of-severe-cyclonic-storm-four-states-brace-for-heavy-rainfall-2026-11-16-141148",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Severe weather event with potential for mass displacement and infrastructure damage across multiple states."
+      },
+      "classified_at": "2026-11-16T06:58:42.888228+00:00"
+    },
+    {
+      "title": "CDS Flags Starlink Disruption, Calls for India's Space Self-Reliance",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cds-gen-raja-subramani-flags-starlink-satellite-disruption-in-ukraine-stresses-need-for-india-s-self-reliant-space-capabilities-2026-11-16-141144",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology & Defense",
+        "reason": "Critical national security concern regarding satellite communications and strategic autonomy."
+      },
+      "classified_at": "2026-11-16T06:58:42.888231+00:00"
+    },
+    {
+      "title": "Prince William, Princess Kate Join Sachin Tendulkar for Gully Cricket With Mumbai Schoolchildren",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/prince-william-princess-kate-join-sachin-tendulkar-for-gully-cricket-with-mumbai-schoolchildren-2026-11-16-141151",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
+      },
+      "classified_at": "2026-11-16T06:58:42.888234+00:00"
+    },
+    {
+      "title": "How China Is Bypassing US' AI Chip Blockade: The Backdoor Routes To Nvidia's Powerful Processors",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/how-china-is-bypassing-us-ai-chip-blockade-the-backdoor-routes-to-nvidias-powerful-processors-shil-ws-l-10427234.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "Major geopolitical and economic conflict regarding technology supply chains and AI dominance."
+      },
+      "classified_at": "2026-11-16T06:58:42.888236+00:00"
+    },
+    {
+      "title": "India Joins US-Led Pact To Secure AI Supply Chains From China Amid Nvidia Row",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/amid-nvidia-jensen-huang-row-india-joins-us-led-pact-to-secure-ai-supply-chains-from-china-ws-kl-10427172.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "Strategic alliance formation to secure critical technology supply chains amid international tensions."
+      },
+      "classified_at": "2026-11-16T06:58:42.888238+00:00"
+    },
+    {
+      "title": "Amid Nvidia Controversy, India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/india-signs-us-led-declaration-to-safeguard-ai-supply-chains-report-2026-11-16-141130",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "India's strategic alignment with the US on critical technology and supply chain security."
+      },
+      "classified_at": "2026-11-16T06:58:42.888241+00:00"
+    },
+    {
+      "title": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN Ahead Of Donald Trump's Visit To Manila",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/china-s-li-qiang-hails-extraordinary-ties-with-asean-ahead-of-donald-trump-s-visit-to-manila-2026-11-16-141150",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "High-level diplomatic engagement between major global powers (China and ASEAN) ahead of a significant visit."
+      },
+      "classified_at": "2026-11-16T06:58:42.888243+00:00"
+    },
+    {
+      "title": "'Gully' Cricket, 'Kulhad' Chai: How Prince William, Kate Began 3-Day India Visit In Mumbai",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/gully-cricket-kulhad-chai-how-prince-william-kate-began-3-day-india-visit-in-mumbai-ws-l-10427151.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Lifestyle and celebrity news coverage of a royal visit, lacking broad international consequence."
+      },
+      "classified_at": "2026-11-16T06:58:42.888246+00:00"
+    },
+    {
+      "title": "Record FPI Inflows Flood India's Market: Crude Prices, Rupee Fuel Surge",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/economy/falling-crude-prices-stronger-rupee-more-why-fpi-inflows-are-breaking-records-after-months-of-outflows-ws-l-10427224.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "Significant economic indicator regarding foreign portfolio investment and market trends."
+      },
+      "classified_at": "2026-11-16T06:58:42.888248+00:00"
+    },
+    {
+      "title": "India's Air Force to get LCA Mark 1A this fiscal; Mark 2 next year.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/defence/indigenous-lca-mark-1a-to-join-iaf-this-fiscal-lca-mark-2-rollout-expected-next-year-air-chief-marshal-ashutosh-dixit-2026-11-16-141146",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Defense",
+        "reason": "Standard defense procurement update regarding indigenous military aircraft development."
+      },
+      "classified_at": "2026-11-16T06:58:42.888250+00:00"
+    },
+    {
+      "title": "New Orleans Cruise Ship Collision: Tanker Steering Failure Caused Crash, NTSB Finds",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/global/new-orleans-cruise-ship-collision-tanker-steering-failure-caused-crash-ntsb-finds-2026-11-16-141145",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Major maritime disaster involving a cruise ship collision with significant safety and environmental implications."
+      },
+      "classified_at": "2026-11-16T06:58:42.888252+00:00"
+    },
+    {
+      "title": "'We'll Find You': Iran Threatens Two US Navy Officers for Minab School Strike",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/we-ll-find-you-iran-threatens-two-us-navy-officers-for-minab-school-strike-2026-11-16-141147",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Escalating geopolitical tension involving threats against military personnel and international relations."
+      },
+      "classified_at": "2026-11-16T06:58:42.888254+00:00"
+    },
+    {
+      "title": "Man Poses As Woman On Tinder Using AI-Generated Photos, Cheats Chennai Techie Of Rs 27 Lakh",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/man-poses-as-woman-on-tinder-using-ai-generated-photos-cheats-chennai-techie-of-rs-27-lakh-ws-l-10427088.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "Localized crime story involving technology misuse, lacking broad international consequence."
+      },
+      "classified_at": "2026-11-16T06:58:42.888256+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
