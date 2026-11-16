@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/lifestyle/relationship/7-signs-youre-emotionally-compatible-with-someone-even-if-youre-complete-opposites-ws-l-10396179.html?comscorekw=jionews",
-      "title": "7 Signs You're Emotionally Compatible With Someone, Even If You're Complete Opposites",
-      "headline": "7 Signs You're Emotionally Compatible With Someone",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17910001947483162",
-      "timestamp": "2026-10-24T15:07:42.572962+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/dr-priti-adani-calls-for-human-intelligence-and-skilled-talent-to-power-indias-semiconductor-ambitions-2026-10-24-139575",
       "title": "Dr Priti Adani Calls For Human Intelligence And Skilled Talent To Power India's Semiconductor Ambitions",
       "headline": "Dr Priti Adani Calls For Human Intelligence To Power India's Semiconductor Ambitions",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18112190906244823",
       "timestamp": "2026-11-16T04:46:44.939646+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/us-seeks-24-year-jail-term-for-nikhil-gupta-in-pannun-assassination-plot-defence-wants-12-years-2026-11-16-141137",
+      "title": "US Seeks 24-Year Jail Term For Nikhil Gupta In Pannun Assassination Plot, Defence Wants 12 Years",
+      "headline": "US Seeks 24-Year Jail Term For Gupta In Pannun Plot",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18014478113987281",
+      "timestamp": "2026-11-16T05:12:54.680585+00:00"
     }
   ],
   "processed": [
@@ -4638,7 +4638,41 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Softer Chip Rules, Chinese Clients And Family Ties: The Questions Facing Howard Lutnick",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/softer-chip-rules-chinese-clients-and-family-ties-the-questions-facing-howard-lutnick-ws-kl-10427007.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A profile piece regarding a business executive and policy changes, which is of general interest but not a major geopolitical event."
+      },
+      "classified_at": "2026-11-16T05:12:28.780081+00:00"
+    },
+    {
+      "title": "Four Women Arrested In Gurugram Over Alleged Religious Conversion At School For Poor Children",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/four-women-arrested-in-gurugram-over-alleged-religious-conversion-at-school-for-poor-children-ws-l-10427081.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "Arrests regarding alleged religious conversion at a school are a matter of public interest and legal proceedings, fitting the criteria for national/regional policy or public interest."
+      },
+      "classified_at": "2026-11-16T05:12:28.780103+00:00"
+    },
+    {
+      "title": "Delhi Pollution Update: Air Quality in 'Poor' Category with AQI at 216",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhis-air-stays-poor-at-216-aqi-even-as-overall-pollution-levels-ease-2026-11-16-141136",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "An update on air quality in a major capital city is a matter of public health and safety, fitting the criteria for a notable public interest story."
+      },
+      "classified_at": "2026-11-16T05:12:28.780105+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
