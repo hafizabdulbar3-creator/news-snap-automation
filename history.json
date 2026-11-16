@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cricket/ms-dhoni-breaks-silence-on-his-ipl-future-after-missing-2026-season-i-will-need-to-ws-l-10396480.html?comscorekw=jionews",
-      "title": "MS Dhoni Breaks Silence On His IPL Future After Missing 2026 Season: 'I Will Need To...'",
-      "headline": "MS Dhoni Breaks Silence On IPL Future After Missing 2026 Season",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18161082691503523",
-      "timestamp": "2026-10-25T01:56:05.972220+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/no-offer-made-to-us-no-proposal-sent-to-pak-mediator-on-hormuz-reopening-iranian-media-rejects-reports-2026-10-25-139602",
       "title": "No Offer Made to US, No Proposal Sent to Pak Mediator on Hormuz Reopening: Iranian Media Rejects Reports",
       "headline": "Iranian Media Deny US Deal for Hormuz Reopening",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18425878288155839",
       "timestamp": "2026-11-16T15:02:32.316026+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/huge-spending-no-improvement-supreme-court-warns-states-uts-of-penalties-as-yamuna-pollution-worsens-2026-11-16-141172",
+      "title": "'Huge Spending, No Improvement': Supreme Court Warns States, UTs Of Penalties As Yamuna Pollution Worsens",
+      "headline": "Supreme Court Warns States, UTs Of Penalties Over Yamuna Pollution",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17995116999066884",
+      "timestamp": "2026-11-16T15:34:01.285705+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Huge Spending, No Improvement': Supreme Court Warns States, UTs Of Penalties As Yamuna Pollution Worsens",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/huge-spending-no-improvement-supreme-court-warns-states-uts-of-penalties-as-yamuna-pollution-worsens-2026-11-16-141172",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "A judicial warning regarding pollution levels and administrative penalties is a significant local/regional environmental issue."
-      },
-      "classified_at": "2026-11-16T13:43:55.685984+00:00"
-    },
     {
       "title": "PM Modi Kicks Off Manila Visit by Interacting With Indian Diaspora, Attends Local Ramayana Staging",
       "domain": "republicworld.com",
