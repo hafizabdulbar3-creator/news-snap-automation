@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/jnu-campus-sees-fresh-political-row-over-naxalbari-graffiti-abvp-targets-left-groups-ws-l-10396309.html?comscorekw=jionews",
-      "title": "JNU Campus Sees Fresh Political Row Over 'Naxalbari' Graffiti, ABVP Targets Left Groups",
-      "headline": "JNU Campus Sees Fresh Political Row Over 'Naxalbari' Graffiti",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17989056462097582",
-      "timestamp": "2026-10-24T15:59:38.880878+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/nitin-dhaboo-why-selling-is-a-life-skill-everyone-needs-2026-10-24-139577",
       "title": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
       "headline": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18018182147977430",
       "timestamp": "2026-11-16T05:39:26.169400+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhis-air-stays-poor-at-216-aqi-even-as-overall-pollution-levels-ease-2026-11-16-141136",
+      "title": "Delhi Pollution Update: Air Quality in 'Poor' Category with AQI at 216",
+      "headline": "Delhi Air Quality Remains in 'Poor' Category at AQI 216",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18127992947296607",
+      "timestamp": "2026-11-16T06:05:29.050281+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "Arrests regarding alleged religious conversion at a school are a matter of public interest and legal proceedings, fitting the criteria for national/regional policy or public interest."
       },
       "classified_at": "2026-11-16T05:12:28.780103+00:00"
-    },
-    {
-      "title": "Delhi Pollution Update: Air Quality in 'Poor' Category with AQI at 216",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhis-air-stays-poor-at-216-aqi-even-as-overall-pollution-levels-ease-2026-11-16-141136",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National News",
-        "reason": "An update on air quality in a major capital city is a matter of public health and safety, fitting the criteria for a notable public interest story."
-      },
-      "classified_at": "2026-11-16T05:12:28.780105+00:00"
     }
   ],
   "quota_cooldown": {
