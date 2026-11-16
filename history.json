@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-s-lodhi-road-school-hoax-bomb-threat-traced-to-own-student-who-wanted-a-day-off-2026-10-24-139589",
-      "title": "Delhi's Lodhi Road School Hoax Bomb Threat Traced To Own Student Who Wanted A Day Off",
-      "headline": "Delhi School Hoax Bomb Threat Traced To Own Student",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18128546636491978",
-      "timestamp": "2026-10-24T19:12:41.871912+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/43-tonnes-of-food-and-719-litres-of-milk-ghee-seized-maharashtra-fda-s-rs-156-crore-food-safety-operation-2026-10-24-139590",
       "title": "Massive Food Safety Bust: Maharashtra FDA Seizes 43 Tonnes, Rs 1.56 Crore",
       "headline": "Maharashtra FDA Seizes 43 Tonnes of Food, Rs 1.56 Crore",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120496673279243",
       "timestamp": "2026-11-16T08:56:11.768481+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-signs-us-led-declaration-to-safeguard-ai-supply-chains-report-2026-11-16-141130",
+      "title": "Amid Nvidia Controversy, India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
+      "headline": "India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18118821746065575",
+      "timestamp": "2026-11-16T09:22:32.691724+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
       },
       "classified_at": "2026-11-16T06:58:42.888234+00:00"
-    },
-    {
-      "title": "Amid Nvidia Controversy, India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/india-signs-us-led-declaration-to-safeguard-ai-supply-chains-report-2026-11-16-141130",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "India's strategic alignment with the US on critical technology and supply chain security."
-      },
-      "classified_at": "2026-11-16T06:58:42.888241+00:00"
     },
     {
       "title": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN Ahead Of Donald Trump's Visit To Manila",
