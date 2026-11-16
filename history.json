@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/nitin-dhaboo-why-selling-is-a-life-skill-everyone-needs-2026-10-24-139577",
-      "title": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
-      "headline": "Nitin Dhaboo: Why Selling Is a Life Skill Everyone Needs",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18119492723469678",
-      "timestamp": "2026-10-24T16:30:52.124274+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/new-delhi-news/delhi-air-quality-improves-to-191-best-october-24-reading-in-a-decade-ws-l-10396343.html?comscorekw=jionews",
       "title": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
       "headline": "Delhi Air Quality Improves To 191, Best October 24 Reading In A Decade",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18127992947296607",
       "timestamp": "2026-11-16T06:05:29.050281+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/four-women-arrested-in-gurugram-over-alleged-religious-conversion-at-school-for-poor-children-ws-l-10427081.html?comscorekw=jionews",
+      "title": "Four Women Arrested In Gurugram Over Alleged Religious Conversion At School For Poor Children",
+      "headline": "Four Women Arrested Over Alleged Religious Conversion At School",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17885477103628454",
+      "timestamp": "2026-11-16T06:31:30.283687+00:00"
     }
   ],
   "processed": [
@@ -4638,19 +4638,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Four Women Arrested In Gurugram Over Alleged Religious Conversion At School For Poor Children",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/four-women-arrested-in-gurugram-over-alleged-religious-conversion-at-school-for-poor-children-ws-l-10427081.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National News",
-        "reason": "Arrests regarding alleged religious conversion at a school are a matter of public interest and legal proceedings, fitting the criteria for national/regional policy or public interest."
-      },
-      "classified_at": "2026-11-16T05:12:28.780103+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
