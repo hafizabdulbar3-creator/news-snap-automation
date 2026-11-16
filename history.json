@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/lifestyle/food/5-viral-one-pan-egg-recipes-to-make-when-you-want-a-delicious-meal-without-the-mess-ws-l-10396206.html?comscorekw=jionews",
-      "title": "5 Viral One-Pan Egg Recipes To Make When You Want A Delicious Meal Without The Mess",
-      "headline": "5 Viral One-Pan Egg Recipes For A Delicious, Mess-Free Meal",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18109817396222137",
-      "timestamp": "2026-10-25T03:50:06.605502+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/pm-modi-hails-india-s-record-114-medal-haul-at-asian-para-games-2026-calls-performance-a-moment-of-national-pride-2026-10-25-139609",
       "title": "India Shines! Record 114 Medals at Asian Para Games Hailed by PM Modi",
       "headline": "India Sets Record with 114 Medals at Asian Para Games",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18440617975199600",
       "timestamp": "2026-11-16T18:12:03.667780+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/how-home-loan-interest-rates-affect-your-total-repayment-amount-2026-11-16-141182",
+      "title": "How Home Loan Interest Rates Affect Your Total Repayment Amount",
+      "headline": "How Home Loan Interest Rates Affect Your Total Repayment Amount",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18124724921298598",
+      "timestamp": "2026-11-16T18:38:18.196460+00:00"
     }
   ],
   "processed": [
@@ -4593,7 +4593,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "5 Brokers For Advanced Charting And Beginner-Friendly Trading In India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/5-brokers-for-advanced-charting-and-beginner-friendly-trading-in-india-2026-11-16-141181",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Finance",
+        "reason": "A guide on trading brokers is a legitimate financial topic of public interest."
+      },
+      "classified_at": "2026-11-16T18:37:47.799793+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
