@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/like-saddam-hussein-opened-a-cheesecake-factory-obama-s-savage-jibe-at-trump-s-gold-plated-white-house-in-ohio-2026-10-25-139600",
-      "title": "Obama's Savage Jibe: Trump's White House Like \"Saddam's Cheesecake Factory\"",
-      "headline": "Obama Mocks Trump's White House Renovations",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17911958235480702",
-      "timestamp": "2026-10-25T00:59:12.112049+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/tiger-shroff-shooting-11th-arrest-with-haryana-engineer-held-in-indore-after-2-firearms-found-in-surat-ws-lrt-10396489.html?comscorekw=jionews",
       "title": "Tiger Shroff Shooting: 11th Arrest With Haryana Engineer Held In Indore After 2 Firearms Found In Surat",
       "headline": "11th Arrest Made In Tiger Shroff Shooting Case: Haryana Engineer Held",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17929350285427962",
       "timestamp": "2026-11-16T14:10:21.989995+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/kulgam-encounter-let-terrorist-lateef-bhat-suspected-mastermind-of-crpf-attack-among-2-killed-2026-11-16-141162",
+      "title": "CRPF Attack Mastermind, LeT Terrorist Lateef Bhat, Killed in Kulgam Encounter",
+      "headline": "CRPF Attack Mastermind, LeT Terrorist Lateef Bhat, Killed in Kulgam Encounter",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18118923463816059",
+      "timestamp": "2026-11-16T14:36:28.262083+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "A judicial warning regarding pollution levels and administrative penalties is a significant local/regional environmental issue."
       },
       "classified_at": "2026-11-16T13:43:55.685984+00:00"
-    },
-    {
-      "title": "CRPF Attack Mastermind, LeT Terrorist Lateef Bhat, Killed in Kulgam Encounter",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/kulgam-encounter-let-terrorist-lateef-bhat-suspected-mastermind-of-crpf-attack-among-2-killed-2026-11-16-141162",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The killing of a terrorist mastermind involved in a CRPF attack is a significant event related to national security and counter-terrorism."
-      },
-      "classified_at": "2026-11-16T13:43:55.685992+00:00"
     },
     {
       "title": "Manila Matters: Why India Remains Central To America's Indo-Pacific Bet",
