@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/france-s-luxury-stores-board-up-windows-ahead-of-fresh-protests-2026-10-24-139574",
-      "title": "France's Luxury Stores Board Up Windows Ahead of Fresh Protests",
-      "headline": "France Boards Up Luxury Store Windows Ahead of New Protests",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18146118316564589",
-      "timestamp": "2026-10-24T13:55:10.911705+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/irrfan-ran-200-metres-during-blackmail-shoot-despite-cancer-told-abhinay-deo-after-this-i-might-fall-ws-kl-10396289.html?comscorekw=jionews",
       "title": "Irrfan Ran 200 Metres During Blackmail Shoot Despite Cancer, Told Abhinay Deo: 'After This, I Might Fall'",
       "headline": "Irrfan Ran 200 Metres During Blackmail Shoot Despite Cancer",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18122290951957494",
       "timestamp": "2026-11-16T03:55:05.799111+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/zelenskyy-says-russia-suffered-over-50000-casualties-in-oct-claims-to-disabled-55-of-moscow-s-oil-refining-capacity-2026-11-16-141135",
+      "title": "Zelenskyy: Russia Suffered 50,000 Casualties, Ukraine Crippled 55% Oil Capacity",
+      "headline": "Zelenskyy Claims Russia Suffered 50,000 Casualties, Disabled 55% of Oil Refining Capacity",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17908993764597919",
+      "timestamp": "2026-11-16T04:20:48.926928+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Zelenskyy: Russia Suffered 50,000 Casualties, Ukraine Crippled 55% Oil Capacity",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/zelenskyy-says-russia-suffered-over-50000-casualties-in-oct-claims-to-disabled-55-of-moscow-s-oil-refining-capacity-2026-11-16-141135",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Updates on the ongoing war in Ukraine, specifically regarding casualty figures and energy infrastructure, are of major international consequence."
-      },
-      "classified_at": "2026-11-16T03:54:31.728329+00:00"
-    },
     {
       "title": "Pickup Truck Accident in Punjab's Fazilka Leaves 5 Dead, 11 Injured",
       "domain": "republicworld.com",
