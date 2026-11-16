@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/no-offer-made-to-us-no-proposal-sent-to-pak-mediator-on-hormuz-reopening-iranian-media-rejects-reports-2026-10-25-139602",
-      "title": "No Offer Made to US, No Proposal Sent to Pak Mediator on Hormuz Reopening: Iranian Media Rejects Reports",
-      "headline": "Iranian Media Deny US Deal for Hormuz Reopening",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18112893968614807",
-      "timestamp": "2026-10-25T02:22:09.709355+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/491-days-in-isolation-ukrainian-soldier-who-cut-his-own-foot-to-live-rescued-by-drone-ws-kl-10396534.html?comscorekw=jionews",
       "title": "491 Days In Isolation: Ukrainian Soldier Who Cut His Own Foot To Live, Rescued By Drone",
       "headline": "Ukrainian Soldier Survives 491 Days In Isolation After Self-Amputation",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17995116999066884",
       "timestamp": "2026-11-16T15:34:01.285705+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/west-bengal-police-seeks-confidential-performance-reports-on-ics-ocs-of-border-police-stations-major-reshuffle-likely-ws-klrt-10427854.html?comscorekw=jionews",
+      "title": "Bengal Police Seeks Performance Reports On ICs, OCs Of Border Police Stations, Major Reshuffle Likely",
+      "headline": "Bengal Police Seeks Performance Reports On ICs, OCs Of Border Police Stations",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18132638087480233",
+      "timestamp": "2026-11-16T16:24:39.401372+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "Coverage of a leader's itinerary, including interactions with the diaspora and cultural events, is a standard diplomatic reporting topic."
       },
       "classified_at": "2026-11-16T13:43:55.685997+00:00"
-    },
-    {
-      "title": "Bengal Police Seeks Performance Reports On ICs, OCs Of Border Police Stations, Major Reshuffle Likely",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/west-bengal-police-seeks-confidential-performance-reports-on-ics-ocs-of-border-police-stations-major-reshuffle-likely-ws-klrt-10427854.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A police reshuffle and request for performance reports is a significant administrative and political development within a specific state."
-      },
-      "classified_at": "2026-11-16T13:43:55.685999+00:00"
     }
   ],
   "quota_cooldown": {
