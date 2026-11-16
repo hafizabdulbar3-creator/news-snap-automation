@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/43-tonnes-of-food-and-719-litres-of-milk-ghee-seized-maharashtra-fda-s-rs-156-crore-food-safety-operation-2026-10-24-139590",
-      "title": "Massive Food Safety Bust: Maharashtra FDA Seizes 43 Tonnes, Rs 1.56 Crore",
-      "headline": "Maharashtra FDA Seizes 43 Tonnes of Food, Rs 1.56 Crore",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18130019353699235",
-      "timestamp": "2026-10-24T19:58:10.124464+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/imd-warns-of-extremely-heavy-rain-in-nilgiris-theni-dindigul-as-system-to-become-cyclone-by-oct-26-2026-10-24-139588",
       "title": "IMD Warns Of Extremely Heavy Rain In Nilgiris, Theni, Dindigul As System To Become Cyclone By Oct 26",
       "headline": "IMD Warns Of Extremely Heavy Rain In Nilgiris, Theni, Dindigul",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18118821746065575",
       "timestamp": "2026-11-16T09:22:32.691724+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/china-s-li-qiang-hails-extraordinary-ties-with-asean-ahead-of-donald-trump-s-visit-to-manila-2026-11-16-141150",
+      "title": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN Ahead Of Donald Trump's Visit To Manila",
+      "headline": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17992457958097462",
+      "timestamp": "2026-11-16T09:48:34.363793+00:00"
     }
   ],
   "processed": [
@@ -4649,17 +4649,6 @@
         "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
       },
       "classified_at": "2026-11-16T06:58:42.888234+00:00"
-    },
-    {
-      "title": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN Ahead Of Donald Trump's Visit To Manila",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/china-s-li-qiang-hails-extraordinary-ties-with-asean-ahead-of-donald-trump-s-visit-to-manila-2026-11-16-141150",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "High-level diplomatic engagement between major global powers (China and ASEAN) ahead of a significant visit."
-      },
-      "classified_at": "2026-11-16T06:58:42.888243+00:00"
     },
     {
       "title": "'Gully' Cricket, 'Kulhad' Chai: How Prince William, Kate Began 3-Day India Visit In Mumbai",
