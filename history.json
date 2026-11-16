@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/ed-moves-supreme-court-against-delhi-hc-order-quashing-eow-fir-in-newsclick-case-2026-10-24-139592",
-      "title": "ED Moves Supreme Court Against Delhi HC Order Quashing EOW FIR In NewsClick Case",
-      "headline": "ED Moves Supreme Court Against Delhi HC Order Quashing EOW FIR",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18344543950285525",
-      "timestamp": "2026-10-24T22:18:16.294544+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/yahan-hamare-ghar-par-goliyan-chal-rahi-hain-rohit-shetty-breaks-silence-on-juhu-firing-on-bigg-boss-20-2026-10-24-139596",
       "title": "Rohit Shetty Breaks Silence on Juhu Firing Incident on Bigg Boss 20",
       "headline": "Rohit Shetty Addresses Juhu Firing Incident on Bigg Boss 20",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18154480639468117",
       "timestamp": "2026-11-16T11:06:24.284740+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/prince-william-princess-kate-join-sachin-tendulkar-for-gully-cricket-with-mumbai-schoolchildren-2026-11-16-141151",
+      "title": "Prince William, Princess Kate Join Sachin Tendulkar for Gully Cricket With Mumbai Schoolchildren",
+      "headline": "Prince William, Kate Join Sachin Tendulkar for Gully Cricket",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18135365258493027",
+      "timestamp": "2026-11-16T11:32:37.294525+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Prince William, Princess Kate Join Sachin Tendulkar for Gully Cricket With Mumbai Schoolchildren",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/prince-william-princess-kate-join-sachin-tendulkar-for-gully-cricket-with-mumbai-schoolchildren-2026-11-16-141151",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
-      },
-      "classified_at": "2026-11-16T06:58:42.888234+00:00"
-    },
     {
       "title": "Record FPI Inflows Flood India's Market: Crude Prices, Rupee Fuel Surge",
       "domain": "news18.com",
