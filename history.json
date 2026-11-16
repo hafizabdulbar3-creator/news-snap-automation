@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/houthis-in-yemen-claim-attack-on-dammam-riyadh-airports-and-saudi-aramco-facility-amid-rising-tensions-2026-10-24-139582",
-      "title": "Houthis Claim They Hit Riyadh Airport And Aramco Sites Hours After Saudis Say They Shot Down Missiles",
-      "headline": "Houthis Claim Attacks on Dammam, Riyadh Airports, and Aramco Sites",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18108029867624506",
-      "timestamp": "2026-10-24T17:53:49.761656+00:00"
-    },
-    {
       "url": "https://www.news18.com/politics/amit-shahs-nda-sarkar-pitch-and-the-war-on-drugs-how-bjp-is-rewriting-punjabs-political-script-ws-blrt-10396393.html?comscorekw=jionews",
       "title": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs: How BJP Is Rewriting Punjab's Political Script",
       "headline": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18416494252089234",
       "timestamp": "2026-11-16T07:29:31.437889+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bay-of-bengal-cyclone-alert-imd-warns-of-severe-cyclonic-storm-four-states-brace-for-heavy-rainfall-2026-11-16-141148",
+      "title": "Bay of Bengal Cyclone Alert: IMD Warns of Severe Cyclonic Storm; Four States Brace for Heavy Rainfall",
+      "headline": "IMD Warns of Severe Cyclonic Storm in Bay of Bengal",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18133638037770208",
+      "timestamp": "2026-11-16T07:55:38.216939+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Bay of Bengal Cyclone Alert: IMD Warns of Severe Cyclonic Storm; Four States Brace for Heavy Rainfall",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bay-of-bengal-cyclone-alert-imd-warns-of-severe-cyclonic-storm-four-states-brace-for-heavy-rainfall-2026-11-16-141148",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Severe weather event with potential for mass displacement and infrastructure damage across multiple states."
-      },
-      "classified_at": "2026-11-16T06:58:42.888228+00:00"
-    },
     {
       "title": "CDS Flags Starlink Disruption, Calls for India's Space Self-Reliance",
       "domain": "republicworld.com",
