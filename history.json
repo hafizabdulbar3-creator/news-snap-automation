@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/politics/amit-shahs-nda-sarkar-pitch-and-the-war-on-drugs-how-bjp-is-rewriting-punjabs-political-script-ws-blrt-10396393.html?comscorekw=jionews",
-      "title": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs: How BJP Is Rewriting Punjab's Political Script",
-      "headline": "Amit Shah's 'NDA Sarkar' Pitch And The War On Drugs",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18058020851569310",
-      "timestamp": "2026-10-24T18:19:29.607118+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/where-is-trump-rallying-next-from-georgia-to-ohio-his-midterm-campaign-trail-ws-l-10396371.html?comscorekw=jionews",
       "title": "Where Is Trump Rallying Next? From Georgia To Ohio, His Midterm Campaign Trail",
       "headline": "Trump Rallying Next? Georgia To Ohio Midterm Trail",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18133638037770208",
       "timestamp": "2026-11-16T07:55:38.216939+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/amid-nvidia-jensen-huang-row-india-joins-us-led-pact-to-secure-ai-supply-chains-from-china-ws-kl-10427172.html?comscorekw=jionews",
+      "title": "India Joins US-Led Pact To Secure AI Supply Chains From China Amid Nvidia Row",
+      "headline": "India Joins US-Led Pact To Secure AI Supply Chains From China",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18124946962935786",
+      "timestamp": "2026-11-16T08:21:43.992615+00:00"
     }
   ],
   "processed": [
@@ -4660,17 +4660,6 @@
         "reason": "Public interest story involving celebrity visits and sports engagement, lacking geopolitical consequence."
       },
       "classified_at": "2026-11-16T06:58:42.888234+00:00"
-    },
-    {
-      "title": "India Joins US-Led Pact To Secure AI Supply Chains From China Amid Nvidia Row",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/amid-nvidia-jensen-huang-row-india-joins-us-led-pact-to-secure-ai-supply-chains-from-china-ws-kl-10427172.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "Strategic alliance formation to secure critical technology supply chains amid international tensions."
-      },
-      "classified_at": "2026-11-16T06:58:42.888238+00:00"
     },
     {
       "title": "Amid Nvidia Controversy, India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
