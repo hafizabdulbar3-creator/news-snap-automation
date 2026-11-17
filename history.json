@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/donald-trump-falsely-claims-us-got-both-greenland-and-venezuela-at-georgia-rally-2026-10-25-139614",
-      "title": "Donald Trump Falsely Claims US 'Got Both' Greenland and Venezuela at Georgia Rally",
-      "headline": "Trump Claims US Acquired Greenland and Venezuela in Georgia Rally",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17894214735614522",
-      "timestamp": "2026-10-25T10:29:39.248080+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/republicans-are-going-to-lose-it-former-us-congress-speaker-who-ushered-gop-revival-last-midterms-shares-stark-prediction-ws-lrt-10396912.html?comscorekw=jionews",
       "title": "Former Speaker McCarthy: Republicans Will 'Lose It' in Midterms",
       "headline": "Former Speaker McCarthy: Republicans Will 'Lose It' in Midterms",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18603314242070683",
       "timestamp": "2026-11-17T05:12:28.120866+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/6-killed-around-20-injured-as-bus-falls-into-ravine-in-uttarakhand-s-gular-bazar-2026-11-17-141211",
+      "title": "8 Killed, Around 20 Injured as Bus Plunges 300 Feet into Ravine in Uttarakhand's Tehri Garhwal",
+      "headline": "8 Killed, 20 Injured as Bus Plunges 300 Feet into Ravine in Uttarakhand",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18133534075764615",
+      "timestamp": "2026-11-17T05:38:38.007291+00:00"
     }
   ],
   "processed": [
@@ -4611,7 +4611,151 @@
       "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Mohan Bhagwat Flagged Foreign Powers' Designs Against India. Is Congress Giving The Warning A Face?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/mohan-bhagwat-flagged-foreign-powers-designs-against-india-is-congress-giving-the-warning-a-face-ws-l-10428481.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political commentary regarding internal party dynamics and rhetoric, not a major geopolitical event."
+      },
+      "classified_at": "2026-11-17T05:38:14.440814+00:00"
+    },
+    {
+      "title": "PM Modi Lays Foundation Stone to Redevelop Manila's Century-Old Khalsa Diwan Gurudwara",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/pm-modi-lays-foundation-stone-to-redevelop-manilas-century-old-khalsa-diwan-gurudwara-2026-11-17-141215",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Diplomacy",
+        "reason": "A diplomatic ceremonial event involving the Prime Minister of India and a foreign nation."
+      },
+      "classified_at": "2026-11-17T05:38:14.440835+00:00"
+    },
+    {
+      "title": "'Threatened With Death If She Spoke': BJP Demands Arrest Of Jharkhand Congress MLA In POCSO Case",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/threatened-with-death-if-she-spoke-bjp-demands-arrest-of-jharkhand-congress-mla-in-pocso-case-ws-l-10428385.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic political controversy regarding a specific legislative case."
+      },
+      "classified_at": "2026-11-17T05:38:14.440838+00:00"
+    },
+    {
+      "title": "Andhra CM Chandrababu Naidu Orders Evacuation After Massive Gas Leak at ONGC Well in Konaseema",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/andhra-cm-chandrababu-naidu-orders-evacuation-after-massive-gas-leak-at-ongc-well-in-konaseema-2026-11-17-141214",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "A regional industrial incident requiring evacuation, but not of international consequence."
+      },
+      "classified_at": "2026-11-17T05:38:14.440842+00:00"
+    },
+    {
+      "title": "CRPF Orders Enhanced Security for J&K Troops After Kulgam Terror Attack",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/bulletproof-jackets-protective-bunkers-crpf-issues-fresh-advisory-after-kulgam-terror-attack-exclusive-ws-l-10428462.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Security",
+        "reason": "A standard security protocol adjustment following a localized security incident."
+      },
+      "classified_at": "2026-11-17T05:38:14.440844+00:00"
+    },
+    {
+      "title": "Zelenskyy: Ukraine Needs Comparable Weapons to Match Russia's North Korean Arsenal",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/ukraine-needs-clear-parity-to-respond-to-russian-threat-zelenskyy-seeks-supply-of-comparable-weapons-from-allies-2026-11-17-141212",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A statement from a head of state regarding military aid and international conflict."
+      },
+      "classified_at": "2026-11-17T05:38:14.440845+00:00"
+    },
+    {
+      "title": "Delhi Air Quality Stays in 'Poor' Category With AQI at 246",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-air-quality-stays-in-poor-category-with-aqi-at-246-2026-11-17-141213",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "A recurring environmental issue affecting a specific region."
+      },
+      "classified_at": "2026-11-17T05:38:14.440847+00:00"
+    },
+    {
+      "title": "Sisters Win £1.6M UK Inheritance Battle, Brother's Claims Rejected by Court",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/indian-origin-sisters-win-nearly-20-crore-inheritance-battle-against-brother-over-fathers-fortune-in-uk-court-ws-l-10428427.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A legal case involving inheritance, which is a matter of public interest but not of broad international consequence."
+      },
+      "classified_at": "2026-11-17T05:38:14.440848+00:00"
+    },
+    {
+      "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/bjp-looks-to-make-inroads-into-sp-ncpsp-on-delimitation-in-fresh-test-for-opposition-unity-ws-l-10428420.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic political strategy regarding electoral boundaries."
+      },
+      "classified_at": "2026-11-17T05:38:14.440850+00:00"
+    },
+    {
+      "title": "Bay of Bengal Alert: Cyclone Akvan Set to Hit Andhra Coast as Very Severe Storm on Nov 20",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bay-of-bengal-alert-cyclone-akvan-set-to-hit-andhra-coast-as-very-severe-storm-on-nov-20-2026-11-17-141210",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Weather",
+        "reason": "A severe weather event posing a significant threat to coastal populations."
+      },
+      "classified_at": "2026-11-17T05:38:14.440852+00:00"
+    },
+    {
+      "title": "Will Pakistan Raise Indus Water Row On Indian Soil? Minister Keeps Agenda Open Ahead Of SCO Forum",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/will-pakistan-raise-indus-water-row-on-indian-soil-minister-keeps-agenda-open-ahead-of-sco-forum-ws-l-10428291.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A diplomatic agenda item regarding water rights between nations."
+      },
+      "classified_at": "2026-11-17T05:38:14.440854+00:00"
+    },
+    {
+      "title": "Elon Musk Expected to Accompany Trump on China Visit; Iran on Agenda for Trilateral Talks with Xi, Putin",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/elon-musk-expected-to-accompany-trump-on-china-visit-iran-on-agenda-for-trilateral-talks-with-xi-putin-2026-11-17-141208",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A high-level diplomatic meeting involving heads of state and major global powers."
+      },
+      "classified_at": "2026-11-17T05:38:14.440855+00:00"
+    },
+    {
+      "title": "US Intel Indicates Iran Is Drawing Up Plans for Potential 'Dirty Bomb' Attack in Washington: Report",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/us-intel-indicates-iran-is-drawing-up-plans-for-potential-dirty-bomb-attack-in-washington-report-2026-11-17-141209",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A significant security threat report involving a potential WMD attack on US soil."
+      },
+      "classified_at": "2026-11-17T05:38:14.440857+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
