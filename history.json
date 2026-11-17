@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/nitin-nabin-chairs-bjp-meeting-for-strategy-for-upcoming-assembly-elections-in-presence-of-amit-shah-2026-10-25-139642",
-      "title": "Nitin Nabin Chairs BJP Meeting for Strategy for Upcoming Assembly Elections in Presence of Amit Shah",
-      "headline": "Nitin Nabin Chairs BJP Meeting for Assembly Election Strategy",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18346293961251986",
-      "timestamp": "2026-10-25T15:10:17.035415+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/eminent-painter-jogen-chowdhury-passes-away-at-87-in-kolkata-cm-suvendu-adhikari-expresses-grief-2026-10-25-139647",
       "title": "Eminent Painter Jogen Chowdhury Passes Away at 87 in Kolkata, CM Suvendu Adhikari Expresses Grief",
       "headline": "Legendary Painter Jogen Chowdhury Passes Away at 87 in Kolkata",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18011719193786017",
       "timestamp": "2026-11-17T09:37:29.632185+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-air-quality-stays-in-poor-category-with-aqi-at-246-2026-11-17-141213",
+      "title": "Delhi Air Quality Stays in 'Poor' Category With AQI at 246",
+      "headline": "Delhi Air Quality Remains in 'Poor' Category at AQI 246",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18083180864384345",
+      "timestamp": "2026-11-17T10:04:05.395926+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Air Quality Stays in 'Poor' Category With AQI at 246",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-air-quality-stays-in-poor-category-with-aqi-at-246-2026-11-17-141213",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "A recurring environmental issue affecting a specific region."
-      },
-      "classified_at": "2026-11-17T05:38:14.440847+00:00"
-    },
     {
       "title": "Sisters Win £1.6M UK Inheritance Battle, Brother's Claims Rejected by Court",
       "domain": "news18.com",
