@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/viral/tripura-techie-quits-job-after-9-months-company-demands-90000-training-fee-i-thought-that-was-it-ws-l-10426565.html?comscorekw=jionews",
-      "title": "Tripura Techie Quits Job After 9 Months, Company Demands ₹90,000 Training Fee: 'I Thought That Was It'",
-      "domain": "news18.com",
-      "timestamp": "2026-11-15T10:59:59.311270+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
-      "url": "https://www.news18.com/movies/television/karan-kundrra-and-tejasswi-prakash-to-get-married-on-desi-bling-2-heres-what-we-know-ws-lr-10426600.html?comscorekw=jionews",
-      "title": "Karan Kundrra And Tejasswi Prakash To Get Married On Desi Bling 2? Here's What We Know",
-      "domain": "news18.com",
-      "timestamp": "2026-11-15T12:48:59.196326+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/armaan-malik-reacts-to-ramayana-song-mangal-rangs-criticism-i-surrendered-to-ar-rahmans-vision-ws-kl-10426785.html?comscorekw=jionews",
       "title": "Armaan Malik Reacts To Ramayana Song Mangal Rang's Criticism: 'I Surrendered To AR Rahman's Vision'",
       "domain": "news18.com",
@@ -4570,6 +4552,15 @@
       "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
       "domain": "news18.com",
       "timestamp": "2026-11-17T10:55:53.970803+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-cricket-score-2nd-test-day-5-afg-vs-zim-latest-scorecard-sharjah-match-updates-liveblog-ws-l-10428535.html?comscorekw=jionews",
+      "title": "Afghanistan Vs Zimbabwe 2nd Test Day 5 Highlights: ZIM Stun AFG With Dramatic Late Victory",
+      "domain": "news18.com",
+      "timestamp": "2026-11-17T15:27:58.711345+00:00",
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
