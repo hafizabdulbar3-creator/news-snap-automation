@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/imran-khan-leave-india-notice-row-bombay-hc-to-hear-plea-on-october-26-possible-outcomes-and-case-explained-ws-lr-10397093.html?comscorekw=jionews",
-      "title": "Imran Khan's Future in India at Stake: High Court to Hear \"Leave India\" Plea",
-      "headline": "Imran Khan's Future in India at Stake: Bombay HC to Hear Plea",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18039809552839901",
-      "timestamp": "2026-10-25T14:44:28.849720+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/nitin-nabin-chairs-bjp-meeting-for-strategy-for-upcoming-assembly-elections-in-presence-of-amit-shah-2026-10-25-139642",
       "title": "Nitin Nabin Chairs BJP Meeting for Strategy for Upcoming Assembly Elections in Presence of Amit Shah",
       "headline": "Nitin Nabin Chairs BJP Meeting for Assembly Election Strategy",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18106697993564344",
       "timestamp": "2026-11-17T09:11:36.490077+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/bulletproof-jackets-protective-bunkers-crpf-issues-fresh-advisory-after-kulgam-terror-attack-exclusive-ws-l-10428462.html?comscorekw=jionews",
+      "title": "CRPF Orders Enhanced Security for J&K Troops After Kulgam Terror Attack",
+      "headline": "CRPF Orders Enhanced Security for J&K Troops After Kulgam Attack",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18011719193786017",
+      "timestamp": "2026-11-17T09:37:29.632185+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "CRPF Orders Enhanced Security for J&K Troops After Kulgam Terror Attack",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/bulletproof-jackets-protective-bunkers-crpf-issues-fresh-advisory-after-kulgam-terror-attack-exclusive-ws-l-10428462.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Security",
-        "reason": "A standard security protocol adjustment following a localized security incident."
-      },
-      "classified_at": "2026-11-17T05:38:14.440844+00:00"
-    },
     {
       "title": "Delhi Air Quality Stays in 'Poor' Category With AQI at 246",
       "domain": "republicworld.com",
