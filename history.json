@@ -4600,6 +4600,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/health/vitamin-b12-may-hold-key-to-treating-a-rare-genetic-disorder-study-2026-11-17-141204",
+      "title": "Vitamin B12 May Hold Key to Treating a Rare Genetic Disorder: Study",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-17T03:32:58.280257+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 16."
     }
   ],
   "classified_pool": [
