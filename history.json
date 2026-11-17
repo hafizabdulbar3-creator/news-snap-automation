@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/telugu-cinema/javed-akhtar-backs-rashmika-mandanna-amid-accent-trolling-ws-lr-10397221.html?comscorekw=jionews",
-      "title": "'Linguistic Superiority Is Not Acceptable': Javed Akhtar Backs Rashmika Mandanna Amid Accent Trolling",
-      "headline": "Javed Akhtar Criticizes Linguistic Superiority in Support of Rashmika Mandanna",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18130770862692296",
-      "timestamp": "2026-10-25T17:25:04.457825+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/weve-turned-the-whole-thing-around-trump-says-republicans-gaining-ground-ahead-of-midterms-ws-l-10397240.html?comscorekw=jionews",
       "title": "'We've Turned The Whole Thing Around': Trump Says Republicans Gaining Ground Ahead Of Midterms",
       "headline": "Trump Claims Republicans Gaining Ground Ahead Of Midterms",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18350251024270846",
       "timestamp": "2026-11-17T11:27:44.619302+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/india-calls-for-country-driven-just-transition-as-talks-enter-crucial-week-at-cop31-ws-l-10429264.html?comscorekw=jionews",
+      "title": "India Calls For 'Country-Driven' Just Transition As Talks Enter Crucial Week At COP31",
+      "headline": "India Calls For 'Country-Driven' Just Transition At COP31",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18085849715725323",
+      "timestamp": "2026-11-17T11:53:31.374415+00:00"
     }
   ],
   "processed": [
@@ -4608,17 +4608,6 @@
         "reason": "A local incident involving pollution and public outrage, though sensitive, is a regional social issue rather than a global geopolitical event."
       },
       "classified_at": "2026-11-17T11:27:19.534750+00:00"
-    },
-    {
-      "title": "India Calls For 'Country-Driven' Just Transition As Talks Enter Crucial Week At COP31",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/india-calls-for-country-driven-just-transition-as-talks-enter-crucial-week-at-cop31-ws-l-10429264.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "India's stance at COP31 (Climate Change) is a major international diplomatic event with global consequences."
-      },
-      "classified_at": "2026-11-17T11:27:19.534752+00:00"
     },
     {
       "title": "Bilkis Bano Questions SC Over Bail to Two Convicts, Says She Was Not Informed or Heard Before Order",
