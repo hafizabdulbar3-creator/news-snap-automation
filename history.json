@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-cricket-score-2nd-test-day-2-afg-vs-zim-latest-scorecard-sharjah-match-updates-liveblog-ws-l-10425257.html?comscorekw=jionews",
-      "title": "Afghanistan Vs Zimbabwe Highlights, 2nd Test Day 2: ZIM Take Massive Lead Before Moving Day",
-      "domain": "news18.com",
-      "timestamp": "2026-11-14T18:37:52.651638+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.republicworld.com/india/cross-border-conspiracy-two-arrested-over-rajasthan-s-sri-ganganagar-rail-track-explosion-2026-11-15-141083",
       "title": "Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion",
       "domain": "republicworld.com",
@@ -4591,9 +4582,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/flight-ground-stop-microsoft-outage-united-glitch-chase-slowdown-what-is-going-on-in-america-2026-11-16-141189",
+      "title": "Flight Ground Stop, Microsoft Outage, United Glitch, Chase Slowdown: What Is Going On In America?",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-17T00:15:22.691172+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Flight Ground Stop, Microsoft Outage, United Glitch, Chase Slowdown: What Is Going On In America?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Appeals To State And Federal Courts To Erase Hush Money Conviction",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/trump-appeals-to-state-and-federal-courts-to-erase-hush-money-conviction-2026-11-16-141190",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A former U.S. President appealing a criminal conviction involves significant legal and political implications."
+      },
+      "classified_at": "2026-11-17T00:15:05.358207+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
