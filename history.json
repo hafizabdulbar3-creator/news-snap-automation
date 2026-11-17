@@ -4564,6 +4564,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/cricket/south-africa-vs-bangladesh-live-cricket-score-2nd-test-day-2-sa-vs-ban-latest-scorecard-johannesburg-match-updates-liveblog-ws-l-10428703.html?comscorekw=jionews",
+      "title": "South Africa Vs Bangladesh 2nd Test Day 3 Highlights: SA Crumble After Bavuma Injury On Day 3 Of BAN Test",
+      "domain": "news18.com",
+      "timestamp": "2026-11-17T15:38:39.649292+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
