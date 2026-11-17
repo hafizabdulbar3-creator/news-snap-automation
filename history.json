@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/republicans-are-going-to-lose-it-former-us-congress-speaker-who-ushered-gop-revival-last-midterms-shares-stark-prediction-ws-lrt-10396912.html?comscorekw=jionews",
-      "title": "Former Speaker McCarthy: Republicans Will 'Lose It' in Midterms",
-      "headline": "Former Speaker McCarthy: Republicans Will 'Lose It' in Midterms",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18170446168464795",
-      "timestamp": "2026-10-25T10:55:42.259133+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/former-army-officer-arrested-in-vellore-for-allegedly-leaking-military-secrets-to-unidentified-woman-2026-10-25-139635",
       "title": "Former Army Officer Arrested in Vellore for Allegedly Leaking Military Secrets to Unidentified Woman",
       "headline": "Former Army Captain Arrested in Vellore Over Alleged Military Secrets Leak",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18133534075764615",
       "timestamp": "2026-11-17T05:38:38.007291+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/ukraine-needs-clear-parity-to-respond-to-russian-threat-zelenskyy-seeks-supply-of-comparable-weapons-from-allies-2026-11-17-141212",
+      "title": "Zelenskyy: Ukraine Needs Comparable Weapons to Match Russia's North Korean Arsenal",
+      "headline": "Zelenskyy: Ukraine Needs Comparable Weapons to Match Russia's North Korean Arsenal",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18079750355450045",
+      "timestamp": "2026-11-17T06:04:16.139785+00:00"
     }
   ],
   "processed": [
@@ -4666,17 +4666,6 @@
         "reason": "A standard security protocol adjustment following a localized security incident."
       },
       "classified_at": "2026-11-17T05:38:14.440844+00:00"
-    },
-    {
-      "title": "Zelenskyy: Ukraine Needs Comparable Weapons to Match Russia's North Korean Arsenal",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/ukraine-needs-clear-parity-to-respond-to-russian-threat-zelenskyy-seeks-supply-of-comparable-weapons-from-allies-2026-11-17-141212",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A statement from a head of state regarding military aid and international conflict."
-      },
-      "classified_at": "2026-11-17T05:38:14.440845+00:00"
     },
     {
       "title": "Delhi Air Quality Stays in 'Poor' Category With AQI at 246",
