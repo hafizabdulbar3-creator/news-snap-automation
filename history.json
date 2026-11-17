@@ -4591,6 +4591,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Flight Ground Stop, Microsoft Outage, United Glitch, Chase Slowdown: What Is Going On In America?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/cricket/mitchell-santner-ruled-out-of-test-series-against-india-due-to-right-hand-fracture-ws-l-10428260.html?comscorekw=jionews",
+      "title": "Mitchell Santner Ruled Out Of Test Series Against India Due To Right-Hand Fracture",
+      "domain": "news18.com",
+      "timestamp": "2026-11-17T00:46:29.406472+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
