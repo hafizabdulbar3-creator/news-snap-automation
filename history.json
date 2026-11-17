@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/afghanistan-hit-by-52-magnitude-earthquake-in-hindu-kush-belt-2026-10-25-139653",
-      "title": "Afghanistan Hit By 5.2 Magnitude Earthquake In Hindu Kush Belt",
-      "headline": "Afghanistan Hit By 5.2 Magnitude Earthquake In Hindu Kush",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18091463279238921",
-      "timestamp": "2026-10-25T18:42:45.430593+00:00"
-    },
-    {
       "url": "https://www.news18.com/cricket/drama-in-lahore-shadab-khan-gets-lbw-on-97-players-shake-hands-and-then-drs-finds-an-edge-ws-l-10397246.html?comscorekw=jionews",
       "title": "Drama In Lahore: Shadab Khan Gets LBW On 97, Players Shake Hands... And Then DRS Finds An Edge",
       "headline": "Shadab Khan LBW On 97, But DRS Reveals Inside Edge",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18160555639569015",
       "timestamp": "2026-11-17T12:46:08.800329+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-president-trump-calls-pm-modi-a-tough-man-during-quad-leaders-meeting-in-philippines-2026-11-17-141248",
+      "title": "'Modi Is a Tough Man': US President Trump Praises PM Modi During Quad Leaders' Meeting in Philippines",
+      "headline": "Trump Calls Modi 'Tough Man' at Quad Meeting in Philippines",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17980314057138299",
+      "timestamp": "2026-11-17T13:12:03.593135+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Modi Is a Tough Man': US President Trump Praises PM Modi During Quad Leaders' Meeting in Philippines",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/us-president-trump-calls-pm-modi-a-tough-man-during-quad-leaders-meeting-in-philippines-2026-11-17-141248",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Statement by the US President regarding the Indian Prime Minister during a major international summit (Quad) holds significant geopolitical weight."
-      },
-      "classified_at": "2026-11-17T11:27:19.534727+00:00"
-    },
     {
       "title": "Parents Dip Child into Foam-Covered Yamuna, Sparks Outrage Over Pollution",
       "domain": "news18.com",
