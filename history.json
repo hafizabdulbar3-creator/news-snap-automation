@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/indigo-and-adani-airports-announce-phased-expansion-of-international-flight-operations-at-navi-mumbai-airport-2026-10-25-139652",
-      "title": "IndiGo and Adani Launch New International Hub in Navi Mumbai.",
-      "headline": "IndiGo and Adani Launch New International Hub in Navi Mumbai",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18033508046676576",
-      "timestamp": "2026-10-25T20:00:15.902277+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/cricket-has-always-given-me-happiness-after-captaincy-exit-harmanpreet-kaur-responds-with-record-8th-odi-ton-2026-10-25-139657",
       "title": "Harmanpreet Kaur's Record 8th ODI Ton: Finding Joy After Captaincy Exit",
       "headline": "Harmanpreet Kaur Hits Record 8th ODI Ton After Captaincy Exit",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18182875120445274",
       "timestamp": "2026-11-17T14:04:35.966353+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/when-the-numbers-dont-add-up-does-the-law-change-the-gokul-dairy-lesson-ws-kl-10429244.html?comscorekw=jionews",
+      "title": "When The Numbers Don't Add Up, Does The Law Change? The Gokul Dairy Lesson",
+      "headline": "When Numbers Don't Add Up, Does The Law Change?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17877871542661671",
+      "timestamp": "2026-11-17T14:30:41.383077+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "When The Numbers Don't Add Up, Does The Law Change? The Gokul Dairy Lesson",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/when-the-numbers-dont-add-up-does-the-law-change-the-gokul-dairy-lesson-ws-kl-10429244.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A legal and business case involving a dairy company is a regional economic/legal matter."
-      },
-      "classified_at": "2026-11-17T11:27:19.534758+00:00"
-    },
     {
       "title": "Balochistan Appeals To 195 Nations, Seeks Global Recognition As Independent State",
       "domain": "news18.com",
