@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/sports/iwf-awards-2029-world-weightlifting-championships-to-ahmedabad-first-time-for-india-2026-10-25-139654",
-      "title": "IWF Awards 2029 World Weightlifting Championships To Ahmedabad, First Time For India",
-      "headline": "IWF Awards 2029 World Weightlifting Championships To Ahmedabad",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18116349242517794",
-      "timestamp": "2026-10-25T19:34:42.093007+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/indigo-and-adani-airports-announce-phased-expansion-of-international-flight-operations-at-navi-mumbai-airport-2026-10-25-139652",
       "title": "IndiGo and Adani Launch New International Hub in Navi Mumbai.",
       "headline": "IndiGo and Adani Launch New International Hub in Navi Mumbai",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18052819271812951",
       "timestamp": "2026-11-17T13:38:15.628446+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/who-issues-first-ever-type-1-diabetes-guidelines-for-adults-5-things-patients-should-know-ws-lt-10429240.html?comscorekw=jionews",
+      "title": "WHO Issues First-Ever Type 1 Diabetes Guidelines For Adults: 5 Things Patients Should Know",
+      "headline": "WHO Releases First-Ever Type 1 Diabetes Guidelines For Adults",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18182875120445274",
+      "timestamp": "2026-11-17T14:04:35.966353+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "WHO Issues First-Ever Type 1 Diabetes Guidelines For Adults: 5 Things Patients Should Know",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/lifestyle/health-and-fitness/who-issues-first-ever-type-1-diabetes-guidelines-for-adults-5-things-patients-should-know-ws-lt-10429240.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Health",
-        "reason": "Health guidelines issued by a major international body are of public interest but are not a geopolitical crisis."
-      },
-      "classified_at": "2026-11-17T11:27:19.534756+00:00"
-    },
     {
       "title": "When The Numbers Don't Add Up, Does The Law Change? The Gokul Dairy Lesson",
       "domain": "news18.com",
