@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/this-is-how-russia-responds-to-diplomacy-and-deisolation-volodymyr-zelenskyy-condemns-recent-strikes-on-ukraine-2026-10-25-139637",
-      "title": "'This is How Russia Responds to Diplomacy and Deisolation': Zelenskyy Condemns Recent Strikes on Ukraine",
-      "headline": "Zelenskyy Condemns Russia's Response to Diplomacy",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18100720841382008",
-      "timestamp": "2026-10-25T12:18:53.188467+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/nana-patole-claims-ib-report-predicted-160-mva-seats-alleges-plot-over-polling-data-ws-klt-10396822.html?comscorekw=jionews",
       "title": "Nana Patole Claims IB Report Predicted 160 MVA Seats, Alleges Plot Over Polling Data",
       "headline": "Nana Patole Claims IB Report Predicted 160 MVA Seats",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18024387194951940",
       "timestamp": "2026-11-17T06:56:16.577845+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/elon-musk-expected-to-accompany-trump-on-china-visit-iran-on-agenda-for-trilateral-talks-with-xi-putin-2026-11-17-141208",
+      "title": "Elon Musk Expected to Accompany Trump on China Visit; Iran on Agenda for Trilateral Talks with Xi, Putin",
+      "headline": "Musk Expected to Join Trump on China Visit; Iran on Agenda for Trilateral Talks",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18645548815061265",
+      "timestamp": "2026-11-17T07:22:23.523420+00:00"
     }
   ],
   "processed": [
@@ -4710,17 +4710,6 @@
         "reason": "A diplomatic agenda item regarding water rights between nations."
       },
       "classified_at": "2026-11-17T05:38:14.440854+00:00"
-    },
-    {
-      "title": "Elon Musk Expected to Accompany Trump on China Visit; Iran on Agenda for Trilateral Talks with Xi, Putin",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/elon-musk-expected-to-accompany-trump-on-china-visit-iran-on-agenda-for-trilateral-talks-with-xi-putin-2026-11-17-141208",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A high-level diplomatic meeting involving heads of state and major global powers."
-      },
-      "classified_at": "2026-11-17T05:38:14.440855+00:00"
     }
   ],
   "quota_cooldown": {
