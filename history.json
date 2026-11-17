@@ -4503,51 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/cross-border-conspiracy-two-arrested-over-rajasthan-s-sri-ganganagar-rail-track-explosion-2026-11-15-141083",
-      "title": "Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-15T04:04:35.745606+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Cross-Border Conspiracy? Two Arrested Over Rajasthan's Sri Ganganagar Rail Track Explosion'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.republicworld.com/global-news/i-acted-alone-nikhil-gupta-takes-full-blame-in-plot-to-kill-sikh-terrorist-gurpatwant-singh-pannun-2026-11-15-141091",
-      "title": "'I Acted Alone': Nikhil Gupta Takes Full Blame In Plot To Kill Sikh Terrorist Gurpatwant Singh Pannun",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-15T05:53:33.268253+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/business/bring-back-jensen-over-132-lakh-sign-petition-to-reinstate-huang-as-nvidia-ceo-2026-11-15-141099",
-      "title": "Bring Back Jensen? Over 1.32 Lakh Sign Petition to Reinstate Huang as Nvidia CEO",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-15T08:08:41.809781+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bring Back Jensen? Over 1.32 Lakh Sign Petition to Reinstate Huang as Nvidia CEO'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.news18.com/movies/television/dont-raise-your-voice-in-front-of-me-salman-khan-warns-bigg-boss-20-contestant-kanika-mann-tells-her-to-stop-justifying-ws-l-10426371.html?comscorekw=jionews",
-      "title": "'Don't Raise Your Voice In Front Of Me': Salman Khan Warns Kanika Mann, Tells Her To Stop Justifying",
-      "domain": "news18.com",
-      "timestamp": "2026-11-15T08:39:52.099287+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/cricket/south-africa-vs-bangladesh-live-cricket-score-1st-test-day-1-sa-vs-ban-latest-scorecard-johannesburg-match-updates-liveblog-ws-l-10426107.html?comscorekw=jionews",
-      "title": "Test Cricket Begins! Bangladesh Wins Toss, Elects to Bat Against South Africa",
-      "domain": "news18.com",
-      "timestamp": "2026-11-15T08:44:59.045947+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.news18.com/viral/tripura-techie-quits-job-after-9-months-company-demands-90000-training-fee-i-thought-that-was-it-ws-l-10426565.html?comscorekw=jionews",
       "title": "Tripura Techie Quits Job After 9 Months, Company Demands ₹90,000 Training Fee: 'I Thought That Was It'",
       "domain": "news18.com",
@@ -4609,20 +4564,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 16."
+    },
+    {
+      "url": "https://www.news18.com/india/bjp-looks-to-make-inroads-into-sp-ncpsp-on-delimitation-in-fresh-test-for-opposition-unity-ws-l-10428420.html?comscorekw=jionews",
+      "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
+      "domain": "news18.com",
+      "timestamp": "2026-11-17T10:55:53.970803+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
-    {
-      "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/bjp-looks-to-make-inroads-into-sp-ncpsp-on-delimitation-in-fresh-test-for-opposition-unity-ws-l-10428420.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A domestic political strategy regarding electoral boundaries."
-      },
-      "classified_at": "2026-11-17T05:38:14.440850+00:00"
-    },
     {
       "title": "Will Pakistan Raise Indus Water Row On Indian Soil? Minister Keeps Agenda Open Ahead Of SCO Forum",
       "domain": "news18.com",
