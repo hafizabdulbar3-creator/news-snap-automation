@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/cyclone-arnab-alert-andhra-cm-naidu-puts-officials-on-high-alert-orders-control-rooms-in-districts-2026-10-25-139660",
-      "title": "Cyclone Arnab Alert: Andhra CM Naidu Puts Officials On High Alert, Orders Control Rooms In Districts",
-      "headline": "Andhra CM Naidu Orders High Alert for Cyclone Arnab",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18098933984540333",
-      "timestamp": "2026-10-25T22:20:19.998898+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/info/skipping-bp-pills-means-no-protection-against-heart-attack-stroke-91000-patient-study-finds-2026-10-25-139662",
       "title": "Skipping BP Pills Means No Protection Against Heart Attack, Stroke: 91,000-Patient Study Finds",
       "headline": "Skipping BP Pills Means No Protection Against Heart Attack, Stroke",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17902762833673867",
       "timestamp": "2026-11-17T16:21:01.607960+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/plane-crashes-in-southern-russia-all-17-on-board-killed-10429831.html?comscorekw=jionews",
+      "title": "Plane Crashes In Southern Russia, All 17 On Board Killed",
+      "headline": "An-12 Military Plane Crashes in Southern Russia, Killing All 17 Onboard",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18116548577140232",
+      "timestamp": "2026-11-17T16:46:38.194179+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Car Insurance Documents: Paper Copy vs DigiLocker for Accident Claims in India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/car-insurance-documents-paper-copy-vs-digilocker-for-accident-claims-in-india-2026-11-17-141256",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business & Economy",
+        "reason": "A consumer advisory regarding insurance documentation in India is a matter of public interest and policy, but lacks the scale of a major geopolitical event."
+      },
+      "classified_at": "2026-11-17T16:46:14.816946+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
