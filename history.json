@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/very-severe-storm-imd-issues-red-alert-in-odisha-ahead-of-cyclone-arnab-2026-10-25-139640",
-      "title": "'Very Severe Storm': IMD Issues Red Alert in Odisha Ahead of Cyclone Arnab",
-      "headline": "IMD Issues Red Alert in Odisha Ahead of Cyclone Arnab",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18152999143547051",
-      "timestamp": "2026-10-25T13:46:54.747899+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/heinous-attack-muslim-world-league-condemns-houthi-missile-attack-targeting-mecca-and-medina-regions-2026-10-25-139641",
       "title": "'Heinous Attack': Muslim World League Condemns Houthi Missile Attack Targeting Mecca and Medina Regions",
       "headline": "Muslim World League Condemns Houthi Missile Attack on Mecca and Medina",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18118217438127536",
       "timestamp": "2026-11-17T08:14:18.861993+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/threatened-with-death-if-she-spoke-bjp-demands-arrest-of-jharkhand-congress-mla-in-pocso-case-ws-l-10428385.html?comscorekw=jionews",
+      "title": "'Threatened With Death If She Spoke': BJP Demands Arrest Of Jharkhand Congress MLA In POCSO Case",
+      "headline": "BJP Demands Arrest Of Jharkhand Congress MLA In POCSO Case",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18125216984285587",
+      "timestamp": "2026-11-17T08:40:49.529340+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Threatened With Death If She Spoke': BJP Demands Arrest Of Jharkhand Congress MLA In POCSO Case",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/threatened-with-death-if-she-spoke-bjp-demands-arrest-of-jharkhand-congress-mla-in-pocso-case-ws-l-10428385.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A domestic political controversy regarding a specific legislative case."
-      },
-      "classified_at": "2026-11-17T05:38:14.440838+00:00"
-    },
     {
       "title": "Andhra CM Chandrababu Naidu Orders Evacuation After Massive Gas Leak at ONGC Well in Konaseema",
       "domain": "republicworld.com",
