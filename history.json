@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/pakistan-karachi-power-crisis-deepens-as-k-electric-extends-loadshedding-2026-10-25-139638",
-      "title": "Pakistan: Karachi Power Crisis Deepens as K-Electric Extends Loadshedding",
-      "headline": "Pakistan: Karachi Power Crisis Deepens as K-Electric Extends Loadshedding",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18128900875886464",
-      "timestamp": "2026-10-25T13:20:50.442637+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/very-severe-storm-imd-issues-red-alert-in-odisha-ahead-of-cyclone-arnab-2026-10-25-139640",
       "title": "'Very Severe Storm': IMD Issues Red Alert in Odisha Ahead of Cyclone Arnab",
       "headline": "IMD Issues Red Alert in Odisha Ahead of Cyclone Arnab",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18116613440163004",
       "timestamp": "2026-11-17T07:48:16.817230+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/pm-modi-lays-foundation-stone-to-redevelop-manilas-century-old-khalsa-diwan-gurudwara-2026-11-17-141215",
+      "title": "PM Modi Lays Foundation Stone to Redevelop Manila's Century-Old Khalsa Diwan Gurudwara",
+      "headline": "PM Modi Lays Foundation Stone for Manila's Khalsa Diwan Gurudwara",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18118217438127536",
+      "timestamp": "2026-11-17T08:14:18.861993+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "PM Modi Lays Foundation Stone to Redevelop Manila's Century-Old Khalsa Diwan Gurudwara",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/pm-modi-lays-foundation-stone-to-redevelop-manilas-century-old-khalsa-diwan-gurudwara-2026-11-17-141215",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Diplomacy",
-        "reason": "A diplomatic ceremonial event involving the Prime Minister of India and a foreign nation."
-      },
-      "classified_at": "2026-11-17T05:38:14.440835+00:00"
-    },
     {
       "title": "'Threatened With Death If She Spoke': BJP Demands Arrest Of Jharkhand Congress MLA In POCSO Case",
       "domain": "news18.com",
