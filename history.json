@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/heinous-attack-muslim-world-league-condemns-houthi-missile-attack-targeting-mecca-and-medina-regions-2026-10-25-139641",
-      "title": "'Heinous Attack': Muslim World League Condemns Houthi Missile Attack Targeting Mecca and Medina Regions",
-      "headline": "Muslim World League Condemns Houthi Missile Attack on Mecca and Medina",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18114281288335315",
-      "timestamp": "2026-10-25T14:12:39.692823+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/imran-khan-leave-india-notice-row-bombay-hc-to-hear-plea-on-october-26-possible-outcomes-and-case-explained-ws-lr-10397093.html?comscorekw=jionews",
       "title": "Imran Khan's Future in India at Stake: High Court to Hear \"Leave India\" Plea",
       "headline": "Imran Khan's Future in India at Stake: Bombay HC to Hear Plea",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18125216984285587",
       "timestamp": "2026-11-17T08:40:49.529340+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/andhra-cm-chandrababu-naidu-orders-evacuation-after-massive-gas-leak-at-ongc-well-in-konaseema-2026-11-17-141214",
+      "title": "Andhra CM Chandrababu Naidu Orders Evacuation After Massive Gas Leak at ONGC Well in Konaseema",
+      "headline": "Andhra CM Orders Evacuation After Massive Gas Leak at ONGC Well",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18106697993564344",
+      "timestamp": "2026-11-17T09:11:36.490077+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Andhra CM Chandrababu Naidu Orders Evacuation After Massive Gas Leak at ONGC Well in Konaseema",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/andhra-cm-chandrababu-naidu-orders-evacuation-after-massive-gas-leak-at-ongc-well-in-konaseema-2026-11-17-141214",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "A regional industrial incident requiring evacuation, but not of international consequence."
-      },
-      "classified_at": "2026-11-17T05:38:14.440842+00:00"
-    },
     {
       "title": "CRPF Orders Enhanced Security for J&K Troops After Kulgam Terror Attack",
       "domain": "news18.com",
