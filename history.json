@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/eminent-painter-jogen-chowdhury-passes-away-at-87-in-kolkata-cm-suvendu-adhikari-expresses-grief-2026-10-25-139647",
-      "title": "Eminent Painter Jogen Chowdhury Passes Away at 87 in Kolkata, CM Suvendu Adhikari Expresses Grief",
-      "headline": "Legendary Painter Jogen Chowdhury Passes Away at 87 in Kolkata",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17946411981359420",
-      "timestamp": "2026-10-25T15:35:52.679730+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/congress-president-mallikarjun-kharge-in-trouble-over-derogatory-remark-on-pm-modi-s-father-complaint-lodged-in-patna-2026-10-25-139650",
       "title": "Congress President Kharge Faces Complaint Over Derogatory Remark on PM Modi's Father.",
       "headline": "Congress President Kharge Faces Complaint Over Derogatory Remark on PM Modi's Father",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18083180864384345",
       "timestamp": "2026-11-17T10:04:05.395926+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/indian-origin-sisters-win-nearly-20-crore-inheritance-battle-against-brother-over-fathers-fortune-in-uk-court-ws-l-10428427.html?comscorekw=jionews",
+      "title": "Sisters Win £1.6M UK Inheritance Battle, Brother's Claims Rejected by Court",
+      "headline": "Sisters Win £1.6M UK Inheritance Battle, Brother's Claims Rejected",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18139985068660111",
+      "timestamp": "2026-11-17T10:30:23.234920+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Sisters Win £1.6M UK Inheritance Battle, Brother's Claims Rejected by Court",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/indian-origin-sisters-win-nearly-20-crore-inheritance-battle-against-brother-over-fathers-fortune-in-uk-court-ws-l-10428427.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A legal case involving inheritance, which is a matter of public interest but not of broad international consequence."
-      },
-      "classified_at": "2026-11-17T05:38:14.440848+00:00"
-    },
     {
       "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
       "domain": "news18.com",
