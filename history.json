@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/600-karnataka-umrah-pilgrims-stranded-minister-says-haj-committee-to-move-sc-as-cm-shivakumar-seeks-centres-help-ws-bklr-10396794.html?comscorekw=jionews",
-      "title": "Karnataka Pilgrims Stranded in Mecca: Haj Committee to Move Supreme Court",
-      "headline": "600 Pilgrims Stranded in Mecca: Karnataka Haj Committee to Move Supreme Court",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18091506746235042",
-      "timestamp": "2026-10-25T11:48:05.503419+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/this-is-how-russia-responds-to-diplomacy-and-deisolation-volodymyr-zelenskyy-condemns-recent-strikes-on-ukraine-2026-10-25-139637",
       "title": "'This is How Russia Responds to Diplomacy and Deisolation': Zelenskyy Condemns Recent Strikes on Ukraine",
       "headline": "Zelenskyy Condemns Russia's Response to Diplomacy",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120525538807410",
       "timestamp": "2026-11-17T06:30:42.763947+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-intel-indicates-iran-is-drawing-up-plans-for-potential-dirty-bomb-attack-in-washington-report-2026-11-17-141209",
+      "title": "US Intel Indicates Iran Is Drawing Up Plans for Potential 'Dirty Bomb' Attack in Washington: Report",
+      "headline": "US Intel Reports Iran Planning Potential 'Dirty Bomb' Attack in Washington",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18024387194951940",
+      "timestamp": "2026-11-17T06:56:16.577845+00:00"
     }
   ],
   "processed": [
@@ -4721,17 +4721,6 @@
         "reason": "A high-level diplomatic meeting involving heads of state and major global powers."
       },
       "classified_at": "2026-11-17T05:38:14.440855+00:00"
-    },
-    {
-      "title": "US Intel Indicates Iran Is Drawing Up Plans for Potential 'Dirty Bomb' Attack in Washington: Report",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/us-intel-indicates-iran-is-drawing-up-plans-for-potential-dirty-bomb-attack-in-washington-report-2026-11-17-141209",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A significant security threat report involving a potential WMD attack on US soil."
-      },
-      "classified_at": "2026-11-17T05:38:14.440857+00:00"
     }
   ],
   "quota_cooldown": {
