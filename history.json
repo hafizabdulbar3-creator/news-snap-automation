@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/former-army-officer-arrested-in-vellore-for-allegedly-leaking-military-secrets-to-unidentified-woman-2026-10-25-139635",
-      "title": "Former Army Officer Arrested in Vellore for Allegedly Leaking Military Secrets to Unidentified Woman",
-      "headline": "Former Army Captain Arrested in Vellore Over Alleged Military Secrets Leak",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18273603916306290",
-      "timestamp": "2026-10-25T11:21:42.692094+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/600-karnataka-umrah-pilgrims-stranded-minister-says-haj-committee-to-move-sc-as-cm-shivakumar-seeks-centres-help-ws-bklr-10396794.html?comscorekw=jionews",
       "title": "Karnataka Pilgrims Stranded in Mecca: Haj Committee to Move Supreme Court",
       "headline": "600 Pilgrims Stranded in Mecca: Karnataka Haj Committee to Move Supreme Court",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18079750355450045",
       "timestamp": "2026-11-17T06:04:16.139785+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bay-of-bengal-alert-cyclone-akvan-set-to-hit-andhra-coast-as-very-severe-storm-on-nov-20-2026-11-17-141210",
+      "title": "Bay of Bengal Alert: Cyclone Akvan Set to Hit Andhra Coast as Very Severe Storm on Nov 20",
+      "headline": "Bay of Bengal Alert: Cyclone Akvan to Hit Andhra Coast",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18120525538807410",
+      "timestamp": "2026-11-17T06:30:42.763947+00:00"
     }
   ],
   "processed": [
@@ -4699,17 +4699,6 @@
         "reason": "A domestic political strategy regarding electoral boundaries."
       },
       "classified_at": "2026-11-17T05:38:14.440850+00:00"
-    },
-    {
-      "title": "Bay of Bengal Alert: Cyclone Akvan Set to Hit Andhra Coast as Very Severe Storm on Nov 20",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bay-of-bengal-alert-cyclone-akvan-set-to-hit-andhra-coast-as-very-severe-storm-on-nov-20-2026-11-17-141210",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Weather",
-        "reason": "A severe weather event posing a significant threat to coastal populations."
-      },
-      "classified_at": "2026-11-17T05:38:14.440852+00:00"
     },
     {
       "title": "Will Pakistan Raise Indus Water Row On Indian Soil? Minister Keeps Agenda Open Ahead Of SCO Forum",
