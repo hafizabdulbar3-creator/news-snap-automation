@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/yemen-army-launches-753-strikes-claims-218-houthi-fighters-neutralised-in-24-hours-2026-10-25-139664",
-      "title": "Yemen Army Launches 753 Strikes, Claims 218 Houthi Fighters Neutralised In 24 Hours",
-      "headline": "Yemen Army Launches 753 Strikes, Claims 218 Houthi Fighters Neutralised",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18108651977248944",
-      "timestamp": "2026-10-25T23:22:41.127884+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/mbappe-double-downs-yamal-s-barcelona-as-real-madrid-win-2-1-clasico-at-camp-nou-2026-10-25-139663",
       "title": "Mbappe Double Downs Yamal's Barcelona As Real Madrid Win 2-1 Clasico At Camp Nou",
       "headline": "Mbappe Scores Twice As Real Madrid Beat Barcelona 2-1 At Camp Nou",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17964755361252665",
       "timestamp": "2026-11-17T17:12:38.142627+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/sorry-boss-vice-city-is-calling-how-millions-of-workers-are-pulling-a-four-day-heist-on-office-attendance-for-gta-6-ws-lrt-10429895.html?comscorekw=jionews",
+      "title": "Boss, Vice City Calls! Millions Worldwide Take Leave for Epic GTA 6 Launch",
+      "headline": "Boss, Vice City Calls! Millions Take Leave for GTA 6",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17899253025416574",
+      "timestamp": "2026-11-17T17:38:57.379038+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Ali Fazal Bags His Next International Project, To Headline Richie Mehta's 'A Passage To India'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/web-series/ali-fazal-bags-his-next-international-project-to-headline-richie-mehtas-a-passage-to-india-ws-l-10429897.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "An actor securing a role in an international film project is a standard industry milestone and does not meet the threshold for a major geopolitical or economic event."
+      },
+      "classified_at": "2026-11-17T17:38:30.230875+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
