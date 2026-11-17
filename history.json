@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/tiger-shroffs-spokesperson-rejects-reports-claiming-actor-asked-why-was-i-attacked-ws-kl-10397185.html?comscorekw=jionews",
-      "title": "Tiger Shroff's Spokesperson Rejects Reports Claiming Actor Asked 'Why Was I Attacked?'",
-      "headline": "Tiger Shroff's Spokesperson Denies Actor Asked 'Why Was I Attacked?",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18218374966350843",
-      "timestamp": "2026-10-25T16:48:35.662946+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/telugu-cinema/javed-akhtar-backs-rashmika-mandanna-amid-accent-trolling-ws-lr-10397221.html?comscorekw=jionews",
       "title": "'Linguistic Superiority Is Not Acceptable': Javed Akhtar Backs Rashmika Mandanna Amid Accent Trolling",
       "headline": "Javed Akhtar Criticizes Linguistic Superiority in Support of Rashmika Mandanna",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17905333059369672",
       "timestamp": "2026-11-17T11:01:33.025493+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/it-is-a-constructed-and-trusted-partnership-pm-modi-speaks-at-quad-summit-in-manila-10429261.html?comscorekw=jionews",
+      "title": "'It Is A Constructive And Trusted Partnership': PM Modi Speaks At Quad Summit In Manila",
+      "headline": "PM Modi Calls Quad Partnership 'Constructive And Trusted",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18350251024270846",
+      "timestamp": "2026-11-17T11:27:44.619302+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,96 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Modi Is a Tough Man': US President Trump Praises PM Modi During Quad Leaders' Meeting in Philippines",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/us-president-trump-calls-pm-modi-a-tough-man-during-quad-leaders-meeting-in-philippines-2026-11-17-141248",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Statement by the US President regarding the Indian Prime Minister during a major international summit (Quad) holds significant geopolitical weight."
+      },
+      "classified_at": "2026-11-17T11:27:19.534727+00:00"
+    },
+    {
+      "title": "'As A True Hindu...': Rahul Gandhi, Congress Respond To 'Mumma In Papa's Lap' Remark Row With 'Love'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/as-a-true-hindu-rahul-gandhi-congress-respond-to-sonia-book-launch-row-remarks-with-love-ws-klrt-10429266.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political response to a remark by a party leader, typical of domestic political discourse."
+      },
+      "classified_at": "2026-11-17T11:27:19.534745+00:00"
+    },
+    {
+      "title": "Parents Dip Child into Foam-Covered Yamuna, Sparks Outrage Over Pollution",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/parents-dip-child-into-foam-covered-yamuna-while-other-kids-play-nearby-video-sparks-outrage-its-very-dangerous-ws-l-10429163.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Social Issues",
+        "reason": "A local incident involving pollution and public outrage, though sensitive, is a regional social issue rather than a global geopolitical event."
+      },
+      "classified_at": "2026-11-17T11:27:19.534750+00:00"
+    },
+    {
+      "title": "India Calls For 'Country-Driven' Just Transition As Talks Enter Crucial Week At COP31",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/india-calls-for-country-driven-just-transition-as-talks-enter-crucial-week-at-cop31-ws-l-10429264.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "India's stance at COP31 (Climate Change) is a major international diplomatic event with global consequences."
+      },
+      "classified_at": "2026-11-17T11:27:19.534752+00:00"
+    },
+    {
+      "title": "Bilkis Bano Questions SC Over Bail to Two Convicts, Says She Was Not Informed or Heard Before Order",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bilkis-bano-questions-sc-over-bail-to-two-convicts-says-she-was-not-informed-or-heard-before-order-2026-11-17-141247",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A legal petition regarding a specific case, while important to the parties involved, is a localized legal matter."
+      },
+      "classified_at": "2026-11-17T11:27:19.534754+00:00"
+    },
+    {
+      "title": "WHO Issues First-Ever Type 1 Diabetes Guidelines For Adults: 5 Things Patients Should Know",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/who-issues-first-ever-type-1-diabetes-guidelines-for-adults-5-things-patients-should-know-ws-lt-10429240.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "Health guidelines issued by a major international body are of public interest but are not a geopolitical crisis."
+      },
+      "classified_at": "2026-11-17T11:27:19.534756+00:00"
+    },
+    {
+      "title": "When The Numbers Don't Add Up, Does The Law Change? The Gokul Dairy Lesson",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/when-the-numbers-dont-add-up-does-the-law-change-the-gokul-dairy-lesson-ws-kl-10429244.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A legal and business case involving a dairy company is a regional economic/legal matter."
+      },
+      "classified_at": "2026-11-17T11:27:19.534758+00:00"
+    },
+    {
+      "title": "Balochistan Appeals To 195 Nations, Seeks Global Recognition As Independent State",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/balochistan-appeals-to-195-nations-seeks-global-recognition-as-independent-state-ws-kl-10429241.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A diplomatic appeal for independence by a region (Balochistan) is a regional political issue, though it touches on international relations."
+      },
+      "classified_at": "2026-11-17T11:27:19.534759+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
