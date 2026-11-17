@@ -4653,11 +4653,11 @@
   "token_metadata": {
     "token_type": "bearer",
     "expires_in": 5184000,
-    "refreshed_at": "2026-11-16T11:58:04.469408+00:00",
-    "expires_at": "2027-01-15T11:58:04.469408+00:00",
+    "refreshed_at": "2026-11-17T12:22:18.234475+00:00",
+    "expires_at": "2027-01-16T12:22:18.234475+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-16T11:58:06.032152+00:00"
+    "updated_at": "2026-11-17T12:22:19.793208+00:00"
   }
 }
