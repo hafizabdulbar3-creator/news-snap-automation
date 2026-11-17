@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/info/skipping-bp-pills-means-no-protection-against-heart-attack-stroke-91000-patient-study-finds-2026-10-25-139662",
-      "title": "Skipping BP Pills Means No Protection Against Heart Attack, Stroke: 91,000-Patient Study Finds",
-      "headline": "Skipping BP Pills Means No Protection Against Heart Attack, Stroke",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17919340827455502",
-      "timestamp": "2026-10-25T22:56:51.201570+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/yemen-army-launches-753-strikes-claims-218-houthi-fighters-neutralised-in-24-hours-2026-10-25-139664",
       "title": "Yemen Army Launches 753 Strikes, Claims 218 Houthi Fighters Neutralised In 24 Hours",
       "headline": "Yemen Army Launches 753 Strikes, Claims 218 Houthi Fighters Neutralised",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18116548577140232",
       "timestamp": "2026-11-17T16:46:38.194179+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/car-insurance-documents-paper-copy-vs-digilocker-for-accident-claims-in-india-2026-11-17-141256",
+      "title": "Car Insurance Documents: Paper Copy vs DigiLocker for Accident Claims in India",
+      "headline": "Paper Copy vs DigiLocker for Accident Claims in India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17964755361252665",
+      "timestamp": "2026-11-17T17:12:38.142627+00:00"
     }
   ],
   "processed": [
@@ -4575,19 +4575,7 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Car Insurance Documents: Paper Copy vs DigiLocker for Accident Claims in India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/car-insurance-documents-paper-copy-vs-digilocker-for-accident-claims-in-india-2026-11-17-141256",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business & Economy",
-        "reason": "A consumer advisory regarding insurance documentation in India is a matter of public interest and policy, but lacks the scale of a major geopolitical event."
-      },
-      "classified_at": "2026-11-17T16:46:14.816946+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
