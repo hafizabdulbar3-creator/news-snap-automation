@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/weve-turned-the-whole-thing-around-trump-says-republicans-gaining-ground-ahead-of-midterms-ws-l-10397240.html?comscorekw=jionews",
-      "title": "'We've Turned The Whole Thing Around': Trump Says Republicans Gaining Ground Ahead Of Midterms",
-      "headline": "Trump Claims Republicans Gaining Ground Ahead Of Midterms",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17911489026509460",
-      "timestamp": "2026-10-25T17:50:45.670975+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/voter-id-cards-found-dumped-on-narmada-riverbank-in-mps-khargone-congress-demands-fir-after-recovery-in-mandleshwar-2026-10-25-139651",
       "title": "Voter ID Cards Found Dumped In Narmada In MP's Khargone: Congress Demands FIR After Recovery",
       "headline": "Voter ID Cards Dumped In Narmada River In MP's Khargone",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18085849715725323",
       "timestamp": "2026-11-17T11:53:31.374415+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bilkis-bano-questions-sc-over-bail-to-two-convicts-says-she-was-not-informed-or-heard-before-order-2026-11-17-141247",
+      "title": "Bilkis Bano Questions SC Over Bail to Two Convicts, Says She Was Not Informed or Heard Before Order",
+      "headline": "Bilkis Bano Questions SC Over Bail to Two Convicts",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18644895985034265",
+      "timestamp": "2026-11-17T12:20:16.835047+00:00"
     }
   ],
   "processed": [
@@ -4608,17 +4608,6 @@
         "reason": "A local incident involving pollution and public outrage, though sensitive, is a regional social issue rather than a global geopolitical event."
       },
       "classified_at": "2026-11-17T11:27:19.534750+00:00"
-    },
-    {
-      "title": "Bilkis Bano Questions SC Over Bail to Two Convicts, Says She Was Not Informed or Heard Before Order",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bilkis-bano-questions-sc-over-bail-to-two-convicts-says-she-was-not-informed-or-heard-before-order-2026-11-17-141247",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal",
-        "reason": "A legal petition regarding a specific case, while important to the parties involved, is a localized legal matter."
-      },
-      "classified_at": "2026-11-17T11:27:19.534754+00:00"
     },
     {
       "title": "WHO Issues First-Ever Type 1 Diabetes Guidelines For Adults: 5 Things Patients Should Know",
