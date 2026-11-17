@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cricket/drama-in-lahore-shadab-khan-gets-lbw-on-97-players-shake-hands-and-then-drs-finds-an-edge-ws-l-10397246.html?comscorekw=jionews",
-      "title": "Drama In Lahore: Shadab Khan Gets LBW On 97, Players Shake Hands... And Then DRS Finds An Edge",
-      "headline": "Shadab Khan LBW On 97, But DRS Reveals Inside Edge",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18357383032218602",
-      "timestamp": "2026-10-25T19:08:38.799338+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/iwf-awards-2029-world-weightlifting-championships-to-ahmedabad-first-time-for-india-2026-10-25-139654",
       "title": "IWF Awards 2029 World Weightlifting Championships To Ahmedabad, First Time For India",
       "headline": "IWF Awards 2029 World Weightlifting Championships To Ahmedabad",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17980314057138299",
       "timestamp": "2026-11-17T13:12:03.593135+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/parents-dip-child-into-foam-covered-yamuna-while-other-kids-play-nearby-video-sparks-outrage-its-very-dangerous-ws-l-10429163.html?comscorekw=jionews",
+      "title": "Parents Dip Child into Foam-Covered Yamuna, Sparks Outrage Over Pollution",
+      "headline": "Parents Dip Child into Foam-Covered Yamuna, Sparks Outrage Over Pollution",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18052819271812951",
+      "timestamp": "2026-11-17T13:38:15.628446+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Parents Dip Child into Foam-Covered Yamuna, Sparks Outrage Over Pollution",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/parents-dip-child-into-foam-covered-yamuna-while-other-kids-play-nearby-video-sparks-outrage-its-very-dangerous-ws-l-10429163.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Social Issues",
-        "reason": "A local incident involving pollution and public outrage, though sensitive, is a regional social issue rather than a global geopolitical event."
-      },
-      "classified_at": "2026-11-17T11:27:19.534750+00:00"
-    },
     {
       "title": "WHO Issues First-Ever Type 1 Diabetes Guidelines For Adults: 5 Things Patients Should Know",
       "domain": "news18.com",
