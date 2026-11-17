@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/taiwan-detects-3-chinese-aircraft-6-naval-vessels-9-official-ships-around-its-territory-mnd-2026-10-26-139670",
-      "title": "Taiwan Detects 3 Chinese Aircraft, 6 Naval Vessels, 9 Official Ships Around Its Territory: MND",
-      "headline": "Taiwan Detects 3 Chinese Aircraft, 6 Naval Vessels, 9 Official Ships",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17899290027393340",
-      "timestamp": "2026-10-26T02:18:53.008230+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/jamia-protest-students-reject-poll-assurance-vow-to-continue-agitation-over-unclear-timeline-2026-10-26-139671",
       "title": "Jamia Protest: Students Reject Poll Assurance, Vow To Continue Agitation Over Unclear Timeline",
       "headline": "Jamia Protest: Students Reject Poll Assurance, Vow To Continue Agitation",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17880458025565787",
       "timestamp": "2026-11-17T20:10:03.703519+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-high-court-suspends-sentence-of-person-convicted-under-pocso-act-and-ipc-provisions-during-pendency-of-appeal-2026-11-17-141260",
+      "title": "High Court Suspends POCSO Convict's Sentence Amidst Appeal Delay",
+      "headline": "Delhi HC Suspends Convict's Sentence During Appeal Pendency",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18111354500246449",
+      "timestamp": "2026-11-17T20:36:01.578429+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "HAEMATOCON 2026 in Ahmedabad Brings Global Haematology Experts Together for Scientific Collaboration",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/haematocon-2026-in-ahmedabad-brings-global-haematology-experts-together-for-scientific-collaboration-2026-11-17-141259",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Science & Health",
+        "reason": "A medical conference bringing experts together is a notable event within the scientific community but is not a major geopolitical event or a broad international consequence."
+      },
+      "classified_at": "2026-11-17T20:35:30.410975+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
