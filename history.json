@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/nana-patole-claims-ib-report-predicted-160-mva-seats-alleges-plot-over-polling-data-ws-klt-10396822.html?comscorekw=jionews",
-      "title": "Nana Patole Claims IB Report Predicted 160 MVA Seats, Alleges Plot Over Polling Data",
-      "headline": "Nana Patole Claims IB Report Predicted 160 MVA Seats",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18116660087017067",
-      "timestamp": "2026-10-25T12:55:02.155750+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/pakistan-karachi-power-crisis-deepens-as-k-electric-extends-loadshedding-2026-10-25-139638",
       "title": "Pakistan: Karachi Power Crisis Deepens as K-Electric Extends Loadshedding",
       "headline": "Pakistan: Karachi Power Crisis Deepens as K-Electric Extends Loadshedding",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18645548815061265",
       "timestamp": "2026-11-17T07:22:23.523420+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/mohan-bhagwat-flagged-foreign-powers-designs-against-india-is-congress-giving-the-warning-a-face-ws-l-10428481.html?comscorekw=jionews",
+      "title": "Mohan Bhagwat Flagged Foreign Powers' Designs Against India. Is Congress Giving The Warning A Face?",
+      "headline": "Mohan Bhagwat Flags Foreign Designs Against India",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18116613440163004",
+      "timestamp": "2026-11-17T07:48:16.817230+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mohan Bhagwat Flagged Foreign Powers' Designs Against India. Is Congress Giving The Warning A Face?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/mohan-bhagwat-flagged-foreign-powers-designs-against-india-is-congress-giving-the-warning-a-face-ws-l-10428481.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political commentary regarding internal party dynamics and rhetoric, not a major geopolitical event."
-      },
-      "classified_at": "2026-11-17T05:38:14.440814+00:00"
-    },
     {
       "title": "PM Modi Lays Foundation Stone to Redevelop Manila's Century-Old Khalsa Diwan Gurudwara",
       "domain": "republicworld.com",
