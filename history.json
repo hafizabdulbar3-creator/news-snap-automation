@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/guilty-of-ballot-harvesting-republican-senator-takes-aim-at-california-as-trump-threatens-jail-time-ws-lrt-10397400.html?comscorekw=jionews",
-      "title": "'Guilty Of Ballot Harvesting': Republican Senator Takes Aim At California As Trump Threatens Jail Time",
-      "headline": "Republican Senator Accuses California Of Ballot Harvesting",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18128519032831726",
-      "timestamp": "2026-10-26T05:51:43.677178+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/netanyahu-vs-eisenkot-trumps-endorsement-iran-threat-and-holocaust-warning-shake-israel-poll-battle-2026-10-26-139678",
       "title": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
       "headline": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18130552597920977",
       "timestamp": "2026-11-18T01:01:38.832889+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/trump-team-pushes-50-billion-air-safety-plan-after-ground-stop-cost-airlines-345-million-congress-pushes-back-2026-11-18-141267",
+      "title": "Trump's $50 Billion Air Safety Plan Faces Congressional Pushback After Costly FAA Ground Stop",
+      "headline": "Trump's Air Safety Plan Faces Congressional Pushback",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18176134489413454",
+      "timestamp": "2026-11-18T01:28:06.346546+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,30 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "J&K Forces Corner Most Wanted LeT Terrorist Lateef Bhat in Kulgam",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/kulgam-encounter-jk-police-army-and-crpf-corner-most-wanted-let-commander-lateef-bhat-in-joint-operation-2026-11-18-141268",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Reports on a significant security operation against a high-profile terrorist target, which is a matter of national security and public safety."
+      },
+      "classified_at": "2026-11-18T01:27:34.857867+00:00"
+    },
+    {
+      "title": "Advocate Moves Delhi HC Seeking Criminal Contempt Against Ratna Singh Over Saket Judge Remarks",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/advocate-moves-delhi-hc-seeking-criminal-contempt-against-ratna-singh-over-saket-judge-remarks-2026-11-17-141261",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A legal proceeding involving a public official and a court order, which is a standard matter of public interest and judicial process."
+      },
+      "classified_at": "2026-11-18T01:27:34.857871+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
