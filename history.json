@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/business/60000-employees-of-microsoft-offered-exit-tech-giant-pushes-voluntary-buyouts-in-us-india-uk-canada-2026-10-26-139725",
-      "title": "Microsoft Offers 60,000 Employees Voluntary Buyouts Amid AI Investment Push",
-      "headline": "Microsoft Offers Voluntary Buyouts to 60,000 Employees",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17909404341325509",
-      "timestamp": "2026-10-26T21:56:01.271916+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/jamia-issues-final-warning-to-vacate-gulistan-e-ghalib-after-reviving-student-union-polls-after-20-years-2026-10-26-139728",
       "title": "Jamia Issues Final Warning To Vacate Gulistan-e-Ghalib After Reviving Student Union Polls After 20 Years",
       "headline": "Jamia Issues Final Warning To Vacate Gulistan-e-Ghalib",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18134194438755306",
       "timestamp": "2026-11-18T15:11:18.889319+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/those-under-12-barred-from-taking-lifts-escalators-moving-walkways-alone-the-new-rules-in-maharashtra-explained-ws-eklt-10430930.html?comscorekw=jionews",
+      "title": "Those Under 12 Can't Ride Lifts, Escalators Alone: Maharashtra's New Safety Rules Explained",
+      "headline": "Maharashtra Bars Kids Under 12 From Riding Lifts, Escalators Alone",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17879186943635102",
+      "timestamp": "2026-11-18T15:38:04.786267+00:00"
     }
   ],
   "processed": [
@@ -4603,17 +4603,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Those Under 12 Can't Ride Lifts, Escalators Alone: Maharashtra's New Safety Rules Explained",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/those-under-12-barred-from-taking-lifts-escalators-moving-walkways-alone-the-new-rules-in-maharashtra-explained-ws-eklt-10430930.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional Policy",
-        "reason": "A report on a specific safety regulation implemented by the Maharashtra government, which is a matter of public interest and regional policy."
-      },
-      "classified_at": "2026-11-18T14:45:00.391288+00:00"
-    },
     {
       "title": "Cockroaches, Flies, Unhygienic Kitchens: FDA Cracks Down on 9 Mumbai Restaurants",
       "domain": "news18.com",
