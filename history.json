@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/agra-teachers-mlc-poll-row-eci-suspends-6-officers-for-lapses-orders-action-against-21-others-2026-10-26-139719",
-      "title": "Agra Teachers' MLC Poll Row: ECI Suspends 6 Officers For Lapses, Orders Action Against 21 Others",
-      "headline": "ECI Suspends 6 Officers Over Agra Teachers' MLC Poll Lapses",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17973370683155349",
-      "timestamp": "2026-10-26T19:03:46.670875+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/maharashtra-govt-to-assess-impact-of-telangana-irrigation-project-orders-joint-study-ws-l-10398756.html?comscorekw=jionews",
       "title": "Maharashtra Govt To Assess Impact of Telangana Irrigation Project, Orders Joint Study",
       "headline": "Maharashtra Orders Joint Study on Telangana Irrigation Project",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18196274935404807",
       "timestamp": "2026-11-18T13:42:39.309238+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/gta-6-launch-begins-worldwide-as-millions-enter-vice-city-after-13-years-of-anticipation-2026-11-18-141327",
+      "title": "GTA 6 Launch Begins Worldwide as Millions Enter Vice City After 13 Years of Anticipation",
+      "headline": "GTA 6 Launch Begins Worldwide as Millions Enter Vice City",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18648466450020036",
+      "timestamp": "2026-11-18T14:13:50.302352+00:00"
     }
   ],
   "processed": [
@@ -4594,17 +4594,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "GTA 6 Launch Begins Worldwide as Millions Enter Vice City After 13 Years of Anticipation",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/gta-6-launch-begins-worldwide-as-millions-enter-vice-city-after-13-years-of-anticipation-2026-11-18-141327",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "Major entertainment release with broad public interest, but falls under consumer tech/gaming rather than geopolitical consequence."
-      },
-      "classified_at": "2026-11-18T13:42:03.933577+00:00"
-    },
     {
       "title": "Jaishankar Urges Japan to Update India's Image, Deepen Ties",
       "domain": "republicworld.com",
