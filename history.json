@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/three-dead-in-firing-incident-in-lucknow-accused-arrested-2026-10-26-139707",
-      "title": "Three Dead in Firing Incident in Lucknow, Accused Arrested",
-      "headline": "Three Dead in Lucknow Firing Incident, Accused Arrested",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18113211752169097",
-      "timestamp": "2026-10-26T13:10:41.146377+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/pm-modi-wants-gurugram-metro-fast-tracked-1662-crore-phase-2-tender-floated-ws-klrt-10398432.html?comscorekw=jionews",
       "title": "PM Modi Wants Gurugram Metro Fast-Tracked, ₹1,662-Crore Phase 2 Tender Floated",
       "headline": "PM Modi Pushes for Fast-Track Gurugram Metro Phase 2",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18183774604429257",
       "timestamp": "2026-11-18T08:24:22.867224+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/saudi-led-coalition-launches-major-strikes-on-houthis-in-yemen-17-reported-killed-2026-11-18-141304",
+      "title": "Saudi-Led Coalition Launches Major Strikes On Houthis In Yemen; 17 Reported Killed",
+      "headline": "Saudi-Led Coalition Launches Major Strikes On Houthis In Yemen",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18023302367730119",
+      "timestamp": "2026-11-18T08:50:33.224396+00:00"
     }
   ],
   "processed": [
