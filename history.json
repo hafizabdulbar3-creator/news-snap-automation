@@ -4609,6 +4609,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/tech/who-is-cenly-chen-2-5-billion-nvidia-chip-smuggling-probe-puts-spotlight-on-former-no-3-jay-puri-ws-lrt-10431698.html?comscorekw=jionews",
+      "title": "'Who Is Cenly Chen?': $2.5 Billion Nvidia Chip Smuggling Probe Puts Spotlight On Former No. 3 Jay Puri",
+      "domain": "news18.com",
+      "timestamp": "2026-11-18T23:11:57.132453+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [],
