@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/atros-water-and-the-mystery-of-the-changing-tap-why-one-purifier-may-not-suit-every-home-2026-10-26-139735",
-      "title": "ATROS Water and the Mystery of the Changing Tap: Why One Purifier May Not Suit Every Home",
-      "headline": "ATROS Water: Why One Purifier May Not Suit Every Home",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18338668918279697",
-      "timestamp": "2026-10-27T00:37:08.422255+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/india-dominate-nigeria-in-commonwealth-kabaddi-championship-women-book-semis-with-38-10-win-2026-10-26-139737",
       "title": "India Dominate Nigeria In Commonwealth Kabaddi Championship, Women Book Semis With 38-10 Win",
       "headline": "India Dominate Nigeria In Commonwealth Kabaddi Championship",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18339230443278350",
       "timestamp": "2026-11-18T17:58:30.598891+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/jammu/jammu-kathgodam-trains-cancelled-for-fog-season-check-train-numbers-dates-and-routes-ws-l-10430537.html?comscorekw=jionews",
+      "title": "Jammu-Kathgodam Trains Cancelled For Fog Season: Check Train Numbers, Dates And Routes",
+      "headline": "Jammu-Kathgodam Trains Cancelled For Fog Season",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17990491571882427",
+      "timestamp": "2026-11-18T18:24:32.606746+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Jammu-Kathgodam Trains Cancelled For Fog Season: Check Train Numbers, Dates And Routes",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/jammu/jammu-kathgodam-trains-cancelled-for-fog-season-check-train-numbers-dates-and-routes-ws-l-10430537.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Transport",
-        "reason": "This is a routine operational update regarding train cancellations due to weather conditions."
-      },
-      "classified_at": "2026-11-18T17:58:02.490918+00:00"
-    },
     {
       "title": "BJP's Women-First Strategy For UP 2027: 403 Organisers To Take Party's Message To Doorsteps",
       "domain": "news18.com",
