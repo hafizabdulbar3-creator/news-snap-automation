@@ -4573,6 +4573,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/india/from-ghaziabad-to-ghazipur-the-numbers-behind-ups-delimitation-puzzle-that-make-sp-anxious-ws-l-10430136.html?comscorekw=jionews",
+      "title": "From Ghaziabad To Ghazipur: The Numbers Behind UP's Delimitation Puzzle That Make SP Anxious",
+      "domain": "news18.com",
+      "timestamp": "2026-11-18T04:40:28.329459+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
