@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/rs-500-crore-jarange-patil-row-sanjay-raut-seeks-ed-probe-writes-to-amit-shah-ws-klrt-10398132.html?comscorekw=jionews",
-      "title": "Rs 500-Crore Jarange Patil Row: Sanjay Raut Seeks ED Probe, Writes To Amit Shah",
-      "headline": "Sanjay Raut Seeks ED Probe Into Rs 500-Crore Jarange Patil Row",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18131375554702016",
-      "timestamp": "2026-10-26T11:26:42.342831+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/bihar-student-dies-under-suspicious-circumstances-in-kota-probe-underway-2026-10-26-139704",
       "title": "Bihar Student Dies Under Suspicious Circumstances in Kota, Probe Underway",
       "headline": "Bihar Student Found Unconscious in Kota, Dies Under Suspicious Circumstances",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18119262749623028",
       "timestamp": "2026-11-18T06:35:35.438669+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/did-anyone-think-of-an-airport-in-jewar-yogi-says-how-he-boosted-ups-infrastructure-economy-ws-lrt-10430373.html?comscorekw=jionews",
+      "title": "'Did Anyone Think Of An Airport In Jewar?' Yogi Says How He Boosted UP's 'Infrastructure Economy'",
+      "headline": "Did Anyone Think Of An Airport In Jewar? Yogi Says How He Boosted UP's",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18361837435171030",
+      "timestamp": "2026-11-18T07:06:29.033702+00:00"
     }
   ],
   "processed": [
@@ -4584,7 +4584,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Xi, Putin Blast Western 'Protectionism', Sanctions Before Meeting Trump at APEC",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/xi-putin-blast-western-protectionism-sanctions-before-meeting-trump-at-apec-2026-11-18-141293",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A meeting between world leaders (Xi and Putin) discussing geopolitical tensions and sanctions."
+      },
+      "classified_at": "2026-11-18T07:05:55.624052+00:00"
+    },
+    {
+      "title": "'Batenge Toh Katenge', 320+ Seats, Mathura-Kashi: CM Yogi's UP Pitch At Rising Bharat Summit | Top Points",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/batenge-toh-katenge-320-seats-mathura-kashi-cm-yogis-up-pitch-at-rising-bharat-summit-top-points-ws-lr-10430419.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political rally and speech focusing on regional electoral strategy and rhetoric."
+      },
+      "classified_at": "2026-11-18T07:05:55.624056+00:00"
+    },
+    {
+      "title": "How UP Went From Training 6,000 Cops To 60,000 At A Time During BJP Rule: CM Yogi Explains",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/training-6000-to-60000-cops-at-a-time-how-yogi-adityanath-boosted-ups-police-training-capacity-ws-klrt-10430409.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political explanation regarding the expansion of police forces in a specific state."
+      },
+      "classified_at": "2026-11-18T07:05:55.624059+00:00"
+    },
+    {
+      "title": "Returning From Bihar After Chhath? Railways Adds Special Trains, Sets Up Holding Areas At Busy Stations",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/patna-news/returning-from-bihar-after-chhath-railways-adds-special-trains-sets-up-holding-areas-at-busy-stations-ws-l-10430222.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Transport",
+        "reason": "A logistical response to a regional festival affecting railway services."
+      },
+      "classified_at": "2026-11-18T07:05:55.624063+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
