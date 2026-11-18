@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/viral/im-unemployed-employee-claims-he-was-fired-after-reporting-workplace-abuse-to-hr-shares-emails-ws-l-10397614.html?comscorekw=jionews",
-      "title": "'I'm Unemployed': Employee Claims He Was Fired After Reporting 'Workplace Abuse' To HR, Shares Emails",
-      "headline": "Employee Claims Fired After Reporting Workplace Abuse to HR",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18096861530408372",
-      "timestamp": "2026-10-26T08:06:28.183981+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/markets/from-infosys-to-railtel-6-stocks-announce-dividends-check-amounts-record-dates-shil-ws-l-10397809.html?comscorekw=jionews",
       "title": "From Infosys To RailTel: 6 Stocks Announce Dividends; Check Amounts, Record Dates",
       "headline": "Infosys, RailTel, CRISIL Announce Interim Dividends",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18652112041055783",
       "timestamp": "2026-11-18T03:17:17.584431+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/just-24-seats-to-start-with-sps-opening-offer-to-congress-could-set-stage-for-tough-up-poll-talks-ws-l-10430046.html?comscorekw=jionews",
+      "title": "Just 24 Seats To Start With? SP's Opening Offer To Congress Could Set Stage For Tough UP Poll Talks",
+      "headline": "SP Offers Congress Just 24 Seats For UP Polls",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18091743044269454",
+      "timestamp": "2026-11-18T03:44:03.676060+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Just 24 Seats To Start With? SP's Opening Offer To Congress Could Set Stage For Tough UP Poll Talks",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/just-24-seats-to-start-with-sps-opening-offer-to-congress-could-set-stage-for-tough-up-poll-talks-ws-l-10430046.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Focuses on regional political negotiations and seat allocations for upcoming state elections in India."
-      },
-      "classified_at": "2026-11-18T02:45:54.479874+00:00"
-    },
     {
       "title": "Security Tightened in J&K's Kulgam Following Fresh Encounter with Terrorists",
       "domain": "republicworld.com",
