@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/trump-offers-1-million-bounty-for-voter-fraud-proof-leading-to-arrest-and-conviction-before-midterms-2026-10-26-139738",
-      "title": "Trump Offers $1 Million Bounty For Voter Fraud Proof Leading To Arrest And Conviction Before Midterms",
-      "headline": "Trump Offers $1 Million Bounty For Voter Fraud Proof",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18098668778415648",
-      "timestamp": "2026-10-27T01:34:21.236145+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/israel-votes-today-iran-war-netanyahus-future-and-the-battle-for-61-seats-ws-l-10398847.html?comscorekw=jionews",
       "title": "Israel Votes Today: Iran War, Netanyahu's Future And The Battle For 61 Seats",
       "headline": "Israel Votes Today: Iran War, Netanyahu's Future And The Battle For 61 Seats",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18400244122163828",
       "timestamp": "2026-11-18T18:50:34.848664+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/bjps-women-first-strategy-for-up-2027-403-organisers-to-take-partys-message-to-doorsteps-ws-l-10430624.html?comscorekw=jionews",
+      "title": "BJP's Women-First Strategy For UP 2027: 403 Organisers To Take Party's Message To Doorsteps",
+      "headline": "BJP's Women-First Strategy For UP 2027: 403 Organisers To Take Message To Doorsteps",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18112255838246897",
+      "timestamp": "2026-11-18T19:16:42.292017+00:00"
     }
   ],
   "processed": [
@@ -4611,19 +4611,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "BJP's Women-First Strategy For UP 2027: 403 Organisers To Take Party's Message To Doorsteps",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/bjps-women-first-strategy-for-up-2027-403-organisers-to-take-partys-message-to-doorsteps-ws-l-10430624.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This covers a political strategy for a state election, which is a notable regional public interest story."
-      },
-      "classified_at": "2026-11-18T17:58:02.490935+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
