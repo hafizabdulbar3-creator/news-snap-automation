@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/movies/bollywood/armaan-malik-reacts-to-ramayana-song-mangal-rangs-criticism-i-surrendered-to-ar-rahmans-vision-ws-kl-10426785.html?comscorekw=jionews",
-      "title": "Armaan Malik Reacts To Ramayana Song Mangal Rang's Criticism: 'I Surrendered To AR Rahman's Vision'",
-      "domain": "news18.com",
-      "timestamp": "2026-11-15T16:11:30.884458+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/india/pm-modi-kicks-off-manila-visit-by-interacting-with-indian-diaspora-attends-local-ramayana-staging-2026-11-16-141173",
       "title": "PM Modi Kicks Off Manila Visit by Interacting With Indian Diaspora, Attends Local Ramayana Staging",
       "domain": "republicworld.com",
@@ -4573,6 +4564,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-strikes-irgc-missile-launch-site-on-irans-qeshm-island-after-attack-on-bahrain-base-2026-11-18-141272",
+      "title": "US Strikes IRGC Missile Launch Site on Iran's Qeshm Island After Attack on Bahrain Base",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-18T03:11:38.293631+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
@@ -4619,17 +4619,6 @@
         "reason": "Involves a plot to assassinate a former US President, carrying high geopolitical and security implications."
       },
       "classified_at": "2026-11-18T02:45:54.479883+00:00"
-    },
-    {
-      "title": "US Strikes IRGC Missile Launch Site on Iran's Qeshm Island After Attack on Bahrain Base",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/us-strikes-irgc-missile-launch-site-on-irans-qeshm-island-after-attack-on-bahrain-base-2026-11-18-141272",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Reports US military strikes on Iranian-backed targets following an attack on a US base, indicating rising tensions in the Middle East."
-      },
-      "classified_at": "2026-11-18T02:45:54.479886+00:00"
     }
   ],
   "quota_cooldown": {
