@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/form-6-not-amended-no-deletion-without-ero-order-cec-can-t-be-restrained-ec-s-15-point-reply-in-sc-heres-the-full-breakdown-2026-10-26-139721",
-      "title": "ECI Rebuts Allegations: Form 6 Unchanged, No Deletion Without ERO Order",
-      "headline": "ECI Rebuts Allegations: Form 6 Unchanged, No Deletion Without ERO Order",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18057994421805309",
-      "timestamp": "2026-10-26T17:18:37.690983+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/guwahati-horror-4-shot-dead-inside-hotel-bilas-inn-in-lachit-nagar-as-gunmen-open-indiscriminate-fire-2026-10-26-139723",
       "title": "Guwahati Horror: 4 Shot Dead Inside Hotel Bilas Inn In Lachit Nagar As Gunmen Open Indiscriminate Fire",
       "headline": "Guwahati Horror: 4 Shot Dead Inside Hotel Bilas Inn",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18134657338705273",
       "timestamp": "2026-11-18T11:53:09.910275+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/rrp-defense-partners-with-israels-mctech-to-introduce-advanced-anti-drone-technologies-in-india-2026-11-18-141320",
+      "title": "RRP Defense Partners with Israel's McTech to Introduce Advanced Anti-Drone Technologies in India",
+      "headline": "RRP Defense Partners With Israel's McTech for Advanced Anti-Drone Tech in India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18104421845379739",
+      "timestamp": "2026-11-18T12:19:15.372390+00:00"
     }
   ],
   "processed": [
@@ -4595,17 +4595,6 @@
         "reason": "A policy change regarding government employees is a significant regional administrative update."
       },
       "classified_at": "2026-11-18T11:52:44.682252+00:00"
-    },
-    {
-      "title": "RRP Defense Partners with Israel's McTech to Introduce Advanced Anti-Drone Technologies in India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/rrp-defense-partners-with-israels-mctech-to-introduce-advanced-anti-drone-technologies-in-india-2026-11-18-141320",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "The introduction of advanced anti-drone technologies in a strategic context is a significant defense and security development."
-      },
-      "classified_at": "2026-11-18T11:52:44.682275+00:00"
     },
     {
       "title": "A Mistake That Cost 7 Years Of Youth: Why SC Ordered Chhattisgarh Govt To Pay Rs 30 Lakh To Devilal Gond",
