@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/pm-modi-kicks-off-manila-visit-by-interacting-with-indian-diaspora-attends-local-ramayana-staging-2026-11-16-141173",
-      "title": "PM Modi Kicks Off Manila Visit by Interacting With Indian Diaspora, Attends Local Ramayana Staging",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-16T16:51:49.977629+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/flight-ground-stop-microsoft-outage-united-glitch-chase-slowdown-what-is-going-on-in-america-2026-11-16-141189",
       "title": "Flight Ground Stop, Microsoft Outage, United Glitch, Chase Slowdown: What Is Going On In America?",
       "domain": "republicworld.com",
@@ -4609,6 +4600,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-1-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10431657.html?comscorekw=jionews",
+      "title": "India Vs New Zealand Live Score, 1st Test Day 1: IND Aim To Start 2-Match Series With Win",
+      "domain": "news18.com",
+      "timestamp": "2026-11-18T20:55:54.075856+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
