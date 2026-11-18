@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/tech/to-make-ai-morally-good-tech-companies-are-turning-to-religion-but-some-say-it-isnt-that-simple-2026-10-26-139706",
-      "title": "To Make AI Morally Good, Tech Companies Are Turning to Religion. But Some Say It Isn't That Simple",
-      "headline": "Tech Giants Turn to Religion to Make AI Morally Good",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17914361298550187",
-      "timestamp": "2026-10-26T12:44:29.698470+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/three-dead-in-firing-incident-in-lucknow-accused-arrested-2026-10-26-139707",
       "title": "Three Dead in Firing Incident in Lucknow, Accused Arrested",
       "headline": "Three Dead in Lucknow Firing Incident, Accused Arrested",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18025880165723213",
       "timestamp": "2026-11-18T07:58:09.374558+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/patna-news/returning-from-bihar-after-chhath-railways-adds-special-trains-sets-up-holding-areas-at-busy-stations-ws-l-10430222.html?comscorekw=jionews",
+      "title": "Returning From Bihar After Chhath? Railways Adds Special Trains, Sets Up Holding Areas At Busy Stations",
+      "headline": "Railways Adds Special Trains, Holding Areas For Chhath Returnees",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18183774604429257",
+      "timestamp": "2026-11-18T08:24:22.867224+00:00"
     }
   ],
   "processed": [
@@ -4595,17 +4595,6 @@
         "reason": "A meeting between world leaders (Xi and Putin) discussing geopolitical tensions and sanctions."
       },
       "classified_at": "2026-11-18T07:05:55.624052+00:00"
-    },
-    {
-      "title": "Returning From Bihar After Chhath? Railways Adds Special Trains, Sets Up Holding Areas At Busy Stations",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/patna-news/returning-from-bihar-after-chhath-railways-adds-special-trains-sets-up-holding-areas-at-busy-stations-ws-l-10430222.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Transport",
-        "reason": "A logistical response to a regional festival affecting railway services."
-      },
-      "classified_at": "2026-11-18T07:05:55.624063+00:00"
     }
   ],
   "quota_cooldown": {
