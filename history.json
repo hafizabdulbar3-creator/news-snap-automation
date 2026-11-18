@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/guwahati-horror-4-shot-dead-inside-hotel-bilas-inn-in-lachit-nagar-as-gunmen-open-indiscriminate-fire-2026-10-26-139723",
-      "title": "Guwahati Horror: 4 Shot Dead Inside Hotel Bilas Inn In Lachit Nagar As Gunmen Open Indiscriminate Fire",
-      "headline": "Guwahati Horror: 4 Shot Dead Inside Hotel Bilas Inn",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18073394534777268",
-      "timestamp": "2026-10-26T17:44:39.921826+00:00"
-    },
-    {
       "url": "https://www.news18.com/lifestyle/food/halloween-dining-guide-2026-themed-dinners-spooky-cocktails-and-gourmet-feasts-across-india-ws-l-10398708.html?comscorekw=jionews",
       "title": "Halloween Dining Guide 2026: Themed Dinners, Spooky Cocktails And Gourmet Feasts Across India",
       "headline": "Halloween Dining Guide 2026: Themed Dinners Across India",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18104421845379739",
       "timestamp": "2026-11-18T12:19:15.372390+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/a-mistake-that-cost-7-years-of-prime-youth-why-sc-ordered-chhattisgarh-govt-to-pay-rs-30-lakh-to-devilal-gond-ws-klrt-10430614.html?comscorekw=jionews",
+      "title": "A Mistake That Cost 7 Years Of Youth: Why SC Ordered Chhattisgarh Govt To Pay Rs 30 Lakh To Devilal Gond",
+      "headline": "SC Orders Chhattisgarh Govt To Pay Rs 30 Lakh To Devilal Gond",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18185009056425156",
+      "timestamp": "2026-11-18T12:45:03.982039+00:00"
     }
   ],
   "processed": [
@@ -4595,17 +4595,6 @@
         "reason": "A policy change regarding government employees is a significant regional administrative update."
       },
       "classified_at": "2026-11-18T11:52:44.682252+00:00"
-    },
-    {
-      "title": "A Mistake That Cost 7 Years Of Youth: Why SC Ordered Chhattisgarh Govt To Pay Rs 30 Lakh To Devilal Gond",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/a-mistake-that-cost-7-years-of-prime-youth-why-sc-ordered-chhattisgarh-govt-to-pay-rs-30-lakh-to-devilal-gond-ws-klrt-10430614.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal",
-        "reason": "A Supreme Court ruling regarding compensation for a specific individual is a notable legal case but lacks broad geopolitical impact."
-      },
-      "classified_at": "2026-11-18T11:52:44.682279+00:00"
     }
   ],
   "quota_cooldown": {
