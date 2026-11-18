@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/mehbooba-invokes-accession-promises-alleges-erosion-of-rights-in-jk-2026-10-26-139690",
-      "title": "Mehbooba Invokes Accession Promises, Alleges Erosion of Rights in J&K",
-      "headline": "Mehbooba Invokes Accession Promises, Alleges Erosion of Rights in J&K",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18102939416372871",
-      "timestamp": "2026-10-26T07:41:02.925814+00:00"
-    },
-    {
       "url": "https://www.news18.com/viral/im-unemployed-employee-claims-he-was-fired-after-reporting-workplace-abuse-to-hr-shares-emails-ws-l-10397614.html?comscorekw=jionews",
       "title": "'I'm Unemployed': Employee Claims He Was Fired After Reporting 'Workplace Abuse' To HR, Shares Emails",
       "headline": "Employee Claims Fired After Reporting Workplace Abuse to HR",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18102972785384457",
       "timestamp": "2026-11-18T02:46:21.885188+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-heads-to-china-betting-on-unscripted-diplomacy-with-xi-and-putin-2026-11-18-141277",
+      "title": "Trump Heads to China, Betting on Unscripted Diplomacy with Xi and Putin",
+      "headline": "Trump Heads to China, Betting on Unscripted Diplomacy",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18652112041055783",
+      "timestamp": "2026-11-18T03:17:17.584431+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump Heads to China, Betting on Unscripted Diplomacy with Xi and Putin",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/trump-heads-to-china-betting-on-unscripted-diplomacy-with-xi-and-putin-2026-11-18-141277",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves a former US President visiting China and Russia, signaling potential shifts in global diplomacy and geopolitics."
-      },
-      "classified_at": "2026-11-18T02:45:54.479857+00:00"
-    },
     {
       "title": "Just 24 Seats To Start With? SP's Opening Offer To Congress Could Set Stage For Tough UP Poll Talks",
       "domain": "news18.com",
