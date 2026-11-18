@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/tech/sennheiser-momentum-5-wireless-review-excellent-sound-immersive-audio-and-battery-life-that-keeps-going-2026-10-26-139722",
-      "title": "Sennheiser Momentum 5 Wireless: Premium Headphones Deliver Excellent Sound, Long Battery Life",
-      "headline": "Sennheiser Momentum 5 Wireless Review: Premium Sound and Long Battery Life",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17904200661600498",
-      "timestamp": "2026-10-26T16:52:41.824367+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/form-6-not-amended-no-deletion-without-ero-order-cec-can-t-be-restrained-ec-s-15-point-reply-in-sc-heres-the-full-breakdown-2026-10-26-139721",
       "title": "ECI Rebuts Allegations: Form 6 Unchanged, No Deletion Without ERO Order",
       "headline": "ECI Rebuts Allegations: Form 6 Unchanged, No Deletion Without ERO Order",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18135884149666780",
       "timestamp": "2026-11-18T11:27:07.228029+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/us-tariff-shock-prompts-indian-textile-exporters-to-diversify-markets-reduce-us-reliance-2026-11-18-141319",
+      "title": "US Tariff Shock Prompts Indian Textile Exporters to Diversify Markets, Reduce US Reliance",
+      "headline": "US Tariff Shock Forces Indian Textile Exporters to Diversify Markets",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18134657338705273",
+      "timestamp": "2026-11-18T11:53:09.910275+00:00"
     }
   ],
   "processed": [
@@ -4584,7 +4584,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Big relief for MP government employees: Two-child norm scrapped!",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/madhya-pradesh-cabinet-ends-two-child-norm-for-government-employees-approves-six-special-ndps-courts-across-state-2026-11-18-141317",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A policy change regarding government employees is a significant regional administrative update."
+      },
+      "classified_at": "2026-11-18T11:52:44.682252+00:00"
+    },
+    {
+      "title": "RRP Defense Partners with Israel's McTech to Introduce Advanced Anti-Drone Technologies in India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/rrp-defense-partners-with-israels-mctech-to-introduce-advanced-anti-drone-technologies-in-india-2026-11-18-141320",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "The introduction of advanced anti-drone technologies in a strategic context is a significant defense and security development."
+      },
+      "classified_at": "2026-11-18T11:52:44.682275+00:00"
+    },
+    {
+      "title": "A Mistake That Cost 7 Years Of Youth: Why SC Ordered Chhattisgarh Govt To Pay Rs 30 Lakh To Devilal Gond",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/a-mistake-that-cost-7-years-of-prime-youth-why-sc-ordered-chhattisgarh-govt-to-pay-rs-30-lakh-to-devilal-gond-ws-klrt-10430614.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A Supreme Court ruling regarding compensation for a specific individual is a notable legal case but lacks broad geopolitical impact."
+      },
+      "classified_at": "2026-11-18T11:52:44.682279+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
