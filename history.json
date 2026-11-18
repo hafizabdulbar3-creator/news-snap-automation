@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/explainers/flight-cancelled-heres-what-the-gst-tribunal-ruling-means-for-your-refund-ws-kl-10397321.html?comscorekw=jionews",
-      "title": "Flight Cancelled? Here's What The GST Tribunal Ruling Means For Your Refund",
-      "headline": "GST Tribunal Ruling: What It Means For Your Flight Refund",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17895832404683164",
-      "timestamp": "2026-10-26T04:59:43.211382+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/12th-brics-parliamentary-forum-21-nation-delegations-arrive-in-delhi-pm-modi-to-meet-speakers-2026-10-26-139679",
       "title": "12th BRICS Parliamentary Forum: 21-Nation Delegations Arrive In Delhi, PM Modi To Meet Speakers",
       "headline": "21 Nations Arrive In Delhi For 12th BRICS Parliamentary Forum",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18130552597920977",
       "timestamp": "2026-11-18T00:09:41.424666+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/nsa-internal-network-goes-offline-amid-week-of-us-system-outages-agency-says-mission-systems-safe-2026-11-18-141265",
+      "title": "NSA Internal Network Goes Offline Amid Week Of US System Outages, Agency Says Mission Systems Safe",
+      "headline": "NSA Internal Network Goes Offline Amid US System Outages",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18025954796718202",
+      "timestamp": "2026-11-18T00:35:59.317392+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Nvidia Rules Out CEO Comeback: Jensen Huang Offered To Return, Board Shut Door In Hours",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/nvidia-rules-out-ceo-comeback-jensen-huang-offered-to-return-board-shut-door-in-hours-2026-11-17-141264",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A notable corporate milestone regarding the leadership structure of a major technology company."
+      },
+      "classified_at": "2026-11-18T00:35:33.998755+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
