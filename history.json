@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/vijay-deverakonda-rashmika-s-team-files-cyber-crime-complaint-in-hyderabad-amid-koffee-with-karan-trolling-2026-10-26-139716",
-      "title": "Stars File Cyber Complaint Amid 'Koffee With Karan' Trolling",
-      "headline": "Stars File Cyber Complaint Amid 'Koffee With Karan' Trolling",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17912829591518612",
-      "timestamp": "2026-10-26T15:39:20.117892+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/tiger-shroff-firing-all-stars-football-club-cancels-sunday-sessions-amid-security-concerns-confirms-founder-bunty-walia-ws-l-10398676.html?comscorekw=jionews",
       "title": "Tiger Shroff Firing: All Stars Football Club Cancels Sessions Amid Security Fears",
       "headline": "All Stars Football Club Cancels Sessions After Tiger Shroff Firing Incident",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17893661499492280",
       "timestamp": "2026-11-18T10:34:45.592607+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/xi-putin-blast-western-protectionism-sanctions-before-meeting-trump-at-apec-2026-11-18-141293",
+      "title": "Xi, Putin Blast Western 'Protectionism', Sanctions Before Meeting Trump at APEC",
+      "headline": "Xi, Putin Blast Western Protectionism Before Meeting Trump at APEC",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18159454843519651",
+      "timestamp": "2026-11-18T11:00:43.555164+00:00"
     }
   ],
   "processed": [
@@ -4584,19 +4584,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Xi, Putin Blast Western 'Protectionism', Sanctions Before Meeting Trump at APEC",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/xi-putin-blast-western-protectionism-sanctions-before-meeting-trump-at-apec-2026-11-18-141293",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A meeting between world leaders (Xi and Putin) discussing geopolitical tensions and sanctions."
-      },
-      "classified_at": "2026-11-18T07:05:55.624052+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
