@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/business/markets/from-infosys-to-railtel-6-stocks-announce-dividends-check-amounts-record-dates-shil-ws-l-10397809.html?comscorekw=jionews",
-      "title": "From Infosys To RailTel: 6 Stocks Announce Dividends; Check Amounts, Record Dates",
-      "headline": "Infosys, RailTel, CRISIL Announce Interim Dividends",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18118280765045481",
-      "timestamp": "2026-10-26T08:37:59.286396+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/protests-will-stop-in-30-seconds-if-rahul-gandhi-reaches-out-to-traders-amid-nov-1-rally-row-ws-l-10397902.html?comscorekw=jionews",
       "title": "'Protests Will Stop In 30 Seconds If...': Rahul Gandhi Reaches Out To Traders Amid Nov 1 Rally Row",
       "headline": "Rahul Gandhi Promises To Stop Protests In 30 Seconds If He Reaches Out",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18091743044269454",
       "timestamp": "2026-11-18T03:44:03.676060+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/security-tightened-in-jks-kulgam-following-fresh-encounter-with-terrorists-2026-11-18-141275",
+      "title": "Security Tightened in J&K's Kulgam Following Fresh Encounter with Terrorists",
+      "headline": "Security Tightened in Kulgam After Terrorist Encounter",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18181915846429290",
+      "timestamp": "2026-11-18T04:14:32.247535+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Security Tightened in J&K's Kulgam Following Fresh Encounter with Terrorists",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/security-tightened-in-jks-kulgam-following-fresh-encounter-with-terrorists-2026-11-18-141275",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "Reports on security measures and an encounter with terrorists in a specific region, though significant, is a localized security update."
-      },
-      "classified_at": "2026-11-18T02:45:54.479881+00:00"
-    },
     {
       "title": "Pakistani National Gets 27 Years in US Prison Over Iranian-Backed Trump Assassination Plot",
       "domain": "republicworld.com",
