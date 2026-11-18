@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/12th-brics-parliamentary-forum-21-nation-delegations-arrive-in-delhi-pm-modi-to-meet-speakers-2026-10-26-139679",
-      "title": "12th BRICS Parliamentary Forum: 21-Nation Delegations Arrive In Delhi, PM Modi To Meet Speakers",
-      "headline": "21 Nations Arrive In Delhi For 12th BRICS Parliamentary Forum",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18111502019213351",
-      "timestamp": "2026-10-26T05:25:56.514402+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/guilty-of-ballot-harvesting-republican-senator-takes-aim-at-california-as-trump-threatens-jail-time-ws-lrt-10397400.html?comscorekw=jionews",
       "title": "'Guilty Of Ballot Harvesting': Republican Senator Takes Aim At California As Trump Threatens Jail Time",
       "headline": "Republican Senator Accuses California Of Ballot Harvesting",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18025954796718202",
       "timestamp": "2026-11-18T00:35:59.317392+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/nvidia-rules-out-ceo-comeback-jensen-huang-offered-to-return-board-shut-door-in-hours-2026-11-17-141264",
+      "title": "Nvidia Rules Out CEO Comeback: Jensen Huang Offered To Return, Board Shut Door In Hours",
+      "headline": "Nvidia Board Rejects Jensen Huang's CEO Return Offer",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18130552597920977",
+      "timestamp": "2026-11-18T01:01:38.832889+00:00"
     }
   ],
   "processed": [
@@ -4575,19 +4575,7 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Nvidia Rules Out CEO Comeback: Jensen Huang Offered To Return, Board Shut Door In Hours",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/nvidia-rules-out-ceo-comeback-jensen-huang-offered-to-return-board-shut-door-in-hours-2026-11-17-141264",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A notable corporate milestone regarding the leadership structure of a major technology company."
-      },
-      "classified_at": "2026-11-18T00:35:33.998755+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
