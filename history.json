@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/bihar-student-dies-under-suspicious-circumstances-in-kota-probe-underway-2026-10-26-139704",
-      "title": "Bihar Student Dies Under Suspicious Circumstances in Kota, Probe Underway",
-      "headline": "Bihar Student Found Unconscious in Kota, Dies Under Suspicious Circumstances",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18096867509419610",
-      "timestamp": "2026-10-26T11:52:41.166298+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/israel-air-force-eliminates-two-hamas-commanders-in-gaza-strikes-amid-ceasefire-violations-2026-10-26-139705",
       "title": "Israel Air Force Eliminates Two Hamas Commanders In Gaza Strikes Amid Ceasefire Violations",
       "headline": "Israel Air Force Eliminates Two Hamas Commanders In Gaza Amid Ceasefire Violations",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18361837435171030",
       "timestamp": "2026-11-18T07:06:29.033702+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/batenge-toh-katenge-320-seats-mathura-kashi-cm-yogis-up-pitch-at-rising-bharat-summit-top-points-ws-lr-10430419.html?comscorekw=jionews",
+      "title": "'Batenge Toh Katenge', 320+ Seats, Mathura-Kashi: CM Yogi's UP Pitch At Rising Bharat Summit | Top Points",
+      "headline": "CM Yogi's UP Pitch: 'Batenge Toh Katenge', 320+ Seats, Mathura-Kashi",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18118032080143525",
+      "timestamp": "2026-11-18T07:32:02.716531+00:00"
     }
   ],
   "processed": [
@@ -4595,17 +4595,6 @@
         "reason": "A meeting between world leaders (Xi and Putin) discussing geopolitical tensions and sanctions."
       },
       "classified_at": "2026-11-18T07:05:55.624052+00:00"
-    },
-    {
-      "title": "'Batenge Toh Katenge', 320+ Seats, Mathura-Kashi: CM Yogi's UP Pitch At Rising Bharat Summit | Top Points",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/batenge-toh-katenge-320-seats-mathura-kashi-cm-yogis-up-pitch-at-rising-bharat-summit-top-points-ws-lr-10430419.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political rally and speech focusing on regional electoral strategy and rhetoric."
-      },
-      "classified_at": "2026-11-18T07:05:55.624056+00:00"
     },
     {
       "title": "How UP Went From Training 6,000 Cops To 60,000 At A Time During BJP Rule: CM Yogi Explains",
