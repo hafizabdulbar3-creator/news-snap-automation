@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/defence/biggest-artillery-buy-in-decades-defence-ministry-clears-rs-20000-crore-k-9-vajra-deal-with-70-desi-content-lt-to-build-335-howitzers-2026-10-26-139724",
-      "title": "India's Defence Ministry Clears Massive Rs 20,000 Crore Artillery Deal",
-      "headline": "Defence Ministry Clears Rs 20,000 Crore K-9 Vajra Deal",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18128044675856787",
-      "timestamp": "2026-10-26T20:26:45.633389+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/business/60000-employees-of-microsoft-offered-exit-tech-giant-pushes-voluntary-buyouts-in-us-india-uk-canada-2026-10-26-139725",
       "title": "Microsoft Offers 60,000 Employees Voluntary Buyouts Amid AI Investment Push",
       "headline": "Microsoft Offers Voluntary Buyouts to 60,000 Employees",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18134806750871736",
       "timestamp": "2026-11-18T14:45:24.971179+00:00"
+    },
+    {
+      "url": "https://www.news18.com/science/namaste-kerkars-bhairavi-to-taj-mahal-traffic-what-india-told-aliens-through-nasas-voyager-golden-record-ws-lrt-10431223.html?comscorekw=jionews",
+      "title": "Namaste To Aliens: NASA's Voyager Golden Record Has India's Music, Taj Mahal And Traffic",
+      "headline": "Namaste To Aliens: India's Music And Taj Mahal On Voyager Golden Record",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18134194438755306",
+      "timestamp": "2026-11-18T15:11:18.889319+00:00"
     }
   ],
   "processed": [
@@ -4603,17 +4603,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Namaste To Aliens: NASA's Voyager Golden Record Has India's Music, Taj Mahal And Traffic",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/science/namaste-kerkars-bhairavi-to-taj-mahal-traffic-what-india-told-aliens-through-nasas-voyager-golden-record-ws-lrt-10431223.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science",
-        "reason": "A report on the Voyager Golden Record containing cultural artifacts from Earth, which is a notable scientific and cultural fact."
-      },
-      "classified_at": "2026-11-18T14:45:00.391284+00:00"
-    },
     {
       "title": "Those Under 12 Can't Ride Lifts, Escalators Alone: Maharashtra's New Safety Rules Explained",
       "domain": "news18.com",
