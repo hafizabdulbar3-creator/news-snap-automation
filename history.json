@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/israel-air-force-eliminates-two-hamas-commanders-in-gaza-strikes-amid-ceasefire-violations-2026-10-26-139705",
-      "title": "Israel Air Force Eliminates Two Hamas Commanders In Gaza Strikes Amid Ceasefire Violations",
-      "headline": "Israel Air Force Eliminates Two Hamas Commanders In Gaza Amid Ceasefire Violations",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18099307376098224",
-      "timestamp": "2026-10-26T12:18:47.440652+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/tech/to-make-ai-morally-good-tech-companies-are-turning-to-religion-but-some-say-it-isnt-that-simple-2026-10-26-139706",
       "title": "To Make AI Morally Good, Tech Companies Are Turning to Religion. But Some Say It Isn't That Simple",
       "headline": "Tech Giants Turn to Religion to Make AI Morally Good",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18118032080143525",
       "timestamp": "2026-11-18T07:32:02.716531+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/training-6000-to-60000-cops-at-a-time-how-yogi-adityanath-boosted-ups-police-training-capacity-ws-klrt-10430409.html?comscorekw=jionews",
+      "title": "How UP Went From Training 6,000 Cops To 60,000 At A Time During BJP Rule: CM Yogi Explains",
+      "headline": "UP Police Training Capacity Triples Under BJP Rule",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18025880165723213",
+      "timestamp": "2026-11-18T07:58:09.374558+00:00"
     }
   ],
   "processed": [
@@ -4595,17 +4595,6 @@
         "reason": "A meeting between world leaders (Xi and Putin) discussing geopolitical tensions and sanctions."
       },
       "classified_at": "2026-11-18T07:05:55.624052+00:00"
-    },
-    {
-      "title": "How UP Went From Training 6,000 Cops To 60,000 At A Time During BJP Rule: CM Yogi Explains",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/training-6000-to-60000-cops-at-a-time-how-yogi-adityanath-boosted-ups-police-training-capacity-ws-klrt-10430409.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political explanation regarding the expansion of police forces in a specific state."
-      },
-      "classified_at": "2026-11-18T07:05:55.624059+00:00"
     },
     {
       "title": "Returning From Bihar After Chhath? Railways Adds Special Trains, Sets Up Holding Areas At Busy Stations",
