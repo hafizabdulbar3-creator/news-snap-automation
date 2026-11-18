@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/maharashtra-govt-to-assess-impact-of-telangana-irrigation-project-orders-joint-study-ws-l-10398756.html?comscorekw=jionews",
-      "title": "Maharashtra Govt To Assess Impact of Telangana Irrigation Project, Orders Joint Study",
-      "headline": "Maharashtra Orders Joint Study on Telangana Irrigation Project",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18124565704860337",
-      "timestamp": "2026-10-26T19:34:01.478281+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/defence/biggest-artillery-buy-in-decades-defence-ministry-clears-rs-20000-crore-k-9-vajra-deal-with-70-desi-content-lt-to-build-335-howitzers-2026-10-26-139724",
       "title": "India's Defence Ministry Clears Massive Rs 20,000 Crore Artillery Deal",
       "headline": "Defence Ministry Clears Rs 20,000 Crore K-9 Vajra Deal",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18648466450020036",
       "timestamp": "2026-11-18T14:13:50.302352+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/kerala-congress-mps-aide-extorts-rs-10-lakh-from-doctor-expelled-after-act-caught-on-cam-ws-lr-10431383.html?comscorekw=jionews",
+      "title": "Kerala Congress MP's Aide Extorts Rs 10 Lakh From Doctor, Expelled After Act Caught On Cam",
+      "headline": "Kerala Congress MP's Aide Extorts Rs 10 Lakh From Doctor",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18134806750871736",
+      "timestamp": "2026-11-18T14:45:24.971179+00:00"
     }
   ],
   "processed": [
@@ -4602,7 +4602,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Namaste To Aliens: NASA's Voyager Golden Record Has India's Music, Taj Mahal And Traffic",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/science/namaste-kerkars-bhairavi-to-taj-mahal-traffic-what-india-told-aliens-through-nasas-voyager-golden-record-ws-lrt-10431223.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Science",
+        "reason": "A report on the Voyager Golden Record containing cultural artifacts from Earth, which is a notable scientific and cultural fact."
+      },
+      "classified_at": "2026-11-18T14:45:00.391284+00:00"
+    },
+    {
+      "title": "Those Under 12 Can't Ride Lifts, Escalators Alone: Maharashtra's New Safety Rules Explained",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/those-under-12-barred-from-taking-lifts-escalators-moving-walkways-alone-the-new-rules-in-maharashtra-explained-ws-eklt-10430930.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional Policy",
+        "reason": "A report on a specific safety regulation implemented by the Maharashtra government, which is a matter of public interest and regional policy."
+      },
+      "classified_at": "2026-11-18T14:45:00.391288+00:00"
+    },
+    {
+      "title": "Cockroaches, Flies, Unhygienic Kitchens: FDA Cracks Down on 9 Mumbai Restaurants",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/mumbai-news/cockroaches-flies-and-unhygienic-kitchens-tukaram-mundhes-fda-cracks-down-on-9-south-mumbai-restaurants-ws-klrt-10431387.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Public Health",
+        "reason": "A report on health inspections and regulatory actions taken by the FDA against restaurants in Mumbai, which is a matter of public safety and consumer interest."
+      },
+      "classified_at": "2026-11-18T14:45:00.391291+00:00"
+    },
+    {
+      "title": "MS Dhoni Announces IPL Retirement: Dhanush, Juhi Chawla, Varun Dhawan Pay Emotional Tributes",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/ms-dhoni-announces-ipl-retirement-dhanush-juhi-chawla-varun-dhawan-pay-emotional-tributes-ws-lr-10431388.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A report on a major retirement announcement in the sport of cricket, which is a significant event for the sports community and fans."
+      },
+      "classified_at": "2026-11-18T14:45:00.391294+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
