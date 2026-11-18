@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/jamia-protest-over-students-reject-withdrawal-notice-say-demands-remain-unmet-ws-l-10397377.html?comscorekw=jionews",
-      "title": "Jamia Protest Over? Students Reject Withdrawal Notice, Say 'Demands Remain Unmet'",
-      "headline": "Jamia Protest Over? Students Reject Withdrawal Notice, Say Demands Remain Unmet",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17914261827515170",
-      "timestamp": "2026-10-26T04:34:04.528797+00:00"
-    },
-    {
       "url": "https://www.news18.com/explainers/flight-cancelled-heres-what-the-gst-tribunal-ruling-means-for-your-refund-ws-kl-10397321.html?comscorekw=jionews",
       "title": "Flight Cancelled? Here's What The GST Tribunal Ruling Means For Your Refund",
       "headline": "GST Tribunal Ruling: What It Means For Your Flight Refund",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17940496842406086",
       "timestamp": "2026-11-17T23:43:39.171843+00:00"
+    },
+    {
+      "url": "https://www.news18.com/tech/nvidia-board-shuts-door-on-jensen-huangs-return-even-as-quarterly-revenue-doubles-to-115-8-billion-ws-lrt-10429993.html?comscorekw=jionews",
+      "title": "Nvidia Board Shuts Door On Jensen Huang's Return Even As Quarterly Revenue Doubles To $115.8 Billion",
+      "headline": "Nvidia Board Shuts Door On Jensen Huang's Return",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18130552597920977",
+      "timestamp": "2026-11-18T00:09:41.424666+00:00"
     }
   ],
   "processed": [
