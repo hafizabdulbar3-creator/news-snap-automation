@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/jamia-issues-final-warning-to-vacate-gulistan-e-ghalib-after-reviving-student-union-polls-after-20-years-2026-10-26-139728",
-      "title": "Jamia Issues Final Warning To Vacate Gulistan-e-Ghalib After Reviving Student Union Polls After 20 Years",
-      "headline": "Jamia Issues Final Warning To Vacate Gulistan-e-Ghalib",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18011271026776922",
-      "timestamp": "2026-10-26T22:22:14.746103+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/ballon-d-or-2026-barcelona-s-19-year-old-star-lamine-yamal-wins-kopa-trophy-again-after-la-liga-title-and-world-cup-glory-2026-10-26-139729",
       "title": "Lamine Yamal Wins Kopa Trophy Again After La Liga, World Cup Glory",
       "headline": "Lamine Yamal Wins Kopa Trophy for Third Consecutive Year",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17879186943635102",
       "timestamp": "2026-11-18T15:38:04.786267+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/mumbai-news/cockroaches-flies-and-unhygienic-kitchens-tukaram-mundhes-fda-cracks-down-on-9-south-mumbai-restaurants-ws-klrt-10431387.html?comscorekw=jionews",
+      "title": "Cockroaches, Flies, Unhygienic Kitchens: FDA Cracks Down on 9 Mumbai Restaurants",
+      "headline": "FDA Cracks Down on 9 South Mumbai Restaurants Over Hygiene",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17988383859107727",
+      "timestamp": "2026-11-18T16:08:52.080220+00:00"
     }
   ],
   "processed": [
@@ -4603,17 +4603,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Cockroaches, Flies, Unhygienic Kitchens: FDA Cracks Down on 9 Mumbai Restaurants",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/mumbai-news/cockroaches-flies-and-unhygienic-kitchens-tukaram-mundhes-fda-cracks-down-on-9-south-mumbai-restaurants-ws-klrt-10431387.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Public Health",
-        "reason": "A report on health inspections and regulatory actions taken by the FDA against restaurants in Mumbai, which is a matter of public safety and consumer interest."
-      },
-      "classified_at": "2026-11-18T14:45:00.391291+00:00"
-    },
     {
       "title": "MS Dhoni Announces IPL Retirement: Dhanush, Juhi Chawla, Varun Dhawan Pay Emotional Tributes",
       "domain": "news18.com",
