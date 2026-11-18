@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/netanyahu-vs-eisenkot-trumps-endorsement-iran-threat-and-holocaust-warning-shake-israel-poll-battle-2026-10-26-139678",
-      "title": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
-      "headline": "Netanyahu vs Eisenkot: Trump's Endorsement, Iran Threat And 'Holocaust' Warning Shake Israel Poll Battle",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18067624016789192",
-      "timestamp": "2026-10-26T06:17:27.413260+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/serbias-youthquake-student-movement-shakes-vucics-12-year-grip-on-power-in-high-turnout-poll-ws-l-10397476.html?comscorekw=jionews",
       "title": "Serbia's 'Youthquake': Student Movement Shakes Vucic's 12-Year Grip On Power In High-Turnout Poll",
       "headline": "Serbia's Student Movement Challenges Vucic's 12-Year Grip",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18176134489413454",
       "timestamp": "2026-11-18T01:28:06.346546+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/kulgam-encounter-jk-police-army-and-crpf-corner-most-wanted-let-commander-lateef-bhat-in-joint-operation-2026-11-18-141268",
+      "title": "J&K Forces Corner Most Wanted LeT Terrorist Lateef Bhat in Kulgam",
+      "headline": "J&K Forces Corner Most Wanted LeT Terrorist Lateef Bhat in Kulgam",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17972831049197795",
+      "timestamp": "2026-11-18T01:54:00.220108+00:00"
     }
   ],
   "processed": [
@@ -4576,17 +4576,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "J&K Forces Corner Most Wanted LeT Terrorist Lateef Bhat in Kulgam",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/kulgam-encounter-jk-police-army-and-crpf-corner-most-wanted-let-commander-lateef-bhat-in-joint-operation-2026-11-18-141268",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Reports on a significant security operation against a high-profile terrorist target, which is a matter of national security and public safety."
-      },
-      "classified_at": "2026-11-18T01:27:34.857867+00:00"
-    },
     {
       "title": "Advocate Moves Delhi HC Seeking Criminal Contempt Against Ratna Singh Over Saket Judge Remarks",
       "domain": "republicworld.com",
