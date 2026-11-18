@@ -4582,6 +4582,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/science/voyager-1-golden-record-goan-singer-kesarbai-kerkar-ws-klrt-10431254.html?comscorekw=jionews",
+      "title": "'Where Are You Going?': The Goan Singer Whose Voice Is Echoing Across The Cosmos Aboard Voyager 1",
+      "domain": "news18.com",
+      "timestamp": "2026-11-18T14:08:19.383975+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry (''Where Are You Going?': The Goan Singer Whose Voice Is Echoing Across The Cosmos Aboard Voyager 1'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
@@ -4595,17 +4604,6 @@
         "reason": "Major entertainment release with broad public interest, but falls under consumer tech/gaming rather than geopolitical consequence."
       },
       "classified_at": "2026-11-18T13:42:03.933577+00:00"
-    },
-    {
-      "title": "'Where Are You Going?': The Goan Singer Whose Voice Is Echoing Across The Cosmos Aboard Voyager 1",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/science/voyager-1-golden-record-goan-singer-kesarbai-kerkar-ws-klrt-10431254.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science",
-        "reason": "A notable scientific and cultural story regarding the Voyager probe, but lacks the scale of a major geopolitical event or disaster."
-      },
-      "classified_at": "2026-11-18T13:42:03.933600+00:00"
     },
     {
       "title": "Jaishankar Urges Japan to Update India's Image, Deepen Ties",
