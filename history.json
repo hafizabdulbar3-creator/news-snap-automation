@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/poisonous-hate-uncultured-politics-bjp-demands-apology-from-kharge-over-pm-modi-remark-ws-kl-10397434.html?comscorekw=jionews",
-      "title": "'Poisonous Hate, Uncultured Politics': BJP Demands Apology From Kharge Over PM Modi Remark",
-      "headline": "BJP Demands Apology From Kharge Over PM Modi Remark",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18099141296449600",
-      "timestamp": "2026-10-26T07:14:35.604908+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/mehbooba-invokes-accession-promises-alleges-erosion-of-rights-in-jk-2026-10-26-139690",
       "title": "Mehbooba Invokes Accession Promises, Alleges Erosion of Rights in J&K",
       "headline": "Mehbooba Invokes Accession Promises, Alleges Erosion of Rights in J&K",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18352269328255770",
       "timestamp": "2026-11-18T02:20:13.358906+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cyclone-akvan-intensifies-over-bay-of-bengal-imd-issues-orange-alert-for-andhra-coast-ahead-of-november-20-landfall-2026-11-18-141276",
+      "title": "Cyclone Akvan Intensifies: Orange Alert for Andhra Coast, Landfall Expected Nov 20.",
+      "headline": "Cyclone Akvan Intensifies: Orange Alert for Andhra Coast",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18102972785384457",
+      "timestamp": "2026-11-18T02:46:21.885188+00:00"
     }
   ],
   "processed": [
@@ -4575,7 +4575,63 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Heads to China, Betting on Unscripted Diplomacy with Xi and Putin",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-heads-to-china-betting-on-unscripted-diplomacy-with-xi-and-putin-2026-11-18-141277",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Involves a former US President visiting China and Russia, signaling potential shifts in global diplomacy and geopolitics."
+      },
+      "classified_at": "2026-11-18T02:45:54.479857+00:00"
+    },
+    {
+      "title": "Just 24 Seats To Start With? SP's Opening Offer To Congress Could Set Stage For Tough UP Poll Talks",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/just-24-seats-to-start-with-sps-opening-offer-to-congress-could-set-stage-for-tough-up-poll-talks-ws-l-10430046.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Focuses on regional political negotiations and seat allocations for upcoming state elections in India."
+      },
+      "classified_at": "2026-11-18T02:45:54.479874+00:00"
+    },
+    {
+      "title": "Security Tightened in J&K's Kulgam Following Fresh Encounter with Terrorists",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/security-tightened-in-jks-kulgam-following-fresh-encounter-with-terrorists-2026-11-18-141275",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "Reports on security measures and an encounter with terrorists in a specific region, though significant, is a localized security update."
+      },
+      "classified_at": "2026-11-18T02:45:54.479881+00:00"
+    },
+    {
+      "title": "Pakistani National Gets 27 Years in US Prison Over Iranian-Backed Trump Assassination Plot",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/pakistani-national-gets-27-years-in-us-prison-over-iranian-backed-trump-assassination-plot-2026-11-18-141270",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Crime",
+        "reason": "Involves a plot to assassinate a former US President, carrying high geopolitical and security implications."
+      },
+      "classified_at": "2026-11-18T02:45:54.479883+00:00"
+    },
+    {
+      "title": "US Strikes IRGC Missile Launch Site on Iran's Qeshm Island After Attack on Bahrain Base",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/us-strikes-irgc-missile-launch-site-on-irans-qeshm-island-after-attack-on-bahrain-base-2026-11-18-141272",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Reports US military strikes on Iranian-backed targets following an attack on a US base, indicating rising tensions in the Middle East."
+      },
+      "classified_at": "2026-11-18T02:45:54.479886+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
