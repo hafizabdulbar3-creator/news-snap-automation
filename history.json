@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/lucknow-gas-leak-scare-formalin-truck-overturns-on-kisan-path-after-tyre-burst-cm-yogi-adityanath-orders-full-alertness-2026-10-26-139731",
-      "title": "Formalin Truck Overturns, Gas Leak Prompts CM's High Alert.",
-      "headline": "Formalin Truck Overturns in Lucknow, Gas Leak Prompts CM's High Alert",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18036259832887320",
-      "timestamp": "2026-10-27T00:11:16.221267+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/atros-water-and-the-mystery-of-the-changing-tap-why-one-purifier-may-not-suit-every-home-2026-10-26-139735",
       "title": "ATROS Water and the Mystery of the Changing Tap: Why One Purifier May Not Suit Every Home",
       "headline": "ATROS Water: Why One Purifier May Not Suit Every Home",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17978281878070691",
       "timestamp": "2026-11-18T17:32:48.808296+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/allah-is-enough-for-me-let-commander-lateef-bhat-as-army-asks-him-to-surrender-in-jk-s-kulgam-watch-2026-11-18-141283",
+      "title": "On Camera: Army Gives LeT Commander Lateef Bhat Last Chance To Surrender Before Kulgam Encounter | WATCH",
+      "headline": "Army Gives LeT Commander Lateef Bhat Last Chance To Surrender",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18339230443278350",
+      "timestamp": "2026-11-18T17:58:30.598891+00:00"
     }
   ],
   "processed": [
@@ -4611,7 +4611,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Jammu-Kathgodam Trains Cancelled For Fog Season: Check Train Numbers, Dates And Routes",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/jammu/jammu-kathgodam-trains-cancelled-for-fog-season-check-train-numbers-dates-and-routes-ws-l-10430537.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Transport",
+        "reason": "This is a routine operational update regarding train cancellations due to weather conditions."
+      },
+      "classified_at": "2026-11-18T17:58:02.490918+00:00"
+    },
+    {
+      "title": "BJP's Women-First Strategy For UP 2027: 403 Organisers To Take Party's Message To Doorsteps",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/bjps-women-first-strategy-for-up-2027-403-organisers-to-take-partys-message-to-doorsteps-ws-l-10430624.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This covers a political strategy for a state election, which is a notable regional public interest story."
+      },
+      "classified_at": "2026-11-18T17:58:02.490935+00:00"
+    },
+    {
+      "title": "'Remove Objectionable Videos': Delhi HC Asks Centre To Examine Clips Of ACP Manasvi Vashistha",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-hc-asks-centre-to-examine-videos-allegedly-showing-acp-manasvi-vashistha-making-objectionable-remarks-against-lawyers-2026-11-18-141301",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "This involves a legal directive from the High Court regarding content moderation, which is a matter of public interest."
+      },
+      "classified_at": "2026-11-18T17:58:02.490939+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
