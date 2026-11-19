@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-airport-route-gets-relief-old-rtr-flyover-reopens-after-6-days-but-theres-a-catch-ws-l-10398943.html?comscorekw=jionews",
-      "title": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days, But There's A Catch",
-      "headline": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18009123632989800",
-      "timestamp": "2026-10-27T07:01:26.260000+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/pm-modi-holds-talks-with-liechtensteins-prince-alois-as-both-sides-look-to-boost-trade-ties-2026-10-27-139756",
       "title": "PM Modi Holds Talks With Liechtenstein's Prince Alois As Both Sides Look To Boost Trade Ties",
       "headline": "PM Modi Holds Talks With Liechtenstein's Prince Alois",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18105130355561578",
       "timestamp": "2026-11-19T04:23:53.746262+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/iran-says-3-oil-tankers-catch-fire-after-hitting-mines-east-of-strait-of-hormuz-2026-11-19-141346",
+      "title": "Iran Says 3 Oil Tankers Catch Fire After Hitting Mines East of Strait of Hormuz",
+      "headline": "Iran Says 3 Oil Tankers Catch Fire After Hitting Mines East of Hormuz",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18389211865226139",
+      "timestamp": "2026-11-19T04:49:59.389651+00:00"
     }
   ],
   "processed": [
@@ -4653,17 +4653,6 @@
         "reason": "Air quality levels in a major city are a recurring environmental issue of public interest, but they do not reach the threshold of a major disaster or geopolitical event."
       },
       "classified_at": "2026-11-19T03:57:20.078829+00:00"
-    },
-    {
-      "title": "Iran Says 3 Oil Tankers Catch Fire After Hitting Mines East of Strait of Hormuz",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/iran-says-3-oil-tankers-catch-fire-after-hitting-mines-east-of-strait-of-hormuz-2026-11-19-141346",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The destruction of oil tankers in a critical global shipping chokepoint (Strait of Hormuz) constitutes a major geopolitical and economic security incident."
-      },
-      "classified_at": "2026-11-19T03:57:20.078831+00:00"
     }
   ],
   "quota_cooldown": {
