@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/explainers/maths-of-deadlock-beyond-netanyahu-vs-eisenkot-why-winning-israels-election-may-still-not-be-enough-to-form-govt-ws-lrt-10400540.html?comscorekw=jionews",
-      "title": "Israel's Election Deadlock: Why Forming a Government Remains a Tough Challenge",
-      "headline": "Israel's Election Deadlock: Why Forming a Government Remains a Tough Challenge",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17867283123680363",
-      "timestamp": "2026-10-27T19:47:43.021440+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cyclone-arnab-hits-andhra-coast-landfall-underway-near-yanam-to-complete-by-4-am-says-imd-2026-10-27-139798",
       "title": "Cyclone Arnab Hits Andhra Coast: Landfall Underway Near Yanam, To Complete By 4 AM, Says IMD",
       "headline": "Cyclone Arnab Makes Landfall Near Yanam, Winds Up to 150 kmph",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18214913728365839",
       "timestamp": "2026-11-19T16:18:16.726811+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-japan-deepen-strategic-ties-bolster-supply-chains-defence-manufacturing-condemn-terrorism-2026-11-19-141411",
+      "title": "India, Japan Deepen Strategic Ties: Bolster Supply Chains, Defence Manufacturing, Condemn Terrorism",
+      "headline": "India, Japan Deepen Strategic Ties Amid Supply Chain, Defence, and Terrorism Concerns",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18403917883162975",
+      "timestamp": "2026-11-19T16:45:12.888834+00:00"
     }
   ],
   "processed": [
@@ -4647,7 +4647,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Gurugram Police Bust Fake International Call Centre Running Customer Support Scam, 17 Arrested",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/gurugram-police-bust-fake-international-call-centre-running-customer-support-scam-17-arrested-2026-11-19-141412",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A specific law enforcement operation targeting a fraudulent call center. While it involves arrests, it is a localized criminal matter rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-19T16:44:44.698952+00:00"
+    },
+    {
+      "title": "Centre Faces First Electoral Test In Ladakh Since Article 370 Abrogation And UT Status",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/centre-faces-first-electoral-test-in-ladakh-since-article-370-abrogation-and-ut-status-2026-11-19-141410",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This is a regional political event within India. While it relates to the abrogation of Article 370, it is framed as a local electoral test rather than a national election or a major international summit."
+      },
+      "classified_at": "2026-11-19T16:44:44.698976+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
