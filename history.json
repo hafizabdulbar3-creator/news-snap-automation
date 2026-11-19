@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/13-of-17-theni-jail-escapees-arrested-after-drone-surveillance-9-prison-officials-suspended-dgp-rathore-2026-10-27-139800",
-      "title": "13 Of 17 Theni Jail Escapees Arrested After Drone Surveillance, 9 Prison Officials Suspended: DGP Rathore",
-      "headline": "13 Of 17 Theni Jail Escapees Arrested, 9 Officials Suspended",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18198274441389054",
-      "timestamp": "2026-10-27T21:32:44.397202+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/taylor-swift-becomes-youngest-inducted-into-nashville-songwriters-hall-of-fame-at-36-reflects-on-fame-chaos-2026-10-27-139803",
       "title": "Taylor Swift Makes History as Youngest Nashville Songwriters Hall of Fame Inductee",
       "headline": "Taylor Swift Makes History as Youngest Nashville Songwriters Hall of Fame Inductee",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18189760333421328",
       "timestamp": "2026-11-19T20:18:38.847731+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/was-jensen-huang-disloyal-to-america-the-question-that-got-a-reporter-barred-from-trump-xi-putin-summit-ws-lrt-10433206.html?comscorekw=jionews",
+      "title": "Nvidia CEO Loyalty Question Sparks Summit Ban for Reporter",
+      "headline": "Reporter Banned from Putin Summit Over Nvidia CEO Loyalty Question",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18118623887024495",
+      "timestamp": "2026-11-19T21:31:35.082934+00:00"
     }
   ],
   "processed": [
@@ -4647,19 +4647,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Nvidia CEO Loyalty Question Sparks Summit Ban for Reporter",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/was-jensen-huang-disloyal-to-america-the-question-that-got-a-reporter-barred-from-trump-xi-putin-summit-ws-lrt-10433206.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A dispute involving a reporter and a tech CEO at a summit is a notable industry event but does not meet the threshold for a major geopolitical or international crisis."
-      },
-      "classified_at": "2026-11-19T21:26:03.001645+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
