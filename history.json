@@ -4645,6 +4645,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/cricket/temba-bavuma-ruled-out-of-2nd-bangladesh-test-due-to-calf-strain-ws-l-10433213.html?comscorekw=jionews",
+      "title": "Temba Bavuma Ruled Out Of 2nd Bangladesh Test Due To Calf Strain",
+      "domain": "news18.com",
+      "timestamp": "2026-11-19T22:07:31.982071+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
