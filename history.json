@@ -4609,6 +4609,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 19."
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/celebrities/saif-ali-khan-receives-death-threat-from-baba-siddiqui-murderers-mumbai-police-probes-2026-11-19-141383",
+      "title": "Saif Ali Khan Receives Death Threat From Baba Siddiqui Murderers, Mumbai Police Probes",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-19T08:58:23.210033+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
