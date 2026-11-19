@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/congress-says-gyanesh-kumar-impeachment-setup-blocked-at-ramlila-maidan-delhi-police-fact-checks-claim-ws-l-10399555.html?comscorekw=jionews",
-      "title": "Congress Says 'Gyanesh Kumar Impeachment' Setup Blocked At Ramlila Maidan, Delhi Police Fact-Checks Claim",
-      "headline": "Congress Claims Impeachment Setup Blocked At Ramlila Maidan",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18108931217251586",
-      "timestamp": "2026-10-27T08:45:05.303575+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/aap-congress-clash-erupts-at-punjab-vidhan-sabha-as-congress-leaders-barred-from-entry-2026-10-27-139766",
       "title": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha As Congress Leaders Barred From Entry",
       "headline": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17906838798672240",
       "timestamp": "2026-11-19T06:13:27.055793+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/us-teen-who-planned-mass-shooting-at-hindu-temple-on-day-1-of-navratri-charged-with-terrorism-ws-lrt-10432042.html?comscorekw=jionews",
+      "title": "US Teen Who Planned Mass Shooting At Hindu Temple On Day 1 Of Navratri Charged With Terrorism",
+      "headline": "US Teen Charged With Terrorism Over Planned Hindu Temple Shooting",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18113126804349029",
+      "timestamp": "2026-11-19T06:39:45.455706+00:00"
     }
   ],
   "processed": [
@@ -4602,7 +4602,74 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Navigating India Just Got Easier: What's New in Apple Maps?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Relationship with China a Great One': Trump Praises Xi Ahead of Trilateral Summit with Putin",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/relationship-with-china-a-great-one-trump-praises-xi-ahead-of-trilateral-summit-with-putin-2026-11-19-141368",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Involves a trilateral summit between major world leaders (Trump, Xi, Putin) regarding China and international relations."
+      },
+      "classified_at": "2026-11-19T06:39:11.198868+00:00"
+    },
+    {
+      "title": "Is The Iran War At A Dangerous Dead End? Why Trump And Tehran Are Trapped In A 'Frozen Conflict'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/is-the-iran-war-at-a-dangerous-dead-end-why-trump-and-tehran-are-trapped-in-a-frozen-conflict-shil-ws-l-10432004.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Discusses the status of the Iran war and high-stakes geopolitical tensions involving the US and Iran."
+      },
+      "classified_at": "2026-11-19T06:39:11.198887+00:00"
+    },
+    {
+      "title": "Nuclear Arms and Ending Wars in Iran and Ukraine Will Top the Agenda at Trump-Xi-Putin Meeting",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/nuclear-arms-and-ending-wars-in-iran-and-ukraine-will-top-the-agenda-at-trump-xi-putin-meeting-2026-11-19-141366",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Reports on a high-level summit involving nuclear arms and conflicts in Iran and Ukraine."
+      },
+      "classified_at": "2026-11-19T06:39:11.198890+00:00"
+    },
+    {
+      "title": "2 Killed, Six Injured After Fortuner Rams into Three-Wheeler in Delhi's Kashmere Gate",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/2-killed-six-injured-after-fortuner-rams-into-three-wheeler-in-delhi-s-kashmere-gate-2026-11-19-141370",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "A traffic accident resulting in injuries in a specific city (Delhi)."
+      },
+      "classified_at": "2026-11-19T06:39:11.198891+00:00"
+    },
+    {
+      "title": "Delhi 2047 Cannot Be Designed Around Cars: The Future of the Capital Will Be Walkable",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/info/delhi-2047-cannot-be-designed-around-cars-the-future-of-the-capital-will-be-walkable-2026-11-19-141369",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "A policy discussion regarding urban planning and infrastructure in a specific city (Delhi)."
+      },
+      "classified_at": "2026-11-19T06:39:11.198893+00:00"
+    },
+    {
+      "title": "Delhi Airport Security Breach: Man Forces His Way Past CISF Into Terminal 3, Arrested",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/delhi-airport-security-breach-man-forces-his-way-past-cisf-into-terminal-3-arrested-ws-l-10432008.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "A security breach incident at a specific airport (Delhi)."
+      },
+      "classified_at": "2026-11-19T06:39:11.198896+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
