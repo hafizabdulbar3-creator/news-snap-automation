@@ -4663,6 +4663,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/dont-fear-failure-delhi-govt-launches-ehsaas-2026-mental-health-and-wellness-policy-ws-lrt-10433227.html?comscorekw=jionews",
+      "title": "'Don't Fear Failure': Delhi Govt Launches Ehsaas 2026 Mental Health And Wellness Policy",
+      "domain": "news18.com",
+      "timestamp": "2026-11-19T23:10:32.538937+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
