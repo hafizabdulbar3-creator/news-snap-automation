@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/brics-parliamentary-forum-adopts-new-delhi-joint-declaration-calling-for-un-reform-multilateralism-2026-10-27-139781",
-      "title": "BRICS Parliamentary Forum Adopts New Delhi Joint Declaration, Calling for UN Reform, Multilateralism",
-      "headline": "BRICS Parliamentary Forum Adopts New Delhi Joint Declaration",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18201060400378414",
-      "timestamp": "2026-10-27T11:31:44.352031+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/voters-in-israel-are-deciding-whether-to-oust-netanyahu-after-3-years-of-war-2026-10-27-139782",
       "title": "Voters in Israel Are Deciding Whether to Oust Netanyahu After 3 Years of War",
       "headline": "Voters in Israel Decide Whether to Oust Netanyahu After 3 Years of War",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18091896464718592",
       "timestamp": "2026-11-19T09:00:12.562476+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/is-the-iran-war-at-a-dangerous-dead-end-why-trump-and-tehran-are-trapped-in-a-frozen-conflict-shil-ws-l-10432004.html?comscorekw=jionews",
+      "title": "Is The Iran War At A Dangerous Dead End? Why Trump And Tehran Are Trapped In A 'Frozen Conflict'",
+      "headline": "Is The Iran War At A Dangerous Dead End?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18353424745271648",
+      "timestamp": "2026-11-19T09:26:08.167433+00:00"
     }
   ],
   "processed": [
@@ -4631,17 +4631,6 @@
         "reason": "Involves a trilateral summit between major world leaders (Trump, Xi, Putin) regarding China and international relations."
       },
       "classified_at": "2026-11-19T06:39:11.198868+00:00"
-    },
-    {
-      "title": "Is The Iran War At A Dangerous Dead End? Why Trump And Tehran Are Trapped In A 'Frozen Conflict'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/is-the-iran-war-at-a-dangerous-dead-end-why-trump-and-tehran-are-trapped-in-a-frozen-conflict-shil-ws-l-10432004.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Discusses the status of the Iran war and high-stakes geopolitical tensions involving the US and Iran."
-      },
-      "classified_at": "2026-11-19T06:39:11.198887+00:00"
     },
     {
       "title": "Nuclear Arms and Ending Wars in Iran and Ukraine Will Top the Agenda at Trump-Xi-Putin Meeting",
