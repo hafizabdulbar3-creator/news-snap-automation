@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/netanyahus-allies-float-unity-government-with-rival-eisenkot-as-trump-backs-post-poll-deal-report-2026-10-27-139742",
-      "title": "Netanyahu's Allies Float Unity Government With Rival Eisenkot As Trump Backs Post-Poll Deal: Report",
-      "headline": "Netanyahu Allies Explore Unity Government With Rival Eisenkot",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17982064328914353",
-      "timestamp": "2026-10-27T06:35:13.650186+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/new-delhi-news/delhi-airport-route-gets-relief-old-rtr-flyover-reopens-after-6-days-but-theres-a-catch-ws-l-10398943.html?comscorekw=jionews",
       "title": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days, But There's A Catch",
       "headline": "Delhi Airport Route Gets Relief: Old RTR Flyover Reopens After 6 Days",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17950946625122994",
       "timestamp": "2026-11-19T03:57:59.676480+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-meets-xi-jinping-and-vladimir-putin-at-33rd-apec-economic-leaders-meeting-trilateral-later-today-2026-11-19-141348",
+      "title": "Trump Meets Xi Jinping and Vladimir Putin at 33rd APEC Economic Leaders' Meeting, Trilateral Later Today",
+      "headline": "Trump Meets Xi Jinping and Putin at APEC Summit for Historic Trilateral",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18105130355561578",
+      "timestamp": "2026-11-19T04:23:53.746262+00:00"
     }
   ],
   "processed": [
@@ -4631,17 +4631,6 @@
         "reason": "A political figure commenting on a tech executive's situation regarding a specific scandal is a notable public interest story but does not constitute a major geopolitical event."
       },
       "classified_at": "2026-11-19T03:57:20.078818+00:00"
-    },
-    {
-      "title": "Trump Meets Xi Jinping and Vladimir Putin at 33rd APEC Economic Leaders' Meeting, Trilateral Later Today",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/trump-meets-xi-jinping-and-vladimir-putin-at-33rd-apec-economic-leaders-meeting-trilateral-later-today-2026-11-19-141348",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A trilateral meeting between the leaders of the US, China, and Russia at the APEC summit is a high-level geopolitical event with significant global consequences."
-      },
-      "classified_at": "2026-11-19T03:57:20.078823+00:00"
     },
     {
       "title": "Navigating India Just Got Easier: What's New in Apple Maps?",
