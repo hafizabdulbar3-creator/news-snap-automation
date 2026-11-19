@@ -4654,6 +4654,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-2-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10433209.html?comscorekw=jionews",
+      "title": "India Vs New Zealand Live Score, 1st Test Day 2: NZ 250/5 In 85 Overs, Glenn Phillips On 97",
+      "domain": "news18.com",
+      "timestamp": "2026-11-19T22:28:16.028767+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
