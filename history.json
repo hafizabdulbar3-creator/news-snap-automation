@@ -4627,6 +4627,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/high-court-stays-punjab-pcs-selection-process-sachin-pilot-slams-aap-govt-alleges-irregularities-2026-11-19-141392",
+      "title": "High Court Stays Punjab PCS Selection Process; Sachin Pilot Slams AAP Govt, Alleges Irregularities",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-19T11:15:36.571037+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains unverified allegation ('High Court Stays Punjab PCS Selection Process; Sachin Pilot Slams AAP Govt, Alleges Irregularities'), but generated post converts it to an established fact without attribution."
     }
   ],
   "classified_pool": [
