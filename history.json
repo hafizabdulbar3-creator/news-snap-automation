@@ -4647,7 +4647,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Nvidia CEO Loyalty Question Sparks Summit Ban for Reporter",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/was-jensen-huang-disloyal-to-america-the-question-that-got-a-reporter-barred-from-trump-xi-putin-summit-ws-lrt-10433206.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A dispute involving a reporter and a tech CEO at a summit is a notable industry event but does not meet the threshold for a major geopolitical or international crisis."
+      },
+      "classified_at": "2026-11-19T21:26:03.001645+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
