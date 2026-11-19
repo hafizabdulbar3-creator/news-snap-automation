@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/tiger-shroff-firing-was-to-extort-money-assert-lawrence-bishnoi-gangs-power-crime-branch-sources-ws-l-10399037.html?comscorekw=jionews",
-      "title": "Tiger Shroff Firing Was To Extort Money, Assert Lawrence Bishnoi Gang's Power: Crime Branch Sources",
-      "headline": "Tiger Shroff Firing Was To Extort Money, Assert Gang's Power: Crime Branch",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18128599609880957",
-      "timestamp": "2026-10-27T06:09:24.805034+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/netanyahus-allies-float-unity-government-with-rival-eisenkot-as-trump-backs-post-poll-deal-report-2026-10-27-139742",
       "title": "Netanyahu's Allies Float Unity Government With Rival Eisenkot As Trump Backs Post-Poll Deal: Report",
       "headline": "Netanyahu Allies Explore Unity Government With Rival Eisenkot",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18160908196515292",
       "timestamp": "2026-11-19T03:31:43.518287+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/bhubaneswar/cyclone-akvan-odisha-evacuates-50000-as-13-districts-face-red-warning-3-trains-rescheduled-ws-l-10431781.html?comscorekw=jionews",
+      "title": "Cyclone Akvan: Odisha Evacuates 50,000 As 13 Districts Face Red Warning, 3 Trains Rescheduled",
+      "headline": "Cyclone Akvan: Odisha Evacuates 50,000, 13 Districts Under Red Warning",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17950946625122994",
+      "timestamp": "2026-11-19T03:57:59.676480+00:00"
     }
   ],
   "processed": [
@@ -4620,7 +4620,63 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Have to Take Care of Our Geniuses': Trump Bats for Jensen Huang Amidst 'Chinese Spy Scandal'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/have-to-take-care-of-our-geniuses-trump-bats-for-jensen-huang-amidst-chinese-spy-scandal-2026-11-19-141350",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A political figure commenting on a tech executive's situation regarding a specific scandal is a notable public interest story but does not constitute a major geopolitical event."
+      },
+      "classified_at": "2026-11-19T03:57:20.078818+00:00"
+    },
+    {
+      "title": "Trump Meets Xi Jinping and Vladimir Putin at 33rd APEC Economic Leaders' Meeting, Trilateral Later Today",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-meets-xi-jinping-and-vladimir-putin-at-33rd-apec-economic-leaders-meeting-trilateral-later-today-2026-11-19-141348",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A trilateral meeting between the leaders of the US, China, and Russia at the APEC summit is a high-level geopolitical event with significant global consequences."
+      },
+      "classified_at": "2026-11-19T03:57:20.078823+00:00"
+    },
+    {
+      "title": "Navigating India Just Got Easier: What's New in Apple Maps?",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/navigating-india-just-got-easier-whats-new-in-apple-maps-2026-11-19-141344",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "The launch of new features for a commercial mapping application is a standard corporate milestone and product update."
+      },
+      "classified_at": "2026-11-19T03:57:20.078826+00:00"
+    },
+    {
+      "title": "Delhi Air Quality Remains 'Poor' at 286; AIIMS and Chandni Chowk Slip Into 'Very Poor' Zone",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-air-quality-remains-poor-at-286-aiims-and-chandni-chowk-slip-into-very-poor-zone-2026-11-19-141347",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "Air quality levels in a major city are a recurring environmental issue of public interest, but they do not reach the threshold of a major disaster or geopolitical event."
+      },
+      "classified_at": "2026-11-19T03:57:20.078829+00:00"
+    },
+    {
+      "title": "Iran Says 3 Oil Tankers Catch Fire After Hitting Mines East of Strait of Hormuz",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/iran-says-3-oil-tankers-catch-fire-after-hitting-mines-east-of-strait-of-hormuz-2026-11-19-141346",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The destruction of oil tankers in a critical global shipping chokepoint (Strait of Hormuz) constitutes a major geopolitical and economic security incident."
+      },
+      "classified_at": "2026-11-19T03:57:20.078831+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
