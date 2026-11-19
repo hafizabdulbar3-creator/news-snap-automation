@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/bengaluru-news/how-a-refund-request-for-leaking-curd-packet-cost-bengaluru-woman-rs-98000-ws-l-10399041.html?comscorekw=jionews",
-      "title": "How A Refund Request For Leaking Curd Packet Cost Bengaluru Woman Rs 98,000",
-      "headline": "Bengaluru Woman Loses Rs 98,000 After Refund Request For Leaking Curd",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18399166243163311",
-      "timestamp": "2026-10-27T05:17:34.177057+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/up-bihar-maharashtra-karnataka-begin-counting-for-28-legislative-council-seats-2026-10-27-139743",
       "title": "UP, Bihar, Maharashtra, Karnataka Begin Counting For 28 Legislative Council Seats",
       "headline": "Counting Begins for 28 Legislative Council Seats in UP, Bihar, Maharashtra, Karnataka",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17967789708238127",
       "timestamp": "2026-11-19T02:39:30.227824+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/severe-cyclone-akvan-to-make-landfall-along-andhra-odisha-coasts-by-noon-3-trains-rescheduled-2026-11-19-141342",
+      "title": "Severe Cyclone Akvan to Make Landfall Along Andhra, Odisha Coasts by Noon; 3 Trains Rescheduled",
+      "headline": "Severe Cyclone Akvan to Hit Andhra, Odisha Coasts by Noon",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18124102894922930",
+      "timestamp": "2026-11-19T03:05:40.091151+00:00"
     }
   ],
   "processed": [
@@ -4620,7 +4620,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'No One Can Replace Him': Elon Musk Says Nvidia's Decision to Sack Jensen Huang Was Not Smart",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/no-one-can-replace-him-elon-musk-says-nvidia-s-decision-to-sack-jensen-huang-was-not-smart-2026-11-19-141343",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "This is a commentary on a corporate executive's opinion regarding a rival company's personnel decisions. While it involves high-profile figures, it does not constitute a major geopolitical event, scientific breakthrough, or central bank action."
+      },
+      "classified_at": "2026-11-19T03:05:12.102335+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
