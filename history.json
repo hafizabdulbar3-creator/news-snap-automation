@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/satyam-shivam-sundaram-rahul-gandhi-invokes-lord-shiva-ahead-of-sir-hearing-10398929.html?comscorekw=jionews",
-      "title": "'Satyam Shivam Sundaram': Rahul Gandhi Invokes Lord Shiva Ahead Of SC Hearing On SIR",
-      "headline": "Rahul Gandhi Invokes Lord Shiva Ahead of SC Hearing",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18048164096820884",
-      "timestamp": "2026-10-27T03:33:46.927168+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cyclone-arnab-nears-andhra-coast-with-140-kmph-gusts-16-districts-on-alert-1763-shelters-ready-for-evacuations-2026-10-27-139741",
       "title": "Cyclone Arnab Nears Andhra Coast: 140 Kmph Gusts, 16 Districts on High Alert",
       "headline": "Cyclone Arnab Nears Andhra Coast With 140 Kmph Gusts",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18127116415705743",
       "timestamp": "2026-11-18T21:01:15.290958+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/xi-jinping-rolls-out-grand-welcome-for-donald-trump-during-china-visit-watch-ws-kl-10430760.html?comscorekw=jionews",
+      "title": "Xi Jinping Rolls Out Grand Welcome For Donald Trump During China Visit | Watch",
+      "headline": "Xi Jinping Rolls Out Grand Welcome For Donald Trump",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18400745920163339",
+      "timestamp": "2026-11-19T01:16:08.148868+00:00"
     }
   ],
   "processed": [
@@ -4620,7 +4620,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Gorkha Hats, Black And Maroon Berets Return: What Changed In The Indian Army's Uniform Rules?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/gorkha-hats-black-and-maroon-berets-return-what-changed-in-the-indian-armys-uniform-rules-ws-l-10430672.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "Update to military uniform regulations is a standard administrative change with limited international impact."
+      },
+      "classified_at": "2026-11-19T01:15:38.963766+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
