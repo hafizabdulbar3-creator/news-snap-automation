@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/trump-made-us-midterms-about-himself-will-it-backfire-ws-l-10400385.html?comscorekw=jionews",
-      "title": "Trump Made US Midterms About Himself. Will It Backfire?",
-      "headline": "Trump Made US Midterms About Himself. Will It Backfire?",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18464981488187258",
-      "timestamp": "2026-10-27T16:18:55.113430+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/maharashtra-govt-to-pay-5000-advance-aid-to-eligible-drought-hit-farmers-before-diwali-ws-l-10400370.html?comscorekw=jionews",
       "title": "Maharashtra Govt To Pay ₹5,000 Advance Aid To Eligible Drought-Hit Farmers Before Diwali",
       "headline": "Maharashtra Govt To Pay ₹5,000 Advance Aid To Drought-Hit Farmers Before Diwali",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18105649175561718",
       "timestamp": "2026-11-19T13:10:33.516353+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/in-a-landmark-judgment-top-un-court-says-myanmar-committed-genocide-against-the-rohingya-2026-11-19-141405",
+      "title": "In a Landmark Judgment, Top UN Court Says Myanmar Committed Genocide Against the Rohingya",
+      "headline": "Top UN Court Rules Myanmar Committed Genocide Against Rohingya",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17909470215606185",
+      "timestamp": "2026-11-19T13:36:44.814157+00:00"
     }
   ],
   "processed": [
