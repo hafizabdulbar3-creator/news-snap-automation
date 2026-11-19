@@ -4636,6 +4636,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/assamese-film-adishakti-shines-internationally-wins-best-film-at-las-vegas-indie-awards-2026-11-19-141413",
+      "title": "Assamese Film 'Adishakti' Shines Internationally, Wins Best Film at Las Vegas Indie Awards",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-19T17:46:38.297138+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
