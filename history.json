@@ -4618,6 +4618,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.republicworld.com/cricket/nz-vs-ind-1st-test-bumrah-surpasses-srinath-among-top-10-indian-test-wicket-takers-2026-11-19-141388",
+      "title": "NZ vs IND, 1st Test: Bumrah Surpasses Srinath, Among Top 10 Indian Test Wicket-Takers",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-19T09:52:20.444883+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
