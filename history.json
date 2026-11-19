@@ -4672,6 +4672,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/cricket/glenn-phillips-scores-118-in-1st-innings-of-wellington-test-to-equal-rohit-sharmas-elite-record-ws-l-10433229.html?comscorekw=jionews",
+      "title": "Glenn Phillips Scores 118 In 1st Innings Of Wellington Test To Equal Rohit Sharma's Elite Record",
+      "domain": "news18.com",
+      "timestamp": "2026-11-19T23:36:25.903355+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
