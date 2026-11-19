@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/mumbai-police-invoke-mcoca-against-all-accused-in-tiger-shroff-firing-case-2026-10-27-139786",
-      "title": "Mumbai Police Invoke MCOCA Against All Accused in Tiger Shroff Firing Case",
-      "headline": "Mumbai Police Invoke MCOCA Against All Accused in Tiger Shroff Firing Case",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17872829676647461",
-      "timestamp": "2026-10-27T13:20:50.462777+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/pm-modi-inaugurates-emerging-science-technology-and-innovation-conclave-2026-2026-10-27-139787",
       "title": "PM Modi Inaugurates Emerging Science, Technology and Innovation Conclave 2026",
       "headline": "PM Modi Inaugurates Emerging Science, Technology and Innovation Conclave 2026",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115795130152478",
       "timestamp": "2026-11-19T11:21:18.263485+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/relationship-with-china-a-great-one-trump-praises-xi-ahead-of-trilateral-summit-with-putin-2026-11-19-141368",
+      "title": "'Relationship with China a Great One': Trump Praises Xi Ahead of Trilateral Summit with Putin",
+      "headline": "Trump Praises China Relationship Ahead of Trilateral Summit with Putin",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18200288584396842",
+      "timestamp": "2026-11-19T11:47:04.546889+00:00"
     }
   ],
   "processed": [
@@ -4639,17 +4639,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Relationship with China a Great One': Trump Praises Xi Ahead of Trilateral Summit with Putin",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/relationship-with-china-a-great-one-trump-praises-xi-ahead-of-trilateral-summit-with-putin-2026-11-19-141368",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves a trilateral summit between major world leaders (Trump, Xi, Putin) regarding China and international relations."
-      },
-      "classified_at": "2026-11-19T06:39:11.198868+00:00"
-    },
     {
       "title": "Nuclear Arms and Ending Wars in Iran and Ukraine Will Top the Agenda at Trump-Xi-Putin Meeting",
       "domain": "republicworld.com",
