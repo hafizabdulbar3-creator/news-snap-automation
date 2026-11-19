@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/acc-builds-momentum-with-improved-trade-mix-capacity-expansion-and-progress-on-one-cement-platform-2026-10-27-139794",
-      "title": "ACC Builds Momentum With Improved Trade Mix, Capacity Expansion And Progress On One Cement Platform",
-      "headline": "ACC Expands Footprint With New Grinding Units And One Cement Platform Progress",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18008741187005192",
-      "timestamp": "2026-10-27T18:03:24.075230+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/hasina-moves-un-seeking-fresh-bangladesh-election-with-awami-league-ahead-of-her-december-return-ws-blt-10400466.html?comscorekw=jionews",
       "title": "Hasina Moves UN Seeking Fresh Bangladesh Election With Awami League Ahead Of Her December Return",
       "headline": "Hasina Seeks UN Help For Fresh Bangladesh Election",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18043387184844739",
       "timestamp": "2026-11-19T14:55:40.159517+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/skyroots-chandana-eyes-human-spaceflight-after-historic-orbital-leap-cnn-news18-indian-of-the-year-ws-l-10432987.html?comscorekw=jionews",
+      "title": "Skyroot's Chandana Eyes Human Spaceflight After Historic Orbital Leap",
+      "headline": "Skyroot's Chandana Eyes Human Spaceflight After Historic Orbital Leap",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17986716125906205",
+      "timestamp": "2026-11-19T15:26:18.955822+00:00"
     }
   ],
   "processed": [
@@ -4647,7 +4647,30 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Influencer's Father, Neighbour Arrested for Beating Man to Death",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/influencers-father-neighbour-arrested-for-beating-man-to-death-2026-11-19-141407",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime & Justice",
+        "reason": "While a homicide is a serious crime, this is a localized legal matter involving a specific dispute rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-19T15:25:47.244655+00:00"
+    },
+    {
+      "title": "After 23 Years, Employee Fired with Just 4 Hours to Pack: 'Didn't Get to Say Goodbye'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/employee-fired-after-23-years-says-company-gave-just-4-hours-to-pack-things-up-i-didnt-get-to-say-goodbye-ws-l-10432828.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Labor & Economy",
+        "reason": "This is a notable employment dispute involving a specific individual, representing a workplace issue rather than a story of broad international consequence."
+      },
+      "classified_at": "2026-11-19T15:25:47.244659+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
