@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-cricket-score-2nd-test-day-5-afg-vs-zim-latest-scorecard-sharjah-match-updates-liveblog-ws-l-10428535.html?comscorekw=jionews",
-      "title": "Afghanistan Vs Zimbabwe 2nd Test Day 5 Highlights: ZIM Stun AFG With Dramatic Late Victory",
-      "domain": "news18.com",
-      "timestamp": "2026-11-17T15:27:58.711345+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/cricket/south-africa-vs-bangladesh-live-cricket-score-2nd-test-day-2-sa-vs-ban-latest-scorecard-johannesburg-match-updates-liveblog-ws-l-10428703.html?comscorekw=jionews",
-      "title": "South Africa Vs Bangladesh 2nd Test Day 3 Highlights: SA Crumble After Bavuma Injury On Day 3 Of BAN Test",
-      "domain": "news18.com",
-      "timestamp": "2026-11-17T15:38:39.649292+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.republicworld.com/world-news/us-strikes-irgc-missile-launch-site-on-irans-qeshm-island-after-attack-on-bahrain-base-2026-11-18-141272",
       "title": "US Strikes IRGC Missile Launch Site on Iran's Qeshm Island After Attack on Bahrain Base",
       "domain": "republicworld.com",
@@ -4645,21 +4627,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 18."
-    }
-  ],
-  "classified_pool": [
+    },
     {
+      "url": "https://www.republicworld.com/india/centre-faces-first-electoral-test-in-ladakh-since-article-370-abrogation-and-ut-status-2026-11-19-141410",
       "title": "Centre Faces First Electoral Test In Ladakh Since Article 370 Abrogation And UT Status",
       "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/centre-faces-first-electoral-test-in-ladakh-since-article-370-abrogation-and-ut-status-2026-11-19-141410",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This is a regional political event within India. While it relates to the abrogation of Article 370, it is framed as a local electoral test rather than a national election or a major international summit."
-      },
-      "classified_at": "2026-11-19T16:44:44.698976+00:00"
+      "timestamp": "2026-11-19T17:41:21.910534+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
