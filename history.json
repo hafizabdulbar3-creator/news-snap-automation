@@ -4503,33 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/global-news/flight-ground-stop-microsoft-outage-united-glitch-chase-slowdown-what-is-going-on-in-america-2026-11-16-141189",
-      "title": "Flight Ground Stop, Microsoft Outage, United Glitch, Chase Slowdown: What Is Going On In America?",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-17T00:15:22.691172+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Flight Ground Stop, Microsoft Outage, United Glitch, Chase Slowdown: What Is Going On In America?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.news18.com/cricket/mitchell-santner-ruled-out-of-test-series-against-india-due-to-right-hand-fracture-ws-l-10428260.html?comscorekw=jionews",
-      "title": "Mitchell Santner Ruled Out Of Test Series Against India Due To Right-Hand Fracture",
-      "domain": "news18.com",
-      "timestamp": "2026-11-17T00:46:29.406472+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.republicworld.com/health/vitamin-b12-may-hold-key-to-treating-a-rare-genetic-disorder-study-2026-11-17-141204",
-      "title": "Vitamin B12 May Hold Key to Treating a Rare Genetic Disorder: Study",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-17T03:32:58.280257+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 16."
-    },
-    {
       "url": "https://www.news18.com/india/bjp-looks-to-make-inroads-into-sp-ncpsp-on-delimitation-in-fresh-test-for-opposition-unity-ws-l-10428420.html?comscorekw=jionews",
       "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
       "domain": "news18.com",
@@ -4618,6 +4591,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/tech/navigating-india-just-got-easier-whats-new-in-apple-maps-2026-11-19-141344",
+      "title": "Navigating India Just Got Easier: What's New in Apple Maps?",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-19T05:15:43.651790+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Navigating India Just Got Easier: What's New in Apple Maps?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
@@ -4631,17 +4613,6 @@
         "reason": "A political figure commenting on a tech executive's situation regarding a specific scandal is a notable public interest story but does not constitute a major geopolitical event."
       },
       "classified_at": "2026-11-19T03:57:20.078818+00:00"
-    },
-    {
-      "title": "Navigating India Just Got Easier: What's New in Apple Maps?",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/navigating-india-just-got-easier-whats-new-in-apple-maps-2026-11-19-141344",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "The launch of new features for a commercial mapping application is a standard corporate milestone and product update."
-      },
-      "classified_at": "2026-11-19T03:57:20.078826+00:00"
     },
     {
       "title": "Delhi Air Quality Remains 'Poor' at 286; AIIMS and Chandni Chowk Slip Into 'Very Poor' Zone",
