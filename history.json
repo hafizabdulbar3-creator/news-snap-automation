@@ -4600,6 +4600,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Navigating India Just Got Easier: What's New in Apple Maps?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.republicworld.com/info/delhi-2047-cannot-be-designed-around-cars-the-future-of-the-capital-will-be-walkable-2026-11-19-141369",
+      "title": "Delhi 2047 Cannot Be Designed Around Cars: The Future of the Capital Will Be Walkable",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-19T07:57:07.802812+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 19."
     }
   ],
   "classified_pool": [
@@ -4635,17 +4644,6 @@
         "reason": "Reports on a high-level summit involving nuclear arms and conflicts in Iran and Ukraine."
       },
       "classified_at": "2026-11-19T06:39:11.198890+00:00"
-    },
-    {
-      "title": "Delhi 2047 Cannot Be Designed Around Cars: The Future of the Capital Will Be Walkable",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/info/delhi-2047-cannot-be-designed-around-cars-the-future-of-the-capital-will-be-walkable-2026-11-19-141369",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "A policy discussion regarding urban planning and infrastructure in a specific city (Delhi)."
-      },
-      "classified_at": "2026-11-19T06:39:11.198893+00:00"
     }
   ],
   "quota_cooldown": {
