@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/pm-modi-holds-talks-with-liechtensteins-prince-alois-as-both-sides-look-to-boost-trade-ties-2026-10-27-139756",
-      "title": "PM Modi Holds Talks With Liechtenstein's Prince Alois As Both Sides Look To Boost Trade Ties",
-      "headline": "PM Modi Holds Talks With Liechtenstein's Prince Alois",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18411625909093958",
-      "timestamp": "2026-10-27T07:27:19.475412+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/mumbai-news/mumbais-tower-of-corruption-set-for-redevelopment-where-is-it-how-is-it-linked-to-lata-mangeshkar-asha-bhosle-ws-klrt-10399334.html?comscorekw=jionews",
       "title": "Mumbai's 'Tower of Corruption' Redeveloped: Celebs, Gangsters, and a New Skyscraper",
       "headline": "Mumbai's 'Tower of Corruption' Redeveloped: Celebs, Gangsters, and a New Skyscraper",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18389211865226139",
       "timestamp": "2026-11-19T04:49:59.389651+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-air-quality-remains-poor-at-286-aiims-and-chandni-chowk-slip-into-very-poor-zone-2026-11-19-141347",
+      "title": "Delhi Air Quality Remains 'Poor' at 286; AIIMS and Chandni Chowk Slip Into 'Very Poor' Zone",
+      "headline": "Delhi Air Quality Remains 'Poor' at 286",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17874540036644334",
+      "timestamp": "2026-11-19T05:21:17.991068+00:00"
     }
   ],
   "processed": [
@@ -4613,17 +4613,6 @@
         "reason": "A political figure commenting on a tech executive's situation regarding a specific scandal is a notable public interest story but does not constitute a major geopolitical event."
       },
       "classified_at": "2026-11-19T03:57:20.078818+00:00"
-    },
-    {
-      "title": "Delhi Air Quality Remains 'Poor' at 286; AIIMS and Chandni Chowk Slip Into 'Very Poor' Zone",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-air-quality-remains-poor-at-286-aiims-and-chandni-chowk-slip-into-very-poor-zone-2026-11-19-141347",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "Air quality levels in a major city are a recurring environmental issue of public interest, but they do not reach the threshold of a major disaster or geopolitical event."
-      },
-      "classified_at": "2026-11-19T03:57:20.078829+00:00"
     }
   ],
   "quota_cooldown": {
