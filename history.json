@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/india/bjp-looks-to-make-inroads-into-sp-ncpsp-on-delimitation-in-fresh-test-for-opposition-unity-ws-l-10428420.html?comscorekw=jionews",
-      "title": "BJP Looks To Make Inroads Into SP, NCP(SP) On Delimitation In Fresh Test For Opposition Unity",
-      "domain": "news18.com",
-      "timestamp": "2026-11-17T10:55:53.970803+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-cricket-score-2nd-test-day-5-afg-vs-zim-latest-scorecard-sharjah-match-updates-liveblog-ws-l-10428535.html?comscorekw=jionews",
       "title": "Afghanistan Vs Zimbabwe 2nd Test Day 5 Highlights: ZIM Stun AFG With Dramatic Late Victory",
       "domain": "news18.com",
@@ -4627,6 +4618,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/viral/amid-gta-6-frenzy-namma-benglooru-goes-viral-with-its-own-bengaluru-open-world-ws-l-10432246.html?comscorekw=jionews",
+      "title": "Amid GTA 6 Frenzy, Namma Benglooru Goes Viral With Its Own Bengaluru Open World",
+      "domain": "news18.com",
+      "timestamp": "2026-11-19T11:10:09.140893+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
