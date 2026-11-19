@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/aap-congress-clash-erupts-at-punjab-vidhan-sabha-as-congress-leaders-barred-from-entry-2026-10-27-139766",
-      "title": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha As Congress Leaders Barred From Entry",
-      "headline": "AAP-Congress Clash Erupts At Punjab Vidhan Sabha",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17873655636649277",
-      "timestamp": "2026-10-27T09:10:54.913573+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/up-ceo-apologises-over-bizarre-thank-god-ram-didn-t-kill-any-minority-post-vows-formal-communication-2026-10-27-139764",
       "title": "UP CEO Apologises Over Bizarre 'Thank God Ram Didn't Kill Any Minority' Post, Vows Formal Communication",
       "headline": "UP CEO Apologises Over 'Thank God Ram Didn't Kill Any Minority' Post",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18113126804349029",
       "timestamp": "2026-11-19T06:39:45.455706+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/2-killed-six-injured-after-fortuner-rams-into-three-wheeler-in-delhi-s-kashmere-gate-2026-11-19-141370",
+      "title": "2 Killed, Six Injured After Fortuner Rams into Three-Wheeler in Delhi's Kashmere Gate",
+      "headline": "2 Killed, Six Injured After Fortuner Rams into Three-Wheeler in Delhi",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18390007558224459",
+      "timestamp": "2026-11-19T07:05:38.239496+00:00"
     }
   ],
   "processed": [
@@ -4635,17 +4635,6 @@
         "reason": "Reports on a high-level summit involving nuclear arms and conflicts in Iran and Ukraine."
       },
       "classified_at": "2026-11-19T06:39:11.198890+00:00"
-    },
-    {
-      "title": "2 Killed, Six Injured After Fortuner Rams into Three-Wheeler in Delhi's Kashmere Gate",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/2-killed-six-injured-after-fortuner-rams-into-three-wheeler-in-delhi-s-kashmere-gate-2026-11-19-141370",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "A traffic accident resulting in injuries in a specific city (Delhi)."
-      },
-      "classified_at": "2026-11-19T06:39:11.198891+00:00"
     },
     {
       "title": "Delhi 2047 Cannot Be Designed Around Cars: The Future of the Capital Will Be Walkable",
