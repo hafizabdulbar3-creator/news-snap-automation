@@ -4755,7 +4755,41 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Congress Wins 27 Of 37 Zila Parishads In Rajasthan: BJP Reduced To 6",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/congress-wins-27-of-37-zila-parishads-in-rajasthan-bjp-reduced-to-6-2026-11-20-141492",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional election result in India involving local governance bodies (Zila Parishads). While significant for local politics, it does not meet the threshold for a major geopolitical event."
+      },
+      "classified_at": "2026-11-20T23:50:23.498385+00:00"
+    },
+    {
+      "title": "India Rejects Terrorist Pannun's Baseless Lawsuit Against NSA Doval, Ex-RAW Chief",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/wanted-in-india-suing-from-america-terrorist-pannun-targets-nsa-doval-and-ex-raw-chief-india-says-baseless-lawsuit-rejected-2026-11-20-141485",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A legal and diplomatic response regarding a specific individual's lawsuit against Indian officials. This is a domestic legal matter rather than a major international crisis or summit."
+      },
+      "classified_at": "2026-11-20T23:50:23.498405+00:00"
+    },
+    {
+      "title": "Diplomatic Ploy: Pakistan's Agra Visit Claims Divert from Cross-Border Terror",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/pakistan-pushes-permission-narrative-over-agra-visit-while-sidestepping-cross-border-terror-exclusive-details-ws-lrt-10434768.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A commentary on a diplomatic visit and its potential implications regarding cross-border terrorism. It discusses regional security dynamics but lacks the scale of a major war or summit."
+      },
+      "classified_at": "2026-11-20T23:50:23.498408+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
