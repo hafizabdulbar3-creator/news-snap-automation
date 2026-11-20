@@ -4683,7 +4683,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump's Cyber Director Resigns Amid US Tech Outages, Banking Disruptions",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/trump-xi-and-putin-issue-joint-peace-declaration-at-historic-summit-pledge-dialogue-on-nuclear-risk-reduction-2026-11-20-141414",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A resignation at the highest level of cybersecurity leadership occurring simultaneously with widespread national infrastructure outages and banking disruptions constitutes a significant geopolitical and economic event."
+      },
+      "classified_at": "2026-11-20T01:20:00.016451+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
