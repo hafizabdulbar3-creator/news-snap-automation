@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/israel-election-exit-polls-show-netanyahu-and-opposition-short-of-majority-arab-parties-hold-key-2026-10-28-139814",
-      "title": "Israel Election Exit Polls Show Netanyahu And Opposition Short Of Majority, Arab Parties Hold Key",
-      "headline": "Exit Polls: Netanyahu, Opposition Short Of Majority In Israel",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18109135514222149",
-      "timestamp": "2026-10-28T02:17:38.537756+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/india-pakistan-sco-civilisational-dialogue-forum-delhi-10400594.html?comscorekw=jionews",
       "title": "India Invites Pakistan, 9 Other SCO Nations For First Civilisational Dialogue Forum In Delhi",
       "headline": "India Hosts First SCO Civilisational Dialogue Forum In Delhi",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18147494671608964",
       "timestamp": "2026-11-20T03:41:20.459156+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/visakhapatnam/cyclone-akvan-disrupts-flights-air-india-indigo-issue-alerts-check-affected-routes-ws-l-10433391.html?comscorekw=jionews",
+      "title": "Cyclone Akvan Disrupts Flights: Air India, IndiGo Issue Alerts – Check Affected Routes",
+      "headline": "Cyclone Akvan Disrupts Flights: Air India, IndiGo Issue Alerts",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17994308430096122",
+      "timestamp": "2026-11-20T04:07:13.256407+00:00"
     }
   ],
   "processed": [
