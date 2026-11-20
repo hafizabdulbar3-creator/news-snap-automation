@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-hc-upholds-conviction-of-5-men-in-monish-s-2020-delhi-riots-killing-2026-10-28-139821",
-      "title": "Delhi HC Upholds Conviction Of 5 Men In Monish's 2020 Delhi Riots Killing",
-      "headline": "Delhi HC Upholds Conviction Of 5 Men In Monish's 2020 Delhi Riots Killing",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18382175653238274",
-      "timestamp": "2026-10-28T07:34:28.321304+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/at-times-sharad-pawar-also-doesnt-know-what-he-wants-to-do-maharashtra-cm-fadnavis-at-rising-bharat-ws-klrt-10401022.html?comscorekw=jionews",
       "title": "'Sharad Pawar Doesn't...': CM Devendra Fadnavis Weighs In On NCP Merger Speculation At Rising Bharat",
       "headline": "Fadnavis Weighs In On NCP Merger Speculation",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18118433147528516",
       "timestamp": "2026-11-20T08:53:51.238683+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/one-representation-one-order-how-dr-arvinder-singh-s-advocacy-led-to-rajasthan-s-accessible-police-station-directive-and-what-other-states-can-learn-2026-11-20-141462",
+      "title": "Advocacy Drives Accessible Police Stations in Rajasthan: A National Model",
+      "headline": "Rajasthan's Accessible Police Stations: A National Model",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18117033053025381",
+      "timestamp": "2026-11-20T09:20:26.343031+00:00"
     }
   ],
   "processed": [
@@ -4692,7 +4692,74 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bengal Blueprint? Amit Shah To Spend 7 Days A Month In UP As BJP Gears Up For 2027 Polls | Exclusive'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Meta Blocking Promotional Videos Of World Hindu Congress, Say Organisers; Seek Fadnavis' Help",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/meta-blocking-promotional-videos-of-world-hindu-congress-say-organisers-seek-fadnavis-help-ws-l-10433981.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Social Issues",
+        "reason": "A dispute regarding content moderation on social media platforms regarding a specific religious event."
+      },
+      "classified_at": "2026-11-20T09:19:49.914111+00:00"
+    },
+    {
+      "title": "'Because Of His Name': Congress-BJP Face-Off Over Siraj's Omission From NZ Test Match",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/because-of-his-name-congress-bjp-face-off-over-sirajs-omission-from-nz-test-match-ws-l-10433900.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A controversy regarding player selection in a cricket match, which is a matter of public interest but falls under sports."
+      },
+      "classified_at": "2026-11-20T09:19:49.914128+00:00"
+    },
+    {
+      "title": "How Medical Bills Pushed an Ice Cream Seller into a Rs 140 Cr Heroin Ring",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/chennai-news/chennai-heroin-bust-rs-50000-for-medical-bills-rs-3-lakh-for-drug-run-how-an-ice-cream-seller-entered-the-trade-ws-el-10433821.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A report on a major criminal syndicate and drug trafficking ring."
+      },
+      "classified_at": "2026-11-20T09:19:49.914137+00:00"
+    },
+    {
+      "title": "'One-Time Measure': Supreme Court Stays Madras HC Order, Allows Lamp Lighting At Deepathoon",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/one-time-measure-supreme-court-stays-madras-hc-order-allows-lamp-lighting-at-deepathoon-10433947.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A legal update regarding a Supreme Court stay on a High Court order concerning a religious festival."
+      },
+      "classified_at": "2026-11-20T09:19:49.914140+00:00"
+    },
+    {
+      "title": "'Update Your Picture Of India, Don't Be Stuck In The Past': Jaishankar To Japanese Businesses",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/update-your-picture-of-india-dont-be-stuck-in-the-past-jaishankar-to-japanese-businesses-2026-11-20-141458",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A diplomatic statement regarding economic relations with a foreign nation."
+      },
+      "classified_at": "2026-11-20T09:19:49.914143+00:00"
+    },
+    {
+      "title": "Markets Stage Stunning Reversal: Sensex Jumps, Nifty Bank Hits All-Time High",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/markets/markets-today-sensex-falls-376-points-nifty-opens-below-25400-metal-realty-stocks-drag-ws-l-10433422.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A report on stock market performance and economic trends."
+      },
+      "classified_at": "2026-11-20T09:19:49.914146+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
