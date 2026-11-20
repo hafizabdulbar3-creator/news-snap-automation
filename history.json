@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/trump-warns-of-veto-power-ahead-of-november-3-midterms-as-democrats-projected-to-win-229-house-seats-2026-10-27-139806",
-      "title": "Trump Warns Of Veto Power Ahead Of November 3 Midterms As Democrats Projected To Win 229 House Seats",
-      "headline": "Trump Warns Of Veto Power Ahead Of Midterms As Democrats Projected To Win 229",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17955106767037295",
-      "timestamp": "2026-10-27T22:55:04.746554+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/ahead-of-diwali-singapore-s-little-india-glows-with-lights-sweets-and-bollywood-music-for-diaspora-2026-10-27-139805",
       "title": "Ahead Of Diwali, Singapore's Little India Glows With Lights, Sweets And Bollywood Music For Diaspora",
       "headline": "Singapore's Little India Glows Ahead Of Diwali",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18135662335681963",
       "timestamp": "2026-11-20T01:25:39.674456+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cyclone-akvan-weakens-into-cyclonic-storm-likely-to-cross-andhra-odisha-coast-by-friday-forenoon-imd-2026-11-20-141415",
+      "title": "Cyclone Akvan Alert: 3 Lakh Evacuated, Rail Services Hit as Storm Heads Towards Andhra-Odisha Coast",
+      "headline": "Cyclone Akvan Weakens Into Storm, Threatens Andhra-Odisha Coast",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17993760606069492",
+      "timestamp": "2026-11-20T01:51:53.498141+00:00"
     }
   ],
   "processed": [
@@ -4683,7 +4683,41 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Republicans Block Iran War Powers Resolution, Backing Trump's Authority",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/us-senate-republicans-block-iran-war-powers-resolution-backing-trump-s-authority-to-continue-military-operations-2026-11-20-141416",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A significant geopolitical development involving a major power (US) and a regional adversary (Iran), impacting national security policy."
+      },
+      "classified_at": "2026-11-20T01:51:20.810808+00:00"
+    },
+    {
+      "title": "Iran Rejects US Claims of Biological and Chemical Weapons Programme, Invokes Iraq's 2003 WMD Controversy",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/iran-rejects-us-claims-of-biological-and-chemical-weapons-programme-invokes-iraq-s-2003-wmd-controversy-2026-11-20-141418",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major diplomatic and geopolitical standoff involving nuclear proliferation concerns and historical context, holding significant international relevance."
+      },
+      "classified_at": "2026-11-20T01:51:20.810812+00:00"
+    },
+    {
+      "title": "Trump Defers Decision on Fresh Iran Strikes Until 2027, Says 'We'll See What Happens After January 1'",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/we-ll-see-what-happens-after-january-1-trump-delays-decision-on-fresh-iran-strikes-until-2027-2026-11-20-141417",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A critical update on potential military escalation involving a major global power and a nuclear-armed state, directly impacting international security."
+      },
+      "classified_at": "2026-11-20T01:51:20.810815+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
