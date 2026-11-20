@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/we-have-lost-22-indian-nationals-including-14-seafarers-mea-deeply-concerned-about-west-asia-conflict-2026-10-28-139867",
-      "title": "West Asia Conflict: 22 Indian Lives Lost, MEA Voices Deep Concern",
-      "headline": "MEA Confirms 22 Indian Nationals Lost in West Asia Conflict",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18184492270420805",
-      "timestamp": "2026-10-28T13:54:35.027802+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/jio-ipo-broke-records-in-every-investor-category-akash-ambani-says-response-surpassed-imagination-ws-klrs-10401973.html?comscorekw=jionews",
       "title": "'Jio IPO Broke Records In Every Investor Category': Akash Ambani Says 'Response Surpassed Imagination'",
       "headline": "Jio IPO Breaks Records In Every Investor Category",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17913618219665363",
       "timestamp": "2026-11-20T16:06:13.074754+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/cyclone-akvan-triggers-widespread-rain-and-disruption-across-south-bengal-ws-klrt-10434350.html?comscorekw=jionews",
+      "title": "Cyclone 'Akvan' Triggers Widespread Rain And Disruption Across South Bengal",
+      "headline": "Cyclone 'Akvan' Brings Widespread Rain And Disruption To South Bengal",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17963032017254775",
+      "timestamp": "2026-11-20T16:32:21.859697+00:00"
     }
   ],
   "processed": [
@@ -4766,17 +4766,6 @@
         "reason": "Domestic political event involving the Prime Minister inaugurating a forum."
       },
       "classified_at": "2026-11-20T14:21:25.524910+00:00"
-    },
-    {
-      "title": "Cyclone 'Akvan' Triggers Widespread Rain And Disruption Across South Bengal",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/cyclone-akvan-triggers-widespread-rain-and-disruption-across-south-bengal-ws-klrt-10434350.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Weather",
-        "reason": "Weather update regarding the impact of a cyclone on a specific region."
-      },
-      "classified_at": "2026-11-20T14:21:25.524911+00:00"
     }
   ],
   "quota_cooldown": {
