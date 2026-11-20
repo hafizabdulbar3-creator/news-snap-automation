@@ -4681,20 +4681,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/cities/chennai-news/chennai-heroin-bust-rs-50000-for-medical-bills-rs-3-lakh-for-drug-run-how-an-ice-cream-seller-entered-the-trade-ws-el-10433821.html?comscorekw=jionews",
+      "title": "How Medical Bills Pushed an Ice Cream Seller into a Rs 140 Cr Heroin Ring",
+      "domain": "news18.com",
+      "timestamp": "2026-11-20T10:44:47.845557+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
   "classified_pool": [
-    {
-      "title": "How Medical Bills Pushed an Ice Cream Seller into a Rs 140 Cr Heroin Ring",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/chennai-news/chennai-heroin-bust-rs-50000-for-medical-bills-rs-3-lakh-for-drug-run-how-an-ice-cream-seller-entered-the-trade-ws-el-10433821.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A report on a major criminal syndicate and drug trafficking ring."
-      },
-      "classified_at": "2026-11-20T09:19:49.914137+00:00"
-    },
     {
       "title": "'One-Time Measure': Supreme Court Stays Madras HC Order, Allows Lamp Lighting At Deepathoon",
       "domain": "news18.com",
