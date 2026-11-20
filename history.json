@@ -4744,6 +4744,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.republicworld.com/business/anthropic-crashes-10-a-day-after-biggest-ipo-in-history-is-ai-dream-turning-into-nightmare-2026-11-20-141484",
+      "title": "Anthropic Crashes 10% A Day After Biggest IPO In History: Is AI Dream Turning Into Nightmare?",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-20T18:05:19.806114+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Anthropic Crashes 10% A Day After Biggest IPO In History: Is AI Dream Turning Into Nightmare?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [],
