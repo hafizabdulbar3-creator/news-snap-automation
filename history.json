@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-1-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10431657.html?comscorekw=jionews",
-      "title": "India Vs New Zealand Live Score, 1st Test Day 1: IND Aim To Start 2-Match Series With Win",
-      "domain": "news18.com",
-      "timestamp": "2026-11-18T20:55:54.075856+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/tech/who-is-cenly-chen-2-5-billion-nvidia-chip-smuggling-probe-puts-spotlight-on-former-no-3-jay-puri-ws-lrt-10431698.html?comscorekw=jionews",
-      "title": "'Who Is Cenly Chen?': $2.5 Billion Nvidia Chip Smuggling Probe Puts Spotlight On Former No. 3 Jay Puri",
-      "domain": "news18.com",
-      "timestamp": "2026-11-18T23:11:57.132453+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/tech/navigating-india-just-got-easier-whats-new-in-apple-maps-2026-11-19-141344",
       "title": "Navigating India Just Got Easier: What's New in Apple Maps?",
       "domain": "republicworld.com",
@@ -4762,21 +4744,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
-    }
-  ],
-  "classified_pool": [
+    },
     {
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-3-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10434749.html?comscorekw=jionews",
       "title": "All Eyes on KL Rahul as India Aims for Big Score on Day 3 Test",
       "domain": "news18.com",
-      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-3-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10434749.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "This is a specific sports match report regarding a cricket game, which is a regional/national interest story rather than a major global event."
-      },
-      "classified_at": "2026-11-20T22:21:55.757112+00:00"
+      "timestamp": "2026-11-20T23:44:47.382241+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
