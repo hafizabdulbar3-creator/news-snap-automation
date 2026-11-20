@@ -4708,20 +4708,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
+    },
+    {
+      "url": "https://www.news18.com/viral/man-fired-from-company-lands-job-at-its-parent-firm-returns-to-same-office-building-actually-laughing-about-it-ws-l-10434216.html?comscorekw=jionews",
+      "title": "Career Karma: Fired Employee Hired by Parent Company, Back in Same Building",
+      "domain": "news18.com",
+      "timestamp": "2026-11-20T11:34:04.135291+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers exhausted: Gemini API quota exhausted: Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s)."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Career Karma: Fired Employee Hired by Parent Company, Back in Same Building",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/man-fired-from-company-lands-job-at-its-parent-firm-returns-to-same-office-building-actually-laughing-about-it-ws-l-10434216.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Classified by local heuristic: standard national or international news report."
-      },
-      "classified_at": "2026-11-20T11:27:47.390518+00:00"
-    },
     {
       "title": "'Didn't See Any Statement…': Vishal Chaturvedi Questions Big Studios' Silence Over Hanuman Ansh's Success",
       "domain": "news18.com",
@@ -4735,12 +4733,21 @@
     }
   ],
   "quota_cooldown": {
-    "active": false,
-    "resets_at": "2026-10-20T00:00:00.017549+00:00",
-    "reason": "Gemini API quota exhausted. Retry required in 85668s (23h 47m 48s).",
-    "updated_at": "2026-10-19T00:12:12.446572+00:00"
+    "active": true,
+    "resets_at": "2026-11-21T08:00:00.001976+00:00",
+    "reason": "Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s).",
+    "provider": "gemini",
+    "updated_at": "2026-11-20T11:34:04.131282+00:00"
   },
-  "quota_cooldowns": {},
+  "quota_cooldowns": {
+    "gemini": {
+      "active": true,
+      "resets_at": "2026-11-21T08:00:00.001976+00:00",
+      "reason": "Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s).",
+      "provider": "gemini",
+      "updated_at": "2026-11-20T11:34:04.131282+00:00"
+    }
+  },
   "token_metadata": {
     "token_type": "bearer",
     "expires_in": 5184000,
