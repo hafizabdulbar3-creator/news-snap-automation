@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/flavio-bolsonaro-flees-brazil-through-argentina-and-is-expected-to-land-in-miami-2026-10-28-139852",
-      "title": "Flávio Bolsonaro Flees Brazil Through Argentina and Is Expected to Land in Miami",
-      "headline": "Flávio Bolsonaro Flees Brazil Through Argentina to Miami",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18037283162896918",
-      "timestamp": "2026-10-28T11:44:10.756330+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/serbian-police-kill-knife-wielding-assailant-after-attack-on-officer-guarding-israeli-embassy-in-belgrade-2026-10-28-139850",
       "title": "Serbian Police Kill Knife-Wielding Assailant After Attack on Officer Guarding Israeli Embassy in Belgrade",
       "headline": "Serbian Police Kill Knifeman After Attack on Israeli Embassy Guard",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17894549469618993",
       "timestamp": "2026-11-20T13:56:14.061020+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cyclone-akvan-weakens-after-landfall-near-gopalpur-heavy-rainfall-projected-in-odishas-coastal-and-northern-districts-imd-2026-11-20-141476",
+      "title": "Cyclone Akvan Weakens After Landfall, Heavy Rains Forecast for Odisha",
+      "headline": "Cyclone Akvan Weakens After Landfall Near Gopalpur",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18127887629008502",
+      "timestamp": "2026-11-20T14:21:53.345821+00:00"
     }
   ],
   "processed": [
@@ -4755,7 +4755,74 @@
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'We Work With Our Trusted Partners That Includes India, Quad': US Amb Gor Onboard USS George Washington",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/we-work-with-our-trusted-partners-that-includes-india-quad-us-ambassador-sergio-gor-onboard-uss-george-washington-2026-11-20-141478",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "International Relations",
+        "reason": "Statement by a US Ambassador regarding military partnerships and regional alliances."
+      },
+      "classified_at": "2026-11-20T14:21:25.524882+00:00"
+    },
+    {
+      "title": "Dhami Gets Thumbs Up, But What About Uttarakhand MLAs? News18 Mega Survey Looks At 'Spots Of Bother'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/dhami-gets-a-big-thumbs-up-but-what-about-mlas-news18-mega-survey-looks-at-spots-of-bother-ws-klrt-10434228.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Regional political analysis and survey results regarding state leadership and public opinion."
+      },
+      "classified_at": "2026-11-20T14:21:25.524901+00:00"
+    },
+    {
+      "title": "Uttarakhand Was First To Implement UCC: Will It Shape Poll Outcome? News18 Mega Survey Finds Out",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/uttarakhand-is-first-indian-state-to-implement-ucc-will-it-impact-poll-outcome-news18-mega-survey-finds-out-ws-klrt-10433885.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Regional political analysis and survey results regarding legal reforms and electoral outcomes."
+      },
+      "classified_at": "2026-11-20T14:21:25.524904+00:00"
+    },
+    {
+      "title": "Film 'Kothala' Tackles Female Infanticide, Sparks Vital Dialogue",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-secretariat-hosts-special-screening-of-short-film-kothala-on-female-infanticide-gender-discrimination-2026-11-20-141475",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Social Issues",
+        "reason": "Cultural commentary on a film addressing a serious social issue."
+      },
+      "classified_at": "2026-11-20T14:21:25.524906+00:00"
+    },
+    {
+      "title": "PM Modi Inaugurates First SCO Civilisational Dialogue Forum at Purana Qila",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/pm-modi-inaugurates-first-sco-civilisational-dialogue-forum-at-purana-qila-2026-11-20-141477",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Domestic political event involving the Prime Minister inaugurating a forum."
+      },
+      "classified_at": "2026-11-20T14:21:25.524910+00:00"
+    },
+    {
+      "title": "Cyclone 'Akvan' Triggers Widespread Rain And Disruption Across South Bengal",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/cyclone-akvan-triggers-widespread-rain-and-disruption-across-south-bengal-ws-klrt-10434350.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Weather",
+        "reason": "Weather update regarding the impact of a cyclone on a specific region."
+      },
+      "classified_at": "2026-11-20T14:21:25.524911+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
