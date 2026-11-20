@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/serbian-police-kill-knife-wielding-assailant-after-attack-on-officer-guarding-israeli-embassy-in-belgrade-2026-10-28-139850",
-      "title": "Serbian Police Kill Knife-Wielding Assailant After Attack on Officer Guarding Israeli Embassy in Belgrade",
-      "headline": "Serbian Police Kill Knifeman After Attack on Israeli Embassy Guard",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18636756139004326",
-      "timestamp": "2026-10-28T12:10:26.801307+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/mlc-poll-results-28-mlc-seats-0-wins-congress-draws-a-blank-in-4-states-karnataka-delivers-biggest-blow-ws-lrt-10401486.html?comscorekw=jionews",
       "title": "28 MLC Seats, 0 Wins: Congress Draws A Blank In 4 States, Karnataka Delivers Biggest Blow",
       "headline": "Congress Draws Blank In MLC Polls, Karnataka Delivers Biggest Blow",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18127887629008502",
       "timestamp": "2026-11-20T14:21:53.345821+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/dhami-gets-a-big-thumbs-up-but-what-about-mlas-news18-mega-survey-looks-at-spots-of-bother-ws-klrt-10434228.html?comscorekw=jionews",
+      "title": "Dhami Gets Thumbs Up, But What About Uttarakhand MLAs? News18 Mega Survey Looks At 'Spots Of Bother'",
+      "headline": "Dhami Gets Thumbs Up, But What About Uttarakhand MLAs?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17992914219086186",
+      "timestamp": "2026-11-20T14:48:00.415246+00:00"
     }
   ],
   "processed": [
@@ -4766,17 +4766,6 @@
         "reason": "Statement by a US Ambassador regarding military partnerships and regional alliances."
       },
       "classified_at": "2026-11-20T14:21:25.524882+00:00"
-    },
-    {
-      "title": "Dhami Gets Thumbs Up, But What About Uttarakhand MLAs? News18 Mega Survey Looks At 'Spots Of Bother'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/dhami-gets-a-big-thumbs-up-but-what-about-mlas-news18-mega-survey-looks-at-spots-of-bother-ws-klrt-10434228.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Regional political analysis and survey results regarding state leadership and public opinion."
-      },
-      "classified_at": "2026-11-20T14:21:25.524901+00:00"
     },
     {
       "title": "Uttarakhand Was First To Implement UCC: Will It Shape Poll Outcome? News18 Mega Survey Finds Out",
