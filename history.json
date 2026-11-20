@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/explainers/ais-evolving-capabilities-demand-stronger-regulatory-oversight-can-governments-control-ai-before-its-too-late-shil-ws-l-10400676.html?comscorekw=jionews",
-      "title": "Governments Grapple with AI's Power: Is Stronger Regulation Coming Before It's Too Late?",
-      "headline": "Governments Grapple with AI's Power: Is Stronger Regulation Coming?",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18082680887354091",
-      "timestamp": "2026-10-28T05:24:09.442079+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/netanyahu-says-zionist-jewish-majority-must-unite-to-form-strong-right-wing-government-2026-10-28-139823",
       "title": "Netanyahu Says 'Zionist Jewish Majority Must Unite' To Form Strong Right-Wing Government",
       "headline": "Netanyahu Calls For 'Zionist Jewish Majority' To Form Strong Right-Wing Government",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18386677594232964",
       "timestamp": "2026-11-20T06:43:54.000454+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/congress-eyes-up-seat-sharing-deal-by-december-15-rahul-gandhi-to-kick-off-campaign-from-saharanpur-ws-l-10433576.html?comscorekw=jionews",
+      "title": "Congress Eyes UP Seat-Sharing Deal By December 15; Rahul Gandhi To Kick Off Campaign From Saharanpur",
+      "headline": "Congress Eyes UP Seat-Sharing Deal By Dec 15",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18094191878227488",
+      "timestamp": "2026-11-20T07:09:35.480143+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Congress Eyes UP Seat-Sharing Deal By December 15; Rahul Gandhi To Kick Off Campaign From Saharanpur",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/congress-eyes-up-seat-sharing-deal-by-december-15-rahul-gandhi-to-kick-off-campaign-from-saharanpur-ws-l-10433576.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Domestic political maneuvering regarding seat-sharing agreements and campaign kickoff for a national election."
-      },
-      "classified_at": "2026-11-20T06:43:23.402604+00:00"
-    },
     {
       "title": "CBI Coordinates Return of Wanted Fugitive Mohd Mazin From UAE to India",
       "domain": "republicworld.com",
