@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/netanyahu-lost-yair-golan-urges-opposition-to-join-arab-parties-form-government-of-change-2026-10-28-139843",
-      "title": "'Netanyahu Lost': Yair Golan Urges Opposition To Join Arab Parties, Form Government Of Change",
-      "headline": "Yair Golan Urges Opposition To Join Arab Parties, Form Government Of Change",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18031098026857873",
-      "timestamp": "2026-10-28T09:34:02.642957+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cyclone-arnab-leaves-trail-of-destruction-in-andhra-pradesh-3-dead-rains-batter-coastal-districts-2026-10-28-139842",
       "title": "3 Dead As Cyclone Arnab Leaves Trail of Destruction in Andhra Pradesh; Rains Batter Coastal Districts",
       "headline": "3 Dead As Cyclone Arnab Leaves Trail of Destruction in Andhra Pradesh",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18022501913957331",
       "timestamp": "2026-11-20T10:48:57.833535+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/vishal-chaturvedi-questions-big-studios-silence-over-hanuman-anshs-success-ws-l-10434194.html?comscorekw=jionews",
+      "title": "'Didn't See Any Statement…': Vishal Chaturvedi Questions Big Studios' Silence Over Hanuman Ansh's Success",
+      "headline": "Vishal Chaturvedi Questions Big Studios' Silence Over Hanuman Ansh",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18013343120776445",
+      "timestamp": "2026-11-20T11:42:40.954737+00:00"
     }
   ],
   "processed": [
@@ -4719,19 +4719,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers exhausted: Gemini API quota exhausted: Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s)."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'Didn't See Any Statement…': Vishal Chaturvedi Questions Big Studios' Silence Over Hanuman Ansh's Success",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/vishal-chaturvedi-questions-big-studios-silence-over-hanuman-anshs-success-ws-l-10434194.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Classified by local heuristic: standard national or international news report."
-      },
-      "classified_at": "2026-11-20T11:27:47.390522+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
