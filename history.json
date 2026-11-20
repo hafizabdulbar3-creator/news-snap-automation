@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/mlc-poll-results-28-mlc-seats-0-wins-congress-draws-a-blank-in-4-states-karnataka-delivers-biggest-blow-ws-lrt-10401486.html?comscorekw=jionews",
-      "title": "28 MLC Seats, 0 Wins: Congress Draws A Blank In 4 States, Karnataka Delivers Biggest Blow",
-      "headline": "Congress Draws Blank In MLC Polls, Karnataka Delivers Biggest Blow",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18023196719941835",
-      "timestamp": "2026-10-28T12:36:37.169262+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/to-be-or-not-to-be-national-award-winning-writer-s-short-film-kothala-rekindles-debate-on-female-infanticide-2026-10-28-139853",
       "title": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
       "headline": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17992914219086186",
       "timestamp": "2026-11-20T14:48:00.415246+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/we-work-with-our-trusted-partners-that-includes-india-quad-us-ambassador-sergio-gor-onboard-uss-george-washington-2026-11-20-141478",
+      "title": "'We Work With Our Trusted Partners That Includes India, Quad': US Amb Gor Onboard USS George Washington",
+      "headline": "US Ambassador Gor Highlights India as a Trusted Partner in Quad",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18101523803404198",
+      "timestamp": "2026-11-20T15:13:49.148692+00:00"
     }
   ],
   "processed": [
@@ -4756,17 +4756,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'We Work With Our Trusted Partners That Includes India, Quad': US Amb Gor Onboard USS George Washington",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/we-work-with-our-trusted-partners-that-includes-india-quad-us-ambassador-sergio-gor-onboard-uss-george-washington-2026-11-20-141478",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "International Relations",
-        "reason": "Statement by a US Ambassador regarding military partnerships and regional alliances."
-      },
-      "classified_at": "2026-11-20T14:21:25.524882+00:00"
-    },
     {
       "title": "Uttarakhand Was First To Implement UCC: Will It Shape Poll Outcome? News18 Mega Survey Finds Out",
       "domain": "news18.com",
