@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/baraat-vs-badebandi-why-rajasthans-winning-netas-have-nowhere-to-hide-this-wedding-season-ws-eklr-10401539.html?comscorekw=jionews",
-      "title": "Baraat Vs Badebandi: Why Rajasthan's Winning Netas Have Nowhere To Hide This Wedding Season",
-      "headline": "Rajasthan Netas Face Scrutiny During Wedding Season Clash",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18341348929260602",
-      "timestamp": "2026-10-28T13:28:24.127849+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/we-have-lost-22-indian-nationals-including-14-seafarers-mea-deeply-concerned-about-west-asia-conflict-2026-10-28-139867",
       "title": "West Asia Conflict: 22 Indian Lives Lost, MEA Voices Deep Concern",
       "headline": "MEA Confirms 22 Indian Nationals Lost in West Asia Conflict",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18155089843545190",
       "timestamp": "2026-11-20T15:39:50.937010+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-secretariat-hosts-special-screening-of-short-film-kothala-on-female-infanticide-gender-discrimination-2026-11-20-141475",
+      "title": "Film 'Kothala' Tackles Female Infanticide, Sparks Vital Dialogue",
+      "headline": "Delhi Secretariat Hosts Screening of Film 'Kothala' on Female Infanticide",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17913618219665363",
+      "timestamp": "2026-11-20T16:06:13.074754+00:00"
     }
   ],
   "processed": [
@@ -4756,17 +4756,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Film 'Kothala' Tackles Female Infanticide, Sparks Vital Dialogue",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-secretariat-hosts-special-screening-of-short-film-kothala-on-female-infanticide-gender-discrimination-2026-11-20-141475",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Social Issues",
-        "reason": "Cultural commentary on a film addressing a serious social issue."
-      },
-      "classified_at": "2026-11-20T14:21:25.524906+00:00"
-    },
     {
       "title": "PM Modi Inaugurates First SCO Civilisational Dialogue Forum at Purana Qila",
       "domain": "republicworld.com",
