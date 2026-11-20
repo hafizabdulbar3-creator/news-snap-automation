@@ -4503,33 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/science/voyager-1-golden-record-goan-singer-kesarbai-kerkar-ws-klrt-10431254.html?comscorekw=jionews",
-      "title": "'Where Are You Going?': The Goan Singer Whose Voice Is Echoing Across The Cosmos Aboard Voyager 1",
-      "domain": "news18.com",
-      "timestamp": "2026-11-18T14:08:19.383975+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry (''Where Are You Going?': The Goan Singer Whose Voice Is Echoing Across The Cosmos Aboard Voyager 1'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.republicworld.com/india/essential-to-update-the-picture-of-india-eam-jaishankar-outlines-considerations-for-japan-to-deepen-bilateral-ties-2026-11-18-141324",
-      "title": "Jaishankar Urges Japan to Update India's Image, Deepen Ties",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-18T14:39:36.259649+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/movies/bollywood/ms-dhoni-announces-ipl-retirement-dhanush-juhi-chawla-varun-dhawan-pay-emotional-tributes-ws-lr-10431388.html?comscorekw=jionews",
-      "title": "MS Dhoni Announces IPL Retirement: Dhanush, Juhi Chawla, Varun Dhawan Pay Emotional Tributes",
-      "domain": "news18.com",
-      "timestamp": "2026-11-18T16:34:23.765780+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
       "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-1-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10431657.html?comscorekw=jionews",
       "title": "India Vs New Zealand Live Score, 1st Test Day 1: IND Aim To Start 2-Match Series With Win",
       "domain": "news18.com",
@@ -4753,20 +4726,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/soni-razdan-shares-adorable-childhood-photos-of-alia-bhatt-and-shaheen-bhatt-says-you-two-grew-up-too-fast-ws-kl-10434532.html?comscorekw=jionews",
+      "title": "See Soni Razdan's Emotional Throwback: Alia & Shaheen Bhatt Grew Up Too Fast!",
+      "domain": "news18.com",
+      "timestamp": "2026-11-20T17:52:14.095928+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
-    {
-      "title": "See Soni Razdan's Emotional Throwback: Alia & Shaheen Bhatt Grew Up Too Fast!",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/soni-razdan-shares-adorable-childhood-photos-of-alia-bhatt-and-shaheen-bhatt-says-you-two-grew-up-too-fast-ws-kl-10434532.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "This is a celebrity lifestyle and entertainment story focusing on a personal family moment, which falls under normal public interest rather than geopolitical or economic significance."
-      },
-      "classified_at": "2026-11-20T17:24:12.550115+00:00"
-    },
     {
       "title": "BlueHands.ai By Trinetra Labs Takes AI Creation Beyond Tech Hubs and Into Everyday Business",
       "domain": "republicworld.com",
