@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/at-least-10-dead-in-collision-between-two-high-speed-trains-in-spains-toledo-province-2026-10-28-139849",
-      "title": "At Least 68 Dead in Spain After One High-Speed Train Slams Into Another Stopped on Tracks",
-      "headline": "At Least 68 Dead After Two High-Speed Trains Collide in Spain",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18116596163034334",
-      "timestamp": "2026-10-28T15:59:51.913494+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/india-pursuing-release-of-citizens-stranded-in-ukraine-and-russia-mea-2026-10-28-139883",
       "title": "India Pursuing Release of Citizens Stranded in Ukraine and Russia: MEA",
       "headline": "India Pursuing Release of Citizens Stranded in Ukraine and Russia",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17866754808693748",
       "timestamp": "2026-11-20T18:11:52.077932+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/nia-writes-to-uae-seeking-access-to-suspects-in-flydubai-mid-air-attack-on-indian-pilot-smit-machchhar-ws-l-10434690.html?comscorekw=jionews",
+      "title": "NIA Writes To UAE Seeking Access To Suspects In Flydubai Mid-Air Attack On Indian Pilot Smit Machchhar",
+      "headline": "NIA Seeks Access To UAE Suspects In Flydubai Pilot Attack",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18154418995555502",
+      "timestamp": "2026-11-20T18:59:38.259224+00:00"
     }
   ],
   "processed": [
