@@ -4753,6 +4753,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Anthropic Crashes 10% A Day After Biggest IPO In History: Is AI Dream Turning Into Nightmare?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/movies/telugu-cinema/samantha-ruth-prabhu-raj-nidimoru-welcome-baby-boy-lalit-modi-wishes-sushmita-sen-on-51st-birthday-ws-kl-10434446.html?comscorekw=jionews",
+      "title": "Samantha Ruth Prabhu, Raj Nidimoru Welcome Baby Boy; Lalit Modi Wishes Sushmita Sen On 51st Birthday",
+      "domain": "news18.com",
+      "timestamp": "2026-11-20T18:37:34.581925+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [],
