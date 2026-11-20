@@ -4735,20 +4735,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.republicworld.com/india/solution-within-legal-procedures-bjp-s-soundararajan-welcomes-sc-s-one-time-karthigai-deepam-lamp-ruling-2026-11-20-141467",
+      "title": "SC Allows One-Time Karthigai Deepam Lamps; BJP Leader Welcomes Ruling",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-20T12:23:10.319576+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
-    {
-      "title": "SC Allows One-Time Karthigai Deepam Lamps; BJP Leader Welcomes Ruling",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/solution-within-legal-procedures-bjp-s-soundararajan-welcomes-sc-s-one-time-karthigai-deepam-lamp-ruling-2026-11-20-141467",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Local News",
-        "reason": "A local administrative decision regarding a religious festival with regional significance."
-      },
-      "classified_at": "2026-11-20T12:11:25.719884+00:00"
-    },
     {
       "title": "People Will Judge BJP on Work Done Since 2019: Former LAHDC CEC Tashi Gyalson Ahead of Ladakh Polls",
       "domain": "republicworld.com",
