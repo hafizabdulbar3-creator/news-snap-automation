@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/netanyahu-says-zionist-jewish-majority-must-unite-to-form-strong-right-wing-government-2026-10-28-139823",
-      "title": "Netanyahu Says 'Zionist Jewish Majority Must Unite' To Form Strong Right-Wing Government",
-      "headline": "Netanyahu Calls For 'Zionist Jewish Majority' To Form Strong Right-Wing Government",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18480617548118445",
-      "timestamp": "2026-10-28T05:50:33.948316+00:00"
-    },
-    {
       "url": "https://www.news18.com/viral/haryana-company-gifts-kia-sonet-suvs-to-four-employees-ahead-of-diwali-video-goes-viral-watch-ws-l-10400771.html?comscorekw=jionews",
       "title": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali, Video Goes Viral | Watch",
       "headline": "Haryana Company Gifts Kia Sonet SUVs To Four Employees Ahead Of Diwali",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18094191878227488",
       "timestamp": "2026-11-20T07:09:35.480143+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/cbi-coordinates-return-of-wanted-fugitive-mohd-mazin-from-uae-to-india-2026-11-20-141445",
+      "title": "CBI Coordinates Return of Wanted Fugitive Mohd Mazin From UAE to India",
+      "headline": "CBI Coordinates Return of Fugitive Mohd Mazin From UAE to India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18414766495091683",
+      "timestamp": "2026-11-20T07:35:39.269715+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "CBI Coordinates Return of Wanted Fugitive Mohd Mazin From UAE to India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/cbi-coordinates-return-of-wanted-fugitive-mohd-mazin-from-uae-to-india-2026-11-20-141445",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "Law enforcement coordination regarding the extradition of a fugitive, which is a standard legal and diplomatic matter."
-      },
-      "classified_at": "2026-11-20T06:43:23.402609+00:00"
-    },
     {
       "title": "SC Rejects Tamil Nadu's Plea Seeking 11 TMC Extra Cauvery Water From Karnataka",
       "domain": "republicworld.com",
