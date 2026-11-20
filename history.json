@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/5-killed-over-55000-evacuated-in-andhra-pradesh-due-to-cyclone-arnab-2026-10-28-139851",
-      "title": "5 Killed, Over 55,000 Evacuated in Andhra Pradesh Due to Cyclone Arnab",
-      "headline": "Cyclone Arnab Makes Landfall in Andhra Pradesh",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18189060667414783",
-      "timestamp": "2026-10-28T11:18:11.424664+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/flavio-bolsonaro-flees-brazil-through-argentina-and-is-expected-to-land-in-miami-2026-10-28-139852",
       "title": "Flávio Bolsonaro Flees Brazil Through Argentina and Is Expected to Land in Miami",
       "headline": "Flávio Bolsonaro Flees Brazil Through Argentina to Miami",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18117358469166873",
       "timestamp": "2026-11-20T13:29:39.823356+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/father-seeks-first-flight-certificate-for-daughter-indigo-suggests-printing-one-internet-jokes-flight-khud-uda-le-ws-l-10434411.html?comscorekw=jionews",
+      "title": "Airline's First Flight Certificate Advice for Daughter Sparks Viral Debate",
+      "headline": "Airline Refuses First Flight Certificate Request, Suggests Printing One",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17894549469618993",
+      "timestamp": "2026-11-20T13:56:14.061020+00:00"
     }
   ],
   "processed": [
@@ -4755,19 +4755,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Airline's First Flight Certificate Advice for Daughter Sparks Viral Debate",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/father-seeks-first-flight-certificate-for-daughter-indigo-suggests-printing-one-internet-jokes-flight-khud-uda-le-ws-l-10434411.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Lifestyle",
-        "reason": "A viral social media debate regarding parenting advice, which is a matter of public interest but falls under lifestyle and social trends rather than major geopolitical events."
-      },
-      "classified_at": "2026-11-20T13:29:13.225432+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
