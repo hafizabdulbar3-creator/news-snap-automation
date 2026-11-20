@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/to-be-or-not-to-be-national-award-winning-writer-s-short-film-kothala-rekindles-debate-on-female-infanticide-2026-10-28-139853",
-      "title": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
-      "headline": "Film 'Kothala' Rekindles Debate on Female Infanticide in Rural India",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18130230446478689",
-      "timestamp": "2026-10-28T13:02:46.113507+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/baraat-vs-badebandi-why-rajasthans-winning-netas-have-nowhere-to-hide-this-wedding-season-ws-eklr-10401539.html?comscorekw=jionews",
       "title": "Baraat Vs Badebandi: Why Rajasthan's Winning Netas Have Nowhere To Hide This Wedding Season",
       "headline": "Rajasthan Netas Face Scrutiny During Wedding Season Clash",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18101523803404198",
       "timestamp": "2026-11-20T15:13:49.148692+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/uttarakhand-is-first-indian-state-to-implement-ucc-will-it-impact-poll-outcome-news18-mega-survey-finds-out-ws-klrt-10433885.html?comscorekw=jionews",
+      "title": "Uttarakhand Was First To Implement UCC: Will It Shape Poll Outcome? News18 Mega Survey Finds Out",
+      "headline": "Uttarakhand First State To Implement UCC: Will It Shape Poll Outcome?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18155089843545190",
+      "timestamp": "2026-11-20T15:39:50.937010+00:00"
     }
   ],
   "processed": [
@@ -4756,17 +4756,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Uttarakhand Was First To Implement UCC: Will It Shape Poll Outcome? News18 Mega Survey Finds Out",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/uttarakhand-is-first-indian-state-to-implement-ucc-will-it-impact-poll-outcome-news18-mega-survey-finds-out-ws-klrt-10433885.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Regional political analysis and survey results regarding legal reforms and electoral outcomes."
-      },
-      "classified_at": "2026-11-20T14:21:25.524904+00:00"
-    },
     {
       "title": "Film 'Kothala' Tackles Female Infanticide, Sparks Vital Dialogue",
       "domain": "republicworld.com",
