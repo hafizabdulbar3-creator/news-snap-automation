@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/easier-not-to-write-than-to-write-justice-sanjay-kishen-kaul-on-his-memoir-without-fear-of-favour-2026-10-28-139822",
-      "title": "'Easier Not To Write Than To Write': Justice Sanjay Kishen Kaul On His Memoir 'Without Fear Of Favour'",
-      "headline": "Justice Kaul: Writing Memoir 'Without Fear Of Favour' Was Harder Than Expected",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18220998913342626",
-      "timestamp": "2026-10-28T06:42:11.691616+00:00"
-    },
-    {
       "url": "https://www.news18.com/viral/im-literally-shaking-bengaluru-woman-confronts-man-for-filming-her-at-metro-station-video-sparks-outrage-ws-l-10400734.html?comscorekw=jionews",
       "title": "Metro Passenger Confronts Man Filming Her; Viral Video Sparks Safety Debate",
       "headline": "Woman Confronts Filming Man at Bengaluru Metro Station",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18082598006760386",
       "timestamp": "2026-11-20T08:01:27.120658+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/anti-india-pak-minister-in-delhi-for-sco-opposition-questions-centre-over-his-threat-to-cut-off-hands-over-iwt-ws-klr-10433783.html?comscorekw=jionews",
+      "title": "Pak Minister's Delhi SCO Visit Sparks Row Over 'Cut Off Hands' Threat",
+      "headline": "Pak Minister's Delhi Visit Sparks Row Over 'Cut Off Hands' Threat",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17970709785199508",
+      "timestamp": "2026-11-20T08:27:54.313364+00:00"
     }
   ],
   "processed": [
@@ -4692,7 +4692,19 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bengal Blueprint? Amit Shah To Spend 7 Days A Month In UP As BJP Gears Up For 2027 Polls | Exclusive'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Bullet Train To Link Delhi, Lucknow And Guwahati: Check Proposed Route And Travel Times",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/bullet-train-to-link-delhi-lucknow-and-guwahati-check-proposed-route-and-travel-times-ws-l-10433719.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Infrastructure",
+        "reason": "This is a regional infrastructure development story regarding a proposed transportation project, which is a legitimate policy and economic trend."
+      },
+      "classified_at": "2026-11-20T08:27:25.875909+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
