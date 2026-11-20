@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/allahabad-hc-orders-demolition-of-2-towers-at-ghaziabad-society-builder-fined-25-lakh-2026-10-28-139845",
-      "title": "Allahabad HC Orders Demolition Of 2 Towers At Ghaziabad's Gulmohar Greens Society, Builder Fined ₹25 Lakh",
-      "headline": "Allahabad HC Orders Demolition Of 2 Illegal Towers At Ghaziabad Society",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18021769022939366",
-      "timestamp": "2026-10-28T10:52:12.645269+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/5-killed-over-55000-evacuated-in-andhra-pradesh-due-to-cyclone-arnab-2026-10-28-139851",
       "title": "5 Killed, Over 55,000 Evacuated in Andhra Pradesh Due to Cyclone Arnab",
       "headline": "Cyclone Arnab Makes Landfall in Andhra Pradesh",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18012377996779723",
       "timestamp": "2026-11-20T13:03:37.204762+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/women-confront-man-for-dumping-waste-into-polluted-yamuna-already-itna-ganda-hai-aap-phir-ws-l-10434289.html?comscorekw=jionews",
+      "title": "Women Confront Man For Dumping Waste Into Polluted Yamuna: 'Already Itna Ganda Hai, Aap Phir…'",
+      "headline": "Women Confront Man Dumping Waste Into Polluted Yamuna",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18117358469166873",
+      "timestamp": "2026-11-20T13:29:39.823356+00:00"
     }
   ],
   "processed": [
@@ -4755,7 +4755,19 @@
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Airline's First Flight Certificate Advice for Daughter Sparks Viral Debate",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/father-seeks-first-flight-certificate-for-daughter-indigo-suggests-printing-one-internet-jokes-flight-khud-uda-le-ws-l-10434411.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "A viral social media debate regarding parenting advice, which is a matter of public interest but falls under lifestyle and social trends rather than major geopolitical events."
+      },
+      "classified_at": "2026-11-20T13:29:13.225432+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
