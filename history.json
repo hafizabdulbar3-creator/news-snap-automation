@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/ra-am-chief-mansour-abbas-claims-both-netanyahu-and-change-bloc-in-contact-as-arab-parties-turn-kingmakers-2026-10-27-139809",
-      "title": "Israel's Election Deadlock: Ra'am Chief Engages Both Netanyahu and Opposition",
-      "headline": "Israel's Election Deadlock: Arab Parties Turn Kingmakers",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18185195173374955",
-      "timestamp": "2026-10-27T23:47:18.137625+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/at-777-turnout-israel-sees-record-mobilisation-but-no-bloc-reaches-majority-mark-of-61-2026-10-27-139808",
       "title": "At 77.7% Turnout, Israel Sees Record Mobilisation But No Bloc Reaches Majority Mark Of 61",
       "headline": "Israel Sees Record 77.7% Turnout But No Bloc Reaches 61-Majority Mark",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17997145565848364",
       "timestamp": "2026-11-20T02:17:54.849323+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-senate-republicans-block-iran-war-powers-resolution-backing-trump-s-authority-to-continue-military-operations-2026-11-20-141416",
+      "title": "Republicans Block Iran War Powers Resolution, Backing Trump's Authority",
+      "headline": "Senate Republicans Block Iran War Powers Resolution",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18137722492579043",
+      "timestamp": "2026-11-20T02:43:38.443970+00:00"
     }
   ],
   "processed": [
@@ -4684,17 +4684,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Republicans Block Iran War Powers Resolution, Backing Trump's Authority",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/us-senate-republicans-block-iran-war-powers-resolution-backing-trump-s-authority-to-continue-military-operations-2026-11-20-141416",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A significant geopolitical development involving a major power (US) and a regional adversary (Iran), impacting national security policy."
-      },
-      "classified_at": "2026-11-20T01:51:20.810808+00:00"
-    },
     {
       "title": "Trump Defers Decision on Fresh Iran Strikes Until 2027, Says 'We'll See What Happens After January 1'",
       "domain": "republicworld.com",
