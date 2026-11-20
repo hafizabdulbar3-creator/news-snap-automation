@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/hackers-target-us-election-watchdog-s-filing-system-days-before-midterm-polls-report-2026-10-28-139824",
-      "title": "Hackers Target US Election Watchdog's Filing System Days Before Midterm Polls: Report",
-      "headline": "US Election Watchdog's System Hacked Days Before Midterms",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17979933009069164",
-      "timestamp": "2026-10-28T04:58:23.318663+00:00"
-    },
-    {
       "url": "https://www.news18.com/explainers/ais-evolving-capabilities-demand-stronger-regulatory-oversight-can-governments-control-ai-before-its-too-late-shil-ws-l-10400676.html?comscorekw=jionews",
       "title": "Governments Grapple with AI's Power: Is Stronger Regulation Coming Before It's Too Late?",
       "headline": "Governments Grapple with AI's Power: Is Stronger Regulation Coming?",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18099922946561278",
       "timestamp": "2026-11-20T06:17:07.517736+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/we-will-settle-the-war-once-and-for-all-iran-tells-us-to-accept-its-terms-or-face-battlefield-decision-2026-11-20-141443",
+      "title": "'We Will Settle the War Once and for All': Iran Tells US to Accept Its Terms or Face Battlefield Decision",
+      "headline": "Iran Warns US to Accept Terms or Face Battlefield Decision",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18386677594232964",
+      "timestamp": "2026-11-20T06:43:54.000454+00:00"
     }
   ],
   "processed": [
@@ -4692,7 +4692,41 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bengal Blueprint? Amit Shah To Spend 7 Days A Month In UP As BJP Gears Up For 2027 Polls | Exclusive'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Congress Eyes UP Seat-Sharing Deal By December 15; Rahul Gandhi To Kick Off Campaign From Saharanpur",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/congress-eyes-up-seat-sharing-deal-by-december-15-rahul-gandhi-to-kick-off-campaign-from-saharanpur-ws-l-10433576.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Domestic political maneuvering regarding seat-sharing agreements and campaign kickoff for a national election."
+      },
+      "classified_at": "2026-11-20T06:43:23.402604+00:00"
+    },
+    {
+      "title": "CBI Coordinates Return of Wanted Fugitive Mohd Mazin From UAE to India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/cbi-coordinates-return-of-wanted-fugitive-mohd-mazin-from-uae-to-india-2026-11-20-141445",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "Law enforcement coordination regarding the extradition of a fugitive, which is a standard legal and diplomatic matter."
+      },
+      "classified_at": "2026-11-20T06:43:23.402609+00:00"
+    },
+    {
+      "title": "SC Rejects Tamil Nadu's Plea Seeking 11 TMC Extra Cauvery Water From Karnataka",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/sc-rejects-tamil-nadu-s-plea-seeking-11-tmc-extra-cauvery-water-from-karnataka-2026-11-20-141444",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A judicial ruling on a water-sharing dispute between states, a matter of regional policy and administration."
+      },
+      "classified_at": "2026-11-20T06:43:23.402611+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-10-20T00:00:00.017549+00:00",
