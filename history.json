@@ -4726,20 +4726,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/man-kills-son-allegedly-attacks-wife-with-knife-and-hammer-in-bengaluru-s-padmanabhanagar-2026-11-20-141469",
+      "title": "Man Kills Son, Allegedly Attacks Wife With Knife and Hammer in Bengaluru's Padmanabhanagar",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-20T12:18:06.228469+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Man Kills Son, Allegedly Attacks Wife With Knife and Hammer in Bengaluru's Padmanabhanagar",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/man-kills-son-allegedly-attacks-wife-with-knife-and-hammer-in-bengaluru-s-padmanabhanagar-2026-11-20-141469",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A serious local crime incident in Bengaluru, but lacks broad international consequence."
-      },
-      "classified_at": "2026-11-20T12:11:25.719863+00:00"
-    },
     {
       "title": "SC Allows One-Time Karthigai Deepam Lamps; BJP Leader Welcomes Ruling",
       "domain": "republicworld.com",
