@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/cjp-backs-india-blocs-november-1-rally-seeks-cec-gyanesh-kumars-resignation-over-sir-2026-10-28-139880",
-      "title": "CJP Backs INDIA Bloc's November 1 Rally, Seeks CEC Gyanesh Kumar's Resignation Over SIR",
-      "headline": "CJP Backs INDIA Bloc's Nov 1 Rally, Demands CEC Gyanesh Kumar's Resignation",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17867361741679015",
-      "timestamp": "2026-10-28T16:57:30.389194+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/science/space/scientists-identify-possible-new-dwarf-planet-beyond-pluto-using-chile-based-rubin-observatory-telescope-2026-10-28-139890",
       "title": "Scientists Identify Possible New Dwarf Planet Beyond Pluto Using Chile-Based Rubin Observatory Telescope",
       "headline": "Scientists Identify Possible New Dwarf Planet Beyond Pluto",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18038136005884040",
       "timestamp": "2026-11-20T21:55:59.783878+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/sp-500-in-correction-nasdaq-in-red-for-year-ai-sell-off-wipes-out-wall-street-s-gains-2026-11-20-141487",
+      "title": "S&P 500 In Correction, Nasdaq In Red For Year: AI Sell-Off Wipes Out Wall Street's Gains",
+      "headline": "S&P 500 Enters Correction as AI Sell-Off Wipes Out Wall Street Gains",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18658245613057367",
+      "timestamp": "2026-11-20T22:22:38.334055+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,41 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Josh Hazlewood Threatens To Quit If Pat Cummins Loses Australia Captaincy Due To Sandpapergate",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/josh-hazlewood-threatens-to-quit-if-pat-cummins-loses-australia-captaincy-due-to-sandpapergate-ws-l-10434763.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a specific sports-related dispute regarding player contracts and leadership, which is of interest to fans but lacks broad geopolitical or economic consequence."
+      },
+      "classified_at": "2026-11-20T22:21:55.757107+00:00"
+    },
+    {
+      "title": "Harry Kane Suffers Ankle Injury As Bayern Munich Play 1-1 Draw With Cologne",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/sports/football/harry-kane-suffers-ankle-injury-as-bayern-munich-play-1-1-draw-with-cologne-ws-l-10434752.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a standard injury report for a major football club, falling under the category of sports news rather than major international news."
+      },
+      "classified_at": "2026-11-20T22:21:55.757110+00:00"
+    },
+    {
+      "title": "All Eyes on KL Rahul as India Aims for Big Score on Day 3 Test",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-3-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10434749.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a specific sports match report regarding a cricket game, which is a regional/national interest story rather than a major global event."
+      },
+      "classified_at": "2026-11-20T22:21:55.757112+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
