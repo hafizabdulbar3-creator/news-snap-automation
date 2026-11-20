@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/world-news/us-strikes-irgc-missile-launch-site-on-irans-qeshm-island-after-attack-on-bahrain-base-2026-11-18-141272",
-      "title": "US Strikes IRGC Missile Launch Site on Iran's Qeshm Island After Attack on Bahrain Base",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-18T03:11:38.293631+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/india/from-ghaziabad-to-ghazipur-the-numbers-behind-ups-delimitation-puzzle-that-make-sp-anxious-ws-l-10430136.html?comscorekw=jionews",
-      "title": "From Ghaziabad To Ghazipur: The Numbers Behind UP's Delimitation Puzzle That Make SP Anxious",
-      "domain": "news18.com",
-      "timestamp": "2026-11-18T04:40:28.329459+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.news18.com/science/voyager-1-golden-record-goan-singer-kesarbai-kerkar-ws-klrt-10431254.html?comscorekw=jionews",
       "title": "'Where Are You Going?': The Goan Singer Whose Voice Is Echoing Across The Cosmos Aboard Voyager 1",
       "domain": "news18.com",
@@ -4690,20 +4672,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bengal Blueprint? Amit Shah To Spend 7 Days A Month In UP As BJP Gears Up For 2027 Polls | Exclusive'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/india/because-of-his-name-congress-bjp-face-off-over-sirajs-omission-from-nz-test-match-ws-l-10433900.html?comscorekw=jionews",
+      "title": "'Because Of His Name': Congress-BJP Face-Off Over Siraj's Omission From NZ Test Match",
+      "domain": "news18.com",
+      "timestamp": "2026-11-20T10:39:00.773704+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Because Of His Name': Congress-BJP Face-Off Over Siraj's Omission From NZ Test Match",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/because-of-his-name-congress-bjp-face-off-over-sirajs-omission-from-nz-test-match-ws-l-10433900.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A controversy regarding player selection in a cricket match, which is a matter of public interest but falls under sports."
-      },
-      "classified_at": "2026-11-20T09:19:49.914128+00:00"
-    },
     {
       "title": "How Medical Bills Pushed an Ice Cream Seller into a Rs 140 Cr Heroin Ring",
       "domain": "news18.com",
