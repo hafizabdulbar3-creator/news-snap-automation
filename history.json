@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/ahead-of-diwali-singapore-s-little-india-glows-with-lights-sweets-and-bollywood-music-for-diaspora-2026-10-27-139805",
-      "title": "Ahead Of Diwali, Singapore's Little India Glows With Lights, Sweets And Bollywood Music For Diaspora",
-      "headline": "Singapore's Little India Glows Ahead Of Diwali",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18022433849951788",
-      "timestamp": "2026-10-27T23:20:55.794670+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/ra-am-chief-mansour-abbas-claims-both-netanyahu-and-change-bloc-in-contact-as-arab-parties-turn-kingmakers-2026-10-27-139809",
       "title": "Israel's Election Deadlock: Ra'am Chief Engages Both Netanyahu and Opposition",
       "headline": "Israel's Election Deadlock: Arab Parties Turn Kingmakers",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17993760606069492",
       "timestamp": "2026-11-20T01:51:53.498141+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/iran-rejects-us-claims-of-biological-and-chemical-weapons-programme-invokes-iraq-s-2003-wmd-controversy-2026-11-20-141418",
+      "title": "Iran Rejects US Claims of Biological and Chemical Weapons Programme, Invokes Iraq's 2003 WMD Controversy",
+      "headline": "Iran Rejects US Claims of Biological and Chemical Weapons Programme",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17997145565848364",
+      "timestamp": "2026-11-20T02:17:54.849323+00:00"
     }
   ],
   "processed": [
@@ -4694,17 +4694,6 @@
         "reason": "A significant geopolitical development involving a major power (US) and a regional adversary (Iran), impacting national security policy."
       },
       "classified_at": "2026-11-20T01:51:20.810808+00:00"
-    },
-    {
-      "title": "Iran Rejects US Claims of Biological and Chemical Weapons Programme, Invokes Iraq's 2003 WMD Controversy",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/iran-rejects-us-claims-of-biological-and-chemical-weapons-programme-invokes-iraq-s-2003-wmd-controversy-2026-11-20-141418",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major diplomatic and geopolitical standoff involving nuclear proliferation concerns and historical context, holding significant international relevance."
-      },
-      "classified_at": "2026-11-20T01:51:20.810812+00:00"
     },
     {
       "title": "Trump Defers Decision on Fresh Iran Strikes Until 2027, Says 'We'll See What Happens After January 1'",
