@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/at-times-sharad-pawar-also-doesnt-know-what-he-wants-to-do-maharashtra-cm-fadnavis-at-rising-bharat-ws-klrt-10401022.html?comscorekw=jionews",
-      "title": "'Sharad Pawar Doesn't...': CM Devendra Fadnavis Weighs In On NCP Merger Speculation At Rising Bharat",
-      "headline": "Fadnavis Weighs In On NCP Merger Speculation",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17916992202534527",
-      "timestamp": "2026-10-28T08:05:49.336514+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cheranalloor-accident-court-denies-bail-to-judges-minor-son-kochi-police-commissioner-to-be-transferred-2026-10-28-139835",
       "title": "Justice System Under Scrutiny: Judge's Son Denied Bail, Police Chief Transferred",
       "headline": "Judge's Son Denied Bail in Fatal Accident, Police Chief Transferred",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18117033053025381",
       "timestamp": "2026-11-20T09:20:26.343031+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/meta-blocking-promotional-videos-of-world-hindu-congress-say-organisers-seek-fadnavis-help-ws-l-10433981.html?comscorekw=jionews",
+      "title": "Meta Blocking Promotional Videos Of World Hindu Congress, Say Organisers; Seek Fadnavis' Help",
+      "headline": "Meta Blocks World Hindu Congress Promo Videos, Organisers Claim",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18122032846766937",
+      "timestamp": "2026-11-20T09:46:05.300871+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Meta Blocking Promotional Videos Of World Hindu Congress, Say Organisers; Seek Fadnavis' Help",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/meta-blocking-promotional-videos-of-world-hindu-congress-say-organisers-seek-fadnavis-help-ws-l-10433981.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Social Issues",
-        "reason": "A dispute regarding content moderation on social media platforms regarding a specific religious event."
-      },
-      "classified_at": "2026-11-20T09:19:49.914111+00:00"
-    },
     {
       "title": "'Because Of His Name': Congress-BJP Face-Off Over Siraj's Omission From NZ Test Match",
       "domain": "news18.com",
