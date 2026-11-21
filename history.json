@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/massive-fire-guts-shops-at-goas-vasco-sunday-market-cm-pramod-sawant-assures-aid-to-affected-vendors-2026-10-29-139892",
-      "title": "Massive Fire Guts Shops At Goa's Vasco Sunday Market, CM Pramod Sawant Assures Aid To Affected Vendors",
-      "headline": "Massive Fire Guts Shops At Goa's Vasco Sunday Market",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17958808968258306",
-      "timestamp": "2026-10-29T01:34:22.661874+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/israel-election-results-netanyahu-bloc-stuck-at-53-seats-as-opposition-eyes-government-change-coalition-talks-begin-2026-10-29-139894",
       "title": "Netanyahu Bloc Stalled: Opposition Eyes Israel Government Change",
       "headline": "Netanyahu Bloc Stalled at 53 Seats as Opposition Eyes Government Change",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18647298667052102",
       "timestamp": "2026-11-21T00:00:41.948050+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/pakistan-pushes-permission-narrative-over-agra-visit-while-sidestepping-cross-border-terror-exclusive-details-ws-lrt-10434768.html?comscorekw=jionews",
+      "title": "Diplomatic Ploy: Pakistan's Agra Visit Claims Divert from Cross-Border Terror",
+      "headline": "Pakistan's Agra Visit Claims Divert from Cross-Border Terror",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17894796051621670",
+      "timestamp": "2026-11-21T00:27:24.510699+00:00"
     }
   ],
   "processed": [
@@ -4766,17 +4766,6 @@
         "reason": "A legal and diplomatic response regarding a specific individual's lawsuit against Indian officials. This is a domestic legal matter rather than a major international crisis or summit."
       },
       "classified_at": "2026-11-20T23:50:23.498405+00:00"
-    },
-    {
-      "title": "Diplomatic Ploy: Pakistan's Agra Visit Claims Divert from Cross-Border Terror",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/pakistan-pushes-permission-narrative-over-agra-visit-while-sidestepping-cross-border-terror-exclusive-details-ws-lrt-10434768.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A commentary on a diplomatic visit and its potential implications regarding cross-border terrorism. It discusses regional security dynamics but lacks the scale of a major war or summit."
-      },
-      "classified_at": "2026-11-20T23:50:23.498408+00:00"
     }
   ],
   "quota_cooldown": {
