@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/israel-erupts-in-protests-hundreds-hit-streets-in-tel-aviv-jerusalem-haifa-demand-jewish-arab-government-2026-10-29-139893",
-      "title": "'Freedom For All...': Hundreds Hit Streets In Tel Aviv, Jerusalem, Haifa, Demand Jewish-Arab Government",
-      "headline": "Israelis Protest for Jewish-Arab Government as Netanyahu Bloc Falls Short",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17991405101866649",
-      "timestamp": "2026-10-29T02:41:40.702761+00:00"
-    },
-    {
       "url": "https://www.news18.com/sports/football/cristiano-ronaldo-beats-lionel-messi-wins-ballon-dor-of-all-time-award-ws-bklt-10402375.html?comscorekw=jionews",
       "title": "Cristiano Ronaldo Beats Lionel Messi, Wins Ballon d'Or of All Time Award",
       "headline": "Cristiano Ronaldo Beats Lionel Messi to Win Ballon d'Or of All Time",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120404101803899",
       "timestamp": "2026-11-21T00:58:22.745518+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/look-at-india-trump-slams-us-federal-reserve-over-high-interest-rates-makes-stunning-20-gdp-growth-claim-ws-lrt-10434783.html?comscorekw=jionews",
+      "title": "Trump Slams Fed Over High Rates, Cites India's 20% GDP Growth Claim",
+      "headline": "Trump Slams Fed Over High Rates, Cites India's Growth",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17958440694030594",
+      "timestamp": "2026-11-21T01:24:21.975280+00:00"
     }
   ],
   "processed": [
@@ -4786,17 +4786,6 @@
         "reason": "A notable conservation milestone regarding the reintroduction of cheetahs to India."
       },
       "classified_at": "2026-11-21T00:57:53.379109+00:00"
-    },
-    {
-      "title": "Trump Slams Fed Over High Rates, Cites India's 20% GDP Growth Claim",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/look-at-india-trump-slams-us-federal-reserve-over-high-interest-rates-makes-stunning-20-gdp-growth-claim-ws-lrt-10434783.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "A political critique of economic policy involving international economic comparisons."
-      },
-      "classified_at": "2026-11-21T00:57:53.379112+00:00"
     }
   ],
   "quota_cooldown": {
