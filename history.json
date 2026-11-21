@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/iran-declares-strait-of-hormuz-closed-as-army-reports-tanker-fire-following-naval-mine-strike-2026-10-29-139974",
-      "title": "Iran Declares Strait of Hormuz Closed as Army Reports Tanker Fire Following Naval Mine Strike",
-      "headline": "Iran Declares Strait of Hormuz Closed After Tanker Fire",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18042882896651428",
-      "timestamp": "2026-10-29T17:06:27.787932+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/sindh-ambulance-blast-at-least-10-dead-after-oxygen-cylinder-explosion-in-nagarparkar-area-2026-10-29-139972",
       "title": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion In Nagarparkar Area",
       "headline": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18132246229850874",
       "timestamp": "2026-11-21T15:31:28.088768+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/fbi-s-criminal-information-database-hacked-reports-2026-11-21-141556",
+      "title": "FBI's Criminal Information Database Hacked: Reports",
+      "headline": "FBI's Criminal Database Hacked: Reports",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17971606344250262",
+      "timestamp": "2026-11-21T16:02:34.934525+00:00"
     }
   ],
   "processed": [
@@ -4748,17 +4748,6 @@
         "reason": "A standard report on local election turnout figures in a specific region."
       },
       "classified_at": "2026-11-21T15:56:57.148555+00:00"
-    },
-    {
-      "title": "FBI's Criminal Information Database Hacked: Reports",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/fbi-s-criminal-information-database-hacked-reports-2026-11-21-141556",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Cybersecurity",
-        "reason": "A breach of a major law enforcement database has significant implications for national security and public safety."
-      },
-      "classified_at": "2026-11-21T15:56:57.148574+00:00"
     },
     {
       "title": "'BrahMos Missile that Gave Sleepless Nights To Enemy Now Made in UP': PM Modi",
