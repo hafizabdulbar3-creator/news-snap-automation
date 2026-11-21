@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/sindh-ambulance-blast-at-least-10-dead-after-oxygen-cylinder-explosion-in-nagarparkar-area-2026-10-29-139972",
-      "title": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion In Nagarparkar Area",
-      "headline": "Sindh Ambulance Blast: At Least 10 Dead After Oxygen Cylinder Explosion",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17990089878075449",
-      "timestamp": "2026-10-29T17:36:54.780951+00:00"
-    },
-    {
       "url": "https://www.news18.com/politics/dhanush-the-new-celluloid-arrow-aimed-at-the-political-arena-ws-lrt-10404006.html?comscorekw=jionews",
       "title": "Dhanush, The New Celluloid Arrow Aimed At The Political Arena",
       "headline": "Dhanush Enters Politics With New Film",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17971606344250262",
       "timestamp": "2026-11-21T16:02:34.934525+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/defence/brahmos-missile-that-gave-sleepless-nights-to-enemy-now-made-in-up-pm-modi-2026-11-21-141554",
+      "title": "'BrahMos Missile that Gave Sleepless Nights To Enemy Now Made in UP': PM Modi",
+      "headline": "BrahMos Missiles Now Manufactured in Uttar Pradesh",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18393317482232461",
+      "timestamp": "2026-11-21T16:28:29.620459+00:00"
     }
   ],
   "processed": [
@@ -4748,17 +4748,6 @@
         "reason": "A standard report on local election turnout figures in a specific region."
       },
       "classified_at": "2026-11-21T15:56:57.148555+00:00"
-    },
-    {
-      "title": "'BrahMos Missile that Gave Sleepless Nights To Enemy Now Made in UP': PM Modi",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/defence/brahmos-missile-that-gave-sleepless-nights-to-enemy-now-made-in-up-pm-modi-2026-11-21-141554",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Defense",
-        "reason": "A statement by the Prime Minister regarding the production of a strategic missile system constitutes a major geopolitical and defense development."
-      },
-      "classified_at": "2026-11-21T15:56:57.148578+00:00"
     }
   ],
   "quota_cooldown": {
