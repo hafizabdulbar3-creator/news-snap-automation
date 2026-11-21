@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/videos/global/obama-slams-trump-for-iran-war-40t-debt-ukraine-at-georgia-rally-full-speech-2026-10-29-139915",
-      "title": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
-      "headline": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17914561200498581",
-      "timestamp": "2026-10-29T08:14:46.560093+00:00"
-    },
-    {
       "url": "https://www.news18.com/lifestyle/health-and-fitness/nasal-spray-for-depression-could-a-toad-venom-psychedelic-help-scientists-experimental-drug-ws-l-10402912.html?comscorekw=jionews",
       "title": "Nasal Spray For Depression: Could A Toad-Venom Psychedelic Help? Scientists Experimental Drug",
       "headline": "Toad Venom Nasal Spray: Could This Psychedelic Help Depression?",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18080229665756777",
       "timestamp": "2026-11-21T06:36:27.006403+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/china-pakistan-operation-sindoor-wider-bid-suppress-india-rise-us-commission-report-ws-l-10435044.html?comscorekw=jionews",
+      "title": "China's Pakistan Backing In Op Sindoor Part Of Wider Bid To Suppress India's Rise, Says US Commission",
+      "headline": "China's Pakistan Backing In Op Sindoor Part Of Wider Bid To Suppress India's Rise",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18162960265512745",
+      "timestamp": "2026-11-21T07:07:16.427046+00:00"
     }
   ],
   "processed": [
@@ -4784,17 +4784,6 @@
         "reason": "This reports on a specific law enforcement operation (Operation Monsoon Thunder) involving a major drug bust, which is a notable public interest story."
       },
       "classified_at": "2026-11-21T07:03:19.977212+00:00"
-    },
-    {
-      "title": "China's Pakistan Backing In Op Sindoor Part Of Wider Bid To Suppress India's Rise, Says US Commission",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/china-pakistan-operation-sindoor-wider-bid-suppress-india-rise-us-commission-report-ws-l-10435044.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "This reports on a geopolitical analysis regarding US-India relations and regional security dynamics."
-      },
-      "classified_at": "2026-11-21T07:03:19.977233+00:00"
     }
   ],
   "quota_cooldown": {
