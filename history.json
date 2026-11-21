@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/fir-against-8-after-stray-dog-seen-carrying-newborn-at-jharkhand-hospital-ultrasound-centre-sealed-2026-10-29-139959",
-      "title": "Jharkhand Hospital Horror: FIR Against 8 After Stray Dog Seen Carrying Newborn's Remains at MMCH",
-      "headline": "FIR Filed Against 8 After Stray Dog Carries Newborn Remains at Jharkhand Hospital",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18133525523502289",
-      "timestamp": "2026-10-29T14:24:05.936473+00:00"
-    },
-    {
       "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-score-2nd-t20i-follow-scorecard-and-match-action-from-sharjah-liveblog-ws-l-10403883.html?comscorekw=jionews",
       "title": "Afghanistan Vs Zimbabwe Live Score, 2nd T20I: Follow Scorecard And Match Action From Sharjah",
       "headline": "Afghanistan Vs Zimbabwe Live: 2nd T20I Scorecard From Sharjah",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18199325812401998",
       "timestamp": "2026-11-21T12:45:34.958501+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/mocked-me-for-talking-about-toilets-pm-modi-cites-world-bank-report-on-50-crore-lifted-out-of-poverty-2026-11-21-141527",
+      "title": "'Mocked Me for Talking About Toilets': PM Modi Cites World Bank Report on 50 Crore Lifted Out of Poverty",
+      "headline": "PM Modi Cites World Bank Report on 50 Crore Lifted Out of Poverty",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17971335573208436",
+      "timestamp": "2026-11-21T13:11:43.640623+00:00"
     }
   ],
   "processed": [
@@ -4764,19 +4764,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'Mocked Me for Talking About Toilets': PM Modi Cites World Bank Report on 50 Crore Lifted Out of Poverty",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/mocked-me-for-talking-about-toilets-pm-modi-cites-world-bank-report-on-50-crore-lifted-out-of-poverty-2026-11-21-141527",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National News",
-        "reason": "A political speech citing economic data and development milestones."
-      },
-      "classified_at": "2026-11-21T08:50:46.316043+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
