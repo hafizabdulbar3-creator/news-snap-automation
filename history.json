@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/initiatives/petpooja-invoice-brings-virtual-try-on-to-small-clothing-shops-with-ai-try-on-2026-10-29-139960",
-      "title": "Petpooja Invoice Brings Virtual Try-On To Small Clothing Shops With AI Try-On",
-      "headline": "Petpooja Invoice Brings Virtual Try-On To Small Clothing Shops With AI",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18098976443394559",
-      "timestamp": "2026-10-29T16:39:38.874835+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/iran-declares-strait-of-hormuz-closed-as-army-reports-tanker-fire-following-naval-mine-strike-2026-10-29-139974",
       "title": "Iran Declares Strait of Hormuz Closed as Army Reports Tanker Fire Following Naval Mine Strike",
       "headline": "Iran Declares Strait of Hormuz Closed After Tanker Fire",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18153620899553759",
       "timestamp": "2026-11-21T15:05:38.454300+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/big-news-india-s-first-bullet-train-moves-closer-as-50-km-surat-billimora-section-gets-power-supply-2026-11-21-141548",
+      "title": "India's First Bullet Train Moves Closer As 50-Km Surat-Bilimora Section Gets Power Supply",
+      "headline": "India's First Bullet Train Moves Closer As 50-Km Section Gets Power Supply",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18132246229850874",
+      "timestamp": "2026-11-21T15:31:28.088768+00:00"
     }
   ],
   "processed": [
@@ -4737,19 +4737,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "India's First Bullet Train Moves Closer As 50-Km Surat-Bilimora Section Gets Power Supply",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/big-news-india-s-first-bullet-train-moves-closer-as-50-km-surat-billimora-section-gets-power-supply-2026-11-21-141548",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Infrastructure",
-        "reason": "Progress on a major infrastructure project like a bullet train is a significant national development."
-      },
-      "classified_at": "2026-11-21T13:36:57.660188+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
