@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/what-is-wrong-with-victims-supreme-court-bats-for-bank-compensation-in-digital-arrest-scams-2026-10-29-139962",
-      "title": "'What Is Wrong With Victims?': Supreme Court Pushes for Bank Compensation in Digital Arrest Scams",
-      "headline": "Supreme Court Asks: What Is Wrong With Victims? Pushing for Bank Compensation",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18188222566411208",
-      "timestamp": "2026-10-29T15:16:32.814897+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/khushaal-on-the-vijay-theory-and-why-too-many-choices-can-leave-you-stuck-youre-not-hungry-anymore-exclusive-ws-kl-10403589.html?comscorekw=jionews",
       "title": "Khushaal's 'The Vijay Theory': Why endless choices leave us 'not hungry anymore'.",
       "headline": "Khushaal on 'The Vijay Theory': Why endless choices leave us 'not hungry anymore",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18036711872674551",
       "timestamp": "2026-11-21T13:42:36.021622+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/people-support-elections-but-seek-greater-democratic-representation-says-leh-apex-body-2026-11-21-141551",
+      "title": "People Support Elections, But Seek Greater Democratic Representation, Says Leh Apex Body",
+      "headline": "Ladakh Leaders Seek Greater Democratic Representation",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18121788760778466",
+      "timestamp": "2026-11-21T14:13:41.683424+00:00"
     }
   ],
   "processed": [
@@ -4738,17 +4738,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "People Support Elections, But Seek Greater Democratic Representation, Says Leh Apex Body",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/people-support-elections-but-seek-greater-democratic-representation-says-leh-apex-body-2026-11-21-141551",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A survey regarding public opinion on elections and representation is a standard political analysis."
-      },
-      "classified_at": "2026-11-21T13:36:57.660159+00:00"
-    },
     {
       "title": "Owaisi Rejects 'Biryani' Jibe, Prioritizes UP Voters; New Alliance Emerges.",
       "domain": "republicworld.com",
