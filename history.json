@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/lifestyle/health-and-fitness/nasal-spray-for-depression-could-a-toad-venom-psychedelic-help-scientists-experimental-drug-ws-l-10402912.html?comscorekw=jionews",
-      "title": "Nasal Spray For Depression: Could A Toad-Venom Psychedelic Help? Scientists Experimental Drug",
-      "headline": "Toad Venom Nasal Spray: Could This Psychedelic Help Depression?",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17947085643361019",
-      "timestamp": "2026-10-29T08:40:42.460712+00:00"
-    },
-    {
       "url": "https://news.abplive.com/elections/up-mlc-election-results-varanasi-bjp-kedarnath-singh-concedes-defeat-accept-mandate-with-humility-1873725/amp",
       "title": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
       "headline": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18162960265512745",
       "timestamp": "2026-11-21T07:07:16.427046+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/us-india-partnership-in-action-sergio-gor-hails-operation-monsoon-thunder-after-major-drug-bust-2026-11-21-141522",
+      "title": "'US-India Partnership in Action': Sergio Gor Hails Operation Monsoon Thunder After Major Drug Bust",
+      "headline": "US-India Partnership in Action: Gor Hails Operation Monsoon Thunder",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18105831275647227",
+      "timestamp": "2026-11-21T07:33:17.375571+00:00"
     }
   ],
   "processed": [
@@ -4773,19 +4773,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'US-India Partnership in Action': Sergio Gor Hails Operation Monsoon Thunder After Major Drug Bust",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/us-india-partnership-in-action-sergio-gor-hails-operation-monsoon-thunder-after-major-drug-bust-2026-11-21-141522",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "This reports on a specific law enforcement operation (Operation Monsoon Thunder) involving a major drug bust, which is a notable public interest story."
-      },
-      "classified_at": "2026-11-21T07:03:19.977212+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
