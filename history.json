@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/sports/football-belongs-to-fans-cristiano-ronaldo-thanks-supporters-after-winning-inaugural-boat-award-2026-10-29-139964",
-      "title": "'Football Belongs to Fans': Cristiano Ronaldo Thanks Supporters After Winning Inaugural BOAT Award",
-      "headline": "Ronaldo Wins Inaugural BOAT Award for 2008 Season",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18140795812618887",
-      "timestamp": "2026-10-29T16:08:28.546520+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/petpooja-invoice-brings-virtual-try-on-to-small-clothing-shops-with-ai-try-on-2026-10-29-139960",
       "title": "Petpooja Invoice Brings Virtual Try-On To Small Clothing Shops With AI Try-On",
       "headline": "Petpooja Invoice Brings Virtual Try-On To Small Clothing Shops With AI",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18104886929547668",
       "timestamp": "2026-11-21T14:39:40.029563+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/lumio-aura-5-review-powerful-sound-deep-bass-and-a-soundbar-alternative-worth-considering-2026-11-21-141547",
+      "title": "Lumio Aura 5 Review: Powerful Sound, Deep Bass, And A Soundbar Alternative Worth Considering",
+      "headline": "Lumio Aura 5 Review: Powerful Sound, Deep Bass, And A Soundbar Alternative Worth Considering",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18153620899553759",
+      "timestamp": "2026-11-21T15:05:38.454300+00:00"
     }
   ],
   "processed": [
@@ -4738,17 +4738,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Lumio Aura 5 Review: Powerful Sound, Deep Bass, And A Soundbar Alternative Worth Considering",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/lumio-aura-5-review-powerful-sound-deep-bass-and-a-soundbar-alternative-worth-considering-2026-11-21-141547",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A product review of an audio device is a consumer interest story."
-      },
-      "classified_at": "2026-11-21T13:36:57.660185+00:00"
-    },
     {
       "title": "India's First Bullet Train Moves Closer As 50-Km Surat-Bilimora Section Gets Power Supply",
       "domain": "republicworld.com",
