@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-2-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10433209.html?comscorekw=jionews",
-      "title": "India Vs New Zealand Live Score, 1st Test Day 2: NZ 250/5 In 85 Overs, Glenn Phillips On 97",
-      "domain": "news18.com",
-      "timestamp": "2026-11-19T22:28:16.028767+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.news18.com/cities/new-delhi-news/dont-fear-failure-delhi-govt-launches-ehsaas-2026-mental-health-and-wellness-policy-ws-lrt-10433227.html?comscorekw=jionews",
       "title": "'Don't Fear Failure': Delhi Govt Launches Ehsaas 2026 Mental Health And Wellness Policy",
       "domain": "news18.com",
@@ -4717,21 +4708,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    }
-  ],
-  "classified_pool": [
+    },
     {
+      "url": "https://www.news18.com/explainers/gta-6-becomes-latest-bjp-vs-congress-battleground-how-pm-modis-post-triggered-political-meme-war-ws-lrt-10435764.html?comscorekw=jionews",
       "title": "GTA 6 Becomes Latest BJP Vs Congress Battleground: How PM Modi's Post Triggered Political Meme War",
       "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/gta-6-becomes-latest-bjp-vs-congress-battleground-how-pm-modis-post-triggered-political-meme-war-ws-lrt-10435764.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "Political meme war regarding a video game is a niche cultural topic rather than a major geopolitical event."
-      },
-      "classified_at": "2026-11-21T22:00:01.975317+00:00"
+      "timestamp": "2026-11-21T22:31:10.467711+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
