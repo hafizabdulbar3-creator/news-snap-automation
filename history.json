@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/bangladesh-air-force-officer-linked-to-former-pm-hasina-escape-video-found-dead-in-river-2026-10-29-139938",
-      "title": "Bangladesh Air Force Officer Linked To Former PM Hasina Escape Video Found Dead In River",
-      "headline": "Bangladesh Air Force Officer Linked to Hasina Escape Video Found Dead",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18218326831347806",
-      "timestamp": "2026-10-29T11:01:19.295803+00:00"
-    },
-    {
       "url": "https://www.news18.com/tech/sundar-pichai-announces-alphabets-q3-results-as-elon-musk-reacts-with-wow-wall-street-raises-concerns-over-ai-spending-ws-l-10403246.html?comscorekw=jionews",
       "title": "Google's Parent Reports Strong Q3, But AI Costs Spark Investor Alarm",
       "headline": "Alphabet Reports Strong Q3, But AI Costs Spark Investor Alarm",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18113881859228017",
       "timestamp": "2026-11-21T09:17:09.344667+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/iit-kharagpur-turns-75-pm-modi-joins-platinum-jubilee-celebrations-interacts-with-students-2026-11-21-141529",
+      "title": "IIT Kharagpur Turns 75: PM Modi Joins Platinum Jubilee Celebrations, Interacts with Students",
+      "headline": "PM Modi Attends IIT Kharagpur's 75th Platinum Jubilee",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17967899889231047",
+      "timestamp": "2026-11-21T09:48:35.905898+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "IIT Kharagpur Turns 75: PM Modi Joins Platinum Jubilee Celebrations, Interacts with Students",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/iit-kharagpur-turns-75-pm-modi-joins-platinum-jubilee-celebrations-interacts-with-students-2026-11-21-141529",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National News",
-        "reason": "A ceremonial event at a prestigious educational institution involving a national leader."
-      },
-      "classified_at": "2026-11-21T08:50:46.316019+00:00"
-    },
     {
       "title": "'Mocked Me for Talking About Toilets': PM Modi Cites World Bank Report on 50 Crore Lifted Out of Poverty",
       "domain": "republicworld.com",
