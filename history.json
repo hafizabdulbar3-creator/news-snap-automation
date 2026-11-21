@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/bolsonaro-like-the-shah-of-iran-americas-welcome-for-defeated-leaders-raises-questions-ws-lr-10402920.html?comscorekw=jionews",
-      "title": "Bolsonaro, Like The Shah Of Iran: America's 'Welcome' For Defeated Leaders Raises Questions",
-      "headline": "US Welcomes Defeated Leaders: Bolsonaro Compared To Shah Of Iran",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17897806014415988",
-      "timestamp": "2026-10-29T07:48:58.926165+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/global/obama-slams-trump-for-iran-war-40t-debt-ukraine-at-georgia-rally-full-speech-2026-10-29-139915",
       "title": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
       "headline": "Obama Slams Trump on Iran, Debt, Ukraine at Georgia Rally",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18154273390543053",
       "timestamp": "2026-11-21T06:10:15.193958+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-claims-us-has-total-control-over-strait-of-hormuz-2026-11-21-141500",
+      "title": "Trump Claims US Has 'Total Control' Over Strait of Hormuz",
+      "headline": "Trump Claims US Has 'Total Control' Over Strait of Hormuz",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18080229665756777",
+      "timestamp": "2026-11-21T06:36:27.006403+00:00"
     }
   ],
   "processed": [
@@ -4773,19 +4773,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Trump Claims US Has 'Total Control' Over Strait of Hormuz",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/trump-claims-us-has-total-control-over-strait-of-hormuz-2026-11-21-141500",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Statement regarding control over a critical global maritime chokepoint (Strait of Hormuz) implies potential geopolitical escalation and international security implications."
-      },
-      "classified_at": "2026-11-21T02:52:18.386318+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
