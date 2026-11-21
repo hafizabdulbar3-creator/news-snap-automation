@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/tripura-sir-rescheduled-fresh-timeline-out-house-to-house-visits-from-december-26-ws-lr-10404141.html?comscorekw=jionews",
-      "title": "Tripura SIR Rescheduled: Fresh Timeline Out, House-to-House Visits From December 26",
-      "headline": "Tripura SIR Rescheduled: House-to-House Visits Begin December 26",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18175080613395998",
-      "timestamp": "2026-10-29T20:03:12.068079+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/star-trek-and-x-men-icon-patrick-stewart-dies-at-86-after-brief-battle-with-alzheimer-s-and-lewy-body-dementia-family-confirms-2026-10-29-139984",
       "title": "Patrick Stewart, Star Trek and X-Men Icon, Dies at 86",
       "headline": "Star Trek Icon Patrick Stewart Dies at 86",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17910676095666268",
       "timestamp": "2026-11-21T18:23:11.530209+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/healing-is-a-journey-princess-kate-opens-up-on-cancer-in-new-documentary-heal-2026-11-21-141560",
+      "title": "'Healing Is A Journey': Princess Kate Opens Up On Cancer In New Documentary Heal",
+      "headline": "Princess Kate Opens Up On Cancer In New Documentary 'Heal",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18097482029666092",
+      "timestamp": "2026-11-21T18:57:16.846415+00:00"
     }
   ],
   "processed": [
@@ -4737,7 +4737,30 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Anirudh-Kavya's Grand Reception, Tiger Shroff's Return After Attack, Salman's Clash Dilemma",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/entertainment-top-news-november-21-anirudh-ravichander-kavya-maran-reception-tiger-shroff-first-appearance-juhu-attack-ws-l-10435734.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-21T18:56:49.768546+00:00"
+    },
+    {
+      "title": "24,000 Diyas Light Up Gayatri Parivar Centenary; Thousands Pledge Yug Nirman Vision",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/info/24000-diyas-illuminate-gayatri-parivars-centenary-celebrations-dr-chinmay-pandya-leads-thousands-in-pledge-to-carry-forward-the-vision-of-yug-nirman-2026-11-21-141559",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-21T18:56:49.768550+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
