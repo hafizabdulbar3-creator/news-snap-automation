@@ -4737,7 +4737,41 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Ladakh Panchayat Elections Record 70.03% Turnout, 52.40% in Municipal Polls",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/ladakh-panchayat-elections-record-7003-turnout-5240-in-municipal-polls-2026-11-21-141555",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A standard report on local election turnout figures in a specific region."
+      },
+      "classified_at": "2026-11-21T15:56:57.148555+00:00"
+    },
+    {
+      "title": "FBI's Criminal Information Database Hacked: Reports",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/fbi-s-criminal-information-database-hacked-reports-2026-11-21-141556",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Cybersecurity",
+        "reason": "A breach of a major law enforcement database has significant implications for national security and public safety."
+      },
+      "classified_at": "2026-11-21T15:56:57.148574+00:00"
+    },
+    {
+      "title": "'BrahMos Missile that Gave Sleepless Nights To Enemy Now Made in UP': PM Modi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/defence/brahmos-missile-that-gave-sleepless-nights-to-enemy-now-made-in-up-pm-modi-2026-11-21-141554",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Defense",
+        "reason": "A statement by the Prime Minister regarding the production of a strategic missile system constitutes a major geopolitical and defense development."
+      },
+      "classified_at": "2026-11-21T15:56:57.148578+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
