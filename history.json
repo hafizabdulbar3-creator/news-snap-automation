@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/israel-police-say-they-will-not-allow-purity-of-election-to-be-undermined-assure-full-investigation-of-alleged-fraud-2026-10-29-139936",
-      "title": "Foreign Funding Claims Rock Israeli Elections; Police Launch Probe",
-      "headline": "Police Launch Probe Into Alleged Foreign Funding in Israeli Elections",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18015700934975387",
-      "timestamp": "2026-10-29T10:35:22.217282+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/bangladesh-air-force-officer-linked-to-former-pm-hasina-escape-video-found-dead-in-river-2026-10-29-139938",
       "title": "Bangladesh Air Force Officer Linked To Former PM Hasina Escape Video Found Dead In River",
       "headline": "Bangladesh Air Force Officer Linked to Hasina Escape Video Found Dead",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17943248241395114",
       "timestamp": "2026-11-21T08:51:11.896511+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/agniveer-data-on-dark-web-14-year-old-questioned-in-delhi-over-suspected-attempt-to-sell-sensitive-files-2026-11-21-141531",
+      "title": "Dark Web Data Leak: 14-year-old questioned over alleged Agniveer files sale.",
+      "headline": "14-year-old questioned over alleged Agniveer data leak",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18113881859228017",
+      "timestamp": "2026-11-21T09:17:09.344667+00:00"
     }
   ],
   "processed": [
@@ -4784,17 +4784,6 @@
         "reason": "A ceremonial event at a prestigious educational institution involving a national leader."
       },
       "classified_at": "2026-11-21T08:50:46.316019+00:00"
-    },
-    {
-      "title": "Dark Web Data Leak: 14-year-old questioned over alleged Agniveer files sale.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/agniveer-data-on-dark-web-14-year-old-questioned-in-delhi-over-suspected-attempt-to-sell-sensitive-files-2026-11-21-141531",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "National News",
-        "reason": "A cybercrime involving the alleged theft of sensitive military recruitment data, raising national security concerns."
-      },
-      "classified_at": "2026-11-21T08:50:46.316040+00:00"
     },
     {
       "title": "'Mocked Me for Talking About Toilets': PM Modi Cites World Bank Report on 50 Crore Lifted Out of Poverty",
