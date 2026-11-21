@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cricket/afghanistan-vs-zimbabwe-live-score-2nd-t20i-follow-scorecard-and-match-action-from-sharjah-liveblog-ws-l-10403883.html?comscorekw=jionews",
-      "title": "Afghanistan Vs Zimbabwe Live Score, 2nd T20I: Follow Scorecard And Match Action From Sharjah",
-      "headline": "Afghanistan Vs Zimbabwe Live: 2nd T20I Scorecard From Sharjah",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17995793396842839",
-      "timestamp": "2026-10-29T14:50:16.317740+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/what-is-wrong-with-victims-supreme-court-bats-for-bank-compensation-in-digital-arrest-scams-2026-10-29-139962",
       "title": "'What Is Wrong With Victims?': Supreme Court Pushes for Bank Compensation in Digital Arrest Scams",
       "headline": "Supreme Court Asks: What Is Wrong With Victims? Pushing for Bank Compensation",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17971335573208436",
       "timestamp": "2026-11-21T13:11:43.640623+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/spoiler-not-winner-how-amritpal-singh-could-reshape-punjabs-2027-electoral-maths-ws-blrt-10435544.html?comscorekw=jionews",
+      "title": "Spoiler, Not Winner: How Amritpal Singh Could Reshape Punjab's 2027 Electoral Maths",
+      "headline": "Amritpal Singh Could Reshape Punjab's 2027 Electoral Maths",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18036711872674551",
+      "timestamp": "2026-11-21T13:42:36.021622+00:00"
     }
   ],
   "processed": [
@@ -4759,17 +4759,6 @@
         "reason": "A politician rejecting a comment and discussing alliance strategies is a standard regional political update."
       },
       "classified_at": "2026-11-21T13:36:57.660175+00:00"
-    },
-    {
-      "title": "Spoiler, Not Winner: How Amritpal Singh Could Reshape Punjab's 2027 Electoral Maths",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/spoiler-not-winner-how-amritpal-singh-could-reshape-punjabs-2027-electoral-maths-ws-blrt-10435544.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Analysis of a political figure's potential impact on future electoral math is a standard political commentary."
-      },
-      "classified_at": "2026-11-21T13:36:57.660182+00:00"
     },
     {
       "title": "Lumio Aura 5 Review: Powerful Sound, Deep Bass, And A Soundbar Alternative Worth Considering",
