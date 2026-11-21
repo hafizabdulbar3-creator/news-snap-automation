@@ -4503,33 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/centre-faces-first-electoral-test-in-ladakh-since-article-370-abrogation-and-ut-status-2026-11-19-141410",
-      "title": "Centre Faces First Electoral Test In Ladakh Since Article 370 Abrogation And UT Status",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T17:41:21.910534+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.republicworld.com/entertainment/assamese-film-adishakti-shines-internationally-wins-best-film-at-las-vegas-indie-awards-2026-11-19-141413",
-      "title": "Assamese Film 'Adishakti' Shines Internationally, Wins Best Film at Las Vegas Indie Awards",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T17:46:38.297138+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/cricket/temba-bavuma-ruled-out-of-2nd-bangladesh-test-due-to-calf-strain-ws-l-10433213.html?comscorekw=jionews",
-      "title": "Temba Bavuma Ruled Out Of 2nd Bangladesh Test Due To Calf Strain",
-      "domain": "news18.com",
-      "timestamp": "2026-11-19T22:07:31.982071+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-2-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10433209.html?comscorekw=jionews",
       "title": "India Vs New Zealand Live Score, 1st Test Day 2: NZ 250/5 In 85 Overs, Glenn Phillips On 97",
       "domain": "news18.com",
@@ -4735,6 +4708,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-4-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10435767.html?comscorekw=jionews",
+      "title": "India Vs New Zealand Live Score, 1st Test Day 4: IND Aim To Take Big 1st Innings Lead",
+      "domain": "news18.com",
+      "timestamp": "2026-11-21T22:25:58.630321+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
@@ -4748,17 +4730,6 @@
         "reason": "Political meme war regarding a video game is a niche cultural topic rather than a major geopolitical event."
       },
       "classified_at": "2026-11-21T22:00:01.975317+00:00"
-    },
-    {
-      "title": "India Vs New Zealand Live Score, 1st Test Day 4: IND Aim To Take Big 1st Innings Lead",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-4-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10435767.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "Live coverage of a cricket match falls under sports reporting."
-      },
-      "classified_at": "2026-11-21T22:00:01.975340+00:00"
     }
   ],
   "quota_cooldown": {
