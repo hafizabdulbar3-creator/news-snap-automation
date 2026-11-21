@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/rs-4600-crore-damage-7-deaths-andhra-grapples-with-cyclone-arnab-aftermath-cm-naidu-surveys-situation-ws-blrt-10404182.html?comscorekw=jionews",
-      "title": "Rs 4,600 Crore Damage, 7 Deaths: Andhra Grapples With Cyclone Arnab Aftermath, CM Naidu Surveys Situation",
-      "headline": "Rs 4,600 Crore Damage, 7 Deaths: Andhra Grapples With Cyclone Arnab Aftermath",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18402212170204855",
-      "timestamp": "2026-10-30T00:49:27.842994+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/centcom-chief-briefs-trump-on-renewed-iran-strikes-as-tehran-sets-7-conditions-for-peace-talks-2026-10-30-139989",
       "title": "CENTCOM Chief Briefs Trump On Renewed Iran Strikes As Tehran Sets 7 Conditions For Peace Talks",
       "headline": "CENTCOM Chief Briefs Trump On Iran Strikes As Tehran Demands 7 Conditions",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17964485847257185",
       "timestamp": "2026-11-21T21:21:29.072434+00:00"
+    },
+    {
+      "url": "https://www.news18.com/sports/football/arsenal-lose-david-raya-in-2-2-draw-with-newcastle-united-ws-l-10435776.html?comscorekw=jionews",
+      "title": "Arsenal Lose David Raya In 2-2 Draw With Newcastle United",
+      "headline": "Arsenal Miss Top Spot After 2-2 Draw With Newcastle",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18117542386847823",
+      "timestamp": "2026-11-21T22:00:23.593896+00:00"
     }
   ],
   "processed": [
@@ -4737,7 +4737,30 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "GTA 6 Becomes Latest BJP Vs Congress Battleground: How PM Modi's Post Triggered Political Meme War",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/gta-6-becomes-latest-bjp-vs-congress-battleground-how-pm-modis-post-triggered-political-meme-war-ws-lrt-10435764.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "Political meme war regarding a video game is a niche cultural topic rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-21T22:00:01.975317+00:00"
+    },
+    {
+      "title": "India Vs New Zealand Live Score, 1st Test Day 4: IND Aim To Take Big 1st Innings Lead",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-4-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10435767.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "Live coverage of a cricket match falls under sports reporting."
+      },
+      "classified_at": "2026-11-21T22:00:01.975340+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
