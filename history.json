@@ -4762,6 +4762,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/india/no-respite-for-delhi-air-quality-remains-poor-with-aqi-at-279-2026-11-21-141502",
+      "title": "No Respite for Delhi: Air Quality Remains 'Poor' with AQI at 279",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-21T03:18:24.184314+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [
