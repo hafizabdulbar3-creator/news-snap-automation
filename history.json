@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/business/markets/half-a-trillion-wiped-out-google-parent-alphabets-shares-plunge-13-over-ai-fears-in-historic-wall-street-crash-ws-lrt-10404178.html?comscorekw=jionews",
-      "title": "AI Fears Trigger Historic Wall Street Crash for Google Parent Alphabet",
-      "headline": "Google Parent Alphabet Shares Plunge in Historic Wall Street Crash",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18107961187979609",
-      "timestamp": "2026-10-29T23:46:56.694410+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/overnight-rain-in-delhi-drops-aqi-from-poor-to-moderate-as-temperature-plunges-2026-10-30-139988",
       "title": "Overnight Rain In Delhi Drops AQI From Poor To Moderate As Temperature Plunges",
       "headline": "Delhi AQI Drops To Moderate After Overnight Rain",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18001888367825635",
       "timestamp": "2026-11-21T20:17:22.544286+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/doue-stretchered-off-with-knee-injury-as-psg-beat-nice-3-2-2026-11-21-141561",
+      "title": "Doue Stretchered Off With Knee Injury As PSG Beat Nice 3-2",
+      "headline": "PSG's Desire Doue Stretchered Off With Severe Knee Injury in Win",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17980799703139538",
+      "timestamp": "2026-11-21T20:50:30.705051+00:00"
     }
   ],
   "processed": [
@@ -4737,19 +4737,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Doue Stretchered Off With Knee Injury As PSG Beat Nice 3-2",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/sports/doue-stretchered-off-with-knee-injury-as-psg-beat-nice-3-2-2026-11-21-141561",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A sports injury and match result falls under the category of sports-only news."
-      },
-      "classified_at": "2026-11-21T20:16:26.438181+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
