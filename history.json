@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/tech/malaysia-seizes-12-1-million-worth-of-ai-chips-hidden-in-servers-at-kuala-lumpur-airport-ws-l-10402529.html?comscorekw=jionews",
-      "title": "Malaysia Seizes $12.1 Million Worth of AI Chips Hidden in Servers at Kuala Lumpur Airport",
-      "headline": "Malaysia Seizes $12.1 Million in AI Chips Hidden in Servers",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17951019096078849",
-      "timestamp": "2026-10-29T06:20:18.054725+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/keen-on-regime-change-ups-new-rules-may-block-your-government-job-ws-l-10402524.html?comscorekw=jionews",
       "title": "Talking Of 'Regime Change'? Read UP's New Rules For Government Jobs",
       "headline": "UP New Rules: Regime Change Activities May Block Government Jobs",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18018194882957471",
       "timestamp": "2026-11-21T04:41:40.239524+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/second-cyber-breach-fbi-investigates-hack-of-sensitive-us-criminal-records-database-2026-11-21-141517",
+      "title": "'Second Cyber Breach': FBI Investigates Hack of Sensitive US Criminal Records Database",
+      "headline": "FBI Investigates Hack of Sensitive US Criminal Records Database",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18379130566241135",
+      "timestamp": "2026-11-21T05:13:23.924391+00:00"
     }
   ],
   "processed": [
