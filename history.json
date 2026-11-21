@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/up-mlc-polls-bjps-reality-check-on-candidates-cadre-and-local-connect-ahead-of-2027-battle-ws-kl-10402395.html?comscorekw=jionews",
-      "title": "UP MLC Polls: BJP's Reality Check On Candidates, Cadre And Local Connect Ahead Of 2027 Battle",
-      "headline": "BJP Faces Reality Check Ahead Of 2027 Battle",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18356766091174426",
-      "timestamp": "2026-10-29T03:44:08.196420+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/jd-vance-reaches-out-to-iran-hardliner-at-trumps-direction-as-us-weighs-fresh-strikes-peace-talks-hang-in-balance-2026-10-29-139897",
       "title": "Vance Reaches Iran Hardliner Amid Trump's Strike Threats, Peace Talks Uncertain",
       "headline": "Vance Reaches Out to Iran Hardliner Amid Trump's Strike Threats",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18108894086198632",
       "timestamp": "2026-11-21T02:01:19.254403+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/us-is-10-years-ahead-because-of-huang-says-trump-urges-board-to-bring-him-back-2026-11-21-141496",
+      "title": "US Is 10 Years Ahead Because Of Huang, Says Trump, Urges Nvidia To Bring Him Back",
+      "headline": "Trump Urges Nvidia To Rehire Jensen Huang",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18124211758926759",
+      "timestamp": "2026-11-21T02:26:57.499603+00:00"
     }
   ],
   "processed": [
@@ -4764,19 +4764,7 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "US Is 10 Years Ahead Because Of Huang, Says Trump, Urges Nvidia To Bring Him Back",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/us-is-10-years-ahead-because-of-huang-says-trump-urges-board-to-bring-him-back-2026-11-21-141496",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A political statement regarding the US technology sector and trade policy, though sensationalized."
-      },
-      "classified_at": "2026-11-21T00:57:53.379088+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
