@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://news.abplive.com/elections/up-mlc-election-results-varanasi-bjp-kedarnath-singh-concedes-defeat-accept-mandate-with-humility-1873725/amp",
-      "title": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
-      "headline": "BJP's Kedarnath Singh concedes defeat in Varanasi Graduate polls",
-      "domain": "abplive.com",
-      "published": true,
-      "media_id": "18107253383199651",
-      "timestamp": "2026-10-29T09:06:38.014006+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/india/diwali-business-or-political-protest-nitin-nabins-big-attack-on-rahul-gandhi-2026-10-29-139910",
       "title": "Diwali Business or Political Protest? Nitin Nabin's Big Attack on Rahul Gandhi",
       "headline": "Diwali Business or Political Protest? Nitin Nabin Attacks Rahul Gandhi",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18105831275647227",
       "timestamp": "2026-11-21T07:33:17.375571+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/makes-me-smile-amit-shahs-jibe-at-congress-on-modi-govts-golden-contribution-to-northeast-ws-l-10435160.html?comscorekw=jionews",
+      "title": "'Makes Me Smile': Amit Shah's Jibe At Congress On Modi Govt's 'Golden' Contribution To Northeast",
+      "headline": "Amit Shah Jabs Congress Over 'Golden' Northeast Development",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18160700164510080",
+      "timestamp": "2026-11-21T07:59:10.086681+00:00"
     }
   ],
   "processed": [
@@ -4773,7 +4773,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "D-Company Shooter Killed After Delhi Murder: How A Gang War Ended With Naseem Durrani's Killing",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/d-company-shooter-killed-after-delhi-murder-how-a-gang-war-ended-with-naseem-durranis-killing-ws-l-10435083.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A report on a specific gang-related killing and subsequent police action, which is a notable regional crime story."
+      },
+      "classified_at": "2026-11-21T07:58:44.379288+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
