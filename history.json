@@ -4787,7 +4787,7 @@
     }
   ],
   "quota_cooldown": {
-    "active": true,
+    "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
     "reason": "Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s).",
     "provider": "gemini",
@@ -4795,7 +4795,7 @@
   },
   "quota_cooldowns": {
     "gemini": {
-      "active": true,
+      "active": false,
       "resets_at": "2026-11-21T08:00:00.001976+00:00",
       "reason": "Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s).",
       "provider": "gemini",
