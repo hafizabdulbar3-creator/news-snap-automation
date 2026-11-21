@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/info/delhi-2047-cannot-be-designed-around-cars-the-future-of-the-capital-will-be-walkable-2026-11-19-141369",
-      "title": "Delhi 2047 Cannot Be Designed Around Cars: The Future of the Capital Will Be Walkable",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T07:57:07.802812+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 19."
-    },
-    {
-      "url": "https://www.republicworld.com/entertainment/celebrities/saif-ali-khan-receives-death-threat-from-baba-siddiqui-murderers-mumbai-police-probes-2026-11-19-141383",
-      "title": "Saif Ali Khan Receives Death Threat From Baba Siddiqui Murderers, Mumbai Police Probes",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T08:58:23.210033+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
-    },
-    {
       "url": "https://www.republicworld.com/cricket/nz-vs-ind-1st-test-bumrah-surpasses-srinath-among-top-10-indian-test-wicket-takers-2026-11-19-141388",
       "title": "NZ vs IND, 1st Test: Bumrah Surpasses Srinath, Among Top 10 Indian Test Wicket-Takers",
       "domain": "republicworld.com",
@@ -4771,6 +4753,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/cities/mumbai-news/mumbais-pataal-lok-road-network-80-kmph-underground-tunnels-to-link-airport-sea-link-and-highways-ws-l-10435182.html?comscorekw=jionews",
+      "title": "Mumbai's 'Pataal Lok' Road Network: 80 Kmph Underground Tunnels To Link Airport, Sea Link And Highways",
+      "domain": "news18.com",
+      "timestamp": "2026-11-21T09:45:07.377497+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
@@ -4795,17 +4786,6 @@
         "reason": "A political speech citing economic data and development milestones."
       },
       "classified_at": "2026-11-21T08:50:46.316043+00:00"
-    },
-    {
-      "title": "Mumbai's 'Pataal Lok' Road Network: 80 Kmph Underground Tunnels To Link Airport, Sea Link And Highways",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/mumbai-news/mumbais-pataal-lok-road-network-80-kmph-underground-tunnels-to-link-airport-sea-link-and-highways-ws-l-10435182.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National News",
-        "reason": "A significant infrastructure development project in a major metropolitan area."
-      },
-      "classified_at": "2026-11-21T08:50:46.316046+00:00"
     }
   ],
   "quota_cooldown": {
