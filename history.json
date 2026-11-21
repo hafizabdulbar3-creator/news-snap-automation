@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/jd-vance-reaches-out-to-iran-hardliner-at-trumps-direction-as-us-weighs-fresh-strikes-peace-talks-hang-in-balance-2026-10-29-139897",
-      "title": "Vance Reaches Iran Hardliner Amid Trump's Strike Threats, Peace Talks Uncertain",
-      "headline": "Vance Reaches Out to Iran Hardliner Amid Trump's Strike Threats",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18220330051354750",
-      "timestamp": "2026-10-29T04:10:09.751295+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/new-delhi-news/heavy-rain-batters-parts-of-delhi-ncr-imd-issues-yellow-alert-aqi-crosses-200-ws-l-10402384.html?comscorekw=jionews",
       "title": "Heavy Rain Batters Parts Of Delhi-NCR, IMD Issues Yellow Alert; AQI Crosses 200",
       "headline": "Heavy Rain Batters Delhi-NCR, IMD Issues Yellow Alert",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18124211758926759",
       "timestamp": "2026-11-21T02:26:57.499603+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-france-condemn-pahalgam-and-red-fort-terror-attacks-at-counter-terrorism-meeting-in-delhi-2026-11-21-141498",
+      "title": "India, France Condemn Pahalgam and Red Fort Terror Attacks at Counter-Terrorism Meeting in Delhi",
+      "headline": "India, France Condemn Pahalgam and Red Fort Terror Attacks",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18188381005423213",
+      "timestamp": "2026-11-21T02:52:42.692409+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,19 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Claims US Has 'Total Control' Over Strait of Hormuz",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-claims-us-has-total-control-over-strait-of-hormuz-2026-11-21-141500",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Statement regarding control over a critical global maritime chokepoint (Strait of Hormuz) implies potential geopolitical escalation and international security implications."
+      },
+      "classified_at": "2026-11-21T02:52:18.386318+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
