@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/sports/football/cristiano-ronaldo-beats-lionel-messi-wins-ballon-dor-of-all-time-award-ws-bklt-10402375.html?comscorekw=jionews",
-      "title": "Cristiano Ronaldo Beats Lionel Messi, Wins Ballon d'Or of All Time Award",
-      "headline": "Cristiano Ronaldo Beats Lionel Messi to Win Ballon d'Or of All Time",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18103210595378403",
-      "timestamp": "2026-10-29T03:13:02.046923+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/up-mlc-polls-bjps-reality-check-on-candidates-cadre-and-local-connect-ahead-of-2027-battle-ws-kl-10402395.html?comscorekw=jionews",
       "title": "UP MLC Polls: BJP's Reality Check On Candidates, Cadre And Local Connect Ahead Of 2027 Battle",
       "headline": "BJP Faces Reality Check Ahead Of 2027 Battle",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17958440694030594",
       "timestamp": "2026-11-21T01:24:21.975280+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/4-cubs-born-in-kuno-botswana-cheetah-komg-3-gives-birth-in-the-wild-pushing-india-s-count-to-62-2026-11-20-141480",
+      "title": "4 Cubs Born In Kuno: Botswana Cheetah KOMG 3 Gives Birth In The Wild, Pushing India's Count To 62",
+      "headline": "4 Cubs Born In Kuno: Botswana Cheetah KOMG 3 Gives Birth In The Wild",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18108894086198632",
+      "timestamp": "2026-11-21T02:01:19.254403+00:00"
     }
   ],
   "processed": [
@@ -4775,17 +4775,6 @@
         "reason": "A political statement regarding the US technology sector and trade policy, though sensationalized."
       },
       "classified_at": "2026-11-21T00:57:53.379088+00:00"
-    },
-    {
-      "title": "4 Cubs Born In Kuno: Botswana Cheetah KOMG 3 Gives Birth In The Wild, Pushing India's Count To 62",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/4-cubs-born-in-kuno-botswana-cheetah-komg-3-gives-birth-in-the-wild-pushing-india-s-count-to-62-2026-11-20-141480",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Science & Nature",
-        "reason": "A notable conservation milestone regarding the reintroduction of cheetahs to India."
-      },
-      "classified_at": "2026-11-21T00:57:53.379109+00:00"
     }
   ],
   "quota_cooldown": {
