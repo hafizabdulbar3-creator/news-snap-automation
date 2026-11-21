@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/star-trek-and-x-men-icon-patrick-stewart-dies-at-86-after-brief-battle-with-alzheimer-s-and-lewy-body-dementia-family-confirms-2026-10-29-139984",
-      "title": "Patrick Stewart, Star Trek and X-Men Icon, Dies at 86",
-      "headline": "Star Trek Icon Patrick Stewart Dies at 86",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18111323585185254",
-      "timestamp": "2026-10-29T21:47:38.709289+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/we-lost-one-of-the-greats-hugh-jackman-shatner-george-takei-lead-tributes-after-patrick-stewart-dies-at-86-2026-10-29-139985",
       "title": "Patrick Stewart, Beloved Star Trek Icon, Dies at 86; Tributes Flood Social Media",
       "headline": "Patrick Stewart, Star Trek Icon, Dies at 86",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18097482029666092",
       "timestamp": "2026-11-21T18:57:16.846415+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/entertainment-top-news-november-21-anirudh-ravichander-kavya-maran-reception-tiger-shroff-first-appearance-juhu-attack-ws-l-10435734.html?comscorekw=jionews",
+      "title": "Anirudh-Kavya's Grand Reception, Tiger Shroff's Return After Attack, Salman's Clash Dilemma",
+      "headline": "Anirudh-Kavya Reception, Tiger Shroff's Return, Salman's Clash Dilemma",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17967834600228161",
+      "timestamp": "2026-11-21T19:24:40.130463+00:00"
     }
   ],
   "processed": [
@@ -4738,17 +4738,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Anirudh-Kavya's Grand Reception, Tiger Shroff's Return After Attack, Salman's Clash Dilemma",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/entertainment-top-news-november-21-anirudh-ravichander-kavya-maran-reception-tiger-shroff-first-appearance-juhu-attack-ws-l-10435734.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Classified by local heuristic: standard national or international news report."
-      },
-      "classified_at": "2026-11-21T18:56:49.768546+00:00"
-    },
     {
       "title": "24,000 Diyas Light Up Gayatri Parivar Centenary; Thousands Pledge Yug Nirman Vision",
       "domain": "republicworld.com",
