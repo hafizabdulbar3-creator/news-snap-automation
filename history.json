@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/chinese-citizen-alice-huang-aka-huang-le-accused-of-using-relationship-with-nvidia-ceo-to-collect-ai-chip-info-for-beijing-2026-10-29-139973",
-      "title": "Shocking Allegations: Chinese Citizen Used Nvidia CEO Link for AI Chip Espionage",
-      "headline": "Chinese Citizen Accused of Using Nvidia CEO Link for AI Chip Espionage",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18114094508225156",
-      "timestamp": "2026-10-29T18:34:03.203663+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/priyanka-chopra-andrew-scott-join-oscar-qualified-indian-short-we-were-here-as-executive-producers-ws-kl-10404002.html?comscorekw=jionews",
       "title": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Indian Short We Were Here As Executive Producers",
       "headline": "Priyanka Chopra, Andrew Scott Join Oscar-Qualified Short Film 'We Were Here",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18066630194799532",
       "timestamp": "2026-11-21T16:55:10.702871+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/going-to-be-permanent-donald-trump-on-making-a-deal-with-iran-2026-11-21-141558",
+      "title": "'Going To Be Permanent': Trump on Making a Deal With Iran",
+      "headline": "Trump Vows Permanent Deal With Iran",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18121089169795320",
+      "timestamp": "2026-11-21T17:26:36.012459+00:00"
     }
   ],
   "processed": [
@@ -4737,7 +4737,30 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "18 Dead, Over 1,000 Hospitalised After Consuming Spurious Liquor in Manipur",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/18-dead-over-1000-hospitalised-after-consuming-spurious-liquor-in-manipur-2026-11-21-141557",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Mass casualty event involving over 1,000 hospitalizations due to spurious liquor, a major public safety disaster."
+      },
+      "classified_at": "2026-11-21T17:26:01.319828+00:00"
+    },
+    {
+      "title": "Key Challenge to Mathura Temple-Mosque Land Pact Dismissed by High Court",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/krishna-janmabhoomi-case-allahabad-hc-dismisses-plea-challenging-1968-land-sharing-pact-with-idgah-trust-in-mathura-ws-lrt-10435675.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Legal ruling on a land dispute involving religious sites, a significant but localized legal matter."
+      },
+      "classified_at": "2026-11-21T17:26:01.319832+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
