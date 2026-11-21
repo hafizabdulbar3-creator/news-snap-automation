@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/overnight-rain-in-delhi-drops-aqi-from-poor-to-moderate-as-temperature-plunges-2026-10-30-139988",
-      "title": "Overnight Rain In Delhi Drops AQI From Poor To Moderate As Temperature Plunges",
-      "headline": "Delhi AQI Drops To Moderate After Overnight Rain",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18229139326327367",
-      "timestamp": "2026-10-30T00:23:23.854790+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/rs-4600-crore-damage-7-deaths-andhra-grapples-with-cyclone-arnab-aftermath-cm-naidu-surveys-situation-ws-blrt-10404182.html?comscorekw=jionews",
       "title": "Rs 4,600 Crore Damage, 7 Deaths: Andhra Grapples With Cyclone Arnab Aftermath, CM Naidu Surveys Situation",
       "headline": "Rs 4,600 Crore Damage, 7 Deaths: Andhra Grapples With Cyclone Arnab Aftermath",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17980799703139538",
       "timestamp": "2026-11-21T20:50:30.705051+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/4-awami-league-leaders-likely-to-head-to-bengal-border-explore-route-for-hasinas-bangladesh-return-exclusive-ws-lrt-10435754.html?comscorekw=jionews",
+      "title": "Awami League Leaders Recon Border Routes for Hasina's Bangladesh Return",
+      "headline": "Awami League Leaders Recon Border Routes for Hasina's Bangladesh Return",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17964485847257185",
+      "timestamp": "2026-11-21T21:21:29.072434+00:00"
     }
   ],
   "processed": [
