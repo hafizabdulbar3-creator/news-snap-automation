@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/lawyers-have-hybrid-option-no-work-from-home-for-judges-sc-justice-vikram-nath-on-delhis-post-diwali-pollution-ws-lrt-10402333.html?comscorekw=jionews",
-      "title": "SC Justice on Delhi Pollution: Judges Lack Hybrid Option, Must Attend Court",
-      "headline": "SC Justice: Judges Lack Hybrid Option, Must Attend Court",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18108445447956388",
-      "timestamp": "2026-10-28T23:29:30.488896+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/massive-fire-guts-shops-at-goas-vasco-sunday-market-cm-pramod-sawant-assures-aid-to-affected-vendors-2026-10-29-139892",
       "title": "Massive Fire Guts Shops At Goa's Vasco Sunday Market, CM Pramod Sawant Assures Aid To Affected Vendors",
       "headline": "Massive Fire Guts Shops At Goa's Vasco Sunday Market",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18026239589715324",
       "timestamp": "2026-11-20T23:19:06.428298+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/congress-wins-27-of-37-zila-parishads-in-rajasthan-bjp-reduced-to-6-2026-11-20-141492",
+      "title": "Congress Wins 27 Of 37 Zila Parishads In Rajasthan: BJP Reduced To 6",
+      "headline": "Congress Sweeps Rajasthan, Wins 27 Of 37 Zila Parishads",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18647298667052102",
+      "timestamp": "2026-11-21T00:00:41.948050+00:00"
     }
   ],
   "processed": [
@@ -4756,17 +4756,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Congress Wins 27 Of 37 Zila Parishads In Rajasthan: BJP Reduced To 6",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/congress-wins-27-of-37-zila-parishads-in-rajasthan-bjp-reduced-to-6-2026-11-20-141492",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional election result in India involving local governance bodies (Zila Parishads). While significant for local politics, it does not meet the threshold for a major geopolitical event."
-      },
-      "classified_at": "2026-11-20T23:50:23.498385+00:00"
-    },
     {
       "title": "India Rejects Terrorist Pannun's Baseless Lawsuit Against NSA Doval, Ex-RAW Chief",
       "domain": "republicworld.com",
