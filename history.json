@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/tech/navigating-india-just-got-easier-whats-new-in-apple-maps-2026-11-19-141344",
-      "title": "Navigating India Just Got Easier: What's New in Apple Maps?",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T05:15:43.651790+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Navigating India Just Got Easier: What's New in Apple Maps?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
       "url": "https://www.republicworld.com/info/delhi-2047-cannot-be-designed-around-cars-the-future-of-the-capital-will-be-walkable-2026-11-19-141369",
       "title": "Delhi 2047 Cannot Be Designed Around Cars: The Future of the Capital Will Be Walkable",
       "domain": "republicworld.com",
@@ -4771,9 +4762,41 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/magnitude-67-earthquake-shakes-perus-andes-with-no-damage-or-casualties-immediately-reported-2026-11-21-141513",
+      "title": "Magnitude 6.7 Earthquake Rattles Central Peru's Andes; Tremors Felt in Lima",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-21T07:03:35.086936+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'US-India Partnership in Action': Sergio Gor Hails Operation Monsoon Thunder After Major Drug Bust",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/us-india-partnership-in-action-sergio-gor-hails-operation-monsoon-thunder-after-major-drug-bust-2026-11-21-141522",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "This reports on a specific law enforcement operation (Operation Monsoon Thunder) involving a major drug bust, which is a notable public interest story."
+      },
+      "classified_at": "2026-11-21T07:03:19.977212+00:00"
+    },
+    {
+      "title": "China's Pakistan Backing In Op Sindoor Part Of Wider Bid To Suppress India's Rise, Says US Commission",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/china-pakistan-operation-sindoor-wider-bid-suppress-india-rise-us-commission-report-ws-l-10435044.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "This reports on a geopolitical analysis regarding US-India relations and regional security dynamics."
+      },
+      "classified_at": "2026-11-21T07:03:19.977233+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
