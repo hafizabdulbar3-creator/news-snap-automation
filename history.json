@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/karnataka-hc-grants-bail-to-man-accused-of-tying-footwear-to-br-ambedkar-jagjivan-ram-portraits-ws-lrt-10404170.html?comscorekw=jionews",
-      "title": "Karnataka HC Grants Bail To Man Accused Of Tying Footwear To BR Ambedkar, Jagjivan Ram Portraits",
-      "headline": "Karnataka HC Grants Bail To Man Accused Of Tying Footwear To Ambedkar, Jagjivan Ram",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18147307825570657",
-      "timestamp": "2026-10-29T23:05:20.062999+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/markets/half-a-trillion-wiped-out-google-parent-alphabets-shares-plunge-13-over-ai-fears-in-historic-wall-street-crash-ws-lrt-10404178.html?comscorekw=jionews",
       "title": "AI Fears Trigger Historic Wall Street Crash for Google Parent Alphabet",
       "headline": "Google Parent Alphabet Shares Plunge in Historic Wall Street Crash",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18116946182607762",
       "timestamp": "2026-11-21T19:50:33.950946+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/after-bjp-appointment-cricketer-yuzvendra-chahal-thanks-pm-modi-amit-shah-for-obc-morcha-role-2026-11-21-141562",
+      "title": "After BJP Appointment, Cricketer Yuzvendra Chahal Thanks PM Modi, Amit Shah For OBC Morcha Role",
+      "headline": "Cricketer Yuzvendra Chahal Thanks PM Modi, Amit Shah For OBC Morcha Role",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18001888367825635",
+      "timestamp": "2026-11-21T20:17:22.544286+00:00"
     }
   ],
   "processed": [
@@ -4737,7 +4737,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Doue Stretchered Off With Knee Injury As PSG Beat Nice 3-2",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/doue-stretchered-off-with-knee-injury-as-psg-beat-nice-3-2-2026-11-21-141561",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A sports injury and match result falls under the category of sports-only news."
+      },
+      "classified_at": "2026-11-21T20:16:26.438181+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
