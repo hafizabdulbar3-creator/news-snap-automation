@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/heavy-rain-batters-parts-of-delhi-ncr-imd-issues-yellow-alert-aqi-crosses-200-ws-l-10402384.html?comscorekw=jionews",
-      "title": "Heavy Rain Batters Parts Of Delhi-NCR, IMD Issues Yellow Alert; AQI Crosses 200",
-      "headline": "Heavy Rain Batters Delhi-NCR, IMD Issues Yellow Alert",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18085151552704953",
-      "timestamp": "2026-10-29T04:36:15.342979+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/congress-scores-first-mlc-poll-win-as-abhijit-wanjari-defeats-bjp-in-nagpur-2026-10-29-139896",
       "title": "Congress Scores First MLC Poll Win As Abhijit Wanjari Defeats BJP In Nagpur",
       "headline": "Congress Scores First MLC Poll Win As Abhijit Wanjari Defeats BJP In Nagpur",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18188381005423213",
       "timestamp": "2026-11-21T02:52:42.692409+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/not-every-agreement-is-worth-accepting-to-escape-iran-fm-araghchi-lays-out-terms-for-us-deal-2026-11-21-141505",
+      "title": "'Not Every Agreement Is Worth Accepting to Escape': Iran FM Araghchi Lays Out Terms for US Deal",
+      "headline": "Iran FM Araghchi: Not Every Agreement Is Worth Accepting to Escape",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17915479563490539",
+      "timestamp": "2026-11-21T03:24:00.344474+00:00"
     }
   ],
   "processed": [
