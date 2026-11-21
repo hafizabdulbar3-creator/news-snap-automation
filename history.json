@@ -4503,42 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/cricket/nz-vs-ind-1st-test-bumrah-surpasses-srinath-among-top-10-indian-test-wicket-takers-2026-11-19-141388",
-      "title": "NZ vs IND, 1st Test: Bumrah Surpasses Srinath, Among Top 10 Indian Test Wicket-Takers",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T09:52:20.444883+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/viral/amid-gta-6-frenzy-namma-benglooru-goes-viral-with-its-own-bengaluru-open-world-ws-l-10432246.html?comscorekw=jionews",
-      "title": "Amid GTA 6 Frenzy, Namma Benglooru Goes Viral With Its Own Bengaluru Open World",
-      "domain": "news18.com",
-      "timestamp": "2026-11-19T11:10:09.140893+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/high-court-stays-punjab-pcs-selection-process-sachin-pilot-slams-aap-govt-alleges-irregularities-2026-11-19-141392",
-      "title": "High Court Stays Punjab PCS Selection Process; Sachin Pilot Slams AAP Govt, Alleges Irregularities",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-19T11:15:36.571037+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains unverified allegation ('High Court Stays Punjab PCS Selection Process; Sachin Pilot Slams AAP Govt, Alleges Irregularities'), but generated post converts it to an established fact without attribution."
-    },
-    {
-      "url": "https://www.news18.com/cricket/shoaib-akhtar-admits-pakistan-also-indulged-in-ball-tampering-we-used-bottle-tops-ws-bklt-10432810.html?comscorekw=jionews",
-      "title": "Shoaib Akhtar Admits Pakistan Also Indulged In Ball-Tampering: 'We Used Bottle Tops'",
-      "domain": "news18.com",
-      "timestamp": "2026-11-19T13:05:00.668960+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
       "url": "https://www.republicworld.com/india/centre-faces-first-electoral-test-in-ladakh-since-article-370-abrogation-and-ut-status-2026-11-19-141410",
       "title": "Centre Faces First Electoral Test In Ladakh Since Article 370 Abrogation And UT Status",
       "domain": "republicworld.com",
@@ -4762,9 +4726,74 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/viral/black-hawk-helicopters-rain-bullets-explosions-rock-ground-in-dramatic-capture-of-fbi-s-most-wanted-drug-lord-2026-11-21-141552",
+      "title": "Black Hawk Raid: FBI's Most-Wanted Drug Lord Captured Amidst Chaos",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-21T13:37:03.304525+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "People Support Elections, But Seek Greater Democratic Representation, Says Leh Apex Body",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/people-support-elections-but-seek-greater-democratic-representation-says-leh-apex-body-2026-11-21-141551",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A survey regarding public opinion on elections and representation is a standard political analysis."
+      },
+      "classified_at": "2026-11-21T13:36:57.660159+00:00"
+    },
+    {
+      "title": "Owaisi Rejects 'Biryani' Jibe, Prioritizes UP Voters; New Alliance Emerges.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/real-issue-is-people-of-up-not-food-owaisi-responds-to-azam-khan-s-hyderabadi-biryani-jibe-wishes-sp-veteran-good-health-2026-11-21-141550",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A politician rejecting a comment and discussing alliance strategies is a standard regional political update."
+      },
+      "classified_at": "2026-11-21T13:36:57.660175+00:00"
+    },
+    {
+      "title": "Spoiler, Not Winner: How Amritpal Singh Could Reshape Punjab's 2027 Electoral Maths",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/politics/spoiler-not-winner-how-amritpal-singh-could-reshape-punjabs-2027-electoral-maths-ws-blrt-10435544.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Analysis of a political figure's potential impact on future electoral math is a standard political commentary."
+      },
+      "classified_at": "2026-11-21T13:36:57.660182+00:00"
+    },
+    {
+      "title": "Lumio Aura 5 Review: Powerful Sound, Deep Bass, And A Soundbar Alternative Worth Considering",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/lumio-aura-5-review-powerful-sound-deep-bass-and-a-soundbar-alternative-worth-considering-2026-11-21-141547",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A product review of an audio device is a consumer interest story."
+      },
+      "classified_at": "2026-11-21T13:36:57.660185+00:00"
+    },
+    {
+      "title": "India's First Bullet Train Moves Closer As 50-Km Surat-Bilimora Section Gets Power Supply",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/big-news-india-s-first-bullet-train-moves-closer-as-50-km-surat-billimora-section-gets-power-supply-2026-11-21-141548",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Infrastructure",
+        "reason": "Progress on a major infrastructure project like a bullet train is a significant national development."
+      },
+      "classified_at": "2026-11-21T13:36:57.660188+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
