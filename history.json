@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/kochi-crash-case-bail-battle-intensifies-as-victims-side-challenges-relief-to-judges-son-2026-10-29-139906",
-      "title": "Kochi Crash Case: Bail Battle Intensifies As Victim's Side Challenges Relief To Judge's Son",
-      "headline": "Kochi Crash: Bail Battle Intensifies As Victim's Side Challenges Relief To Judge's Son",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18118260736812721",
-      "timestamp": "2026-10-29T10:04:34.630925+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/israel-police-say-they-will-not-allow-purity-of-election-to-be-undermined-assure-full-investigation-of-alleged-fraud-2026-10-29-139936",
       "title": "Foreign Funding Claims Rock Israeli Elections; Police Launch Probe",
       "headline": "Police Launch Probe Into Alleged Foreign Funding in Israeli Elections",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17915058183482504",
       "timestamp": "2026-11-21T08:25:02.874833+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/no-local-terrorists-left-in-kashmir-valley-amit-shah-says-last-known-local-let-operative-killed-in-pulwama-2026-11-21-141528",
+      "title": "Historic Claim: Amit Shah Declares Kashmir Valley Free of Local Terrorists",
+      "headline": "Amit Shah Claims Last Local Lashkar-e-Taiba Operative Neutralised",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17943248241395114",
+      "timestamp": "2026-11-21T08:51:11.896511+00:00"
     }
   ],
   "processed": [
@@ -4773,7 +4773,52 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "IIT Kharagpur Turns 75: PM Modi Joins Platinum Jubilee Celebrations, Interacts with Students",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/iit-kharagpur-turns-75-pm-modi-joins-platinum-jubilee-celebrations-interacts-with-students-2026-11-21-141529",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "A ceremonial event at a prestigious educational institution involving a national leader."
+      },
+      "classified_at": "2026-11-21T08:50:46.316019+00:00"
+    },
+    {
+      "title": "Dark Web Data Leak: 14-year-old questioned over alleged Agniveer files sale.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/agniveer-data-on-dark-web-14-year-old-questioned-in-delhi-over-suspected-attempt-to-sell-sensitive-files-2026-11-21-141531",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "National News",
+        "reason": "A cybercrime involving the alleged theft of sensitive military recruitment data, raising national security concerns."
+      },
+      "classified_at": "2026-11-21T08:50:46.316040+00:00"
+    },
+    {
+      "title": "'Mocked Me for Talking About Toilets': PM Modi Cites World Bank Report on 50 Crore Lifted Out of Poverty",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/mocked-me-for-talking-about-toilets-pm-modi-cites-world-bank-report-on-50-crore-lifted-out-of-poverty-2026-11-21-141527",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "A political speech citing economic data and development milestones."
+      },
+      "classified_at": "2026-11-21T08:50:46.316043+00:00"
+    },
+    {
+      "title": "Mumbai's 'Pataal Lok' Road Network: 80 Kmph Underground Tunnels To Link Airport, Sea Link And Highways",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/mumbai-news/mumbais-pataal-lok-road-network-80-kmph-underground-tunnels-to-link-airport-sea-link-and-highways-ws-l-10435182.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National News",
+        "reason": "A significant infrastructure development project in a major metropolitan area."
+      },
+      "classified_at": "2026-11-21T08:50:46.316046+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
