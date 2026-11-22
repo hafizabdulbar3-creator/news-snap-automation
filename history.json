@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/bhutan-glof-alert-cwc-warns-of-sudden-flooding-in-assam-bengal-sankosh-river-on-watch-2026-10-30-140000",
-      "title": "Bhutan GLOF Alert: CWC Warns Of Sudden Flooding In Assam, Bengal; Sankosh River On Watch",
-      "headline": "CWC Issues Flood Advisory For Assam, Bengal After Bhutan GLOF",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18076931507766136",
-      "timestamp": "2026-10-30T06:42:09.945967+00:00"
-    },
-    {
       "url": "https://www.news18.com/explainers/israel-election-deadlock-can-netanyahu-be-ousted-4-possible-ways-to-form-the-next-government-shil-ws-l-10404411.html?comscorekw=jionews",
       "title": "Israel Election Deadlock: Can Netanyahu Be Ousted? 4 Possible Ways To Form The Next Government",
       "headline": "Israel Election Deadlock: 4 Ways To Form The Next Government",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17951573112067053",
       "timestamp": "2026-11-22T05:11:10.476096+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/indian-origin-couple-shot-dead-outside-walmart-in-canada-police-suspect-targeted-attack-2026-11-22-141584",
+      "title": "Indian-Origin Couple Shot Dead Outside Walmart in Canada; Police Suspect Targeted Attack",
+      "headline": "Indian-Origin Couple Shot Dead Outside Walmart in Canada",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18112903073138392",
+      "timestamp": "2026-11-22T05:37:15.931882+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Modi Ji Saved Lakhs From Debt': Traders' Body Thanks PM Modi for Appeal to Curb Gold Purchases",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/modi-ji-saved-lakhs-from-debt-traders-body-thanks-pm-modi-for-appeal-to-curb-gold-purchases-2026-11-22-141585",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A specific policy appeal regarding gold purchases and a trader's response, which is a localized economic or political issue rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-22T05:36:45.803954+00:00"
+    },
+    {
+      "title": "Washington Governor Condemns ICE Arrests of Two Travelers at Seattle Airport, Demands Agency Leave",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/washington-governor-condemns-ice-arrests-of-two-travelers-at-seattle-airport-demands-agency-leave-2026-11-22-141587",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "A state-level political response to federal agency actions, representing a regional policy stance rather than a major international event."
+      },
+      "classified_at": "2026-11-22T05:36:45.803968+00:00"
+    },
+    {
+      "title": "Gym, Protein and Testosterone: Are Your Fitness Habits Helping or Hurting Male Fertility?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/gym-protein-and-testosterone-are-your-fitness-habits-helping-or-hurting-male-fertility-ws-l-10435915.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "A health and lifestyle article discussing fitness habits and fertility, which falls under general public interest rather than major news."
+      },
+      "classified_at": "2026-11-22T05:36:45.803975+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
