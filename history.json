@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cricket/virat-kohli-triggers-fan-frenzy-gets-mobbed-at-auckland-airport-after-arriving-in-new-zealand-watch-ws-bklt-10404208.html?comscorekw=jionews",
-      "title": "Virat Kohli Triggers Fan Frenzy, Gets Mobbed At Auckland Airport After Arriving In New Zealand | Watch",
-      "headline": "Virat Kohli Arrives In New Zealand For ODI Series",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18041558252839023",
-      "timestamp": "2026-10-30T04:06:36.567005+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/netanyahu-wins-the-battle-loses-the-numbers-as-israel-heads-for-political-deadlock-arab-parties-hold-key-ws-lr-10404252.html?comscorekw=jionews",
       "title": "Netanyahu Wins The Battle, Loses The Numbers As Israel Enters Deadlock; Arab Parties Hold Key",
       "headline": "Netanyahu Wins Battle, Loses Numbers As Israel Heads For Deadlock",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18065728955685995",
       "timestamp": "2026-11-22T01:38:21.594339+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/science/mercury-gets-first-visitor-in-over-a-decade-as-bepicolombo-arrives-after-8-year-6-billion-mile-journey-2026-11-22-141571",
+      "title": "Mercury Gets First Visitor In Over A Decade As BepiColombo Arrives After 8-Year, 6-Billion-Mile Journey",
+      "headline": "Mercury Gets First Visitor In Over A Decade As BepiColombo Arrives",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18115327307520221",
+      "timestamp": "2026-11-22T02:04:38.978593+00:00"
     }
   ],
   "processed": [
@@ -4719,7 +4719,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Pilgrimage Tragedy: 9 Dead, Including Children, on Kota-Udaipur Highway",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/9-pilgrims-including-children-killed-as-cruiser-rams-stationary-truck-on-kota-udaipur-highway-2026-11-22-141570",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A traffic accident involving pilgrims is a significant local news event but does not rise to the level of a major geopolitical event or international crisis."
+      },
+      "classified_at": "2026-11-22T02:03:49.058434+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
