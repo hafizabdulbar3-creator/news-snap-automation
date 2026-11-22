@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/jamia-agrees-to-students-union-elections-by-august-2027-after-18-day-hunger-strike-students-celebrate-2026-10-30-140002",
-      "title": "Jamia Agrees To Students' Union Elections By August 2027 After 18-Day Hunger Strike, Students Celebrate",
-      "headline": "Jamia Agrees To Students' Union Elections By August 2027",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18140417299713056",
-      "timestamp": "2026-10-30T08:25:54.910750+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/kept-waiting-for-uddhavs-call-after-2019-fadnaviss-banter-steals-the-show-at-mumbai-event-ws-l-10404428.html?comscorekw=jionews",
       "title": "'Kept Waiting For Uddhav's Call After 2019': Fadnavis's Banter Steals The Show At Mumbai Event",
       "headline": "Fadnavis Jokes About Waiting For Uddhav's Call After 2019",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18110602619307751",
       "timestamp": "2026-11-22T06:54:42.204512+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/her-father-has-a-gun-officer-recalls-911-call-before-husband-killed-purdue-professor-2-daughters-in-murder-suicide-ws-klrt-10435954.html?comscorekw=jionews",
+      "title": "Chilling 911 Call Preceded Purdue Professor, Two Daughters Killed in Murder-Suicide",
+      "headline": "Chilling 911 Call Preceded Purdue Professor, Two Daughters Killed in Murder-Suicide",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17912257371666584",
+      "timestamp": "2026-11-22T07:20:57.177678+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Two Killed, 10 Injured as Russian Missile Strikes Building in Ukraine's Lviv",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/two-killed-10-injured-as-russian-missile-strikes-building-in-ukraines-lviv-2026-11-22-141592",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A Russian missile strike in Ukraine resulting in civilian casualties is a major geopolitical event."
+      },
+      "classified_at": "2026-11-22T07:20:20.203844+00:00"
+    },
+    {
+      "title": "Agniveers Allowed To Marry During Second Tour Of Duty, Sources Clarify",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/agniveers-allowed-to-marry-during-second-tour-of-duty-sources-clarify-ws-klrt-10435952.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A clarification regarding military service regulations is a legitimate national policy update."
+      },
+      "classified_at": "2026-11-22T07:20:20.203859+00:00"
+    },
+    {
+      "title": "Manager's Ultimatum: Resign or Be Fired. Employee's Viral Ordeal Sparks Debate",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/resign-or-get-fired-indian-employee-claims-project-manager-pressured-him-to-quit-shares-workplace-ordeal-ws-l-10435991.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A workplace dispute involving a manager and employee is a notable public interest story regarding labor relations."
+      },
+      "classified_at": "2026-11-22T07:20:20.203863+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
