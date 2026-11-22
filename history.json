@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/forbidden-to-form-government-with-them-netanyahu-ramps-up-rhetoric-against-alliance-with-arab-parties-2026-10-30-140028",
-      "title": "'Forbidden To Form Government With Them': Netanyahu Ramps Up Rhetoric Against Alliance With Arab Parties",
-      "headline": "Netanyahu Rules Out Government With Arab Parties",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17984613686897957",
-      "timestamp": "2026-10-30T09:23:20.989927+00:00"
-    },
-    {
       "url": "https://www.news18.com/cricket/new-zealand-break-record-for-highest-total-against-india-in-t20is-ws-l-10404914.html?comscorekw=jionews",
       "title": "New Zealand Break Record For Highest Total Against India In T20Is",
       "headline": "New Zealand Break Record For Highest Total Against India In T20Is",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18403111366160148",
       "timestamp": "2026-11-22T07:46:35.995605+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/agniveers-allowed-to-marry-during-second-tour-of-duty-sources-clarify-ws-klrt-10435952.html?comscorekw=jionews",
+      "title": "Agniveers Allowed To Marry During Second Tour Of Duty, Sources Clarify",
+      "headline": "Agniveers Allowed To Marry During Second Tour Of Duty",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18004079981993512",
+      "timestamp": "2026-11-22T08:18:41.866974+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Agniveers Allowed To Marry During Second Tour Of Duty, Sources Clarify",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/agniveers-allowed-to-marry-during-second-tour-of-duty-sources-clarify-ws-klrt-10435952.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A clarification regarding military service regulations is a legitimate national policy update."
-      },
-      "classified_at": "2026-11-22T07:20:20.203859+00:00"
-    },
     {
       "title": "Manager's Ultimatum: Resign or Be Fired. Employee's Viral Ordeal Sparks Debate",
       "domain": "news18.com",
