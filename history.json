@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/jaishankar-flags-attacks-on-civilian-shipping-at-g20-says-global-south-hit-hardest-2026-10-30-140085",
-      "title": "Jaishankar Flags Attacks On Civilian Shipping At G20, Says Global South Hit Hardest",
-      "headline": "Jaishankar Flags Attacks On Civilian Shipping At G20",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18141075811724104",
-      "timestamp": "2026-10-31T00:44:21.416842+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/science/isro-places-third-indigenous-atomic-clock-in-orbit-with-nvs-03-launch-2026-10-30-140084",
       "title": "ISRO Places Third Indigenous Atomic Clock In Orbit With NVS-03 Launch",
       "headline": "ISRO Launches Third Indigenous Atomic Clock Into Orbit",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18091011698305596",
       "timestamp": "2026-11-22T15:08:29.983792+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/7-best-yoga-mats-and-props-under-rs-2000-to-upgrade-your-daily-practice-m-amz-ws-l-10436439.html?comscorekw=jionews",
+      "title": "7 Best Yoga Mats And Props Under Rs 2,000 To Upgrade Your Daily Practice",
+      "headline": "7 Best Yoga Mats And Props Under Rs 2,000",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18078638642737531",
+      "timestamp": "2026-11-22T15:34:53.418297+00:00"
     }
   ],
   "processed": [
@@ -4701,7 +4701,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Blinkit Delivery Partner Earns Rs 39,000 In First Month, Reveals What Makes Chandigarh Deliveries Easier",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/blinkit-delivery-partner-earns-rs-39000-in-first-month-reveals-what-makes-chandigarh-deliveries-easier-ws-l-10436348.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "This is a corporate milestone or business trend story about a delivery partner's earnings, which is of local/regional interest rather than international consequence."
+      },
+      "classified_at": "2026-11-22T15:34:19.061558+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
