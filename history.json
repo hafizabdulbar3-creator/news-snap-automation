@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/brij-bhushan-singh-gets-place-on-up-bjps-top-panel-for-the-first-time-before-polls-ws-kl-10404267.html?comscorekw=jionews",
-      "title": "Brij Bhushan Singh Gets Place On UP BJP's Top Panel For The First Time Before Polls",
-      "headline": "Brij Bhushan Singh Joins UP BJP's Top Panel Ahead of 2027 Polls",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18098785223443694",
-      "timestamp": "2026-10-30T03:14:42.019839+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/ankur-rathee-calls-indian-cinemas-fair-skin-bias-dangerous-west-idolises-lupita-nyongo-exclusive-ws-kl-10404062.html?comscorekw=jionews",
       "title": "Ankur Rathee Calls Indian Cinema's Fair-Skin Bias 'Dangerous': 'West Idolises Lupita Nyong'O' | Exclusive",
       "headline": "Ankur Rathee Calls Fair-Skin Bias in Indian Cinema 'Dangerous",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17958133137303748",
       "timestamp": "2026-11-22T00:36:16.912218+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/deaf-and-mute-minor-rape-survivor-allegedly-strangled-by-mother-brother-in-bihar-s-muzaffarpur-over-social-taunts-2026-11-22-141567",
+      "title": "Deaf-Mute Teen Raped, Then Strangled By Mother And Brother Over Social Taunts In Bihar's Muzaffarpur",
+      "headline": "Deaf-Mute Teen Strangled by Mother and Brother in Bihar Over Social Taunts",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18124360129821916",
+      "timestamp": "2026-11-22T01:02:15.433757+00:00"
     }
   ],
   "processed": [
@@ -4719,7 +4719,30 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Pant Makes History: First Indian Keeper To Score Test Centuries In All 4 SENA Countries",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/pant-makes-history-first-indian-keeper-to-score-test-centuries-in-all-four-sena-countries-2026-11-22-141568",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A significant sporting achievement for an individual athlete, but limited to the scope of cricket and national interest."
+      },
+      "classified_at": "2026-11-22T01:01:45.031325+00:00"
+    },
+    {
+      "title": "Bellingham, Espi Rescue Real Madrid After Mbappe Miss In 2-1 Comeback Over Celta Vigo",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/bellingham-espi-rescue-real-madrid-after-mbappe-miss-in-2-1-comeback-over-celta-vigo-2026-11-21-141566",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A standard sports report regarding a football match result and player performance."
+      },
+      "classified_at": "2026-11-22T01:01:45.031343+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
