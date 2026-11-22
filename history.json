@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/rain-delays-indi-bloc-s-public-impeachment-programme-against-cec-gyanesh-kumar-rahul-gandhi-announces-new-date-2026-10-30-140030",
-      "title": "Rain Delays INDI Bloc's Impeachment Program Against CEC Gyanesh Kumar; New Date Set",
-      "headline": "Rain Delays INDIA Bloc's Impeachment Program Against CEC Gyanesh Kumar",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18103967324039276",
-      "timestamp": "2026-10-30T10:15:20.930672+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/india/pm-modi-with-gujarat-cm-holds-roadshow-to-launch-development-projects-worth-over-rs-14-cr-2026-10-30-140034",
       "title": "PM Modi, With Gujarat CM Holds Roadshow; To Launch Development Projects Worth Over Rs 14 Cr",
       "headline": "PM Modi Holds Roadshow With Gujarat CM; Launches Projects Worth Over Rs 14 Cr",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18419542258080748",
       "timestamp": "2026-11-22T08:49:01.147525+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/54-year-old-woman-sexually-assaulted-murdered-on-train-gold-ring-solves-case-2026-11-22-141598",
+      "title": "54-Year-Old Woman Sexually Assaulted, Murdered on Train; Gold Ring Solves Case",
+      "headline": "54-Year-Old Woman Murdered on Train; Gold Ring Solves Case",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17934661779167422",
+      "timestamp": "2026-11-22T09:15:05.862850+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,30 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Anand Mahindra Praises Aizawl's No-Honking Traffic Culture, Says 'Quietness Has Become A Rare Luxury'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/anand-mahindra-praises-aizawls-no-honking-traffic-culture-says-quietness-has-become-a-rare-luxury-ws-l-10436122.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A regional policy or cultural observation regarding traffic discipline in a specific city."
+      },
+      "classified_at": "2026-11-22T09:14:35.959306+00:00"
+    },
+    {
+      "title": "Four Houses Gutted in J&K's Ramban Fire, Affected Families to Receive Up to Rs 3.5 Lakh Aid",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/four-houses-gutted-in-jk-s-ramban-fire-affected-families-to-receive-up-to-rs-35-lakh-aid-2026-11-22-141597",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A regional disaster response involving property damage and government aid allocation."
+      },
+      "classified_at": "2026-11-22T09:14:35.959309+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
