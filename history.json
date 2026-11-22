@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/kept-waiting-for-uddhavs-call-after-2019-fadnaviss-banter-steals-the-show-at-mumbai-event-ws-l-10404428.html?comscorekw=jionews",
-      "title": "'Kept Waiting For Uddhav's Call After 2019': Fadnavis's Banter Steals The Show At Mumbai Event",
-      "headline": "Fadnavis Jokes About Waiting For Uddhav's Call After 2019",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18119194510961505",
-      "timestamp": "2026-10-30T08:52:12.207671+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/forbidden-to-form-government-with-them-netanyahu-ramps-up-rhetoric-against-alliance-with-arab-parties-2026-10-30-140028",
       "title": "'Forbidden To Form Government With Them': Netanyahu Ramps Up Rhetoric Against Alliance With Arab Parties",
       "headline": "Netanyahu Rules Out Government With Arab Parties",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17912257371666584",
       "timestamp": "2026-11-22T07:20:57.177678+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/two-killed-10-injured-as-russian-missile-strikes-building-in-ukraines-lviv-2026-11-22-141592",
+      "title": "Two Killed, 10 Injured as Russian Missile Strikes Building in Ukraine's Lviv",
+      "headline": "Two Killed, 10 Injured as Russian Missile Strikes Building in Ukraine's Lviv",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18403111366160148",
+      "timestamp": "2026-11-22T07:46:35.995605+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Two Killed, 10 Injured as Russian Missile Strikes Building in Ukraine's Lviv",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/two-killed-10-injured-as-russian-missile-strikes-building-in-ukraines-lviv-2026-11-22-141592",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A Russian missile strike in Ukraine resulting in civilian casualties is a major geopolitical event."
-      },
-      "classified_at": "2026-11-22T07:20:20.203844+00:00"
-    },
     {
       "title": "Agniveers Allowed To Marry During Second Tour Of Duty, Sources Clarify",
       "domain": "news18.com",
