@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/bjp-president-nitin-nabin-hosts-50-nations-envoys-for-diwali-milan-at-party-hq-2026-10-30-140082",
-      "title": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
-      "headline": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18390344821238738",
-      "timestamp": "2026-10-31T02:02:49.709564+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/india-bloc-rally-in-delhi-250-cctv-cameras-face-recognition-system-to-keep-ramlila-maidan-under-watch-2026-10-30-140056",
       "title": "INDI Bloc Rally in Delhi: 250 CCTV Cameras, Face Recognition System to Keep Ramlila Maidan Under Watch",
       "headline": "Delhi Police Deploy 250 CCTV Cameras for INDI Bloc Rally",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18173530321476290",
       "timestamp": "2026-11-22T16:42:44.781044+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-eu-fta-likely-to-be-signed-during-pm-modi-s-europe-visit-in-december-official-2026-11-22-141621",
+      "title": "India-EU FTA Likely to be Signed During PM Modi's Europe Visit in December: Official",
+      "headline": "India-EU FTA Likely to be Signed During PM Modi's Europe Visit in December: Official",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18091237388520806",
+      "timestamp": "2026-11-22T17:08:28.081923+00:00"
     }
   ],
   "processed": [
@@ -4750,17 +4750,6 @@
         "reason": "A minister seeking talks on a water treaty is a significant diplomatic engagement between two nations, qualifying as a major regional geopolitical event."
       },
       "classified_at": "2026-11-22T16:42:04.687173+00:00"
-    },
-    {
-      "title": "India-EU FTA Likely to be Signed During PM Modi's Europe Visit in December: Official",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/india-eu-fta-likely-to-be-signed-during-pm-modi-s-europe-visit-in-december-official-2026-11-22-141621",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "The potential signing of a Free Trade Agreement between India and the EU is a major geopolitical and economic event with broad international implications."
-      },
-      "classified_at": "2026-11-22T16:42:04.687180+00:00"
     },
     {
       "title": "Nepal PM Balendra Shah Welcomed with Traditional Folk Dance on his First India Visit",
