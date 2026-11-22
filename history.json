@@ -4764,7 +4764,74 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Air Raid Alert Sounds in Russia's Kaliningrad as Finland Battles Fire on Drone-Hit Cargo Ship",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/air-raid-alert-sounds-in-russia-s-kaliningrad-as-finland-battles-fire-on-drone-hit-cargo-ship-2026-11-22-141611",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "An air raid alert in a Russian region and a fire on a cargo ship in international waters constitute a significant security and safety incident."
+      },
+      "classified_at": "2026-11-22T12:42:42.400925+00:00"
+    },
+    {
+      "title": "Migration Stops, Population Rises in 40 China-Border Villages: Amit Shah On Growth in Arunachal Pradesh",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/migration-stops-population-rises-in-40-china-border-villages-amit-shah-on-growth-in-arunachal-pradesh-2026-11-22-141606",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This is a regional political statement regarding population trends and governance in a specific state, which is a standard news topic."
+      },
+      "classified_at": "2026-11-22T12:42:42.400940+00:00"
+    },
+    {
+      "title": "'Opportunity to Strengthen Enduring, Multifaceted Partnership': MEA as Nepal PM Begins India Visit",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/opportunity-to-strengthen-enduring-multifaceted-partnership-mea-as-nepal-pm-begins-india-visit-2026-11-22-141607",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This covers a bilateral diplomatic visit and statement, which is standard regional political news."
+      },
+      "classified_at": "2026-11-22T12:42:42.400945+00:00"
+    },
+    {
+      "title": "EPG Report, Hydropower, Border Issues on Nepal's Agenda for Balen Shah's India Visit",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/epg-report-hydropower-border-issues-on-nepal-s-agenda-for-balen-shah-s-india-visit-2026-11-22-141608",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This reports on the agenda for a diplomatic visit, which is standard regional political news."
+      },
+      "classified_at": "2026-11-22T12:42:42.400949+00:00"
+    },
+    {
+      "title": "'New, Historic Initiative': PM Modi, Nepal PM Balendra Shah to Flag Off Ayodhya-Janakpur Train on Nov 23",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/new-historic-initiative-pm-modi-nepal-pm-balendra-shah-to-flag-off-ayodhya-janakpur-train-on-nov-23-2026-11-22-141609",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This covers the inauguration of a train service connecting two nations, which is a significant regional development but not a global crisis."
+      },
+      "classified_at": "2026-11-22T12:42:42.400952+00:00"
+    },
+    {
+      "title": "Nepal PM Shah in India for Key Bilateral Talks with PM Modi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/nepal-pm-balendra-shah-arrives-for-two-day-india-visit-to-hold-bilateral-talks-with-pm-modi-2026-11-22-141605",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This reports on a bilateral diplomatic visit, which is standard regional political news."
+      },
+      "classified_at": "2026-11-22T12:42:42.400955+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
