@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/videos/india/pm-modi-with-gujarat-cm-holds-roadshow-to-launch-development-projects-worth-over-rs-14-cr-2026-10-30-140034",
-      "title": "PM Modi, With Gujarat CM Holds Roadshow; To Launch Development Projects Worth Over Rs 14 Cr",
-      "headline": "PM Modi Holds Roadshow With Gujarat CM; Launches Projects Worth Over Rs 14 Cr",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18287844145292558",
-      "timestamp": "2026-10-30T10:41:19.153612+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/india/west-bengal-s-alipurduar-on-alert-after-glof-in-bhutans-shintaphu-lake-thousands-shifted-to-safety-2026-10-30-140039",
       "title": "West Bengal's Alipurduar On Alert After GLOF In Bhutan's Shintaphu Lake; Thousands Shifted To Safety",
       "headline": "West Bengal's Alipurduar On High Alert After GLOF In Bhutan",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17934661779167422",
       "timestamp": "2026-11-22T09:15:05.862850+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/anand-mahindra-praises-aizawls-no-honking-traffic-culture-says-quietness-has-become-a-rare-luxury-ws-l-10436122.html?comscorekw=jionews",
+      "title": "Anand Mahindra Praises Aizawl's No-Honking Traffic Culture, Says 'Quietness Has Become A Rare Luxury'",
+      "headline": "Anand Mahindra Praises Aizawl's No-Honking Traffic Culture",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18652313827049425",
+      "timestamp": "2026-11-22T09:40:43.570696+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Anand Mahindra Praises Aizawl's No-Honking Traffic Culture, Says 'Quietness Has Become A Rare Luxury'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/anand-mahindra-praises-aizawls-no-honking-traffic-culture-says-quietness-has-become-a-rare-luxury-ws-l-10436122.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A regional policy or cultural observation regarding traffic discipline in a specific city."
-      },
-      "classified_at": "2026-11-22T09:14:35.959306+00:00"
-    },
     {
       "title": "Four Houses Gutted in J&K's Ramban Fire, Affected Families to Receive Up to Rs 3.5 Lakh Aid",
       "domain": "republicworld.com",
