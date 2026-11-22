@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/india-bloc-shifts-gyanesh-kumars-peoples-impeachment-to-kharges-home-after-permission-hurdles-ws-l-10404213.html?comscorekw=jionews",
-      "title": "INDIA Bloc Shifts Gyanesh Kumar's 'People's Impeachment' To Kharge's Home After Permission Hurdles",
-      "headline": "India Bloc Shifts 'People's Impeachment' To Kharge's Home",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17947347450360520",
-      "timestamp": "2026-10-30T02:23:09.964621+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/hollywood/patrick-stewart-dies-hugh-jackman-william-shatner-george-takei-pay-tribute-to-acclaimed-thespian-2026-10-30-139993",
       "title": "Patrick Stewart Dies: Hugh Jackman, William Shatner, George Takei Pay Tribute To Acclaimed Thespian",
       "headline": "Patrick Stewart Dies: Hollywood Stars Pay Tribute",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18230875393336128",
       "timestamp": "2026-11-21T23:44:26.108704+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/irgc-claims-missile-drone-strike-on-2-us-patriot-radars-at-al-riffa-and-awali-bases-in-bahrain-2026-11-21-141565",
+      "title": "IRGC Claims Missile-Drone Strike On 2 US Patriot Radars At Al-Riffa And Awali Bases In Bahrain",
+      "headline": "IRGC Claims Missile-Drone Strike On US Patriot Radars In Bahrain",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17920929072258692",
+      "timestamp": "2026-11-22T00:10:18.707003+00:00"
     }
   ],
   "processed": [
@@ -4719,7 +4719,19 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "PM Modi Pitches Skilled Workforce, BrahMos In UP And Aptitude Certificates For Students",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/pm-modi-pitches-skilled-workforce-brahmos-in-up-and-aptitude-certificates-for-students-2026-11-21-141564",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "A campaign speech by a national leader focusing on workforce development and infrastructure, which is a standard political event."
+      },
+      "classified_at": "2026-11-22T00:09:52.506228+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-21T08:00:00.001976+00:00",
