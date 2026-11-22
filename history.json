@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/ins-vikrant-makes-history-rafale-marine-fighter-completes-first-ever-landing-on-indias-indigenous-aircraft-carrier-watch-ws-blrt-10405322.html?comscorekw=jionews",
-      "title": "INS Vikrant Makes History: Rafale Marine Fighter Achieves Maiden Landing on Indigenous Carrier",
-      "headline": "INS Vikrant Makes History: Rafale Fighter Completes First Landing",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18125309686926228",
-      "timestamp": "2026-10-30T12:09:48.680425+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/india/container-turns-fireball-on-tonks-banas-river-bridge-after-tyre-burst-driver-jumps-to-safety-2026-10-30-140047",
       "title": "Container Turns Fireball On Tonk's Banas River Bridge After Tyre Burst, Driver Jumps To Safety",
       "headline": "Container Turns Fireball On Tonk's Banas River Bridge After Tyre Burst",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18643835488024306",
       "timestamp": "2026-11-22T10:32:59.502145+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/rjd-workers-tear-down-pm-modi-s-posters-at-nitish-setu-after-inauguration-trigger-political-row-2026-11-22-141599",
+      "title": "RJD Workers Tear Down PM Modi's Poster, Raise Lalu & Tejashwi Slogans at Newly Inaugurated Nitish Setu",
+      "headline": "RJD Workers Tear Down PM Modi Posters at Nitish Setu",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18120104966171871",
+      "timestamp": "2026-11-22T10:58:53.441126+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "RJD Workers Tear Down PM Modi's Poster, Raise Lalu & Tejashwi Slogans at Newly Inaugurated Nitish Setu",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/rjd-workers-tear-down-pm-modi-s-posters-at-nitish-setu-after-inauguration-trigger-political-row-2026-11-22-141599",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This is a local/regional political dispute involving protests and slogans at a newly inaugurated infrastructure project, which is a notable public interest story."
-      },
-      "classified_at": "2026-11-22T10:32:32.742979+00:00"
-    },
     {
       "title": "Mitwa Singer Shafqat Amanat Ali Reveals Battle With Blood Cancer, Recalls Spending A Year On Bed Rest",
       "domain": "news18.com",
