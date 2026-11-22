@@ -4503,87 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/india/because-of-his-name-congress-bjp-face-off-over-sirajs-omission-from-nz-test-match-ws-l-10433900.html?comscorekw=jionews",
-      "title": "'Because Of His Name': Congress-BJP Face-Off Over Siraj's Omission From NZ Test Match",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T10:39:00.773704+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/cities/chennai-news/chennai-heroin-bust-rs-50000-for-medical-bills-rs-3-lakh-for-drug-run-how-an-ice-cream-seller-entered-the-trade-ws-el-10433821.html?comscorekw=jionews",
-      "title": "How Medical Bills Pushed an Ice Cream Seller into a Rs 140 Cr Heroin Ring",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T10:44:47.845557+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    },
-    {
-      "url": "https://www.news18.com/business/markets/markets-today-sensex-falls-376-points-nifty-opens-below-25400-metal-realty-stocks-drag-ws-l-10433422.html?comscorekw=jionews",
-      "title": "Markets Stage Stunning Reversal: Sensex Jumps, Nifty Bank Hits All-Time High",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T11:22:19.640461+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    },
-    {
-      "url": "https://www.republicworld.com/india/ed-raids-ex-mla-in-telangana-in-case-of-misappropriation-of-govt-paddy-stock-worth-rs-4096-crore-2026-11-20-141465",
-      "title": "ED Raids Ex-MLA in Telangana in Case of Misappropriation of Govt Paddy Stock Worth Rs 40.96 Crore",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T11:30:36.460329+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    },
-    {
-      "url": "https://www.news18.com/viral/man-fired-from-company-lands-job-at-its-parent-firm-returns-to-same-office-building-actually-laughing-about-it-ws-l-10434216.html?comscorekw=jionews",
-      "title": "Career Karma: Fired Employee Hired by Parent Company, Back in Same Building",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T11:34:04.135291+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers exhausted: Gemini API quota exhausted: Gemini API quota exhausted. Retry required in 73556s (20h 25m 56s)."
-    },
-    {
-      "url": "https://www.republicworld.com/india/india-unveils-first-indigenous-h5n1-bird-flu-vaccine-union-minister-shivraj-singh-chouhan-dedicates-it-to-nation-2026-11-20-141466",
-      "title": "Game Changer: India Unveils First Homegrown H5N1 Bird Flu Vaccine!",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T12:11:41.676353+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/man-kills-son-allegedly-attacks-wife-with-knife-and-hammer-in-bengaluru-s-padmanabhanagar-2026-11-20-141469",
-      "title": "Man Kills Son, Allegedly Attacks Wife With Knife and Hammer in Bengaluru's Padmanabhanagar",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T12:18:06.228469+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
-    },
-    {
-      "url": "https://www.republicworld.com/india/solution-within-legal-procedures-bjp-s-soundararajan-welcomes-sc-s-one-time-karthigai-deepam-lamp-ruling-2026-11-20-141467",
-      "title": "SC Allows One-Time Karthigai Deepam Lamps; BJP Leader Welcomes Ruling",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T12:23:10.319576+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
-    },
-    {
-      "url": "https://www.republicworld.com/india/people-will-judge-bjp-on-work-done-since-2019-former-lahdc-cec-tashi-gyalson-ahead-of-ladakh-polls-2026-11-20-141468",
-      "title": "People Will Judge BJP on Work Done Since 2019: Former LAHDC CEC Tashi Gyalson Ahead of Ladakh Polls",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T12:28:37.962865+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/soni-razdan-shares-adorable-childhood-photos-of-alia-bhatt-and-shaheen-bhatt-says-you-two-grew-up-too-fast-ws-kl-10434532.html?comscorekw=jionews",
       "title": "See Soni Razdan's Emotional Throwback: Alia & Shaheen Bhatt Grew Up Too Fast!",
       "domain": "news18.com",
@@ -4762,20 +4681,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/epg-report-hydropower-border-issues-on-nepal-s-agenda-for-balen-shah-s-india-visit-2026-11-22-141608",
+      "title": "EPG Report, Hydropower, Border Issues on Nepal's Agenda for Balen Shah's India Visit",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-22T14:05:33.501864+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "EPG Report, Hydropower, Border Issues on Nepal's Agenda for Balen Shah's India Visit",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/epg-report-hydropower-border-issues-on-nepal-s-agenda-for-balen-shah-s-india-visit-2026-11-22-141608",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This reports on the agenda for a diplomatic visit, which is standard regional political news."
-      },
-      "classified_at": "2026-11-22T12:42:42.400949+00:00"
-    },
     {
       "title": "'New, Historic Initiative': PM Modi, Nepal PM Balendra Shah to Flag Off Ayodhya-Janakpur Train on Nov 23",
       "domain": "republicworld.com",
