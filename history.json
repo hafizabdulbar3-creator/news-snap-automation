@@ -4753,9 +4753,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.news18.com/viral/550-boxes-of-old-shoes-returned-flipkart-seller-seeks-agra-police-help-over-alleged-return-fraud-dcp-responds-ws-l-10435900.html?comscorekw=jionews",
+      "title": "Seller's Shock: 550 Boxes of Old Shoes Returned in Alleged Flipkart Fraud",
+      "domain": "news18.com",
+      "timestamp": "2026-11-22T05:05:40.822742+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Lawlessness Caught on Cam: Minor Boys Assault Couple in Mumbai's Kurla Garden, Viral Video Sparks Outrage",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/lawlessness-caught-on-cam-minor-boys-assault-couple-in-mumbai-s-kurla-garden-2026-11-22-141583",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A reported assault incident in a major city that has garnered public attention."
+      },
+      "classified_at": "2026-11-22T05:05:35.162826+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
