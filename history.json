@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/dont-weaponise-rape-law-in-broken-relationships-supreme-court-warns-against-misuse-ws-lrt-10405911.html?comscorekw=jionews",
-      "title": "'Don't Weaponise Rape Law In Broken Relationships': Supreme Court Warns Against Misuse",
-      "headline": "SC Warns Against Weaponising Rape Law In Broken Relationships",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18101284682370846",
-      "timestamp": "2026-10-31T01:36:10.779524+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/bjp-president-nitin-nabin-hosts-50-nations-envoys-for-diwali-milan-at-party-hq-2026-10-30-140082",
       "title": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
       "headline": "BJP President Nitin Nabin Hosts 50 Nations' Envoys For Diwali Milan At Party HQ",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18001154148042941",
       "timestamp": "2026-11-22T16:05:49.938732+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/india-flags-lack-of-equity-dilution-of-climate-responsibilities-as-cop31-talks-collapse-without-pact-2026-11-22-141619",
+      "title": "India Flags Lack of Equity, Dilution of Climate Responsibilities as COP31 Talks Collapse Without Pact",
+      "headline": "India Flags Lack of Equity, Dilution of Climate Responsibilities as COP31 Talks Collapse",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18173530321476290",
+      "timestamp": "2026-11-22T16:42:44.781044+00:00"
     }
   ],
   "processed": [
@@ -4728,7 +4728,52 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "UK Parliament Hosts Historic Diwali Talks on Hindu Deities' Symbolism",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/info/historic-first-symbolism-of-surya-bhagavan-randal-maa-brahma-dev-and-gayatri-maa-discussed-at-uk-parliament-diwali-celebrations-2026-2026-11-22-141620",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Culture",
+        "reason": "A cultural event at the UK Parliament discussing religious symbolism is a notable regional occurrence but lacks broad international geopolitical consequence."
+      },
+      "classified_at": "2026-11-22T16:42:04.687156+00:00"
+    },
+    {
+      "title": "From Threats to Pleas: Pakistan Minister Seeks India Talks on Water Treaty",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/pakistan-minister-musadik-malik-evades-responsibility-for-past-indus-waters-treaty-remarks-pleads-with-india-for-talks-2026-11-22-141618",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "A minister seeking talks on a water treaty is a significant diplomatic engagement between two nations, qualifying as a major regional geopolitical event."
+      },
+      "classified_at": "2026-11-22T16:42:04.687173+00:00"
+    },
+    {
+      "title": "India-EU FTA Likely to be Signed During PM Modi's Europe Visit in December: Official",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/india-eu-fta-likely-to-be-signed-during-pm-modi-s-europe-visit-in-december-official-2026-11-22-141621",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "The potential signing of a Free Trade Agreement between India and the EU is a major geopolitical and economic event with broad international implications."
+      },
+      "classified_at": "2026-11-22T16:42:04.687180+00:00"
+    },
+    {
+      "title": "Nepal PM Balendra Shah Welcomed with Traditional Folk Dance on his First India Visit",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/nepal-pm-balendra-shah-welcomed-with-traditional-folk-dance-on-his-first-india-visit-2026-11-22-141617",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "The visit of a foreign Prime Minister to another country is a standard diplomatic event of national/regional significance."
+      },
+      "classified_at": "2026-11-22T16:42:04.687183+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
