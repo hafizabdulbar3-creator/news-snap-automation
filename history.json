@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/4-dead-2-injured-after-massive-fire-rips-through-shoe-factory-in-delhi-s-mangolpuri-2026-10-30-140083",
-      "title": "4 Dead, 2 Injured After Massive Fire Rips Through Shoe Factory In Delhi's Mangolpuri",
-      "headline": "4 Dead, 2 Injured After Massive Fire Rips Through Delhi Shoe Factory",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18097424762653708",
-      "timestamp": "2026-10-31T02:59:14.325137+00:00"
-    },
-    {
       "url": "https://www.news18.com/lifestyle/events/national-unity-day-2026-sardar-vallabhbhai-patel-legacy-role-uniting-india-ws-lr-10405973.html?comscorekw=jionews",
       "title": "National Unity Day 2026: Sardar Vallabhbhai Patel's Legacy And His Role In Uniting India",
       "headline": "National Unity Day 2026: Sardar Patel's Legacy And Role In Uniting India",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18132278023836702",
       "timestamp": "2026-11-22T17:34:04.507633+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/pakistan-minister-musadik-malik-evades-responsibility-for-past-indus-waters-treaty-remarks-pleads-with-india-for-talks-2026-11-22-141618",
+      "title": "From Threats to Pleas: Pakistan Minister Seeks India Talks on Water Treaty",
+      "headline": "Pakistan Minister Evades Responsibility for IWT Threats, Seeks Talks",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18030331589870816",
+      "timestamp": "2026-11-22T18:26:14.291936+00:00"
     }
   ],
   "processed": [
@@ -4729,17 +4729,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "From Threats to Pleas: Pakistan Minister Seeks India Talks on Water Treaty",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/pakistan-minister-musadik-malik-evades-responsibility-for-past-indus-waters-treaty-remarks-pleads-with-india-for-talks-2026-11-22-141618",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A minister seeking talks on a water treaty is a significant diplomatic engagement between two nations, qualifying as a major regional geopolitical event."
-      },
-      "classified_at": "2026-11-22T16:42:04.687173+00:00"
-    },
     {
       "title": "Nepal PM Balendra Shah Welcomed with Traditional Folk Dance on his First India Visit",
       "domain": "republicworld.com",
