@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/mossad-joins-shin-bet-probe-into-alleged-foreign-interference-in-israel-elections-2026-10-30-140078",
-      "title": "Mossad Joins Shin Bet Probe Into Alleged Foreign Interference in Israel Elections",
-      "headline": "Mossad Joins Shin Bet Probe Into Alleged Foreign Election Interference",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18390568771224524",
-      "timestamp": "2026-10-30T23:47:39.341932+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/pm-modi-inaugurates-bharat-parv-ahead-of-sardar-patel-s-birth-anniversary-witnesses-play-on-bankim-chattopadhyays-anand-math-2026-10-30-140077",
       "title": "PM Modi Inaugurates Bharat Parv, Unveils Projects, Witnesses 'Anand Math' Play",
       "headline": "PM Modi Inaugurates Bharat Parv, Unveils Projects, Witnesses 'Anand Math' Play",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18129338918313186",
       "timestamp": "2026-11-22T14:16:13.651861+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/roadways-bus-rams-tempo-in-up-s-hathras-four-killed-including-three-women-and-a-child-six-others-injured-2026-11-22-141613",
+      "title": "Deadly UP Bus Crash: Four Killed, Including Child, Six Injured",
+      "headline": "Deadly UP Bus Crash: Four Killed, Including Child",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18205385569378988",
+      "timestamp": "2026-11-22T14:42:42.431318+00:00"
     }
   ],
   "processed": [
@@ -4701,7 +4701,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Petrol, Diesel Prices Rose Just 7% in India Over Four Years Against 50-70% Global Surge: Hardeep Puri",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/petrol-diesel-prices-rose-just-7-in-india-over-four-years-against-50-70-global-surge-hardeep-puri-2026-11-22-141612",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A regional economic policy statement regarding fuel price trends."
+      },
+      "classified_at": "2026-11-22T14:42:04.714925+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
