@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/setback-for-anant-singh-as-sc-cancels-bail-in-dularchand-yadav-murder-case-orders-surrender-by-dec-1-10404513.html?comscorekw=jionews",
-      "title": "Setback For Anant Singh As SC Cancels Bail In Dularchand Yadav Murder Case, Orders Surrender By Dec 1",
-      "headline": "SC Cancels Bail For Anant Singh In Dularchand Yadav Murder Case",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18099433052422327",
-      "timestamp": "2026-10-30T08:00:03.108040+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/jamia-agrees-to-students-union-elections-by-august-2027-after-18-day-hunger-strike-students-celebrate-2026-10-30-140002",
       "title": "Jamia Agrees To Students' Union Elections By August 2027 After 18-Day Hunger Strike, Students Celebrate",
       "headline": "Jamia Agrees To Students' Union Elections By August 2027",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17877415134680171",
       "timestamp": "2026-11-22T06:28:51.616487+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/washington-governor-condemns-ice-arrests-of-two-travelers-at-seattle-airport-demands-agency-leave-2026-11-22-141587",
+      "title": "Washington Governor Condemns ICE Arrests of Two Travelers at Seattle Airport, Demands Agency Leave",
+      "headline": "Washington Governor Demands ICE Leave After Seattle Airport Arrests",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18110602619307751",
+      "timestamp": "2026-11-22T06:54:42.204512+00:00"
     }
   ],
   "processed": [
@@ -4764,19 +4764,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Washington Governor Condemns ICE Arrests of Two Travelers at Seattle Airport, Demands Agency Leave",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/washington-governor-condemns-ice-arrests-of-two-travelers-at-seattle-airport-demands-agency-leave-2026-11-22-141587",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "A state-level political response to federal agency actions, representing a regional policy stance rather than a major international event."
-      },
-      "classified_at": "2026-11-22T05:36:45.803968+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
