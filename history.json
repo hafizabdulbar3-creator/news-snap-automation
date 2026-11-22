@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/does-anyone-want-baltic-sea-to-become-like-hormuz-putin-warns-europe-amid-rising-tensions-2026-10-30-140006",
-      "title": "'Does Anyone Want Baltic Sea To Become Like Hormuz?' Putin Warns Europe Amid Rising Tensions",
-      "headline": "Putin Warns Europe: Baltic Sea Could Become Like Hormuz",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17957821005278750",
-      "timestamp": "2026-10-30T06:16:42.278261+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/bhutan-glof-alert-cwc-warns-of-sudden-flooding-in-assam-bengal-sankosh-river-on-watch-2026-10-30-140000",
       "title": "Bhutan GLOF Alert: CWC Warns Of Sudden Flooding In Assam, Bengal; Sankosh River On Watch",
       "headline": "CWC Issues Flood Advisory For Assam, Bengal After Bhutan GLOF",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18132309577699511",
       "timestamp": "2026-11-22T04:35:36.232154+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/lawlessness-caught-on-cam-minor-boys-assault-couple-in-mumbai-s-kurla-garden-2026-11-22-141583",
+      "title": "Lawlessness Caught on Cam: Minor Boys Assault Couple in Mumbai's Kurla Garden, Viral Video Sparks Outrage",
+      "headline": "Minor Boys Assault Couple in Viral Mumbai Video",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17951573112067053",
+      "timestamp": "2026-11-22T05:11:10.476096+00:00"
     }
   ],
   "processed": [
@@ -4764,19 +4764,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Lawlessness Caught on Cam: Minor Boys Assault Couple in Mumbai's Kurla Garden, Viral Video Sparks Outrage",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/lawlessness-caught-on-cam-minor-boys-assault-couple-in-mumbai-s-kurla-garden-2026-11-22-141583",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A reported assault incident in a major city that has garnered public attention."
-      },
-      "classified_at": "2026-11-22T05:05:35.162826+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
