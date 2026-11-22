@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/yashs-children-ayra-and-yatharv-watch-ramayana-have-their-first-movie-experience-ws-lt-10405439.html?comscorekw=jionews",
-      "title": "Yash's Children Ayra And Yatharv Watch Ramayana, Have Their First Movie Experience",
-      "headline": "Yash's Kids Ayra And Yatharv Attend Ramayana Premiere In LA",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18099413960210563",
-      "timestamp": "2026-10-30T15:39:33.535821+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/punjab-asi-tests-positive-for-substance-use-after-being-caught-in-unstable-condition-during-anti-drug-protest-2026-10-30-140053",
       "title": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
       "headline": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115492879886802",
       "timestamp": "2026-11-22T12:16:48.939691+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/air-raid-alert-sounds-in-russia-s-kaliningrad-as-finland-battles-fire-on-drone-hit-cargo-ship-2026-11-22-141611",
+      "title": "Air Raid Alert Sounds in Russia's Kaliningrad as Finland Battles Fire on Drone-Hit Cargo Ship",
+      "headline": "Air Raid Alert Sounded in Kaliningrad Amid Baltic Drone Activity",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18194617090407417",
+      "timestamp": "2026-11-22T12:48:22.333814+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Air Raid Alert Sounds in Russia's Kaliningrad as Finland Battles Fire on Drone-Hit Cargo Ship",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/air-raid-alert-sounds-in-russia-s-kaliningrad-as-finland-battles-fire-on-drone-hit-cargo-ship-2026-11-22-141611",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "An air raid alert in a Russian region and a fire on a cargo ship in international waters constitute a significant security and safety incident."
-      },
-      "classified_at": "2026-11-22T12:42:42.400925+00:00"
-    },
     {
       "title": "Migration Stops, Population Rises in 40 China-Border Villages: Amit Shah On Growth in Arunachal Pradesh",
       "domain": "republicworld.com",
