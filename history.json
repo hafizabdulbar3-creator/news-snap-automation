@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/punjab-asi-tests-positive-for-substance-use-after-being-caught-in-unstable-condition-during-anti-drug-protest-2026-10-30-140053",
-      "title": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
-      "headline": "Irony in Punjab: Police ASI Tests Positive for Drugs During Anti-Drug Rally",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18118620581004624",
-      "timestamp": "2026-10-30T16:10:12.837707+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/strait-of-hormuz-cleared-of-iranian-sea-mines-commercial-ships-sail-freely-centcom-chief-2026-10-30-140076",
       "title": "Strait of Hormuz Cleared of Iranian Sea Mines, Commercial Ships Sail Freely: CENTCOM Chief",
       "headline": "Strait of Hormuz Cleared of Iranian Sea Mines, Ships Sail Freely",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18194617090407417",
       "timestamp": "2026-11-22T12:48:22.333814+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/migration-stops-population-rises-in-40-china-border-villages-amit-shah-on-growth-in-arunachal-pradesh-2026-11-22-141606",
+      "title": "Migration Stops, Population Rises in 40 China-Border Villages: Amit Shah On Growth in Arunachal Pradesh",
+      "headline": "Migration Stops, Population Rises in 40 China-Border Villages",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18018299624970990",
+      "timestamp": "2026-11-22T13:14:08.582567+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Migration Stops, Population Rises in 40 China-Border Villages: Amit Shah On Growth in Arunachal Pradesh",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/migration-stops-population-rises-in-40-china-border-villages-amit-shah-on-growth-in-arunachal-pradesh-2026-11-22-141606",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This is a regional political statement regarding population trends and governance in a specific state, which is a standard news topic."
-      },
-      "classified_at": "2026-11-22T12:42:42.400940+00:00"
-    },
     {
       "title": "'Opportunity to Strengthen Enduring, Multifaceted Partnership': MEA as Nepal PM Begins India Visit",
       "domain": "republicworld.com",
