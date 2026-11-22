@@ -4690,20 +4690,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/new-historic-initiative-pm-modi-nepal-pm-balendra-shah-to-flag-off-ayodhya-janakpur-train-on-nov-23-2026-11-22-141609",
+      "title": "'New, Historic Initiative': PM Modi, Nepal PM Balendra Shah to Flag Off Ayodhya-Janakpur Train on Nov 23",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-22T14:10:49.038919+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "'New, Historic Initiative': PM Modi, Nepal PM Balendra Shah to Flag Off Ayodhya-Janakpur Train on Nov 23",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/new-historic-initiative-pm-modi-nepal-pm-balendra-shah-to-flag-off-ayodhya-janakpur-train-on-nov-23-2026-11-22-141609",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This covers the inauguration of a train service connecting two nations, which is a significant regional development but not a global crisis."
-      },
-      "classified_at": "2026-11-22T12:42:42.400952+00:00"
-    },
     {
       "title": "Nepal PM Shah in India for Key Bilateral Talks with PM Modi",
       "domain": "republicworld.com",
