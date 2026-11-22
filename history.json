@@ -4717,20 +4717,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.news18.com/world/lot-of-political-theatre-little-substance-ex-us-commerce-secretary-carlos-gutierrez-on-trump-xi-putin-summit-exclusive-ws-blrt-10435777.html?comscorekw=jionews",
+      "title": "Trump-Xi-Putin Summit: All Show, Little Substance? Ex-US Secretary Reveals Truth",
+      "domain": "news18.com",
+      "timestamp": "2026-11-22T04:16:27.823802+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump-Xi-Putin Summit: All Show, Little Substance? Ex-US Secretary Reveals Truth",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/lot-of-political-theatre-little-substance-ex-us-commerce-secretary-carlos-gutierrez-on-trump-xi-putin-summit-exclusive-ws-blrt-10435777.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Geopolitics",
-        "reason": "Offers analysis and commentary from a former US official regarding high-level international relations involving the US, China, and Russia."
-      },
-      "classified_at": "2026-11-22T03:09:09.525840+00:00"
-    },
     {
       "title": "Israel: Eisenkot Invites Likud for Marathon Coalition Talks in Bid to Break Coalition Deadlock",
       "domain": "republicworld.com",
