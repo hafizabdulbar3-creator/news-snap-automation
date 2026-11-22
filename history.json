@@ -4735,9 +4735,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers exhausted: Gemini API quota exhausted: Gemini API quota exhausted. Retry required in 13134s (3h 38m 54s)."
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/ice-detains-indian-origin-man-in-texas-after-conviction-for-stealing-customer-s-explicit-photos-2026-11-22-141581",
+      "title": "Indian-Origin Man Detained by ICE After Conviction for Stealing Explicit Photos",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-22T04:27:45.012626+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Masked ICE Agents Detain Two on Jet Bridge, Sparking Outrage",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/masked-ice-agents-detain-two-on-seattle-airport-jet-bridge-during-boarding-2026-11-22-141580",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-22T04:25:52.368836+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": true,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
