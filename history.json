@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/dont-fear-failure-delhi-govt-launches-ehsaas-2026-mental-health-and-wellness-policy-ws-lrt-10433227.html?comscorekw=jionews",
-      "title": "'Don't Fear Failure': Delhi Govt Launches Ehsaas 2026 Mental Health And Wellness Policy",
-      "domain": "news18.com",
-      "timestamp": "2026-11-19T23:10:32.538937+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/cricket/glenn-phillips-scores-118-in-1st-innings-of-wellington-test-to-equal-rohit-sharmas-elite-record-ws-l-10433229.html?comscorekw=jionews",
-      "title": "Glenn Phillips Scores 118 In 1st Innings Of Wellington Test To Equal Rohit Sharma's Elite Record",
-      "domain": "news18.com",
-      "timestamp": "2026-11-19T23:36:25.903355+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
       "url": "https://www.news18.com/india/bengal-blueprint-amit-shah-to-spend-7-days-a-month-in-up-as-bjp-gears-up-for-2027-polls-exclusive-ws-l-10433283.html?comscorekw=jionews",
       "title": "Bengal Blueprint? Amit Shah To Spend 7 Days A Month In UP As BJP Gears Up For 2027 Polls | Exclusive",
       "domain": "news18.com",
@@ -4717,20 +4699,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/sports/pant-makes-history-first-indian-keeper-to-score-test-centuries-in-all-four-sena-countries-2026-11-22-141568",
+      "title": "Pant Makes History: First Indian Keeper To Score Test Centuries In All 4 SENA Countries",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-22T01:27:41.723800+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Pant Makes History: First Indian Keeper To Score Test Centuries In All 4 SENA Countries",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/sports/pant-makes-history-first-indian-keeper-to-score-test-centuries-in-all-four-sena-countries-2026-11-22-141568",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A significant sporting achievement for an individual athlete, but limited to the scope of cricket and national interest."
-      },
-      "classified_at": "2026-11-22T01:01:45.031325+00:00"
-    },
     {
       "title": "Bellingham, Espi Rescue Real Madrid After Mbappe Miss In 2-1 Comeback Over Celta Vigo",
       "domain": "republicworld.com",
