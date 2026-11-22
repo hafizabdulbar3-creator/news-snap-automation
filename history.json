@@ -4503,42 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/movies/bollywood/soni-razdan-shares-adorable-childhood-photos-of-alia-bhatt-and-shaheen-bhatt-says-you-two-grew-up-too-fast-ws-kl-10434532.html?comscorekw=jionews",
-      "title": "See Soni Razdan's Emotional Throwback: Alia & Shaheen Bhatt Grew Up Too Fast!",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T17:52:14.095928+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
-    },
-    {
-      "url": "https://www.republicworld.com/info/bluehandsai-by-trinetra-labs-takes-ai-creation-beyond-tech-hubs-and-into-everyday-business-2026-11-20-141483",
-      "title": "BlueHands.ai By Trinetra Labs Takes AI Creation Beyond Tech Hubs and Into Everyday Business",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T17:57:18.477720+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: Cloudflare Workers AI failed after 3 attempts: The read operation timed out"
-    },
-    {
-      "url": "https://www.republicworld.com/business/anthropic-crashes-10-a-day-after-biggest-ipo-in-history-is-ai-dream-turning-into-nightmare-2026-11-20-141484",
-      "title": "Anthropic Crashes 10% A Day After Biggest IPO In History: Is AI Dream Turning Into Nightmare?",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-20T18:05:19.806114+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Anthropic Crashes 10% A Day After Biggest IPO In History: Is AI Dream Turning Into Nightmare?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.news18.com/movies/telugu-cinema/samantha-ruth-prabhu-raj-nidimoru-welcome-baby-boy-lalit-modi-wishes-sushmita-sen-on-51st-birthday-ws-kl-10434446.html?comscorekw=jionews",
-      "title": "Samantha Ruth Prabhu, Raj Nidimoru Welcome Baby Boy; Lalit Modi Wishes Sushmita Sen On 51st Birthday",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T18:37:34.581925+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
       "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-3-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10434749.html?comscorekw=jionews",
       "title": "All Eyes on KL Rahul as India Aims for Big Score on Day 3 Test",
       "domain": "news18.com",
@@ -4726,6 +4690,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/sports/i-know-it-s-been-a-tough-year-nadal-hails-alcaraz-after-maiden-atp-triumph-with-heartfelt-message-2026-11-22-141624",
+      "title": "'I Know It's Been A Tough Year': Nadal Hails Alcaraz After Maiden ATP Triumph With Heartfelt Message",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-22T23:32:22.360061+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
