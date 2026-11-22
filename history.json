@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/strait-of-hormuz-cleared-of-iranian-sea-mines-commercial-ships-sail-freely-centcom-chief-2026-10-30-140076",
-      "title": "Strait of Hormuz Cleared of Iranian Sea Mines, Commercial Ships Sail Freely: CENTCOM Chief",
-      "headline": "Strait of Hormuz Cleared of Iranian Sea Mines, Ships Sail Freely",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18199662013378371",
-      "timestamp": "2026-10-30T16:51:53.815484+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/cryptocurrency/6-3-billion-binance-heist-north-korea-suspected-as-us-secret-service-launches-global-hunt-for-crypto-hackers-ws-lrt-10405822.html?comscorekw=jionews",
       "title": "North Korea Suspected in Massive $6.3 Billion Binance Crypto Heist, US Launches Global Hunt",
       "headline": "US Launches Global Hunt After $6.3 Billion Binance Crypto Heist",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18018299624970990",
       "timestamp": "2026-11-22T13:14:08.582567+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/opportunity-to-strengthen-enduring-multifaceted-partnership-mea-as-nepal-pm-begins-india-visit-2026-11-22-141607",
+      "title": "'Opportunity to Strengthen Enduring, Multifaceted Partnership': MEA as Nepal PM Begins India Visit",
+      "headline": "MEA Welcomes Nepal PM Balendra Shah to India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18453668251130685",
+      "timestamp": "2026-11-22T13:40:08.490447+00:00"
     }
   ],
   "processed": [
@@ -4765,17 +4765,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Opportunity to Strengthen Enduring, Multifaceted Partnership': MEA as Nepal PM Begins India Visit",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/opportunity-to-strengthen-enduring-multifaceted-partnership-mea-as-nepal-pm-begins-india-visit-2026-11-22-141607",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This covers a bilateral diplomatic visit and statement, which is standard regional political news."
-      },
-      "classified_at": "2026-11-22T12:42:42.400945+00:00"
-    },
     {
       "title": "EPG Report, Hydropower, Border Issues on Nepal's Agenda for Balen Shah's India Visit",
       "domain": "republicworld.com",
