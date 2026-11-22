@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/man-found-dead-inside-parked-car-in-pune-probe-underway-2026-10-30-140046",
-      "title": "Man Found Dead Inside Parked Car in Pune, Probe Underway",
-      "headline": "Man Found Dead Inside Parked Car in Pune",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17994120984063550",
-      "timestamp": "2026-10-30T13:01:45.330101+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/consensual-intimacy-during-relationship-can-t-be-branded-rape-merely-because-it-failed-supreme-court-2026-10-30-140055",
       "title": "Consensual Intimacy During Relationship Can't Be Branded Rape Merely Because It Failed: Supreme Court",
       "headline": "Supreme Court Rules Relationship Sex Can't Be Branded Rape If It Fails",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18114394316589752",
       "timestamp": "2026-11-22T11:25:09.441715+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/rahul-gandhi-calls-bjp-rss-uncouth-greedy-casteist-male-chauvinists-questions-understanding-of-spiritual-traditions-2026-11-22-141604",
+      "title": "Rahul Gandhi's Fiery Attack: BJP, RSS Lack Spiritual Understanding, Are 'Uncouth'",
+      "headline": "Rahul Gandhi Attacks BJP, RSS as 'Uncouth, Greedy, Casteist",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18096172025198495",
+      "timestamp": "2026-11-22T11:51:01.298188+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Men's Asia Cup Rising Stars 2026: Pakistan A Win Toss, Elect to Bat Against India A in Doha",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/cricket/men-s-asia-cup-rising-stars-2026-pakistan-a-win-toss-elect-to-bat-against-india-a-in-doha-2026-11-22-141602",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "Cricket matches involving national teams constitute major sports news, though they are generally categorized separately from geopolitical events."
+      },
+      "classified_at": "2026-11-22T11:50:37.741933+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
