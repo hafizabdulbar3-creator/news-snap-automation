@@ -4708,20 +4708,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/air-raid-and-blackout-mock-drills-conducted-across-up-to-assess-emergency-preparedness-2026-11-22-141616",
+      "title": "Air Raid and Blackout Mock Drills Conducted across UP to Assess Emergency Preparedness",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-22T16:31:24.784298+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Air Raid and Blackout Mock Drills Conducted across UP to Assess Emergency Preparedness",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/air-raid-and-blackout-mock-drills-conducted-across-up-to-assess-emergency-preparedness-2026-11-22-141616",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "This describes a state-level emergency preparedness drill, which is a standard administrative and safety procedure."
-      },
-      "classified_at": "2026-11-22T16:05:26.343012+00:00"
-    },
     {
       "title": "Nine from Maharashtra's Dhule Killed as Cruiser Rams into Truck in Rajasthan",
       "domain": "republicworld.com",
