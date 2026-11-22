@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/explainers/israel-election-deadlock-can-netanyahu-be-ousted-4-possible-ways-to-form-the-next-government-shil-ws-l-10404411.html?comscorekw=jionews",
-      "title": "Israel Election Deadlock: Can Netanyahu Be Ousted? 4 Possible Ways To Form The Next Government",
-      "headline": "Israel Election Deadlock: 4 Ways To Form The Next Government",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17984613686897957",
-      "timestamp": "2026-10-30T07:08:13.254404+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/2-million-traders-at-risk-cti-appeals-to-sonia-gandhi-to-defer-india-s-nov-1-rally-warns-of-10000-crore-hit-2026-10-30-140004",
       "title": "Traders Urge Sonia Gandhi: Defer November 1 Rally, ₹10,000 Crore Diwali Loss Feared",
       "headline": "Traders Urge Sonia Gandhi to Postpone November 1 Rally",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18112903073138392",
       "timestamp": "2026-11-22T05:37:15.931882+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/gym-protein-and-testosterone-are-your-fitness-habits-helping-or-hurting-male-fertility-ws-l-10435915.html?comscorekw=jionews",
+      "title": "Gym, Protein and Testosterone: Are Your Fitness Habits Helping or Hurting Male Fertility?",
+      "headline": "Gym, Protein, and Testosterone: How Fitness Habits Impact Male Fertility",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17914314864310135",
+      "timestamp": "2026-11-22T06:02:57.051499+00:00"
     }
   ],
   "processed": [
@@ -4786,17 +4786,6 @@
         "reason": "A state-level political response to federal agency actions, representing a regional policy stance rather than a major international event."
       },
       "classified_at": "2026-11-22T05:36:45.803968+00:00"
-    },
-    {
-      "title": "Gym, Protein and Testosterone: Are Your Fitness Habits Helping or Hurting Male Fertility?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/lifestyle/health-and-fitness/gym-protein-and-testosterone-are-your-fitness-habits-helping-or-hurting-male-fertility-ws-l-10435915.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Health",
-        "reason": "A health and lifestyle article discussing fitness habits and fertility, which falls under general public interest rather than major news."
-      },
-      "classified_at": "2026-11-22T05:36:45.803975+00:00"
     }
   ],
   "quota_cooldown": {
