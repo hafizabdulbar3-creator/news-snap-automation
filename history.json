@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/business/blockchain-intelligence-firms-link-north-korea-to-63b-hack-on-binance-2026-10-30-140037",
-      "title": "Blockchain Intelligence Firms Link North Korea to $6.3b Hack on Binance",
-      "headline": "Blockchain Firms Link North Korea to $6.3B Binance Hack",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18099411629407601",
-      "timestamp": "2026-10-30T11:35:52.045321+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/ins-vikrant-makes-history-rafale-marine-fighter-completes-first-ever-landing-on-indias-indigenous-aircraft-carrier-watch-ws-blrt-10405322.html?comscorekw=jionews",
       "title": "INS Vikrant Makes History: Rafale Marine Fighter Achieves Maiden Landing on Indigenous Carrier",
       "headline": "INS Vikrant Makes History: Rafale Fighter Completes First Landing",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18080355605439290",
       "timestamp": "2026-11-22T10:06:56.276476+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/us-startup-hires-36-year-old-gamer-to-play-gta-6-with-over-100000-salary-heres-what-he-has-to-do-ws-l-10436158.html?comscorekw=jionews",
+      "title": "US Startup Hires 36-Year-Old Gamer To Play GTA 6 With Over $100,000 Salary, Here's What He Has To Do",
+      "headline": "Gamer Hired To Play GTA 6 For $100,000 Salary",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18643835488024306",
+      "timestamp": "2026-11-22T10:32:59.502145+00:00"
     }
   ],
   "processed": [
@@ -4764,7 +4764,30 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "RJD Workers Tear Down PM Modi's Poster, Raise Lalu & Tejashwi Slogans at Newly Inaugurated Nitish Setu",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/rjd-workers-tear-down-pm-modi-s-posters-at-nitish-setu-after-inauguration-trigger-political-row-2026-11-22-141599",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This is a local/regional political dispute involving protests and slogans at a newly inaugurated infrastructure project, which is a notable public interest story."
+      },
+      "classified_at": "2026-11-22T10:32:32.742979+00:00"
+    },
+    {
+      "title": "Mitwa Singer Shafqat Amanat Ali Reveals Battle With Blood Cancer, Recalls Spending A Year On Bed Rest",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/mitwa-singer-shafqat-amanat-ali-reveals-battle-with-blood-cancer-recalls-spending-a-year-on-bed-rest-ws-kl-10436149.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "This is a notable public interest story regarding a public figure's health battle, which is of general public concern."
+      },
+      "classified_at": "2026-11-22T10:32:32.742985+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
