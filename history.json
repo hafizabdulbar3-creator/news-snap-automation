@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/panchkula-school-assault-case-fir-against-management-over-negligence-six-year-old-girl-out-of-danger-2026-10-31-140151",
-      "title": "Panchkula School Assault Case: FIR Against Management Over Negligence; Six-Year-Old Girl Out of Danger",
-      "headline": "FIR Filed Against School Management Over Negligence in Panchkula Assault",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18141555571723420",
-      "timestamp": "2026-10-31T17:27:17.195716+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/india-make-history-beat-uganda-35-15-to-win-inaugural-women-s-commonwealth-kabaddi-championship-2026-10-31-140158",
       "title": "India Make History, Beat Uganda 35-15 to Win Inaugural Women's Commonwealth Kabaddi Championship",
       "headline": "India Beats Uganda 35-15 to Win Inaugural Women's Commonwealth Kabaddi Championship",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17912563635327666",
       "timestamp": "2026-11-23T13:36:02.175953+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/west-bengal-to-paschim-banga-a-renaming-push-that-goes-back-nearly-27-years-ws-l-10437667.html?comscorekw=jionews",
+      "title": "West Bengal To Paschim Banga: A Renaming Push That Goes Back Nearly 27 Years",
+      "headline": "West Bengal Renaming Push: 27-Year History Explained",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18115508198331382",
+      "timestamp": "2026-11-23T14:01:46.390340+00:00"
     }
   ],
   "processed": [
@@ -4720,17 +4720,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "West Bengal To Paschim Banga: A Renaming Push That Goes Back Nearly 27 Years",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/west-bengal-to-paschim-banga-a-renaming-push-that-goes-back-nearly-27-years-ws-l-10437667.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Reports on a state-level administrative change regarding the renaming of a region in India, which is a domestic policy matter."
-      },
-      "classified_at": "2026-11-23T12:38:17.809554+00:00"
-    },
     {
       "title": "150 CCTV Cameras, Additional Forces: Security Tightened For Jhiri Mela In Jammu",
       "domain": "news18.com",
