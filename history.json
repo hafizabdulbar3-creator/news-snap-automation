@@ -4690,20 +4690,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 17."
+    },
+    {
+      "url": "https://www.news18.com/viral/hyderabad-roommates-want-to-ditch-rs-30000-2bhk-to-live-in-hotel-zero-landlord-drama-security-deposits-ws-l-10436923.html?comscorekw=jionews",
+      "title": "Tired of Renting? Roommates Eye Hotel Life for Zero Landlord Drama, Chores",
+      "domain": "news18.com",
+      "timestamp": "2026-11-23T08:49:09.433701+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Tired of Renting? Roommates Eye Hotel Life for Zero Landlord Drama, Chores",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/hyderabad-roommates-want-to-ditch-rs-30000-2bhk-to-live-in-hotel-zero-landlord-drama-security-deposits-ws-l-10436923.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Lifestyle",
-        "reason": "This is a consumer/lifestyle trend story about housing options and rental markets."
-      },
-      "classified_at": "2026-11-23T07:52:28.382293+00:00"
-    },
     {
       "title": "Beyond Bisleri: FSSAI Launches Nationwide Quality Check on All Packaged Water Brands",
       "domain": "republicworld.com",
