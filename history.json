@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/business/republic-business-to-launch-on-november-2-as-republic-media-network-s-fifth-news-channel-2026-10-31-140132",
-      "title": "Republic Business to Launch on November 2 as Republic Media Network's Fifth News Channel",
-      "headline": "Republic Media Network Launches Fifth News Channel: Republic Business",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18639398794006161",
-      "timestamp": "2026-10-31T12:04:36.535468+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/sanjay-gupta-death-suniel-shetty-john-abraham-sonu-sood-and-others-mourn-kaante-filmmaker-ws-klt-10406689.html?comscorekw=jionews",
       "title": "Sanjay Gupta Death: Suniel Shetty, John Abraham, Sonu Sood And Others Mourn Kaante Filmmaker",
       "headline": "Bollywood Mourns Sanjay Gupta: Shetty, Abraham, Sood Pay Tribute",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18097990967658229",
       "timestamp": "2026-11-23T07:53:08.541587+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/sp-congress-begin-seat-sharing-talks-for-up-assembly-polls-leaders-confident-of-smooth-process-2026-11-23-141660",
+      "title": "'Cordial Atmosphere': SP-Congress Concludes First Round of UP-Seat-Sharing Talks, Next Meeting on Tuesday",
+      "headline": "SP-Congress Conclude First Round of UP Seat-Sharing Talks",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18120032822087668",
+      "timestamp": "2026-11-23T08:23:36.931796+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Cordial Atmosphere': SP-Congress Concludes First Round of UP-Seat-Sharing Talks, Next Meeting on Tuesday",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/sp-congress-begin-seat-sharing-talks-for-up-assembly-polls-leaders-confident-of-smooth-process-2026-11-23-141660",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Details regarding seat-sharing talks between political parties are a standard political development."
-      },
-      "classified_at": "2026-11-23T07:52:28.382275+00:00"
-    },
     {
       "title": "Tired of Renting? Roommates Eye Hotel Life for Zero Landlord Drama, Chores",
       "domain": "news18.com",
