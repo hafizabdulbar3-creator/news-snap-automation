@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/sports/india-make-history-beat-uganda-35-15-to-win-inaugural-women-s-commonwealth-kabaddi-championship-2026-10-31-140158",
-      "title": "India Make History, Beat Uganda 35-15 to Win Inaugural Women's Commonwealth Kabaddi Championship",
-      "headline": "India Beats Uganda 35-15 to Win Inaugural Women's Commonwealth Kabaddi Championship",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18118617389022826",
-      "timestamp": "2026-10-31T17:52:53.620833+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/france-protests-clashes-erupt-in-paris-lyon-as-32-lakh-take-to-streets-over-rising-living-costs-2026-10-31-140159",
       "title": "France Protests: Clashes Erupt in Paris, Lyon as 3.2 Lakh Take to Streets Over Rising Living Costs",
       "headline": "France Protests: Clashes Erupt as 3.2 Lakh Take to Streets",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115508198331382",
       "timestamp": "2026-11-23T14:01:46.390340+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/150-cctv-cameras-additional-security-forces-security-tightened-for-jhiri-mela-in-jammu-ws-klr-10437434.html?comscorekw=jionews",
+      "title": "150 CCTV Cameras, Additional Forces: Security Tightened For Jhiri Mela In Jammu",
+      "headline": "150 CCTV Cameras, Additional Forces: Security Tightened For Jhiri Mela In Jammu",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18138154702675574",
+      "timestamp": "2026-11-23T14:27:54.224035+00:00"
     }
   ],
   "processed": [
@@ -4720,17 +4720,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "150 CCTV Cameras, Additional Forces: Security Tightened For Jhiri Mela In Jammu",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/150-cctv-cameras-additional-security-forces-security-tightened-for-jhiri-mela-in-jammu-ws-klr-10437434.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Details security preparations for a local religious fair (Jhiri Mela) in India, a regional public safety event."
-      },
-      "classified_at": "2026-11-23T12:38:17.809557+00:00"
-    },
     {
       "title": "No Cheating In Exams: Why South Korean Minister's Strict Measures Cost Him His Job",
       "domain": "news18.com",
