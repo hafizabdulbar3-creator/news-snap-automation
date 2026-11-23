@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/viral/fresher-says-he-was-fired-after-asking-company-to-give-him-developer-work-wanted-to-do-what-i-was-hired-for-ws-l-10406517.html?comscorekw=jionews",
-      "title": "Fresher Fired for Demanding Developer Work: Was He Wrong?",
-      "headline": "Fresher Fired for Demanding Developer Work: Was He Wrong?",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18120175351950738",
-      "timestamp": "2026-10-31T11:38:46.701328+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/business/republic-business-to-launch-on-november-2-as-republic-media-network-s-fifth-news-channel-2026-10-31-140132",
       "title": "Republic Business to Launch on November 2 as Republic Media Network's Fifth News Channel",
       "headline": "Republic Media Network Launches Fifth News Channel: Republic Business",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18131652019882085",
       "timestamp": "2026-11-23T07:16:39.629179+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/10-stops-19-hours-2-countries-new-train-to-connect-rams-ayodhya-with-sitas-janakpur-in-nepal-ws-klrt-10437040.html?comscorekw=jionews",
+      "title": "From Ram's Ayodhya To Sita's Janakpur In Nepal: New Train To Connect 2 Countries In 19 Hours",
+      "headline": "New Train Connects Ayodhya To Janakpur In 19 Hours",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18097990967658229",
+      "timestamp": "2026-11-23T07:53:08.541587+00:00"
     }
   ],
   "processed": [
@@ -4692,7 +4692,63 @@
       "rejection_reason": "Caption must contain 20–80 words, got 17."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "'Cordial Atmosphere': SP-Congress Concludes First Round of UP-Seat-Sharing Talks, Next Meeting on Tuesday",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/sp-congress-begin-seat-sharing-talks-for-up-assembly-polls-leaders-confident-of-smooth-process-2026-11-23-141660",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Details regarding seat-sharing talks between political parties are a standard political development."
+      },
+      "classified_at": "2026-11-23T07:52:28.382275+00:00"
+    },
+    {
+      "title": "Tired of Renting? Roommates Eye Hotel Life for Zero Landlord Drama, Chores",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/hyderabad-roommates-want-to-ditch-rs-30000-2bhk-to-live-in-hotel-zero-landlord-drama-security-deposits-ws-l-10436923.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "This is a consumer/lifestyle trend story about housing options and rental markets."
+      },
+      "classified_at": "2026-11-23T07:52:28.382293+00:00"
+    },
+    {
+      "title": "Beyond Bisleri: FSSAI Launches Nationwide Quality Check on All Packaged Water Brands",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/beyond-bisleri-fssai-launches-nationwide-quality-check-on-all-packaged-water-brands-2026-11-23-141661",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Regulatory actions by the FSSAI regarding food safety standards are a standard public interest and business update."
+      },
+      "classified_at": "2026-11-23T07:52:28.382296+00:00"
+    },
+    {
+      "title": "Neighborhood First Boost! PM Modi Greets Nepal PM Balendra Shah At Rashtrapati Bhavan In Delhi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/neighborhood-first-boost-pm-modi-greets-nepal-pm-balendra-shah-at-rashtrapati-bhavan-in-delhi-2026-11-23-141658",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A bilateral meeting between Prime Ministers is a standard diplomatic engagement."
+      },
+      "classified_at": "2026-11-23T07:52:28.382300+00:00"
+    },
+    {
+      "title": "Chess World Title: Youngest Champions Gukesh, Sindarov Clash for $2.5M Prize",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/sports/other-sports/fide-world-chess-championship-2026-d-gukesh-vs-javokhir-sindarov-format-prize-money-schedule-start-time-live-streaming-more-ws-klrt-10436924.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "This is a sports-specific report on a championship match."
+      },
+      "classified_at": "2026-11-23T07:52:28.382302+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
