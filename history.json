@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/science/proud-moment-for-india-ex-isro-chief-hails-nvs-03-launch-says-mission-restores-confidence-after-setback-2026-10-31-140119",
-      "title": "Proud Moment: Ex-ISRO Chief Praises NVS-03 Launch, Boosts India's Space Confidence.",
-      "headline": "Ex-ISRO Chief Hails NVS-03 Launch, Boosts India's Space Confidence",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18131024464829726",
-      "timestamp": "2026-10-31T09:54:53.095890+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/andhra-school-horror-man-attacks-class-10-girl-with-chainsaw-cm-orders-swift-action-2026-10-31-140123",
       "title": "Andhra School Horror: Man Attacks Class 10 Girl With Chainsaw, Cuts Her Throat; Accused Arrested",
       "headline": "Andhra School Horror: Man Attacks Student With Chainsaw",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17994343745865367",
       "timestamp": "2026-11-23T05:26:16.050802+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/kim-jong-un-ghosts-trump-us-president-s-calls-go-unanswered-letter-reportedly-returned-unopened-2026-11-23-141641",
+      "title": "Kim Jong Un Ghosts Trump? US President's Calls Go Unanswered, Letter Reportedly Returned Unopened",
+      "headline": "Kim Jong Un Ghosts Trump? Calls Go Unanswered",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18085821761397270",
+      "timestamp": "2026-11-23T05:52:24.420145+00:00"
     }
   ],
   "processed": [
@@ -4684,17 +4684,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Kim Jong Un Ghosts Trump? US President's Calls Go Unanswered, Letter Reportedly Returned Unopened",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/kim-jong-un-ghosts-trump-us-president-s-calls-go-unanswered-letter-reportedly-returned-unopened-2026-11-23-141641",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves high-level diplomatic relations between the US and North Korea, a major geopolitical actor."
-      },
-      "classified_at": "2026-11-23T04:02:37.954593+00:00"
-    },
     {
       "title": "Trump Claims Somali Community Has 'Completely Taken Over' Minnesota",
       "domain": "republicworld.com",
