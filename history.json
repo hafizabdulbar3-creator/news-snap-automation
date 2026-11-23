@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/india-at-unga-warns-against-weaponisation-of-human-rights-calls-out-double-standards-2026-10-31-140098",
-      "title": "India At UNGA Warns Against 'Weaponisation' Of Human Rights, Calls Out Double Standards",
-      "headline": "India Warns Against Weaponisation Of Human Rights At UNGA",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18102824306357224",
-      "timestamp": "2026-10-31T05:09:29.094503+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/jaishankar-holds-key-bilateral-talks-with-eu-germany-canada-brazil-mexico-at-g20-in-atlanta-2026-10-31-140099",
       "title": "Jaishankar Holds Key Bilateral Talks With EU, Germany, Canada, Brazil, Mexico At G20 In Atlanta",
       "headline": "Jaishankar Holds Key Bilateral Talks With EU, Germany, Canada, Brazil, Mexico At G20",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18031476485920788",
       "timestamp": "2026-11-23T00:50:51.695530+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/democrats-hit-258-house-seats-largest-majority-of-the-century-after-north-carolina-win-2026-11-23-141629",
+      "title": "Democrats Hit 258 House Seats, Largest Majority Of The Century After North Carolina Win",
+      "headline": "Democrats Reach 258 Seats, Largest Majority Of The Century",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18192875686406970",
+      "timestamp": "2026-11-23T01:16:37.602490+00:00"
     }
   ],
   "processed": [
@@ -4702,17 +4702,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Democrats Hit 258 House Seats, Largest Majority Of The Century After North Carolina Win",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/democrats-hit-258-house-seats-largest-majority-of-the-century-after-north-carolina-win-2026-11-23-141629",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Politics",
-        "reason": "A significant shift in the US House of Representatives, resulting in the largest majority in a century, is a major political event with broad national and international consequences."
-      },
-      "classified_at": "2026-11-23T00:50:23.555186+00:00"
-    },
     {
       "title": "Delta Flights To And From Atlanta Delayed After Weight-Balance System Fails",
       "domain": "republicworld.com",
