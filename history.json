@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/france-protests-clashes-erupt-in-paris-lyon-as-32-lakh-take-to-streets-over-rising-living-costs-2026-10-31-140159",
-      "title": "France Protests: Clashes Erupt in Paris, Lyon as 3.2 Lakh Take to Streets Over Rising Living Costs",
-      "headline": "France Protests: Clashes Erupt as 3.2 Lakh Take to Streets",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18119436113049752",
-      "timestamp": "2026-10-31T18:24:08.333698+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/diljit-dosanjh-on-im-an-artist-remark-yashs-son-cried-watching-ravana-kill-jatayu-in-ramayana-ws-kl-10406987.html?comscorekw=jionews",
       "title": "Diljit Dosanjh On 'I'm An Artist' Remark; Yash's Son Cried Watching Ravana Kill Jatayu In Ramayana",
       "headline": "Diljit Dosanjh Responds to 'I'm an Artist' Remark; Yash's Son Cries Watching Ramayana",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18138154702675574",
       "timestamp": "2026-11-23T14:27:54.224035+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/emergency-phone-alerts-only-pencils-for-exam-no-wi-fi-why-s-korea-ministers-anti-cheating-measures-cost-him-his-job-ws-klr-10437145.html?comscorekw=jionews",
+      "title": "No Cheating In Exams: Why South Korean Minister's Strict Measures Cost Him His Job",
+      "headline": "Strict Anti-Cheating Measures Cost South Korean Minister His Job",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17974268118193507",
+      "timestamp": "2026-11-23T14:53:58.340491+00:00"
     }
   ],
   "processed": [
@@ -4719,19 +4719,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "No Cheating In Exams: Why South Korean Minister's Strict Measures Cost Him His Job",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/emergency-phone-alerts-only-pencils-for-exam-no-wi-fi-why-s-korea-ministers-anti-cheating-measures-cost-him-his-job-ws-klr-10437145.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Reports on the resignation of a South Korean minister due to exam cheating policies, a significant domestic political event."
-      },
-      "classified_at": "2026-11-23T12:38:17.809564+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
