@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-hc-denies-anticipatory-bail-to-medical-student-of-pmch-in-rape-case-2026-10-31-140139",
-      "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
-      "headline": "Delhi HC Denies Anticipatory Bail To PMCH Medical Student In Rape Case",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17942934216373539",
-      "timestamp": "2026-10-31T14:14:27.927464+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/manipur-large-number-of-people-join-cocomi-rally-in-imphal-demand-scrapping-of-soo-agreement-safe-return-of-idps-2026-10-31-140137",
       "title": "Manipur Unites: Huge Rally Demands SoO Scrapping, Safe IDP Return.",
       "headline": "Manipur Rally Demands Scrapping of SoO Agreement",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17899650528421116",
       "timestamp": "2026-11-23T10:12:58.569649+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/bangladesh-vows-to-arrest-sheikh-hasina-if-she-returns-from-india-amid-rising-political-tensions-and-protests-2026-11-23-141673",
+      "title": "'She Will Have to Face the Music': Bangladesh Vows to Arrest Sheikh Hasina if She Returns From India",
+      "headline": "Bangladesh Vows Arrest of Sheikh Hasina if She Returns",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17908126170354673",
+      "timestamp": "2026-11-23T10:38:54.876342+00:00"
     }
   ],
   "processed": [
@@ -4712,17 +4712,6 @@
         "reason": "A domestic economic trend regarding gold imports and political commentary."
       },
       "classified_at": "2026-11-23T10:12:29.418514+00:00"
-    },
-    {
-      "title": "'She Will Have to Face the Music': Bangladesh Vows to Arrest Sheikh Hasina if She Returns From India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/bangladesh-vows-to-arrest-sheikh-hasina-if-she-returns-from-india-amid-rising-political-tensions-and-protests-2026-11-23-141673",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major geopolitical development involving the potential arrest of a former head of state and cross-border political asylum."
-      },
-      "classified_at": "2026-11-23T10:12:29.418528+00:00"
     },
     {
       "title": "West Bengal To Become 'Paschim Banga' Soon? CM Suvendu Says Proposal To Be Tabled In Assembly",
