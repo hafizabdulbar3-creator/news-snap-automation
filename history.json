@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/videos/defence/retd-maj-gen-gd-bakshi-on-media-panic-over-itbp-statement-unwarranted-thaw-with-china-works-2026-10-31-140130",
-      "title": "Retd. Maj Gen GD Bakshi On Media Panic Over ITBP Statement Unwarranted; 'Thaw With China Works'",
-      "headline": "Retd. Maj Gen Bakshi Calls Media Panic Over ITBP Statement Unwarranted",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18098823362112329",
-      "timestamp": "2026-10-31T13:48:35.671058+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-hc-denies-anticipatory-bail-to-medical-student-of-pmch-in-rape-case-2026-10-31-140139",
       "title": "Delhi HC Denies Anticipatory Bail To Medical Student of PMCH in Rape Case",
       "headline": "Delhi HC Denies Anticipatory Bail To PMCH Medical Student In Rape Case",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18029629748864586",
       "timestamp": "2026-11-23T09:46:52.152974+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/bla-claims-18-pakistani-soldiers-killed-in-mastung-suicide-attack-reports-confirm-civilian-deaths-ws-l-10437357.html?comscorekw=jionews",
+      "title": "BLA Claims 18 Pakistani Soldiers Killed In Mastung Suicide Attack, Reports Confirm Civilian Deaths",
+      "headline": "BLA Claims 18 Pakistani Soldiers Killed In Mastung Suicide Attack",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17899650528421116",
+      "timestamp": "2026-11-23T10:12:58.569649+00:00"
     }
   ],
   "processed": [
@@ -4701,7 +4701,74 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Gold Imports Fall 40%: BJP Credits PM Modi's Appeal To Citizens, Congress Questions Logic",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/gold-imports-fall-40-bjp-credits-pm-modis-appeal-to-citizens-congress-questions-logic-ws-l-10437396.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A domestic economic trend regarding gold imports and political commentary."
+      },
+      "classified_at": "2026-11-23T10:12:29.418514+00:00"
+    },
+    {
+      "title": "'She Will Have to Face the Music': Bangladesh Vows to Arrest Sheikh Hasina if She Returns From India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/bangladesh-vows-to-arrest-sheikh-hasina-if-she-returns-from-india-amid-rising-political-tensions-and-protests-2026-11-23-141673",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major geopolitical development involving the potential arrest of a former head of state and cross-border political asylum."
+      },
+      "classified_at": "2026-11-23T10:12:29.418528+00:00"
+    },
+    {
+      "title": "West Bengal To Become 'Paschim Banga' Soon? CM Suvendu Says Proposal To Be Tabled In Assembly",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/proposal-to-rename-west-bengal-to-paschim-banga-to-be-tabled-in-next-assembly-session-suvendu-ws-l-10437315.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional policy proposal regarding state renaming."
+      },
+      "classified_at": "2026-11-23T10:12:29.418536+00:00"
+    },
+    {
+      "title": "'Water For Sale? What Next, Air?': How Bisleri Got Indians To Pay For Paani",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/water-for-sale-what-next-air-how-bisleri-got-indians-to-pay-for-paani-ws-l-10437329.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A corporate milestone and marketing strategy analysis."
+      },
+      "classified_at": "2026-11-23T10:12:29.418538+00:00"
+    },
+    {
+      "title": "Ayodhya: UP CM Yogi Adityanath Offers Prayers To Ram Lalla At Shri Ram Janmabhoomi Temple",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/ayodhya-up-cm-yogi-adityanath-offers-prayers-to-ram-lalla-at-shri-ram-janmabhoomi-temple-2026-11-23-141671",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A routine political event involving a state leader offering prayers at a religious site."
+      },
+      "classified_at": "2026-11-23T10:12:29.418541+00:00"
+    },
+    {
+      "title": "India Has Run Out Of Excuses But Diabetes Is No Longer A Disease We Can Outrun",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/india-has-run-out-of-excuses-but-diabetes-is-no-longer-a-disease-we-can-outrun-ws-l-10437328.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "A public health issue of national interest."
+      },
+      "classified_at": "2026-11-23T10:12:29.418543+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
