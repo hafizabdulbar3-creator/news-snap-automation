@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/tech/github-says-indian-government-agencies-are-emerging-as-major-drivers-of-ai-adoption-heres-why-ws-l-10406739.html?comscorekw=jionews",
-      "title": "GitHub Says Indian Government Agencies Are Emerging As Major Drivers Of AI Adoption: Here's Why",
-      "headline": "GitHub Reports Indian Agencies Leading AI Adoption",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18113793367892956",
-      "timestamp": "2026-10-31T13:22:39.486825+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/defence/retd-maj-gen-gd-bakshi-on-media-panic-over-itbp-statement-unwarranted-thaw-with-china-works-2026-10-31-140130",
       "title": "Retd. Maj Gen GD Bakshi On Media Panic Over ITBP Statement Unwarranted; 'Thaw With China Works'",
       "headline": "Retd. Maj Gen Bakshi Calls Media Panic Over ITBP Statement Unwarranted",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18227130103347508",
       "timestamp": "2026-11-23T09:20:53.346458+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/neighborhood-first-boost-pm-modi-greets-nepal-pm-balendra-shah-at-rashtrapati-bhavan-in-delhi-2026-11-23-141658",
+      "title": "Neighborhood First Boost! PM Modi Greets Nepal PM Balendra Shah At Rashtrapati Bhavan In Delhi",
+      "headline": "PM Modi Greets Nepal PM Balendra Shah At Rashtrapati Bhavan",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18029629748864586",
+      "timestamp": "2026-11-23T09:46:52.152974+00:00"
     }
   ],
   "processed": [
@@ -4701,19 +4701,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Neighborhood First Boost! PM Modi Greets Nepal PM Balendra Shah At Rashtrapati Bhavan In Delhi",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/neighborhood-first-boost-pm-modi-greets-nepal-pm-balendra-shah-at-rashtrapati-bhavan-in-delhi-2026-11-23-141658",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A bilateral meeting between Prime Ministers is a standard diplomatic engagement."
-      },
-      "classified_at": "2026-11-23T07:52:28.382300+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
