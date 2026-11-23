@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/jaishankar-holds-key-bilateral-talks-with-eu-germany-canada-brazil-mexico-at-g20-in-atlanta-2026-10-31-140099",
-      "title": "Jaishankar Holds Key Bilateral Talks With EU, Germany, Canada, Brazil, Mexico At G20 In Atlanta",
-      "headline": "Jaishankar Holds Key Bilateral Talks With EU, Germany, Canada, Brazil, Mexico At G20",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17994164439025549",
-      "timestamp": "2026-10-31T05:35:19.173406+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/took-stock-of-our-bilateral-cooperation-eam-jaishankar-meets-us-secy-of-state-rubio-on-sidelines-of-g20-2026-10-31-140105",
       "title": "Jaishankar, Rubio Meet at G20: India Urges Diplomacy Amid Global Conflicts",
       "headline": "Jaishankar Meets Rubio at G20: India Urges Diplomacy",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18192875686406970",
       "timestamp": "2026-11-23T01:16:37.602490+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/delta-flights-to-and-from-atlanta-delayed-after-weight-balance-system-fails-2026-11-23-141628",
+      "title": "Delta Flights To And From Atlanta Delayed After Weight-Balance System Fails",
+      "headline": "Delta Flights To And From Atlanta Delayed After Weight-Balance System Fails",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18129127210924155",
+      "timestamp": "2026-11-23T01:42:47.933338+00:00"
     }
   ],
   "processed": [
@@ -4702,17 +4702,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delta Flights To And From Atlanta Delayed After Weight-Balance System Fails",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/delta-flights-to-and-from-atlanta-delayed-after-weight-balance-system-fails-2026-11-23-141628",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A specific operational disruption at a major airline (Delta) affecting a specific hub (Atlanta) is a notable regional business/transportation issue."
-      },
-      "classified_at": "2026-11-23T00:50:23.555191+00:00"
-    },
     {
       "title": "Alcaraz Beats Zverev To Win ATP Finals, Joins Federer, Djokovic In Elite Club",
       "domain": "republicworld.com",
