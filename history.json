@@ -4681,6 +4681,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
+    },
+    {
+      "url": "https://www.republicworld.com/india/pm-modi-nepal-pm-balen-shah-hold-bilateral-talks-in-delhi-trade-connectivity-and-investment-in-focus-2026-11-23-141657",
+      "title": "PM Modi, Nepal PM Balen Shah Hold Bilateral Talks in Delhi; Trade, Connectivity and Investment in Focus",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-23T06:44:38.512845+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
