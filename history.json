@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/indi-bloc-rally-over-4000-cops-capf-companies-to-be-deployed-at-delhi-s-ramlila-maidan-2026-10-31-140155",
-      "title": "INDI Bloc Rally: Over 4,000 Cops, CAPF Companies To Be Deployed At Delhi's Ramlila Maidan",
-      "headline": "4,000 Police & CAPF Deployed For INDI Bloc Rally At Ramlila Maidan",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18010372401004704",
-      "timestamp": "2026-10-31T17:01:25.205986+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/panchkula-school-assault-case-fir-against-management-over-negligence-six-year-old-girl-out-of-danger-2026-10-31-140151",
       "title": "Panchkula School Assault Case: FIR Against Management Over Negligence; Six-Year-Old Girl Out of Danger",
       "headline": "FIR Filed Against School Management Over Negligence in Panchkula Assault",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17983614105133558",
       "timestamp": "2026-11-23T13:09:52.196121+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/five-cops-stabbed-inside-delhi-s-jama-masjid-police-station-accused-shot-during-capture-2026-11-23-141683",
+      "title": "'Five Cops Stabbed Inside Delhi's Jama Masjid Police Station': Accused Shot During Capture",
+      "headline": "Five Cops Stabbed Inside Delhi Police Station, Accused Shot During Capture",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17912563635327666",
+      "timestamp": "2026-11-23T13:36:02.175953+00:00"
     }
   ],
   "processed": [
@@ -4741,17 +4741,6 @@
         "reason": "Details security preparations for a local religious fair (Jhiri Mela) in India, a regional public safety event."
       },
       "classified_at": "2026-11-23T12:38:17.809557+00:00"
-    },
-    {
-      "title": "'Five Cops Stabbed Inside Delhi's Jama Masjid Police Station': Accused Shot During Capture",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/five-cops-stabbed-inside-delhi-s-jama-masjid-police-station-accused-shot-during-capture-2026-11-23-141683",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Reports on a violent crime incident (stabbing) within a police station in India, a significant local crime story."
-      },
-      "classified_at": "2026-11-23T12:38:17.809559+00:00"
     },
     {
       "title": "No Cheating In Exams: Why South Korean Minister's Strict Measures Cost Him His Job",
