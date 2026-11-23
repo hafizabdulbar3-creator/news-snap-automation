@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/mla-chor-with-vote-for-note-chor-ktr-s-sarcastic-swipe-at-rahul-gandhi-and-revanth-reddy-ahead-of-indi-bloc-rally-in-delhi-2026-10-31-140162",
-      "title": "KTR Slams Rahul, Revanth as 'MLA-Chor' & 'Vote-for-Note-Chor'",
-      "headline": "KTR Mocks Rahul Gandhi, Revanth Reddy as 'MLA-Chor",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17961190134259305",
-      "timestamp": "2026-10-31T23:04:50.406676+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/protest-then-go-shopping-rahul-gandhi-urges-india-bloc-rally-participants-to-support-delhi-traders-ws-lrt-10407123.html?comscorekw=jionews",
       "title": "'Protest, Then Go Shopping': Rahul Gandhi Urges INDIA Bloc Rally Participants To Support Delhi Traders",
       "headline": "Rahul Gandhi Tells INDIA Bloc: Protest Then Go Shopping",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18092215619686281",
       "timestamp": "2026-11-23T17:35:46.212025+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/no-national-security-risk-trump-backs-jensen-huang-s-return-as-nvidia-ceo-after-board-reinstates-him-2026-11-23-141694",
+      "title": "Trump Declares No Security Risk as Jensen Huang Returns to Lead Nvidia.",
+      "headline": "Trump Declares No Security Risk as Jensen Huang Returns to Lead Nvidia",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18102786962644590",
+      "timestamp": "2026-11-23T18:01:45.668414+00:00"
     }
   ],
   "processed": [
@@ -4720,17 +4720,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Trump Declares No Security Risk as Jensen Huang Returns to Lead Nvidia.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/no-national-security-risk-trump-backs-jensen-huang-s-return-as-nvidia-ceo-after-board-reinstates-him-2026-11-23-141694",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A political reaction to a business leader's return to a corporate role."
-      },
-      "classified_at": "2026-11-23T15:19:52.096664+00:00"
-    },
     {
       "title": "Tukaram Mundhe As Chief Minister Of Maharashtra? Here's What FDA Chief Said",
       "domain": "news18.com",
