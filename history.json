@@ -4503,33 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-3-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10434749.html?comscorekw=jionews",
-      "title": "All Eyes on KL Rahul as India Aims for Big Score on Day 3 Test",
-      "domain": "news18.com",
-      "timestamp": "2026-11-20T23:44:47.382241+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.republicworld.com/global-news/wanted-in-india-suing-from-america-terrorist-pannun-targets-nsa-doval-and-ex-raw-chief-india-says-baseless-lawsuit-rejected-2026-11-20-141485",
-      "title": "India Rejects Terrorist Pannun's Baseless Lawsuit Against NSA Doval, Ex-RAW Chief",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-21T00:52:49.526804+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "headline failed English validation."
-    },
-    {
-      "url": "https://www.republicworld.com/india/no-respite-for-delhi-air-quality-remains-poor-with-aqi-at-279-2026-11-21-141502",
-      "title": "No Respite for Delhi: Air Quality Remains 'Poor' with AQI at 279",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-21T03:18:24.184314+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/world-news/magnitude-67-earthquake-shakes-perus-andes-with-no-damage-or-casualties-immediately-reported-2026-11-21-141513",
       "title": "Magnitude 6.7 Earthquake Rattles Central Peru's Andes; Tremors Felt in Lima",
       "domain": "republicworld.com",
@@ -4699,9 +4672,30 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/police-stop-ys-sharmila-near-bengaluru-airport-deny-entry-to-yelahanka-family-palace-2026-11-23-141638",
+      "title": "Police Block YS Sharmila From Palace Entry; Videos Go Viral",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-23T03:29:32.500851+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Delhi Chokes on 'Poor' Air as AQI Hits 249; Punjabi Bagh Records 282",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-chokes-on-poor-air-as-aqi-hits-249-punjabi-bagh-records-282-2026-11-23-141639",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "Air quality issues are a significant public health concern, but this specific report describes a regional environmental condition rather than a major global disaster."
+      },
+      "classified_at": "2026-11-23T03:26:45.277393+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
