@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/not-just-impeached-youll-be-jailed-neha-bora-warns-cec-gyanesh-kumar-at-india-bloc-event-ws-lrt-10407107.html?comscorekw=jionews",
-      "title": "'Not Just Impeached, You'll Be Jailed': Neha Bora Warns CEC Gyanesh Kumar At INDIA Bloc Event",
-      "headline": "Opposition MP Warns CEC of Jail Time Over Alleged Bias",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17910013236581172",
-      "timestamp": "2026-10-31T19:16:10.335608+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/bengaluru-news/kannada-rajyotsava-2026-namma-karnataka-heritage-pride-future-ws-lnr-10406685.html?comscorekw=jionews",
       "title": "Kannada Rajyotsava 2026: History, Significance And Why Karnataka Celebrates November 1",
       "headline": "Kannada Rajyotsava 2026: History, Significance And Why Karnataka Celebrates November 1",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17876493804601850",
       "timestamp": "2026-11-23T15:20:32.110059+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/nvidias-jensen-huang-the-indispensable-godfather-of-ai-ws-l-10437905.html?comscorekw=jionews",
+      "title": "Nvidia's Jensen Huang: The Indispensable Godfather Of AI",
+      "headline": "Nvidia CEO Jensen Huang Forced Out Amid Scandal",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18000253992020087",
+      "timestamp": "2026-11-23T15:46:22.113855+00:00"
     }
   ],
   "processed": [
@@ -4741,17 +4741,6 @@
         "reason": "A regional travel guide highlighting specific beaches for public interest."
       },
       "classified_at": "2026-11-23T15:19:52.096653+00:00"
-    },
-    {
-      "title": "Nvidia's Jensen Huang: The Indispensable Godfather Of AI",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/nvidias-jensen-huang-the-indispensable-godfather-of-ai-ws-l-10437905.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "A profile of Jensen Huang, the CEO of Nvidia, a central figure in the global AI and semiconductor industry."
-      },
-      "classified_at": "2026-11-23T15:19:52.096656+00:00"
     },
     {
       "title": "Visiting Sabarimala? Dumping Clothes Or Waste In Pamba River Could Cost You Rs 5,000",
