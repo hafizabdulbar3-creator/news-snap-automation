@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/manipur-large-number-of-people-join-cocomi-rally-in-imphal-demand-scrapping-of-soo-agreement-safe-return-of-idps-2026-10-31-140137",
-      "title": "Manipur Unites: Huge Rally Demands SoO Scrapping, Safe IDP Return.",
-      "headline": "Manipur Rally Demands Scrapping of SoO Agreement",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18119063210084629",
-      "timestamp": "2026-10-31T14:40:21.471175+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-fire-services-to-get-2345-additional-posts-in-first-major-cadre-restructuring-in-84-years-2026-10-31-140138",
       "title": "Delhi Fire Services to Get 2,345 Additional Posts in First Major Cadre Restructuring in 84 Years",
       "headline": "Delhi Fire Services to Get 2,345 New Posts in Major Cadre Restructuring",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17908126170354673",
       "timestamp": "2026-11-23T10:38:54.876342+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/water-for-sale-what-next-air-how-bisleri-got-indians-to-pay-for-paani-ws-l-10437329.html?comscorekw=jionews",
+      "title": "'Water For Sale? What Next, Air?': How Bisleri Got Indians To Pay For Paani",
+      "headline": "Water For Sale? What Next, Air?: How Bisleri Changed Indian Consumption",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18136677703775586",
+      "timestamp": "2026-11-23T11:10:13.584057+00:00"
     }
   ],
   "processed": [
@@ -4712,17 +4712,6 @@
         "reason": "A domestic economic trend regarding gold imports and political commentary."
       },
       "classified_at": "2026-11-23T10:12:29.418514+00:00"
-    },
-    {
-      "title": "'Water For Sale? What Next, Air?': How Bisleri Got Indians To Pay For Paani",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/water-for-sale-what-next-air-how-bisleri-got-indians-to-pay-for-paani-ws-l-10437329.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A corporate milestone and marketing strategy analysis."
-      },
-      "classified_at": "2026-11-23T10:12:29.418538+00:00"
     },
     {
       "title": "Ayodhya: UP CM Yogi Adityanath Offers Prayers To Ram Lalla At Shri Ram Janmabhoomi Temple",
