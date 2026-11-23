@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/bollywood-director-sanjay-gupta-laid-to-rest-at-pawan-hans-abhishek-bachchan-and-rakesh-roshan-attend-last-rites-2026-10-31-140160",
-      "title": "Bollywood Mourns Director Sanjay Gupta; Stars Attend Funeral",
-      "headline": "Bollywood Mourns Director Sanjay Gupta; Stars Attend Funeral",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18363645652247612",
-      "timestamp": "2026-10-31T21:46:51.603664+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/quad-foreign-ministers-meet-in-atlanta-agree-to-expand-joint-exercises-and-maritime-surveillance-2026-10-31-140161",
       "title": "Quad Foreign Ministers Meet In Atlanta, Agree To Expand Joint Exercises And Maritime Surveillance",
       "headline": "Quad Foreign Ministers Meet In Atlanta, Agree To Expand Joint Exercises",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18101596823394391",
       "timestamp": "2026-11-23T16:11:55.972900+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/visiting-sabarimala-dumping-clothes-or-waste-in-pamba-river-could-cost-you-rs-5000-ws-l-10437800.html?comscorekw=jionews",
+      "title": "Visiting Sabarimala? Dumping Clothes Or Waste In Pamba River Could Cost You Rs 5,000",
+      "headline": "Dumping Waste In Pamba River Could Cost Rs 5,000",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18107044097633655",
+      "timestamp": "2026-11-23T16:43:39.287301+00:00"
     }
   ],
   "processed": [
@@ -4730,17 +4730,6 @@
         "reason": "A minister's statement regarding a national legislative policy (Waqf Law)."
       },
       "classified_at": "2026-11-23T15:19:52.096648+00:00"
-    },
-    {
-      "title": "Visiting Sabarimala? Dumping Clothes Or Waste In Pamba River Could Cost You Rs 5,000",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/visiting-sabarimala-dumping-clothes-or-waste-in-pamba-river-could-cost-you-rs-5000-ws-l-10437800.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Public Policy",
-        "reason": "A local administrative announcement regarding fines for environmental protection."
-      },
-      "classified_at": "2026-11-23T15:19:52.096659+00:00"
     },
     {
       "title": "Kerala Orders Crackdown On Illegal Fairness Creams After Teen Develops Kidney Damage",
