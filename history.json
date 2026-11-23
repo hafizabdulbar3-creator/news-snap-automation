@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/eam-jaishankar-meets-russian-counterpart-lavrov-in-atlanta-to-discuss-ukraine-conflict-and-gulf-situation-2026-10-31-140163",
-      "title": "EAM Jaishankar Meets Russian Counterpart Lavrov In Atlanta To Discuss Ukraine Conflict And Gulf Situation",
-      "headline": "EAM Jaishankar Meets Lavrov In Atlanta To Discuss Ukraine And Gulf Situation",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18090456815267680",
-      "timestamp": "2026-10-31T22:38:54.881352+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/mla-chor-with-vote-for-note-chor-ktr-s-sarcastic-swipe-at-rahul-gandhi-and-revanth-reddy-ahead-of-indi-bloc-rally-in-delhi-2026-10-31-140162",
       "title": "KTR Slams Rahul, Revanth as 'MLA-Chor' & 'Vote-for-Note-Chor'",
       "headline": "KTR Mocks Rahul Gandhi, Revanth Reddy as 'MLA-Chor",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18149797048601031",
       "timestamp": "2026-11-23T17:09:35.188241+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/kerala-orders-crackdown-on-illegal-fairness-creams-after-teen-develops-kidney-damage-ws-l-10437894.html?comscorekw=jionews",
+      "title": "Kerala Orders Crackdown On Illegal Fairness Creams After Teen Develops Kidney Damage",
+      "headline": "Kerala Orders Crackdown On Illegal Fairness Creams After Teenage Kidney Damage",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18092215619686281",
+      "timestamp": "2026-11-23T17:35:46.212025+00:00"
     }
   ],
   "processed": [
@@ -4720,17 +4720,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Kerala Orders Crackdown On Illegal Fairness Creams After Teen Develops Kidney Damage",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/kerala-orders-crackdown-on-illegal-fairness-creams-after-teen-develops-kidney-damage-ws-l-10437894.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Public Health",
-        "reason": "A regional government order regarding consumer safety and health regulations."
-      },
-      "classified_at": "2026-11-23T15:19:52.096662+00:00"
-    },
     {
       "title": "Trump Declares No Security Risk as Jensen Huang Returns to Lead Nvidia.",
       "domain": "republicworld.com",
