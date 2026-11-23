@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/mojtaba-khamenei-orders-effective-unrestricted-geographical-response-if-us-strikes-2026-10-31-140134",
-      "title": "Mojtaba Khamenei Orders 'Effective, Unrestricted Geographical Response' If US Strikes",
-      "headline": "Iran's Supreme Leader Orders Unrestricted Response to US Strikes",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18123457280285499",
-      "timestamp": "2026-10-31T12:56:53.916588+00:00"
-    },
-    {
       "url": "https://www.news18.com/tech/github-says-indian-government-agencies-are-emerging-as-major-drivers-of-ai-adoption-heres-why-ws-l-10406739.html?comscorekw=jionews",
       "title": "GitHub Says Indian Government Agencies Are Emerging As Major Drivers Of AI Adoption: Here's Why",
       "headline": "GitHub Reports Indian Agencies Leading AI Adoption",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18198083038395400",
       "timestamp": "2026-11-23T08:54:47.483943+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/beyond-bisleri-fssai-launches-nationwide-quality-check-on-all-packaged-water-brands-2026-11-23-141661",
+      "title": "Beyond Bisleri: FSSAI Launches Nationwide Quality Check on All Packaged Water Brands",
+      "headline": "FSSAI Launches Nationwide Quality Check on All Packaged Water Brands",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18227130103347508",
+      "timestamp": "2026-11-23T09:20:53.346458+00:00"
     }
   ],
   "processed": [
@@ -4702,17 +4702,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Beyond Bisleri: FSSAI Launches Nationwide Quality Check on All Packaged Water Brands",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/beyond-bisleri-fssai-launches-nationwide-quality-check-on-all-packaged-water-brands-2026-11-23-141661",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Regulatory actions by the FSSAI regarding food safety standards are a standard public interest and business update."
-      },
-      "classified_at": "2026-11-23T07:52:28.382296+00:00"
-    },
     {
       "title": "Neighborhood First Boost! PM Modi Greets Nepal PM Balendra Shah At Rashtrapati Bhavan In Delhi",
       "domain": "republicworld.com",
