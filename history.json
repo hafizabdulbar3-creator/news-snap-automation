@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/sanjay-gupta-death-suniel-shetty-john-abraham-sonu-sood-and-others-mourn-kaante-filmmaker-ws-klt-10406689.html?comscorekw=jionews",
-      "title": "Sanjay Gupta Death: Suniel Shetty, John Abraham, Sonu Sood And Others Mourn Kaante Filmmaker",
-      "headline": "Bollywood Mourns Sanjay Gupta: Shetty, Abraham, Sood Pay Tribute",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18118945031049958",
-      "timestamp": "2026-10-31T12:31:03.367937+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/mojtaba-khamenei-orders-effective-unrestricted-geographical-response-if-us-strikes-2026-10-31-140134",
       "title": "Mojtaba Khamenei Orders 'Effective, Unrestricted Geographical Response' If US Strikes",
       "headline": "Iran's Supreme Leader Orders Unrestricted Response to US Strikes",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120032822087668",
       "timestamp": "2026-11-23T08:23:36.931796+00:00"
+    },
+    {
+      "url": "https://www.news18.com/sports/other-sports/fide-world-chess-championship-2026-d-gukesh-vs-javokhir-sindarov-format-prize-money-schedule-start-time-live-streaming-more-ws-klrt-10436924.html?comscorekw=jionews",
+      "title": "Chess World Title: Youngest Champions Gukesh, Sindarov Clash for $2.5M Prize",
+      "headline": "Gukesh vs Sindarov: Youngest Champions Clash for $2.5M",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18198083038395400",
+      "timestamp": "2026-11-23T08:54:47.483943+00:00"
     }
   ],
   "processed": [
@@ -4723,17 +4723,6 @@
         "reason": "A bilateral meeting between Prime Ministers is a standard diplomatic engagement."
       },
       "classified_at": "2026-11-23T07:52:28.382300+00:00"
-    },
-    {
-      "title": "Chess World Title: Youngest Champions Gukesh, Sindarov Clash for $2.5M Prize",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/sports/other-sports/fide-world-chess-championship-2026-d-gukesh-vs-javokhir-sindarov-format-prize-money-schedule-start-time-live-streaming-more-ws-klrt-10436924.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "This is a sports-specific report on a championship match."
-      },
-      "classified_at": "2026-11-23T07:52:28.382302+00:00"
     }
   ],
   "quota_cooldown": {
