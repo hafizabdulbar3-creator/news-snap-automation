@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/bengaluru-news/kannada-rajyotsava-2026-namma-karnataka-heritage-pride-future-ws-lnr-10406685.html?comscorekw=jionews",
-      "title": "Kannada Rajyotsava 2026: History, Significance And Why Karnataka Celebrates November 1",
-      "headline": "Kannada Rajyotsava 2026: History, Significance And Why Karnataka Celebrates November 1",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18134260510741314",
-      "timestamp": "2026-10-31T19:47:20.397089+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/bollywood-director-sanjay-gupta-laid-to-rest-at-pawan-hans-abhishek-bachchan-and-rakesh-roshan-attend-last-rites-2026-10-31-140160",
       "title": "Bollywood Mourns Director Sanjay Gupta; Stars Attend Funeral",
       "headline": "Bollywood Mourns Director Sanjay Gupta; Stars Attend Funeral",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18000253992020087",
       "timestamp": "2026-11-23T15:46:22.113855+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/jensen-huang-reinstated-as-nvidia-ceo-board-unanimously-backs-return-after-national-security-review-2026-11-23-141693",
+      "title": "Nvidia Board Unanimously Reinstates Jensen Huang as CEO After Security Review",
+      "headline": "Nvidia Board Unanimously Reinstates Jensen Huang as CEO",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18101596823394391",
+      "timestamp": "2026-11-23T16:11:55.972900+00:00"
     }
   ],
   "processed": [
@@ -4774,17 +4774,6 @@
         "reason": "A political reaction to a business leader's return to a corporate role."
       },
       "classified_at": "2026-11-23T15:19:52.096664+00:00"
-    },
-    {
-      "title": "Nvidia Board Unanimously Reinstates Jensen Huang as CEO After Security Review",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/jensen-huang-reinstated-as-nvidia-ceo-board-unanimously-backs-return-after-national-security-review-2026-11-23-141693",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "A major corporate governance decision reinstating the CEO of Nvidia, a critical player in the global AI supply chain."
-      },
-      "classified_at": "2026-11-23T15:19:52.096667+00:00"
     },
     {
       "title": "Tukaram Mundhe As Chief Minister Of Maharashtra? Here's What FDA Chief Said",
