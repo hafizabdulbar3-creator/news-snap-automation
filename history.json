@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/iranian-envoys-meet-qatari-mediators-as-threat-looms-of-us-strikes-after-midterm-elections-2026-10-31-140153",
-      "title": "Iranian Envoys Meet Qatari Mediators as Threat Looms of US Strikes on Iran After Midterm Elections",
-      "headline": "Iranian Envoys Meet Qatari Mediators Amid US Strike Threats",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18092116364238638",
-      "timestamp": "2026-10-31T16:34:57.643361+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/indi-bloc-rally-over-4000-cops-capf-companies-to-be-deployed-at-delhi-s-ramlila-maidan-2026-10-31-140155",
       "title": "INDI Bloc Rally: Over 4,000 Cops, CAPF Companies To Be Deployed At Delhi's Ramlila Maidan",
       "headline": "4,000 Police & CAPF Deployed For INDI Bloc Rally At Ramlila Maidan",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18005766461797953",
       "timestamp": "2026-11-23T12:43:59.458348+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/well-not-beg-for-our-lives-jaac-leader-umar-nazir-kashmiri-amid-military-siege-in-pok-ws-l-10437643.html?comscorekw=jionews",
+      "title": "'We'll Not Beg For Our Lives': JAAC Leader Umar Nazir Kashmiri Amid Military Siege In PoK",
+      "headline": "JAAC Leader Vows Not To Beg Amid Military Siege In PoK",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17983614105133558",
+      "timestamp": "2026-11-23T13:09:52.196121+00:00"
     }
   ],
   "processed": [
@@ -4720,17 +4720,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'We'll Not Beg For Our Lives': JAAC Leader Umar Nazir Kashmiri Amid Military Siege In PoK",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/well-not-beg-for-our-lives-jaac-leader-umar-nazir-kashmiri-amid-military-siege-in-pok-ws-l-10437643.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Reports on a militant leader's statement during a military siege in a specific region (PoK), which is a regional security matter rather than a global event."
-      },
-      "classified_at": "2026-11-23T12:38:17.809518+00:00"
-    },
     {
       "title": "West Bengal To Paschim Banga: A Renaming Push That Goes Back Nearly 27 Years",
       "domain": "news18.com",
