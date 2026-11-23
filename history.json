@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/diljit-dosanjh-on-im-an-artist-remark-yashs-son-cried-watching-ravana-kill-jatayu-in-ramayana-ws-kl-10406987.html?comscorekw=jionews",
-      "title": "Diljit Dosanjh On 'I'm An Artist' Remark; Yash's Son Cried Watching Ravana Kill Jatayu In Ramayana",
-      "headline": "Diljit Dosanjh Responds to 'I'm an Artist' Remark; Yash's Son Cries Watching Ramayana",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17956834662272230",
-      "timestamp": "2026-10-31T18:50:13.918642+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/not-just-impeached-youll-be-jailed-neha-bora-warns-cec-gyanesh-kumar-at-india-bloc-event-ws-lrt-10407107.html?comscorekw=jionews",
       "title": "'Not Just Impeached, You'll Be Jailed': Neha Bora Warns CEC Gyanesh Kumar At INDIA Bloc Event",
       "headline": "Opposition MP Warns CEC of Jail Time Over Alleged Bias",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17974268118193507",
       "timestamp": "2026-11-23T14:53:58.340491+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/virginia-oregon-sue-musk-s-spacex-over-grok-ai-s-creation-of-child-sexual-abuse-images-and-videos-2026-11-23-141697",
+      "title": "Virginia, Oregon Sue Musk's SpaceX Over Grok AI's Creation of Child Sexual Abuse Images and Videos",
+      "headline": "Virginia, Oregon Sue Musk's SpaceX Over Grok AI's Creation of Child Sexual Abuse Images",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17876493804601850",
+      "timestamp": "2026-11-23T15:20:32.110059+00:00"
     }
   ],
   "processed": [
@@ -4719,7 +4719,96 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Waqf Law Meant to Strengthen Institutions, Not Trouble Muslims: Rijiju in Srinagar",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/waqf-law-meant-to-strengthen-institutions-not-trouble-muslims-rijiju-in-srinagar-2026-11-23-141696",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A minister's statement regarding a national legislative policy (Waqf Law)."
+      },
+      "classified_at": "2026-11-23T15:19:52.096648+00:00"
+    },
+    {
+      "title": "Looking For Cleaner, Quieter Shores In Goa? These 2 Beaches Just Made The Global List",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/travel/looking-for-cleaner-quieter-shores-in-goa-these-2-beaches-just-made-the-global-list-ws-l-10437869.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "A regional travel guide highlighting specific beaches for public interest."
+      },
+      "classified_at": "2026-11-23T15:19:52.096653+00:00"
+    },
+    {
+      "title": "Nvidia's Jensen Huang: The Indispensable Godfather Of AI",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/nvidias-jensen-huang-the-indispensable-godfather-of-ai-ws-l-10437905.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "A profile of Jensen Huang, the CEO of Nvidia, a central figure in the global AI and semiconductor industry."
+      },
+      "classified_at": "2026-11-23T15:19:52.096656+00:00"
+    },
+    {
+      "title": "Visiting Sabarimala? Dumping Clothes Or Waste In Pamba River Could Cost You Rs 5,000",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/visiting-sabarimala-dumping-clothes-or-waste-in-pamba-river-could-cost-you-rs-5000-ws-l-10437800.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Public Policy",
+        "reason": "A local administrative announcement regarding fines for environmental protection."
+      },
+      "classified_at": "2026-11-23T15:19:52.096659+00:00"
+    },
+    {
+      "title": "Kerala Orders Crackdown On Illegal Fairness Creams After Teen Develops Kidney Damage",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/kerala-orders-crackdown-on-illegal-fairness-creams-after-teen-develops-kidney-damage-ws-l-10437894.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Public Health",
+        "reason": "A regional government order regarding consumer safety and health regulations."
+      },
+      "classified_at": "2026-11-23T15:19:52.096662+00:00"
+    },
+    {
+      "title": "Trump Declares No Security Risk as Jensen Huang Returns to Lead Nvidia.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/no-national-security-risk-trump-backs-jensen-huang-s-return-as-nvidia-ceo-after-board-reinstates-him-2026-11-23-141694",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A political reaction to a business leader's return to a corporate role."
+      },
+      "classified_at": "2026-11-23T15:19:52.096664+00:00"
+    },
+    {
+      "title": "Nvidia Board Unanimously Reinstates Jensen Huang as CEO After Security Review",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/jensen-huang-reinstated-as-nvidia-ceo-board-unanimously-backs-return-after-national-security-review-2026-11-23-141693",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "A major corporate governance decision reinstating the CEO of Nvidia, a critical player in the global AI supply chain."
+      },
+      "classified_at": "2026-11-23T15:19:52.096667+00:00"
+    },
+    {
+      "title": "Tukaram Mundhe As Chief Minister Of Maharashtra? Here's What FDA Chief Said",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/tukaram-mundhe-as-maharashtra-cm-heres-what-fda-chief-said-also-his-warning-on-protein-shakes-for-fitness-enthusiasts-ws-klr-10437818.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A local political speculation regarding a Chief Minister appointment."
+      },
+      "classified_at": "2026-11-23T15:19:52.096670+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
