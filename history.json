@@ -4784,11 +4784,11 @@
   "token_metadata": {
     "token_type": "bearer",
     "expires_in": 5184000,
-    "refreshed_at": "2026-11-22T11:54:35.918938+00:00",
-    "expires_at": "2027-01-21T11:54:35.918938+00:00",
+    "refreshed_at": "2026-11-23T13:33:36.871502+00:00",
+    "expires_at": "2027-01-22T13:33:36.871502+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-22T11:54:37.561012+00:00"
+    "updated_at": "2026-11-23T13:33:38.775472+00:00"
   }
 }
