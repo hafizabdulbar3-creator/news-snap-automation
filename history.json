@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/quad-foreign-ministers-meet-in-atlanta-agree-to-expand-joint-exercises-and-maritime-surveillance-2026-10-31-140161",
-      "title": "Quad Foreign Ministers Meet In Atlanta, Agree To Expand Joint Exercises And Maritime Surveillance",
-      "headline": "Quad Foreign Ministers Meet In Atlanta, Agree To Expand Joint Exercises",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18347279431271234",
-      "timestamp": "2026-10-31T22:13:00.569332+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/eam-jaishankar-meets-russian-counterpart-lavrov-in-atlanta-to-discuss-ukraine-conflict-and-gulf-situation-2026-10-31-140163",
       "title": "EAM Jaishankar Meets Russian Counterpart Lavrov In Atlanta To Discuss Ukraine Conflict And Gulf Situation",
       "headline": "EAM Jaishankar Meets Lavrov In Atlanta To Discuss Ukraine And Gulf Situation",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18107044097633655",
       "timestamp": "2026-11-23T16:43:39.287301+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/waqf-law-meant-to-strengthen-institutions-not-trouble-muslims-rijiju-in-srinagar-2026-11-23-141696",
+      "title": "Waqf Law Meant to Strengthen Institutions, Not Trouble Muslims: Rijiju in Srinagar",
+      "headline": "Waqf Law Meant to Strengthen Institutions, Not Trouble Muslims: Rijiju",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18149797048601031",
+      "timestamp": "2026-11-23T17:09:35.188241+00:00"
     }
   ],
   "processed": [
@@ -4720,17 +4720,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Waqf Law Meant to Strengthen Institutions, Not Trouble Muslims: Rijiju in Srinagar",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/waqf-law-meant-to-strengthen-institutions-not-trouble-muslims-rijiju-in-srinagar-2026-11-23-141696",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A minister's statement regarding a national legislative policy (Waqf Law)."
-      },
-      "classified_at": "2026-11-23T15:19:52.096648+00:00"
-    },
     {
       "title": "Kerala Orders Crackdown On Illegal Fairness Creams After Teen Develops Kidney Damage",
       "domain": "news18.com",
