@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-fire-services-to-get-2345-additional-posts-in-first-major-cadre-restructuring-in-84-years-2026-10-31-140138",
-      "title": "Delhi Fire Services to Get 2,345 Additional Posts in First Major Cadre Restructuring in 84 Years",
-      "headline": "Delhi Fire Services to Get 2,345 New Posts in Major Cadre Restructuring",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18106416098346717",
-      "timestamp": "2026-10-31T15:06:34.514236+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/we-plan-to-expand-our-organisation-in-uttar-pradesh-nishant-kumar-on-jdu-s-plan-ahead-of-2027-assembly-elections-2026-10-31-140136",
       "title": "'We Plan To Expand Our Organisation in UP': Nishant Kumar On JDU's Plan Ahead of 2027 Assembly Polls",
       "headline": "JDU Plans Organizational Expansion in Uttar Pradesh Ahead of 2027 Polls",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18136677703775586",
       "timestamp": "2026-11-23T11:10:13.584057+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/ayodhya-up-cm-yogi-adityanath-offers-prayers-to-ram-lalla-at-shri-ram-janmabhoomi-temple-2026-11-23-141671",
+      "title": "Ayodhya: UP CM Yogi Adityanath Offers Prayers To Ram Lalla At Shri Ram Janmabhoomi Temple",
+      "headline": "UP CM Yogi Adityanath Offers Prayers To Ram Lalla At Ayodhya Temple",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18377514853212278",
+      "timestamp": "2026-11-23T11:37:20.368505+00:00"
     }
   ],
   "processed": [
@@ -4712,17 +4712,6 @@
         "reason": "A domestic economic trend regarding gold imports and political commentary."
       },
       "classified_at": "2026-11-23T10:12:29.418514+00:00"
-    },
-    {
-      "title": "Ayodhya: UP CM Yogi Adityanath Offers Prayers To Ram Lalla At Shri Ram Janmabhoomi Temple",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/ayodhya-up-cm-yogi-adityanath-offers-prayers-to-ram-lalla-at-shri-ram-janmabhoomi-temple-2026-11-23-141671",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A routine political event involving a state leader offering prayers at a religious site."
-      },
-      "classified_at": "2026-11-23T10:12:29.418541+00:00"
     },
     {
       "title": "India Has Run Out Of Excuses But Diabetes Is No Longer A Disease We Can Outrun",
