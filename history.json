@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/viral/black-hawk-helicopters-rain-bullets-explosions-rock-ground-in-dramatic-capture-of-fbi-s-most-wanted-drug-lord-2026-11-21-141552",
-      "title": "Black Hawk Raid: FBI's Most-Wanted Drug Lord Captured Amidst Chaos",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-21T13:37:03.304525+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-4-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10435767.html?comscorekw=jionews",
       "title": "India Vs New Zealand Live Score, 1st Test Day 4: IND Aim To Take Big 1st Innings Lead",
       "domain": "news18.com",
@@ -4717,6 +4708,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/travel/looking-for-cleaner-quieter-shores-in-goa-these-2-beaches-just-made-the-global-list-ws-l-10437869.html?comscorekw=jionews",
+      "title": "Looking For Cleaner, Quieter Shores In Goa? These 2 Beaches Just Made The Global List",
+      "domain": "news18.com",
+      "timestamp": "2026-11-23T16:37:44.133427+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [
@@ -4730,17 +4730,6 @@
         "reason": "A minister's statement regarding a national legislative policy (Waqf Law)."
       },
       "classified_at": "2026-11-23T15:19:52.096648+00:00"
-    },
-    {
-      "title": "Looking For Cleaner, Quieter Shores In Goa? These 2 Beaches Just Made The Global List",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/lifestyle/travel/looking-for-cleaner-quieter-shores-in-goa-these-2-beaches-just-made-the-global-list-ws-l-10437869.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Lifestyle",
-        "reason": "A regional travel guide highlighting specific beaches for public interest."
-      },
-      "classified_at": "2026-11-23T15:19:52.096653+00:00"
     },
     {
       "title": "Visiting Sabarimala? Dumping Clothes Or Waste In Pamba River Could Cost You Rs 5,000",
