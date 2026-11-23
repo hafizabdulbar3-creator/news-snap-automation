@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/poland-president-accuses-tusk-government-of-forcible-takeover-of-constitutional-tribunal-2026-10-31-140111",
-      "title": "Poland President Accuses Tusk Government Of 'Forcible Takeover' Of Constitutional Tribunal",
-      "headline": "Poland President Accuses Tusk Government Of 'Forcible Takeover' Of Constitutional Tribunal",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18643787935031621",
-      "timestamp": "2026-10-31T07:45:17.469453+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/yogi-govt-reaches-22-62-lakh-more-paddy-farmers-than-sp-govt-in-uttar-pradesh-ws-kl-10406233.html?comscorekw=jionews",
       "title": "Yogi Govt Reaches 22.62 Lakh More Paddy Farmers Than SP Govt In Uttar Pradesh",
       "headline": "Yogi Govt Procures Paddy For 22.62 Lakh More Farmers Than SP Govt",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18013747242004863",
       "timestamp": "2026-11-23T03:32:10.933636+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/sheikh-hasinas-hanging-why-tarique-rahmans-monday-meeting-with-ncp-could-turn-awkward-ws-l-10436705.html?comscorekw=jionews",
+      "title": "Sheikh Hasina's 'Hanging': Why Tarique Rahman's Monday Meeting With NCP Could Turn Awkward",
+      "headline": "Awkward Monday Meeting: Tarique Rahman Meets NCP Amidst Hasina Speculation",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18365225242217727",
+      "timestamp": "2026-11-23T04:03:23.799696+00:00"
     }
   ],
   "processed": [
@@ -4683,7 +4683,30 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Kim Jong Un Ghosts Trump? US President's Calls Go Unanswered, Letter Reportedly Returned Unopened",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/kim-jong-un-ghosts-trump-us-president-s-calls-go-unanswered-letter-reportedly-returned-unopened-2026-11-23-141641",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Involves high-level diplomatic relations between the US and North Korea, a major geopolitical actor."
+      },
+      "classified_at": "2026-11-23T04:02:37.954593+00:00"
+    },
+    {
+      "title": "Trump Claims Somali Community Has 'Completely Taken Over' Minnesota",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-claims-somali-community-has-completely-taken-over-minnesota-2026-11-23-141640",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Reports on a political statement regarding demographics and immigration policy, which is a standard topic of public interest."
+      },
+      "classified_at": "2026-11-23T04:02:37.954614+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
