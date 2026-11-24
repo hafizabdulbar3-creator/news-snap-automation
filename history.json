@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-dangal-indi-bloc-s-chalo-delhi-rally-to-clash-with-bjp-s-1984-anti-sikh-riots-protest-2026-11-01-140187",
-      "title": "Delhi Dangal: INDI Bloc's 'Chalo Delhi' Rally to Clash with BJP's 1984 Anti-Sikh Riots Protest",
-      "headline": "INDIA Bloc's 'Chalo Delhi' Rally to Clash with BJP's 1984 Protest",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18453991297120923",
-      "timestamp": "2026-11-01T08:50:50.733457+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-hit-by-dual-gridlock-as-strict-non-bs6-entry-restrictions-clash-with-high-security-rallies-2026-11-01-140184",
       "title": "Delhi Hit by Dual Gridlock as Strict Non-BS6 Entry Restrictions Clash with High-Security Rallies",
       "headline": "Delhi Gridlock: Non-BS6 Bans Clash with High-Security Rallies",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18642821821002361",
       "timestamp": "2026-11-24T08:57:59.919978+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/viral-video-indian-entrepreneur-celebrates-her-roots-cycles-and-runs-in-saree-in-dubai-ws-l-10438695.html?comscorekw=jionews",
+      "title": "Viral Video: Indian Entrepreneur Celebrates Her Roots, Cycles And Runs In Saree In Dubai",
+      "headline": "Indian Entrepreneur Celebrates Heritage By Cycling And Running In Saree In Dubai",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17935082088162335",
+      "timestamp": "2026-11-24T09:23:48.978453+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Viral Video: Indian Entrepreneur Celebrates Her Roots, Cycles And Runs In Saree In Dubai",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/viral-video-indian-entrepreneur-celebrates-her-roots-cycles-and-runs-in-saree-in-dubai-ws-l-10438695.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Lifestyle",
-        "reason": "A viral video of an entrepreneur celebrating culture is a human interest story rather than a major news event."
-      },
-      "classified_at": "2026-11-24T08:57:15.287969+00:00"
-    },
     {
       "title": "Why Is Tamil Nadu Fighting A Court Order To Remove Periyar's Statue From A Hindu Temple?",
       "domain": "news18.com",
