@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/days-before-us-midterms-trump-admin-targeted-voters-in-5-states-put-all-50-on-notice-ws-lr-10407479.html?comscorekw=jionews",
-      "title": "Days Before US Midterms, Trump Admin Targeted Voters In 5 States, Put All 50 On Notice",
-      "headline": "Trump Admin Targets Voters in 5 States, Warns All 50",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17908895778604602",
-      "timestamp": "2026-11-01T10:08:50.449259+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/iran-designates-uk-s-royal-navy-royal-air-force-as-terrorist-organisations-classifies-mi6-as-hostile-group-2026-11-01-140195",
       "title": "Iran Labels UK Royal Navy, Air Force 'Terrorist Organizations,' MI6 'Hostile Group'",
       "headline": "Iran Labels UK Royal Navy, RAF 'Terrorist Organizations,' MI6 'Hostile Group",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17968995971980209",
       "timestamp": "2026-11-24T10:57:47.739100+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bjp-gives-sad-big-brother-role-in-punjab-amit-shah-hints-at-cm-s-post-but-who-gets-how-many-seats-in-2027-2026-11-24-141755",
+      "title": "BJP-SAD Alliance: Amit Shah Hints at CM Post for Akali Dal in Punjab 2027",
+      "headline": "Amit Shah Hints at CM Post for SAD in Punjab 2027",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18210695248329112",
+      "timestamp": "2026-11-24T11:24:06.590833+00:00"
     }
   ],
   "processed": [
@@ -4711,17 +4711,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "BJP-SAD Alliance: Amit Shah Hints at CM Post for Akali Dal in Punjab 2027",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bjp-gives-sad-big-brother-role-in-punjab-amit-shah-hints-at-cm-s-post-but-who-gets-how-many-seats-in-2027-2026-11-24-141755",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Confirmation of a high-level political alliance between the BJP and SAD, with a specific focus on the Chief Ministerial candidate for the 2027 Punjab elections."
-      },
-      "classified_at": "2026-11-24T10:57:26.518770+00:00"
-    },
     {
       "title": "Hyderabad's 'Gold Man' Under IT Scanner Amid YouTube Videos: Properties Attached Over Benami Dealings",
       "domain": "news18.com",
