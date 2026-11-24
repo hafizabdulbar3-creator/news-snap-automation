@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/quad-unveils-85-million-trusted-ai-initiative-us-vows-10-million-for-india-minerals-recycling-2026-11-01-140178",
-      "title": "Quad Unveils $85 Million Trusted AI Initiative, US Vows $10 Million for India Minerals Recycling",
-      "headline": "Quad Unveils $85 Million Trusted AI Initiative, US Vows $10 Million for India Minerals",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17917100379537069",
-      "timestamp": "2026-11-01T06:41:17.942619+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/6-indian-tourists-go-missing-during-trek-to-deepest-lake-of-nepal-shey-phoksundo-2026-11-01-140179",
       "title": "6 Indian Tourists Go Missing During Trek to Deepest Lake of Nepal, Shey-Phoksundo",
       "headline": "6 Indian Tourists Missing During Trek to Nepal's Deepest Lake",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18653684104005479",
       "timestamp": "2026-11-24T06:16:00.645995+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/akali-dal-bjp-alliance-on-cards-amit-shah-sukhbir-badal-call-for-news-conference-2026-11-24-141737",
+      "title": "Akali Dal-BJP Alliance on Cards, Amit Shah-Sukhbir Badal Call for News Conference",
+      "headline": "Akali Dal-BJP Alliance on Cards, Amit Shah-Sukhbir Badal Call for News Conference",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17937679791142706",
+      "timestamp": "2026-11-24T06:53:08.281456+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Akali Dal-BJP Alliance on Cards, Amit Shah-Sukhbir Badal Call for News Conference",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/akali-dal-bjp-alliance-on-cards-amit-shah-sukhbir-badal-call-for-news-conference-2026-11-24-141737",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This is a regional political development involving a coalition announcement and a press conference, which is a standard political news item."
-      },
-      "classified_at": "2026-11-24T06:46:57.868979+00:00"
-    },
     {
       "title": "Delhi Startup Founder Says He Prefers Not To Hire People Living Over 40 Minutes Away, Here's Why",
       "domain": "news18.com",
