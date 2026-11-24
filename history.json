@@ -4710,7 +4710,41 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Republic Summit Kolkata 2026: Ajay Bagga & Ratun Lahiri On Why India Is The World's Case Study",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/republic-summit-kolkata-2026-ajay-bagga-ratun-lahiri-on-why-india-is-the-world-s-case-study-2026-11-24-141759",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business & Economy",
+        "reason": "A commentary on economic policy and international relations, relevant to business and political analysis but not a major geopolitical event."
+      },
+      "classified_at": "2026-11-24T12:15:44.220503+00:00"
+    },
+    {
+      "title": "'Deepathoon' Row: Tamil Nadu BJP Chief Nainar Nagenthran Detained by Police in Tirunelveli",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/deepathoon-row-tamil-nadu-bjp-chief-nainar-nagenthran-detained-by-police-in-tirunelveli-2026-11-24-141760",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A local political incident involving a party leader and police action, which is a standard regional news story."
+      },
+      "classified_at": "2026-11-24T12:15:44.220656+00:00"
+    },
+    {
+      "title": "Jama Masjid Knife Attack: No Terror Link Yet, IB to Interrogate Accused",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/no-terror-angle-established-yet-delhi-police-on-jama-masjid-s-knife-attack-accused-to-face-joint-interrogation-by-ib-2026-11-24-141761",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime & Safety",
+        "reason": "A security incident at a religious site; while concerning, it is currently classified as a local crime investigation rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-24T12:15:44.220660+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
