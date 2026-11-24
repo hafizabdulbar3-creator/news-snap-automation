@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/cricket/india-create-history-become-first-team-to-smash-400-sixes-in-t20-internationals-in-a-calendar-year-2026-11-01-140196",
-      "title": "India Create History, Become First Team to Smash 400 Sixes in T20 Internationals in a Calendar Year",
-      "headline": "India Script History, First Team to Smash 400 Sixes in T20Is in a Calendar",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18143190223615061",
-      "timestamp": "2026-11-01T11:57:35.992753+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/search-operation-intensifies-for-8-missing-trekkers-in-uttarkashi-2026-11-01-140193",
       "title": "Search Operation Intensifies For 8 Missing Trekkers in Uttarkashi",
       "headline": "Search Operation Intensifies For 8 Missing Trekkers in Uttarkashi",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18112666924934788",
       "timestamp": "2026-11-24T12:52:31.990686+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/no-terror-angle-established-yet-delhi-police-on-jama-masjid-s-knife-attack-accused-to-face-joint-interrogation-by-ib-2026-11-24-141761",
+      "title": "Jama Masjid Knife Attack: No Terror Link Yet, IB to Interrogate Accused",
+      "headline": "No Terror Link Yet: Jama Masjid Knife Attack Accused to Face IB Interrogation",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18146845441625901",
+      "timestamp": "2026-11-24T13:54:51.673056+00:00"
     }
   ],
   "processed": [
@@ -4710,19 +4710,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Jama Masjid Knife Attack: No Terror Link Yet, IB to Interrogate Accused",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/no-terror-angle-established-yet-delhi-police-on-jama-masjid-s-knife-attack-accused-to-face-joint-interrogation-by-ib-2026-11-24-141761",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime & Safety",
-        "reason": "A security incident at a religious site; while concerning, it is currently classified as a local crime investigation rather than a major geopolitical event."
-      },
-      "classified_at": "2026-11-24T12:15:44.220660+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
