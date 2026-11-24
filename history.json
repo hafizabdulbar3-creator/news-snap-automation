@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/ujjain-shocker-four-hotel-workers-die-after-inhaling-toxic-gas-2026-11-01-140169",
-      "title": "Ujjain Shocker: Four Hotel Workers Die After Inhaling Toxic Gas",
-      "headline": "Four Hotel Workers Die After Inhaling Toxic Gas in Ujjain",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17909309721568870",
-      "timestamp": "2026-11-01T02:17:13.980789+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/hold-energy-prices-hostage-jaishankar-criticises-sanctions-chokepoints-disrupting-oil-supplies-ws-kl-10407149.html?comscorekw=jionews",
       "title": "'Hold Energy Prices Hostage': Jaishankar Criticises Sanctions, Chokepoints Disrupting Oil Supplies",
       "headline": "Jaishankar Criticises Sanctions, Chokepoints Disrupting Oil Supplies",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18123688217071468",
       "timestamp": "2026-11-24T01:09:00.701051+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/lmil-unlocks-commercial-launch-of-radiation-free-breast-cancer-screening-device-with-official-manufacturing-license-2026-11-24-141707",
+      "title": "LMIL Launches Radiation-Free Breast Cancer Screening Device with License",
+      "headline": "LMIL Launches Radiation-Free Breast Cancer Screening Device with License",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18098598830161998",
+      "timestamp": "2026-11-24T01:45:22.695534+00:00"
     }
   ],
   "processed": [
@@ -4710,19 +4710,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "LMIL Launches Radiation-Free Breast Cancer Screening Device with License",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/lmil-unlocks-commercial-launch-of-radiation-free-breast-cancer-screening-device-with-official-manufacturing-license-2026-11-24-141707",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Health",
-        "reason": "A regional corporate milestone regarding a medical device launch, which is of public interest but lacks broad geopolitical consequence."
-      },
-      "classified_at": "2026-11-24T01:03:14.552302+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
