@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/will-proceed-in-accordance-with-law-tukaram-mundhe-on-vimal-elaichi-ad-controversy-2026-11-01-140209",
-      "title": "'Will Proceed in Accordance With Law': Tukaram Mundhe on Vimal Elaichi Ad Controversy",
-      "headline": "FDA Commissioner Tukaram Mundhe on Vimal Elaichi Ad Controversy",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18199889113386961",
-      "timestamp": "2026-11-01T14:43:34.091696+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/100-students-detained-on-delhis-minto-road-while-marching-towards-connaught-place-during-anti-sir-protest-ws-l-10407809.html?comscorekw=jionews",
       "title": "100 Students Detained in Delhi During Electoral Roll Protest March",
       "headline": "100 Students Detained in Delhi During Electoral Roll Protest March",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17968239825248398",
       "timestamp": "2026-11-24T16:10:53.144129+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/two-men-arrested-over-suspected-break-in-at-prince-william-kate-s-country-home-report-2026-11-24-141774",
+      "title": "Two Men Arrested Over Suspected Break-in at Prince William, Kate's Country Home: Report",
+      "headline": "Two Men Arrested Over Suspected Break-in at Prince William, Kate's Country Home",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17981045106140541",
+      "timestamp": "2026-11-24T16:42:13.824344+00:00"
     }
   ],
   "processed": [
@@ -4711,17 +4711,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Two Men Arrested Over Suspected Break-in at Prince William, Kate's Country Home: Report",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/two-men-arrested-over-suspected-break-in-at-prince-william-kate-s-country-home-report-2026-11-24-141774",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "Arrests related to a break-in at a residence of high-profile public figures."
-      },
-      "classified_at": "2026-11-24T15:44:25.459816+00:00"
-    },
     {
       "title": "'Two Brothers Have Reunited': Shivraj Singh Chouhan Welcomes BJP-SAD Alliance in Punjab",
       "domain": "republicworld.com",
