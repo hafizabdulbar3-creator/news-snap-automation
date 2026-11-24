@@ -4710,7 +4710,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Pune Horror: Techie Beats Girlfriend To Death, Sits Beside Her Body All Night Before Calling Cops",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/pune-horror-techie-beats-girlfriend-to-death-sits-beside-her-body-all-night-before-calling-cops-2026-11-24-141720",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "While a serious crime, this is a localized incident involving a specific individual and does not constitute a major geopolitical event."
+      },
+      "classified_at": "2026-11-24T03:34:20.692107+00:00"
+    },
+    {
+      "title": "Sonia Gandhi Gets Legal Notice Over Savarkar Depiction In Memoir; Kin Seeks Apology, Correction",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/sonia-gandhi-gets-legal-notice-over-savarkar-depiction-in-memoir-kin-seeks-apology-correction-ws-kl-10438158.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This involves a legal notice and a request for correction regarding a memoir, which is a standard political/legal matter rather than a major event."
+      },
+      "classified_at": "2026-11-24T03:34:20.692140+00:00"
+    },
+    {
+      "title": "US Blacklists Nvidia Chip Customer Megaspeed Amid Jensen Huang Espionage Probe, China Spy Allegations",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/videos/world/us-blacklists-nvidia-chip-customer-megaspeed-amid-jensen-huang-espionage-probe-china-spy-allegations-ws-l-10438132.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "Technology",
+        "reason": "This involves a major US government action against a leading tech company (Nvidia) regarding national security and espionage allegations, which has significant international economic and geopolitical consequences."
+      },
+      "classified_at": "2026-11-24T03:34:20.692143+00:00"
+    },
+    {
+      "title": "'Can't Force Parents To Share Home': Delhi High Court Orders Couple To Vacate 85-Year-Old Father's House",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/cant-force-parents-to-share-home-delhi-high-court-orders-couple-to-vacate-85-year-old-fathers-house-ws-l-10438129.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Law",
+        "reason": "This is a specific judicial ruling regarding a family dispute, which is a local/regional legal matter rather than a major international event."
+      },
+      "classified_at": "2026-11-24T03:34:20.692146+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
