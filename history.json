@@ -4654,20 +4654,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/countries-don-t-outsource-their-history-colonial-narratives-saraswati-maj-gen-gd-bakshi-2026-11-24-141736",
+      "title": "'Countries Don't Outsource Their History' Colonial Narratives & Saraswati: Maj Gen GD Bakshi",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-24T08:46:44.049741+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Countries Don't Outsource Their History' Colonial Narratives & Saraswati: Maj Gen GD Bakshi",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/countries-don-t-outsource-their-history-colonial-narratives-saraswati-maj-gen-gd-bakshi-2026-11-24-141736",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A discussion on historical narratives and colonialism is a matter of public interest and policy debate, but not a major geopolitical event."
-      },
-      "classified_at": "2026-11-24T07:49:20.080292+00:00"
-    },
     {
       "title": "Smoking in Public? Gurugram's New Rule Could Cost You Rs 200; Check Which Places Are Now No-Smoking Zones",
       "domain": "republicworld.com",
