@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/panchkula-school-assault-case-two-jbt-teachers-suspended-child-rights-panel-seeks-report-2026-11-01-140177",
-      "title": "Panchkula School Assault Case: Two JBT Teachers Suspended, Child Rights Panel Seeks Report",
-      "headline": "Panchkula School Assault: Two JBT Teachers Suspended",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17885288682525243",
-      "timestamp": "2026-11-01T05:49:20.538178+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/an-ev-entry-air-chief-marshal-ashutosh-dixit-arrives-in-electric-car-to-take-charge-photos-ws-kl-10407259.html?comscorekw=jionews",
       "title": "An EV Entry: Air Chief Marshal Ashutosh Dixit Arrives In Electric Car To Take Charge | Photos",
       "headline": "Air Chief Marshal Ashutosh Dixit Arrives In Electric Car To Take Charge",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18092125070293733",
       "timestamp": "2026-11-24T05:19:29.841091+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cricket/india-a-vs-uae-live-cricket-score-ind-a-vs-uae-asia-cup-rising-stars-2026-latest-scorecard-doha-match-updates-liveblog-ws-l-10438130.html?comscorekw=jionews",
+      "title": "India A Vs UAE Live Score, Asia Cup Rising Stars: Can Vaibhav Sooryavanshi Deliver In Must-Win Clash?",
+      "headline": "India A vs UAE Live: Can Vaibhav Sooryavanshi Deliver In Must-Win Clash?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17872069695658752",
+      "timestamp": "2026-11-24T05:50:12.370043+00:00"
     }
   ],
   "processed": [
@@ -4710,7 +4710,30 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Gods, Ganga And Kargil Heroes: What Makes Varanasi's Dev Deepawali Special",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/varanasi/gods-ganga-and-kargil-heroes-what-makes-varanasis-dev-deepawali-special-ws-l-10438231.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Culture",
+        "reason": "This covers a cultural and religious festival in India, which is a notable public interest story of regional significance."
+      },
+      "classified_at": "2026-11-24T05:49:44.169274+00:00"
+    },
+    {
+      "title": "Too Important To Replace, Too Powerful To Question? The Jensen Huang Story",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/too-important-to-replace-too-powerful-to-question-the-jensen-huang-alice-huang-spy-story-ws-l-10438284.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "This discusses a prominent business leader and industry trends, which is a notable public interest story."
+      },
+      "classified_at": "2026-11-24T05:49:44.169277+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
