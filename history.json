@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/trump-says-remaining-iran-nuclear-sites-can-be-hit-in-10-minutes-claims-tehran-wants-to-make-a-deal-2026-11-01-140180",
-      "title": "Trump Says Remaining Iran Nuclear Sites Can Be Hit 'In 10 Minutes,' Claims Tehran Wants to 'Make a Deal'",
-      "headline": "Trump Claims Iran Nuclear Sites Can Be Hit in 10 Minutes",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18131459959875717",
-      "timestamp": "2026-11-01T07:33:16.015214+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cti-claims-25-lakh-shops-may-remain-shut-in-delhi-over-indi-bloc-rally-warns-of-trade-losses-2026-11-01-140181",
       "title": "CTI Claims 2.5 Lakh Shops May Remain Shut in Delhi Over INDI Bloc Rally, Warns of Trade Losses",
       "headline": "CTI Warns 2.5 Lakh Shops May Shut in Delhi Over INDIA Bloc Rally",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18186844429424992",
       "timestamp": "2026-11-24T07:23:43.215812+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/major-general-gd-bakshi-retd-at-republic-summit-kolkata-2026-an-ode-to-netaji-2026-11-24-141743",
+      "title": "Major General Bakshi Honors Netaji's Legacy at Republic Summit 2026",
+      "headline": "Major General Bakshi Honors Netaji at Republic Summit 2026",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18001835420825330",
+      "timestamp": "2026-11-24T07:54:52.838014+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Major General Bakshi Honors Netaji's Legacy at Republic Summit 2026",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/videos/india/major-general-gd-bakshi-retd-at-republic-summit-kolkata-2026-an-ode-to-netaji-2026-11-24-141743",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A ceremonial honor at a summit, though involving a military figure, does not constitute a major geopolitical event or crisis."
-      },
-      "classified_at": "2026-11-24T07:49:20.080272+00:00"
-    },
     {
       "title": "'Countries Don't Outsource Their History' Colonial Narratives & Saraswati: Maj Gen GD Bakshi",
       "domain": "republicworld.com",
