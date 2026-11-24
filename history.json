@@ -4645,9 +4645,41 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
+    },
+    {
+      "url": "https://www.news18.com/explainers/how-nvidia-became-so-big-and-critical-to-the-us-economy-that-trump-stepped-in-to-bring-jensen-huang-back-shil-ws-l-10438213.html?comscorekw=jionews",
+      "title": "How Nvidia Became So Big And Critical To The US Economy That Trump Stepped In To Bring Jensen Huang Back",
+      "domain": "news18.com",
+      "timestamp": "2026-11-24T06:49:49.076918+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Akali Dal-BJP Alliance on Cards, Amit Shah-Sukhbir Badal Call for News Conference",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/akali-dal-bjp-alliance-on-cards-amit-shah-sukhbir-badal-call-for-news-conference-2026-11-24-141737",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "This is a regional political development involving a coalition announcement and a press conference, which is a standard political news item."
+      },
+      "classified_at": "2026-11-24T06:46:57.868979+00:00"
+    },
+    {
+      "title": "Delhi Startup Founder Says He Prefers Not To Hire People Living Over 40 Minutes Away, Here's Why",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/delhi-startup-founder-says-he-prefers-not-to-hire-people-living-over-40-minutes-away-heres-why-ws-l-10438448.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "This is a regional business trend regarding hiring practices and labor economics, which is a standard economic news item."
+      },
+      "classified_at": "2026-11-24T06:46:57.868982+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
