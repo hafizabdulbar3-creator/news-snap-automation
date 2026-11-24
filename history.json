@@ -4503,51 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/epg-report-hydropower-border-issues-on-nepal-s-agenda-for-balen-shah-s-india-visit-2026-11-22-141608",
-      "title": "EPG Report, Hydropower, Border Issues on Nepal's Agenda for Balen Shah's India Visit",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-22T14:05:33.501864+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/new-historic-initiative-pm-modi-nepal-pm-balendra-shah-to-flag-off-ayodhya-janakpur-train-on-nov-23-2026-11-22-141609",
-      "title": "'New, Historic Initiative': PM Modi, Nepal PM Balendra Shah to Flag Off Ayodhya-Janakpur Train on Nov 23",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-22T14:10:49.038919+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/viral/blinkit-delivery-partner-earns-rs-39000-in-first-month-reveals-what-makes-chandigarh-deliveries-easier-ws-l-10436348.html?comscorekw=jionews",
-      "title": "Blinkit Delivery Partner Earns Rs 39,000 In First Month, Reveals What Makes Chandigarh Deliveries Easier",
-      "domain": "news18.com",
-      "timestamp": "2026-11-22T16:00:15.417123+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/india/air-raid-and-blackout-mock-drills-conducted-across-up-to-assess-emergency-preparedness-2026-11-22-141616",
-      "title": "Air Raid and Blackout Mock Drills Conducted across UP to Assess Emergency Preparedness",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-22T16:31:24.784298+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.republicworld.com/india/nine-from-maharashtra-s-dhule-killed-as-cruiser-rams-into-truck-in-rajasthan-2026-11-22-141614",
-      "title": "Nine from Maharashtra's Dhule Killed as Cruiser Rams into Truck in Rajasthan",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-22T16:36:31.989595+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/sports/i-know-it-s-been-a-tough-year-nadal-hails-alcaraz-after-maiden-atp-triumph-with-heartfelt-message-2026-11-22-141624",
       "title": "'I Know It's Been A Tough Year': Nadal Hails Alcaraz After Maiden ATP Triumph With Heartfelt Message",
       "domain": "republicworld.com",
@@ -4708,21 +4663,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    }
-  ],
-  "classified_pool": [
+    },
     {
+      "url": "https://www.republicworld.com/india/sp-drops-2027-polls-bombshell-all-5-sitting-mlas-kept-in-first-list-of-candidates-but-what-about-congress-2026-11-24-141784",
       "title": "SP Shakes Up 2027 Polls: All Sitting MLAs Retained, Congress Future Uncertain?",
       "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/sp-drops-2027-polls-bombshell-all-5-sitting-mlas-kept-in-first-list-of-candidates-but-what-about-congress-2026-11-24-141784",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional political update regarding state assembly retention and future party prospects."
-      },
-      "classified_at": "2026-11-24T18:05:06.162479+00:00"
+      "timestamp": "2026-11-24T18:10:54.110982+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('SP Shakes Up 2027 Polls: All Sitting MLAs Retained, Congress Future Uncertain?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
