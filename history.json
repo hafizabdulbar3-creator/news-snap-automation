@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-hit-by-dual-gridlock-as-strict-non-bs6-entry-restrictions-clash-with-high-security-rallies-2026-11-01-140184",
-      "title": "Delhi Hit by Dual Gridlock as Strict Non-BS6 Entry Restrictions Clash with High-Security Rallies",
-      "headline": "Delhi Gridlock: Non-BS6 Bans Clash with High-Security Rallies",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18138953740648035",
-      "timestamp": "2026-11-01T09:16:50.791520+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/ed-brings-sp-leader-azam-khan-to-ghaziabad-for-production-before-pmla-court-2026-11-01-140183",
       "title": "ED Brings SP Leader Azam Khan to Ghaziabad for Production Before PMLA Court",
       "headline": "ED Brings SP Leader Azam Khan to Ghaziabad for PMLA Court Appearance",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17935082088162335",
       "timestamp": "2026-11-24T09:23:48.978453+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/anupam-kher-shares-harrowing-flight-experience-says-plane-had-to-divert-from-mumbai-to-surat-i-am-a-nervous-flyer-ws-l-10438643.html?comscorekw=jionews",
+      "title": "Anupam Kher's Flight Ordeal: Mumbai Landing Aborted, Diverted to Surat",
+      "headline": "Anupam Kher's Flight Diverted to Surat After Abortive Mumbai Landing",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17937563061146309",
+      "timestamp": "2026-11-24T10:32:08.616220+00:00"
     }
   ],
   "processed": [
@@ -4710,19 +4710,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Anupam Kher's Flight Ordeal: Mumbai Landing Aborted, Diverted to Surat",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/anupam-kher-shares-harrowing-flight-experience-says-plane-had-to-divert-from-mumbai-to-surat-i-am-a-nervous-flyer-ws-l-10438643.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Travel",
-        "reason": "A flight diversion is an inconvenience and a notable public event, but lacks broad international consequence."
-      },
-      "classified_at": "2026-11-24T08:57:15.287979+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
