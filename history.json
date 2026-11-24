@@ -4690,20 +4690,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.news18.com/viral/candidate-rejects-job-offer-twice-over-pay-cut-and-unclear-conditions-definitely-dodged-a-bullet-ws-l-10438525.html?comscorekw=jionews",
+      "title": "Candidate Rejects Job Offer Twice Over Pay Cut And Unclear Conditions: 'Definitely Dodged A Bullet'",
+      "domain": "news18.com",
+      "timestamp": "2026-11-24T10:04:01.686567+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Candidate Rejects Job Offer Twice Over Pay Cut And Unclear Conditions: 'Definitely Dodged A Bullet'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/candidate-rejects-job-offer-twice-over-pay-cut-and-unclear-conditions-definitely-dodged-a-bullet-ws-l-10438525.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A personal career decision regarding a job offer is a matter of public interest but not a major news event."
-      },
-      "classified_at": "2026-11-24T08:57:15.287976+00:00"
-    },
     {
       "title": "Two Soldiers Killed In Tank Accident During Army Drill In Hisar: What Happened At Training Centre",
       "domain": "news18.com",
