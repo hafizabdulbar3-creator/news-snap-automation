@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/azam-khan-sent-to-14-day-judicial-custody-in-money-laundering-case-day-after-release-from-jail-2026-11-01-140204",
-      "title": "Azam Khan Sent To 14-Day Judicial Custody In Money Laundering Case Day After Release From Jail",
-      "headline": "Azam Khan Sent To 14-Day Judicial Custody In Money Laundering Case",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17914768998516770",
-      "timestamp": "2026-11-01T13:48:11.181211+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/inspace-space-startups-satellite-propulsion-technology-adoption-fund-maharashtra-mumbai-ws-el-10407770.html?comscorekw=jionews",
       "title": "IN-SPACe Offers Rs 67 Crore To Four More Startups To Develop Indigenous Space Technology",
       "headline": "IN-SPACe Offers Rs 67 Crore To Four More Startups",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18150190072579484",
       "timestamp": "2026-11-24T15:18:45.068830+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/punjab-people-will-never-forget-chitta-beadbi-during-2007-2017-akali-bjp-rule-bhagwant-mann-ws-l-10439293.html?comscorekw=jionews",
+      "title": "'Punjab People Will Never Forget 'Chitta', 'Beadbi' During 2007-2017 Akali-BJP Rule': Bhagwant Mann",
+      "headline": "Punjab People Will Never Forget 'Chitta', 'Beadbi' During 2007-2017 Akali-BJP Rule: Bhagwant Mann",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18605626432069452",
+      "timestamp": "2026-11-24T15:44:56.345046+00:00"
     }
   ],
   "processed": [
@@ -4710,7 +4710,52 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Alliance Solid: SP Offers Congress 26 Seats for 2027 UP Elections.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/alliance-intact-sp-offers-congress-26-seats-for-2027-up-polls-next-round-of-seat-sharing-talks-likely-on-november-27-2026-11-24-141773",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional political alliance offer regarding upcoming state elections."
+      },
+      "classified_at": "2026-11-24T15:44:25.459800+00:00"
+    },
+    {
+      "title": "Two Men Arrested Over Suspected Break-in at Prince William, Kate's Country Home: Report",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/two-men-arrested-over-suspected-break-in-at-prince-william-kate-s-country-home-report-2026-11-24-141774",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "Arrests related to a break-in at a residence of high-profile public figures."
+      },
+      "classified_at": "2026-11-24T15:44:25.459816+00:00"
+    },
+    {
+      "title": "'Two Brothers Have Reunited': Shivraj Singh Chouhan Welcomes BJP-SAD Alliance in Punjab",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/two-brothers-have-reunited-shivraj-singh-chouhan-welcomes-bjp-sad-alliance-in-punjab-2026-11-24-141775",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political alliance announcement in a specific state."
+      },
+      "classified_at": "2026-11-24T15:44:25.459820+00:00"
+    },
+    {
+      "title": "Bisleri Water Quality Row: FSSAI Clarifies, Goa FDA Boosts Checks",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/only-one-batch-flagged-no-stock-in-market-bisleri-welcomes-fssai-clarification-goa-fda-steps-up-water-quality-checks-2026-11-24-141772",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A regulatory clarification and increased inspection regarding a consumer product."
+      },
+      "classified_at": "2026-11-24T15:44:25.459823+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
