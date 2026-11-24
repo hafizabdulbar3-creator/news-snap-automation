@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/iran-says-us-has-completely-shifted-tone-in-jd-vance-s-letter-on-peace-talks-2026-11-01-140171",
-      "title": "Iran Says US Has 'Completely Shifted Tone' in JD Vance's Letter on Peace Talks",
-      "headline": "Iran Claims US Tone Shifted in JD Vance's Peace Letter",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18080105684426413",
-      "timestamp": "2026-11-01T04:05:30.050583+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/up-drug-bust-1102-kg-mephedrone-seized-from-rose-water-unit-in-jalaun-two-arrested-ws-ekl-10407209.html?comscorekw=jionews",
       "title": "UP Drug Bust: 1,102 Kg Mephedrone Seized From Rose Water Unit In Jalaun, Two Arrested",
       "headline": "Massive Mephedrone Bust: 1,102 Kg Seized From Rose Water Unit",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18093928286232942",
       "timestamp": "2026-11-24T03:04:50.587118+00:00"
+    },
+    {
+      "url": "https://www.news18.com/videos/world/us-blacklists-nvidia-chip-customer-megaspeed-amid-jensen-huang-espionage-probe-china-spy-allegations-ws-l-10438132.html?comscorekw=jionews",
+      "title": "US Blacklists Nvidia Chip Customer Megaspeed Amid Jensen Huang Espionage Probe, China Spy Allegations",
+      "headline": "US Blacklists Nvidia Customer Amid Espionage Probe",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17961366426016913",
+      "timestamp": "2026-11-24T03:50:20.843811+00:00"
     }
   ],
   "processed": [
@@ -4732,17 +4732,6 @@
         "reason": "This involves a legal notice and a request for correction regarding a memoir, which is a standard political/legal matter rather than a major event."
       },
       "classified_at": "2026-11-24T03:34:20.692140+00:00"
-    },
-    {
-      "title": "US Blacklists Nvidia Chip Customer Megaspeed Amid Jensen Huang Espionage Probe, China Spy Allegations",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/videos/world/us-blacklists-nvidia-chip-customer-megaspeed-amid-jensen-huang-espionage-probe-china-spy-allegations-ws-l-10438132.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "Technology",
-        "reason": "This involves a major US government action against a leading tech company (Nvidia) regarding national security and espionage allegations, which has significant international economic and geopolitical consequences."
-      },
-      "classified_at": "2026-11-24T03:34:20.692143+00:00"
     },
     {
       "title": "'Can't Force Parents To Share Home': Delhi High Court Orders Couple To Vacate 85-Year-Old Father's House",
