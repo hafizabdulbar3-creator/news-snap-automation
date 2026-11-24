@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/filmmaker-alleges-cheating-in-doordarshan-project-pib-media-assistant-3-others-named-in-fir-2026-10-31-140167",
-      "title": "Filmmaker Alleges Cheating In Doordarshan Project: PIB Media Assistant, 3 Others Named In Chargesheet",
-      "headline": "Filmmaker Alleges Cheating In Doordarshan Project",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18394561744165867",
-      "timestamp": "2026-11-01T01:19:22.822370+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/ujjain-shocker-four-hotel-workers-die-after-inhaling-toxic-gas-2026-11-01-140169",
       "title": "Ujjain Shocker: Four Hotel Workers Die After Inhaling Toxic Gas",
       "headline": "Four Hotel Workers Die After Inhaling Toxic Gas in Ujjain",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18119697509026952",
       "timestamp": "2026-11-24T00:37:46.733516+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/eam-jaishankar-holds-telephonic-talk-with-russian-fm-lavrov-on-recent-developments-2026-11-24-141708",
+      "title": "EAM Jaishankar Holds Telephonic Talk With Russian FM Lavrov On Recent Developments",
+      "headline": "EAM Jaishankar Holds Telephonic Talk With Russian FM Lavrov",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18123688217071468",
+      "timestamp": "2026-11-24T01:09:00.701051+00:00"
     }
   ],
   "processed": [
@@ -4711,17 +4711,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "EAM Jaishankar Holds Telephonic Talk With Russian FM Lavrov On Recent Developments",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/eam-jaishankar-holds-telephonic-talk-with-russian-fm-lavrov-on-recent-developments-2026-11-24-141708",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves a high-level diplomatic exchange between foreign ministers regarding recent geopolitical developments."
-      },
-      "classified_at": "2026-11-24T01:03:14.552298+00:00"
-    },
     {
       "title": "LMIL Launches Radiation-Free Breast Cancer Screening Device with License",
       "domain": "republicworld.com",
