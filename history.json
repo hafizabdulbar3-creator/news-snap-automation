@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/ed-brings-sp-leader-azam-khan-to-ghaziabad-for-production-before-pmla-court-2026-11-01-140183",
-      "title": "ED Brings SP Leader Azam Khan to Ghaziabad for Production Before PMLA Court",
-      "headline": "ED Brings SP Leader Azam Khan to Ghaziabad for PMLA Court Appearance",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18634852384009507",
-      "timestamp": "2026-11-01T09:42:46.118526+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/days-before-us-midterms-trump-admin-targeted-voters-in-5-states-put-all-50-on-notice-ws-lr-10407479.html?comscorekw=jionews",
       "title": "Days Before US Midterms, Trump Admin Targeted Voters In 5 States, Put All 50 On Notice",
       "headline": "Trump Admin Targets Voters in 5 States, Warns All 50",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17937563061146309",
       "timestamp": "2026-11-24T10:32:08.616220+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/welfare-of-punjabis-first-pm-modi-welcomes-sad-s-return-to-nda-says-bjp-akali-dal-alliance-will-be-preferred-choice-in-punjab-2026-11-24-141756",
+      "title": "PM Modi Welcomes SAD Back to NDA, Eyes Punjab's Welfare and 2027 Elections",
+      "headline": "PM Modi Welcomes SAD Back to NDA, Eyes Punjab's Welfare",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17968995971980209",
+      "timestamp": "2026-11-24T10:57:47.739100+00:00"
     }
   ],
   "processed": [
@@ -4710,7 +4710,30 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "BJP-SAD Alliance: Amit Shah Hints at CM Post for Akali Dal in Punjab 2027",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bjp-gives-sad-big-brother-role-in-punjab-amit-shah-hints-at-cm-s-post-but-who-gets-how-many-seats-in-2027-2026-11-24-141755",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Confirmation of a high-level political alliance between the BJP and SAD, with a specific focus on the Chief Ministerial candidate for the 2027 Punjab elections."
+      },
+      "classified_at": "2026-11-24T10:57:26.518770+00:00"
+    },
+    {
+      "title": "Hyderabad's 'Gold Man' Under IT Scanner Amid YouTube Videos: Properties Attached Over Benami Dealings",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/hyderabad-news/hyderabads-gold-man-under-it-scanner-amid-youtube-videos-properties-attached-over-benami-dealings-ws-klr-10438521.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime & Justice",
+        "reason": "A significant financial crime case involving the attachment of properties and an IT investigation into a high-profile individual in Hyderabad."
+      },
+      "classified_at": "2026-11-24T10:57:26.518774+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
