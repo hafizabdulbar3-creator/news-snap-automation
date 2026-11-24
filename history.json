@@ -4656,7 +4656,52 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Major General Bakshi Honors Netaji's Legacy at Republic Summit 2026",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/major-general-gd-bakshi-retd-at-republic-summit-kolkata-2026-an-ode-to-netaji-2026-11-24-141743",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A ceremonial honor at a summit, though involving a military figure, does not constitute a major geopolitical event or crisis."
+      },
+      "classified_at": "2026-11-24T07:49:20.080272+00:00"
+    },
+    {
+      "title": "'Countries Don't Outsource Their History' Colonial Narratives & Saraswati: Maj Gen GD Bakshi",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/videos/india/countries-don-t-outsource-their-history-colonial-narratives-saraswati-maj-gen-gd-bakshi-2026-11-24-141736",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A discussion on historical narratives and colonialism is a matter of public interest and policy debate, but not a major geopolitical event."
+      },
+      "classified_at": "2026-11-24T07:49:20.080292+00:00"
+    },
+    {
+      "title": "Smoking in Public? Gurugram's New Rule Could Cost You Rs 200; Check Which Places Are Now No-Smoking Zones",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/smoking-in-public-gurugram-s-new-rule-could-cost-you-rs-200-check-which-places-are-now-no-smoking-zones-2026-11-24-141738",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Local News",
+        "reason": "This is a regional policy update regarding public health regulations in Gurugram, which is a legitimate local news story."
+      },
+      "classified_at": "2026-11-24T07:49:20.080297+00:00"
+    },
+    {
+      "title": "Karthigai Deepam: Hilltop lamp ignites Supreme Court battle in Tamil Nadu.",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/chennai-news/karthigai-deepam-2026-why-has-lighting-a-lamp-on-a-tamil-nadu-hill-become-a-matter-for-the-supreme-court-ws-l-10438373.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "This involves a legal dispute over a religious festival, which is a matter of public interest and legal consequence, though not a major geopolitical event."
+      },
+      "classified_at": "2026-11-24T07:49:20.080299+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
