@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/hardeep-singh-puri-questions-congress-over-1984-sikh-riots-ahead-of-indi-bloc-s-ramlila-maidan-rally-2026-11-01-140185",
-      "title": "Hardeep Puri Questions Congress on 1984 Sikh Riots Before INDIA Bloc Rally",
-      "headline": "Hardeep Puri Questions Congress Over 1984 Sikh Riots Ahead of INDIA Bloc Rally",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18134182141744949",
-      "timestamp": "2026-11-01T08:25:01.524671+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-dangal-indi-bloc-s-chalo-delhi-rally-to-clash-with-bjp-s-1984-anti-sikh-riots-protest-2026-11-01-140187",
       "title": "Delhi Dangal: INDI Bloc's 'Chalo Delhi' Rally to Clash with BJP's 1984 Anti-Sikh Riots Protest",
       "headline": "INDIA Bloc's 'Chalo Delhi' Rally to Clash with BJP's 1984 Protest",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17994575223080150",
       "timestamp": "2026-11-24T08:20:53.546505+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/videos/india/china-gained-most-trump-went-as-lame-duck-maj-gen-gd-bakshi-decodes-xi-trump-putin-summit-2026-11-24-141745",
+      "title": "'China Gained Most, Trump Went As Lame Duck!': Maj Gen GD Bakshi Decodes Xi-Trump-Putin Summit",
+      "headline": "China Gained Most, Trump Went As Lame Duck: Maj Gen GD Bakshi Decodes Xi-Trump-Putin",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18642821821002361",
+      "timestamp": "2026-11-24T08:57:59.919978+00:00"
     }
   ],
   "processed": [
@@ -4674,7 +4674,74 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Smoking in Public? Gurugram's New Rule Could Cost You Rs 200; Check Which Places Are Now No-Smoking Zones'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Viral Video: Indian Entrepreneur Celebrates Her Roots, Cycles And Runs In Saree In Dubai",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/viral-video-indian-entrepreneur-celebrates-her-roots-cycles-and-runs-in-saree-in-dubai-ws-l-10438695.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Lifestyle",
+        "reason": "A viral video of an entrepreneur celebrating culture is a human interest story rather than a major news event."
+      },
+      "classified_at": "2026-11-24T08:57:15.287969+00:00"
+    },
+    {
+      "title": "Why Is Tamil Nadu Fighting A Court Order To Remove Periyar's Statue From A Hindu Temple?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/chennai-news/why-is-tamil-nadu-fighting-a-court-order-to-remove-periyars-statue-from-a-hindu-temple-ws-l-10438738.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A dispute over a statue removal is a local/regional legal matter with limited international consequence."
+      },
+      "classified_at": "2026-11-24T08:57:15.287972+00:00"
+    },
+    {
+      "title": "BJP Gets Punjab Foothold, SAD A Shot At Revival: Who Gains What From NDA's Pre-Poll Reset?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/bjp-gets-punjab-foothold-sad-a-shot-at-revival-who-gains-what-from-ndas-pre-poll-reset-ws-l-10438736.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Analysis of political party alignments and election strategies is a standard regional political story."
+      },
+      "classified_at": "2026-11-24T08:57:15.287974+00:00"
+    },
+    {
+      "title": "Candidate Rejects Job Offer Twice Over Pay Cut And Unclear Conditions: 'Definitely Dodged A Bullet'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/candidate-rejects-job-offer-twice-over-pay-cut-and-unclear-conditions-definitely-dodged-a-bullet-ws-l-10438525.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A personal career decision regarding a job offer is a matter of public interest but not a major news event."
+      },
+      "classified_at": "2026-11-24T08:57:15.287976+00:00"
+    },
+    {
+      "title": "Two Soldiers Killed In Tank Accident During Army Drill In Hisar: What Happened At Training Centre",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/chandigarh/two-soldiers-killed-in-tank-accident-during-army-drill-in-hisar-what-happened-at-training-centre-ws-l-10438670.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Military",
+        "reason": "A training accident resulting in fatalities is a serious local event but does not rise to the level of a major geopolitical crisis."
+      },
+      "classified_at": "2026-11-24T08:57:15.287978+00:00"
+    },
+    {
+      "title": "Anupam Kher's Flight Ordeal: Mumbai Landing Aborted, Diverted to Surat",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/anupam-kher-shares-harrowing-flight-experience-says-plane-had-to-divert-from-mumbai-to-surat-i-am-a-nervous-flyer-ws-l-10438643.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Travel",
+        "reason": "A flight diversion is an inconvenience and a notable public event, but lacks broad international consequence."
+      },
+      "classified_at": "2026-11-24T08:57:15.287979+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
