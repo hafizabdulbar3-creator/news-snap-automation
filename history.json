@@ -4719,7 +4719,19 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Highway Infrastructure Ltd Secures ₹630.17 Crore Projects in Single Day",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/highway-infrastructure-ltd-signs-3-major-projects-worth-63017-crore-in-a-single-day-a-turning-point-for-the-company-2026-11-24-141706",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A corporate milestone involving a specific company securing infrastructure projects, which is a standard business news item but lacks the scale of a major geopolitical event."
+      },
+      "classified_at": "2026-11-24T00:26:49.977104+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
