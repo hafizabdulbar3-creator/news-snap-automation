@@ -4672,20 +4672,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Smoking in Public? Gurugram's New Rule Could Cost You Rs 200; Check Which Places Are Now No-Smoking Zones'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/cities/chennai-news/why-is-tamil-nadu-fighting-a-court-order-to-remove-periyars-statue-from-a-hindu-temple-ws-l-10438738.html?comscorekw=jionews",
+      "title": "Why Is Tamil Nadu Fighting A Court Order To Remove Periyar's Statue From A Hindu Temple?",
+      "domain": "news18.com",
+      "timestamp": "2026-11-24T09:51:40.410120+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Why Is Tamil Nadu Fighting A Court Order To Remove Periyar's Statue From A Hindu Temple?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/chennai-news/why-is-tamil-nadu-fighting-a-court-order-to-remove-periyars-statue-from-a-hindu-temple-ws-l-10438738.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal",
-        "reason": "A dispute over a statue removal is a local/regional legal matter with limited international consequence."
-      },
-      "classified_at": "2026-11-24T08:57:15.287972+00:00"
-    },
     {
       "title": "BJP Gets Punjab Foothold, SAD A Shot At Revival: Who Gains What From NDA's Pre-Poll Reset?",
       "domain": "news18.com",
