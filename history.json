@@ -4699,20 +4699,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
+    },
+    {
+      "url": "https://www.news18.com/cities/chandigarh/two-soldiers-killed-in-tank-accident-during-army-drill-in-hisar-what-happened-at-training-centre-ws-l-10438670.html?comscorekw=jionews",
+      "title": "Two Soldiers Killed In Tank Accident During Army Drill In Hisar: What Happened At Training Centre",
+      "domain": "news18.com",
+      "timestamp": "2026-11-24T10:12:37.766764+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Two Soldiers Killed In Tank Accident During Army Drill In Hisar: What Happened At Training Centre",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/chandigarh/two-soldiers-killed-in-tank-accident-during-army-drill-in-hisar-what-happened-at-training-centre-ws-l-10438670.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Military",
-        "reason": "A training accident resulting in fatalities is a serious local event but does not rise to the level of a major geopolitical crisis."
-      },
-      "classified_at": "2026-11-24T08:57:15.287978+00:00"
-    },
     {
       "title": "Anupam Kher's Flight Ordeal: Mumbai Landing Aborted, Diverted to Surat",
       "domain": "news18.com",
