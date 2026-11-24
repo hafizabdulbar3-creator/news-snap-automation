@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/mahadev-betting-app-promoter-sourabh-chandrakar-extradited-from-oman-to-india-2026-11-01-140208",
-      "title": "Mahadev Betting App Promoter Sourabh Chandrakar Extradited From Oman To India",
-      "headline": "Mahadev Betting App Promoter Extradited From Oman To India",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18134247760706048",
-      "timestamp": "2026-11-01T15:35:27.123690+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/bangladesh-garment-workers-wage-protests-turn-violent-police-outposts-vandalised-bbg-deployed-2026-11-01-140211",
       "title": "Bangladesh Garment Workers' Wage Protests Turn Violent, Police Outposts Vandalised, BBG Deployed",
       "headline": "Violent Protests Rock Bangladesh Garment Sector Over Wage Demands",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18002888814011301",
       "timestamp": "2026-11-24T17:08:00.029604+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/only-one-batch-flagged-no-stock-in-market-bisleri-welcomes-fssai-clarification-goa-fda-steps-up-water-quality-checks-2026-11-24-141772",
+      "title": "Bisleri Water Quality Row: FSSAI Clarifies, Goa FDA Boosts Checks",
+      "headline": "Bisleri Welcomes FSSAI Clarification Amid Goa Water Quality Checks",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18154982653538126",
+      "timestamp": "2026-11-24T17:35:01.199563+00:00"
     }
   ],
   "processed": [
@@ -4710,19 +4710,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Bisleri Water Quality Row: FSSAI Clarifies, Goa FDA Boosts Checks",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/only-one-batch-flagged-no-stock-in-market-bisleri-welcomes-fssai-clarification-goa-fda-steps-up-water-quality-checks-2026-11-24-141772",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A regulatory clarification and increased inspection regarding a consumer product."
-      },
-      "classified_at": "2026-11-24T15:44:25.459823+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
