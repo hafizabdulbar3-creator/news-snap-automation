@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/100-students-detained-on-delhis-minto-road-while-marching-towards-connaught-place-during-anti-sir-protest-ws-l-10407809.html?comscorekw=jionews",
-      "title": "100 Students Detained in Delhi During Electoral Roll Protest March",
-      "headline": "100 Students Detained in Delhi During Electoral Roll Protest March",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17903829921377468",
-      "timestamp": "2026-11-01T15:09:36.351114+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/mahadev-betting-app-promoter-sourabh-chandrakar-extradited-from-oman-to-india-2026-11-01-140208",
       "title": "Mahadev Betting App Promoter Sourabh Chandrakar Extradited From Oman To India",
       "headline": "Mahadev Betting App Promoter Extradited From Oman To India",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17981045106140541",
       "timestamp": "2026-11-24T16:42:13.824344+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/two-brothers-have-reunited-shivraj-singh-chouhan-welcomes-bjp-sad-alliance-in-punjab-2026-11-24-141775",
+      "title": "'Two Brothers Have Reunited': Shivraj Singh Chouhan Welcomes BJP-SAD Alliance in Punjab",
+      "headline": "Shivraj Singh Chouhan Welcomes BJP-SAD Alliance in Punjab",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18002888814011301",
+      "timestamp": "2026-11-24T17:08:00.029604+00:00"
     }
   ],
   "processed": [
@@ -4711,17 +4711,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Two Brothers Have Reunited': Shivraj Singh Chouhan Welcomes BJP-SAD Alliance in Punjab",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/two-brothers-have-reunited-shivraj-singh-chouhan-welcomes-bjp-sad-alliance-in-punjab-2026-11-24-141775",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political alliance announcement in a specific state."
-      },
-      "classified_at": "2026-11-24T15:44:25.459820+00:00"
-    },
     {
       "title": "Bisleri Water Quality Row: FSSAI Clarifies, Goa FDA Boosts Checks",
       "domain": "republicworld.com",
