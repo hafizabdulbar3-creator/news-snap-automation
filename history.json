@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/an-ev-entry-air-chief-marshal-ashutosh-dixit-arrives-in-electric-car-to-take-charge-photos-ws-kl-10407259.html?comscorekw=jionews",
-      "title": "An EV Entry: Air Chief Marshal Ashutosh Dixit Arrives In Electric Car To Take Charge | Photos",
-      "headline": "Air Chief Marshal Ashutosh Dixit Arrives In Electric Car To Take Charge",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18113599253230397",
-      "timestamp": "2026-11-01T06:15:08.179697+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/quad-unveils-85-million-trusted-ai-initiative-us-vows-10-million-for-india-minerals-recycling-2026-11-01-140178",
       "title": "Quad Unveils $85 Million Trusted AI Initiative, US Vows $10 Million for India Minerals Recycling",
       "headline": "Quad Unveils $85 Million Trusted AI Initiative, US Vows $10 Million for India Minerals",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17872069695658752",
       "timestamp": "2026-11-24T05:50:12.370043+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/varanasi/gods-ganga-and-kargil-heroes-what-makes-varanasis-dev-deepawali-special-ws-l-10438231.html?comscorekw=jionews",
+      "title": "Gods, Ganga And Kargil Heroes: What Makes Varanasi's Dev Deepawali Special",
+      "headline": "Gods, Ganga And Kargil Heroes: What Makes Varanasi's Dev Deepawali Special",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18653684104005479",
+      "timestamp": "2026-11-24T06:16:00.645995+00:00"
     }
   ],
   "processed": [
@@ -4711,17 +4711,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Gods, Ganga And Kargil Heroes: What Makes Varanasi's Dev Deepawali Special",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/varanasi/gods-ganga-and-kargil-heroes-what-makes-varanasis-dev-deepawali-special-ws-l-10438231.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Culture",
-        "reason": "This covers a cultural and religious festival in India, which is a notable public interest story of regional significance."
-      },
-      "classified_at": "2026-11-24T05:49:44.169274+00:00"
-    },
     {
       "title": "Too Important To Replace, Too Powerful To Question? The Jensen Huang Story",
       "domain": "news18.com",
