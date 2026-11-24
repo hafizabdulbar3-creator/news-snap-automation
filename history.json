@@ -4690,6 +4690,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/explainers/one-man-one-company-1-trillion-at-stake-is-nvidias-jensen-huang-truly-irreplaceable-ws-lrt-10439544.html?comscorekw=jionews",
+      "title": "One Man, One Company, $1 Trillion At Stake: Is Nvidia's Jensen Huang Truly 'Irreplaceable'?",
+      "domain": "news18.com",
+      "timestamp": "2026-11-24T20:07:23.139701+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [],
