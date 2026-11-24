@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/alabama-football-game-mass-shooting-near-legion-field-leaves-one-dead-eight-others-injured-2026-11-01-140205",
-      "title": "Police Say 4 Dead, 15 Injured in Separate Shootings in Dallas on Halloween Night",
-      "headline": "Police Say 4 Dead, 15 Injured in Separate Shootings in Dallas",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18438792457176446",
-      "timestamp": "2026-11-01T17:03:52.859740+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/india-beat-malaysia-3-1-as-harmanpreet-scores-hat-trick-in-asian-champions-trophy-2026-11-01-140215",
       "title": "India Beat Malaysia 3-1 as Harmanpreet Scores Hat-Trick in Asian Champions Trophy",
       "headline": "India Defeats Malaysia 3-1 at Asian Champions Trophy",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18099370853690037",
       "timestamp": "2026-11-24T18:57:37.547380+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/nvidia-falls-59-anthropic-drops-below-ipo-price-as-ai-bubble-fears-roar-back-2026-11-24-141791",
+      "title": "AI Bubble Fears Resurface as Nvidia, Anthropic Stocks Plummet",
+      "headline": "AI Bubble Fears Return as Nvidia, Anthropic Stocks Plummet",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18502557331101559",
+      "timestamp": "2026-11-24T21:39:18.257023+00:00"
     }
   ],
   "processed": [
