@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-1st-test-day-4-ind-vs-nz-latest-scorecard-basin-reserve-wellington-match-updates-liveblog-ws-l-10435767.html?comscorekw=jionews",
-      "title": "India Vs New Zealand Live Score, 1st Test Day 4: IND Aim To Take Big 1st Innings Lead",
-      "domain": "news18.com",
-      "timestamp": "2026-11-21T22:25:58.630321+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/explainers/gta-6-becomes-latest-bjp-vs-congress-battleground-how-pm-modis-post-triggered-political-meme-war-ws-lrt-10435764.html?comscorekw=jionews",
-      "title": "GTA 6 Becomes Latest BJP Vs Congress Battleground: How PM Modi's Post Triggered Political Meme War",
-      "domain": "news18.com",
-      "timestamp": "2026-11-21T22:31:10.467711+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
       "url": "https://www.republicworld.com/sports/pant-makes-history-first-indian-keeper-to-score-test-centuries-in-all-four-sena-countries-2026-11-22-141568",
       "title": "Pant Makes History: First Indian Keeper To Score Test Centuries In All 4 SENA Countries",
       "domain": "republicworld.com",
@@ -4717,9 +4699,41 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 18."
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/us-senator-elizabeth-warren-warns-huang-s-return-raises-urgency-for-export-control-bills-demands-answers-from-trump-admin-2026-11-24-141709",
+      "title": "Nvidia CEO's Return Sparks Senator Warren's Call for Export Control Action",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-24T01:03:21.912430+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "EAM Jaishankar Holds Telephonic Talk With Russian FM Lavrov On Recent Developments",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/eam-jaishankar-holds-telephonic-talk-with-russian-fm-lavrov-on-recent-developments-2026-11-24-141708",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Involves a high-level diplomatic exchange between foreign ministers regarding recent geopolitical developments."
+      },
+      "classified_at": "2026-11-24T01:03:14.552298+00:00"
+    },
+    {
+      "title": "LMIL Launches Radiation-Free Breast Cancer Screening Device with License",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/lmil-unlocks-commercial-launch-of-radiation-free-breast-cancer-screening-device-with-official-manufacturing-license-2026-11-24-141707",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Health",
+        "reason": "A regional corporate milestone regarding a medical device launch, which is of public interest but lacks broad geopolitical consequence."
+      },
+      "classified_at": "2026-11-24T01:03:14.552302+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
