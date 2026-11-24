@@ -4681,20 +4681,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
+    },
+    {
+      "url": "https://www.news18.com/explainers/bjp-gets-punjab-foothold-sad-a-shot-at-revival-who-gains-what-from-ndas-pre-poll-reset-ws-l-10438736.html?comscorekw=jionews",
+      "title": "BJP Gets Punjab Foothold, SAD A Shot At Revival: Who Gains What From NDA's Pre-Poll Reset?",
+      "domain": "news18.com",
+      "timestamp": "2026-11-24T09:57:23.474292+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
     }
   ],
   "classified_pool": [
-    {
-      "title": "BJP Gets Punjab Foothold, SAD A Shot At Revival: Who Gains What From NDA's Pre-Poll Reset?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/explainers/bjp-gets-punjab-foothold-sad-a-shot-at-revival-who-gains-what-from-ndas-pre-poll-reset-ws-l-10438736.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Analysis of political party alignments and election strategies is a standard regional political story."
-      },
-      "classified_at": "2026-11-24T08:57:15.287974+00:00"
-    },
     {
       "title": "Candidate Rejects Job Offer Twice Over Pay Cut And Unclear Conditions: 'Definitely Dodged A Bullet'",
       "domain": "news18.com",
