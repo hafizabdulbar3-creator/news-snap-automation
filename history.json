@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/business/india-eu-fta-rollout-in-focus-as-both-sides-discuss-customs-reforms-market-access-in-brussels-2026-11-02-140246",
-      "title": "India-EU FTA Rollout In Focus As Both Sides Discuss Customs Reforms, Market Access In Brussels",
-      "headline": "India-EU FTA Rollout In Focus As Both Sides Discuss Customs Reforms",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18383565847232579",
-      "timestamp": "2026-11-02T06:56:47.546756+00:00"
-    },
-    {
       "url": "https://www.news18.com/viral/british-couple-takes-indian-auto-rickshaw-to-uk-after-4218-km-journey-across-india-video-goes-viral-ws-l-10408406.html?comscorekw=jionews",
       "title": "British Couple Takes Indian Auto-Rickshaw To UK After 4,218-Km Journey Across India, Video Goes Viral",
       "headline": "British Couple Ship Indian Auto-Rickshaw To UK After 4,218-Km Journey",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18104070530434194",
       "timestamp": "2026-11-25T12:34:12.266836+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/bjp-s-face-is-lotus-mlas-will-decide-cm-keshav-maurya-backs-yogi-adityanath-rules-out-self-as-contender-for-up-s-top-post-2026-11-25-141836",
+      "title": "Who Will Lead UP? Maurya Backs Adityanath, Dismisses Own CM Bid",
+      "headline": "Maurya Backs Adityanath, Rules Out CM Bid",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18356180587271239",
+      "timestamp": "2026-11-25T13:00:34.205529+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Who Will Lead UP? Maurya Backs Adityanath, Dismisses Own CM Bid",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/bjp-s-face-is-lotus-mlas-will-decide-cm-keshav-maurya-backs-yogi-adityanath-rules-out-self-as-contender-for-up-s-top-post-2026-11-25-141836",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National Politics",
-        "reason": "A regional political development concerning leadership speculation within a state government, which is a standard aspect of domestic political news."
-      },
-      "classified_at": "2026-11-25T11:36:34.599078+00:00"
-    },
     {
       "title": "FSSAI Flags Cancer-Linked Chemicals in Bisleri Water, Raising Safety Questions",
       "domain": "news18.com",
