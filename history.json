@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/mossad-official-arrives-in-us-for-high-level-talks-as-netanyahu-pushes-for-resumed-war-against-iran-report-2026-11-13-141003",
-      "title": "High-Stakes US-Mossad Talks on Iran War as Netanyahu Pressures Trump",
-      "headline": "Mossad Official Arrives in US for High-Level Talks Amid Netanyahu War Push",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17970960372237324",
-      "timestamp": "2026-11-13T17:15:08.563409+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/web-series/tvfs-family-kirana-store-season-3-releases-on-youtube-clocks-three-seasons-in-10-months-ws-l-10424550.html?comscorekw=jionews",
       "title": "TVF's Family Kirana Store Season 3 Releases On YouTube, Clocks Three Seasons In 10 Months",
       "headline": "TVF's Family Kirana Store Season 3 Premieres On YouTube",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18133295896701274",
       "timestamp": "2026-11-25T22:59:50.987280+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-high-court-allows-taj-mahal-photographers-to-work-beyond-65-strikes-down-asi-s-age-based-retirement-rule-2026-11-25-141847",
+      "title": "Taj Mahal Photographers Can Work Past 65, Court Rules",
+      "headline": "Delhi High Court Strikes Down ASI's 65-Year Retirement Rule for Taj Mahal Photographers",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18111501365565436",
+      "timestamp": "2026-11-25T23:30:55.131680+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Taj Mahal Photographers Can Work Past 65, Court Rules",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-high-court-allows-taj-mahal-photographers-to-work-beyond-65-strikes-down-asi-s-age-based-retirement-rule-2026-11-25-141847",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A court ruling regarding photography permits at a specific monument is a notable local policy change but lacks broad international consequence."
-      },
-      "classified_at": "2026-11-25T15:15:41.937717+00:00"
-    },
     {
       "title": "Fire Breaks Out at Cloth Godown on Kolkata's AJC Bose Road; 10 Families Rescued",
       "domain": "republicworld.com",
