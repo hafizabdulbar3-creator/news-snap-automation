@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/diwali-week-begins-with-delhis-air-turning-very-poor-aqi-hits-349-ws-l-10408020.html?comscorekw=jionews",
-      "title": "Diwali Week Begins With Delhi's Air Turning 'Very Poor', AQI Hits 349",
-      "headline": "Delhi's Air Quality Deteriorates To 'Very Poor' Ahead Of Diwali",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18091637705247194",
-      "timestamp": "2026-11-02T02:29:59.307864+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/us-midterms-spineless-servants-inflation-and-iran-war-ex-us-officials-sharp-attack-on-trump-ws-blr-10408028.html?comscorekw=jionews",
       "title": "US Midterms | 'Spineless Servants', Inflation And Iran War: Ex-US Official's Sharp Attack On Trump",
       "headline": "Ex-US Official Attacks Trump Over Midterms, Inflation, Iran War",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18145600927714401",
       "timestamp": "2026-11-25T06:08:57.587505+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/from-gokul-to-latur-congress-finds-new-political-momentum-in-maharashtras-cooperative-belt-ws-l-10439922.html?comscorekw=jionews",
+      "title": "From Gokul To Latur: Congress Finds New Political Momentum In Maharashtra's Cooperative Belt",
+      "headline": "Congress Seeks New Momentum In Maharashtra's Cooperative Belt",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18120532727008638",
+      "timestamp": "2026-11-25T06:55:29.149137+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "From Gokul To Latur: Congress Finds New Political Momentum In Maharashtra's Cooperative Belt",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/from-gokul-to-latur-congress-finds-new-political-momentum-in-maharashtras-cooperative-belt-ws-l-10439922.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional political development regarding the Congress party's momentum in Maharashtra."
-      },
-      "classified_at": "2026-11-25T06:39:27.127732+00:00"
-    },
     {
       "title": "CJP's Saurav Das Moves Delhi High Court After Being Stopped At Airport From Travelling To UK",
       "domain": "news18.com",
