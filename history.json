@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-traders-claim-rs-10000-11000-crore-loss-due-to-indi-bloc-rally-at-ramlila-maidan-2026-11-02-140228",
-      "title": "Delhi Traders Claim Rs 10,000-11,000 Crore Loss Due To INDI Bloc Rally At Ramlila Maidan",
-      "headline": "Delhi Traders Claim Rs 10,000-11,000 Crore Loss From INDI Bloc Rally",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18480015331116513",
-      "timestamp": "2026-11-02T01:33:14.395296+00:00"
-    },
-    {
       "url": "https://www.news18.com/world/9-killed-as-private-jet-plunges-from-sky-bursts-into-flames-in-florida-ws-kl-10408017.html?comscorekw=jionews",
       "title": "9 Killed As Private Jet Plunges From Sky, Bursts Into Flames In Florida",
       "headline": "9 Killed As Private Jet Plunges From Sky, Bursts Into Flames In Florida",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18113578112186727",
       "timestamp": "2026-11-25T05:11:38.871537+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/crawled-back-to-bjp-punjab-congress-targets-sad-over-reunion-invokes-farmers-agitation-ws-l-10439793.html?comscorekw=jionews",
+      "title": "'Crawled Back To BJP': Punjab Congress Targets SAD Over Reunion, Invokes Farmers' Agitation",
+      "headline": "Punjab Congress Targets SAD Over Reunion, Calls It 'Crawling Back to BJP",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18105460148364413",
+      "timestamp": "2026-11-25T05:37:25.920109+00:00"
     }
   ],
   "processed": [
@@ -4712,17 +4712,6 @@
         "reason": "A domestic political negotiation regarding seat allocation is a matter of public interest but does not rise to the level of a major geopolitical event or national election."
       },
       "classified_at": "2026-11-25T05:01:06.154030+00:00"
-    },
-    {
-      "title": "'Crawled Back To BJP': Punjab Congress Targets SAD Over Reunion, Invokes Farmers' Agitation",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/crawled-back-to-bjp-punjab-congress-targets-sad-over-reunion-invokes-farmers-agitation-ws-l-10439793.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "This is a regional political dispute involving party alliances and internal criticism, which falls under normal national/regional policy and public interest."
-      },
-      "classified_at": "2026-11-25T05:01:06.154051+00:00"
     },
     {
       "title": "Hangor's Hidden Bill: Sustainment Costs Will Burden Pakistan's Defence Budget for Decades",
