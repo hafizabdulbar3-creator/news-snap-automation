@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/florida-plane-crash-horror-learjet-60-private-jet-from-texas-to-bahamas-crashes-near-military-trail-multiple-fatalities-feared-2026-11-01-140219",
-      "title": "Private Jet Crashes in Florida, Killing All Nine Onboard",
-      "headline": "Private Jet Crashes in Florida, Killing All Nine Onboard",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18172446142461930",
-      "timestamp": "2026-11-01T22:46:12.908548+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/at-20-mercedes-kimi-antonelli-beats-vettel-s-record-to-become-youngest-f1-world-champion-2026-11-01-140222",
       "title": "At 20, Mercedes' Kimi Antonelli Beats Vettel's Record To Become Youngest F1 World Champion",
       "headline": "Mercedes' Kimi Antonelli Becomes Youngest F1 World Champion at 20",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18145227229620867",
       "timestamp": "2026-11-25T02:20:16.626212+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-administration-plans-new-tariff-hikes-on-china-india-and-other-trading-partners-2026-11-25-141798",
+      "title": "US Administration Plans New Tariff Hikes on China, India and Other Trading Partners | Here's Why",
+      "headline": "US Administration Plans New Tariff Hikes on China, India, and Others",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18140594665649662",
+      "timestamp": "2026-11-25T02:46:42.844251+00:00"
     }
   ],
   "processed": [
@@ -4701,7 +4701,41 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "The Numbers Behind The Noise: Decoding Yogi Adityanath's 1.27 Crore 'Missing' Voters Claim",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/up-elections-2027-the-numbers-behind-the-noise-decoding-yogi-adityanaths-1-27-crore-missing-voters-claim-ws-bl-10439597.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political analysis regarding voter statistics in a specific region."
+      },
+      "classified_at": "2026-11-25T02:45:33.906986+00:00"
+    },
+    {
+      "title": "Delhi Horror: Woman Gang-Raped by Colleagues at Preet Vihar Cafe; Two Women Among Three Held",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-horror-woman-gang-raped-by-colleagues-at-preet-vihar-cafe-two-women-among-three-held-2026-11-25-141799",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A report on a local criminal incident."
+      },
+      "classified_at": "2026-11-25T02:45:33.907003+00:00"
+    },
+    {
+      "title": "Jensen Huang Denies Trump's Role In Nvidia Return: 'That Is Completely Untrue'",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/jensen-huang-denies-trumps-role-in-nvidia-return-that-is-completely-untrue-ws-l-10439600.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A statement from a corporate executive regarding business operations."
+      },
+      "classified_at": "2026-11-25T02:45:33.907011+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
