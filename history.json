@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/us-midterms-spineless-servants-inflation-and-iran-war-ex-us-officials-sharp-attack-on-trump-ws-blr-10408028.html?comscorekw=jionews",
-      "title": "US Midterms | 'Spineless Servants', Inflation And Iran War: Ex-US Official's Sharp Attack On Trump",
-      "headline": "Ex-US Official Attacks Trump Over Midterms, Inflation, Iran War",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18377979367212110",
-      "timestamp": "2026-11-02T02:56:19.555190+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-chokes-as-aqi-touches-428-714-vehicles-turned-back-38-impounded-in-grap-crackdown-2026-11-02-140230",
       "title": "Delhi Chokes As AQI Touches 428; 714 Vehicles Turned Back, 38 Impounded In GRAP Crackdown",
       "headline": "Delhi Air Quality Hits Severe 428 As Authorities Impound Vehicles",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120532727008638",
       "timestamp": "2026-11-25T06:55:29.149137+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/cjps-saurav-das-moves-delhi-high-court-after-being-stopped-at-airport-from-travelling-to-uk-ws-l-10439968.html?comscorekw=jionews",
+      "title": "CJP's Saurav Das Moves Delhi High Court After Being Stopped At Airport From Travelling To UK",
+      "headline": "CJP Saurav Das Seeks Court Intervention After UK Travel Stop",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17923403436241417",
+      "timestamp": "2026-11-25T07:21:38.654425+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "CJP's Saurav Das Moves Delhi High Court After Being Stopped At Airport From Travelling To UK",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/cjps-saurav-das-moves-delhi-high-court-after-being-stopped-at-airport-from-travelling-to-uk-ws-l-10439968.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Legal",
-        "reason": "A legal dispute involving a High Court judge and travel restrictions."
-      },
-      "classified_at": "2026-11-25T06:39:27.127748+00:00"
-    },
     {
       "title": "25 Tankers Hit, Hormuz Traffic Down 40%: Why Isn't The World Facing An Oil Price Shock?",
       "domain": "news18.com",
