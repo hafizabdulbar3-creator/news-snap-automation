@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/imd-weather-today-delhi-ncr-sees-dry-spell-hazardous-aqi-cyclone-murasu-puts-4-states-on-alert-ws-l-10408112.html?comscorekw=jionews",
-      "title": "IMD Weather Today: Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
-      "headline": "Delhi-NCR Sees Dry Spell, Hazardous AQI; Cyclone Murasu Puts 4 States On Alert",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18012991274988748",
-      "timestamp": "2026-11-02T05:59:27.087166+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/markets/sensex-jumps-nearly-800-points-nifty-opens-above-23250-ril-tata-steel-lead-gains-ws-l-10408100.html?comscorekw=jionews",
       "title": "Sensex Jumps Nearly 800 Points, Nifty Opens Above 23,250; RIL, Tata Steel Lead Gains",
       "headline": "Sensex Jumps Nearly 800 Points, Nifty Opens Above 23,250",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17967148539223639",
       "timestamp": "2026-11-25T11:10:54.758699+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/libyan-army-vows-retaliation-after-2-naval-officers-die-of-wounds-from-ukrainian-drone-attack-2026-11-25-141835",
+      "title": "Libyan Army Vows Retaliation After Officers Die in Ukraine Drone Attack",
+      "headline": "Libyan Army Vows Retaliation After Officers Die in Ukraine Drone Attack",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18112179059109862",
+      "timestamp": "2026-11-25T11:37:07.566261+00:00"
     }
   ],
   "processed": [
@@ -4674,7 +4674,52 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('CEO Kalyan Krishnamurthy Steps Down After 11 Years; Who Will Lead Flipkart Next?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Tiny American Town Blasts To Fame As US Military Prepares To Detonate 4,500 Kg Of Explosives",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/tiny-american-town-blasts-to-fame-as-us-military-prepares-to-detonate-4500-kg-of-explosives-ws-lr-10440623.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major geopolitical event involving the detonation of a large quantity of explosives in a populated area, raising significant safety and international concerns."
+      },
+      "classified_at": "2026-11-25T11:36:34.599062+00:00"
+    },
+    {
+      "title": "Who Will Lead UP? Maurya Backs Adityanath, Dismisses Own CM Bid",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/bjp-s-face-is-lotus-mlas-will-decide-cm-keshav-maurya-backs-yogi-adityanath-rules-out-self-as-contender-for-up-s-top-post-2026-11-25-141836",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National Politics",
+        "reason": "A regional political development concerning leadership speculation within a state government, which is a standard aspect of domestic political news."
+      },
+      "classified_at": "2026-11-25T11:36:34.599078+00:00"
+    },
+    {
+      "title": "FSSAI Flags Cancer-Linked Chemicals in Bisleri Water, Raising Safety Questions",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/cancer-linked-chemicals-in-bisleri-water-how-purification-by-products-bromate-and-pahs-raise-health-concerns-ws-l-10440559.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy & Business",
+        "reason": "A regulatory action by a food safety authority regarding product safety, which is a matter of public interest and consumer protection."
+      },
+      "classified_at": "2026-11-25T11:36:34.599084+00:00"
+    },
+    {
+      "title": "Tamil Nadu Govt Apologizes to SC: Temple Board Blocked Deepam Ritual",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/sincerely-apologise-tamil-nadu-govt-apologises-to-supreme-court-says-temple-board-did-not-authorise-team-for-deepathoon-ritual-2026-11-25-141832",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National Politics",
+        "reason": "A legal and administrative matter involving a government apology to the Supreme Court regarding a religious ritual, representing standard judicial and governance news."
+      },
+      "classified_at": "2026-11-25T11:36:34.599087+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
