@@ -4692,7 +4692,52 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "From Gokul To Latur: Congress Finds New Political Momentum In Maharashtra's Cooperative Belt",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/from-gokul-to-latur-congress-finds-new-political-momentum-in-maharashtras-cooperative-belt-ws-l-10439922.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional political development regarding the Congress party's momentum in Maharashtra."
+      },
+      "classified_at": "2026-11-25T06:39:27.127732+00:00"
+    },
+    {
+      "title": "CJP's Saurav Das Moves Delhi High Court After Being Stopped At Airport From Travelling To UK",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/cjps-saurav-das-moves-delhi-high-court-after-being-stopped-at-airport-from-travelling-to-uk-ws-l-10439968.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Legal",
+        "reason": "A legal dispute involving a High Court judge and travel restrictions."
+      },
+      "classified_at": "2026-11-25T06:39:27.127748+00:00"
+    },
+    {
+      "title": "25 Tankers Hit, Hormuz Traffic Down 40%: Why Isn't The World Facing An Oil Price Shock?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/25-tankers-hit-hormuz-traffic-down-40-why-isnt-the-world-facing-an-oil-price-shock-shil-ws-l-10439944.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "An analysis of oil market dynamics and shipping traffic in a specific region."
+      },
+      "classified_at": "2026-11-25T06:39:27.127753+00:00"
+    },
+    {
+      "title": "Gold, Silver Prices Drop Across India: What You Need to Know Today",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/savings-and-investments/gold-silver-rates-today-check-24k-22k-gold-prices-in-delhi-mumbai-chennai-and-other-cities-on-november-25-ws-l-10439834.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A report on commodity price fluctuations affecting the domestic market."
+      },
+      "classified_at": "2026-11-25T06:39:27.127757+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
