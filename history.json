@@ -4674,7 +4674,63 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('CEO Kalyan Krishnamurthy Steps Down After 11 Years; Who Will Lead Flipkart Next?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "US Proposes 25% Tariffs On Indian Goods, Says Rate Could Drop To 17% If New Delhi Seals Trade Deal",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/global-news/us-proposes-25-tariffs-on-indian-goods-says-rate-could-drop-to-17-if-new-delhi-seals-trade-deal-2026-11-25-141846",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Proposed US tariffs on Indian goods constitute a significant shift in international trade policy with broad economic implications."
+      },
+      "classified_at": "2026-11-25T15:15:41.937698+00:00"
+    },
+    {
+      "title": "Taj Mahal Photographers Can Work Past 65, Court Rules",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-high-court-allows-taj-mahal-photographers-to-work-beyond-65-strikes-down-asi-s-age-based-retirement-rule-2026-11-25-141847",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A court ruling regarding photography permits at a specific monument is a notable local policy change but lacks broad international consequence."
+      },
+      "classified_at": "2026-11-25T15:15:41.937717+00:00"
+    },
+    {
+      "title": "Fire Breaks Out at Cloth Godown on Kolkata's AJC Bose Road; 10 Families Rescued",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/fire-breaks-out-at-cloth-godown-on-kolkatas-ajc-bose-road-10-families-rescued-2026-11-25-141849",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "A fire incident resulting in the rescue of families is a local disaster story of public interest but limited in scope."
+      },
+      "classified_at": "2026-11-25T15:15:41.937721+00:00"
+    },
+    {
+      "title": "India, China Held Talks in Eastern Sector Recently: MEA",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/india-china-held-talks-in-eastern-sector-recently-mea-2026-11-25-141848",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Diplomatic talks between India and China regarding border tensions are a major geopolitical event."
+      },
+      "classified_at": "2026-11-25T15:15:41.937723+00:00"
+    },
+    {
+      "title": "India Concerned: 1,700 Nationals Deported from US, Violence in Bangladesh",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/1700-indian-nationals-deported-from-us-in-2026-so-far-india-deeply-concerned-over-violence-against-minorities-in-bangladesh-mea-2026-11-25-141842",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Regional News",
+        "reason": "Deportation statistics and unrest in neighboring countries are significant but fall under regional political and social reporting rather than a major global event."
+      },
+      "classified_at": "2026-11-25T15:15:41.937726+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
