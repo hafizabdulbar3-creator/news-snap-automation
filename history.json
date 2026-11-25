@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/business/markets/sensex-jumps-nearly-800-points-nifty-opens-above-23250-ril-tata-steel-lead-gains-ws-l-10408100.html?comscorekw=jionews",
-      "title": "Sensex Jumps Nearly 800 Points, Nifty Opens Above 23,250; RIL, Tata Steel Lead Gains",
-      "headline": "Sensex Jumps Nearly 800 Points, Nifty Opens Above 23,250",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17963246936999619",
-      "timestamp": "2026-11-02T06:30:22.142968+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/business/india-eu-fta-rollout-in-focus-as-both-sides-discuss-customs-reforms-market-access-in-brussels-2026-11-02-140246",
       "title": "India-EU FTA Rollout In Focus As Both Sides Discuss Customs Reforms, Market Access In Brussels",
       "headline": "India-EU FTA Rollout In Focus As Both Sides Discuss Customs Reforms",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18112179059109862",
       "timestamp": "2026-11-25T11:37:07.566261+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/tiny-american-town-blasts-to-fame-as-us-military-prepares-to-detonate-4500-kg-of-explosives-ws-lr-10440623.html?comscorekw=jionews",
+      "title": "Tiny American Town Blasts To Fame As US Military Prepares To Detonate 4,500 Kg Of Explosives",
+      "headline": "Tiny American Town Blasts To Fame As US Military Prepares To Detonate 4,500 Kg",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18104070530434194",
+      "timestamp": "2026-11-25T12:34:12.266836+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Tiny American Town Blasts To Fame As US Military Prepares To Detonate 4,500 Kg Of Explosives",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/tiny-american-town-blasts-to-fame-as-us-military-prepares-to-detonate-4500-kg-of-explosives-ws-lr-10440623.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major geopolitical event involving the detonation of a large quantity of explosives in a populated area, raising significant safety and international concerns."
-      },
-      "classified_at": "2026-11-25T11:36:34.599062+00:00"
-    },
     {
       "title": "Who Will Lead UP? Maurya Backs Adityanath, Dismisses Own CM Bid",
       "domain": "republicworld.com",
