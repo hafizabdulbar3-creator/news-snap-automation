@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/amitabh-bachchan-greets-fans-behind-bulletproof-glass-srks-king-teaser-to-be-unveiled-on-his-birthday-ws-l-10407998.html?comscorekw=jionews",
-      "title": "Amitabh Bachchan Greets Fans Behind Bulletproof Glass; SRK's King Teaser To Be Unveiled On His Birthday?",
-      "headline": "Amitabh Bachchan Greets Fans Behind Bulletproof Glass",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18115258676334157",
-      "timestamp": "2026-11-01T18:57:51.734991+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/pakistan-s-terror-pride-becomes-meme-most-frightened-masood-azhar-reduced-to-ai-photoshop-terrorist-after-operation-sindoor-hammer-2026-11-01-140217",
       "title": "Terror Group Uses AI Deepfakes of Missing Chief for Recruitment",
       "headline": "Terror Group Uses AI Deepfakes of Missing Chief for Recruitment",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18505999549099771",
       "timestamp": "2026-11-25T01:18:05.308045+00:00"
+    },
+    {
+      "url": "https://www.news18.com/sports/football/rayan-cherkis-late-goal-saves-manchester-city-from-defeat-against-napoli-ws-l-10439577.html?comscorekw=jionews",
+      "title": "Rayan Cherki's Late Goal Saves Manchester City From Defeat Against Napoli",
+      "headline": "Cherki's Late Goal Saves Manchester City From Defeat Against Napoli",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18016515515764028",
+      "timestamp": "2026-11-25T01:48:41.844217+00:00"
     }
   ],
   "processed": [
@@ -4701,7 +4701,19 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Azam Khan Slams Owaisi-Azad Alliance: 'Stale Biryani' for UP Polls",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/hyderabadi-biryani-aur-pulao-sad-gaye-hain-azam-khan-dismisses-owaisi-chandrashekhar-tie-up-for-up-polls-exclusive-ws-blrt-10439354.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional political comment regarding a specific alliance and upcoming state elections, which is of national/regional significance but not a major geopolitical event."
+      },
+      "classified_at": "2026-11-25T01:48:20.513136+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
