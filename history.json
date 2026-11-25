@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/internship-of-5-years-is-over-why-3-aap-leaders-joined-bjp-ahead-of-2027-punjab-polls-ws-l-10408393.html?comscorekw=jionews",
-      "title": "'Internship Of 5 Years Is Over': Why 3 AAP Leaders Joined BJP Ahead Of 2027 Punjab Polls",
-      "headline": "3 AAP Leaders Join BJP Ahead Of 2027 Punjab Polls",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17865793752691934",
-      "timestamp": "2026-11-02T07:49:12.582513+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/new-delhi-news/delhi-ncr-pollution-plan-50-wfh-vehicle-checks-and-construction-curbs-what-has-the-govt-ordered-ahead-of-diwali-ws-l-10408178.html?comscorekw=jionews",
       "title": "Ahead of Diwali, Delhi-NCR mandates WFH, construction curbs, vehicle checks to fight pollution.",
       "headline": "Delhi-NCR mandates WFH, construction curbs, vehicle checks ahead of Diwali",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18026494913941248",
       "timestamp": "2026-11-25T14:03:10.002127+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/sincerely-apologise-tamil-nadu-govt-apologises-to-supreme-court-says-temple-board-did-not-authorise-team-for-deepathoon-ritual-2026-11-25-141832",
+      "title": "Tamil Nadu Govt Apologizes to SC: Temple Board Blocked Deepam Ritual",
+      "headline": "Tamil Nadu Govt Apologizes to SC Over Deepam Ritual",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18030834584873013",
+      "timestamp": "2026-11-25T14:50:06.952849+00:00"
     }
   ],
   "processed": [
@@ -4674,19 +4674,7 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('CEO Kalyan Krishnamurthy Steps Down After 11 Years; Who Will Lead Flipkart Next?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Tamil Nadu Govt Apologizes to SC: Temple Board Blocked Deepam Ritual",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/sincerely-apologise-tamil-nadu-govt-apologises-to-supreme-court-says-temple-board-did-not-authorise-team-for-deepathoon-ritual-2026-11-25-141832",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National Politics",
-        "reason": "A legal and administrative matter involving a government apology to the Supreme Court regarding a religious ritual, representing standard judicial and governance news."
-      },
-      "classified_at": "2026-11-25T11:36:34.599087+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
