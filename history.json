@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/sports/formula-one/kimi-antonelli-breaks-sebastian-vettels-record-to-become-youngest-f1-world-champion-in-history-ws-l-10408077.html?comscorekw=jionews",
-      "title": "Kimi Antonelli Breaks Sebastian Vettel's Record To Become Youngest F1 World Champion In History",
-      "headline": "Kimi Antonelli Breaks Sebastian Vettel's Record to Become Youngest F1 World Champion",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18145330759515389",
-      "timestamp": "2026-11-02T04:41:07.053876+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/us-midterm-elections-2026-democrats-gain-ground-in-key-senate-races-lead-in-5-republican-held-states-2026-11-02-140234",
       "title": "US Midterm Elections 2026: Democrats Gain Ground In Key Senate Races, Lead In 5 Republican-Held States",
       "headline": "Democrats Lead In 5 Key Senate Races Ahead Of US Midterms",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18143015797627697",
       "timestamp": "2026-11-25T09:21:33.913329+00:00"
+    },
+    {
+      "url": "https://www.news18.com/photogallery/cities/new-delhi-news/indias-expressway-boom-from-delhi-mumbai-to-bengaluru-vijayawada-10-big-road-projects-to-watch-ws-l-10440190.html?comscorekw=jionews",
+      "title": "India's Expressway Boom: 10 Major Corridors That Are Bringing Cities Closer",
+      "headline": "India's Expressway Boom: 10 Major Corridors Connecting Cities",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17970596085226791",
+      "timestamp": "2026-11-25T10:03:17.734214+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India's Expressway Boom: 10 Major Corridors That Are Bringing Cities Closer",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/photogallery/cities/new-delhi-news/indias-expressway-boom-from-delhi-mumbai-to-bengaluru-vijayawada-10-big-road-projects-to-watch-ws-l-10440190.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Infrastructure",
-        "reason": "Regional economic development and infrastructure policy."
-      },
-      "classified_at": "2026-11-25T09:11:01.345531+00:00"
-    },
     {
       "title": "How Karnataka Bagged Pixxel's ₹350-Crore Satellite Manufacturing Investment In Just Two Weeks",
       "domain": "news18.com",
