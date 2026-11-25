@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/9-killed-as-private-jet-plunges-from-sky-bursts-into-flames-in-florida-ws-kl-10408017.html?comscorekw=jionews",
-      "title": "9 Killed As Private Jet Plunges From Sky, Bursts Into Flames In Florida",
-      "headline": "9 Killed As Private Jet Plunges From Sky, Bursts Into Flames In Florida",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17885008449627198",
-      "timestamp": "2026-11-02T02:04:24.000761+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/new-delhi-news/diwali-week-begins-with-delhis-air-turning-very-poor-aqi-hits-349-ws-l-10408020.html?comscorekw=jionews",
       "title": "Diwali Week Begins With Delhi's Air Turning 'Very Poor', AQI Hits 349",
       "headline": "Delhi's Air Quality Deteriorates To 'Very Poor' Ahead Of Diwali",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18105460148364413",
       "timestamp": "2026-11-25T05:37:25.920109+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/congress-signals-unwillingness-to-compromise-on-less-than-120-seats-during-talks-with-sp-sources-2026-11-25-141808",
+      "title": "Congress Signals Unwillingness to Compromise on Less Than 120 Seats During Talks with SP: Sources",
+      "headline": "Congress Signals Unwillingness to Compromise on Less Than 120 Seats",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18145600927714401",
+      "timestamp": "2026-11-25T06:08:57.587505+00:00"
     }
   ],
   "processed": [
@@ -4702,17 +4702,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Congress Signals Unwillingness to Compromise on Less Than 120 Seats During Talks with SP: Sources",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/congress-signals-unwillingness-to-compromise-on-less-than-120-seats-during-talks-with-sp-sources-2026-11-25-141808",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "A domestic political negotiation regarding seat allocation is a matter of public interest but does not rise to the level of a major geopolitical event or national election."
-      },
-      "classified_at": "2026-11-25T05:01:06.154030+00:00"
-    },
     {
       "title": "Hangor's Hidden Bill: Sustainment Costs Will Burden Pakistan's Defence Budget for Decades",
       "domain": "republicworld.com",
