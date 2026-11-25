@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/new-delhi-news/delhi-ncr-pollution-plan-50-wfh-vehicle-checks-and-construction-curbs-what-has-the-govt-ordered-ahead-of-diwali-ws-l-10408178.html?comscorekw=jionews",
-      "title": "Ahead of Diwali, Delhi-NCR mandates WFH, construction curbs, vehicle checks to fight pollution.",
-      "headline": "Delhi-NCR mandates WFH, construction curbs, vehicle checks ahead of Diwali",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18078798263569174",
-      "timestamp": "2026-11-13T16:23:01.022809+00:00"
-    },
-    {
       "url": "https://www.news18.com/cities/chennai-news/chennai-weather-today-cyclone-murasu-triggers-heavy-rain-alert-schools-shut-check-imd-forecast-ws-l-10408259.html?comscorekw=jionews",
       "title": "Chennai Weather Today: Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut; Check IMD Forecast",
       "headline": "Cyclone Murasu Triggers Heavy Rain Alert, Schools Shut in Chennai",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18030834584873013",
       "timestamp": "2026-11-25T14:50:06.952849+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/us-proposes-25-tariffs-on-indian-goods-says-rate-could-drop-to-17-if-new-delhi-seals-trade-deal-2026-11-25-141846",
+      "title": "US Proposes 25% Tariffs On Indian Goods, Says Rate Could Drop To 17% If New Delhi Seals Trade Deal",
+      "headline": "US Proposes 25% Tariffs On Indian Goods",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17911417275656784",
+      "timestamp": "2026-11-25T15:21:34.551799+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "US Proposes 25% Tariffs On Indian Goods, Says Rate Could Drop To 17% If New Delhi Seals Trade Deal",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/us-proposes-25-tariffs-on-indian-goods-says-rate-could-drop-to-17-if-new-delhi-seals-trade-deal-2026-11-25-141846",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Proposed US tariffs on Indian goods constitute a significant shift in international trade policy with broad economic implications."
-      },
-      "classified_at": "2026-11-25T15:15:41.937698+00:00"
-    },
     {
       "title": "Taj Mahal Photographers Can Work Past 65, Court Rules",
       "domain": "republicworld.com",
