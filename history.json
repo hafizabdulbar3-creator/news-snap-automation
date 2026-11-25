@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/two-oil-tankers-explode-in-strait-of-hormuz-after-hitting-naval-mines-claims-irgc-2026-11-01-140223",
-      "title": "Two Oil Tankers Explode In Strait Of Hormuz After Hitting Naval Mines, Claims IRGC",
-      "headline": "IRGC Claims Two Tankers Explode in Strait of Hormuz After Hitting Mines",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17997014082062718",
-      "timestamp": "2026-11-02T00:09:32.289402+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/naftali-bennett-backs-gadi-eisenkot-for-pm-says-will-recommend-yashar-chief-to-president-herzog-2026-11-01-140224",
       "title": "Bennett Backs Eisenkot for PM Amid Israeli Political Deadlock",
       "headline": "Bennett Backs Eisenkot for PM Amid Israeli Political Deadlock",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17913037761667989",
       "timestamp": "2026-11-25T03:28:39.943656+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-horror-woman-gang-raped-by-colleagues-at-preet-vihar-cafe-two-women-among-three-held-2026-11-25-141799",
+      "title": "Delhi Horror: Woman Gang-Raped by Colleagues at Preet Vihar Cafe; Two Women Among Three Held",
+      "headline": "Woman Gang-Raped by Colleagues at Preet Vihar Cafe; Two Women Among Three Held",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17917147011490082",
+      "timestamp": "2026-11-25T04:09:06.611617+00:00"
     }
   ],
   "processed": [
@@ -4702,17 +4702,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Horror: Woman Gang-Raped by Colleagues at Preet Vihar Cafe; Two Women Among Three Held",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-horror-woman-gang-raped-by-colleagues-at-preet-vihar-cafe-two-women-among-three-held-2026-11-25-141799",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A report on a local criminal incident."
-      },
-      "classified_at": "2026-11-25T02:45:33.907003+00:00"
-    },
     {
       "title": "Jensen Huang Denies Trump's Role In Nvidia Return: 'That Is Completely Untrue'",
       "domain": "news18.com",
