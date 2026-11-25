@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/viral/british-couple-takes-indian-auto-rickshaw-to-uk-after-4218-km-journey-across-india-video-goes-viral-ws-l-10408406.html?comscorekw=jionews",
-      "title": "British Couple Takes Indian Auto-Rickshaw To UK After 4,218-Km Journey Across India, Video Goes Viral",
-      "headline": "British Couple Ship Indian Auto-Rickshaw To UK After 4,218-Km Journey",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18091110236254920",
-      "timestamp": "2026-11-02T07:23:10.882327+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/internship-of-5-years-is-over-why-3-aap-leaders-joined-bjp-ahead-of-2027-punjab-polls-ws-l-10408393.html?comscorekw=jionews",
       "title": "'Internship Of 5 Years Is Over': Why 3 AAP Leaders Joined BJP Ahead Of 2027 Punjab Polls",
       "headline": "3 AAP Leaders Join BJP Ahead Of 2027 Punjab Polls",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18356180587271239",
       "timestamp": "2026-11-25T13:00:34.205529+00:00"
+    },
+    {
+      "url": "https://www.news18.com/lifestyle/health-and-fitness/cancer-linked-chemicals-in-bisleri-water-how-purification-by-products-bromate-and-pahs-raise-health-concerns-ws-l-10440559.html?comscorekw=jionews",
+      "title": "FSSAI Flags Cancer-Linked Chemicals in Bisleri Water, Raising Safety Questions",
+      "headline": "FSSAI Flags Cancer-Linked Chemicals in Bisleri Water",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18026494913941248",
+      "timestamp": "2026-11-25T14:03:10.002127+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "FSSAI Flags Cancer-Linked Chemicals in Bisleri Water, Raising Safety Questions",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/lifestyle/health-and-fitness/cancer-linked-chemicals-in-bisleri-water-how-purification-by-products-bromate-and-pahs-raise-health-concerns-ws-l-10440559.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy & Business",
-        "reason": "A regulatory action by a food safety authority regarding product safety, which is a matter of public interest and consumer protection."
-      },
-      "classified_at": "2026-11-25T11:36:34.599084+00:00"
-    },
     {
       "title": "Tamil Nadu Govt Apologizes to SC: Temple Board Blocked Deepam Ritual",
       "domain": "republicworld.com",
