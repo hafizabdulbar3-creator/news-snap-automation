@@ -4716,12 +4716,12 @@
   },
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5184000,
-    "refreshed_at": "2026-11-24T14:12:05.570701+00:00",
-    "expires_at": "2027-01-23T14:12:05.570701+00:00",
+    "expires_in": 5100445,
+    "refreshed_at": "2026-11-25T13:24:39.740684+00:00",
+    "expires_at": "2027-01-23T14:12:04.740684+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-24T14:12:07.923292+00:00"
+    "updated_at": "2026-11-25T13:24:41.800588+00:00"
   }
 }
