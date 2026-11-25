@@ -4503,42 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/india/proposal-to-rename-west-bengal-to-paschim-banga-to-be-tabled-in-next-assembly-session-suvendu-ws-l-10437315.html?comscorekw=jionews",
-      "title": "West Bengal To Become 'Paschim Banga' Soon? CM Suvendu Says Proposal To Be Tabled In Assembly",
-      "domain": "news18.com",
-      "timestamp": "2026-11-23T11:05:34.161897+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('West Bengal To Become 'Paschim Banga' Soon? CM Suvendu Says Proposal To Be Tabled In Assembly'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.news18.com/india/gold-imports-fall-40-bjp-credits-pm-modis-appeal-to-citizens-congress-questions-logic-ws-l-10437396.html?comscorekw=jionews",
-      "title": "Gold Imports Fall 40%: BJP Credits PM Modi's Appeal To Citizens, Congress Questions Logic",
-      "domain": "news18.com",
-      "timestamp": "2026-11-23T12:36:09.604156+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    },
-    {
-      "url": "https://www.republicworld.com/world-news/ukraine-sinks-russian-warship-in-libya-kyiv-claims-drone-strike-as-russia-s-military-assets-come-under-fire-2026-11-23-141684",
-      "title": "Dramatic Drone Attacks: Ukraine Sinks Russian Warship in Libya, Hits Cargo Ship",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-23T12:38:26.356066+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "curiosity_line failed English validation."
-    },
-    {
-      "url": "https://www.news18.com/lifestyle/travel/looking-for-cleaner-quieter-shores-in-goa-these-2-beaches-just-made-the-global-list-ws-l-10437869.html?comscorekw=jionews",
-      "title": "Looking For Cleaner, Quieter Shores In Goa? These 2 Beaches Just Made The Global List",
-      "domain": "news18.com",
-      "timestamp": "2026-11-23T16:37:44.133427+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
       "url": "https://www.republicworld.com/global-news/us-senator-elizabeth-warren-warns-huang-s-return-raises-urgency-for-export-control-bills-demands-answers-from-trump-admin-2026-11-24-141709",
       "title": "Nvidia CEO's Return Sparks Senator Warren's Call for Export Control Action",
       "domain": "republicworld.com",
@@ -4672,20 +4636,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('CEO Kalyan Krishnamurthy Steps Down After 11 Years; Who Will Lead Flipkart Next?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.republicworld.com/india/fire-breaks-out-at-cloth-godown-on-kolkatas-ajc-bose-road-10-families-rescued-2026-11-25-141849",
+      "title": "Fire Breaks Out at Cloth Godown on Kolkata's AJC Bose Road; 10 Families Rescued",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-25T23:56:27.128312+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "curiosity_line failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Fire Breaks Out at Cloth Godown on Kolkata's AJC Bose Road; 10 Families Rescued",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/fire-breaks-out-at-cloth-godown-on-kolkatas-ajc-bose-road-10-families-rescued-2026-11-25-141849",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "A fire incident resulting in the rescue of families is a local disaster story of public interest but limited in scope."
-      },
-      "classified_at": "2026-11-25T15:15:41.937721+00:00"
-    },
     {
       "title": "India Concerned: 1,700 Nationals Deported from US, Violence in Bangladesh",
       "domain": "republicworld.com",
