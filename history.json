@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/business/savings-and-investments/epfo-launches-whatsapp-services-check-epf-balance-last-5-transactions-download-passbook-ws-l-10408066.html?comscorekw=jionews",
-      "title": "EPFO Launches WhatsApp Services: Check EPF Balance, Last 5 Transactions, Download Passbook",
-      "headline": "EPFO Launches WhatsApp Services for Members",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18504453871097197",
-      "timestamp": "2026-11-02T04:14:52.932577+00:00"
-    },
-    {
       "url": "https://www.news18.com/sports/formula-one/kimi-antonelli-breaks-sebastian-vettels-record-to-become-youngest-f1-world-champion-in-history-ws-l-10408077.html?comscorekw=jionews",
       "title": "Kimi Antonelli Breaks Sebastian Vettel's Record To Become Youngest F1 World Champion In History",
       "headline": "Kimi Antonelli Breaks Sebastian Vettel's Record to Become Youngest F1 World Champion",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18053555171811296",
       "timestamp": "2026-11-25T08:41:19.541139+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/economy/walmart-owned-flipkart-ceo-kalyan-krishnamurthy-to-step-down-after-11-years-ws-l-10440392.html?comscorekw=jionews",
+      "title": "Walmart-Owned Flipkart CEO Kalyan Krishnamurthy To Step Down After 11 Years",
+      "headline": "Flipkart CEO Kalyan Krishnamurthy To Step Down After 11 Years",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18143015797627697",
+      "timestamp": "2026-11-25T09:21:33.913329+00:00"
     }
   ],
   "processed": [
@@ -4675,17 +4675,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Walmart-Owned Flipkart CEO Kalyan Krishnamurthy To Step Down After 11 Years",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/economy/walmart-owned-flipkart-ceo-kalyan-krishnamurthy-to-step-down-after-11-years-ws-l-10440392.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Corporate leadership transition at a major e-commerce company."
-      },
-      "classified_at": "2026-11-25T09:11:01.345528+00:00"
-    },
     {
       "title": "India's Expressway Boom: 10 Major Corridors That Are Bringing Cities Closer",
       "domain": "news18.com",
