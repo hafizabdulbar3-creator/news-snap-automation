@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/naftali-bennett-backs-gadi-eisenkot-for-pm-says-will-recommend-yashar-chief-to-president-herzog-2026-11-01-140224",
-      "title": "Bennett Backs Eisenkot for PM Amid Israeli Political Deadlock",
-      "headline": "Bennett Backs Eisenkot for PM Amid Israeli Political Deadlock",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18096250202468098",
-      "timestamp": "2026-11-02T00:35:20.548188+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cyclone-alert-heavy-machinery-deployed-in-rayagada-as-cyclone-murasu-approaches-andhra-coast-by-november-3-2026-11-02-140226",
       "title": "Cyclone Murasu Approaches Andhra Coast; Evacuations Underway",
       "headline": "Cyclone Murasu Approaches Andhra Coast; Evacuations Underway",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17917147011490082",
       "timestamp": "2026-11-25T04:09:06.611617+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/jensen-huang-denies-trumps-role-in-nvidia-return-that-is-completely-untrue-ws-l-10439600.html?comscorekw=jionews",
+      "title": "Jensen Huang Denies Trump's Role In Nvidia Return: 'That Is Completely Untrue'",
+      "headline": "Nvidia CEO Jensen Huang Denies Trump's Role In Company's Return",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17912672928598531",
+      "timestamp": "2026-11-25T04:35:37.095476+00:00"
     }
   ],
   "processed": [
@@ -4701,19 +4701,7 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Jensen Huang Denies Trump's Role In Nvidia Return: 'That Is Completely Untrue'",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/jensen-huang-denies-trumps-role-in-nvidia-return-that-is-completely-untrue-ws-l-10439600.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A statement from a corporate executive regarding business operations."
-      },
-      "classified_at": "2026-11-25T02:45:33.907011+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
