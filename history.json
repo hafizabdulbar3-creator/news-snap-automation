@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/sports/at-20-mercedes-kimi-antonelli-beats-vettel-s-record-to-become-youngest-f1-world-champion-2026-11-01-140222",
-      "title": "At 20, Mercedes' Kimi Antonelli Beats Vettel's Record To Become Youngest F1 World Champion",
-      "headline": "Mercedes' Kimi Antonelli Becomes Youngest F1 World Champion at 20",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18102065036074613",
-      "timestamp": "2026-11-01T23:43:19.835184+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/two-oil-tankers-explode-in-strait-of-hormuz-after-hitting-naval-mines-claims-irgc-2026-11-01-140223",
       "title": "Two Oil Tankers Explode In Strait Of Hormuz After Hitting Naval Mines, Claims IRGC",
       "headline": "IRGC Claims Two Tankers Explode in Strait of Hormuz After Hitting Mines",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18140594665649662",
       "timestamp": "2026-11-25T02:46:42.844251+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/up-elections-2027-the-numbers-behind-the-noise-decoding-yogi-adityanaths-1-27-crore-missing-voters-claim-ws-bl-10439597.html?comscorekw=jionews",
+      "title": "The Numbers Behind The Noise: Decoding Yogi Adityanath's 1.27 Crore 'Missing' Voters Claim",
+      "headline": "Decoding Yogi Adityanath's 1.27 Crore 'Missing' Voters Claim",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17913037761667989",
+      "timestamp": "2026-11-25T03:28:39.943656+00:00"
     }
   ],
   "processed": [
@@ -4702,17 +4702,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "The Numbers Behind The Noise: Decoding Yogi Adityanath's 1.27 Crore 'Missing' Voters Claim",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/up-elections-2027-the-numbers-behind-the-noise-decoding-yogi-adityanaths-1-27-crore-missing-voters-claim-ws-bl-10439597.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political analysis regarding voter statistics in a specific region."
-      },
-      "classified_at": "2026-11-25T02:45:33.906986+00:00"
-    },
     {
       "title": "Delhi Horror: Woman Gang-Raped by Colleagues at Preet Vihar Cafe; Two Women Among Three Held",
       "domain": "republicworld.com",
