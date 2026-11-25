@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/indias-data-leak-problem-govt-analysis-flags-security-lapses-third-party-alerts-raise-concern-exclusive-ws-l-10408079.html?comscorekw=jionews",
-      "title": "India's Data Security in Peril: Government Report Reveals Widespread Lapses",
-      "headline": "India's Data Security in Peril: Government Report Reveals Widespread Lapses",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18128002204856469",
-      "timestamp": "2026-11-02T03:49:11.438107+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/savings-and-investments/epfo-launches-whatsapp-services-check-epf-balance-last-5-transactions-download-passbook-ws-l-10408066.html?comscorekw=jionews",
       "title": "EPFO Launches WhatsApp Services: Check EPF Balance, Last 5 Transactions, Download Passbook",
       "headline": "EPFO Launches WhatsApp Services for Members",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115887092125441",
       "timestamp": "2026-11-25T08:09:19.912935+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/savings-and-investments/gold-silver-rates-today-check-24k-22k-gold-prices-in-delhi-mumbai-chennai-and-other-cities-on-november-25-ws-l-10439834.html?comscorekw=jionews",
+      "title": "Gold, Silver Prices Drop Across India: What You Need to Know Today",
+      "headline": "Gold, Silver Prices Drop Across India Today",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18053555171811296",
+      "timestamp": "2026-11-25T08:41:19.541139+00:00"
     }
   ],
   "processed": [
@@ -4692,19 +4692,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Gold, Silver Prices Drop Across India: What You Need to Know Today",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/savings-and-investments/gold-silver-rates-today-check-24k-22k-gold-prices-in-delhi-mumbai-chennai-and-other-cities-on-november-25-ws-l-10439834.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "A report on commodity price fluctuations affecting the domestic market."
-      },
-      "classified_at": "2026-11-25T06:39:27.127757+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
