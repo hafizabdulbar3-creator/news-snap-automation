@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/politics/thug-jibe-exposes-nc-civil-war-budhal-mla-claims-deputy-cm-diverted-rs-400-crore-bjp-says-party-heading-for-split-ws-blrt-10425913.html?comscorekw=jionews",
-      "title": "Explosive 'Thug' Jibe Ignites NC Civil War: MLA Alleges Rs 400 Cr Fund Diversion",
-      "headline": "NC Civil War: MLA Alleges Rs 400 Cr Fund Diversion",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17979092655176278",
-      "timestamp": "2026-11-14T14:49:46.073961+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/a-long-goodbye-on-raisina-hill-the-final-exit-of-the-armed-forces-from-south-block-ws-l-10425848.html?comscorekw=jionews",
       "title": "A Long Goodbye On Raisina Hill: The Final Exit Of The Armed Forces From South Block",
       "headline": "Armed Forces To Exit South Block After Decades",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18362470966217806",
       "timestamp": "2026-11-26T17:16:09.127329+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/heroes-who-gave-everything-priyanka-chopra-honours-26-11-mumbai-attack-martyrs-on-18th-anniversary-ws-kl-10442512.html?comscorekw=jionews",
+      "title": "'Heroes Who Gave Everything': Priyanka Chopra Honours 26/11 Mumbai Attack Martyrs On 18th Anniversary",
+      "headline": "Priyanka Chopra Honours 26/11 Martyrs On 18th Anniversary",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17992455879116900",
+      "timestamp": "2026-11-26T17:42:17.807401+00:00"
     }
   ],
   "processed": [
@@ -4648,17 +4648,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Heroes Who Gave Everything': Priyanka Chopra Honours 26/11 Mumbai Attack Martyrs On 18th Anniversary",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/movies/bollywood/heroes-who-gave-everything-priyanka-chopra-honours-26-11-mumbai-attack-martyrs-on-18th-anniversary-ws-kl-10442512.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic News",
-        "reason": "A celebrity honoring martyrs on a specific anniversary; while respectful, it falls under public interest rather than a major geopolitical event."
-      },
-      "classified_at": "2026-11-26T16:49:50.295594+00:00"
-    },
     {
       "title": "Pakistan Court Defers Verdict Against Imran Khan's Sister Aleema in 2024 Protest Case Till Dec 16",
       "domain": "republicworld.com",
