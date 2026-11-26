@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/mla-s-nephew-in-range-rover-kills-rapido-passenger-in-ahmedabad-walks-free-on-a-notice-2026-11-14-141015",
-      "title": "MLA's Nephew In Range Rover Kills Rapido Passenger In Ahmedabad, Walks Free On A Notice",
-      "headline": "MLA's Nephew In Range Rover Kills Rapido Passenger In Ahmedabad, Walks Free",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18398757895161515",
-      "timestamp": "2026-11-14T01:19:04.337984+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/pm-modi-reviews-crucial-rail-project-for-andhras-new-capital-amaravati-exclusive-ws-blrt-10425013.html?comscorekw=jionews",
       "title": "PM Modi Reviews Crucial Rail Project For Andhra's New Capital Amaravati | Exclusive",
       "headline": "PM Modi Reviews Crucial Rail Project For Amaravati",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17934832911165695",
       "timestamp": "2026-11-26T03:24:46.713278+00:00"
+    },
+    {
+      "url": "https://www.news18.com/sports/football/sporting-lisbon-vs-manchester-united-match-result-2-2-champions-league-draw-bruno-fernandes-mauricio-pochettino-ws-kl-10441207.html?comscorekw=jionews",
+      "title": "Bruno Fernandes Scores Twice But Manchester United Held 2-2 At Sporting Lisbon",
+      "headline": "Bruno Fernandes Scores Twice But United Held 2-2 At Sporting Lisbon",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18389591068234445",
+      "timestamp": "2026-11-26T03:51:00.682915+00:00"
     }
   ],
   "processed": [
@@ -4656,19 +4656,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Bruno Fernandes Scores Twice But Manchester United Held 2-2 At Sporting Lisbon",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/sports/football/sporting-lisbon-vs-manchester-united-match-result-2-2-champions-league-draw-bruno-fernandes-mauricio-pochettino-ws-kl-10441207.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A football match result for a club team is a standard sports update, not a major international event."
-      },
-      "classified_at": "2026-11-26T02:58:30.301762+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
