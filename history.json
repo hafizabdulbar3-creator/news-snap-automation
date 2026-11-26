@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/katrina-kaif-says-vicky-kaushal-reminds-her-to-take-breaks-from-work-he-is-the-peace-to-my-hysteria-ws-kl-10425867.html?comscorekw=jionews",
-      "title": "Katrina Kaif Says Vicky Kaushal Reminds Her To Take Breaks From Work: 'He Is The Peace To My Hysteria'",
-      "headline": "Katrina Kaif Calls Vicky Kaushal Her 'Peace' Amidst Hysteria",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18379423303211290",
-      "timestamp": "2026-11-14T14:08:50.696829+00:00"
-    },
-    {
       "url": "https://www.news18.com/politics/thug-jibe-exposes-nc-civil-war-budhal-mla-claims-deputy-cm-diverted-rs-400-crore-bjp-says-party-heading-for-split-ws-blrt-10425913.html?comscorekw=jionews",
       "title": "Explosive 'Thug' Jibe Ignites NC Civil War: MLA Alleges Rs 400 Cr Fund Diversion",
       "headline": "NC Civil War: MLA Alleges Rs 400 Cr Fund Diversion",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18016402151763673",
       "timestamp": "2026-11-26T16:50:34.999568+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-nato-chief-urge-putin-to-pull-back-and-avoid-actions-that-could-expand-the-war-in-ukraine-2026-11-26-141939",
+      "title": "Urgent Plea: Trump, NATO Chief Warn Putin Against Ukraine War Escalation",
+      "headline": "Trump and NATO Chief Warn Putin Against Escalation",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18362470966217806",
+      "timestamp": "2026-11-26T17:16:09.127329+00:00"
     }
   ],
   "processed": [
@@ -4648,17 +4648,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Urgent Plea: Trump, NATO Chief Warn Putin Against Ukraine War Escalation",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/trump-nato-chief-urge-putin-to-pull-back-and-avoid-actions-that-could-expand-the-war-in-ukraine-2026-11-26-141939",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Involves a former US President and NATO leadership issuing urgent warnings regarding a major ongoing geopolitical conflict in Europe."
-      },
-      "classified_at": "2026-11-26T16:49:50.295573+00:00"
-    },
     {
       "title": "'Heroes Who Gave Everything': Priyanka Chopra Honours 26/11 Mumbai Attack Martyrs On 18th Anniversary",
       "domain": "news18.com",
