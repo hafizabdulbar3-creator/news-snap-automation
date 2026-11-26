@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cities/chandigarh/punjab-da-crorepati-are-you-aged-15-30-you-could-win-rs-1-crore-by-answering-these-questions-ws-l-10425523.html?comscorekw=jionews",
-      "title": "'Punjab Da Crorepati': Are You Aged 15-30? You Could Win Rs 1 Crore By Answering These Questions",
-      "headline": "Punjab Da Crorepati: Win Rs 1 Crore By Answering Questions",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18172624951481507",
-      "timestamp": "2026-11-14T10:03:56.594443+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/health/this-surprising-brain-difference-may-explain-why-some-kids-struggle-with-math-study-2026-11-14-141062",
       "title": "This Surprising Brain Difference May Explain Why Some Kids Struggle With Math: Study",
       "headline": "Brain Difference May Explain Math Struggles in Kids",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18381182209214856",
       "timestamp": "2026-11-26T12:35:12.818190+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/ott/fwice-urges-pm-modi-s-intervention-to-prevent-release-of-pakistani-series-in-india-2026-11-26-141904",
+      "title": "FWICE Urges PM Modi's Intervention To Prevent Release Of Pakistani Series In India",
+      "headline": "FWICE Urges PM Modi To Halt Pakistani Series Release In India",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18085972082410263",
+      "timestamp": "2026-11-26T13:01:15.437028+00:00"
     }
   ],
   "processed": [
@@ -4611,19 +4611,7 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "FWICE Urges PM Modi's Intervention To Prevent Release Of Pakistani Series In India",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/ott/fwice-urges-pm-modi-s-intervention-to-prevent-release-of-pakistani-series-in-india-2026-11-26-141904",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "A request from a film body regarding content, classified as entertainment industry news."
-      },
-      "classified_at": "2026-11-26T09:33:10.353128+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
