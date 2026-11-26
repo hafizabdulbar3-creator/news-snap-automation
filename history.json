@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/web-series/tvfs-family-kirana-store-season-3-releases-on-youtube-clocks-three-seasons-in-10-months-ws-l-10424550.html?comscorekw=jionews",
-      "title": "TVF's Family Kirana Store Season 3 Releases On YouTube, Clocks Three Seasons In 10 Months",
-      "headline": "TVF's Family Kirana Store Season 3 Premieres On YouTube",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18034575416889746",
-      "timestamp": "2026-11-13T17:41:19.556876+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/four-held-within-six-hours-for-alleged-gang-rape-of-minor-girl-in-nainital-2026-11-13-141004",
       "title": "Four Held Within Six Hours for Alleged Gang-rape of Minor Girl in Nainital",
       "headline": "Four Held Within Six Hours for Alleged Gang-rape of Minor Girl in Nainital",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18111501365565436",
       "timestamp": "2026-11-25T23:30:55.131680+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/1700-indian-nationals-deported-from-us-in-2026-so-far-india-deeply-concerned-over-violence-against-minorities-in-bangladesh-mea-2026-11-25-141842",
+      "title": "India Concerned: 1,700 Nationals Deported from US, Violence in Bangladesh",
+      "headline": "India Concerned Over Deportations & Violence in Bangladesh",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17878817139586302",
+      "timestamp": "2026-11-26T00:01:57.302820+00:00"
     }
   ],
   "processed": [
@@ -4647,19 +4647,7 @@
       "rejection_reason": "curiosity_line failed English validation."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "India Concerned: 1,700 Nationals Deported from US, Violence in Bangladesh",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/1700-indian-nationals-deported-from-us-in-2026-so-far-india-deeply-concerned-over-violence-against-minorities-in-bangladesh-mea-2026-11-25-141842",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Regional News",
-        "reason": "Deportation statistics and unrest in neighboring countries are significant but fall under regional political and social reporting rather than a major global event."
-      },
-      "classified_at": "2026-11-25T15:15:41.937726+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
