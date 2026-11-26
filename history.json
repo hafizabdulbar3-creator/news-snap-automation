@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/ukraine-expects-largest-ever-prisoner-exchange-with-russia-since-war-involving-over-1000-from-each-side-zelenskyy-2026-11-14-141050",
-      "title": "Ukraine, Russia Poised for Largest Prisoner Exchange Since War Began",
-      "headline": "Ukraine, Russia Poised for Largest Prisoner Exchange Since War Began",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17919533220260056",
-      "timestamp": "2026-11-14T07:28:10.528118+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/two-oil-tankers-explode-catch-fire-after-hitting-naval-mines-near-hormuz-iran-s-irgc-navy-2026-11-14-141049",
       "title": "Two Oil Tankers Explode, Catch Fire After Hitting Naval Mines Near Hormuz: Iran's IRGC Navy",
       "headline": "Two Oil Tankers Explode, Catch Fire After Hitting Naval Mines Near Hormuz",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17897118450435733",
       "timestamp": "2026-11-26T09:33:39.088227+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/huge-explosion-at-bangkok-oil-depot-sends-thick-black-smoke-into-sky-residents-asked-to-evacuate-10441871.html?comscorekw=jionews",
+      "title": "Explosion at Bangkok oil depot; evacuation underway",
+      "headline": "Massive explosion rocks Bangkok oil depot",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18399077089207620",
+      "timestamp": "2026-11-26T09:59:35.139210+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Explosion at Bangkok oil depot; evacuation underway",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/huge-explosion-at-bangkok-oil-depot-sends-thick-black-smoke-into-sky-residents-asked-to-evacuate-10441871.html?comscorekw=jionews",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major industrial explosion at an oil depot in Bangkok with immediate safety implications and evacuation orders."
-      },
-      "classified_at": "2026-11-26T09:33:10.353097+00:00"
-    },
     {
       "title": "BJP To Launch 'Seva Doot Abhiyan' From December 1 To Mark PM Modi's 25 Years In Public Life",
       "domain": "news18.com",
