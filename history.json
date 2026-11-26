@@ -4627,20 +4627,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/business/building-indias-metals-capacity-for-the-next-phase-of-economic-growth-2026-11-26-141936",
+      "title": "Building India's Metals Capacity for the Next Phase of Economic Growth",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-26T15:47:39.169533+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "headline failed English validation."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Building India's Metals Capacity for the Next Phase of Economic Growth",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/business/building-indias-metals-capacity-for-the-next-phase-of-economic-growth-2026-11-26-141936",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "A policy announcement focused on industrial capacity and economic growth."
-      },
-      "classified_at": "2026-11-26T15:21:27.211105+00:00"
-    },
     {
       "title": "CISF, IIT Delhi Partner for Indigenous Drone Tech to Secure Critical Infrastructure",
       "domain": "republicworld.com",
