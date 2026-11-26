@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/bollywood/varun-dhawan-to-lead-yrfs-first-horror-film-abhay-pannu-to-direct-2026-11-14-141061",
-      "title": "Varun Dhawan To Lead YRF's First Horror Film, Abhay Pannu To Direct",
-      "headline": "Varun Dhawan To Lead YRF's First Horror Film",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18099089117395130",
-      "timestamp": "2026-11-14T11:53:20.201807+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/lifestyle/art-culture/pravasi-uttarakhandi-sammelan-2026-prasoon-joshi-urges-youth-to-preserve-their-cultural-roots-2026-11-14-141059",
       "title": "Pravasi Uttarakhandi Sammelan 2026: Prasoon Joshi Urges Youth To Preserve Their Cultural Roots",
       "headline": "Prasoon Joshi Urges Youth to Preserve Cultural Roots at Sammelan",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18419782129081116",
       "timestamp": "2026-11-26T14:19:20.804781+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/info/vehant-technologies-brings-indigenous-full-body-screening-technology-to-lajpore-central-jail-surats-prison-security-infrastructure-2026-11-26-141926",
+      "title": "Indigenous X-Ray Scanners Transform Prison Security, Ending Manual Frisking",
+      "headline": "Indigenous X-Ray Scanners Transform Prison Security",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18115368419164463",
+      "timestamp": "2026-11-26T14:50:37.865574+00:00"
     }
   ],
   "processed": [
@@ -4621,17 +4621,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Indigenous X-Ray Scanners Transform Prison Security, Ending Manual Frisking",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/info/vehant-technologies-brings-indigenous-full-body-screening-technology-to-lajpore-central-jail-surats-prison-security-infrastructure-2026-11-26-141926",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A regional or national technological innovation in security, though significant, is a specific application rather than a global geopolitical event."
-      },
-      "classified_at": "2026-11-26T13:26:56.138978+00:00"
-    },
     {
       "title": "CJP Leaders Hit with Lookout Circulars Over Prohibited Protest.",
       "domain": "republicworld.com",
