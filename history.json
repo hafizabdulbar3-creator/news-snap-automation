@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/faa-issues-nationwide-ground-stop-across-us-airports-after-communication-outage-thousands-of-flights-disrupted-2026-11-14-141048",
-      "title": "FAA Ground Stop: US Airports Halted by Communication Outage, Thousands Affected",
-      "headline": "FAA Ground Stop Halts US Airports After Communication Outage",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18147941359571873",
-      "timestamp": "2026-11-14T08:20:20.855334+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhi-air-stays-very-poor-with-aqi-at-348-severe-pollution-grips-key-areas-2026-11-14-141046",
       "title": "Delhi Air Stays 'Very Poor' with AQI at 348; Severe Pollution Grips Key Areas",
       "headline": "Delhi Air Stays 'Very Poor' with AQI at 348",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18143837608730737",
       "timestamp": "2026-11-26T10:30:33.162031+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/bjp-to-launch-seva-doot-abhiyan-from-december-1-to-mark-pm-modis-25-years-in-public-life-ws-l-10441921.html?comscorekw=jionews",
+      "title": "BJP To Launch 'Seva Doot Abhiyan' From December 1 To Mark PM Modi's 25 Years In Public Life",
+      "headline": "BJP To Launch 'Seva Doot Abhiyan' From Dec 1",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18125976274901849",
+      "timestamp": "2026-11-26T11:02:03.128955+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "BJP To Launch 'Seva Doot Abhiyan' From December 1 To Mark PM Modi's 25 Years In Public Life",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/bjp-to-launch-seva-doot-abhiyan-from-december-1-to-mark-pm-modis-25-years-in-public-life-ws-l-10441921.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A domestic political campaign announcement regarding a specific leader's tenure, falling under national/regional policy."
-      },
-      "classified_at": "2026-11-26T09:33:10.353118+00:00"
-    },
     {
       "title": "12 Bangladesh Nationals Held In Aligarh: Police Now Probe Who Helped Them Get Indian IDs",
       "domain": "news18.com",
