@@ -4609,20 +4609,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Caption must contain 20–80 words, got 18."
+    },
+    {
+      "url": "https://www.republicworld.com/business/real-estate/translating-sustainable-visions-into-urban-execution-2026-11-26-141927",
+      "title": "Translating Sustainable Visions Into Urban Execution",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-26T14:45:02.375136+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Translating Sustainable Visions Into Urban Execution",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/business/real-estate/translating-sustainable-visions-into-urban-execution-2026-11-26-141927",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "A regional or national policy story focused on urban planning and sustainability execution."
-      },
-      "classified_at": "2026-11-26T13:26:56.138972+00:00"
-    },
     {
       "title": "Indigenous X-Ray Scanners Transform Prison Security, Ending Manual Frisking",
       "domain": "republicworld.com",
