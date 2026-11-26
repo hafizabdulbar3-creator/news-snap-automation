@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/lifestyle/art-culture/pravasi-uttarakhandi-sammelan-2026-prasoon-joshi-urges-youth-to-preserve-their-cultural-roots-2026-11-14-141059",
-      "title": "Pravasi Uttarakhandi Sammelan 2026: Prasoon Joshi Urges Youth To Preserve Their Cultural Roots",
-      "headline": "Prasoon Joshi Urges Youth to Preserve Cultural Roots at Sammelan",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18101964701387540",
-      "timestamp": "2026-11-14T12:19:21.068936+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/zelenskyy-says-a-new-european-security-framework-floated-by-us-could-benefit-putin-2026-11-14-141067",
       "title": "Zelenskyy Says a New European Security Framework Floated by US Could Benefit Putin",
       "headline": "Zelenskyy Warns US Framework Could Benefit Putin",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115368419164463",
       "timestamp": "2026-11-26T14:50:37.865574+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/govt-moves-to-reconvene-parliament-from-november-30-to-december-3-2026-11-26-141934",
+      "title": "Govt Moves to Reconvene Parliament from November 30 to December 3",
+      "headline": "Govt Moves to Reconvene Parliament from Nov 30 to Dec 3",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18075988505787135",
+      "timestamp": "2026-11-26T15:22:00.091452+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,52 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Building India's Metals Capacity for the Next Phase of Economic Growth",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/business/building-indias-metals-capacity-for-the-next-phase-of-economic-growth-2026-11-26-141936",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A policy announcement focused on industrial capacity and economic growth."
+      },
+      "classified_at": "2026-11-26T15:21:27.211105+00:00"
+    },
+    {
+      "title": "CISF, IIT Delhi Partner for Indigenous Drone Tech to Secure Critical Infrastructure",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/defence/cisf-signs-mou-with-iit-delhi-to-develop-indigenous-drone-and-anti-drone-technology-for-critical-infrastructure-security-2026-11-26-141935",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A partnership announcement regarding indigenous technology development."
+      },
+      "classified_at": "2026-11-26T15:21:27.211108+00:00"
+    },
+    {
+      "title": "India Pitches Ahmedabad to Host 2036 Olympics, Showcasing Readiness",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/ioa-presents-india-s-vision-amdavad-s-preparedness-to-host-2036-olympics-to-ioc-2026-11-26-141932",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A bid for an international sporting event, which is a regional public interest story."
+      },
+      "classified_at": "2026-11-26T15:21:27.211111+00:00"
+    },
+    {
+      "title": "UCC Coming to BJP States: Amit Shah's Vision for India by 2047.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/ucc-in-all-bjp-ruled-states-soon-swami-vivekananda-s-dream-for-bharat-mata-will-be-accomplished-in-2047-amit-shah-2026-11-26-141933",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic Politics",
+        "reason": "A political vision statement regarding future legislative goals."
+      },
+      "classified_at": "2026-11-26T15:21:27.211113+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
