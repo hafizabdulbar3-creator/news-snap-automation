@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/web-series/student-of-the-year-after-dark-review-shanaya-kapoors-double-role-is-interesting-but-the-mystery-is-not-ws-kl-10425506.html?comscorekw=jionews",
-      "title": "Shanaya Kapoor's Double Role Shines in Dark SOTY Spinoff, But Mystery Falls Flat",
-      "headline": "Shanaya Kapoor's Double Role Shines in SOTY Spinoff, But Mystery Falls Flat",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18116393015326410",
-      "timestamp": "2026-11-14T10:56:06.333410+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/celebrities/iffi-2026-cm-pramod-sawant-welcomes-global-filmmakers-to-goa-2026-11-14-141060",
       "title": "IFFI 2026: CM Pramod Sawant Welcomes Global Filmmakers To Goa",
       "headline": "Goa Set to Host 57th IFFI From Nov 20",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18190868476417331",
       "timestamp": "2026-11-26T13:27:23.677462+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/terrorism-knows-no-borders-israel-backs-india-s-fight-against-terrorism-on-2611-anniversary-2026-11-26-141925",
+      "title": "'Terrorism Knows No Borders': Israel Backs India's Fight against Terrorism on 26/11 Anniversary",
+      "headline": "Israel Backs India's Fight Against Terrorism on 26/11 Anniversary",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17916733524504419",
+      "timestamp": "2026-11-26T13:53:11.987390+00:00"
     }
   ],
   "processed": [
@@ -4644,17 +4644,6 @@
         "reason": "A regional or national technological innovation in security, though significant, is a specific application rather than a global geopolitical event."
       },
       "classified_at": "2026-11-26T13:26:56.138978+00:00"
-    },
-    {
-      "title": "'Terrorism Knows No Borders': Israel Backs India's Fight against Terrorism on 26/11 Anniversary",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/terrorism-knows-no-borders-israel-backs-india-s-fight-against-terrorism-on-2611-anniversary-2026-11-26-141925",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major geopolitical event involving international relations, specifically the backing of a nation's anti-terrorism stance by another major power on the anniversary of a significant terrorist attack."
-      },
-      "classified_at": "2026-11-26T13:26:56.138981+00:00"
     },
     {
       "title": "CJP Leaders Hit with Lookout Circulars Over Prohibited Protest.",
