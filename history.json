@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/global-news/us-senator-elizabeth-warren-warns-huang-s-return-raises-urgency-for-export-control-bills-demands-answers-from-trump-admin-2026-11-24-141709",
-      "title": "Nvidia CEO's Return Sparks Senator Warren's Call for Export Control Action",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-24T01:03:21.912430+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.news18.com/explainers/too-important-to-replace-too-powerful-to-question-the-jensen-huang-alice-huang-spy-story-ws-l-10438284.html?comscorekw=jionews",
       "title": "Too Important To Replace, Too Powerful To Question? The Jensen Huang Story",
       "domain": "news18.com",
@@ -4654,20 +4645,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/eco-bharats-sampat-saraswat-pitches-road-safety-in-rome-impresses-italian-ministers-piyush-goyal-2026-11-25-141860",
+      "title": "Eco Bharat's Sampat Saraswat Pitches Road Safety in Rome, Impresses Italian Ministers & Piyush Goyal",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-26T01:11:26.649500+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
   "classified_pool": [
-    {
-      "title": "Eco Bharat's Sampat Saraswat Pitches Road Safety in Rome, Impresses Italian Ministers & Piyush Goyal",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/eco-bharats-sampat-saraswat-pitches-road-safety-in-rome-impresses-italian-ministers-piyush-goyal-2026-11-25-141860",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A regional policy or business initiative involving a specific individual (Sampat Saraswat) and a trade delegation, which is notable but not of broad international consequence."
-      },
-      "classified_at": "2026-11-26T00:33:02.455610+00:00"
-    },
     {
       "title": "Same Turnover, Different Rate: Why MSME Loan Offers Vary",
       "domain": "republicworld.com",
