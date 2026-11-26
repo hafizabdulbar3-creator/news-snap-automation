@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/zelenskyy-says-a-new-european-security-framework-floated-by-us-could-benefit-putin-2026-11-14-141067",
-      "title": "Zelenskyy Says a New European Security Framework Floated by US Could Benefit Putin",
-      "headline": "Zelenskyy Warns US Framework Could Benefit Putin",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18643918930030695",
-      "timestamp": "2026-11-14T12:45:09.870614+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/kashmirs-autumn-of-contrasts-when-golden-leaves-flowers-and-gunfire-share-the-landscape-ws-l-10425744.html?comscorekw=jionews",
       "title": "Kashmir's Autumn Of Contrasts: When Golden Leaves, Flowers And Gunfire Share The Landscape",
       "headline": "Kashmir's Autumn: Golden Leaves Amidst Gunfire And Chaos",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18075988505787135",
       "timestamp": "2026-11-26T15:22:00.091452+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/ioa-presents-india-s-vision-amdavad-s-preparedness-to-host-2036-olympics-to-ioc-2026-11-26-141932",
+      "title": "India Pitches Ahmedabad to Host 2036 Olympics, Showcasing Readiness",
+      "headline": "India Pitches Ahmedabad to Host 2036 Olympics",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18076963313758240",
+      "timestamp": "2026-11-26T15:58:15.200254+00:00"
     }
   ],
   "processed": [
@@ -4648,17 +4648,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India Pitches Ahmedabad to Host 2036 Olympics, Showcasing Readiness",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/sports/ioa-presents-india-s-vision-amdavad-s-preparedness-to-host-2036-olympics-to-ioc-2026-11-26-141932",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A bid for an international sporting event, which is a regional public interest story."
-      },
-      "classified_at": "2026-11-26T15:21:27.211111+00:00"
-    },
     {
       "title": "UCC Coming to BJP States: Amit Shah's Vision for India by 2047.",
       "domain": "republicworld.com",
