@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/tech/global-microsoft-365-outage-enters-second-day-disrupts-outlook-teams-and-copilot-in-74-countries-2026-11-14-141016",
-      "title": "Global Microsoft 365 Outage Enters Second Day, Disrupts Outlook, Teams And Copilot In 74 Countries",
-      "headline": "Microsoft 365 Outage Enters Second Day, Disrupting Outlook, Teams, and Copilot",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18009151224008106",
-      "timestamp": "2026-11-14T02:10:56.298727+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/rubio-breaks-with-trump-on-economy-admits-americans-are-struggling-defends-iran-war-and-lashes-un-over-weaponization-of-international-law-2026-11-14-141018",
       "title": "Rubio Breaks With Trump on Economy, Defends Iran War, Lashes UN",
       "headline": "Rubio Breaks With Trump on Economy, Defends Iran War",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18133280255511065",
       "timestamp": "2026-11-26T04:16:45.486357+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/did-trump-consider-using-a-1950-wartime-law-to-bring-back-nvidia-ceo-jensen-huang-ws-l-10441267.html?comscorekw=jionews",
+      "title": "Did Trump Consider Using A 1950 Wartime Law To Bring Back Nvidia CEO Jensen Huang?",
+      "headline": "Did Trump Consider Using 1950 Wartime Law To Bring Back Nvidia CEO?",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17973126627193283",
+      "timestamp": "2026-11-26T04:42:38.696759+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Did Trump Consider Using A 1950 Wartime Law To Bring Back Nvidia CEO Jensen Huang?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/world/did-trump-consider-using-a-1950-wartime-law-to-bring-back-nvidia-ceo-jensen-huang-ws-l-10441267.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business & Economy",
-        "reason": "A speculative news story regarding a potential legal maneuver involving a prominent tech executive and a wartime law. While it touches on high-profile figures, it is currently a political rumor or investigative angle rather than a confirmed major geopolitical event."
-      },
-      "classified_at": "2026-11-26T04:16:21.416940+00:00"
-    },
     {
       "title": "IMD Weather Forecast: Delhi Wakes Up To Season's Coldest Morning, AQI Stays Poor At 226",
       "domain": "news18.com",
