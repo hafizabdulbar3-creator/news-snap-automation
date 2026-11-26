@@ -4600,6 +4600,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.news18.com/india/bomb-threat-targets-amitabh-bachchans-jalsa-residence-mumbai-mayors-office-10441836.html?comscorekw=jionews",
+      "title": "Bomb Threat Targets Amitabh Bachchan's 'Jalsa' Residence, Mumbai Mayor's Office",
+      "domain": "news18.com",
+      "timestamp": "2026-11-26T12:30:05.964908+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
   "classified_pool": [
@@ -4613,17 +4622,6 @@
         "reason": "A request from a film body regarding content, classified as entertainment industry news."
       },
       "classified_at": "2026-11-26T09:33:10.353128+00:00"
-    },
-    {
-      "title": "Bomb Threat Targets Amitabh Bachchan's 'Jalsa' Residence, Mumbai Mayor's Office",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/bomb-threat-targets-amitabh-bachchans-jalsa-residence-mumbai-mayors-office-10441836.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Crime",
-        "reason": "A bomb threat against a private residence and public office, a significant local security incident."
-      },
-      "classified_at": "2026-11-26T09:33:10.353133+00:00"
     }
   ],
   "quota_cooldown": {
