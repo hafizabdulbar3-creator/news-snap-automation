@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/france-germany-italy-poland-uk-to-represent-europe-in-ukraine-peace-talks-alongside-eu-institutions-2026-11-14-141022",
-      "title": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks Alongside EU Institutions",
-      "headline": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17998671966108218",
-      "timestamp": "2026-11-14T03:28:43.774389+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/air-india-warns-of-possible-flight-disruptions-amid-us-air-traffic-outage-2026-11-14-141020",
       "title": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
       "headline": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18101214050442206",
       "timestamp": "2026-11-26T05:34:38.493164+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/new-delhi-news/from-facebook-to-truecaller-87-apps-on-indian-armys-radar-what-can-soldiers-still-use-ws-l-10441329.html?comscorekw=jionews",
+      "title": "From Facebook To Truecaller: 87 Apps On Indian Army's Radar; What Can Soldiers Still Use?",
+      "headline": "87 Apps Face Scrutiny: Facebook, Truecaller, PUBG On Indian Army's Radar",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18205559734378563",
+      "timestamp": "2026-11-26T06:00:30.353625+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "From Facebook To Truecaller: 87 Apps On Indian Army's Radar; What Can Soldiers Still Use?",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/new-delhi-news/from-facebook-to-truecaller-87-apps-on-indian-armys-radar-what-can-soldiers-still-use-ws-l-10441329.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "A regional news story regarding technology usage policies within a specific military organization."
-      },
-      "classified_at": "2026-11-26T05:34:13.393777+00:00"
-    },
     {
       "title": "'Priceless Heritage Of Indian Democracy': PM Modi Pays Tribute To Ambedkar On Constitution Day",
       "domain": "republicworld.com",
