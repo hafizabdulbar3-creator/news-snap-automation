@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/us-aviation-in-tailspin-faa-halts-all-flights-due-to-extraordinary-circumstances-thousands-of-flyers-stranded-ws-lrt-10425000.html?comscorekw=jionews",
-      "title": "US Aviation Chaos: FAA Halts All Flights, Stranding Thousands Nationwide",
-      "headline": "US Aviation Chaos: FAA Halts All Flights Nationwide",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18147172612590911",
-      "timestamp": "2026-11-13T23:29:51.848693+00:00"
-    },
-    {
       "url": "https://www.news18.com/politics/mysterious-foreign-national-himachal-police-book-bjp-mp-kangana-ranaut-over-x-post-against-sonia-gandhi-ws-lrt-10425009.html?comscorekw=jionews",
       "title": "Kangana Ranaut Booked Over 'Mysterious Foreign National' Post Targeting Sonia Gandhi",
       "headline": "Himachal Police Book Kangana Ranaut Over 'Mysterious Foreign National' Post",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17977271613146588",
       "timestamp": "2026-11-26T02:32:54.748665+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/no-force-can-stop-womens-reservation-in-constitution-day-message-pm-modi-targets-oppn-ws-kl-10441212.html?comscorekw=jionews",
+      "title": "'No Force Can Stop Women's Reservation': In Constitution Day Message, PM Modi Targets Oppn",
+      "headline": "PM Modi Targets Opposition in Constitution Day Message",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18173524633473451",
+      "timestamp": "2026-11-26T02:58:57.039936+00:00"
     }
   ],
   "processed": [
@@ -4656,7 +4656,30 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Dhanvi Fuel Credit Kiosk Announces Hiring for Fuel Outlets Across Nine Metropolitan Cities",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/dhanvi-fuel-credit-kiosk-announces-hiring-for-fuel-outlets-across-nine-metropolitan-cities-2026-11-26-141872",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Corporate hiring news for a specific fuel credit kiosk chain is a regional business matter of limited international scope."
+      },
+      "classified_at": "2026-11-26T02:58:30.301739+00:00"
+    },
+    {
+      "title": "Bruno Fernandes Scores Twice But Manchester United Held 2-2 At Sporting Lisbon",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/sports/football/sporting-lisbon-vs-manchester-united-match-result-2-2-champions-league-draw-bruno-fernandes-mauricio-pochettino-ws-kl-10441207.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A football match result for a club team is a standard sports update, not a major international event."
+      },
+      "classified_at": "2026-11-26T02:58:30.301762+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
