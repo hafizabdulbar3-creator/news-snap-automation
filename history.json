@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/videos/global/cruise-ship-hit-by-tanker-in-new-orleans-all-130-rescued-in-miracle-on-mississippi-2026-11-14-141044",
-      "title": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued In 'Miracle On Mississippi'",
-      "headline": "Cruise Ship Hit By Tanker In New Orleans, All 130 Rescued",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18091319753286491",
-      "timestamp": "2026-11-14T09:11:57.569570+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/videos/global/us-flights-resume-after-faa-lifts-hours-long-ground-stop-delays-cancellations-continue-2026-11-14-141058",
       "title": "US Flights Resume After FAA Lifts Hours-Long Ground Stop; Delays, Cancellations Continue",
       "headline": "US Flights Resume After FAA Lifts Ground Stop",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17875293543646485",
       "timestamp": "2026-11-26T11:27:44.196300+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/hyderabad-news/hyderabad-gets-its-first-apple-store-check-location-opening-date-and-what-customers-can-expect-ws-l-10441808.html?comscorekw=jionews",
+      "title": "Hyderabad Gets Its First Apple Store: Check Location, Opening Date And What Customers Can Expect",
+      "headline": "Hyderabad Welcomes First Apple Store, Expanding to Six Indian Cities",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18111224570211870",
+      "timestamp": "2026-11-26T12:04:16.386686+00:00"
     }
   ],
   "processed": [
@@ -4613,17 +4613,6 @@
         "reason": "A request from a film body regarding content, classified as entertainment industry news."
       },
       "classified_at": "2026-11-26T09:33:10.353128+00:00"
-    },
-    {
-      "title": "Hyderabad Gets Its First Apple Store: Check Location, Opening Date And What Customers Can Expect",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/hyderabad-news/hyderabad-gets-its-first-apple-store-check-location-opening-date-and-what-customers-can-expect-ws-l-10441808.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "The opening of a retail store, a standard business milestone."
-      },
-      "classified_at": "2026-11-26T09:33:10.353132+00:00"
     },
     {
       "title": "Bomb Threat Targets Amitabh Bachchan's 'Jalsa' Residence, Mumbai Mayor's Office",
