@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/deeply-sorry-for-disruption-microsoft-issues-apology-after-global-outage-says-broad-recovery-across-services-2026-11-14-141043",
-      "title": "Microsoft Apologizes for Global Outage; Services Recovering",
-      "headline": "Microsoft Issues Apology After Global Outage",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17947849740366227",
-      "timestamp": "2026-11-14T06:36:13.687185+00:00"
-    },
-    {
       "url": "https://www.news18.com/cricket/india-vs-pakistan-live-cricket-score-u19-asia-cup-2026-final-ind-vs-pak-latest-scorecard-al-amerat-match-updates-liveblog-ws-l-10425160.html?comscorekw=jionews",
       "title": "U19 Asia Cup Final: Abdul Qadir's Fifty Powers Pakistan to 144/1 vs India",
       "headline": "Pakistan's Qadir Hits Fifty in U19 Asia Cup Final vs India",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17997807609048593",
       "timestamp": "2026-11-26T08:36:18.081588+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/economy/jet-airways-liquidation-nclat-orders-rs-480-crore-gratuity-payout-to-employees-after-7-year-battle-ws-l-10441651.html?comscorekw=jionews",
+      "title": "Jet Airways Liquidation: NCLAT Orders Rs 480 Crore Gratuity Payout to Employees After 7-Year Battle",
+      "headline": "NCLAT Orders Rs 480 Crore Gratuity Payout to Jet Airways Employees",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17970558258232004",
+      "timestamp": "2026-11-26T09:02:17.213381+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Jet Airways Liquidation: NCLAT Orders Rs 480 Crore Gratuity Payout to Employees After 7-Year Battle",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/economy/jet-airways-liquidation-nclat-orders-rs-480-crore-gratuity-payout-to-employees-after-7-year-battle-ws-l-10441651.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A significant corporate and labor development resulting from a major airline's liquidation."
-      },
-      "classified_at": "2026-11-26T08:10:04.732764+00:00"
-    },
     {
       "title": "Will Bangladesh Move ICJ Against India Over Hasina? What Its Speaker Said In Pakistan | Exclusive",
       "domain": "news18.com",
