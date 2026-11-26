@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/3100-flights-in-the-air-zero-allowed-to-take-off-why-faa-froze-us-departures-in-second-shutdown-since-911-2026-11-13-141014",
-      "title": "FAA Halts US Departures: 3100 Flights Airborne, Zero Takeoffs Allowed",
-      "headline": "FAA Halts All US Departures: 3100 Flights In Air",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18081928259723184",
-      "timestamp": "2026-11-14T06:09:53.202876+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/deeply-sorry-for-disruption-microsoft-issues-apology-after-global-outage-says-broad-recovery-across-services-2026-11-14-141043",
       "title": "Microsoft Apologizes for Global Outage; Services Recovering",
       "headline": "Microsoft Issues Apology After Global Outage",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17947687407085468",
       "timestamp": "2026-11-26T08:10:32.648431+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/high-fat-sugar-salt-sc-directs-fssai-to-frame-warning-labels-for-packaged-foods-ws-l-10441637.html?comscorekw=jionews",
+      "title": "'High Fat, Sugar, Salt': SC Directs FSSAI To Frame Warning Labels For Packaged Foods",
+      "headline": "SC Directs FSSAI To Frame Warning Labels For Packaged Foods",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17997807609048593",
+      "timestamp": "2026-11-26T08:36:18.081588+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "'High Fat, Sugar, Salt': SC Directs FSSAI To Frame Warning Labels For Packaged Foods",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/high-fat-sugar-salt-sc-directs-fssai-to-frame-warning-labels-for-packaged-foods-ws-l-10441637.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Health",
-        "reason": "A significant regulatory directive regarding public health and food safety standards."
-      },
-      "classified_at": "2026-11-26T08:10:04.732738+00:00"
-    },
     {
       "title": "Jet Airways Liquidation: NCLAT Orders Rs 480 Crore Gratuity Payout to Employees After 7-Year Battle",
       "domain": "news18.com",
