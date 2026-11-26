@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/china-and-us-discuss-usd-30-bn-reciprocal-tariff-cuts-ahead-of-trump-xi-meeting-2026-11-14-141070",
-      "title": "China and US Discuss USD 30 Bn Reciprocal Tariff Cuts Ahead of Trump-Xi Meeting",
-      "headline": "China and US Discuss USD 30 Bn Reciprocal Tariff Cuts",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18146996782717177",
-      "timestamp": "2026-11-14T13:42:28.917912+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/katrina-kaif-says-vicky-kaushal-reminds-her-to-take-breaks-from-work-he-is-the-peace-to-my-hysteria-ws-kl-10425867.html?comscorekw=jionews",
       "title": "Katrina Kaif Says Vicky Kaushal Reminds Her To Take Breaks From Work: 'He Is The Peace To My Hysteria'",
       "headline": "Katrina Kaif Calls Vicky Kaushal Her 'Peace' Amidst Hysteria",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18416193499095809",
       "timestamp": "2026-11-26T16:24:25.223434+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/pull-back-all-military-aggression-from-europe-trumps-fresh-appeal-to-putin-for-ukraine-peace-deal-10442491.html?comscorekw=jionews",
+      "title": "'Pull Back All Military Aggression From Europe': Trump's Fresh Appeal To Putin For Ukraine Peace Deal",
+      "headline": "Trump Calls For Putin To Pull Back All Military Aggression From Europe",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18016402151763673",
+      "timestamp": "2026-11-26T16:50:34.999568+00:00"
     }
   ],
   "processed": [
@@ -4647,7 +4647,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Urgent Plea: Trump, NATO Chief Warn Putin Against Ukraine War Escalation",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-nato-chief-urge-putin-to-pull-back-and-avoid-actions-that-could-expand-the-war-in-ukraine-2026-11-26-141939",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "Involves a former US President and NATO leadership issuing urgent warnings regarding a major ongoing geopolitical conflict in Europe."
+      },
+      "classified_at": "2026-11-26T16:49:50.295573+00:00"
+    },
+    {
+      "title": "'Heroes Who Gave Everything': Priyanka Chopra Honours 26/11 Mumbai Attack Martyrs On 18th Anniversary",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/movies/bollywood/heroes-who-gave-everything-priyanka-chopra-honours-26-11-mumbai-attack-martyrs-on-18th-anniversary-ws-kl-10442512.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic News",
+        "reason": "A celebrity honoring martyrs on a specific anniversary; while respectful, it falls under public interest rather than a major geopolitical event."
+      },
+      "classified_at": "2026-11-26T16:49:50.295594+00:00"
+    },
+    {
+      "title": "Pakistan Court Defers Verdict Against Imran Khan's Sister Aleema in 2024 Protest Case Till Dec 16",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/pakistan-court-defers-verdict-against-imran-khan-s-sister-aleema-in-2024-protest-case-till-dec-16-2026-11-26-141938",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Domestic News",
+        "reason": "Updates on a legal proceeding regarding a political figure's family member in a specific country."
+      },
+      "classified_at": "2026-11-26T16:49:50.295597+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
