@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/sidharth-malhotra-marks-chhath-puja-with-a-nostalgic-note-about-vvan-feels-truly-special-ws-l-10424909.html?comscorekw=jionews",
-      "title": "Sidharth Malhotra Marks Chhath Puja With A Nostalgic Note About 'Vvan': 'Feels Truly Special'",
-      "headline": "Sidharth Malhotra Shares Nostalgic Note About 'Vaan' on Chhath Puja",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18396574117167619",
-      "timestamp": "2026-11-13T18:33:11.005351+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/diljit-dosanjh-faces-restrictions-ahead-of-ahmedabad-show-govindas-co-star-komal-rani-posts-first-pics-with-actor-ws-kl-10424581.html?comscorekw=jionews",
       "title": "Diljit Dosanjh's Concert Drama: Songs Restricted! Govinda's Co-Star Shares First Photos",
       "headline": "Diljit Dosanjh Faces Song Restrictions Ahead of Ahmedabad Show",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18085077086709335",
       "timestamp": "2026-11-26T00:33:38.534177+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/same-turnover-different-rate-why-msme-loan-offers-vary-2026-11-25-141859",
+      "title": "Same Turnover, Different Rate: Why MSME Loan Offers Vary",
+      "headline": "Same Turnover, Different Rate: Why MSME Loan Offers Vary",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18395460964226797",
+      "timestamp": "2026-11-26T01:14:32.269159+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Same Turnover, Different Rate: Why MSME Loan Offers Vary",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/same-turnover-different-rate-why-msme-loan-offers-vary-2026-11-25-141859",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "An explanation of a financial product (MSME loans) and market trends, falling under economic trends and corporate milestones."
-      },
-      "classified_at": "2026-11-26T00:33:02.455614+00:00"
-    },
     {
       "title": "Family Legacy: AI Audits & Financial Trust Across Generations",
       "domain": "republicworld.com",
