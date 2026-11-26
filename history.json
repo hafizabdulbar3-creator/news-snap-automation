@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/death-toll-in-kaziranga-road-accident-rises-to-25-two-remain-unidentified-2026-11-14-141027",
-      "title": "Death Toll in Kaziranga Road Accident Rises to 25, Two Remain Unidentified",
-      "headline": "Death Toll in Kaziranga Road Accident Rises to 25",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18113154011180561",
-      "timestamp": "2026-11-14T05:17:59.232270+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/nvidia-tips-arm-holdings-ceo-haas-to-take-over-jensen-huang-s-job-musk-backs-huang-s-reinstatement-2026-11-14-141024",
       "title": "Nvidia Tips Arm Holdings CEO Haas to Take over Jensen Huang's Job, Musk Backs Huang's Reinstatement",
       "headline": "Nvidia Eyes Arm CEO Haas for Jensen Huang's Role",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18661811197024656",
       "timestamp": "2026-11-26T07:18:25.305286+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/priceless-heritage-of-indian-democracy-pm-modi-pays-tribute-to-ambedkar-on-constitution-day-2026-11-26-141877",
+      "title": "'Priceless Heritage Of Indian Democracy': PM Modi Pays Tribute To Ambedkar On Constitution Day",
+      "headline": "PM Modi Calls Constitution 'Priceless Heritage' On Ambedkar's Birth Anniversary",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18122273852095074",
+      "timestamp": "2026-11-26T07:44:40.909169+00:00"
     }
   ],
   "processed": [
@@ -4656,19 +4656,7 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "'Priceless Heritage Of Indian Democracy': PM Modi Pays Tribute To Ambedkar On Constitution Day",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/priceless-heritage-of-indian-democracy-pm-modi-pays-tribute-to-ambedkar-on-constitution-day-2026-11-26-141877",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A standard political tribute and commemorative event regarding a national leader."
-      },
-      "classified_at": "2026-11-26T05:34:13.393780+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
