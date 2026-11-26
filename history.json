@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/pm-modi-reviews-crucial-rail-project-for-andhras-new-capital-amaravati-exclusive-ws-blrt-10425013.html?comscorekw=jionews",
-      "title": "PM Modi Reviews Crucial Rail Project For Andhra's New Capital Amaravati | Exclusive",
-      "headline": "PM Modi Reviews Crucial Rail Project For Amaravati",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18348198457262362",
-      "timestamp": "2026-11-14T01:44:57.315839+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/tech/global-microsoft-365-outage-enters-second-day-disrupts-outlook-teams-and-copilot-in-74-countries-2026-11-14-141016",
       "title": "Global Microsoft 365 Outage Enters Second Day, Disrupts Outlook, Teams And Copilot In 74 Countries",
       "headline": "Microsoft 365 Outage Enters Second Day, Disrupting Outlook, Teams, and Copilot",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18389591068234445",
       "timestamp": "2026-11-26T03:51:00.682915+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/celebrities/andy-taylor-duran-duran-guitarist-dies-at-65-after-battle-with-prostate-cancer-2026-11-26-141874",
+      "title": "Andy Taylor, Duran Duran Guitarist, Dies At 65 After Battle With Prostate Cancer",
+      "headline": "Duran Duran Guitarist Andy Taylor Dies at 65 After Prostate Cancer Battle",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18133280255511065",
+      "timestamp": "2026-11-26T04:16:45.486357+00:00"
     }
   ],
   "processed": [
@@ -4656,7 +4656,30 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Did Trump Consider Using A 1950 Wartime Law To Bring Back Nvidia CEO Jensen Huang?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/did-trump-consider-using-a-1950-wartime-law-to-bring-back-nvidia-ceo-jensen-huang-ws-l-10441267.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business & Economy",
+        "reason": "A speculative news story regarding a potential legal maneuver involving a prominent tech executive and a wartime law. While it touches on high-profile figures, it is currently a political rumor or investigative angle rather than a confirmed major geopolitical event."
+      },
+      "classified_at": "2026-11-26T04:16:21.416940+00:00"
+    },
+    {
+      "title": "IMD Weather Forecast: Delhi Wakes Up To Season's Coldest Morning, AQI Stays Poor At 226",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/imd-weather-forecast-delhi-wakes-up-to-seasons-coldest-morning-aqi-stays-poor-at-226-ws-l-10441216.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Science & Environment",
+        "reason": "A weather report regarding air quality and temperature in a major capital city. This is a legitimate public interest story regarding health and safety."
+      },
+      "classified_at": "2026-11-26T04:16:21.416962+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
