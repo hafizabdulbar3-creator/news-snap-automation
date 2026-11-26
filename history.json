@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/science/spacex-starship-reaches-orbit-deploys-26-starlink-satellites-after-booster-falls-into-gulf-and-explodes-2026-11-14-141019",
-      "title": "SpaceX Starship Reaches Orbit, Deploys 26 Starlink Satellites After Booster Falls Into Gulf And Explodes",
-      "headline": "SpaceX Starship Reaches Orbit, Deploys 26 Satellites",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18013206584771252",
-      "timestamp": "2026-11-14T03:02:37.370046+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/france-germany-italy-poland-uk-to-represent-europe-in-ukraine-peace-talks-alongside-eu-institutions-2026-11-14-141022",
       "title": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks Alongside EU Institutions",
       "headline": "France, Germany, Italy, Poland, UK to Represent Europe in Ukraine Peace Talks",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18122282951584294",
       "timestamp": "2026-11-26T05:08:30.743310+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/opinion/the-constitution-our-guiding-force-2026-11-26-141879",
+      "title": "The Constitution - Our guiding force",
+      "headline": "PM Modi reflects on Constitution's role in shaping India's journey",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18101214050442206",
+      "timestamp": "2026-11-26T05:34:38.493164+00:00"
     }
   ],
   "processed": [
@@ -4656,7 +4656,63 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "From Facebook To Truecaller: 87 Apps On Indian Army's Radar; What Can Soldiers Still Use?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/from-facebook-to-truecaller-87-apps-on-indian-armys-radar-what-can-soldiers-still-use-ws-l-10441329.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A regional news story regarding technology usage policies within a specific military organization."
+      },
+      "classified_at": "2026-11-26T05:34:13.393777+00:00"
+    },
+    {
+      "title": "'Priceless Heritage Of Indian Democracy': PM Modi Pays Tribute To Ambedkar On Constitution Day",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/priceless-heritage-of-indian-democracy-pm-modi-pays-tribute-to-ambedkar-on-constitution-day-2026-11-26-141877",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A standard political tribute and commemorative event regarding a national leader."
+      },
+      "classified_at": "2026-11-26T05:34:13.393780+00:00"
+    },
+    {
+      "title": "Delhi AQI Remains 'Poor' At 228, Anand Vihar Records 332; SC Weighs BS-VI Vehicle Curbs",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-aqi-remains-poor-at-228-anand-vihar-records-332-sc-weighs-bs-vi-vehicle-curbs-2026-11-26-141876",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "A regional environmental report regarding air quality and a specific court case."
+      },
+      "classified_at": "2026-11-26T05:34:13.393783+00:00"
+    },
+    {
+      "title": "Gandhi Family Legacy Vs SP's Numbers: Who Really Has The Stronger Claim To Amethi-Rae Bareli?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/explainers/gandhi-family-legacy-vs-sps-numbers-who-really-has-the-stronger-claim-to-amethi-rae-bareli-ws-kl-10441344.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political analysis and commentary on electoral demographics and party legacies."
+      },
+      "classified_at": "2026-11-26T05:34:13.393785+00:00"
+    },
+    {
+      "title": "Steel, Solar, Pharma: Which Indian Industries Are In Trump's 25% Tariff Firing Line?",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/steel-solar-pharma-which-indian-industries-are-in-trumps-25-pc-tariff-firing-line-ws-l-10441346.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "An economic analysis regarding trade policies and their potential impact on specific industries."
+      },
+      "classified_at": "2026-11-26T05:34:13.393787+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
