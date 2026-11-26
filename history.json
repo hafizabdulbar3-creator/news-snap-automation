@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/info/zephyrus-2026-is-back-st-xavier-s-flagship-management-fest-returns-this-november-2026-11-13-141010",
-      "title": "Zephyrus 2026 Is Back: St Xavier's Flagship Management Fest Returns This November",
-      "headline": "St Xavier's Flagship Management Fest Zephyrus 2026 Returns This November",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18646275925021579",
-      "timestamp": "2026-11-13T22:22:13.914428+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/tech/18-hour-global-blackout-the-night-microsoft-365-left-world-stranded-microsoft-confirms-upgrade-error-not-hackers-2026-11-13-141012",
       "title": "Microsoft 365 Global Blackout: 18-Hour Outage Blamed on Upgrade Error, Not Hackers",
       "headline": "Microsoft 365 Global Outage Blamed on Upgrade Error, Not Hackers",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18224043208353009",
       "timestamp": "2026-11-26T01:40:45.348559+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/how-does-margin-trading-work-in-india-and-what-are-the-risks-2026-11-25-141858",
+      "title": "How Does Margin Trading Work in India and What Are the Risks?",
+      "headline": "How Does Margin Trading Work in India and What Are the Risks?",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17969042280211792",
+      "timestamp": "2026-11-26T02:06:55.895466+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "How Does Margin Trading Work in India and What Are the Risks?",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/how-does-margin-trading-work-in-india-and-what-are-the-risks-2026-11-25-141858",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "An educational article explaining financial concepts (margin trading) and associated risks, falling under economic trends and public interest."
-      },
-      "classified_at": "2026-11-26T00:33:02.455619+00:00"
-    },
     {
       "title": "How Colleges and Employers Use AI Checkers, and What Applicants Should Know",
       "domain": "republicworld.com",
