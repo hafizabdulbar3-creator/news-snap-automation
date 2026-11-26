@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/politics/mysterious-foreign-national-himachal-police-book-bjp-mp-kangana-ranaut-over-x-post-against-sonia-gandhi-ws-lrt-10425009.html?comscorekw=jionews",
-      "title": "Kangana Ranaut Booked Over 'Mysterious Foreign National' Post Targeting Sonia Gandhi",
-      "headline": "Himachal Police Book Kangana Ranaut Over 'Mysterious Foreign National' Post",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17970626319196892",
-      "timestamp": "2026-11-14T00:47:49.204079+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/mla-s-nephew-in-range-rover-kills-rapido-passenger-in-ahmedabad-walks-free-on-a-notice-2026-11-14-141015",
       "title": "MLA's Nephew In Range Rover Kills Rapido Passenger In Ahmedabad, Walks Free On A Notice",
       "headline": "MLA's Nephew In Range Rover Kills Rapido Passenger In Ahmedabad, Walks Free",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18173524633473451",
       "timestamp": "2026-11-26T02:58:57.039936+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/dhanvi-fuel-credit-kiosk-announces-hiring-for-fuel-outlets-across-nine-metropolitan-cities-2026-11-26-141872",
+      "title": "Dhanvi Fuel Credit Kiosk Announces Hiring for Fuel Outlets Across Nine Metropolitan Cities",
+      "headline": "Dhanvi Fuel Credit Kiosk Announces Hiring for Nine Metropolitan Cities",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17934832911165695",
+      "timestamp": "2026-11-26T03:24:46.713278+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Dhanvi Fuel Credit Kiosk Announces Hiring for Fuel Outlets Across Nine Metropolitan Cities",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/dhanvi-fuel-credit-kiosk-announces-hiring-for-fuel-outlets-across-nine-metropolitan-cities-2026-11-26-141872",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Corporate hiring news for a specific fuel credit kiosk chain is a regional business matter of limited international scope."
-      },
-      "classified_at": "2026-11-26T02:58:30.301739+00:00"
-    },
     {
       "title": "Bruno Fernandes Scores Twice But Manchester United Held 2-2 At Sporting Lisbon",
       "domain": "news18.com",
