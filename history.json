@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/diljit-dosanjh-faces-restrictions-ahead-of-ahmedabad-show-govindas-co-star-komal-rani-posts-first-pics-with-actor-ws-kl-10424581.html?comscorekw=jionews",
-      "title": "Diljit Dosanjh's Concert Drama: Songs Restricted! Govinda's Co-Star Shares First Photos",
-      "headline": "Diljit Dosanjh Faces Song Restrictions Ahead of Ahmedabad Show",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18148179343590998",
-      "timestamp": "2026-11-13T19:04:30.496664+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/info/zephyrus-2026-is-back-st-xavier-s-flagship-management-fest-returns-this-november-2026-11-13-141010",
       "title": "Zephyrus 2026 Is Back: St Xavier's Flagship Management Fest Returns This November",
       "headline": "St Xavier's Flagship Management Fest Zephyrus 2026 Returns This November",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18395460964226797",
       "timestamp": "2026-11-26T01:14:32.269159+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/aman-hemchand-and-karishni-khanna-hemchand-carry-forward-the-family-s-legacy-of-trust-through-ai-led-audit-planning-at-checkfirst-and-financial-services-at-rfs-2026-11-25-141856",
+      "title": "Family Legacy: AI Audits & Financial Trust Across Generations",
+      "headline": "Family Legacy: AI Audits & Financial Trust Across Generations",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18224043208353009",
+      "timestamp": "2026-11-26T01:40:45.348559+00:00"
     }
   ],
   "processed": [
@@ -4657,17 +4657,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Family Legacy: AI Audits & Financial Trust Across Generations",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/aman-hemchand-and-karishni-khanna-hemchand-carry-forward-the-family-s-legacy-of-trust-through-ai-led-audit-planning-at-checkfirst-and-financial-services-at-rfs-2026-11-25-141856",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Technology",
-        "reason": "An article discussing the application of AI in financial auditing and generational wealth management, which is a notable public interest topic but not a major geopolitical event."
-      },
-      "classified_at": "2026-11-26T00:33:02.455617+00:00"
-    },
     {
       "title": "How Does Margin Trading Work in India and What Are the Risks?",
       "domain": "republicworld.com",
