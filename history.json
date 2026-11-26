@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/entertainment/celebrities/iffi-2026-cm-pramod-sawant-welcomes-global-filmmakers-to-goa-2026-11-14-141060",
-      "title": "IFFI 2026: CM Pramod Sawant Welcomes Global Filmmakers To Goa",
-      "headline": "Goa Set to Host 57th IFFI From Nov 20",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18101712614644827",
-      "timestamp": "2026-11-14T11:23:03.414107+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/entertainment/bollywood/varun-dhawan-to-lead-yrfs-first-horror-film-abhay-pannu-to-direct-2026-11-14-141061",
       "title": "Varun Dhawan To Lead YRF's First Horror Film, Abhay Pannu To Direct",
       "headline": "Varun Dhawan To Lead YRF's First Horror Film",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17916733524504419",
       "timestamp": "2026-11-26T13:53:11.987390+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/nc-joins-congress-to-raise-jk-statehood-restoration-at-constitution-march-bjp-hits-back-ws-l-10442261.html?comscorekw=jionews",
+      "title": "NC Joins Congress To Raise J&K Statehood Restoration At Constitution March, BJP Hits Back",
+      "headline": "NC Joins Congress To Demand J&K Statehood Restoration",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18419782129081116",
+      "timestamp": "2026-11-26T14:19:20.804781+00:00"
     }
   ],
   "processed": [
@@ -4612,17 +4612,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "NC Joins Congress To Raise J&K Statehood Restoration At Constitution March, BJP Hits Back",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/nc-joins-congress-to-raise-jk-statehood-restoration-at-constitution-march-bjp-hits-back-ws-l-10442261.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A regional political development regarding statehood restoration and a counter-argument from a major party, relevant to domestic policy."
-      },
-      "classified_at": "2026-11-26T13:26:56.138953+00:00"
-    },
     {
       "title": "Translating Sustainable Visions Into Urban Execution",
       "domain": "republicworld.com",
