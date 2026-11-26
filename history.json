@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/health/this-surprising-brain-difference-may-explain-why-some-kids-struggle-with-math-study-2026-11-14-141062",
-      "title": "This Surprising Brain Difference May Explain Why Some Kids Struggle With Math: Study",
-      "headline": "Brain Difference May Explain Math Struggles in Kids",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18116576878841832",
-      "timestamp": "2026-11-14T10:30:22.893452+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/web-series/student-of-the-year-after-dark-review-shanaya-kapoors-double-role-is-interesting-but-the-mystery-is-not-ws-kl-10425506.html?comscorekw=jionews",
       "title": "Shanaya Kapoor's Double Role Shines in Dark SOTY Spinoff, But Mystery Falls Flat",
       "headline": "Shanaya Kapoor's Double Role Shines in SOTY Spinoff, But Mystery Falls Flat",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18085972082410263",
       "timestamp": "2026-11-26T13:01:15.437028+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/fifa-confirms-cyberattack-says-hackers-accessed-limited-set-of-personal-and-business-information-2026-11-26-141928",
+      "title": "FIFA Confirms Cyberattack, Says Hackers Accessed 'Limited Set' of Personal and Business Information",
+      "headline": "FIFA Confirms Cyberattack, Hackers Accessed Limited Data",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18190868476417331",
+      "timestamp": "2026-11-26T13:27:23.677462+00:00"
     }
   ],
   "processed": [
@@ -4611,7 +4611,63 @@
       "rejection_reason": "Caption must contain 20–80 words, got 18."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "NC Joins Congress To Raise J&K Statehood Restoration At Constitution March, BJP Hits Back",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/politics/nc-joins-congress-to-raise-jk-statehood-restoration-at-constitution-march-bjp-hits-back-ws-l-10442261.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A regional political development regarding statehood restoration and a counter-argument from a major party, relevant to domestic policy."
+      },
+      "classified_at": "2026-11-26T13:26:56.138953+00:00"
+    },
+    {
+      "title": "Translating Sustainable Visions Into Urban Execution",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/business/real-estate/translating-sustainable-visions-into-urban-execution-2026-11-26-141927",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Environment",
+        "reason": "A regional or national policy story focused on urban planning and sustainability execution."
+      },
+      "classified_at": "2026-11-26T13:26:56.138972+00:00"
+    },
+    {
+      "title": "Indigenous X-Ray Scanners Transform Prison Security, Ending Manual Frisking",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/info/vehant-technologies-brings-indigenous-full-body-screening-technology-to-lajpore-central-jail-surats-prison-security-infrastructure-2026-11-26-141926",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology",
+        "reason": "A regional or national technological innovation in security, though significant, is a specific application rather than a global geopolitical event."
+      },
+      "classified_at": "2026-11-26T13:26:56.138978+00:00"
+    },
+    {
+      "title": "'Terrorism Knows No Borders': Israel Backs India's Fight against Terrorism on 26/11 Anniversary",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/terrorism-knows-no-borders-israel-backs-india-s-fight-against-terrorism-on-2611-anniversary-2026-11-26-141925",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major geopolitical event involving international relations, specifically the backing of a nation's anti-terrorism stance by another major power on the anniversary of a significant terrorist attack."
+      },
+      "classified_at": "2026-11-26T13:26:56.138981+00:00"
+    },
+    {
+      "title": "CJP Leaders Hit with Lookout Circulars Over Prohibited Protest.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/not-just-saurav-das-mumbai-police-issues-lookout-circulars-against-cjp-s-abhijeet-dipke-and-ashutosh-ranka-2026-11-26-141923",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic legal/administrative action regarding protest leaders, which is a standard political development."
+      },
+      "classified_at": "2026-11-26T13:26:56.138983+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
