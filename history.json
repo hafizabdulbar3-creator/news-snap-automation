@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/air-india-warns-of-possible-flight-disruptions-amid-us-air-traffic-outage-2026-11-14-141020",
-      "title": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
-      "headline": "Air India Warns of Possible Flight Disruptions Amid US Air Traffic Outage",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17938538745410965",
-      "timestamp": "2026-11-14T03:59:57.841367+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/14-year-old-tribal-girl-accuses-jharkhand-congress-mla-of-rape-assault-and-death-threats-fir-registered-under-pocso-2026-11-14-141017",
       "title": "Tribal Girl Accuses Jharkhand Congress MLA of Rape, Assault; POCSO Case Filed",
       "headline": "14-Year-Old Tribal Girl Accuses Jharkhand Congress MLA of Rape",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18205559734378563",
       "timestamp": "2026-11-26T06:00:30.353625+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/delhi-aqi-remains-poor-at-228-anand-vihar-records-332-sc-weighs-bs-vi-vehicle-curbs-2026-11-26-141876",
+      "title": "Delhi AQI Remains 'Poor' At 228, Anand Vihar Records 332; SC Weighs BS-VI Vehicle Curbs",
+      "headline": "Delhi AQI Remains 'Poor' At 228, Anand Vihar Records 332",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18035044457911374",
+      "timestamp": "2026-11-26T06:26:21.620179+00:00"
     }
   ],
   "processed": [
@@ -4667,17 +4667,6 @@
         "reason": "A standard political tribute and commemorative event regarding a national leader."
       },
       "classified_at": "2026-11-26T05:34:13.393780+00:00"
-    },
-    {
-      "title": "Delhi AQI Remains 'Poor' At 228, Anand Vihar Records 332; SC Weighs BS-VI Vehicle Curbs",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/delhi-aqi-remains-poor-at-228-anand-vihar-records-332-sc-weighs-bs-vi-vehicle-curbs-2026-11-26-141876",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Environment",
-        "reason": "A regional environmental report regarding air quality and a specific court case."
-      },
-      "classified_at": "2026-11-26T05:34:13.393783+00:00"
     },
     {
       "title": "Gandhi Family Legacy Vs SP's Numbers: Who Really Has The Stronger Claim To Amethi-Rae Bareli?",
