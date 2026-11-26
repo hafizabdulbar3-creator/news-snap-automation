@@ -4645,6 +4645,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "curiosity_line failed English validation."
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/after-10-years-brad-pitt-and-angelina-jolie-settle-decade-long-winery-battle-2026-11-25-141863",
+      "title": "After 10 Years, Brad Pitt And Angelina Jolie Settle Decade-Long Winery Battle",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-26T00:27:33.788009+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
   "classified_pool": [],
