@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/a-long-goodbye-on-raisina-hill-the-final-exit-of-the-armed-forces-from-south-block-ws-l-10425848.html?comscorekw=jionews",
-      "title": "A Long Goodbye On Raisina Hill: The Final Exit Of The Armed Forces From South Block",
-      "headline": "Armed Forces To Exit South Block After Decades",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18649271662058934",
-      "timestamp": "2026-11-14T15:57:12.838730+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/south-cinema/jr-ntr-announces-his-next-film-with-anil-ravipudi-this-ones-going-to-be-a-laugh-riot-ws-kl-10425986.html?comscorekw=jionews",
       "title": "Jr NTR Announces His Next Film With Anil Ravipudi: 'This One's Going To Be A Laugh Riot'",
       "headline": "Jr NTR Announces Next Film With Anil Ravipudi",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17992455879116900",
       "timestamp": "2026-11-26T17:42:17.807401+00:00"
+    },
+    {
+      "url": "https://www.news18.com/movies/bollywood/samay-raina-becomes-worlds-first-youtuber-to-cross-1-million-channel-members-ws-klt-10442554.html?comscorekw=jionews",
+      "title": "Samay Raina Becomes World's First YouTuber To Cross 1 Million Channel Members",
+      "headline": "Samay Raina Becomes First YouTuber To Cross 1 Million Channel Members",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18368461576247037",
+      "timestamp": "2026-11-26T18:13:51.257781+00:00"
     }
   ],
   "processed": [
@@ -4656,7 +4656,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Trump Calls the Pre-Election GDP Figures 'Fake' and Demands an Investigation of Commerce Department",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/world-news/trump-calls-the-pre-election-gdp-figures-fake-and-demands-an-investigation-of-commerce-department-2026-11-26-141941",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A political dispute regarding economic data and government agencies, though politically charged, does not constitute a major geopolitical event or crisis."
+      },
+      "classified_at": "2026-11-26T18:13:26.193382+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
