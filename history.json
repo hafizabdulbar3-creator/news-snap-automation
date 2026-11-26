@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/kashmirs-autumn-of-contrasts-when-golden-leaves-flowers-and-gunfire-share-the-landscape-ws-l-10425744.html?comscorekw=jionews",
-      "title": "Kashmir's Autumn Of Contrasts: When Golden Leaves, Flowers And Gunfire Share The Landscape",
-      "headline": "Kashmir's Autumn: Golden Leaves Amidst Gunfire And Chaos",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18114381866611956",
-      "timestamp": "2026-11-14T13:11:13.287059+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/china-and-us-discuss-usd-30-bn-reciprocal-tariff-cuts-ahead-of-trump-xi-meeting-2026-11-14-141070",
       "title": "China and US Discuss USD 30 Bn Reciprocal Tariff Cuts Ahead of Trump-Xi Meeting",
       "headline": "China and US Discuss USD 30 Bn Reciprocal Tariff Cuts",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18076963313758240",
       "timestamp": "2026-11-26T15:58:15.200254+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/ucc-in-all-bjp-ruled-states-soon-swami-vivekananda-s-dream-for-bharat-mata-will-be-accomplished-in-2047-amit-shah-2026-11-26-141933",
+      "title": "UCC Coming to BJP States: Amit Shah's Vision for India by 2047.",
+      "headline": "Amit Shah Announces UCC Implementation in All BJP States by 2047",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18416193499095809",
+      "timestamp": "2026-11-26T16:24:25.223434+00:00"
     }
   ],
   "processed": [
@@ -4647,19 +4647,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "UCC Coming to BJP States: Amit Shah's Vision for India by 2047.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/ucc-in-all-bjp-ruled-states-soon-swami-vivekananda-s-dream-for-bharat-mata-will-be-accomplished-in-2047-amit-shah-2026-11-26-141933",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Domestic Politics",
-        "reason": "A political vision statement regarding future legislative goals."
-      },
-      "classified_at": "2026-11-26T15:21:27.211113+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
