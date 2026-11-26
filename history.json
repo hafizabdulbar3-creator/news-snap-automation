@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/cricket/india-vs-pakistan-live-cricket-score-u19-asia-cup-2026-final-ind-vs-pak-latest-scorecard-al-amerat-match-updates-liveblog-ws-l-10425160.html?comscorekw=jionews",
-      "title": "U19 Asia Cup Final: Abdul Qadir's Fifty Powers Pakistan to 144/1 vs India",
-      "headline": "Pakistan's Qadir Hits Fifty in U19 Asia Cup Final vs India",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17920517565465586",
-      "timestamp": "2026-11-14T07:02:13.940431+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/ukraine-expects-largest-ever-prisoner-exchange-with-russia-since-war-involving-over-1000-from-each-side-zelenskyy-2026-11-14-141050",
       "title": "Ukraine, Russia Poised for Largest Prisoner Exchange Since War Began",
       "headline": "Ukraine, Russia Poised for Largest Prisoner Exchange Since War Began",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17970558258232004",
       "timestamp": "2026-11-26T09:02:17.213381+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/explosion-at-major-oil-refinery-in-bangkok-triggers-evacuation-alert-no-casualties-reported-2026-11-26-141905",
+      "title": "Explosion At Major Bangkok Oil Refinery Sends Thick Black Smoke Into Sky, Residents Told To Evacuate",
+      "headline": "Explosion Rocks Major Bangkok Oil Refinery, Evacuation Alert Issued",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17897118450435733",
+      "timestamp": "2026-11-26T09:33:39.088227+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,96 @@
       "rejection_reason": "headline failed English validation."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Explosion at Bangkok oil depot; evacuation underway",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/world/huge-explosion-at-bangkok-oil-depot-sends-thick-black-smoke-into-sky-residents-asked-to-evacuate-10441871.html?comscorekw=jionews",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major industrial explosion at an oil depot in Bangkok with immediate safety implications and evacuation orders."
+      },
+      "classified_at": "2026-11-26T09:33:10.353097+00:00"
+    },
+    {
+      "title": "BJP To Launch 'Seva Doot Abhiyan' From December 1 To Mark PM Modi's 25 Years In Public Life",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/bjp-to-launch-seva-doot-abhiyan-from-december-1-to-mark-pm-modis-25-years-in-public-life-ws-l-10441921.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A domestic political campaign announcement regarding a specific leader's tenure, falling under national/regional policy."
+      },
+      "classified_at": "2026-11-26T09:33:10.353118+00:00"
+    },
+    {
+      "title": "12 Bangladesh Nationals Held In Aligarh: Police Now Probe Who Helped Them Get Indian IDs",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/lucknow-news/12-bangladesh-nationals-held-in-aligarh-police-now-probe-who-helped-them-get-indian-ids-ws-l-10441834.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A regional law enforcement matter involving the detention of foreign nationals and ID verification, significant locally but not globally."
+      },
+      "classified_at": "2026-11-26T09:33:10.353121+00:00"
+    },
+    {
+      "title": "India Directs Netflix: Block Pakistani Content Amid Security Concerns",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/ott/jo-bachay-hain-sang-samait-lo-government-asks-netflix-to-keep-pakistani-origin-content-off-its-india-platform-2026-11-26-141902",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Technology & Media",
+        "reason": "A regulatory directive regarding content blocking on a streaming platform, falling under national policy."
+      },
+      "classified_at": "2026-11-26T09:33:10.353125+00:00"
+    },
+    {
+      "title": "FWICE Urges PM Modi's Intervention To Prevent Release Of Pakistani Series In India",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/ott/fwice-urges-pm-modi-s-intervention-to-prevent-release-of-pakistani-series-in-india-2026-11-26-141904",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A request from a film body regarding content, classified as entertainment industry news."
+      },
+      "classified_at": "2026-11-26T09:33:10.353128+00:00"
+    },
+    {
+      "title": "India Coach Hints at Brar's Test Debut: 'Well Suited' for Green Pitch",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cricket/will-gurnoor-brar-make-test-debut-in-christchurch-india-coach-drops-a-hint-well-suited-to-the-conditions-ws-klnt-10441835.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "A coaching update regarding a player's potential debut, falling under sports news."
+      },
+      "classified_at": "2026-11-26T09:33:10.353130+00:00"
+    },
+    {
+      "title": "Hyderabad Gets Its First Apple Store: Check Location, Opening Date And What Customers Can Expect",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/hyderabad-news/hyderabad-gets-its-first-apple-store-check-location-opening-date-and-what-customers-can-expect-ws-l-10441808.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "The opening of a retail store, a standard business milestone."
+      },
+      "classified_at": "2026-11-26T09:33:10.353132+00:00"
+    },
+    {
+      "title": "Bomb Threat Targets Amitabh Bachchan's 'Jalsa' Residence, Mumbai Mayor's Office",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/bomb-threat-targets-amitabh-bachchans-jalsa-residence-mumbai-mayors-office-10441836.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Crime",
+        "reason": "A bomb threat against a private residence and public office, a significant local security incident."
+      },
+      "classified_at": "2026-11-26T09:33:10.353133+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
