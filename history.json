@@ -4503,42 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/india/sp-drops-2027-polls-bombshell-all-5-sitting-mlas-kept-in-first-list-of-candidates-but-what-about-congress-2026-11-24-141784",
-      "title": "SP Shakes Up 2027 Polls: All Sitting MLAs Retained, Congress Future Uncertain?",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-24T18:10:54.110982+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('SP Shakes Up 2027 Polls: All Sitting MLAs Retained, Congress Future Uncertain?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
-    },
-    {
-      "url": "https://www.news18.com/movies/web-series/stop-jo-bachay-hain-sang-samait-lo-and-enact-permanent-law-banning-pakistani-content-aicwa-writes-to-pm-modi-ws-lrt-10439455.html?comscorekw=jionews",
-      "title": "Cine Workers Demand Permanent Ban on Pakistani Content, Urge PM Modi to Halt Netflix Series",
-      "domain": "news18.com",
-      "timestamp": "2026-11-24T18:16:06.979409+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.republicworld.com/tech/jensen-is-back-why-nvidia-called-every-employee-into-one-meeting-2026-11-24-141787",
-      "title": "Jensen Is Back: Why Nvidia Called Every Employee Into One Meeting",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-24T18:20:42.762690+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
-      "url": "https://www.news18.com/explainers/one-man-one-company-1-trillion-at-stake-is-nvidias-jensen-huang-truly-irreplaceable-ws-lrt-10439544.html?comscorekw=jionews",
-      "title": "One Man, One Company, $1 Trillion At Stake: Is Nvidia's Jensen Huang Truly 'Irreplaceable'?",
-      "domain": "news18.com",
-      "timestamp": "2026-11-24T20:07:23.139701+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
       "url": "https://www.republicworld.com/defence/hangor-s-hidden-bill-sustainment-costs-will-burden-pakistan-s-defence-budget-for-decades-2026-11-25-141804",
       "title": "Hangor's Hidden Bill: Sustainment Costs Will Burden Pakistan's Defence Budget for Decades",
       "domain": "republicworld.com",
@@ -4654,6 +4618,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/cricket/gurnoor-brar-makes-test-debut-for-india-in-christchurch-ws-l-10442664.html?comscorekw=jionews",
+      "title": "Gurnoor Brar Makes Test Debut For India, Replaces Prasidh Krishna In Playing XI",
+      "domain": "news18.com",
+      "timestamp": "2026-11-26T21:46:24.686469+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
