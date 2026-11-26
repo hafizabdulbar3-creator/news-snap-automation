@@ -4503,42 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cities/chennai-news/why-is-tamil-nadu-fighting-a-court-order-to-remove-periyars-statue-from-a-hindu-temple-ws-l-10438738.html?comscorekw=jionews",
-      "title": "Why Is Tamil Nadu Fighting A Court Order To Remove Periyar's Statue From A Hindu Temple?",
-      "domain": "news18.com",
-      "timestamp": "2026-11-24T09:51:40.410120+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    },
-    {
-      "url": "https://www.news18.com/explainers/bjp-gets-punjab-foothold-sad-a-shot-at-revival-who-gains-what-from-ndas-pre-poll-reset-ws-l-10438736.html?comscorekw=jionews",
-      "title": "BJP Gets Punjab Foothold, SAD A Shot At Revival: Who Gains What From NDA's Pre-Poll Reset?",
-      "domain": "news18.com",
-      "timestamp": "2026-11-24T09:57:23.474292+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
-    },
-    {
-      "url": "https://www.news18.com/viral/candidate-rejects-job-offer-twice-over-pay-cut-and-unclear-conditions-definitely-dodged-a-bullet-ws-l-10438525.html?comscorekw=jionews",
-      "title": "Candidate Rejects Job Offer Twice Over Pay Cut And Unclear Conditions: 'Definitely Dodged A Bullet'",
-      "domain": "news18.com",
-      "timestamp": "2026-11-24T10:04:01.686567+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API failed after 4 attempts: The read operation timed out"
-    },
-    {
-      "url": "https://www.news18.com/cities/chandigarh/two-soldiers-killed-in-tank-accident-during-army-drill-in-hisar-what-happened-at-training-centre-ws-l-10438670.html?comscorekw=jionews",
-      "title": "Two Soldiers Killed In Tank Accident During Army Drill In Hisar: What Happened At Training Centre",
-      "domain": "news18.com",
-      "timestamp": "2026-11-24T10:12:37.766764+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
-    },
-    {
       "url": "https://www.republicworld.com/india/sp-drops-2027-polls-bombshell-all-5-sitting-mlas-kept-in-first-list-of-candidates-but-what-about-congress-2026-11-24-141784",
       "title": "SP Shakes Up 2027 Polls: All Sitting MLAs Retained, Congress Future Uncertain?",
       "domain": "republicworld.com",
@@ -4627,6 +4591,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "headline failed English validation."
+    },
+    {
+      "url": "https://www.news18.com/cricket/will-gurnoor-brar-make-test-debut-in-christchurch-india-coach-drops-a-hint-well-suited-to-the-conditions-ws-klnt-10441835.html?comscorekw=jionews",
+      "title": "India Coach Hints at Brar's Test Debut: 'Well Suited' for Green Pitch",
+      "domain": "news18.com",
+      "timestamp": "2026-11-26T11:54:18.569496+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [
@@ -4640,17 +4613,6 @@
         "reason": "A request from a film body regarding content, classified as entertainment industry news."
       },
       "classified_at": "2026-11-26T09:33:10.353128+00:00"
-    },
-    {
-      "title": "India Coach Hints at Brar's Test Debut: 'Well Suited' for Green Pitch",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cricket/will-gurnoor-brar-make-test-debut-in-christchurch-india-coach-drops-a-hint-well-suited-to-the-conditions-ws-klnt-10441835.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "A coaching update regarding a player's potential debut, falling under sports news."
-      },
-      "classified_at": "2026-11-26T09:33:10.353130+00:00"
     },
     {
       "title": "Hyderabad Gets Its First Apple Store: Check Location, Opening Date And What Customers Can Expect",
