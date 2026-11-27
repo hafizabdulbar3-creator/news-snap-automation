@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/irans-irgc-says-it-attacked-us-radar-system-at-a-base-in-bahrain-2026-11-15-141104",
-      "title": "Iran's IRGC Says It Attacked US Radar System at a Base in Bahrain",
-      "headline": "Iran's IRGC Claims Attack on US Radar at Bahrain Base",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18064555058803484",
-      "timestamp": "2026-11-15T09:16:32.213551+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/indigo-flight-with-192-on-board-makes-emergency-landing-at-pune-airport-after-gear-malfunction-2026-11-15-141107",
       "title": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport After Gear Malfunction",
       "headline": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18024773201931568",
       "timestamp": "2026-11-27T12:08:32.271308+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/deepam-row-supreme-court-order-lighting-lamp-thirupparankundram-hills-madurai-temple-board-ws-l-10443586.html?comscorekw=jionews",
+      "title": "From 'Defied' Supreme Court Order To Fresh 'Light The Lamp' Directions: A Timeline Of The Deepam Row",
+      "headline": "Timeline of Deepam Row: From Court Defiance to New Lighting Orders",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17898700164614461",
+      "timestamp": "2026-11-27T12:34:41.419970+00:00"
     }
   ],
   "processed": [
@@ -4640,17 +4640,6 @@
         "reason": "Regional political development involving a high-profile appointment."
       },
       "classified_at": "2026-11-27T11:16:28.565706+00:00"
-    },
-    {
-      "title": "From 'Defied' Supreme Court Order To Fresh 'Light The Lamp' Directions: A Timeline Of The Deepam Row",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/deepam-row-supreme-court-order-lighting-lamp-thirupparankundram-hills-madurai-temple-board-ws-l-10443586.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Legal and political developments regarding a local administrative dispute."
-      },
-      "classified_at": "2026-11-27T11:16:28.565709+00:00"
     },
     {
       "title": "Sensex Tanks Nearly 1,000 Points, Nifty Below 25,650; IT, Auto, Banking Stocks Lead Selloff",
