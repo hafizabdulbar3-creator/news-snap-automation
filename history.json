@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/lifestyle/health-and-fitness/stopping-glp-1-weight-loss-drugs-study-flags-nearly-double-risk-of-heart-attack-stroke-and-death-ws-l-10426572.html?comscorekw=jionews",
-      "title": "Stopping GLP-1 Weight-Loss Drugs? Study Flags Nearly Double Risk Of Heart Attack, Stroke And Death",
-      "headline": "Study Links Stopping GLP-1 Drugs To Nearly Double Risk Of Heart Issues",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17957353140039507",
-      "timestamp": "2026-11-15T11:57:39.023921+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/my-n99-mask-and-i-are-still-inseparable-first-person-account-a-week-after-diwali-in-delhi-ws-l-10426528.html?comscorekw=jionews",
       "title": "A Week After Diwali, My N99 Mask And I Are Still Inseparable: First-Person Account",
       "headline": "A Week After Diwali, Delhi's Air Quality Hits Alarming Levels",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18109189727137318",
       "timestamp": "2026-11-27T14:44:29.575596+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/no-interim-relief-for-tata-trusts-as-bombay-hc-clears-way-for-tata-sons-board-meeting-on-november-30-2026-11-27-142003",
+      "title": "Bombay HC Refuses Relief To Tata Trusts, Clears Way for Tata Sons Board Meeting on November 30",
+      "headline": "Bombay HC Refuses Relief To Tata Trusts, Allows Tata Sons Board Meeting",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18114178037575328",
+      "timestamp": "2026-11-27T15:15:38.019418+00:00"
     }
   ],
   "processed": [
@@ -4629,19 +4629,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Bombay HC Refuses Relief To Tata Trusts, Clears Way for Tata Sons Board Meeting on November 30",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/business/no-interim-relief-for-tata-trusts-as-bombay-hc-clears-way-for-tata-sons-board-meeting-on-november-30-2026-11-27-142003",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A court order clearing the way for a corporate board meeting is a standard business and legal update."
-      },
-      "classified_at": "2026-11-27T14:44:00.766784+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
