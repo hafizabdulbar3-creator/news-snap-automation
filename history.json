@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/minor-gang-raped-in-uttarakhand-haldwani-homestay-sealed-ex-abvp-candidate-among-4-held-outfit-condemns-crime-ws-lrt-10426091.html?comscorekw=jionews",
-      "title": "Homestay Sealed in Uttarakhand After Minor Gang-Rape; Ex-ABVP Candidate Among Four Held",
-      "headline": "Homestay Sealed After Minor Gang-Rape in Uttarakhand",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18066191366792372",
-      "timestamp": "2026-11-14T21:29:50.543357+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/science/historic-chopsticks-catch-spacex-arms-grab-starship-make-reusable-rockets-look-routine-2026-11-14-141074",
       "title": "Historic Chopsticks Catch: SpaceX Arms Grab Starship, Make Reusable Rockets Look Routine",
       "headline": "SpaceX Successfully Catches Starship With Chopsticks Arms",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120260330007395",
       "timestamp": "2026-11-27T02:05:52.558717+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/trump-calls-the-pre-election-gdp-figures-fake-and-demands-an-investigation-of-commerce-department-2026-11-26-141941",
+      "title": "Trump Calls the Pre-Election GDP Figures 'Fake' and Demands an Investigation of Commerce Department",
+      "headline": "Trump Calls Pre-Election GDP Figures 'Fake' and Demands Probe",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18119500589042898",
+      "timestamp": "2026-11-27T02:31:48.283693+00:00"
     }
   ],
   "processed": [
@@ -4629,19 +4629,7 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Trump Calls the Pre-Election GDP Figures 'Fake' and Demands an Investigation of Commerce Department",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/trump-calls-the-pre-election-gdp-figures-fake-and-demands-an-investigation-of-commerce-department-2026-11-26-141941",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A political dispute regarding economic data and government agencies, though politically charged, does not constitute a major geopolitical event or crisis."
-      },
-      "classified_at": "2026-11-26T18:13:26.193382+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
