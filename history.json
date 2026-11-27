@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/defence/india-has-strengthened-indigenous-defence-ecosystem-rajnath-singh-calls-for-quality-assurance-in-defence-manufacturing-2026-11-15-141100",
-      "title": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance.",
-      "headline": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18080637125769590",
-      "timestamp": "2026-11-15T10:08:25.000268+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/j-k-4-sustain-minor-burn-injuries-as-fire-breaks-out-at-baramulla-s-jamia-masjid-2026-11-15-141103",
       "title": "J-K: 4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
       "headline": "4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18108787769371110",
       "timestamp": "2026-11-27T13:00:27.682136+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/markets/sensex-tanks-nearly-1000-points-nifty-below-25650-it-auto-banking-stocks-lead-selloff-ws-l-10443614.html?comscorekw=jionews",
+      "title": "Sensex Tanks Nearly 1,000 Points, Nifty Below 25,650; IT, Auto, Banking Stocks Lead Selloff",
+      "headline": "Sensex Plunges Nearly 1,000 Points Amid Selloff",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18206424685331959",
+      "timestamp": "2026-11-27T13:26:25.341100+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Sensex Tanks Nearly 1,000 Points, Nifty Below 25,650; IT, Auto, Banking Stocks Lead Selloff",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/markets/sensex-tanks-nearly-1000-points-nifty-below-25650-it-auto-banking-stocks-lead-selloff-ws-l-10443614.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Significant movement in the stock market indices."
-      },
-      "classified_at": "2026-11-27T11:16:28.565711+00:00"
-    },
     {
       "title": "Swiggy To Lay Off 340 Employees From Instamart Amid Restructuring, Rising Losses",
       "domain": "news18.com",
