@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/soni-razdan-reveals-she-smoked-100-cigarettes-while-pregnant-with-alia-bhatt-i-had-no-clue-she-ws-kl-10426712.html?comscorekw=jionews",
-      "title": "Soni Razdan Reveals She Smoked 100 Cigarettes While Pregnant With Alia Bhatt: 'I Had No Clue She...'",
-      "headline": "Soni Razdan Reveals Smoking 100 Cigarettes During Pregnancy With Alia Bhatt",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18149951197536288",
-      "timestamp": "2026-11-15T15:04:30.171225+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/shah-rukh-khans-tu-mil-jaaye-bts-photos-reveal-how-king-song-was-shot-in-cape-town-not-with-a-phone-ws-kl-10426754.html?comscorekw=jionews",
       "title": "Shah Rukh Khan's Tu Mil Jaaye BTS Photos Reveal How King Song Was Shot In Cape Town: 'Not With A Phone'",
       "headline": "Shah Rukh Khan's 'Tu Mil Jaaye' BTS Photos Reveal Cape Town Filming",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17998601283053144",
       "timestamp": "2026-11-27T18:22:42.977433+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/us-military-disables-another-ship-attempting-to-breach-naval-blockade-on-iranian-ports-in-gulf-of-oman-2026-11-27-142018",
+      "title": "US Military Disables Another Ship Attempting To Breach Naval Blockade On Iranian Ports In Gulf Of Oman",
+      "headline": "US Forces Disable Ship Attempting To Breach Naval Blockade On Iranian Ports",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18098281088164731",
+      "timestamp": "2026-11-27T18:49:02.170601+00:00"
     }
   ],
   "processed": [
@@ -4647,7 +4647,30 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Preserving Business Value Through Law: Inside LEGAL EAGLES' Approach to Corporate Legal Practice",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/preserving-business-value-through-law-inside-legal-eagles-approach-to-corporate-legal-practice-2026-11-27-142020",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "This is a business news piece regarding corporate legal practice and value preservation, which is a standard topic for national/regional business reporting."
+      },
+      "classified_at": "2026-11-27T18:48:22.838220+00:00"
+    },
+    {
+      "title": "Why Indian Car Owners Are Reassessing Vehicle Protection Amid Increasing Weather Uncertainty?",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/initiatives/why-indian-car-owners-are-reassessing-vehicle-protection-amid-increasing-weather-uncertainty-2026-11-27-142019",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "This article discusses consumer trends regarding vehicle protection, which is a legitimate topic of public and economic interest."
+      },
+      "classified_at": "2026-11-27T18:48:22.838222+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
