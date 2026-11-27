@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/wire-glitch-short-circuited-us-aviation-faa-says-full-recovery-by-sunday-night-as-over-8000-flights-grounded-ws-lr-10426096.html?comscorekw=jionews",
-      "title": "Wire Glitch Grounds US Flights: Over 8,000 Cancelled, Recovery Expected Soon",
-      "headline": "US Aviation Grounded by Wire Glitch: 8,000+ Flights Cancelled",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17924163282449536",
-      "timestamp": "2026-11-14T23:29:24.622110+00:00"
-    },
-    {
       "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-5th-odi-ind-vs-nz-latest-scorecard-mount-maunganui-match-updates-liveblog-ws-l-10426100.html?comscorekw=jionews",
       "title": "India Vs New Zealand Live Score, 5th ODI: Men In Blue Aim To Win Series",
       "headline": "India Vs New Zealand: Men In Blue Aim To Win Series",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17882212263561204",
       "timestamp": "2026-11-27T03:59:54.064014+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/tech/elon-musk-s-x-introduces-parental-controls-for-teenagers-aged-13-17-parents-can-set-screen-time-limits-monitor-activity-2026-11-27-141945",
+      "title": "X Rolls Out Parental Controls for Teens: Monitor Activity, Set Screen Time",
+      "headline": "X Introduces New Parental Controls for Teen Users",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18132047665640319",
+      "timestamp": "2026-11-27T04:30:50.625768+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "X Rolls Out Parental Controls for Teens: Monitor Activity, Set Screen Time",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/tech/elon-musk-s-x-introduces-parental-controls-for-teenagers-aged-13-17-parents-can-set-screen-time-limits-monitor-activity-2026-11-27-141945",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Classified by local heuristic: standard national or international news report."
-      },
-      "classified_at": "2026-11-27T03:57:03.017857+00:00"
-    },
     {
       "title": "Amit Shah, Rajnath Singh To Join RSS Mega Meet In Delhi; Mohan Bhagwat To Deliver Centenary Address",
       "domain": "news18.com",
