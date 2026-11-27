@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/us-flights-to-fully-recover-by-sunday-after-longest-ground-stop-in-25-years-2026-11-15-141112",
-      "title": "US Flights To Fully Recover By Sunday After Longest Ground Stop In 25 Years",
-      "headline": "US Flights To Fully Recover By Sunday After Longest Ground Stop In 25 Years",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18152660134616229",
-      "timestamp": "2026-11-15T16:58:54.820573+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/defence/china-supercharges-vt-4-tank-used-by-pakistan-with-thicker-armour-bigger-gun-smarter-sensors-should-india-worry-2026-11-15-141111",
       "title": "China Upgrades Pakistan's VT-4 Tanks: Thicker Armor, Bigger Gun, Smarter Sensors",
       "headline": "China Upgrades Pakistan's VT-4 Tanks With Thicker Armor, Bigger Gun",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17994306005861476",
       "timestamp": "2026-11-27T19:40:36.259616+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/repentance-or-destruction-iran-issues-chilling-ai-drone-threat-to-amazon-microsoft-spacex-ws-lrt-10444155.html?comscorekw=jionews",
+      "title": "'Repentance Or Destruction': Iran Issues Chilling AI Drone Threat To Amazon, Microsoft, SpaceX",
+      "headline": "Iran Issues AI Drone Threat To Amazon, Microsoft, SpaceX",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18113322674524652",
+      "timestamp": "2026-11-27T21:29:38.332819+00:00"
     }
   ],
   "processed": [
