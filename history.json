@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/three-oil-tankers-catch-fire-after-hitting-naval-mines-in-hormuz-claims-iran-s-navy-2026-11-15-141075",
-      "title": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz: Iran's Navy",
-      "headline": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18163383628504728",
-      "timestamp": "2026-11-15T02:20:48.632611+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/senior-hamas-commander-samir-abu-younis-killed-in-israeli-airstrike-in-southern-gaza-2026-11-15-141079",
       "title": "Senior Hamas Commander Samir Abu Younis Killed in Israeli Airstrike in Southern Gaza",
       "headline": "Senior Hamas Commander Samir Abu Younis Killed in Israeli Airstrike",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18120925456818174",
       "timestamp": "2026-11-27T05:23:04.919546+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/chennai-news/tamil-nadu-weather-today-imd-warns-of-heavy-rain-in-4-districts-thunderstorms-in-chennai-ws-l-10442899.html?comscorekw=jionews",
+      "title": "Tamil Nadu Weather Today: IMD Warns Of Heavy Rain In 4 Districts, Thunderstorms In Chennai",
+      "headline": "IMD Issues Heavy Rain Alert For 4 Tamil Nadu Districts",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17959829628270620",
+      "timestamp": "2026-11-27T05:48:50.505030+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Tamil Nadu Weather Today: IMD Warns Of Heavy Rain In 4 Districts, Thunderstorms In Chennai",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/chennai-news/tamil-nadu-weather-today-imd-warns-of-heavy-rain-in-4-districts-thunderstorms-in-chennai-ws-l-10442899.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Weather",
-        "reason": "A standard weather advisory for a specific region affecting public safety and daily life, falling under regional news."
-      },
-      "classified_at": "2026-11-27T05:22:39.651824+00:00"
-    },
     {
       "title": "Mahanadi Coalfields Listing: Shares Trade Below IPO Price After Market Debut, Fall Up To 2.7%",
       "domain": "news18.com",
