@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/4-killed-18-injured-as-two-buses-carrying-pilgrims-collide-in-punjab-s-tarn-taran-2026-11-15-141080",
-      "title": "4 Killed, 18 Injured as Two Buses Carrying Pilgrims Collide in Punjab's Tarn Taran",
-      "headline": "4 Killed, 18 Injured as Two Buses Collide in Punjab's Tarn Taran",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18126530809910806",
-      "timestamp": "2026-11-15T04:36:06.710458+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/hegseth-hails-elon-musk-as-great-american-after-spacexs-starship-returns-to-launch-pad-from-orbit-in-victory-for-company-2026-11-15-141094",
       "title": "Elon Musk's SpaceX Achieves 'Science Fiction' Starship Catch, Reshaping Rocketry",
       "headline": "SpaceX Achieves 'Science Fiction' Starship Catch",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18147835825514805",
       "timestamp": "2026-11-27T07:33:05.412639+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/delhi-police-writes-to-home-ministry-says-wants-to-keep-22000-capf-jawans-in-capital-till-dec-31-ws-l-10443038.html?comscorekw=jionews",
+      "title": "Delhi Police Writes To Home Ministry, Says Wants To Keep 22,000 CAPF Jawans In Capital Till Dec 31",
+      "headline": "Delhi Police Requests Extension For 22,000 CAPF Jawans In Capital",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17998069938026847",
+      "timestamp": "2026-11-27T08:04:03.192547+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Delhi Police Writes To Home Ministry, Says Wants To Keep 22,000 CAPF Jawans In Capital Till Dec 31",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/delhi-police-writes-to-home-ministry-says-wants-to-keep-22000-capf-jawans-in-capital-till-dec-31-ws-l-10443038.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Public Safety",
-        "reason": "A request for additional security forces by the Delhi Police is a routine administrative matter."
-      },
-      "classified_at": "2026-11-27T07:06:34.513799+00:00"
-    },
     {
       "title": "Kerala Weather Today: 6 Districts Under Yellow Alert As 90 Minutes Of Rain Flood Thiruvananthapuram",
       "domain": "news18.com",
