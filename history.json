@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/hegseth-hails-elon-musk-as-great-american-after-spacexs-starship-returns-to-launch-pad-from-orbit-in-victory-for-company-2026-11-15-141094",
-      "title": "Elon Musk's SpaceX Achieves 'Science Fiction' Starship Catch, Reshaping Rocketry",
-      "headline": "SpaceX Achieves 'Science Fiction' Starship Catch",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18138891763562621",
-      "timestamp": "2026-11-15T05:02:13.658841+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/20-year-old-arrested-for-conducting-recce-of-mumbai-s-2611-target-nariman-house-2026-11-15-141097",
       "title": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
       "headline": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17998069938026847",
       "timestamp": "2026-11-27T08:04:03.192547+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/kochi/kerala-weather-today-6-districts-under-yellow-alert-as-90-minutes-of-rain-flood-thiruvananthapuram-ws-l-10442933.html?comscorekw=jionews",
+      "title": "Kerala Weather Today: 6 Districts Under Yellow Alert As 90 Minutes Of Rain Flood Thiruvananthapuram",
+      "headline": "Kerala Weather Today: 6 Districts Under Yellow Alert",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17992209233875115",
+      "timestamp": "2026-11-27T08:30:00.579870+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Kerala Weather Today: 6 Districts Under Yellow Alert As 90 Minutes Of Rain Flood Thiruvananthapuram",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/kochi/kerala-weather-today-6-districts-under-yellow-alert-as-90-minutes-of-rain-flood-thiruvananthapuram-ws-l-10442933.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Weather",
-        "reason": "Weather alerts and local flooding incidents are standard regional news items."
-      },
-      "classified_at": "2026-11-27T07:06:34.513801+00:00"
-    },
     {
       "title": "Market Update: Sensex Sinks 650 Points, Nifty Slips Below 25,750; IT, Banking Stocks Drag Markets",
       "domain": "news18.com",
