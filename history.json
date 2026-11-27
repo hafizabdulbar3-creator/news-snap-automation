@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/my-n99-mask-and-i-are-still-inseparable-first-person-account-a-week-after-diwali-in-delhi-ws-l-10426528.html?comscorekw=jionews",
-      "title": "A Week After Diwali, My N99 Mask And I Are Still Inseparable: First-Person Account",
-      "headline": "A Week After Diwali, Delhi's Air Quality Hits Alarming Levels",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17955852444329874",
-      "timestamp": "2026-11-15T12:23:22.098013+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/sonu-sood-reportedly-offers-sharad-kapoor-medical-support-explores-possible-acting-opportunity-ws-kl-10426619.html?comscorekw=jionews",
       "title": "Sonu Sood Reportedly Offers Sharad Kapoor Medical Support, Explores Possible Acting Opportunity",
       "headline": "Sonu Sood Offers Medical Support to Sharad Kapoor, Explores Acting Opportunity",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18114178037575328",
       "timestamp": "2026-11-27T15:15:38.019418+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/entertainment/celebrities/iffi-2026-neena-gupta-calls-out-hierarchy-between-film-ott-tv-says-we-do-the-same-work-2026-11-27-142007",
+      "title": "IFFI 2026: Neena Gupta Calls Out Hierarchy Between Film, OTT, TV, Says 'We Do the Same Work'",
+      "headline": "IFFI 2026: Neena Gupta Calls Out Hierarchy Between Film, OTT, TV",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18115094201521139",
+      "timestamp": "2026-11-27T15:46:52.773400+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "IFFI 2026: Neena Gupta Calls Out Hierarchy Between Film, OTT, TV, Says 'We Do the Same Work'",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/entertainment/celebrities/iffi-2026-neena-gupta-calls-out-hierarchy-between-film-ott-tv-says-we-do-the-same-work-2026-11-27-142007",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Entertainment",
-        "reason": "This is a commentary on the film industry hierarchy involving a prominent actor, which falls under national public interest but lacks the scale of a major geopolitical crisis."
-      },
-      "classified_at": "2026-11-27T15:41:17.060354+00:00"
-    },
     {
       "title": "Pakistan Funding Row: CJP's Ashutosh Ranka Sends Rs 3 Crore Defamation Notice To Jitendra Singh",
       "domain": "republicworld.com",
