@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/shah-rukh-khans-tu-mil-jaaye-bts-photos-reveal-how-king-song-was-shot-in-cape-town-not-with-a-phone-ws-kl-10426754.html?comscorekw=jionews",
-      "title": "Shah Rukh Khan's Tu Mil Jaaye BTS Photos Reveal How King Song Was Shot In Cape Town: 'Not With A Phone'",
-      "headline": "Shah Rukh Khan's 'Tu Mil Jaaye' BTS Photos Reveal Cape Town Filming",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18115067681613531",
-      "timestamp": "2026-11-15T15:30:27.297855+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/global-news/after-losing-congress-trump-heads-to-asia-to-chase-a-world-stage-comeback-2026-11-15-141110",
       "title": "After Losing Congress, Trump Heads To Asia To Chase A World-Stage Comeback",
       "headline": "Trump Heads to Asia After Midterm Losses",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18098281088164731",
       "timestamp": "2026-11-27T18:49:02.170601+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/initiatives/preserving-business-value-through-law-inside-legal-eagles-approach-to-corporate-legal-practice-2026-11-27-142020",
+      "title": "Preserving Business Value Through Law: Inside LEGAL EAGLES' Approach to Corporate Legal Practice",
+      "headline": "Preserving Business Value Through Law: LEGAL EAGLES' Corporate Strategy",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17982152250238910",
+      "timestamp": "2026-11-27T19:14:44.827556+00:00"
     }
   ],
   "processed": [
@@ -4648,17 +4648,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Preserving Business Value Through Law: Inside LEGAL EAGLES' Approach to Corporate Legal Practice",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/initiatives/preserving-business-value-through-law-inside-legal-eagles-approach-to-corporate-legal-practice-2026-11-27-142020",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "This is a business news piece regarding corporate legal practice and value preservation, which is a standard topic for national/regional business reporting."
-      },
-      "classified_at": "2026-11-27T18:48:22.838220+00:00"
-    },
     {
       "title": "Why Indian Car Owners Are Reassessing Vehicle Protection Amid Increasing Weather Uncertainty?",
       "domain": "republicworld.com",
