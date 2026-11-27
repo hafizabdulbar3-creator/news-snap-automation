@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/bawana-double-murder-27-year-old-hacked-to-death-killed-by-victim-s-brother-in-retaliation-2026-11-15-141098",
-      "title": "Bawana Double Murder: 27-Year-Old Hacked to Death; Killed by Victim's Brother in Retaliation",
-      "headline": "Brother Hacks 27-Year-Old to Death in Bawana Retaliation",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18002470821019402",
-      "timestamp": "2026-11-15T08:14:03.450318+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/pilot-admits-going-too-far-after-ups-boeing-767-and-copa-airlines-jet-collide-on-miami-airport-taxiway-2026-11-15-141106",
       "title": "Pilot Admits Going 'Too Far' After UPS Boeing 767 and Copa Airlines Jet Collide on Miami Airport Taxiway",
       "headline": "UPS Pilot Admits Crew 'Went Too Far' After Miami Airport Collision",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17964314907257770",
       "timestamp": "2026-11-27T11:16:57.642740+00:00"
+    },
+    {
+      "url": "https://www.news18.com/viral/watch-this-before-resigning-wipro-walk-in-interview-in-hyderabad-sparks-debate-on-job-market-ws-l-10443652.html?comscorekw=jionews",
+      "title": "'Watch This Before Resigning': Wipro Walk-In Interview In Hyderabad Sparks Debate On Job Market",
+      "headline": "Wipro Walk-In Interview In Hyderabad Draws Massive Crowds",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18140904067734336",
+      "timestamp": "2026-11-27T11:42:33.368069+00:00"
     }
   ],
   "processed": [
@@ -4640,17 +4640,6 @@
         "reason": "Notable retirement announcement of a sports champion."
       },
       "classified_at": "2026-11-27T11:16:28.565682+00:00"
-    },
-    {
-      "title": "'Watch This Before Resigning': Wipro Walk-In Interview In Hyderabad Sparks Debate On Job Market",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/viral/watch-this-before-resigning-wipro-walk-in-interview-in-hyderabad-sparks-debate-on-job-market-ws-l-10443652.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Discussion regarding job market trends and corporate recruitment."
-      },
-      "classified_at": "2026-11-27T11:16:28.565702+00:00"
     },
     {
       "title": "Setback For Rebel TMC Camp: Calcutta HC Quashes Ritabrata Banerjee's Appointment As Bengal LoP",
