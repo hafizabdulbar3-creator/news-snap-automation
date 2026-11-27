@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/explainers/microsofts-global-meltdown-how-indias-govt-digital-backbone-stayed-up-running-ws-lr-10426094.html?comscorekw=jionews",
-      "title": "Microsoft's Global Meltdown: How India's Govt Digital Backbone Stayed Up & Running",
-      "headline": "Microsoft's Global Meltdown: India's Digital Backbone Stays Up",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17918212272497131",
-      "timestamp": "2026-11-14T22:37:16.465078+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/business/your-next-office-will-feel-more-like-an-experience-than-a-workplace-heres-why-2026-11-14-141071",
       "title": "Your Next Office Will Feel More Like An Experience Than A Workplace | Here's Why",
       "headline": "India's Biggest Workplace Design Exhibition Returns to Mumbai",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18182349682390357",
       "timestamp": "2026-11-27T03:01:29.429289+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/after-republic-s-sting-on-zakir-naik-centre-intensifies-crackdown-gives-states-powers-to-act-against-irf-2026-11-27-141944",
+      "title": "Centre Empowers States to Act Against Zakir Naik's IRF After Sting Operation",
+      "headline": "Centre Empowers States to Act Against Zakir Naik's IRF After Sting Operation",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18399886429163075",
+      "timestamp": "2026-11-27T03:28:45.795941+00:00"
     }
   ],
   "processed": [
@@ -4629,19 +4629,7 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Centre Empowers States to Act Against Zakir Naik's IRF After Sting Operation",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/after-republic-s-sting-on-zakir-naik-centre-intensifies-crackdown-gives-states-powers-to-act-against-irf-2026-11-27-141944",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "Classified by local heuristic: standard national or international news report."
-      },
-      "classified_at": "2026-11-27T03:00:03.267862+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
