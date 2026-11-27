@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/kunal-kapoor-reacts-to-thailand-fan-frenzy-after-ramayana-cameo-as-lord-indra-overwhelmed-by-the-love-ws-l-10426282.html?comscorekw=jionews",
-      "title": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra: 'Overwhelmed By The Love'",
-      "headline": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17916902193493560",
-      "timestamp": "2026-11-15T07:17:04.522673+00:00"
-    },
-    {
       "url": "https://www.news18.com/viral/qualcomm-engineer-who-wanted-to-quit-gets-laid-off-with-15-months-salary-blessing-in-disguise-ws-l-10426289.html?comscorekw=jionews",
       "title": "Qualcomm Engineer Who Wanted To Quit Gets Laid Off With 15 Months' Salary: 'Blessing In Disguise'",
       "headline": "Qualcomm Engineer Gets 15 Months' Salary After Being Laid Off",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18167333842433781",
       "timestamp": "2026-11-27T10:19:22.994888+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/beyond-cricket-and-curry-how-australia-is-using-gday-namaste-to-deepen-india-ties-ws-l-10443379.html?comscorekw=jionews",
+      "title": "Beyond Cricket And Curry: How Australia Is Using G'Day Namaste To Deepen India Ties",
+      "headline": "Australia's 'G'Day Namaste' Festival To Deepen India Ties",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18025927907955473",
+      "timestamp": "2026-11-27T10:45:08.673224+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Beyond Cricket And Curry: How Australia Is Using G'Day Namaste To Deepen India Ties",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/beyond-cricket-and-curry-how-australia-is-using-gday-namaste-to-deepen-india-ties-ws-l-10443379.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "International Relations",
-        "reason": "Discusses diplomatic and cultural initiatives between nations, which is a standard topic of international news."
-      },
-      "classified_at": "2026-11-27T09:21:37.364613+00:00"
-    },
     {
       "title": "CISF Finds Hidden Knife In Passenger's Belt At Delhi Airport: What Flyers Can And Cannot Carry",
       "domain": "news18.com",
