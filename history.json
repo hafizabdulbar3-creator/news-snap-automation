@@ -4503,15 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.republicworld.com/defence/hangor-s-hidden-bill-sustainment-costs-will-burden-pakistan-s-defence-budget-for-decades-2026-11-25-141804",
-      "title": "Hangor's Hidden Bill: Sustainment Costs Will Burden Pakistan's Defence Budget for Decades",
-      "domain": "republicworld.com",
-      "timestamp": "2026-11-25T06:34:19.559740+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Rejected headline: not confidently English"
-    },
-    {
       "url": "https://www.republicworld.com/india/ceo-kalyan-krishnamurthy-steps-down-after-11-years-who-will-lead-flipkart-next-2026-11-25-141827",
       "title": "CEO Kalyan Krishnamurthy Steps Down After 11 Years; Who Will Lead Flipkart Next?",
       "domain": "republicworld.com",
@@ -4627,20 +4618,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
+    },
+    {
+      "url": "https://www.republicworld.com/india/ysrcp-backs-centre-s-delimitation-bill-but-what-safeguards-does-it-want-for-southern-states-political-representation-2026-11-27-141952",
+      "title": "Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-27T07:58:24.718600+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/ysrcp-backs-centre-s-delimitation-bill-but-what-safeguards-does-it-want-for-southern-states-political-representation-2026-11-27-141952",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A legislative proposal regarding state representation in delimitation is a standard domestic political development."
-      },
-      "classified_at": "2026-11-27T07:06:34.513796+00:00"
-    },
     {
       "title": "Delhi Police Writes To Home Ministry, Says Wants To Keep 22,000 CAPF Jawans In Capital Till Dec 31",
       "domain": "news18.com",
