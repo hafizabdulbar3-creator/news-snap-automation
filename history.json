@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/senior-hamas-commander-samir-abu-younis-killed-in-israeli-airstrike-in-southern-gaza-2026-11-15-141079",
-      "title": "Senior Hamas Commander Samir Abu Younis Killed in Israeli Airstrike in Southern Gaza",
-      "headline": "Senior Hamas Commander Samir Abu Younis Killed in Israeli Airstrike",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18138297742727924",
-      "timestamp": "2026-11-15T02:46:48.717814+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/netanyahu-calls-for-unity-government-talks-with-eisenkot-yashar-leader-dismisses-offer-as-another-spin-2026-11-15-141078",
       "title": "Netanyahu Urges Unity Government; Rival Dismisses Offer as 'Spin'",
       "headline": "Netanyahu Calls for Unity Government Talks",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17959829628270620",
       "timestamp": "2026-11-27T05:48:50.505030+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/ipo/mahanadi-coalfields-listing-shares-trade-below-ipo-price-after-market-debut-fall-up-to-2-7-ws-l-10442895.html?comscorekw=jionews",
+      "title": "Mahanadi Coalfields Listing: Shares Trade Below IPO Price After Market Debut, Fall Up To 2.7%",
+      "headline": "Mahanadi Coalfields Shares Trade Below IPO Price After Market Debut",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17965476459219063",
+      "timestamp": "2026-11-27T06:15:05.526438+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Mahanadi Coalfields Listing: Shares Trade Below IPO Price After Market Debut, Fall Up To 2.7%",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/ipo/mahanadi-coalfields-listing-shares-trade-below-ipo-price-after-market-debut-fall-up-to-2-7-ws-l-10442895.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "A standard financial market report regarding a company's stock performance post-IPO, falling under economic trends."
-      },
-      "classified_at": "2026-11-27T05:22:39.651843+00:00"
-    },
     {
       "title": "A Southern Opening For BJP? YSRCP Backs Delimitation, DMK Weighs Support With Conditions",
       "domain": "news18.com",
