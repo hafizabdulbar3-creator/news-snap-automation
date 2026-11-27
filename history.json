@@ -4654,6 +4654,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bangladesh Threatens To Take India To ICJ Over Sheikh Hasina: How Far Could The Diplomatic Battle Go?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.news18.com/cricket/india-vs-new-zealand-live-cricket-score-2nd-test-day-2-ind-vs-nz-latest-scorecard-christchurch-match-updates-liveblog-ws-l-10444158.html?comscorekw=jionews",
+      "title": "Early Breakthrough! Phillips Departs for 36 as India Pushes on Day 2",
+      "domain": "news18.com",
+      "timestamp": "2026-11-27T22:16:07.171199+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
   "classified_pool": [],
