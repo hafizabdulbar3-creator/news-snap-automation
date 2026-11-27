@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/tech/did-facebook-peek-into-your-phone-gallery-without-telling-you-italy-says-yes-fines-meta-887-million-2026-11-15-141077",
-      "title": "Did Facebook Peek Into Your Phone Gallery Without Telling You? Italy Says Yes, Fines Meta $887 Million",
-      "headline": "Italy Fines Meta $887 Million Over Unauthorized Photo Access",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18000209313031156",
-      "timestamp": "2026-11-15T04:10:07.592295+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/4-killed-18-injured-as-two-buses-carrying-pilgrims-collide-in-punjab-s-tarn-taran-2026-11-15-141080",
       "title": "4 Killed, 18 Injured as Two Buses Carrying Pilgrims Collide in Punjab's Tarn Taran",
       "headline": "4 Killed, 18 Injured as Two Buses Collide in Punjab's Tarn Taran",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17925158757462922",
       "timestamp": "2026-11-27T07:07:11.053654+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/lucknow-news/ayodhya-janakpur-saryu-kamala-express-6-things-train-passengers-must-know-before-booking-ws-l-10442898.html?comscorekw=jionews",
+      "title": "Ayodhya-Janakpur Saryu-Kamala Express: 6 Things Train Passengers Must Know Before Booking",
+      "headline": "Ayodhya-Janakpur Express: 6 Key Facts for Passengers",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18147835825514805",
+      "timestamp": "2026-11-27T07:33:05.412639+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Ayodhya-Janakpur Saryu-Kamala Express: 6 Things Train Passengers Must Know Before Booking",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/lucknow-news/ayodhya-janakpur-saryu-kamala-express-6-things-train-passengers-must-know-before-booking-ws-l-10442898.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Transport",
-        "reason": "A service announcement regarding a new train route and booking details is a standard regional news item."
-      },
-      "classified_at": "2026-11-27T07:06:34.513793+00:00"
-    },
     {
       "title": "Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.",
       "domain": "republicworld.com",
