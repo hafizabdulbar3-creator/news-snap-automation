@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/indigo-flight-with-192-on-board-makes-emergency-landing-at-pune-airport-after-gear-malfunction-2026-11-15-141107",
-      "title": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport After Gear Malfunction",
-      "headline": "IndiGo Flight With 192 On Board Makes Emergency Landing at Pune Airport",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18101663033089429",
-      "timestamp": "2026-11-15T09:42:14.425729+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/defence/india-has-strengthened-indigenous-defence-ecosystem-rajnath-singh-calls-for-quality-assurance-in-defence-manufacturing-2026-11-15-141100",
       "title": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance.",
       "headline": "India's Indigenous Defence Thrives; Rajnath Singh Stresses Quality Assurance",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17898700164614461",
       "timestamp": "2026-11-27T12:34:41.419970+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/setback-for-rebel-tmc-camp-calcutta-hc-quashes-ritabrata-banerjee-s-appointment-as-bengal-lop-2026-11-27-141981",
+      "title": "Setback For Rebel TMC Camp: Calcutta HC Quashes Ritabrata Banerjee's Appointment As Bengal LoP",
+      "headline": "Calcutta HC Quashes Ritabrata Banerjee's Appointment As Bengal LoP",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18108787769371110",
+      "timestamp": "2026-11-27T13:00:27.682136+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Setback For Rebel TMC Camp: Calcutta HC Quashes Ritabrata Banerjee's Appointment As Bengal LoP",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/setback-for-rebel-tmc-camp-calcutta-hc-quashes-ritabrata-banerjee-s-appointment-as-bengal-lop-2026-11-27-141981",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Regional political development involving a high-profile appointment."
-      },
-      "classified_at": "2026-11-27T11:16:28.565706+00:00"
-    },
     {
       "title": "Sensex Tanks Nearly 1,000 Points, Nifty Below 25,650; IT, Auto, Banking Stocks Lead Selloff",
       "domain": "news18.com",
