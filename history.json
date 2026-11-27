@@ -4682,12 +4682,12 @@
   },
   "token_metadata": {
     "token_type": "bearer",
-    "expires_in": 5184000,
-    "refreshed_at": "2026-11-26T13:03:45.429501+00:00",
-    "expires_at": "2027-01-25T13:03:45.429501+00:00",
+    "expires_in": 5097743,
+    "refreshed_at": "2026-11-27T13:01:22.682565+00:00",
+    "expires_at": "2027-01-25T13:03:45.682565+00:00",
     "secret_updated": true,
     "secret_status": "UPDATED_SUCCESSFULLY",
     "status": "HEALTHY",
-    "updated_at": "2026-11-26T13:03:46.902458+00:00"
+    "updated_at": "2026-11-27T13:01:24.138835+00:00"
   }
 }
