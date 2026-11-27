@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/pilot-admits-going-too-far-after-ups-boeing-767-and-copa-airlines-jet-collide-on-miami-airport-taxiway-2026-11-15-141106",
-      "title": "Pilot Admits Going 'Too Far' After UPS Boeing 767 and Copa Airlines Jet Collide on Miami Airport Taxiway",
-      "headline": "UPS Pilot Admits Crew 'Went Too Far' After Miami Airport Collision",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18230257312333442",
-      "timestamp": "2026-11-15T08:50:45.215374+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/irans-irgc-says-it-attacked-us-radar-system-at-a-base-in-bahrain-2026-11-15-141104",
       "title": "Iran's IRGC Says It Attacked US Radar System at a Base in Bahrain",
       "headline": "Iran's IRGC Claims Attack on US Radar at Bahrain Base",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18140904067734336",
       "timestamp": "2026-11-27T11:42:33.368069+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/sports/motogp-champion-marc-marquez-announces-retirement-days-after-winning-record-equalling-eighth-world-title-2026-11-27-141983",
+      "title": "MotoGP Champion Marc Marquez Announces Retirement Days After Winning Record-Equalling Eighth World Title",
+      "headline": "MotoGP Champion Marc Marquez Announces Retirement After Record-Equalling Title",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18024773201931568",
+      "timestamp": "2026-11-27T12:08:32.271308+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "MotoGP Champion Marc Marquez Announces Retirement Days After Winning Record-Equalling Eighth World Title",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/sports/motogp-champion-marc-marquez-announces-retirement-days-after-winning-record-equalling-eighth-world-title-2026-11-27-141983",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Sports",
-        "reason": "Notable retirement announcement of a sports champion."
-      },
-      "classified_at": "2026-11-27T11:16:28.565682+00:00"
-    },
     {
       "title": "Setback For Rebel TMC Camp: Calcutta HC Quashes Ritabrata Banerjee's Appointment As Bengal LoP",
       "domain": "republicworld.com",
