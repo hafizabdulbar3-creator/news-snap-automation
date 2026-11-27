@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/flag-row-intensifies-in-jk-after-saifullah-rana-backs-restoration-of-former-state-flag-revives-article-370-debate-ws-klrt-10426511.html?comscorekw=jionews",
-      "title": "J&K Flag Row Deepens: NC Ministers Push for Restoration, BJP Fights Back",
-      "headline": "J&K Flag Row Deepens: NC Ministers Push for Restoration, BJP Fights Back",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18134948386703844",
-      "timestamp": "2026-11-15T11:31:26.687229+00:00"
-    },
-    {
       "url": "https://www.news18.com/lifestyle/health-and-fitness/stopping-glp-1-weight-loss-drugs-study-flags-nearly-double-risk-of-heart-attack-stroke-and-death-ws-l-10426572.html?comscorekw=jionews",
       "title": "Stopping GLP-1 Weight-Loss Drugs? Study Flags Nearly Double Risk Of Heart Attack, Stroke And Death",
       "headline": "Study Links Stopping GLP-1 Drugs To Nearly Double Risk Of Heart Issues",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18114164801226774",
       "timestamp": "2026-11-27T14:18:32.025408+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/india-to-work-closely-with-partners-in-strengthening-peace-and-security-in-ior-pm-modi-2026-11-27-142004",
+      "title": "India to Work Closely with Partners in Strengthening Peace and Security in IOR: PM Modi",
+      "headline": "India to Collaborate with Partners for IOR Peace and Security",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18109189727137318",
+      "timestamp": "2026-11-27T14:44:29.575596+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Bombay HC Refuses Relief To Tata Trusts, Clears Way for Tata Sons Board Meeting on November 30",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/business/no-interim-relief-for-tata-trusts-as-bombay-hc-clears-way-for-tata-sons-board-meeting-on-november-30-2026-11-27-142003",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A court order clearing the way for a corporate board meeting is a standard business and legal update."
+      },
+      "classified_at": "2026-11-27T14:44:00.766784+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
