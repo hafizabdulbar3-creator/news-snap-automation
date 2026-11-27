@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/movies/bollywood/sonu-sood-reportedly-offers-sharad-kapoor-medical-support-explores-possible-acting-opportunity-ws-kl-10426619.html?comscorekw=jionews",
-      "title": "Sonu Sood Reportedly Offers Sharad Kapoor Medical Support, Explores Possible Acting Opportunity",
-      "headline": "Sonu Sood Offers Medical Support to Sharad Kapoor, Explores Acting Opportunity",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18098757944656061",
-      "timestamp": "2026-11-15T12:54:27.526191+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/vinod-kapri-claims-he-was-warned-of-serious-repercussions-for-speaking-up-about-pyre-losing-shows-to-ramayana-ws-l-10426665.html?comscorekw=jionews",
       "title": "Vinod Kapri Claims He Was Warned Of 'Serious Repercussions' For Speaking Up As Pyre Loses Shows",
       "headline": "Vinod Kapri Claims He Was Warned Of 'Serious Repercussions' For Speaking Up",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18115094201521139",
       "timestamp": "2026-11-27T15:46:52.773400+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/pakistan-funding-row-cjp-s-ashutosh-ranka-sends-rs-3-crore-defamation-notice-to-jitendra-singh-2026-11-27-142008",
+      "title": "Pakistan Funding Row: CJP's Ashutosh Ranka Sends Rs 3 Crore Defamation Notice To Jitendra Singh",
+      "headline": "CJP Ashutosh Ranka Sends Rs 3 Crore Defamation Notice to Jitendra Singh",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17955351345348020",
+      "timestamp": "2026-11-27T16:12:42.066545+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Pakistan Funding Row: CJP's Ashutosh Ranka Sends Rs 3 Crore Defamation Notice To Jitendra Singh",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/pakistan-funding-row-cjp-s-ashutosh-ranka-sends-rs-3-crore-defamation-notice-to-jitendra-singh-2026-11-27-142008",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This involves a legal notice regarding funding and defamation between political figures, which is a significant political development but remains a specific legal/political dispute rather than a global crisis."
-      },
-      "classified_at": "2026-11-27T15:41:17.060371+00:00"
-    },
     {
       "title": "Kejriwal's 'Sheesh Mahal' Opens: Every Penny Must Be Accounted For",
       "domain": "republicworld.com",
