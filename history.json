@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/viral/qualcomm-engineer-who-wanted-to-quit-gets-laid-off-with-15-months-salary-blessing-in-disguise-ws-l-10426289.html?comscorekw=jionews",
-      "title": "Qualcomm Engineer Who Wanted To Quit Gets Laid Off With 15 Months' Salary: 'Blessing In Disguise'",
-      "headline": "Qualcomm Engineer Gets 15 Months' Salary After Being Laid Off",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18031223981914668",
-      "timestamp": "2026-11-15T07:42:55.296857+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/bawana-double-murder-27-year-old-hacked-to-death-killed-by-victim-s-brother-in-retaliation-2026-11-15-141098",
       "title": "Bawana Double Murder: 27-Year-Old Hacked to Death; Killed by Victim's Brother in Retaliation",
       "headline": "Brother Hacks 27-Year-Old to Death in Bawana Retaliation",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18025927907955473",
       "timestamp": "2026-11-27T10:45:08.673224+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/2026-edelstam-prize-winner-dr-mahrang-baloch-accuses-pakistan-of-systematic-rights-abuses-in-balochistan-2026-11-27-141979",
+      "title": "2026 Edelstam Prize Winner Dr Mahrang Baloch Accuses Pakistan of Systematic Rights Abuses in Balochistan",
+      "headline": "2026 Edelstam Prize Winner Accuses Pakistan of Systematic Rights Abuses",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17964314907257770",
+      "timestamp": "2026-11-27T11:16:57.642740+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,85 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "MotoGP Champion Marc Marquez Announces Retirement Days After Winning Record-Equalling Eighth World Title",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/sports/motogp-champion-marc-marquez-announces-retirement-days-after-winning-record-equalling-eighth-world-title-2026-11-27-141983",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Sports",
+        "reason": "Notable retirement announcement of a sports champion."
+      },
+      "classified_at": "2026-11-27T11:16:28.565682+00:00"
+    },
+    {
+      "title": "'Watch This Before Resigning': Wipro Walk-In Interview In Hyderabad Sparks Debate On Job Market",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/viral/watch-this-before-resigning-wipro-walk-in-interview-in-hyderabad-sparks-debate-on-job-market-ws-l-10443652.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Discussion regarding job market trends and corporate recruitment."
+      },
+      "classified_at": "2026-11-27T11:16:28.565702+00:00"
+    },
+    {
+      "title": "Setback For Rebel TMC Camp: Calcutta HC Quashes Ritabrata Banerjee's Appointment As Bengal LoP",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/setback-for-rebel-tmc-camp-calcutta-hc-quashes-ritabrata-banerjee-s-appointment-as-bengal-lop-2026-11-27-141981",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Regional political development involving a high-profile appointment."
+      },
+      "classified_at": "2026-11-27T11:16:28.565706+00:00"
+    },
+    {
+      "title": "From 'Defied' Supreme Court Order To Fresh 'Light The Lamp' Directions: A Timeline Of The Deepam Row",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/politics/deepam-row-supreme-court-order-lighting-lamp-thirupparankundram-hills-madurai-temple-board-ws-l-10443586.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Legal and political developments regarding a local administrative dispute."
+      },
+      "classified_at": "2026-11-27T11:16:28.565709+00:00"
+    },
+    {
+      "title": "Sensex Tanks Nearly 1,000 Points, Nifty Below 25,650; IT, Auto, Banking Stocks Lead Selloff",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/markets/sensex-tanks-nearly-1000-points-nifty-below-25650-it-auto-banking-stocks-lead-selloff-ws-l-10443614.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Significant movement in the stock market indices."
+      },
+      "classified_at": "2026-11-27T11:16:28.565711+00:00"
+    },
+    {
+      "title": "Swiggy To Lay Off 340 Employees From Instamart Amid Restructuring, Rising Losses",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/economy/swiggy-to-lay-off-340-employees-from-instamart-amid-restructuring-rising-losses-ws-l-10443603.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Corporate restructuring and employment news."
+      },
+      "classified_at": "2026-11-27T11:16:28.565715+00:00"
+    },
+    {
+      "title": "'Can't Sit In Silos', 'Iron Hand': Top Quotes From SC's Deepathoon Order",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/cant-sit-in-silos-iron-hand-top-quotes-from-scs-deepathoon-order-ws-l-10443581.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Coverage of a Supreme Court order and its key quotes."
+      },
+      "classified_at": "2026-11-27T11:16:28.565717+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
