@@ -4645,6 +4645,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/explainers/bangladesh-threatens-to-take-india-to-icj-over-sheikh-hasina-how-far-could-the-diplomatic-battle-go-ws-lrt-10444144.html?comscorekw=jionews",
+      "title": "Bangladesh Threatens To Take India To ICJ Over Sheikh Hasina: How Far Could The Diplomatic Battle Go?",
+      "domain": "news18.com",
+      "timestamp": "2026-11-27T20:06:28.318656+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bangladesh Threatens To Take India To ICJ Over Sheikh Hasina: How Far Could The Diplomatic Battle Go?'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [],
