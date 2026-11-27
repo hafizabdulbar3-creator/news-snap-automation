@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/20-year-old-arrested-for-conducting-recce-of-mumbai-s-2611-target-nariman-house-2026-11-15-141097",
-      "title": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
-      "headline": "20-Year-Old Arrested for Conducting Recce of Mumbai's 26/11 Target Nariman House",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18140478556709415",
-      "timestamp": "2026-11-15T05:28:01.123528+00:00"
-    },
-    {
       "url": "https://www.news18.com/viral/chinese-father-uses-ai-to-curb-sons-tv-addiction-turns-television-time-into-quiz-sessions-ws-l-10426248.html?comscorekw=jionews",
       "title": "Chinese Father Uses AI To Curb Son's TV Addiction, Turns Television Time Into Quiz Sessions",
       "headline": "Chinese Father Uses AI To Curb Son's TV Addiction",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17992209233875115",
       "timestamp": "2026-11-27T08:30:00.579870+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/markets/sensex-falls-340-points-nifty-opens-below-25850-it-stocks-drag-mid-smallcaps-gain-ws-l-10442826.html?comscorekw=jionews",
+      "title": "Market Update: Sensex Sinks 650 Points, Nifty Slips Below 25,750; IT, Banking Stocks Drag Markets",
+      "headline": "Sensex Drops 650 Points, Nifty Falls Below 25,750",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "17943342537401170",
+      "timestamp": "2026-11-27T08:55:57.224425+00:00"
     }
   ],
   "processed": [
@@ -4629,19 +4629,7 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [
-    {
-      "title": "Market Update: Sensex Sinks 650 Points, Nifty Slips Below 25,750; IT, Banking Stocks Drag Markets",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/markets/sensex-falls-340-points-nifty-opens-below-25850-it-stocks-drag-mid-smallcaps-gain-ws-l-10442826.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Daily market fluctuations and stock performance are routine economic news updates."
-      },
-      "classified_at": "2026-11-27T07:06:34.513803+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
