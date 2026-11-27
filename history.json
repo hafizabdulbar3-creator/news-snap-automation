@@ -4627,20 +4627,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.republicworld.com/india/every-penny-must-be-accounted-for-parvesh-verma-opens-kejriwal-s-sheesh-mahal-to-media-public-entry-soon-2026-11-27-142005",
+      "title": "Kejriwal's 'Sheesh Mahal' Opens: Every Penny Must Be Accounted For",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-27T16:38:27.886706+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Headline appears clipped/incomplete (ends with trailing connector 'For')."
     }
   ],
   "classified_pool": [
-    {
-      "title": "Kejriwal's 'Sheesh Mahal' Opens: Every Penny Must Be Accounted For",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/every-penny-must-be-accounted-for-parvesh-verma-opens-kejriwal-s-sheesh-mahal-to-media-public-entry-soon-2026-11-27-142005",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "This concerns a specific political controversy regarding a government building and public funds, which is a notable national story but not a major international event."
-      },
-      "classified_at": "2026-11-27T15:41:17.060375+00:00"
-    },
     {
       "title": "'50% More Lok Sabha Seats': CM Chandrababu Naidu Says Delimitation Will Benefit Southern States",
       "domain": "republicworld.com",
