@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/science/historic-chopsticks-catch-spacex-arms-grab-starship-make-reusable-rockets-look-routine-2026-11-14-141074",
-      "title": "Historic Chopsticks Catch: SpaceX Arms Grab Starship, Make Reusable Rockets Look Routine",
-      "headline": "SpaceX Successfully Catches Starship With Chopsticks Arms",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18506005615102838",
-      "timestamp": "2026-11-14T22:11:20.091005+00:00"
-    },
-    {
       "url": "https://www.news18.com/explainers/microsofts-global-meltdown-how-indias-govt-digital-backbone-stayed-up-running-ws-lr-10426094.html?comscorekw=jionews",
       "title": "Microsoft's Global Meltdown: How India's Govt Digital Backbone Stayed Up & Running",
       "headline": "Microsoft's Global Meltdown: India's Digital Backbone Stays Up",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18119500589042898",
       "timestamp": "2026-11-27T02:31:48.283693+00:00"
+    },
+    {
+      "url": "https://www.news18.com/india/bjps-delimitation-push-2-0-dmks-possible-shift-pawars-stand-and-the-new-numbers-game-ws-kl-10442774.html?comscorekw=jionews",
+      "title": "BJP's Delimitation Push 2.0: DMK's Possible Shift, Pawar's Stand And The New Numbers Game",
+      "headline": "BJP's Delimitation Push 2.0: DMK's Possible Shift, Pawar's Stand And The New Numbers Game",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18182349682390357",
+      "timestamp": "2026-11-27T03:01:29.429289+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,19 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Centre Empowers States to Act Against Zakir Naik's IRF After Sting Operation",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/after-republic-s-sting-on-zakir-naik-centre-intensifies-crackdown-gives-states-powers-to-act-against-irf-2026-11-27-141944",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-27T03:00:03.267862+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
