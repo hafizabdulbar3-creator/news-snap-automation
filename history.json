@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/focus-now-on-facilitating-direct-engagement-between-russia-europe-on-ukraine-peace-talks-us-envoy-kushner-2026-11-15-141076",
-      "title": "US Pushes Direct Russia-Europe Talks for Ukraine Peace",
-      "headline": "US Envoy Kushner Pushes Direct Russia-Europe Talks for Ukraine Peace",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18125090890935540",
-      "timestamp": "2026-11-15T01:54:55.250853+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/three-oil-tankers-catch-fire-after-hitting-naval-mines-in-hormuz-claims-iran-s-navy-2026-11-15-141075",
       "title": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz: Iran's Navy",
       "headline": "Three Oil Tankers Catch Fire After Hitting Naval Mines in Hormuz",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18130709423298572",
       "timestamp": "2026-11-27T04:57:02.249130+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/new-delimitation-bill-may-propose-50-seat-increase-for-all-states-specify-state-wise-allocation-sources-2026-11-27-141951",
+      "title": "New Delimitation Bill: Lok Sabha Seats May Increase by 50% for All States",
+      "headline": "Delimitation Bill Proposes 50% Increase in Lok Sabha Seats",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18120925456818174",
+      "timestamp": "2026-11-27T05:23:04.919546+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,41 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Tamil Nadu Weather Today: IMD Warns Of Heavy Rain In 4 Districts, Thunderstorms In Chennai",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/chennai-news/tamil-nadu-weather-today-imd-warns-of-heavy-rain-in-4-districts-thunderstorms-in-chennai-ws-l-10442899.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Weather",
+        "reason": "A standard weather advisory for a specific region affecting public safety and daily life, falling under regional news."
+      },
+      "classified_at": "2026-11-27T05:22:39.651824+00:00"
+    },
+    {
+      "title": "Mahanadi Coalfields Listing: Shares Trade Below IPO Price After Market Debut, Fall Up To 2.7%",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/ipo/mahanadi-coalfields-listing-shares-trade-below-ipo-price-after-market-debut-fall-up-to-2-7-ws-l-10442895.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A standard financial market report regarding a company's stock performance post-IPO, falling under economic trends."
+      },
+      "classified_at": "2026-11-27T05:22:39.651843+00:00"
+    },
+    {
+      "title": "A Southern Opening For BJP? YSRCP Backs Delimitation, DMK Weighs Support With Conditions",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/ysrcp-signals-support-for-delimitation-bill-says-regional-balance-must-be-protected-10442879.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on political party reactions and internal negotiations regarding a specific legislative bill, falling under regional/national policy."
+      },
+      "classified_at": "2026-11-27T05:22:39.651851+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
