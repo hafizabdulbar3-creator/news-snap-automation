@@ -4629,7 +4629,41 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "X Rolls Out Parental Controls for Teens: Monitor Activity, Set Screen Time",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/tech/elon-musk-s-x-introduces-parental-controls-for-teenagers-aged-13-17-parents-can-set-screen-time-limits-monitor-activity-2026-11-27-141945",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-27T03:57:03.017857+00:00"
+    },
+    {
+      "title": "From BMC To Belapur Court: Fresh Threat Emails Trigger Searches Across Mumbai Region",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/mumbai-news/from-bmc-to-belapur-court-fresh-threat-emails-trigger-searches-across-mumbai-region-ws-l-10442806.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-27T03:57:03.017878+00:00"
+    },
+    {
+      "title": "Amit Shah, Rajnath Singh To Join RSS Mega Meet In Delhi; Mohan Bhagwat To Deliver Centenary Address",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/amit-shah-rajnath-singh-to-join-rss-mega-meet-in-delhi-mohan-bhagwat-to-deliver-centenary-address-ws-lt-10442736.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "World News",
+        "reason": "Classified by local heuristic: standard national or international news report."
+      },
+      "classified_at": "2026-11-27T03:57:03.017880+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
