@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/diabetes-breakthrough-treatment-immune-cell-off-switch-insulin-iit-kanpur-research-ws-el-10426327.html?comscorekw=jionews",
-      "title": "Breakthrough In Fight Against Diabetes? IIT Kanpur Researchers Find Immune Cell 'Off Switch' For Insulin",
-      "headline": "IIT Kanpur Researchers Identify Immune Cell 'Off Switch' For Insulin",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18054974831811287",
-      "timestamp": "2026-11-15T06:51:10.185680+00:00"
-    },
-    {
       "url": "https://www.news18.com/movies/bollywood/kunal-kapoor-reacts-to-thailand-fan-frenzy-after-ramayana-cameo-as-lord-indra-overwhelmed-by-the-love-ws-l-10426282.html?comscorekw=jionews",
       "title": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra: 'Overwhelmed By The Love'",
       "headline": "Kunal Kapoor Reacts To Thailand Fan Frenzy After Ramayana Cameo As Lord Indra",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18500451796118856",
       "timestamp": "2026-11-27T09:53:08.675481+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/guwahati/who-is-sanjukta-parashar-the-iron-lady-of-assam-leading-crpfs-elite-cobra-force-ws-l-10443395.html?comscorekw=jionews",
+      "title": "Who Is Sanjukta Parashar? The 'Iron Lady Of Assam' Leading CRPF's Elite CoBRA Force",
+      "headline": "Who Is Sanjukta Parashar? The 'Iron Lady Of Assam' Leading CRPF's Elite CoBRA Force",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18167333842433781",
+      "timestamp": "2026-11-27T10:19:22.994888+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Who Is Sanjukta Parashar? The 'Iron Lady Of Assam' Leading CRPF's Elite CoBRA Force",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/cities/guwahati/who-is-sanjukta-parashar-the-iron-lady-of-assam-leading-crpfs-elite-cobra-force-ws-l-10443395.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "National Security",
-        "reason": "Profiles a military officer leading a specialized force, which is a matter of public interest regarding national security leadership."
-      },
-      "classified_at": "2026-11-27T09:21:37.364610+00:00"
-    },
     {
       "title": "Beyond Cricket And Curry: How Australia Is Using G'Day Namaste To Deepen India Ties",
       "domain": "news18.com",
