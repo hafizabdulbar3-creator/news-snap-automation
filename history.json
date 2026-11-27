@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/j-k-4-sustain-minor-burn-injuries-as-fire-breaks-out-at-baramulla-s-jamia-masjid-2026-11-15-141103",
-      "title": "J-K: 4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
-      "headline": "4 Sustain Minor Burn Injuries as Fire Breaks Out at Baramulla's Jamia Masjid",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17902372938674120",
-      "timestamp": "2026-11-15T10:34:18.705127+00:00"
-    },
-    {
       "url": "https://www.news18.com/politics/ncs-infighting-will-sink-it-bjp-slams-omar-govt-as-larmi-demands-promises-be-kept-ws-klr-10426402.html?comscorekw=jionews",
       "title": "'NC's Infighting Will Sink It': BJP Slams Omar Govt As Larmi Demands Promises Be Kept",
       "headline": "BJP Slams NC Govt Over Infighting, Larmi Demands Promises Kept",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18206424685331959",
       "timestamp": "2026-11-27T13:26:25.341100+00:00"
+    },
+    {
+      "url": "https://www.news18.com/business/economy/swiggy-to-lay-off-340-employees-from-instamart-amid-restructuring-rising-losses-ws-l-10443603.html?comscorekw=jionews",
+      "title": "Swiggy To Lay Off 340 Employees From Instamart Amid Restructuring, Rising Losses",
+      "headline": "Swiggy To Lay Off 340 Employees From Instamart Amid Restructuring",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18154097236555369",
+      "timestamp": "2026-11-27T13:52:27.232555+00:00"
     }
   ],
   "processed": [
@@ -4630,17 +4630,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Swiggy To Lay Off 340 Employees From Instamart Amid Restructuring, Rising Losses",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/business/economy/swiggy-to-lay-off-340-employees-from-instamart-amid-restructuring-rising-losses-ws-l-10443603.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Business",
-        "reason": "Corporate restructuring and employment news."
-      },
-      "classified_at": "2026-11-27T11:16:28.565715+00:00"
-    },
     {
       "title": "'Can't Sit In Silos', 'Iron Hand': Top Quotes From SC's Deepathoon Order",
       "domain": "news18.com",
