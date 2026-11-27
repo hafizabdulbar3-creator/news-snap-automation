@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhi-chokes-under-severe-smog-as-overall-aqi-breaches-400-mark-2026-11-15-141082",
-      "title": "Delhi Chokes Under 'Severe' Smog as Overall AQI Breaches 400 Mark",
-      "headline": "Delhi Chokes Under Severe Smog as AQI Breaches 400",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18132565390866885",
-      "timestamp": "2026-11-15T03:38:52.442204+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/tech/did-facebook-peek-into-your-phone-gallery-without-telling-you-italy-says-yes-fines-meta-887-million-2026-11-15-141077",
       "title": "Did Facebook Peek Into Your Phone Gallery Without Telling You? Italy Says Yes, Fines Meta $887 Million",
       "headline": "Italy Fines Meta $887 Million Over Unauthorized Photo Access",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18118777256595184",
       "timestamp": "2026-11-27T06:41:06.223808+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/business/india-us-trade-deal-nears-finalisation-says-piyush-goyal-amid-fresh-us-tariff-threat-of-up-to-25-on-indian-goods-2026-11-27-141954",
+      "title": "India-US Trade Deal Nears Finalization Amidst New US Tariff Threats",
+      "headline": "India-US Trade Deal Nears Finalization Amid New US Tariff Threats",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17925158757462922",
+      "timestamp": "2026-11-27T07:07:11.053654+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,63 @@
       "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Ayodhya-Janakpur Saryu-Kamala Express: 6 Things Train Passengers Must Know Before Booking",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/lucknow-news/ayodhya-janakpur-saryu-kamala-express-6-things-train-passengers-must-know-before-booking-ws-l-10442898.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Transport",
+        "reason": "A service announcement regarding a new train route and booking details is a standard regional news item."
+      },
+      "classified_at": "2026-11-27T07:06:34.513793+00:00"
+    },
+    {
+      "title": "Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/ysrcp-backs-centre-s-delimitation-bill-but-what-safeguards-does-it-want-for-southern-states-political-representation-2026-11-27-141952",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A legislative proposal regarding state representation in delimitation is a standard domestic political development."
+      },
+      "classified_at": "2026-11-27T07:06:34.513796+00:00"
+    },
+    {
+      "title": "Delhi Police Writes To Home Ministry, Says Wants To Keep 22,000 CAPF Jawans In Capital Till Dec 31",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/delhi-police-writes-to-home-ministry-says-wants-to-keep-22000-capf-jawans-in-capital-till-dec-31-ws-l-10443038.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Public Safety",
+        "reason": "A request for additional security forces by the Delhi Police is a routine administrative matter."
+      },
+      "classified_at": "2026-11-27T07:06:34.513799+00:00"
+    },
+    {
+      "title": "Kerala Weather Today: 6 Districts Under Yellow Alert As 90 Minutes Of Rain Flood Thiruvananthapuram",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/kochi/kerala-weather-today-6-districts-under-yellow-alert-as-90-minutes-of-rain-flood-thiruvananthapuram-ws-l-10442933.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Weather",
+        "reason": "Weather alerts and local flooding incidents are standard regional news items."
+      },
+      "classified_at": "2026-11-27T07:06:34.513801+00:00"
+    },
+    {
+      "title": "Market Update: Sensex Sinks 650 Points, Nifty Slips Below 25,750; IT, Banking Stocks Drag Markets",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/business/markets/sensex-falls-340-points-nifty-opens-below-25850-it-stocks-drag-mid-smallcaps-gain-ws-l-10442826.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Daily market fluctuations and stock performance are routine economic news updates."
+      },
+      "classified_at": "2026-11-27T07:06:34.513803+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
