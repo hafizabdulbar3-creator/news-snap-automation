@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/viral/chinese-father-uses-ai-to-curb-sons-tv-addiction-turns-television-time-into-quiz-sessions-ws-l-10426248.html?comscorekw=jionews",
-      "title": "Chinese Father Uses AI To Curb Son's TV Addiction, Turns Television Time Into Quiz Sessions",
-      "headline": "Chinese Father Uses AI To Curb Son's TV Addiction",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18092088962308130",
-      "timestamp": "2026-11-15T05:59:05.140679+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/initiatives/why-health-benefits-are-becoming-part-of-the-healthcare-workforce-conversation-2026-11-15-141095",
       "title": "Why Health Benefits Are Becoming Part of the Healthcare Workforce Conversation",
       "headline": "Health Benefits Join Pay as Top Hiring Priorities",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17943342537401170",
       "timestamp": "2026-11-27T08:55:57.224425+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/pakistani-forces-target-residential-homes-in-balochistan-drone-strike-elderly-civilian-wounded-as-military-operations-spread-2026-11-27-141960",
+      "title": "Pakistani Forces Target Balochistan Homes in Drone Strike, Civilian Wounded",
+      "headline": "Pakistani Forces Target Balochistan Homes in Drone Strike",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17961476034275780",
+      "timestamp": "2026-11-27T09:23:54.045078+00:00"
     }
   ],
   "processed": [
@@ -4629,7 +4629,52 @@
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Lok Sabha to expand? YSRCP wants Southern states protected in Delimitation Bill.'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "The $5 Trillion Question: Why The World's Biggest Investors Are Heading To Miami For I20 Summit",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/studio18/the-5-trillion-question-why-the-worlds-biggest-investors-are-heading-to-miami-for-i20-summit-ws-l-10443366.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "Focuses on investor trends and a specific summit, which is a notable economic and business development."
+      },
+      "classified_at": "2026-11-27T09:21:37.364589+00:00"
+    },
+    {
+      "title": "Who Is Sanjukta Parashar? The 'Iron Lady Of Assam' Leading CRPF's Elite CoBRA Force",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/guwahati/who-is-sanjukta-parashar-the-iron-lady-of-assam-leading-crpfs-elite-cobra-force-ws-l-10443395.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "National Security",
+        "reason": "Profiles a military officer leading a specialized force, which is a matter of public interest regarding national security leadership."
+      },
+      "classified_at": "2026-11-27T09:21:37.364610+00:00"
+    },
+    {
+      "title": "Beyond Cricket And Curry: How Australia Is Using G'Day Namaste To Deepen India Ties",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/beyond-cricket-and-curry-how-australia-is-using-gday-namaste-to-deepen-india-ties-ws-l-10443379.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "International Relations",
+        "reason": "Discusses diplomatic and cultural initiatives between nations, which is a standard topic of international news."
+      },
+      "classified_at": "2026-11-27T09:21:37.364613+00:00"
+    },
+    {
+      "title": "CISF Finds Hidden Knife In Passenger's Belt At Delhi Airport: What Flyers Can And Cannot Carry",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/new-delhi-news/cisf-finds-hidden-knife-in-passengers-belt-at-delhi-airport-what-flyers-can-and-cannot-carry-ws-l-10443340.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Public Safety",
+        "reason": "Reports on security measures at a major airport, which is relevant to public safety and travel regulations."
+      },
+      "classified_at": "2026-11-27T09:21:37.364616+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
