@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/cds-gen-raja-subramani-flags-starlink-satellite-disruption-in-ukraine-stresses-need-for-india-s-self-reliant-space-capabilities-2026-11-16-141144",
-      "title": "CDS Flags Starlink Disruption, Calls for India's Space Self-Reliance",
-      "headline": "CDS Flags Starlink Disruption, Calls for India's Space Self-Reliance",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18120496673279243",
-      "timestamp": "2026-11-16T08:56:11.768481+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/india-signs-us-led-declaration-to-safeguard-ai-supply-chains-report-2026-11-16-141130",
       "title": "Amid Nvidia Controversy, India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
       "headline": "India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18089611481709043",
       "timestamp": "2026-11-28T15:51:50.744835+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/viral/90-rupees-for-a-roti-pakistan-busy-weighing-rotis-as-bread-crisis-brews-officials-gaffe-sparks-meme-fest-2026-09-28-137827",
+      "title": "Pakistan's Roti Crisis: Rs 90 Bread Sparks Outrage, Official's Gaffe Goes Viral",
+      "headline": "Pakistan's Roti Crisis: Rs 90 Bread Sparks Outrage",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18123554165049953",
+      "timestamp": "2026-11-28T16:17:57.767431+00:00"
     }
   ],
   "processed": [
@@ -4684,17 +4684,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Pakistan's Roti Crisis: Rs 90 Bread Sparks Outrage, Official's Gaffe Goes Viral",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/viral/90-rupees-for-a-roti-pakistan-busy-weighing-rotis-as-bread-crisis-brews-officials-gaffe-sparks-meme-fest-2026-09-28-137827",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Economy",
-        "reason": "A regional economic issue regarding the cost of staple food items."
-      },
-      "classified_at": "2026-11-28T14:59:37.412676+00:00"
-    },
     {
       "title": "Flat 50% Seat Hike, 2051 Freeze & Women's Quota: How BJP's Delimitation Blueprint Seeks to Protect States",
       "domain": "republicworld.com",
