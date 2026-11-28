@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/videos/global/new-orleans-cruise-ship-collision-tanker-steering-failure-caused-crash-ntsb-finds-2026-11-16-141145",
-      "title": "New Orleans Cruise Ship Collision: Tanker Steering Failure Caused Crash, NTSB Finds",
-      "headline": "NTSB: Steering Failure Caused New Orleans Cruise Ship Collision",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18144474373721257",
-      "timestamp": "2026-11-16T10:14:42.358919+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/we-ll-find-you-iran-threatens-two-us-navy-officers-for-minab-school-strike-2026-11-16-141147",
       "title": "'We'll Find You': Iran Threatens Two US Navy Officers for Minab School Strike",
       "headline": "Iran Threatens US Navy Officers Over Minab School Strike",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18421670263087832",
       "timestamp": "2026-11-28T17:09:56.836877+00:00"
+    },
+    {
+      "url": "https://www.news18.com/explainers/power-in-chennai-price-in-delhi-how-rahul-gandhis-tamil-nadu-tvk-gambit-triggered-dmk-delimitation-twist-ws-lrt-10445046.html?comscorekw=jionews",
+      "title": "Gandhi's Tamil Nadu Alliance: DMK's Delimitation Twist Isolates Congress Nationally",
+      "headline": "Congress Isolated Nationally After DMK's Delimitation Twist",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18138305107673338",
+      "timestamp": "2026-11-28T17:36:00.810767+00:00"
     }
   ],
   "processed": [
@@ -4683,7 +4683,19 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "97 DMK MPs Get New Lok Sabha Seats, To Sit Apart from INDI Bloc As Party Backs Centre's Delimitation Bill",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/97-dmk-mps-get-new-lok-sabha-seats-to-sit-apart-from-indi-bloc-as-party-backs-centre-s-delimitation-bill-2026-11-28-142088",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A report on the allocation of parliamentary seats and the DMK's stance on the delimitation bill, which is a matter of national legislative policy."
+      },
+      "classified_at": "2026-11-28T17:35:32.812581+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
