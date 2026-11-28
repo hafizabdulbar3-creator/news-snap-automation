@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/explainers/how-china-is-bypassing-us-ai-chip-blockade-the-backdoor-routes-to-nvidias-powerful-processors-shil-ws-l-10427234.html?comscorekw=jionews",
-      "title": "How China Is Bypassing US' AI Chip Blockade: The Backdoor Routes To Nvidia's Powerful Processors",
-      "headline": "China Bypasses US AI Chip Blockade via Backdoor Routes",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18416494252089234",
-      "timestamp": "2026-11-16T07:29:31.437889+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/bay-of-bengal-cyclone-alert-imd-warns-of-severe-cyclonic-storm-four-states-brace-for-heavy-rainfall-2026-11-16-141148",
       "title": "Bay of Bengal Cyclone Alert: IMD Warns of Severe Cyclonic Storm; Four States Brace for Heavy Rainfall",
       "headline": "IMD Warns of Severe Cyclonic Storm in Bay of Bengal",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18123272368760801",
       "timestamp": "2026-11-28T14:30:11.534989+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/pm-modi-announces-rs-2-lakh-ex-gratia-for-families-of-7-killed-in-uttarakhand-gorge-accident-rs-50000-for-injured-2026-11-28-142077",
+      "title": "PM Modi announces Rs 2 lakh aid after deadly Uttarakhand gorge accident.",
+      "headline": "PM Modi announces Rs 2 lakh aid for Uttarakhand accident victims",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18113012032914920",
+      "timestamp": "2026-11-28T15:00:07.057308+00:00"
     }
   ],
   "processed": [
@@ -4683,7 +4683,63 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Before Indian Citizenship, On Voter List? Sonia Gandhi's 1980 Entry Back In Court As Police Seek Records",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/before-indian-citizenship-on-voter-list-delhi-police-files-atr-in-sonia-gandhi-voter-row-2026-11-28-142081",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A legal matter concerning political figures and voter records."
+      },
+      "classified_at": "2026-11-28T14:59:37.412653+00:00"
+    },
+    {
+      "title": "India's Women's Quota Push: 50% Seat Hike, 2011 Census to Fast-Track 2029",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/women-s-quota-ahead-of-2029-how-centre-s-50-seat-hike-2011-census-formula-2051-freeze-aim-to-fast-track-reservation-2026-11-28-142080",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A legislative proposal regarding women's representation in politics."
+      },
+      "classified_at": "2026-11-28T14:59:37.412671+00:00"
+    },
+    {
+      "title": "Pakistan's Roti Crisis: Rs 90 Bread Sparks Outrage, Official's Gaffe Goes Viral",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/viral/90-rupees-for-a-roti-pakistan-busy-weighing-rotis-as-bread-crisis-brews-officials-gaffe-sparks-meme-fest-2026-09-28-137827",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Economy",
+        "reason": "A regional economic issue regarding the cost of staple food items."
+      },
+      "classified_at": "2026-11-28T14:59:37.412676+00:00"
+    },
+    {
+      "title": "Flat 50% Seat Hike, 2051 Freeze & Women's Quota: How BJP's Delimitation Blueprint Seeks to Protect States",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/flat-50-seat-hike-2051-freeze-womens-quota-how-bjps-delimitation-blueprint-seeks-to-protect-states-2026-11-28-142078",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "Analysis of a political policy regarding seat allocation and delimitation."
+      },
+      "classified_at": "2026-11-28T14:59:37.412680+00:00"
+    },
+    {
+      "title": "NEET-UG 2026: CJP Writes To Centre Over Suicide Victims' Compensation Policy Ahead Of Nov 30 SC Deadline",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/neet-ug-2026-cjp-writes-to-centre-over-suicide-victims-compensation-policy-ahead-of-november-30-sc-deadline-2026-11-28-142079",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Education",
+        "reason": "A legal issue regarding compensation policy for students involved in an exam-related tragedy."
+      },
+      "classified_at": "2026-11-28T14:59:37.412684+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
