@@ -4503,24 +4503,6 @@
   ],
   "processed": [
     {
-      "url": "https://www.news18.com/cricket/will-gurnoor-brar-make-test-debut-in-christchurch-india-coach-drops-a-hint-well-suited-to-the-conditions-ws-klnt-10441835.html?comscorekw=jionews",
-      "title": "India Coach Hints at Brar's Test Debut: 'Well Suited' for Green Pitch",
-      "domain": "news18.com",
-      "timestamp": "2026-11-26T11:54:18.569496+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Safeguard refusal: Generated post is marked synthetic."
-    },
-    {
-      "url": "https://www.news18.com/india/bomb-threat-targets-amitabh-bachchans-jalsa-residence-mumbai-mayors-office-10441836.html?comscorekw=jionews",
-      "title": "Bomb Threat Targets Amitabh Bachchan's 'Jalsa' Residence, Mumbai Mayor's Office",
-      "domain": "news18.com",
-      "timestamp": "2026-11-26T12:30:05.964908+00:00",
-      "published": false,
-      "rejected": true,
-      "rejection_reason": "Caption must contain 20–80 words, got 18."
-    },
-    {
       "url": "https://www.republicworld.com/business/real-estate/translating-sustainable-visions-into-urban-execution-2026-11-26-141927",
       "title": "Translating Sustainable Visions Into Urban Execution",
       "domain": "republicworld.com",
@@ -4690,6 +4672,15 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "Rejected headline: not confidently English"
+    },
+    {
+      "url": "https://www.news18.com/india/ex-cbi-officer-says-he-refused-fishing-and-roving-inquiry-against-gujarat-politicians-in-2010-mci-scam-case-ws-l-10444865.html?comscorekw=jionews",
+      "title": "Retired CBI Officer Reveals Pressure to Probe Gujarat Politicians Without Evidence",
+      "domain": "news18.com",
+      "timestamp": "2026-11-28T14:25:28.088499+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
   "classified_pool": [
@@ -4703,17 +4694,6 @@
         "reason": "A profile piece regarding a businessman's lifestyle, which falls under regional business and public interest rather than global consequence."
       },
       "classified_at": "2026-11-28T13:26:24.983809+00:00"
-    },
-    {
-      "title": "Retired CBI Officer Reveals Pressure to Probe Gujarat Politicians Without Evidence",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/india/ex-cbi-officer-says-he-refused-fishing-and-roving-inquiry-against-gujarat-politicians-in-2010-mci-scam-case-ws-l-10444865.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "An allegation regarding political pressure lacks the scale of a major geopolitical event or confirmed national policy change."
-      },
-      "classified_at": "2026-11-28T13:26:24.983811+00:00"
     }
   ],
   "quota_cooldown": {
