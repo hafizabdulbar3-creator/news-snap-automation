@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/gully-cricket-kulhad-chai-how-prince-william-kate-began-3-day-india-visit-in-mumbai-ws-l-10427151.html?comscorekw=jionews",
-      "title": "'Gully' Cricket, 'Kulhad' Chai: How Prince William, Kate Began 3-Day India Visit In Mumbai",
-      "headline": "Prince William, Kate Middleton Begin India Visit In Mumbai",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18154480639468117",
-      "timestamp": "2026-11-16T11:06:24.284740+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/prince-william-princess-kate-join-sachin-tendulkar-for-gully-cricket-with-mumbai-schoolchildren-2026-11-16-141151",
       "title": "Prince William, Princess Kate Join Sachin Tendulkar for Gully Cricket With Mumbai Schoolchildren",
       "headline": "Prince William, Kate Join Sachin Tendulkar for Gully Cricket",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18014929223987596",
       "timestamp": "2026-11-28T18:01:45.460698+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/hackers-got-into-the-air-force-cloud-computing-system-but-critical-parts-not-impacted-2026-11-28-142091",
+      "title": "Hackers Got Into the Air Force Cloud Computing System but Critical Parts Not Impacted",
+      "headline": "Hackers Breach US Air Force Cloud System",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18158374927554260",
+      "timestamp": "2026-11-28T18:28:02.031129+00:00"
     }
   ],
   "processed": [
@@ -4683,7 +4683,41 @@
       "rejection_reason": "Generation failed: Production post generation failed: All available AI providers failed. Last error: Gemini API permanent failure (HTTP 503): HTTP Error 503: Service Unavailable"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Sukhbir Badal Says SAD, BJP Will 'Jointly Come Up With a Plan' to Fight 2027 Punjab Elections",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/sukhbir-badal-says-sad-bjp-will-jointly-come-up-with-a-plan-to-fight-2027-punjab-elections-2026-11-28-142090",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "A standard political announcement regarding a coalition's strategy for an upcoming state election."
+      },
+      "classified_at": "2026-11-28T18:27:25.472813+00:00"
+    },
+    {
+      "title": "Amid Bomb Threat, Diljit Dosanjh's Bengaluru Show to Go Ahead as Planned; Police Step Up Security",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/entertainment/amid-bomb-threat-diljit-dosanjh-s-bengaluru-show-to-go-ahead-as-planned-police-step-up-security-2026-11-28-142092",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Entertainment",
+        "reason": "A local public safety update regarding a celebrity event, which is of regional interest but not major geopolitical significance."
+      },
+      "classified_at": "2026-11-28T18:27:25.472830+00:00"
+    },
+    {
+      "title": "Delhi Court Frames Murder Charges Against 5 in Manipuri Music Teacher Chongtham Vikram Singh's Killing",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/delhi-court-frames-murder-charges-against-5-in-manipuri-music-teacher-chongtham-vikram-singh-s-killing-2026-11-28-142089",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A legal development involving the murder of a teacher, which falls under major crime and justice reporting."
+      },
+      "classified_at": "2026-11-28T18:27:25.472838+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
