@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/india-signs-us-led-declaration-to-safeguard-ai-supply-chains-report-2026-11-16-141130",
-      "title": "Amid Nvidia Controversy, India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
-      "headline": "India Backs US-Led Strategy to Keep China Out of Critical AI Supply Chains",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18118821746065575",
-      "timestamp": "2026-11-16T09:22:32.691724+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/china-s-li-qiang-hails-extraordinary-ties-with-asean-ahead-of-donald-trump-s-visit-to-manila-2026-11-16-141150",
       "title": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN Ahead Of Donald Trump's Visit To Manila",
       "headline": "China's Li Qiang Hails 'Extraordinary' Ties With ASEAN",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18123554165049953",
       "timestamp": "2026-11-28T16:17:57.767431+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/flat-50-seat-hike-2051-freeze-womens-quota-how-bjps-delimitation-blueprint-seeks-to-protect-states-2026-11-28-142078",
+      "title": "Flat 50% Seat Hike, 2051 Freeze & Women's Quota: How BJP's Delimitation Blueprint Seeks to Protect States",
+      "headline": "BJP's Delimitation Blueprint: 50% Seat Hike, 2051 Freeze & Women's Quota",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17980104114168103",
+      "timestamp": "2026-11-28T16:43:57.825283+00:00"
     }
   ],
   "processed": [
@@ -4684,17 +4684,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Flat 50% Seat Hike, 2051 Freeze & Women's Quota: How BJP's Delimitation Blueprint Seeks to Protect States",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/flat-50-seat-hike-2051-freeze-womens-quota-how-bjps-delimitation-blueprint-seeks-to-protect-states-2026-11-28-142078",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Analysis of a political policy regarding seat allocation and delimitation."
-      },
-      "classified_at": "2026-11-28T14:59:37.412680+00:00"
-    },
     {
       "title": "NEET-UG 2026: CJP Writes To Centre Over Suicide Victims' Compensation Policy Ahead Of Nov 30 SC Deadline",
       "domain": "republicworld.com",
