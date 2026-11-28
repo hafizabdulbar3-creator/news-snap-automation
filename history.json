@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/four-women-arrested-in-gurugram-over-alleged-religious-conversion-at-school-for-poor-children-ws-l-10427081.html?comscorekw=jionews",
-      "title": "Four Women Arrested In Gurugram Over Alleged Religious Conversion At School For Poor Children",
-      "headline": "Four Women Arrested Over Alleged Religious Conversion At School",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "17885477103628454",
-      "timestamp": "2026-11-16T06:31:30.283687+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/india-asean-trade-hits-usd-12837-billion-in-fy26-as-pm-modi-departs-for-philippines-summit-2026-11-16-141149",
       "title": "India-ASEAN Trade Hits USD 128.37 Billion In FY26 As PM Modi Departs For Philippines Summit",
       "headline": "India-ASEAN Trade Reaches $128.37 Billion in FY26",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18102655514395187",
       "timestamp": "2026-11-28T13:26:52.111117+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/8-killed-4-injured-as-overcrowded-car-plunges-into-gorge-in-uttarakhand-s-pauri-pm-modi-announces-aid-2026-11-28-142075",
+      "title": "8 Killed, 4 Injured As Overcrowded Car Plunges Into Gorge In Uttarakhand's Pauri; PM Modi Announces Aid",
+      "headline": "8 Killed, 4 Injured As Overcrowded Car Plunges Into Gorge",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "17902185453393080",
+      "timestamp": "2026-11-28T13:53:31.300858+00:00"
     }
   ],
   "processed": [
@@ -4693,17 +4693,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "8 Killed, 4 Injured As Overcrowded Car Plunges Into Gorge In Uttarakhand's Pauri; PM Modi Announces Aid",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/8-killed-4-injured-as-overcrowded-car-plunges-into-gorge-in-uttarakhand-s-pauri-pm-modi-announces-aid-2026-11-28-142075",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "A major natural disaster resulting in multiple casualties and a direct response from the national leadership."
-      },
-      "classified_at": "2026-11-28T13:26:24.983806+00:00"
-    },
     {
       "title": "Rao Inderjeet Singh Yadav: From a Haryana Village to Dubai's Business and Luxury Lifestyle",
       "domain": "republicworld.com",
