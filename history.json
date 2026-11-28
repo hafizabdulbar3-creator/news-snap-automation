@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/2-days-after-cop-shot-accused-ratan-sheikh-killed-in-birbhum-encounter-cm-adhikari-backs-police-2026-11-15-141118",
-      "title": "2 Days After Cop Shot, Accused Ratan Sheikh Killed In Birbhum Encounter; CM Adhikari Backs Police",
-      "headline": "Accused Ratan Sheikh Killed In Birbhum Encounter After Cop Shooting",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17899018047417472",
-      "timestamp": "2026-11-15T19:08:38.864424+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/sports/proud-of-our-boys-gambhir-praises-bowlers-as-india-defend-209-to-stun-new-zealand-2026-11-15-141119",
       "title": "'Proud Of Our Boys': Gambhir Praises Bowlers As India Defend 209 To Stun New Zealand",
       "headline": "India Clinch ODI Series vs New Zealand After Bowling Out Opponents for 187",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18453803434126107",
       "timestamp": "2026-11-28T05:13:18.400046+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/world-news/italy-bans-burqas-niqabs-in-schools-parents-face-up-to-1000-fine-if-minors-violate-rule-2026-11-28-142044",
+      "title": "Italy Bans Burqas and Niqabs in Schools, With Fines Up to €1,000 for Violations",
+      "headline": "Italy Bans Burqas and Niqabs in Schools, Fines Up to €1,000",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18083380112453344",
+      "timestamp": "2026-11-28T05:39:24.054564+00:00"
     }
   ],
   "processed": [
@@ -4666,17 +4666,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Italy Bans Burqas and Niqabs in Schools, With Fines Up to €1,000 for Violations",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/world-news/italy-bans-burqas-niqabs-in-schools-parents-face-up-to-1000-fine-if-minors-violate-rule-2026-11-28-142044",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "World News",
-        "reason": "A significant national policy change regarding religious attire in schools, affecting a specific country (Italy)."
-      },
-      "classified_at": "2026-11-28T04:46:51.132145+00:00"
-    },
     {
       "title": "Zara, H&M Shift $254 Million Orders From Bangladesh To India Amid Unrest; Here's What Happened",
       "domain": "republicworld.com",
