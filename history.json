@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/sports/proud-of-our-boys-gambhir-praises-bowlers-as-india-defend-209-to-stun-new-zealand-2026-11-15-141119",
-      "title": "'Proud Of Our Boys': Gambhir Praises Bowlers As India Defend 209 To Stun New Zealand",
-      "headline": "India Clinch ODI Series vs New Zealand After Bowling Out Opponents for 187",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18081899033415519",
-      "timestamp": "2026-11-15T19:44:51.801482+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/divide-and-rule-again-rss-chief-mohan-bhagwat-warns-of-plot-to-split-india-by-identity-2026-11-15-141121",
       "title": "'Divide-And-Rule Again': RSS Chief Mohan Bhagwat Warns Of Plot To Split India By Identity",
       "headline": "RSS Chief Mohan Bhagwat Warns Of Plot To Split India By Identity",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18083380112453344",
       "timestamp": "2026-11-28T05:39:24.054564+00:00"
+    },
+    {
+      "url": "https://www.news18.com/cities/guwahati/tripura-drug-bust-44000-bottles-of-codeine-cough-syrup-worth-rs-4-4-crore-seized-in-joint-bsf-police-operation-ws-l-10444408.html?comscorekw=jionews",
+      "title": "Major Drug Bust: Rs 4.4 Crore Cough Syrup Seized in Tripura Operation",
+      "headline": "Rs 4.4 Crore Cough Syrup Seized in Tripura Operation",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18509386516103741",
+      "timestamp": "2026-11-28T06:10:28.464747+00:00"
     }
   ],
   "processed": [
@@ -4647,7 +4647,19 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "Bengaluru Beats Delhi, Solo Trips Take Off: Inside India's 2026 Year-End Travel Boom",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/cities/bengaluru-news/bengaluru-beats-delhi-solo-trips-take-off-inside-indias-2026-year-end-travel-boom-cx-amz-ws-l-10444305.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A report on travel trends and economic activity within a specific region is a notable public interest story but does not rise to the level of a major geopolitical event."
+      },
+      "classified_at": "2026-11-28T06:10:05.093183+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
