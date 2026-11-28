@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/prince-william-princess-kate-join-sachin-tendulkar-for-gully-cricket-with-mumbai-schoolchildren-2026-11-16-141151",
-      "title": "Prince William, Princess Kate Join Sachin Tendulkar for Gully Cricket With Mumbai Schoolchildren",
-      "headline": "Prince William, Kate Join Sachin Tendulkar for Gully Cricket",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18135365258493027",
-      "timestamp": "2026-11-16T11:32:37.294525+00:00"
-    },
-    {
       "url": "https://www.news18.com/business/economy/falling-crude-prices-stronger-rupee-more-why-fpi-inflows-are-breaking-records-after-months-of-outflows-ws-l-10427224.html?comscorekw=jionews",
       "title": "Record FPI Inflows Flood India's Market: Crude Prices, Rupee Fuel Surge",
       "headline": "Record FPI Inflows Flood India's Market",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18158374927554260",
       "timestamp": "2026-11-28T18:28:02.031129+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/sukhbir-badal-says-sad-bjp-will-jointly-come-up-with-a-plan-to-fight-2027-punjab-elections-2026-11-28-142090",
+      "title": "Sukhbir Badal Says SAD, BJP Will 'Jointly Come Up With a Plan' to Fight 2027 Punjab Elections",
+      "headline": "Sukhbir Badal Announces Joint Plan to Fight 2027 Punjab Elections",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18251057269315465",
+      "timestamp": "2026-11-28T19:03:54.555707+00:00"
     }
   ],
   "processed": [
@@ -4648,17 +4648,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Sukhbir Badal Says SAD, BJP Will 'Jointly Come Up With a Plan' to Fight 2027 Punjab Elections",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/sukhbir-badal-says-sad-bjp-will-jointly-come-up-with-a-plan-to-fight-2027-punjab-elections-2026-11-28-142090",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A standard political announcement regarding a coalition's strategy for an upcoming state election."
-      },
-      "classified_at": "2026-11-28T18:27:25.472813+00:00"
-    },
     {
       "title": "Amid Bomb Threat, Diljit Dosanjh's Bengaluru Show to Go Ahead as Planned; Police Step Up Security",
       "domain": "republicworld.com",
