@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/world/softer-chip-rules-chinese-clients-and-family-ties-the-questions-facing-howard-lutnick-ws-kl-10427007.html?comscorekw=jionews",
-      "title": "Softer Chip Rules, Chinese Clients And Family Ties: The Questions Facing Howard Lutnick",
-      "headline": "Questions Facing Howard Lutnick: Chip Rules, Chinese Clients & Family Ties",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18018182147977430",
-      "timestamp": "2026-11-16T05:39:26.169400+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/delhis-air-stays-poor-at-216-aqi-even-as-overall-pollution-levels-ease-2026-11-16-141136",
       "title": "Delhi Pollution Update: Air Quality in 'Poor' Category with AQI at 216",
       "headline": "Delhi Air Quality Remains in 'Poor' Category at AQI 216",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18117601561862874",
       "timestamp": "2026-11-28T12:35:06.459769+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/global-news/china-using-ai-generated-social-media-personas-to-influence-taiwan-elections-us-research-report-finds-2026-11-28-142072",
+      "title": "China Using AI-Generated Social Media Personas To Influence Taiwan Elections, US Research Report Finds",
+      "headline": "China Allegedly Uses AI Personas to Influence Taiwan Elections",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18019622222752105",
+      "timestamp": "2026-11-28T13:00:41.898846+00:00"
     }
   ],
   "processed": [
@@ -4692,19 +4692,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "China Using AI-Generated Social Media Personas To Influence Taiwan Elections, US Research Report Finds",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/global-news/china-using-ai-generated-social-media-personas-to-influence-taiwan-elections-us-research-report-finds-2026-11-28-142072",
-      "classification": {
-        "importance": "MAJOR",
-        "topic": "World News",
-        "reason": "Addresses a significant geopolitical conflict (Taiwan) and the use of advanced technology (AI) in influencing elections, which has broad international security implications."
-      },
-      "classified_at": "2026-11-28T12:34:18.985801+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
