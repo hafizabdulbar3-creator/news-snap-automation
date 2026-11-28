@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/delhis-air-stays-poor-at-216-aqi-even-as-overall-pollution-levels-ease-2026-11-16-141136",
-      "title": "Delhi Pollution Update: Air Quality in 'Poor' Category with AQI at 216",
-      "headline": "Delhi Air Quality Remains in 'Poor' Category at AQI 216",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18127992947296607",
-      "timestamp": "2026-11-16T06:05:29.050281+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/four-women-arrested-in-gurugram-over-alleged-religious-conversion-at-school-for-poor-children-ws-l-10427081.html?comscorekw=jionews",
       "title": "Four Women Arrested In Gurugram Over Alleged Religious Conversion At School For Poor Children",
       "headline": "Four Women Arrested Over Alleged Religious Conversion At School",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18019622222752105",
       "timestamp": "2026-11-28T13:00:41.898846+00:00"
+    },
+    {
+      "url": "https://www.news18.com/world/afghan-taliban-delivers-blunt-warning-to-pakistan-stop-blaming-kabul-for-your-security-failures-exclusive-details-ws-lrt-10444896.html?comscorekw=jionews",
+      "title": "Taliban Delivers Blunt Warning: Pakistan Must Own Its Security Failures",
+      "headline": "Taliban Issues Blunt Warning to Pakistan Over Security Failures",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18102655514395187",
+      "timestamp": "2026-11-28T13:26:52.111117+00:00"
     }
   ],
   "processed": [
@@ -4692,7 +4692,41 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [],
+  "classified_pool": [
+    {
+      "title": "8 Killed, 4 Injured As Overcrowded Car Plunges Into Gorge In Uttarakhand's Pauri; PM Modi Announces Aid",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/india/8-killed-4-injured-as-overcrowded-car-plunges-into-gorge-in-uttarakhand-s-pauri-pm-modi-announces-aid-2026-11-28-142075",
+      "classification": {
+        "importance": "MAJOR",
+        "topic": "World News",
+        "reason": "A major natural disaster resulting in multiple casualties and a direct response from the national leadership."
+      },
+      "classified_at": "2026-11-28T13:26:24.983806+00:00"
+    },
+    {
+      "title": "Rao Inderjeet Singh Yadav: From a Haryana Village to Dubai's Business and Luxury Lifestyle",
+      "domain": "republicworld.com",
+      "url": "https://www.republicworld.com/info/rao-inderjeet-singh-yadav-from-a-haryana-village-to-dubais-business-and-luxury-lifestyle-2026-11-28-142074",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Business",
+        "reason": "A profile piece regarding a businessman's lifestyle, which falls under regional business and public interest rather than global consequence."
+      },
+      "classified_at": "2026-11-28T13:26:24.983809+00:00"
+    },
+    {
+      "title": "Retired CBI Officer Reveals Pressure to Probe Gujarat Politicians Without Evidence",
+      "domain": "news18.com",
+      "url": "https://www.news18.com/india/ex-cbi-officer-says-he-refused-fishing-and-roving-inquiry-against-gujarat-politicians-in-2010-mci-scam-case-ws-l-10444865.html?comscorekw=jionews",
+      "classification": {
+        "importance": "NORMAL",
+        "topic": "Politics",
+        "reason": "An allegation regarding political pressure lacks the scale of a major geopolitical event or confirmed national policy change."
+      },
+      "classified_at": "2026-11-28T13:26:24.983811+00:00"
+    }
+  ],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
