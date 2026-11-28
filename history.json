@@ -4672,20 +4672,18 @@
       "published": false,
       "rejected": true,
       "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry ('Bisleri Faces Second Food Safety Prosecution: What Does Bacteria Coliform In Water Mean? Doctors Explain'), but generated post converts it to a definitive established outcome without inquiry or attribution."
+    },
+    {
+      "url": "https://www.republicworld.com/viral/bolt-dal-vada-passenger-finds-rusty-metal-bolt-in-vande-bharat-meal-irctc-takes-action-2026-11-28-142067",
+      "title": "'Bolt Dal Vada'? Passenger Finds Rusty Metal Bolt In Vande Bharat Meal, IRCTC Takes Action",
+      "domain": "republicworld.com",
+      "timestamp": "2026-11-28T11:27:01.217551+00:00",
+      "published": false,
+      "rejected": true,
+      "rejection_reason": "FACTUAL GROUNDING REFUSAL: Source title contains a question/inquiry (''Bolt Dal Vada'? Passenger Finds Rusty Metal Bolt In Vande Bharat Meal, IRCTC Takes Action'), but generated post converts it to a definitive established outcome without inquiry or attribution."
     }
   ],
   "classified_pool": [
-    {
-      "title": "'Bolt Dal Vada'? Passenger Finds Rusty Metal Bolt In Vande Bharat Meal, IRCTC Takes Action",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/viral/bolt-dal-vada-passenger-finds-rusty-metal-bolt-in-vande-bharat-meal-irctc-takes-action-2026-11-28-142067",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Consumer Affairs",
-        "reason": "A service quality issue involving a specific train service (Vande Bharat) and a food safety complaint, which is a matter of public interest but not a major geopolitical event."
-      },
-      "classified_at": "2026-11-28T11:21:43.329094+00:00"
-    },
     {
       "title": "Over 100 Muslim Devotees Visit Thirupparankundram Dargah Amid SC Order on Karthigai Deepam Lighting",
       "domain": "republicworld.com",
