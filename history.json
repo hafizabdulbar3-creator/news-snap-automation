@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.news18.com/india/amid-nvidia-jensen-huang-row-india-joins-us-led-pact-to-secure-ai-supply-chains-from-china-ws-kl-10427172.html?comscorekw=jionews",
-      "title": "India Joins US-Led Pact To Secure AI Supply Chains From China Amid Nvidia Row",
-      "headline": "India Joins US-Led Pact To Secure AI Supply Chains From China",
-      "domain": "news18.com",
-      "published": true,
-      "media_id": "18124946962935786",
-      "timestamp": "2026-11-16T08:21:43.992615+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/cds-gen-raja-subramani-flags-starlink-satellite-disruption-in-ukraine-stresses-need-for-india-s-self-reliant-space-capabilities-2026-11-16-141144",
       "title": "CDS Flags Starlink Disruption, Calls for India's Space Self-Reliance",
       "headline": "CDS Flags Starlink Disruption, Calls for India's Space Self-Reliance",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18141034246734693",
       "timestamp": "2026-11-28T15:25:53.786184+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/women-s-quota-ahead-of-2029-how-centre-s-50-seat-hike-2011-census-formula-2051-freeze-aim-to-fast-track-reservation-2026-11-28-142080",
+      "title": "India's Women's Quota Push: 50% Seat Hike, 2011 Census to Fast-Track 2029",
+      "headline": "India's Women's Quota Push: 50% Seat Hike, 2011 Census to Fast-Track 2029",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18089611481709043",
+      "timestamp": "2026-11-28T15:51:50.744835+00:00"
     }
   ],
   "processed": [
@@ -4684,17 +4684,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "India's Women's Quota Push: 50% Seat Hike, 2011 Census to Fast-Track 2029",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/women-s-quota-ahead-of-2029-how-centre-s-50-seat-hike-2011-census-formula-2051-freeze-aim-to-fast-track-reservation-2026-11-28-142080",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A legislative proposal regarding women's representation in politics."
-      },
-      "classified_at": "2026-11-28T14:59:37.412671+00:00"
-    },
     {
       "title": "Pakistan's Roti Crisis: Rs 90 Bread Sparks Outrage, Official's Gaffe Goes Viral",
       "domain": "republicworld.com",
