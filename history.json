@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/world-news/zelenskyy-says-russia-suffered-over-50000-casualties-in-oct-claims-to-disabled-55-of-moscow-s-oil-refining-capacity-2026-11-16-141135",
-      "title": "Zelenskyy: Russia Suffered 50,000 Casualties, Ukraine Crippled 55% Oil Capacity",
-      "headline": "Zelenskyy Claims Russia Suffered 50,000 Casualties, Disabled 55% of Oil Refining Capacity",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "17908993764597919",
-      "timestamp": "2026-11-16T04:20:48.926928+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/india/punjab-pickup-truck-accident-in-fazilka-leaves-5-dead-11-injured-2026-11-16-141134",
       "title": "Pickup Truck Accident in Punjab's Fazilka Leaves 5 Dead, 11 Injured",
       "headline": "5 Dead, 11 Injured in Punjab Pickup Truck Accident",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "17948578470392075",
       "timestamp": "2026-11-28T10:51:03.014823+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/opinion/the-man-who-never-wanted-to-be-a-milkman-how-an-unwanted-posting-changed-the-destiny-of-a-nation-2026-11-28-142064",
+      "title": "The Man Who Never Wanted to Be a Milkman: How an Unwanted Posting Changed the Destiny of a Nation",
+      "headline": "The Man Who Never Wanted to Be a Milkman",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18020860898978340",
+      "timestamp": "2026-11-28T11:38:03.733873+00:00"
     }
   ],
   "processed": [
@@ -4692,19 +4692,7 @@
       "rejection_reason": "Rejected headline: not confidently English"
     }
   ],
-  "classified_pool": [
-    {
-      "title": "The Man Who Never Wanted to Be a Milkman: How an Unwanted Posting Changed the Destiny of a Nation",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/opinion/the-man-who-never-wanted-to-be-a-milkman-how-an-unwanted-posting-changed-the-destiny-of-a-nation-2026-11-28-142064",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Biography",
-        "reason": "A profile piece about a historical figure and their career path, which is a notable public interest story but not a major breaking news event."
-      },
-      "classified_at": "2026-11-28T11:21:43.329112+00:00"
-    }
-  ],
+  "classified_pool": [],
   "quota_cooldown": {
     "active": false,
     "resets_at": "2026-11-22T08:00:00.038622+00:00",
