@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/global-news/pilot-exposes-faa-claims-cancun-flight-had-zero-problems-accuses-us-govt-of-staging-aviation-crisis-2026-11-15-141123",
-      "title": "Pilot Exposes FAA? Claims Cancun Flight Had Zero Problems, Accuses US Govt Of Staging Aviation Crisis",
-      "headline": "Pilot Accuses US Govt of Staging Aviation Crisis",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18100376495426184",
-      "timestamp": "2026-11-16T01:12:47.821994+00:00"
-    },
-    {
       "url": "https://www.republicworld.com/world-news/houthis-claim-missile-strikes-on-king-khalid-airport-financial-centre-in-saudi-s-riyadh-2026-11-16-141125",
       "title": "Houthis Claim Missile Strikes on King Khalid Airport, Financial Centre in Saudi's Riyadh",
       "headline": "Houthis Claim Missile Strikes on Riyadh Targets",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18063318023584805",
       "timestamp": "2026-11-28T08:04:41.420527+00:00"
+    },
+    {
+      "url": "https://www.news18.com/politics/stalins-two-conditions-met-why-the-dmk-agreed-to-back-centres-delimitation-bill-ws-l-10444537.html?comscorekw=jionews",
+      "title": "Stalin's 'Two Conditions' Met: Why The DMK Agreed To Back Centre's Delimitation Bill",
+      "headline": "DMK Backs Centre's Delimitation Bill After Stalin Claims Demands Met",
+      "domain": "news18.com",
+      "published": true,
+      "media_id": "18109895156326072",
+      "timestamp": "2026-11-28T08:30:34.299341+00:00"
     }
   ],
   "processed": [
@@ -4667,17 +4667,6 @@
         "reason": "Reports on a specific legislative promise regarding women's quota, which is a national policy matter."
       },
       "classified_at": "2026-11-28T08:04:13.842170+00:00"
-    },
-    {
-      "title": "Stalin's 'Two Conditions' Met: Why The DMK Agreed To Back Centre's Delimitation Bill",
-      "domain": "news18.com",
-      "url": "https://www.news18.com/politics/stalins-two-conditions-met-why-the-dmk-agreed-to-back-centres-delimitation-bill-ws-l-10444537.html?comscorekw=jionews",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "Details a political negotiation regarding a specific bill (delimitation) within a national parliament."
-      },
-      "classified_at": "2026-11-28T08:04:13.842174+00:00"
     }
   ],
   "quota_cooldown": {
