@@ -1,15 +1,6 @@
 {
   "posted": [
     {
-      "url": "https://www.republicworld.com/india/bay-of-bengal-cyclone-alert-imd-warns-of-severe-cyclonic-storm-four-states-brace-for-heavy-rainfall-2026-11-16-141148",
-      "title": "Bay of Bengal Cyclone Alert: IMD Warns of Severe Cyclonic Storm; Four States Brace for Heavy Rainfall",
-      "headline": "IMD Warns of Severe Cyclonic Storm in Bay of Bengal",
-      "domain": "republicworld.com",
-      "published": true,
-      "media_id": "18133638037770208",
-      "timestamp": "2026-11-16T07:55:38.216939+00:00"
-    },
-    {
       "url": "https://www.news18.com/india/amid-nvidia-jensen-huang-row-india-joins-us-led-pact-to-secure-ai-supply-chains-from-china-ws-kl-10427172.html?comscorekw=jionews",
       "title": "India Joins US-Led Pact To Secure AI Supply Chains From China Amid Nvidia Row",
       "headline": "India Joins US-Led Pact To Secure AI Supply Chains From China",
@@ -4499,6 +4490,15 @@
       "published": true,
       "media_id": "18113012032914920",
       "timestamp": "2026-11-28T15:00:07.057308+00:00"
+    },
+    {
+      "url": "https://www.republicworld.com/india/before-indian-citizenship-on-voter-list-delhi-police-files-atr-in-sonia-gandhi-voter-row-2026-11-28-142081",
+      "title": "Before Indian Citizenship, On Voter List? Sonia Gandhi's 1980 Entry Back In Court As Police Seek Records",
+      "headline": "Sonia Gandhi's 1980 Voter List Entry Back In Court As Delhi Police Seek Records",
+      "domain": "republicworld.com",
+      "published": true,
+      "media_id": "18141034246734693",
+      "timestamp": "2026-11-28T15:25:53.786184+00:00"
     }
   ],
   "processed": [
@@ -4684,17 +4684,6 @@
     }
   ],
   "classified_pool": [
-    {
-      "title": "Before Indian Citizenship, On Voter List? Sonia Gandhi's 1980 Entry Back In Court As Police Seek Records",
-      "domain": "republicworld.com",
-      "url": "https://www.republicworld.com/india/before-indian-citizenship-on-voter-list-delhi-police-files-atr-in-sonia-gandhi-voter-row-2026-11-28-142081",
-      "classification": {
-        "importance": "NORMAL",
-        "topic": "Politics",
-        "reason": "A legal matter concerning political figures and voter records."
-      },
-      "classified_at": "2026-11-28T14:59:37.412653+00:00"
-    },
     {
       "title": "India's Women's Quota Push: 50% Seat Hike, 2011 Census to Fast-Track 2029",
       "domain": "republicworld.com",
